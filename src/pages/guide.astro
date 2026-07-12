@@ -8,7 +8,6 @@ const jsonLd = {
   name: 'Free Turning 65 Medicare Guide',
   description: 'Download a free guide covering everything you need to know about turning 65 and Medicare.',
 };
-const pdfPath = '/docs/T65-Medicare-Guide-2026.pdf';
 ---
 <BaseLayout
   title="Free T65 Medicare Guide — Download Now | Learn Medicare"
@@ -24,7 +23,6 @@ const pdfPath = '/docs/T65-Medicare-Guide-2026.pdf';
         A clear, no-pressure walkthrough of everything you need to know before you turn 65 —
         enrollment timing, coverage options, and how to avoid costly penalties.
       </p>
-      <a href={pdfPath} class="btn btn-primary" download>Download the Free Guide</a>
     </div>
   </section>
 
@@ -44,18 +42,103 @@ const pdfPath = '/docs/T65-Medicare-Guide-2026.pdf';
         </p>
       </div>
       <div class="preview-card">
-        <p class="eyebrow">Preview</p>
-        <div class="pdf-frame-wrap">
-          <iframe
-            src={`${pdfPath}#view=FitH`}
-            title="T65 Medicare Guide preview"
-            loading="lazy"
-          ></iframe>
+        <p class="eyebrow">Get the Guide</p>
+        <h2 class="form-heading">Tell us where to send it</h2>
+
+        <form id="guide-lead-form" class="lead-form" novalidate>
+          <div class="form-row">
+            <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+          </div>
+          <div class="form-row">
+            <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+          <!-- Honeypot — hidden from real visitors -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Send Me the Free Guide</button>
+          <p id="guide-form-error" class="form-error" role="alert" hidden></p>
+        </form>
+
+        <div id="guide-form-success" class="form-success" hidden>
+          <p>Check your email — your free Medicare guide is on its way!</p>
         </div>
-        <a href={pdfPath} class="btn btn-outline" download>Download PDF</a>
+
+        <p class="compliance-note">
+          By submitting this form you agree to be contacted by Price Services Group LLC.
+          We respect your privacy and will never sell your information.
+        </p>
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('guide-lead-form') as HTMLFormElement | null;
+    const errorEl = document.getElementById('guide-form-error');
+    const successEl = document.getElementById('guide-form-success');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        firstName: String(formData.get('firstName') ?? '').trim(),
+        lastName: String(formData.get('lastName') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        phone: String(formData.get('phone') ?? '').trim(),
+        website: String(formData.get('website') ?? ''),
+        pagePath: window.location.pathname,
+      };
+
+      const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch('/api/guide-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({ ok: false }));
+
+        if (res.ok && data.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        if (errorEl) {
+          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          errorEl.hidden = false;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Me the Free Guide';
+        }
+      }
+    });
+  </script>
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">
@@ -85,20 +168,59 @@ const pdfPath = '/docs/T65-Medicare-Guide-2026.pdf';
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
-    text-align: center;
+    text-align: left;
   }
-  .pdf-frame-wrap {
-    width: 100%;
-    height: 420px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    margin: 0.75rem 0 1.25rem;
-  }
-  .pdf-frame-wrap iframe { width: 100%; height: 100%; border: none; }
+  .preview-card .eyebrow { text-align: center; display: block; }
+  .form-heading { text-align: center; font-size: 1.4rem; margin-bottom: 1.25rem; }
   @media (max-width: 800px) {
     .guide-grid { grid-template-columns: 1fr; }
   }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+  .lead-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: flex; flex-direction: column; gap: 0.35rem; text-align: left; }
+  .form-row label { font-weight: 600; font-size: 0.9rem; color: var(--color-text); }
+  .form-row .optional { font-weight: 400; color: var(--color-text-muted); font-size: 0.8rem; }
+  .form-row input {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  .form-row input:focus {
+    outline: none;
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(144, 89, 181, 0.18);
+  }
+  :root[data-theme="dark"] .form-row input:focus {
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(81, 222, 204, 0.18);
+  }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-submit { width: 100%; text-align: center; margin-top: 0.25rem; }
+  .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .form-error {
+    color: #b3261e;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .form-success {
+    background: var(--color-lavender);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  :root[data-theme="dark"] .form-success { background: rgba(81, 222, 204, 0.12); }
+  .compliance-note {
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    margin: 1.25rem 0 0;
+    text-align: center;
+  }
 </style>
