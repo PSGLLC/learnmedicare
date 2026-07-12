@@ -20,6 +20,7 @@ interface LeadPayload {
   phone?: string;
   pagePath?: string;
   website?: string; // honeypot — real visitors never fill this
+  smsOptIn?: boolean;
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -73,6 +74,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const email = String(body.email ?? "").trim();
   const phone = String(body.phone ?? "").trim();
 
+  const smsOptIn = body.smsOptIn === true;
+
   if (!firstName || !lastName || !email) {
     return json({ ok: false, error: "First name, last name, and email are required." }, 400);
   }
@@ -81,6 +84,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
   if (phone && !PHONE_RE.test(phone)) {
     return json({ ok: false, error: "Enter a valid phone number." }, 400);
+  }
+  if (!smsOptIn) {
+    return json({ ok: false, error: "SMS opt-in consent is required." }, 400);
   }
 
   const submittedAt = new Date().toISOString();
@@ -93,6 +99,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     tags: ["t65-guide-request"],
     source: "learnmedicare-guide-page",
     pagePath: String(body.pagePath ?? "/guide"),
+    smsOptIn,
     submittedAt,
   };
 

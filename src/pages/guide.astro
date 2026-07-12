@@ -80,6 +80,13 @@ const jsonLd = {
             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
           </div>
 
+          <div class="form-row form-row-checkbox">
+            <label class="checkbox-label" for="smsOptIn">
+              <input type="checkbox" id="smsOptIn" name="smsOptIn" required />
+              <span>I agree to receive text messages from Price Services Group LLC. Message and data rates may apply.</span>
+            </label>
+          </div>
+
           <button type="submit" class="btn btn-primary form-submit">Send Me the Free Guide</button>
           <p id="guide-form-error" class="form-error" role="alert" hidden></p>
         </form>
@@ -109,12 +116,23 @@ const jsonLd = {
       }
 
       const formData = new FormData(form);
+      const smsOptIn = formData.get('smsOptIn') === 'on';
+
+      if (!smsOptIn) {
+        if (errorEl) {
+          errorEl.textContent = 'Please check the box to agree to receive text messages.';
+          errorEl.hidden = false;
+        }
+        return;
+      }
+
       const payload = {
         firstName: String(formData.get('firstName') ?? '').trim(),
         lastName: String(formData.get('lastName') ?? '').trim(),
         email: String(formData.get('email') ?? '').trim(),
         phone: String(formData.get('phone') ?? '').trim(),
         website: String(formData.get('website') ?? ''),
+        smsOptIn: true,
         pagePath: window.location.pathname,
       };
 
@@ -245,6 +263,23 @@ const jsonLd = {
     box-shadow: 0 0 0 3px rgba(81, 222, 204, 0.18);
   }
   .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-row-checkbox { flex-direction: row; }
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+  .checkbox-label input[type='checkbox'] {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.15rem;
+    accent-color: var(--color-purple);
+  }
   .form-submit { width: 100%; text-align: center; margin-top: 0.25rem; }
   .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
   .form-error {
