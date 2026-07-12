@@ -6,12 +6,12 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Free Turning 65 Medicare Guide',
-  description: 'Download a free guide covering everything you need to know about turning 65 and Medicare.',
+  description: 'Request a free guide covering everything you need to know about turning 65 and Medicare, delivered by email.',
 };
 ---
 <BaseLayout
-  title="Free T65 Medicare Guide — Download Now | Learn Medicare"
-  description="Download our free guide to turning 65 and Medicare: enrollment timing, coverage options, and how to avoid penalties."
+  title="Get the Free T65 Medicare Guide | Learn Medicare"
+  description="Request our free guide to turning 65 and Medicare: enrollment timing, coverage options, and how to avoid penalties — sent straight to your inbox."
   path="/guide"
   jsonLd={jsonLd}
 >
@@ -43,6 +43,18 @@ const jsonLd = {
       </div>
       <div class="preview-card">
         <p class="eyebrow">Get the Guide</p>
+        <h2 class="form-heading">Take a peek inside</h2>
+
+        <div class="pdf-preview" aria-hidden="true">
+          <iframe
+            src="/docs/T65-Medicare-Guide-2026.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+            title="Preview of the Turning 65 Medicare Guide cover page"
+            tabindex="-1"
+          ></iframe>
+          <div class="pdf-preview-overlay"></div>
+        </div>
+        <p class="preview-caption">A quick look at the guide — enter your info below and we'll email you the full copy.</p>
+
         <h2 class="form-heading">Tell us where to send it</h2>
 
         <form id="guide-lead-form" class="lead-form" novalidate>
@@ -73,7 +85,7 @@ const jsonLd = {
         </form>
 
         <div id="guide-form-success" class="form-success" hidden>
-          <p>Check your email — your free Medicare guide is on its way!</p>
+          <p>Your guide is on its way — check your inbox!</p>
         </div>
 
         <p class="compliance-note">
@@ -172,6 +184,38 @@ const jsonLd = {
   }
   .preview-card .eyebrow { text-align: center; display: block; }
   .form-heading { text-align: center; font-size: 1.4rem; margin-bottom: 1.25rem; }
+  .pdf-preview {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 8.5 / 11;
+    margin: 0 auto 0.75rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    background: var(--color-bg);
+  }
+  .pdf-preview iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+  }
+  .pdf-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    /* Sits above the iframe so clicks/right-clicks can't reach the PDF viewer chrome. */
+  }
+  .preview-caption {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 1.5rem;
+  }
   @media (max-width: 800px) {
     .guide-grid { grid-template-columns: 1fr; }
   }
