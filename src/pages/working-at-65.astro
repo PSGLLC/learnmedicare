@@ -15,6 +15,16 @@ const jsonLd = {
       name: 'What is "creditable coverage"?',
       acceptedAnswer: { '@type': 'Answer', text: 'Creditable coverage is health or drug coverage that\'s considered at least as good as Medicare\'s. Having creditable coverage can let you delay Medicare enrollment without facing a late enrollment penalty later.' },
     },
+    {
+      '@type': 'Question',
+      name: 'Do I need to enroll in Medicare if I still have employer coverage?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Not necessarily. If your employer has 20 or more employees and your group coverage is creditable, you can often delay enrolling without penalty. If your employer has fewer than 20 employees, Medicare typically becomes primary, so enrolling on time usually matters more.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens when I eventually leave my job or lose employer coverage?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Losing employer group coverage generally triggers a Special Enrollment Period, giving you a window to sign up for Medicare without facing a late enrollment penalty, as long as your prior coverage was creditable.' },
+    },
   ],
 };
 ---
@@ -41,7 +51,7 @@ const jsonLd = {
             A common rule of thumb: if your employer has <strong>20 or more employees</strong> and
             you have group health coverage through that employer (or a spouse's employer), you
             generally have the option to delay Medicare Part B without a late enrollment penalty,
-            since you'd qualify for a Special Enrollment Period later.
+            since you'd qualify for a <a href="/enrollment">Special Enrollment Period</a> later.
           </p>
           <p>
             If your employer has fewer than 20 employees, Medicare often becomes the primary payer,
@@ -59,7 +69,8 @@ const jsonLd = {
           <p>
             Ask your employer's benefits administrator for a "creditable coverage" notice each year —
             it confirms whether your plan meets this standard for both medical (Part B) and
-            prescription drug (Part D) purposes.
+            prescription drug (Part D) purposes. If you're weighing employer coverage against
+            Medicare options, see how <a href="/coverage">Medicare Advantage compares to Medigap</a>.
           </p>
         </div>
       </div>
@@ -69,7 +80,9 @@ const jsonLd = {
           <strong>Why this matters:</strong> if your coverage isn't creditable, or you let it lapse
           without enrolling in Medicare, you could face the late enrollment penalties described on
           our <a href="/penalties">Penalties</a> page. Confirming creditable coverage status before
-          you decide to delay is one of the most important steps in planning your Medicare timeline.
+          you decide to delay is one of the most important steps in planning your Medicare timeline. For
+          official guidance, see <a href="https://www.medicare.gov" target="_blank" rel="noopener noreferrer">Medicare.gov</a>
+          or the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
         </p>
       </div>
     </div>

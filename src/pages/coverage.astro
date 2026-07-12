@@ -1,12 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Medicare Advantage vs. Medigap',
-  description: 'A balanced, educational comparison of Medicare Advantage and Medicare Supplement (Medigap) plans.',
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare Advantage vs. Medigap',
+    description: 'A balanced, educational comparison of Medicare Advantage and Medicare Supplement (Medigap) plans.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Can I switch from Medicare Advantage to Medigap later?',
+        acceptedAnswer: { '@type': 'Answer', text: 'You can generally switch, but outside of certain protected windows, a Medigap insurer may use medical underwriting to accept or deny your application or charge more based on health history.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Medicare Advantage or Medigap have lower monthly premiums?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Medicare Advantage plans often have lower monthly premiums, sometimes $0, while Medigap plans generally carry higher monthly premiums in exchange for more predictable cost-sharing.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do Medicare Advantage plans restrict which doctors I can see?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Usually, yes. Medicare Advantage plans typically use HMO or PPO provider networks, while Medigap lets you see any doctor nationwide who accepts Medicare.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Medigap include prescription drug coverage?',
+        acceptedAnswer: { '@type': 'Answer', text: 'No. Medigap plans typically don\'t include drug coverage, so you\'d need to pair a Medigap policy with a separate Part D plan.' },
+      },
+    ],
+  },
+];
 ---
 <BaseLayout
   title="Medicare Advantage vs. Medigap: A Balanced Comparison | Learn Medicare"
@@ -77,12 +105,12 @@ const jsonLd = {
         <div class="card">
           <h2>Medicare Advantage — At a Glance</h2>
           <p><strong>Potential pros:</strong> often lower monthly premiums, extra benefits like dental and vision, an annual out-of-pocket maximum.</p>
-          <p><strong>Potential trade-offs:</strong> care is typically limited to an in-network provider list, and some services may require prior authorization or referrals.</p>
+          <p><strong>Potential trade-offs:</strong> care is typically limited to an in-network provider list, and some services may require prior authorization or referrals. Recall that Part C is one of the four <a href="/basics">core parts of Medicare</a>.</p>
         </div>
         <div class="card">
           <h2>Medigap — At a Glance</h2>
           <p><strong>Potential pros:</strong> freedom to see any provider who accepts Medicare, predictable cost-sharing, no networks.</p>
-          <p><strong>Potential trade-offs:</strong> higher monthly premiums, and prescription drug coverage must be purchased separately through Part D.</p>
+          <p><strong>Potential trade-offs:</strong> higher monthly premiums, and prescription drug coverage must be purchased separately through Part D. If you're still working, see <a href="/working-at-65">how employer coverage factors into this decision</a>.</p>
         </div>
       </div>
 
@@ -90,7 +118,8 @@ const jsonLd = {
         <p style="margin:0;">
           This comparison is educational only. It is not a recommendation of any specific plan.
           The right choice depends on your personal health needs, budget, and provider preferences —
-          a licensed advisor can help you weigh your specific situation.
+          a licensed advisor can help you weigh your specific situation. You can review official plan
+          details anytime at <a href="https://www.medicare.gov" target="_blank" rel="noopener noreferrer">Medicare.gov</a>.
         </p>
       </div>
     </div>

@@ -15,6 +15,16 @@ const jsonLd = {
       name: 'How is the Medicare Part D late enrollment penalty calculated?',
       acceptedAnswer: { '@type': 'Answer', text: 'The Part D penalty is generally about 1% of the national base beneficiary premium for each full month you went without creditable prescription drug coverage, added to your monthly Part D premium for as long as you have Part D coverage.' },
     },
+    {
+      '@type': 'Question',
+      name: 'How can I avoid the Medicare late enrollment penalties?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Enroll during your Initial Enrollment Period, or make sure any coverage you keep instead (such as employer coverage) qualifies as creditable coverage so you avoid a penalty when you do eventually sign up.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do the Part B and Part D penalties ever go away?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Generally, no. Both penalties are typically added to your premium for as long as you have that part of Medicare, which is why enrolling on time or maintaining creditable coverage matters.' },
+    },
   ],
 };
 ---
@@ -38,10 +48,11 @@ const jsonLd = {
         <div class="card">
           <h2>Part B Late Enrollment Penalty</h2>
           <p>
-            For each full 12-month period you were eligible for Part B but didn't sign up — and
-            didn't have other creditable coverage, such as through an employer — your monthly Part B
-            premium can increase by roughly <strong>10%</strong>. This higher premium generally
-            applies for as long as you have Part B.
+            For each full 12-month period you were eligible for Part B but didn't sign up during your
+            <a href="/enrollment">Initial Enrollment Period</a> — and didn't have other creditable
+            coverage, such as through an employer — your monthly Part B premium can increase by
+            roughly <strong>10%</strong>. This higher premium generally applies for as long as you
+            have Part B.
           </p>
           <div class="example">
             <strong>Illustrative example:</strong> If you delayed Part B by 24 months (two full
@@ -72,7 +83,8 @@ const jsonLd = {
           <strong>The best way to avoid these penalties:</strong> enroll during your Initial
           Enrollment Period, or make sure any coverage you have while delaying Medicare qualifies as
           "creditable coverage." See <a href="/working-at-65">Working at 65</a> to learn more about
-          creditable coverage.
+          creditable coverage. Official penalty rules are published at
+          <a href="https://www.medicare.gov/basics/costs/medicare-costs" target="_blank" rel="noopener noreferrer">Medicare.gov</a>.
         </p>
       </div>
     </div>

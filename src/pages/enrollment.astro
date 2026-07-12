@@ -25,6 +25,11 @@ const jsonLd = {
       name: 'What is the Annual Enrollment Period (AEP)?',
       acceptedAnswer: { '@type': 'Answer', text: 'AEP runs October 15 through December 7 each year. It\'s when anyone already on Medicare can change Medicare Advantage or Part D plans for the following year.' },
     },
+    {
+      '@type': 'Question',
+      name: 'What happens if I miss my Initial Enrollment Period?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If you miss your IEP and don\'t qualify for a Special Enrollment Period, you\'ll generally need to wait for the General Enrollment Period (Jan 1 - Mar 31), and you may face late enrollment penalties for Part B and Part D.' },
+    },
   ],
 };
 ---
@@ -50,7 +55,8 @@ const jsonLd = {
           <p>
             Your Initial Enrollment Period is a 7-month window centered on your 65th birthday: the
             3 months before your birthday month, your birthday month itself, and the 3 months after.
-            This is typically the first chance most people have to enroll in Medicare.
+            This is typically the first chance most people have to enroll in Medicare — see
+            <a href="/basics">the basics of Parts A, B, C, and D</a> if you're still getting oriented.
           </p>
         </div>
         <div class="card">
@@ -58,7 +64,8 @@ const jsonLd = {
           <p>
             A Special Enrollment Period is triggered by certain life events — most commonly, losing
             employer group coverage or moving to a new service area. SEPs let you enroll or change
-            coverage outside the usual windows without waiting for the next general opportunity.
+            coverage outside the usual windows without waiting for the next general opportunity. If
+            you're still working past 65, see <a href="/working-at-65">how employer coverage affects your timing</a>.
           </p>
         </div>
         <div class="card">
@@ -84,7 +91,9 @@ const jsonLd = {
           <strong>Late enrollment can cost you.</strong> Missing your Initial Enrollment Period and
           not having other qualifying coverage can lead to late enrollment penalties for Part B and
           Part D that may last for as long as you have that coverage.
-          Visit <a href="/penalties">Penalties</a> to see how these penalties are calculated.
+          Visit <a href="/penalties">Penalties</a> to see how these penalties are calculated. You can
+          also confirm your personal enrollment dates at <a href="https://www.medicare.gov" target="_blank" rel="noopener noreferrer">Medicare.gov</a>
+          or sign up directly through the <a href="https://www.ssa.gov/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
         </p>
       </div>
     </div>

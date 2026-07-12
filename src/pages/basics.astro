@@ -25,6 +25,11 @@ const jsonLd = {
       name: 'What is Medicare Part D?',
       acceptedAnswer: { '@type': 'Answer', text: 'Part D is prescription drug coverage, offered through private insurance companies, either as a stand-alone plan or bundled into a Medicare Advantage plan.' },
     },
+    {
+      '@type': 'Question',
+      name: "What's the difference between Part A and Part B?",
+      acceptedAnswer: { '@type': 'Answer', text: "Part A covers hospital and inpatient-related care and is usually premium-free, while Part B covers doctor visits, outpatient care, and preventive services and generally requires a monthly premium." },
+    },
   ],
 };
 ---
@@ -50,7 +55,8 @@ const jsonLd = {
           <p>
             Part A generally helps cover inpatient hospital stays, care in a skilled nursing facility,
             hospice care, and some home health care. Most people don't pay a monthly premium for
-            Part A because they (or a spouse) paid Medicare taxes while working.
+            Part A because they (or a spouse) paid Medicare taxes while working — you can confirm your
+            work-history eligibility through the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
           </p>
         </div>
         <div class="card">
@@ -58,7 +64,8 @@ const jsonLd = {
           <p>
             Part B generally helps cover doctor visits, outpatient care, preventive services like
             screenings and vaccines, and durable medical equipment. Most people pay a monthly
-            premium for Part B.
+            premium for Part B. Signing up during your <a href="/enrollment">Initial Enrollment Period</a>
+            helps you avoid a late enrollment penalty.
           </p>
         </div>
         <div class="card">
@@ -66,7 +73,8 @@ const jsonLd = {
           <p>
             Part C, better known as Medicare Advantage, is a way to get your Part A and Part B
             benefits (and often Part D) through a private insurance company approved by Medicare.
-            These plans often bundle in extra benefits, but typically use a provider network.
+            These plans often bundle in extra benefits, but typically use a provider network. See how
+            <a href="/coverage">Medicare Advantage compares to Medigap</a> to weigh your options.
           </p>
         </div>
         <div class="card">
@@ -74,7 +82,8 @@ const jsonLd = {
           <p>
             Part D helps cover the cost of prescription medications. It's offered through private
             insurance companies, either as its own stand-alone plan alongside Original Medicare, or
-            bundled into a Medicare Advantage plan.
+            bundled into a Medicare Advantage plan. Going without creditable drug coverage can lead to
+            a lasting <a href="/penalties">late enrollment penalty</a>.
           </p>
         </div>
       </div>
