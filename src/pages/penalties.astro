@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is the Medicare Part B late enrollment penalty calculated?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For each full 12-month period you were eligible for Part B but didn\'t enroll (and didn\'t have other creditable coverage), your monthly premium may go up by roughly 10%. This penalty generally lasts as long as you have Part B.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is the Medicare Part D late enrollment penalty calculated?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Part D penalty is generally about 1% of the national base beneficiary premium for each full month you went without creditable prescription drug coverage, added to your monthly Part D premium for as long as you have Part D coverage.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Medicare Late Enrollment Penalties: Part B & Part D Explained | Learn Medicare"
+  description="How Medicare Part B and Part D late enrollment penalties are calculated, with illustrative examples. Educational content only."
+  path="/penalties"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Penalties</p>
+      <h1>Understanding Medicare late enrollment penalties</h1>
+      <p class="subhead">Enrolling late without other qualifying coverage can add a lasting penalty to your premiums. Here's how the math works.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Part B Late Enrollment Penalty</h2>
+          <p>
+            For each full 12-month period you were eligible for Part B but didn't sign up — and
+            didn't have other creditable coverage, such as through an employer — your monthly Part B
+            premium can increase by roughly <strong>10%</strong>. This higher premium generally
+            applies for as long as you have Part B.
+          </p>
+          <div class="example">
+            <strong>Illustrative example:</strong> If you delayed Part B by 24 months (two full
+            12-month periods) without creditable coverage, your premium could increase by roughly
+            20% for as long as you have Part B. This is a hypothetical example to illustrate the
+            formula, not a current rate.
+          </div>
+        </div>
+        <div class="card">
+          <h2>Part D Late Enrollment Penalty</h2>
+          <p>
+            The Part D penalty is generally about <strong>1% of the national base beneficiary
+            premium</strong> for each full month you went without Part D or other creditable
+            prescription drug coverage after becoming eligible. That amount is added to your monthly
+            Part D premium for as long as you have Part D coverage.
+          </p>
+          <div class="example">
+            <strong>Illustrative example:</strong> If you went 18 months without creditable drug
+            coverage, your penalty could be roughly 18% of that year's national base beneficiary
+            premium, added to your monthly Part D premium. This is a hypothetical example to
+            illustrate the formula, not a current rate.
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>The best way to avoid these penalties:</strong> enroll during your Initial
+          Enrollment Period, or make sure any coverage you have while delaying Medicare qualifies as
+          "creditable coverage." See <a href="/working-at-65">Working at 65</a> to learn more about
+          creditable coverage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Still working? Here's what to know</h2>
+      <p>Learn how Medicare interacts with employer coverage after 65.</p>
+      <a href="/working-at-65" class="btn btn-primary">Continue to Working at 65</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+  .example {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--color-bg-alt);
+    border-radius: 10px;
+    font-size: 0.92rem;
+    border: 1px solid var(--color-border);
+  }
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>

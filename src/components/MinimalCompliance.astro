@@ -1,0 +1,20 @@
+---
+import { COMPLIANCE, TAGLINE } from '../site.config';
+const year = 2026;
+---
+<footer class="minimal-footer">
+  <div class="container">
+    <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
+    <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
+    <p>{COMPLIANCE.tpmo}</p>
+    <p>&copy; {year} Price Services Group LLC. {TAGLINE}</p>
+  </div>
+</footer>
+<style>
+  .minimal-footer {
+    background: var(--color-dark);
+    color: #b6a4cb;
+    padding: 1.25rem 0;
+  }
+  .minimal-footer p { font-size: 0.72rem; line-height: 1.5; margin: 0 0 0.35rem; max-width: 1000px; }
+</style>

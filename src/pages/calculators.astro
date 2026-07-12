@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Medicare Calculators',
+  description: 'Explore free Medicare calculators covering penalties, plan comparisons, IRMAA, and retirement gap planning.',
+};
+
+const calculators = [
+  { name: 'Part B Penalty Calculator', desc: 'Estimate how a late Part B enrollment could affect your premium.' },
+  { name: 'Part D Penalty Calculator', desc: 'Estimate how a late Part D enrollment could affect your premium.' },
+  { name: 'Medicare Advantage vs. Medigap Calculator', desc: 'Compare estimated costs side by side.' },
+  { name: 'IRMAA Calculator', desc: 'See how income can affect your Medicare premiums.' },
+  { name: 'Retirement Gap Calculator', desc: 'Explore coverage gaps between retirement and Medicare eligibility.' },
+];
+---
+<BaseLayout
+  title="Medicare Calculators — Penalties, IRMAA & More | Learn Medicare"
+  description="Explore free interactive Medicare calculators: Part B and Part D penalties, Medicare Advantage vs. Medigap, IRMAA, and retirement gap planning."
+  path="/calculators"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Calculators</p>
+      <h1>Free Medicare Calculators</h1>
+      <p class="subhead">
+        Our full interactive calculator suite lives on the Price Services Group site. Explore all
+        five tools there — free, no account required.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="calc-card">
+        <ul class="calc-list">
+          {calculators.map((c) => (
+            <li>
+              <strong>{c.name}</strong>
+              <span>{c.desc}</span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href="https://priceservicesgroup.com/medicare-calculators"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >Explore the Calculators &rarr;</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+  .calc-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .calc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+    display: grid;
+    gap: 1rem;
+  }
+  .calc-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .calc-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .calc-list span { color: var(--color-text-muted); font-size: 0.9rem; }
+</style>

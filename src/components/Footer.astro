@@ -1,0 +1,59 @@
+---
+import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS } from '../site.config';
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/brand/psg-logo.png" alt="Price Services Group logo" />
+        <p class="tagline">{TAGLINE}</p>
+      </div>
+      <nav class="footer-links">
+        {NAV_LINKS.filter((l) => l.href !== '/').map((l) => (
+          <a href={l.href}>{l.label}</a>
+        ))}
+      </nav>
+      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
+    </div>
+
+    <div class="compliance">
+      <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
+      <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
+      <p class="tpmo">{COMPLIANCE.tpmo}</p>
+      <p class="copyright">&copy; {year} Price Services Group LLC. {TAGLINE}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-dark);
+    color: #e7dcf4;
+    padding: 3.5rem 0 2rem;
+    margin-top: 3rem;
+  }
+  .footer-inner { display: flex; flex-direction: column; gap: 2rem; }
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand img { height: 34px; margin-bottom: 0.4rem; }
+  .tagline { font-family: var(--font-heading); font-style: italic; color: var(--color-teal); margin: 0; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .footer-links a { color: #d8c8ea; text-decoration: none; font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--color-teal); }
+  .compliance p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #b6a4cb;
+    max-width: 900px;
+    margin: 0 0 0.5rem;
+  }
+  .copyright { color: #9e8bb6; }
+</style>

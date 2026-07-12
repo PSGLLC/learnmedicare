@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Medicare Part A?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health care.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Medicare Part B?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive services, and durable medical equipment.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Medicare Part C?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Part C, also called Medicare Advantage, is an alternative way to get your Medicare benefits through private insurance companies approved by Medicare.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Medicare Part D?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Part D is prescription drug coverage, offered through private insurance companies, either as a stand-alone plan or bundled into a Medicare Advantage plan.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="What Is Medicare? The Basics Explained | Learn Medicare"
+  description="A plain-English breakdown of Medicare Parts A, B, C, and D — what each one covers and how they fit together."
+  path="/basics"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">The Basics</p>
+      <h1>What is Medicare?</h1>
+      <p class="subhead">Medicare can feel like alphabet soup. Let's break it down in plain English — no jargon.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Part A — Hospital Insurance</h2>
+          <p>
+            Part A generally helps cover inpatient hospital stays, care in a skilled nursing facility,
+            hospice care, and some home health care. Most people don't pay a monthly premium for
+            Part A because they (or a spouse) paid Medicare taxes while working.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Part B — Medical Insurance</h2>
+          <p>
+            Part B generally helps cover doctor visits, outpatient care, preventive services like
+            screenings and vaccines, and durable medical equipment. Most people pay a monthly
+            premium for Part B.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Part C — Medicare Advantage</h2>
+          <p>
+            Part C, better known as Medicare Advantage, is a way to get your Part A and Part B
+            benefits (and often Part D) through a private insurance company approved by Medicare.
+            These plans often bundle in extra benefits, but typically use a provider network.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Part D — Prescription Drug Coverage</h2>
+          <p>
+            Part D helps cover the cost of prescription medications. It's offered through private
+            insurance companies, either as its own stand-alone plan alongside Original Medicare, or
+            bundled into a Medicare Advantage plan.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>Heads up:</strong> Premiums, deductibles, and other dollar figures change every year.
+          Rather than guess, always check <a href="https://www.medicare.gov" target="_blank" rel="noopener noreferrer">Medicare.gov</a>
+          or ask your advisor for current figures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Ready to learn when to sign up?</h2>
+      <p>Next, explore the enrollment periods that determine when you can join Medicare.</p>
+      <a href="/enrollment" class="btn btn-primary">Continue to Enrollment</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>

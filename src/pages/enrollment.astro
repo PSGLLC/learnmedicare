@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the Initial Enrollment Period (IEP)?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The IEP is a 7-month window around your 65th birthday (the 3 months before, the month of, and the 3 months after) when you can first sign up for Medicare.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a Special Enrollment Period (SEP)?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A SEP lets you enroll or make changes outside normal windows because of a qualifying life event, such as losing employer coverage or moving.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the General Enrollment Period (GEP)?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The GEP runs January 1 through March 31 each year for people who missed their Initial Enrollment Period and don\'t qualify for a Special Enrollment Period.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Annual Enrollment Period (AEP)?',
+      acceptedAnswer: { '@type': 'Answer', text: 'AEP runs October 15 through December 7 each year. It\'s when anyone already on Medicare can change Medicare Advantage or Part D plans for the following year.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="When to Enroll in Medicare: IEP, SEP, GEP & AEP | Learn Medicare"
+  description="Understand the Medicare enrollment periods — IEP, SEP, GEP, and AEP (Oct 15–Dec 7) — and why enrolling on time matters."
+  path="/enrollment"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Enrollment</p>
+      <h1>When can you enroll in Medicare?</h1>
+      <p class="subhead">Medicare has several enrollment windows. Knowing which one applies to you helps you avoid gaps in coverage and unnecessary penalties.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>IEP — Initial Enrollment Period</h2>
+          <p>
+            Your Initial Enrollment Period is a 7-month window centered on your 65th birthday: the
+            3 months before your birthday month, your birthday month itself, and the 3 months after.
+            This is typically the first chance most people have to enroll in Medicare.
+          </p>
+        </div>
+        <div class="card">
+          <h2>SEP — Special Enrollment Period</h2>
+          <p>
+            A Special Enrollment Period is triggered by certain life events — most commonly, losing
+            employer group coverage or moving to a new service area. SEPs let you enroll or change
+            coverage outside the usual windows without waiting for the next general opportunity.
+          </p>
+        </div>
+        <div class="card">
+          <h2>GEP — General Enrollment Period</h2>
+          <p>
+            If you missed your Initial Enrollment Period and don't qualify for a Special Enrollment
+            Period, the General Enrollment Period (January 1 – March 31 each year) gives you another
+            chance to sign up for Part A and/or Part B.
+          </p>
+        </div>
+        <div class="card">
+          <h2>AEP — Annual Enrollment Period</h2>
+          <p>
+            The Annual Enrollment Period runs <strong>October 15 – December 7</strong> every year.
+            If you're already on Medicare, this is your annual opportunity to switch Medicare
+            Advantage or Part D prescription drug plans for the coming year.
+          </p>
+        </div>
+      </div>
+
+      <div class="warning" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>Late enrollment can cost you.</strong> Missing your Initial Enrollment Period and
+          not having other qualifying coverage can lead to late enrollment penalties for Part B and
+          Part D that may last for as long as you have that coverage.
+          Visit <a href="/penalties">Penalties</a> to see how these penalties are calculated.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Next: compare your coverage options</h2>
+      <p>Once you know when to enroll, it's time to understand Medicare Advantage vs. Medigap.</p>
+      <a href="/coverage" class="btn btn-primary">Continue to Coverage Options</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>

@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BOOKING_URL } from '../site.config';
+
+const lessons = [
+  { n: 1, title: 'Medicare Options Overview', desc: 'A bird\'s-eye view of how Medicare fits together.' },
+  { n: 2, title: 'Original Medicare Parts A & B', desc: 'Hospital and medical coverage, explained simply.' },
+  { n: 3, title: 'Medicare Advantage', desc: 'How private Part C plans work.' },
+  { n: 4, title: 'Medicare Supplement / Medigap', desc: 'Filling the gaps in Original Medicare.' },
+  { n: 5, title: 'Part D Prescription Drugs', desc: 'Understanding drug coverage and formularies.' },
+  { n: 6, title: 'Your Next Step', desc: 'How to move from learning to enrolling with confidence.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Learn Medicare',
+  url: 'https://learnmedicare.org',
+  description: 'Free, unbiased Medicare education from a licensed independent advisor.',
+  logo: 'https://learnmedicare.org/brand/psg-logo.png',
+};
+---
+<BaseLayout
+  title="Learn Medicare — Free Medicare Education | Where You Matter"
+  description="Free, unbiased Medicare education. Understand your options before you enroll. No pressure, no sales pitch."
+  path="/"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Free Medicare Education</p>
+      <h1>Free Medicare Education — Where You Matter</h1>
+      <p class="subhead">Understand your options before you enroll. No pressure, no sales pitch.</p>
+      <a href="/basics" class="btn btn-primary">Start Learning Free</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Free Mini-Course</p>
+      <h2>Six short lessons. Zero sales pitch.</h2>
+      <div class="grid grid-3">
+        {lessons.map((l) => (
+          <a href="/course" class="card lesson-card">
+            <span class="lesson-num">Lesson {l.n}</span>
+            <h3>{l.title}</h3>
+            <p>{l.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container meet-kayla">
+      <img src="/img/headshot.png" alt="Kayla, licensed independent Medicare advisor" class="headshot" />
+      <div class="card kayla-card">
+        <p class="eyebrow">Meet Kayla</p>
+        <h2>Your guide through Medicare</h2>
+        <p>
+          Kayla is a licensed independent Medicare advisor (NPN 18530055) dedicated to helping
+          people understand their coverage options in plain English, without pressure or a sales pitch.
+          Because she isn't tied to a single insurance company, her focus stays on your questions —
+          not a quota.
+        </p>
+        <p>
+          Whether you're new to Medicare or reviewing your current plan, Kayla believes informed
+          decisions start with clear, honest education — because where you matter, you deserve real answers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Ready for personalized guidance?</h2>
+      <p>Schedule a free, no-pressure review with a licensed independent advisor.</p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #2b1147 100%);
+    color: #fff;
+    padding: 6rem 0;
+  }
+  .hero-inner { max-width: 700px; }
+  .hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); }
+  .hero .eyebrow { color: var(--color-teal); }
+  .subhead { font-size: 1.15rem; color: #e2d4f0; margin-bottom: 1.75rem; }
+
+  .lesson-card { text-decoration: none; display: block; transition: transform 0.15s ease; }
+  .lesson-card:hover { transform: translateY(-4px); }
+  .lesson-num {
+    display: inline-block;
+    background: var(--color-lavender);
+    color: var(--color-purple);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+  :root[data-theme="dark"] .lesson-num { background: rgba(81,222,204,0.15); color: var(--color-teal); }
+  .lesson-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .lesson-card p { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }
+
+  .meet-kayla {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .headshot {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .kayla-card p:last-child { margin-bottom: 0; }
+  @media (max-width: 800px) {
+    .meet-kayla { grid-template-columns: 1fr; }
+    .headshot { max-width: 260px; margin: 0 auto; }
+  }
+
+  .cta-section {
+    background: var(--color-purple);
+    color: #fff;
+    text-align: center;
+  }
+  .cta-inner h2 { color: #fff; }
+  .cta-inner p { color: #f0e6f8; margin-bottom: 1.5rem; }
+</style>

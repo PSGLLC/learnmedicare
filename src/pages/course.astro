@@ -1,0 +1,81 @@
+---
+import MinimalLayout from '../layouts/MinimalLayout.astro';
+---
+<MinimalLayout
+  title="Free Medicare Course | Learn Medicare"
+  description="Take our free, self-paced Medicare course — six lessons covering everything you need to know before you enroll."
+  path="/course"
+>
+  <section class="course-hero">
+    <div class="container">
+      <h1>Free Medicare Course</h1>
+    </div>
+  </section>
+
+  <section class="course-frame-section">
+    <div class="frame-wrap">
+      <iframe
+        id="course-frame"
+        src="https://course.learnmedicare.org"
+        title="Learn Medicare free course"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <noscript>
+      <p class="fallback-note">
+        Course not loading? Watch directly at
+        <a href="https://course.learnmedicare.org" target="_blank" rel="noopener noreferrer">course.learnmedicare.org &rarr;</a>
+      </p>
+    </noscript>
+    <p class="fallback-note" id="fallback-note" hidden>
+      Course not loading? Watch directly at
+      <a href="https://course.learnmedicare.org" target="_blank" rel="noopener noreferrer">course.learnmedicare.org &rarr;</a>
+    </p>
+  </section>
+</MinimalLayout>
+
+<script>
+  const frame = document.getElementById('course-frame') as HTMLIFrameElement | null;
+  const note = document.getElementById('fallback-note');
+  if (frame && note) {
+    const timer = setTimeout(() => {
+      note.hidden = false;
+    }, 3500);
+    frame.addEventListener('load', () => {
+      // Best-effort: if the iframe successfully reports a load event, assume it rendered.
+      clearTimeout(timer);
+    });
+    frame.addEventListener('error', () => {
+      note.hidden = false;
+    });
+  }
+</script>
+
+<style>
+  .course-hero {
+    padding: 1.5rem 0 0.5rem;
+    text-align: center;
+  }
+  .course-hero h1 { font-size: 1.6rem; margin: 0; }
+  .course-frame-section {
+    padding: 0 0 1.5rem;
+  }
+  .frame-wrap {
+    width: 100%;
+    height: calc(100vh - 130px);
+    min-height: 500px;
+  }
+  .frame-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  .fallback-note {
+    text-align: center;
+    padding: 1rem 1.5rem 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+</style>

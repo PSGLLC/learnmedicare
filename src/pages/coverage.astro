@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Medicare Advantage vs. Medigap',
+  description: 'A balanced, educational comparison of Medicare Advantage and Medicare Supplement (Medigap) plans.',
+};
+---
+<BaseLayout
+  title="Medicare Advantage vs. Medigap: A Balanced Comparison | Learn Medicare"
+  description="Compare Medicare Advantage and Medicare Supplement (Medigap) plans side by side — pros, cons, and how each works. Educational only, no recommendations."
+  path="/coverage"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Coverage Options</p>
+      <h1>Medicare Advantage vs. Medigap</h1>
+      <p class="subhead">Two different paths to covering the gaps Original Medicare leaves behind. Neither is universally "better" — the right fit depends on your health, budget, and priorities.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Medicare Advantage (Part C)</th>
+              <th>Medigap (Medicare Supplement)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly premium</td>
+              <td>Often lower, sometimes $0</td>
+              <td>Generally higher</td>
+            </tr>
+            <tr>
+              <td>Provider network</td>
+              <td>Usually HMO/PPO network restrictions</td>
+              <td>Any doctor who accepts Medicare, nationwide</td>
+            </tr>
+            <tr>
+              <td>Extra benefits</td>
+              <td>May include dental, vision, hearing, fitness</td>
+              <td>Typically none — pairs with a separate Part D plan</td>
+            </tr>
+            <tr>
+              <td>Out-of-pocket costs</td>
+              <td>Copays/coinsurance, annual out-of-pocket max</td>
+              <td>Very predictable, often minimal cost-sharing</td>
+            </tr>
+            <tr>
+              <td>Referrals</td>
+              <td>May be required for specialists (HMO plans)</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>Prescription drugs</td>
+              <td>Usually bundled in</td>
+              <td>Requires a separate Part D plan</td>
+            </tr>
+            <tr>
+              <td>Travel flexibility</td>
+              <td>Limited outside plan service area (except emergencies)</td>
+              <td>Coverage travels with you nationwide</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-2" style="margin-top: 2.5rem;">
+        <div class="card">
+          <h2>Medicare Advantage — At a Glance</h2>
+          <p><strong>Potential pros:</strong> often lower monthly premiums, extra benefits like dental and vision, an annual out-of-pocket maximum.</p>
+          <p><strong>Potential trade-offs:</strong> care is typically limited to an in-network provider list, and some services may require prior authorization or referrals.</p>
+        </div>
+        <div class="card">
+          <h2>Medigap — At a Glance</h2>
+          <p><strong>Potential pros:</strong> freedom to see any provider who accepts Medicare, predictable cost-sharing, no networks.</p>
+          <p><strong>Potential trade-offs:</strong> higher monthly premiums, and prescription drug coverage must be purchased separately through Part D.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          This comparison is educational only. It is not a recommendation of any specific plan.
+          The right choice depends on your personal health needs, budget, and provider preferences —
+          a licensed advisor can help you weigh your specific situation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Understand the cost of waiting</h2>
+      <p>Late enrollment penalties can affect your premiums for years. Here's how they work.</p>
+      <a href="/penalties" class="btn btn-primary">Continue to Penalties</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+  .table-scroll { overflow-x: auto; }
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>

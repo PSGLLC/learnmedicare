@@ -1,0 +1,73 @@
+---
+import MinimalCompliance from '../components/MinimalCompliance.astro';
+import '../styles/global.css';
+import { SITE_URL } from '../site.config';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+}
+const { title, description, path } = Astro.props;
+const canonical = new URL(path, SITE_URL).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/brand/psg-logo.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="noindex, follow" />
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="mini-header">
+      <div class="container mini-header-inner">
+        <a href="/" class="mini-brand">
+          <img src="/brand/psg-logo.png" alt="Price Services Group logo" />
+          <span>Learn Medicare</span>
+        </a>
+        <a href="/" class="back-link">&larr; Back to Learn Medicare</a>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <MinimalCompliance />
+  </body>
+</html>
+
+<style>
+  .mini-header {
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .mini-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+  }
+  .mini-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+  .mini-brand img { height: 34px; }
+  .back-link { font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+</style>

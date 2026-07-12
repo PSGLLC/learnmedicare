@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: "Can I delay Medicare if I'm still working at 65?",
+      acceptedAnswer: { '@type': 'Answer', text: 'In many cases, yes — especially if your employer has 20 or more employees and offers group health coverage. You may be able to delay Part B without a penalty as long as that coverage is creditable.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is "creditable coverage"?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Creditable coverage is health or drug coverage that\'s considered at least as good as Medicare\'s. Having creditable coverage can let you delay Medicare enrollment without facing a late enrollment penalty later.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Medicare and Working at 65: Employer Coverage Explained | Learn Medicare"
+  description="How Medicare interacts with employer coverage after 65, when it may make sense to delay Part B, and what creditable coverage means."
+  path="/working-at-65"
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Working at 65</p>
+      <h1>Still working at 65? Here's how Medicare fits in.</h1>
+      <p class="subhead">Turning 65 doesn't always mean you need to enroll in Medicare right away — but the right choice depends on your employer coverage.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Employer size matters</h2>
+          <p>
+            A common rule of thumb: if your employer has <strong>20 or more employees</strong> and
+            you have group health coverage through that employer (or a spouse's employer), you
+            generally have the option to delay Medicare Part B without a late enrollment penalty,
+            since you'd qualify for a Special Enrollment Period later.
+          </p>
+          <p>
+            If your employer has fewer than 20 employees, Medicare often becomes the primary payer,
+            and delaying enrollment can leave gaps in coverage — this is a conversation worth having
+            with your HR department and a licensed advisor.
+          </p>
+        </div>
+        <div class="card">
+          <h2>What is "creditable coverage"?</h2>
+          <p>
+            Creditable coverage is health or drug coverage that Medicare considers at least as good
+            as its own. If your employer coverage is creditable, you can generally delay Medicare
+            enrollment without facing a late enrollment penalty when you eventually sign up.
+          </p>
+          <p>
+            Ask your employer's benefits administrator for a "creditable coverage" notice each year —
+            it confirms whether your plan meets this standard for both medical (Part B) and
+            prescription drug (Part D) purposes.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>Why this matters:</strong> if your coverage isn't creditable, or you let it lapse
+          without enrolling in Medicare, you could face the late enrollment penalties described on
+          our <a href="/penalties">Penalties</a> page. Confirming creditable coverage status before
+          you decide to delay is one of the most important steps in planning your Medicare timeline.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Grab our free Turning 65 guide</h2>
+      <p>A step-by-step reference for navigating your Medicare decisions.</p>
+      <a href="/guide" class="btn btn-primary">Get the Free Guide</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>
