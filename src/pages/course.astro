@@ -1,10 +1,37 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does the free Medicare course teach?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The course covers everything you need to know before you enroll in Medicare, broken into six self-paced lessons.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the Medicare course really free?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, the course is completely free to take, with no obligation to purchase any insurance plan.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the course take to complete?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It\'s self-paced, so you can go through the six lessons on your own schedule and revisit them any time.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to create an account to take the course?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No account is required — the course loads directly on this page, or you can watch it at course.learnmedicare.org.' },
+    },
+  ],
+};
 ---
 <MinimalLayout
   title="Free Medicare Course | Learn Medicare"
   description="Take our free, self-paced Medicare course — six lessons covering everything you need to know before you enroll."
   path="/course"
+  jsonLd={jsonLd}
 >
   <section class="course-hero">
     <div class="container">

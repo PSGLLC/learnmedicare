@@ -2,12 +2,40 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { BOOKING_URL } from '../site.config';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Free Turning 65 Medicare Guide',
-  description: 'Request a free guide covering everything you need to know about turning 65 and Medicare, delivered by email.',
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Free Turning 65 Medicare Guide',
+    description: 'Request a free guide covering everything you need to know about turning 65 and Medicare, delivered by email.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What does the free Turning 65 Medicare Guide cover?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The guide walks through Medicare Parts A, B, C, and D in plain English, a timeline of enrollment periods so you don\'t miss a deadline, an overview of Medicare Advantage vs. Medigap, how to avoid late enrollment penalties, and tips for coordinating Medicare with employer coverage.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I get the free guide?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Fill out the short form on this page with your name, email, and phone number, and we\'ll email you the full guide.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is the guide free and is there any obligation?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes, the guide is completely free and educational. It does not recommend any specific insurance plan, and requesting it doesn\'t obligate you to buy anything.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Who is the Turning 65 Medicare Guide for?',
+        acceptedAnswer: { '@type': 'Answer', text: 'It\'s designed for anyone approaching age 65 who wants a clear, no-pressure walkthrough of their Medicare enrollment timing and coverage options before making a decision.' },
+      },
+    ],
+  },
+];
 ---
 <BaseLayout
   title="Get the Free T65 Medicare Guide | Learn Medicare"
