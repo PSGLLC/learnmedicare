@@ -5,20 +5,12 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Medicare Calculators',
-  description: 'Explore free Medicare calculators covering penalties, plan comparisons, IRMAA, and retirement gap planning.',
+  description: 'Free interactive Medicare calculators covering Part B and Part D late enrollment penalties, Medicare Advantage vs. Medigap costs, IRMAA surcharges, and the retirement healthcare coverage gap.',
 };
-
-const calculators = [
-  { name: 'Part B Penalty Calculator', desc: 'Estimate how a late Part B enrollment could affect your premium.' },
-  { name: 'Part D Penalty Calculator', desc: 'Estimate how a late Part D enrollment could affect your premium.' },
-  { name: 'Medicare Advantage vs. Medigap Calculator', desc: 'Compare estimated costs side by side.' },
-  { name: 'IRMAA Calculator', desc: 'See how income can affect your Medicare premiums.' },
-  { name: 'Retirement Gap Calculator', desc: 'Explore coverage gaps between retirement and Medicare eligibility.' },
-];
 ---
 <BaseLayout
   title="Medicare Calculators — Penalties, IRMAA & More | Learn Medicare"
-  description="Explore free interactive Medicare calculators: Part B and Part D penalties, Medicare Advantage vs. Medigap, IRMAA, and retirement gap planning."
+  description="Five free interactive Medicare calculators: Part B and Part D penalties, Medicare Advantage vs. Medigap, IRMAA, and retirement healthcare gap — all calculated instantly in your browser."
   path="/calculators"
   jsonLd={jsonLd}
 >
@@ -27,63 +19,424 @@ const calculators = [
       <p class="eyebrow">Calculators</p>
       <h1>Free Medicare Calculators</h1>
       <p class="subhead">
-        Our full interactive calculator suite lives on the Price Services Group site. Explore all
-        five tools there — free, no account required.
+        Five interactive tools to help you estimate penalties, compare coverage costs, and plan
+        ahead. Enter your numbers below — everything calculates instantly right here on the page.
       </p>
     </div>
   </section>
 
   <section>
-    <div class="container">
-      <div class="calc-card">
-        <ul class="calc-list">
-          {calculators.map((c) => (
-            <li>
-              <strong>{c.name}</strong>
-              <span>{c.desc}</span>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="https://priceservicesgroup.com/medicare-calculators"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >Explore the Calculators &rarr;</a>
+    <div class="container calc-stack">
+
+      <!-- 1. Part B Late Enrollment Penalty -->
+      <div class="calc-card card">
+        <h2>Part B Late Enrollment Penalty</h2>
+        <p class="calc-desc">Estimate how a late Part B enrollment could affect your monthly premium.</p>
+        <div class="calc-field">
+          <label for="b-months">Months without Part B coverage (when you were eligible but not enrolled)</label>
+          <input type="number" id="b-months" min="0" step="1" value="0" inputmode="numeric" />
+        </div>
+        <div class="calc-result" id="b-result">
+          <div class="calc-result-row">
+            <span>Penalty percentage</span>
+            <strong id="b-percent">0%</strong>
+          </div>
+          <div class="calc-result-row">
+            <span>Monthly penalty amount</span>
+            <strong id="b-penalty">$0.00</strong>
+          </div>
+          <div class="calc-result-row calc-result-highlight">
+            <span>New monthly Part B premium</span>
+            <strong id="b-total">$202.90</strong>
+          </div>
+        </div>
+        <p class="calc-note">Based on the 2026 standard Part B premium of $202.90/month. This penalty is generally added to your premium for as long as you have Medicare.</p>
       </div>
+
+      <!-- 2. Part D Late Enrollment Penalty -->
+      <div class="calc-card card">
+        <h2>Part D Late Enrollment Penalty</h2>
+        <p class="calc-desc">Estimate the penalty for going without creditable prescription drug coverage.</p>
+        <div class="calc-field">
+          <label for="d-months">Months without creditable drug coverage</label>
+          <input type="number" id="d-months" min="0" step="1" value="0" inputmode="numeric" />
+        </div>
+        <div class="calc-result" id="d-result">
+          <div class="calc-result-row calc-result-highlight">
+            <span>Estimated monthly Part D penalty</span>
+            <strong id="d-penalty">$0.00</strong>
+          </div>
+        </div>
+        <p class="calc-note">Based on the 2026 national base beneficiary premium of $38.99. This penalty amount is added on top of whatever Part D plan premium you eventually choose — it does not include the plan's own premium, which varies by plan.</p>
+      </div>
+
+      <!-- 3. Medicare Advantage vs. Medigap -->
+      <div class="calc-card card">
+        <h2>Medicare Advantage vs. Medigap Cost Comparison</h2>
+        <p class="calc-desc">A rough, illustrative comparison of estimated annual costs — not a quote. Actual costs vary by plan, insurer, and location.</p>
+        <div class="calc-field-grid">
+          <div class="calc-field">
+            <label for="mg-primary">Primary care visits / year</label>
+            <input type="number" id="mg-primary" min="0" step="1" value="4" />
+          </div>
+          <div class="calc-field">
+            <label for="mg-specialist">Specialist visits / year</label>
+            <input type="number" id="mg-specialist" min="0" step="1" value="2" />
+          </div>
+          <div class="calc-field">
+            <label for="mg-hosp">Hospitalizations / year</label>
+            <input type="number" id="mg-hosp" min="0" step="1" value="0" />
+          </div>
+          <div class="calc-field">
+            <label for="mg-budget">Monthly premium budget ($)</label>
+            <input type="number" id="mg-budget" min="0" step="10" value="0" />
+          </div>
+        </div>
+        <div class="calc-result" id="mg-result">
+          <table class="calc-table">
+            <thead>
+              <tr><th></th><th>Medicare Advantage</th><th>Medigap (Plan G)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Estimated annual premiums</td>
+                <td id="mg-ma-premium">$0</td>
+                <td id="mg-mg-premium">$0</td>
+              </tr>
+              <tr>
+                <td>Estimated annual visit/admission costs</td>
+                <td id="mg-ma-visits">$0</td>
+                <td id="mg-mg-visits">$0</td>
+              </tr>
+              <tr>
+                <td><strong>Estimated total annual cost</strong></td>
+                <td><strong id="mg-ma-total">$0</strong></td>
+                <td><strong id="mg-mg-total">$0</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="calc-note">
+          This is an illustrative estimate, not a quote. Assumes Medicare Advantage copays of about $25/primary
+          care visit, $50/specialist visit, and $1,556 per hospital admission (roughly the 2026 Part A inpatient
+          deductible), on top of your chosen monthly premium budget. Assumes a Medigap Plan G monthly premium of
+          about $165 (varies widely by state and insurer) with near-zero per-visit cost after the annual Part B
+          deductible (~$257 in 2026), since Plan G covers Part B coinsurance in full. Adjust these assumptions to
+          your actual plan quotes for an accurate comparison.
+        </p>
+      </div>
+
+      <!-- 4. IRMAA Calculator -->
+      <div class="calc-card card">
+        <h2>IRMAA Calculator</h2>
+        <p class="calc-desc">See whether income-related monthly adjustment amounts (IRMAA) apply to your Part B premium.</p>
+        <div class="calc-field-grid">
+          <div class="calc-field">
+            <label for="irmaa-magi">2024 Modified Adjusted Gross Income (MAGI)</label>
+            <input type="number" id="irmaa-magi" min="0" step="1000" value="0" />
+          </div>
+          <div class="calc-field">
+            <label for="irmaa-filing">Filing status</label>
+            <select id="irmaa-filing">
+              <option value="single">Single</option>
+              <option value="joint">Married Filing Jointly</option>
+              <option value="separate">Married Filing Separately</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result" id="irmaa-result">
+          <div class="calc-result-row">
+            <span>Does IRMAA apply?</span>
+            <strong id="irmaa-applies">No</strong>
+          </div>
+          <div class="calc-result-row calc-result-highlight">
+            <span>Estimated additional monthly amount</span>
+            <strong id="irmaa-surcharge">$0.00</strong>
+          </div>
+        </div>
+        <p class="calc-note">
+          IRMAA uses a two-year lookback, so your 2026 Part B premium is based on your 2024 tax return MAGI.
+          Married Filing Separately uses a two-bracket structure (only one surcharge tier above the standard
+          threshold), while Single, Married Filing Jointly, and Qualifying Widow(er) share a five-tier bracket
+          structure. The bracket <em>logic</em> below is implemented correctly, but the exact dollar thresholds
+          and surcharge amounts are illustrative placeholders and change annually — verify current figures at
+          <a href="https://www.ssa.gov/benefits/medicare/medicare-premiums.html" target="_blank" rel="noopener noreferrer">SSA.gov</a>
+          before relying on them.
+        </p>
+      </div>
+
+      <!-- 5. Retirement Healthcare Gap -->
+      <div class="calc-card card">
+        <h2>Retirement Healthcare Gap</h2>
+        <p class="calc-desc">If you plan to retire before age 65, estimate the cost of covering healthcare until Medicare eligibility begins.</p>
+        <div class="calc-field-grid">
+          <div class="calc-field">
+            <label for="gap-current-age">Current age</label>
+            <input type="number" id="gap-current-age" min="18" max="100" step="1" value="55" />
+          </div>
+          <div class="calc-field">
+            <label for="gap-retire-age">Planned retirement age</label>
+            <input type="number" id="gap-retire-age" min="18" max="100" step="1" value="62" />
+          </div>
+          <div class="calc-field">
+            <label for="gap-monthly-cost">Estimated monthly healthcare cost during the gap ($)</label>
+            <input type="number" id="gap-monthly-cost" min="0" step="10" value="800" />
+          </div>
+        </div>
+        <div class="calc-result" id="gap-result">
+          <p class="calc-result-headline" id="gap-headline">No coverage gap — Medicare eligibility begins at 65.</p>
+        </div>
+        <p class="calc-note">Assumes Medicare eligibility begins at age 65. Does not account for employer retiree coverage, COBRA, or ACA marketplace subsidies, which may reduce your actual cost.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="disclaimer-section">
+    <div class="container">
+      <p class="disclaimer">
+        These calculators provide estimates only and are not a substitute for personalized advice from a
+        licensed Medicare advisor.
+      </p>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const fmt = (n: number) =>
+    n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+  // ── Calculator 1: Part B Late Enrollment Penalty ──────────────────────
+  const PART_B_STANDARD_PREMIUM = 202.9; // 2026 standard Part B premium
+  const bMonthsInput = document.getElementById('b-months') as HTMLInputElement;
+  function updatePartB() {
+    const monthsLate = Math.max(0, Number(bMonthsInput.value) || 0);
+    const penaltyPercent = Math.floor(monthsLate / 12) * 10;
+    const monthlyPenalty = PART_B_STANDARD_PREMIUM * (penaltyPercent / 100);
+    const newMonthlyPremium = PART_B_STANDARD_PREMIUM + monthlyPenalty;
+    (document.getElementById('b-percent') as HTMLElement).textContent = `${penaltyPercent}%`;
+    (document.getElementById('b-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
+    (document.getElementById('b-total') as HTMLElement).textContent = fmt(newMonthlyPremium);
+  }
+  bMonthsInput.addEventListener('input', updatePartB);
+  updatePartB();
+
+  // ── Calculator 2: Part D Late Enrollment Penalty ───────────────────────
+  const PART_D_BASE_PREMIUM = 38.99; // 2026 national base beneficiary premium
+  const dMonthsInput = document.getElementById('d-months') as HTMLInputElement;
+  function updatePartD() {
+    const monthsLate = Math.max(0, Number(dMonthsInput.value) || 0);
+    const monthlyPenalty = 0.01 * PART_D_BASE_PREMIUM * monthsLate;
+    (document.getElementById('d-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
+  }
+  dMonthsInput.addEventListener('input', updatePartD);
+  updatePartD();
+
+  // ── Calculator 3: Medicare Advantage vs. Medigap ───────────────────────
+  // Illustrative cost assumptions only — not verified current rates.
+  // Adjust these constants as actual plan data becomes available.
+  const MA_PRIMARY_COPAY = 25; // typical MA primary care visit copay
+  const MA_SPECIALIST_COPAY = 50; // typical MA specialist visit copay
+  const MA_HOSPITAL_COPAY = 1556; // approx. 2026 Part A inpatient deductible, used as a per-admission proxy
+  const MEDIGAP_PLAN_G_MONTHLY_PREMIUM = 165; // illustrative average Plan G premium; varies widely by state/insurer
+  const MEDIGAP_RESIDUAL_ANNUAL_COST = 257; // approx. 2026 Part B annual deductible, the main Plan G out-of-pocket exposure
+
+  const mgIds = ['mg-primary', 'mg-specialist', 'mg-hosp', 'mg-budget'];
+  function updateMG() {
+    const primary = Math.max(0, Number((document.getElementById('mg-primary') as HTMLInputElement).value) || 0);
+    const specialist = Math.max(0, Number((document.getElementById('mg-specialist') as HTMLInputElement).value) || 0);
+    const hosp = Math.max(0, Number((document.getElementById('mg-hosp') as HTMLInputElement).value) || 0);
+    const budget = Math.max(0, Number((document.getElementById('mg-budget') as HTMLInputElement).value) || 0);
+
+    const maAnnualPremium = budget * 12;
+    const maAnnualVisits =
+      primary * MA_PRIMARY_COPAY + specialist * MA_SPECIALIST_COPAY + hosp * MA_HOSPITAL_COPAY;
+    const maTotal = maAnnualPremium + maAnnualVisits;
+
+    const mgAnnualPremium = MEDIGAP_PLAN_G_MONTHLY_PREMIUM * 12;
+    const mgAnnualVisits = MEDIGAP_RESIDUAL_ANNUAL_COST;
+    const mgTotal = mgAnnualPremium + mgAnnualVisits;
+
+    (document.getElementById('mg-ma-premium') as HTMLElement).textContent = fmt(maAnnualPremium);
+    (document.getElementById('mg-ma-visits') as HTMLElement).textContent = fmt(maAnnualVisits);
+    (document.getElementById('mg-ma-total') as HTMLElement).textContent = fmt(maTotal);
+
+    (document.getElementById('mg-mg-premium') as HTMLElement).textContent = fmt(mgAnnualPremium);
+    (document.getElementById('mg-mg-visits') as HTMLElement).textContent = fmt(mgAnnualVisits);
+    (document.getElementById('mg-mg-total') as HTMLElement).textContent = fmt(mgTotal);
+  }
+  mgIds.forEach((id) => document.getElementById(id)?.addEventListener('input', updateMG));
+  updateMG();
+
+  // ── Calculator 4: IRMAA Calculator ─────────────────────────────────────
+  // NOTE: The bracket LOGIC/STRUCTURE below is correct (5 tiers for Single/
+  // Joint/Widow(er), 2 tiers for Married Filing Separately, each tier adding
+  // an increasing surcharge on top of the standard Part B premium). The
+  // exact dollar thresholds and surcharge amounts are illustrative and
+  // should be verified annually against SSA.gov — they are NOT guaranteed
+  // to be the authoritative 2026 figures.
+  const IRMAA_STANDARD_BRACKETS = [
+    { single: 0, joint: 0, surcharge: 0 },
+    { single: 106000, joint: 212000, surcharge: 69.9 },
+    { single: 133000, joint: 266000, surcharge: 174.7 },
+    { single: 167000, joint: 334000, surcharge: 279.5 },
+    { single: 200000, joint: 400000, surcharge: 384.3 },
+    { single: 500000, joint: 750000, surcharge: 419.3 },
+  ];
+  const IRMAA_SEPARATE_BRACKETS = [
+    { threshold: 0, surcharge: 0 },
+    { threshold: 106000, surcharge: 384.3 },
+  ];
+
+  function updateIRMAA() {
+    const magi = Math.max(0, Number((document.getElementById('irmaa-magi') as HTMLInputElement).value) || 0);
+    const filing = (document.getElementById('irmaa-filing') as HTMLSelectElement).value;
+
+    let surcharge = 0;
+    if (filing === 'separate') {
+      for (const bracket of IRMAA_SEPARATE_BRACKETS) {
+        if (magi >= bracket.threshold) surcharge = bracket.surcharge;
+      }
+    } else {
+      for (const bracket of IRMAA_STANDARD_BRACKETS) {
+        const threshold = filing === 'joint' ? bracket.joint : bracket.single;
+        if (magi >= threshold) surcharge = bracket.surcharge;
+      }
+    }
+
+    const applies = surcharge > 0;
+    (document.getElementById('irmaa-applies') as HTMLElement).textContent = applies ? 'Yes' : 'No';
+    (document.getElementById('irmaa-surcharge') as HTMLElement).textContent = fmt(surcharge);
+  }
+  document.getElementById('irmaa-magi')?.addEventListener('input', updateIRMAA);
+  document.getElementById('irmaa-filing')?.addEventListener('change', updateIRMAA);
+  updateIRMAA();
+
+  // ── Calculator 5: Retirement Healthcare Gap ────────────────────────────
+  const MEDICARE_ELIGIBILITY_AGE = 65;
+  function updateGap() {
+    const currentAge = Math.max(0, Number((document.getElementById('gap-current-age') as HTMLInputElement).value) || 0);
+    const retireAge = Math.max(0, Number((document.getElementById('gap-retire-age') as HTMLInputElement).value) || 0);
+    const monthlyCost = Math.max(0, Number((document.getElementById('gap-monthly-cost') as HTMLInputElement).value) || 0);
+    const headline = document.getElementById('gap-headline') as HTMLElement;
+
+    if (retireAge >= MEDICARE_ELIGIBILITY_AGE) {
+      headline.textContent = 'No coverage gap — Medicare eligibility begins at 65.';
+      return;
+    }
+
+    const gapYears = MEDICARE_ELIGIBILITY_AGE - retireAge;
+    const totalGapCost = gapYears * 12 * monthlyCost;
+    headline.innerHTML = `Estimated coverage gap: <strong>${gapYears} year${gapYears === 1 ? '' : 's'}</strong> — total estimated cost: <strong>${fmt(totalGapCost)}</strong>`;
+  }
+  ['gap-current-age', 'gap-retire-age', 'gap-monthly-cost'].forEach((id) =>
+    document.getElementById(id)?.addEventListener('input', updateGap),
+  );
+  updateGap();
+</script>
 
 <style>
   .page-hero { background: var(--color-lavender); padding: 4rem 0; }
   :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
   .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
-  .calc-card {
-    max-width: 640px;
+
+  .calc-stack {
+    max-width: 780px;
     margin: 0 auto;
-    background: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 2.5rem;
-    text-align: center;
-  }
-  .calc-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    text-align: left;
-    display: grid;
-    gap: 1rem;
-  }
-  .calc-list li {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    padding-bottom: 0.85rem;
-    border-bottom: 1px solid var(--color-border);
+    gap: 2rem;
   }
-  .calc-list li:last-child { border-bottom: none; padding-bottom: 0; }
-  .calc-list span { color: var(--color-text-muted); font-size: 0.9rem; }
+
+  .calc-card h2 { margin-bottom: 0.35rem; font-size: 1.4rem; }
+  .calc-desc { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+  .calc-field { margin-bottom: 1.1rem; }
+  .calc-field label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+  .calc-field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.25rem;
+  }
+
+  .calc-field input,
+  .calc-field select {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.6rem;
+    border: 2px solid var(--color-teal);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  .calc-field input:focus,
+  .calc-field select:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(81, 222, 204, 0.3);
+  }
+
+  .calc-result {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    padding: 1.25rem 1.4rem;
+    margin: 1.25rem 0;
+  }
+  .calc-result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+  }
+  .calc-result-row strong { color: var(--color-purple); font-family: var(--font-heading); font-size: 1.1rem; }
+  .calc-result-row.calc-result-highlight {
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.4rem;
+    padding-top: 0.75rem;
+  }
+  .calc-result-row.calc-result-highlight strong { font-size: 1.3rem; }
+  .calc-result-headline { margin: 0; font-size: 1.05rem; color: var(--color-text); }
+  .calc-result-headline strong { color: var(--color-purple); }
+
+  .calc-table { width: 100%; border-collapse: collapse; }
+  .calc-table th, .calc-table td {
+    text-align: left;
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.92rem;
+  }
+  .calc-table th {
+    color: var(--color-purple);
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+  }
+  .calc-table tr:last-child td { border-bottom: none; }
+
+  .calc-note { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.75rem; }
+  .calc-note a { color: var(--color-purple); }
+
+  .disclaimer-section { padding: 0 0 3.5rem; }
+  .disclaimer {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .calc-field-grid { grid-template-columns: 1fr; }
+  }
 </style>
