@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import StickyGuideCTA from '../components/StickyGuideCTA.astro';
+import LessonProgress from '../components/LessonProgress.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
 
@@ -19,6 +20,8 @@ const ogImageUrl = new URL(ogImage, SITE_URL).toString();
 const jsonLdEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const showStickyGuideCTA = normalizedPath !== '/guide';
+const LESSON_PATHS = ['/basics', '/enrollment', '/coverage', '/penalties', '/working-at-65'];
+const showLessonProgress = LESSON_PATHS.includes(normalizedPath);
 ---
 <!doctype html>
 <html lang="en">
@@ -56,6 +59,7 @@ const showStickyGuideCTA = normalizedPath !== '/guide';
   </head>
   <body>
     <Nav />
+    {showLessonProgress && <LessonProgress />}
     <main>
       <slot />
     </main>

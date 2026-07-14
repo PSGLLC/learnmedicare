@@ -1,0 +1,129 @@
+---
+// Sitewide lesson progress tracker for the 5-page lesson flow
+// (/basics, /enrollment, /coverage, /penalties, /working-at-65).
+// Marks the current lesson viewed in sessionStorage on load, then renders
+// a segmented teal progress bar showing X/5 lessons viewed. Clicking a
+// viewed segment navigates to that lesson.
+//
+// Only rendered on the 5 lesson pages themselves (see BaseLayout) — not on
+// /guide, /calculators, /course, or the homepage, since those aren't part
+// of the lesson flow.
+
+const LESSONS = [
+  { path: '/basics', label: 'Medicare Basics' },
+  { path: '/enrollment', label: 'Enrollment' },
+  { path: '/coverage', label: 'Coverage' },
+  { path: '/penalties', label: 'Penalties' },
+  { path: '/working-at-65', label: 'Working at 65' },
+];
+
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<div class="lesson-progress" id="lesson-progress" data-lessons={JSON.stringify(LESSONS.map((l) => l.path))} data-current={normalizedPath}>
+  <p class="lp-label" id="lp-label">Lessons viewed</p>
+  <div class="lp-bar" role="list">
+    {LESSONS.map((lesson) => (
+      <button
+        type="button"
+        class="lp-segment"
+        data-path={lesson.path}
+        aria-label={lesson.label}
+        role="listitem"
+      ></button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .lesson-progress {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 0;
+  }
+
+  .lp-label {
+    margin: 0 0 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-dark, #1a0a2e);
+    opacity: 0.75;
+  }
+
+  :root[data-theme="dark"] .lp-label {
+    color: #fff;
+  }
+
+  .lp-bar {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .lp-segment {
+    flex: 1;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    padding: 0;
+    background: rgba(128, 128, 128, 0.25);
+    cursor: default;
+    transition: background 0.2s ease;
+  }
+
+  .lp-segment.lp-viewed {
+    background: var(--color-teal, #51decc);
+    cursor: pointer;
+  }
+
+  .lp-segment.lp-current {
+    outline: 2px solid var(--color-teal, #51decc);
+    outline-offset: 2px;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var STORAGE_KEY = 'lessonsViewed';
+    var root = document.getElementById('lesson-progress');
+    if (!root) return;
+
+    var lessons = JSON.parse(root.getAttribute('data-lessons') || '[]');
+    var currentPath = root.getAttribute('data-current') || '';
+
+    var viewed = {};
+    try {
+      viewed = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+    } catch (e) {
+      viewed = {};
+    }
+
+    // Mark the current lesson as viewed, if it's one of the tracked lessons.
+    if (lessons.indexOf(currentPath) !== -1) {
+      viewed[currentPath] = true;
+      try {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(viewed));
+      } catch (e) {}
+    }
+
+    var count = 0;
+    var segments = root.querySelectorAll('.lp-segment');
+    segments.forEach(function (segment, i) {
+      var path = lessons[i];
+      var isViewed = !!viewed[path];
+      if (isViewed) {
+        count++;
+        segment.classList.add('lp-viewed');
+        segment.addEventListener('click', function () {
+          window.location.href = path;
+        });
+      }
+      if (path === currentPath) {
+        segment.classList.add('lp-current');
+      }
+    });
+
+    var label = document.getElementById('lp-label');
+    if (label) {
+      label.textContent = count + '/' + lessons.length + ' lessons viewed';
+    }
+  })();
+</script>

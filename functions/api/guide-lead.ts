@@ -96,7 +96,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     email,
     phone,
     locationId: GHL_LOCATION_ID,
-    tags: ["t65-guide-request"],
+    tags: ["t65-guide-request", "email-drip-day1"],
     source: "learnmedicare-guide-page",
     pagePath: String(body.pagePath ?? "/guide"),
     smsOptIn,
