@@ -1,0 +1,149 @@
+---
+// Sitewide sticky/slide-in CTA promoting the free Medicare guide.
+// Excluded on /guide itself since that page already has its own lead form.
+---
+<div class="sticky-guide-cta" id="sticky-guide-cta" role="complementary" aria-label="Free Medicare Guide offer">
+  <button class="sgc-close" id="sgc-close" aria-label="Dismiss">&times;</button>
+  <p class="sgc-text">Not sure where to start? Get our free Medicare guide.</p>
+  <a href="/guide" class="sgc-btn">Get Your Free Medicare Guide &rarr;</a>
+</div>
+
+<style>
+  .sticky-guide-cta {
+    position: fixed;
+    z-index: 100;
+    background: var(--color-purple);
+    color: #fff;
+    box-shadow: 0 -4px 20px rgba(26, 10, 46, 0.25);
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .sticky-guide-cta.sgc-visible {
+    display: flex;
+  }
+
+  .sgc-text {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    flex: 1;
+  }
+
+  .sgc-btn {
+    display: inline-block;
+    background: var(--color-teal);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: transform 0.15s ease;
+  }
+  .sgc-btn:hover { transform: translateY(-2px); }
+
+  .sgc-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.4rem;
+    order: -1;
+  }
+
+  /* Mobile: sticky bottom bar spanning full width */
+  @media (max-width: 900px) {
+    .sticky-guide-cta {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .sgc-text { flex-basis: 100%; text-align: center; }
+    .sgc-btn { flex: 1; text-align: center; }
+  }
+
+  /* Desktop: slide-in sidebar widget, bottom-right */
+  @media (min-width: 901px) {
+    .sticky-guide-cta {
+      right: 1.5rem;
+      bottom: 1.5rem;
+      max-width: 320px;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      transform: translateX(120%);
+      transition: transform 0.4s ease;
+    }
+    .sticky-guide-cta.sgc-visible {
+      transform: translateX(0);
+    }
+    .sgc-close {
+      position: absolute;
+      top: 0.4rem;
+      right: 0.6rem;
+      order: 0;
+    }
+    .sgc-btn { text-align: center; }
+  }
+
+  :root[data-theme="dark"] .sticky-guide-cta {
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var STORAGE_KEY = 'sgcDismissed';
+    try {
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') return;
+    } catch (e) {}
+
+    var el = document.getElementById('sticky-guide-cta');
+    if (!el) return;
+    var closeBtn = document.getElementById('sgc-close');
+    var shown = false;
+
+    function showWidget() {
+      if (shown) return;
+      shown = true;
+      el.classList.add('sgc-visible');
+    }
+
+    function dismiss() {
+      el.classList.remove('sgc-visible');
+      try {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+      } catch (e) {}
+    }
+
+    closeBtn.addEventListener('click', dismiss);
+
+    // Trigger 1: 5 second timer
+    var timerId = setTimeout(showWidget, 5000);
+
+    // Trigger 2: 50% scroll depth
+    function onScroll() {
+      var scrollTop = window.scrollY;
+      var totalScrollable = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScrollable <= 0) return;
+      if (scrollTop / totalScrollable >= 0.5) {
+        clearTimeout(timerId);
+        showWidget();
+        window.removeEventListener('scroll', onScroll);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
