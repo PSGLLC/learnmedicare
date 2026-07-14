@@ -19,5 +19,5 @@ export const COMPLIANCE = {
   agencyNpn: 'Agency NPN 20387435',
   states: ['NC', 'SC', 'GA', 'FL', 'VA', 'MD', 'MI', 'KS', 'TX', 'OH'],
   tpmo:
-    'We do not offer every plan available in your area. Currently we represent X organizations which offer X products in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.',
+    'We do not offer every plan available in your area. Any information we provide is limited to the plans we do offer. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.',
 };
