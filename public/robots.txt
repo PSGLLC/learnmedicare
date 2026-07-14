@@ -28,4 +28,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://learnmedicare.org/sitemap.xml
+Sitemap: https://learnmedicare.org/sitemap-index.xml
