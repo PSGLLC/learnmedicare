@@ -1,0 +1,2 @@
+Output directory for scripts/build-lesson-videos.sh. lesson1.mp4 through lesson6.mp4 land here
+and are served as static files (Astro copies public/ as-is; not processed by the Vite/asset pipeline).

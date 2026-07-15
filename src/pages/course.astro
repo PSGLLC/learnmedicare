@@ -26,6 +26,14 @@ const jsonLd = {
     },
   ],
 };
+const LESSONS = [
+  { n: 1, title: 'Medicare Basics' },
+  { n: 2, title: 'Enrollment Periods' },
+  { n: 3, title: 'Coverage Options' },
+  { n: 4, title: 'Avoiding Penalties' },
+  { n: 5, title: 'Working Past 65' },
+  { n: 6, title: 'Putting It All Together' },
+];
 ---
 <MinimalLayout
   title="Free Medicare Course | Learn Medicare"
@@ -60,6 +68,61 @@ const jsonLd = {
       <a href="https://course.learnmedicare.org" target="_blank" rel="noopener noreferrer">course.learnmedicare.org &rarr;</a>
     </p>
   </section>
+
+  <section class="video-lessons-section">
+    <div class="container">
+      <h2>Video Lessons</h2>
+      <p class="vl-intro">
+        Watch each lesson below, then mark it complete. Once all six are done, your
+        certificate of completion unlocks underneath.
+      </p>
+      <div class="vl-grid" id="vl-grid">
+        {LESSONS.map((lesson) => (
+          <div class="vl-card" data-lesson={lesson.n}>
+            <div class="vl-card-head">
+              <span class="vl-num">Lesson {lesson.n}</span>
+              <span class="vl-check" aria-hidden="true">&#10003;</span>
+            </div>
+            <h3>{lesson.title}</h3>
+            <video
+              controls
+              preload="none"
+              width="100%"
+              poster="/brand/psg-logo.png"
+              src={`/videos/lesson${lesson.n}.mp4`}
+            >
+              Your browser does not support embedded video. Watch at
+              <a href={`/videos/lesson${lesson.n}.mp4`}>course.learnmedicare.org</a>.
+            </video>
+            <label class="vl-mark">
+              <input type="checkbox" class="vl-checkbox" data-lesson-checkbox={lesson.n} />
+              Mark lesson {lesson.n} complete
+            </label>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="certificate-section" id="certificate-section" hidden>
+    <div class="container">
+      <h2>Your Certificate of Completion</h2>
+      <p class="cert-name-prompt">
+        <label for="cert-name-input">Name for your certificate:</label>
+        <input type="text" id="cert-name-input" placeholder="Full name" autocomplete="name" />
+      </p>
+      <div class="certificate" id="certificate">
+        <img class="cert-logo" src="/brand/psg-logo.png" alt="Price Services Group logo" />
+        <p class="cert-eyebrow">Certificate of Completion</p>
+        <h3 id="cert-name">Your Name</h3>
+        <p class="cert-body">has successfully completed the free six-lesson Medicare course from</p>
+        <p class="cert-brand">Learn Medicare, a Price Services Group resource</p>
+        <p class="cert-date" id="cert-date"></p>
+        <p class="cert-tagline">Where You Matter</p>
+      </div>
+      <button type="button" class="cert-print-btn" id="cert-print-btn">Print / Save as PDF</button>
+    </div>
+  </section>
 </MinimalLayout>
 
 <script>
@@ -77,6 +140,103 @@ const jsonLd = {
       note.hidden = false;
     });
   }
+</script>
+
+<script is:inline>
+  (function () {
+    // Course video-lesson completion tracker (separate from the sitewide
+    // /basics-/working-at-65 page-view tracker in LessonProgress.astro,
+    // which tracks a different 5-page flow). Scoped to this page's 6
+    // video lessons under its own sessionStorage key.
+    var STORAGE_KEY = 'courseLessonsCompleted';
+    var TOTAL_LESSONS = 6;
+
+    function loadCompleted() {
+      try {
+        return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveCompleted(completed) {
+      try {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+      } catch (e) {}
+    }
+
+    function render() {
+      var completed = loadCompleted();
+      var checkboxes = document.querySelectorAll('[data-lesson-checkbox]');
+      checkboxes.forEach(function (box) {
+        var n = box.getAttribute('data-lesson-checkbox');
+        box.checked = !!completed[n];
+        var card = box.closest('.vl-card');
+        if (card) {
+          card.classList.toggle('vl-complete', !!completed[n]);
+        }
+      });
+
+      var doneCount = Object.keys(completed).filter(function (k) {
+        return completed[k];
+      }).length;
+
+      var certSection = document.getElementById('certificate-section');
+      if (certSection) {
+        certSection.hidden = doneCount < TOTAL_LESSONS;
+      }
+    }
+
+    document.querySelectorAll('[data-lesson-checkbox]').forEach(function (box) {
+      box.addEventListener('change', function () {
+        var n = box.getAttribute('data-lesson-checkbox');
+        var completed = loadCompleted();
+        completed[n] = box.checked;
+        saveCompleted(completed);
+        render();
+      });
+    });
+
+    var nameInput = document.getElementById('cert-name-input');
+    var certName = document.getElementById('cert-name');
+    var certDate = document.getElementById('cert-date');
+    var NAME_KEY = 'courseCertName';
+
+    if (nameInput && certName) {
+      try {
+        var savedName = sessionStorage.getItem(NAME_KEY);
+        if (savedName) {
+          nameInput.value = savedName;
+          certName.textContent = savedName;
+        }
+      } catch (e) {}
+
+      nameInput.addEventListener('input', function () {
+        var val = nameInput.value.trim();
+        certName.textContent = val || 'Your Name';
+        try {
+          sessionStorage.setItem(NAME_KEY, val);
+        } catch (e) {}
+      });
+    }
+
+    if (certDate) {
+      certDate.textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
+
+    var printBtn = document.getElementById('cert-print-btn');
+    if (printBtn) {
+      printBtn.addEventListener('click', function () {
+        window.print();
+      });
+    }
+
+    render();
+  })();
 </script>
 
 <style>
@@ -104,5 +264,180 @@ const jsonLd = {
     padding: 1rem 1.5rem 0;
     color: var(--color-text-muted);
     font-size: 0.95rem;
+  }
+
+  .video-lessons-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .video-lessons-section h2 {
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  .vl-intro {
+    text-align: center;
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+  }
+  .vl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .vl-card {
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1rem;
+    background: var(--color-bg);
+    transition: border-color 0.2s ease;
+  }
+  .vl-card.vl-complete {
+    border-color: #51decc;
+  }
+  .vl-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+  }
+  .vl-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #9059B5;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .vl-check {
+    color: #51decc;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .vl-card.vl-complete .vl-check {
+    opacity: 1;
+  }
+  .vl-card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.05rem;
+  }
+  .vl-card video {
+    width: 100%;
+    border-radius: 6px;
+    background: #1a0a2e;
+    display: block;
+  }
+  .vl-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .vl-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #51decc;
+  }
+
+  .certificate-section {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .certificate-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .cert-name-prompt {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .cert-name-prompt label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.35rem;
+  }
+  .cert-name-prompt input {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    font-size: 1rem;
+    min-width: 260px;
+  }
+  .certificate {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #1a0a2e;
+    color: #fff;
+    border: 2px solid #9059B5;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .cert-logo {
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+  .cert-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: #51decc;
+    margin: 0 0 0.75rem;
+  }
+  .certificate h3 {
+    font-size: 1.8rem;
+    margin: 0 0 0.75rem;
+    color: #EAD8F6;
+  }
+  .cert-body {
+    margin: 0 0 0.25rem;
+  }
+  .cert-brand {
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+  .cert-date {
+    color: #EAD8F6;
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
+  }
+  .cert-tagline {
+    color: #51decc;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .cert-print-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: #9059B5;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .cert-print-btn:hover {
+    background: #7a4a9c;
+  }
+
+  @media print {
+    .course-hero,
+    .course-frame-section,
+    .video-lessons-section,
+    .cert-name-prompt,
+    .cert-print-btn,
+    header,
+    footer {
+      display: none !important;
+    }
+    .certificate-section {
+      border: none;
+      padding: 0;
+    }
   }
 </style>
