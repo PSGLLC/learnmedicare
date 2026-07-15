@@ -84,16 +84,23 @@ const LESSONS = [
               <span class="vl-check" aria-hidden="true">&#10003;</span>
             </div>
             <h3>{lesson.title}</h3>
-            <video
-              controls
-              preload="none"
-              width="100%"
-              poster="/brand/psg-logo.png"
-              src={`/videos/lesson${lesson.n}.mp4`}
-            >
-              Your browser does not support embedded video. Watch at
-              <a href={`/videos/lesson${lesson.n}.mp4`}>course.learnmedicare.org</a>.
-            </video>
+            <div class="vl-video-wrap" data-video-wrap data-video-src={`/videos/lesson${lesson.n}.mp4`}>
+              <video
+                controls
+                preload="none"
+                width="100%"
+                poster="/brand/psg-logo.png"
+                data-lesson-video
+                hidden
+              >
+                Your browser does not support embedded video. Watch at
+                <a href={`/videos/lesson${lesson.n}.mp4`}>course.learnmedicare.org</a>.
+              </video>
+              <div class="vl-coming-soon" data-coming-soon>
+                <span class="vl-coming-soon-icon" aria-hidden="true">&#9200;</span>
+                <span>Coming Soon</span>
+              </div>
+            </div>
             <label class="vl-mark">
               <input type="checkbox" class="vl-checkbox" data-lesson-checkbox={lesson.n} />
               Mark lesson {lesson.n} complete
@@ -140,6 +147,34 @@ const LESSONS = [
       note.hidden = false;
     });
   }
+</script>
+
+<script is:inline>
+  (function () {
+    // Probe each lesson's video file with a HEAD request before revealing the
+    // <video> element. A missing file (404) shows a "Coming Soon" placeholder
+    // instead of a broken/empty native video player.
+    document.querySelectorAll('[data-video-wrap]').forEach(function (wrap) {
+      var src = wrap.getAttribute('data-video-src');
+      var video = wrap.querySelector('[data-lesson-video]');
+      var comingSoon = wrap.querySelector('[data-coming-soon]');
+      if (!src || !video || !comingSoon) return;
+
+      fetch(src, { method: 'HEAD' })
+        .then(function (res) {
+          if (res.ok) {
+            video.setAttribute('src', src);
+            video.hidden = false;
+            comingSoon.hidden = true;
+          } else {
+            comingSoon.hidden = false;
+          }
+        })
+        .catch(function () {
+          comingSoon.hidden = false;
+        });
+    });
+  })();
 </script>
 
 <script is:inline>
@@ -326,6 +361,27 @@ const LESSONS = [
     border-radius: 6px;
     background: #1a0a2e;
     display: block;
+  }
+  .vl-video-wrap {
+    position: relative;
+  }
+  .vl-coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 6px;
+    background: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .vl-coming-soon-icon {
+    font-size: 1.6rem;
   }
   .vl-mark {
     display: flex;

@@ -103,8 +103,12 @@ for N in $LESSONS; do
 
   echo "== Building lesson $N =="
 
-  # Ordered slide list
-  mapfile -t SLIDES < <(find "$SLIDE_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) | sort)
+  # Ordered slide list (avoid `mapfile`/`readarray` - not available in bash 3.2,
+  # which is still the default /bin/bash on macOS)
+  SLIDES=()
+  while IFS= read -r -d '' f; do
+    SLIDES+=("$f")
+  done < <(find "$SLIDE_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -print0 | sort -z)
   SLIDE_COUNT="${#SLIDES[@]}"
   if [ "$SLIDE_COUNT" -eq 0 ]; then
     echo "Skipping lesson $N: no image files in $SLIDE_DIR"
@@ -121,7 +125,9 @@ for N in $LESSONS; do
     printf "file '%s'\nduration %s\n" "$SLIDE" "$PER_SLIDE" >> "$CONCAT_FILE"
   done
   # ffmpeg concat demuxer requires the last file repeated without a duration
-  printf "file '%s'\n" "${SLIDES[-1]}" >> "$CONCAT_FILE"
+  # (avoid negative array indices - not supported in bash 3.2)
+  LAST_SLIDE="${SLIDES[$((SLIDE_COUNT - 1))]}"
+  printf "file '%s'\n" "$LAST_SLIDE" >> "$CONCAT_FILE"
 
   SLIDESHOW="$WORK_DIR/slideshow_${N}.mp4"
   ffmpeg -y -f concat -safe 0 -i "$CONCAT_FILE" \
