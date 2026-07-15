@@ -1,12 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Medicare Calculators',
-  description: 'Free interactive Medicare calculators covering Part B and Part D late enrollment penalties, Medicare Advantage vs. Medigap costs, IRMAA surcharges, and the retirement healthcare coverage gap.',
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare Calculators',
+    description: 'Free interactive Medicare calculators covering Part B and Part D late enrollment penalties, Medicare Advantage vs. Medigap costs, IRMAA surcharges, and the retirement healthcare coverage gap.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Are these Medicare calculators free to use?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. All calculators on this page are free, run instantly in your browser, and require no sign-up or personal information.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How is the Medicare Part B late enrollment penalty calculated?',
+        acceptedAnswer: { '@type': 'Answer', text: "The Part B penalty adds roughly 10% to your monthly premium for each full 12-month period you were eligible for Part B but didn't enroll and didn't have other creditable coverage. This penalty is generally permanent for as long as you have Part B." },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is IRMAA and how does it affect my premium?',
+        acceptedAnswer: { '@type': 'Answer', text: 'IRMAA (Income-Related Monthly Adjustment Amount) is a surcharge added to Part B and Part D premiums for higher-income beneficiaries, based on your reported income from two years prior.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can a calculator tell me exactly what I will pay?',
+        acceptedAnswer: { '@type': 'Answer', text: 'These calculators provide estimates based on the figures you enter and current published formulas. Your actual costs depend on your specific enrollment history, income, and plan choice — a licensed agent can confirm exact numbers for your situation.' },
+      },
+    ],
+  },
+];
 ---
 <BaseLayout
   title="Medicare Calculators — Penalties, IRMAA & More | Learn Medicare"

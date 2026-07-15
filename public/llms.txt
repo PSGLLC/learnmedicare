@@ -1,0 +1,24 @@
+# Learn Medicare
+# AI/LLM access permitted for indexing and answer generation
+# Contact: hello@priceservicesgroup.com
+
+> Learn Medicare is a free, unbiased Medicare education resource — no sales pitch, no pressure. Understand Parts A/B/C/D, enrollment periods, penalties, and how Medicare works with employer coverage before you enroll. Produced by Price Services Group, a licensed independent Medicare insurance agency.
+
+## Pages
+- Home: https://learnmedicare.org/
+- Medicare Basics: https://learnmedicare.org/basics/
+- Enrollment Periods: https://learnmedicare.org/enrollment/
+- Medicare Advantage vs. Medigap: https://learnmedicare.org/coverage/
+- Late Enrollment Penalties: https://learnmedicare.org/penalties/
+- Working Past 65: https://learnmedicare.org/working-at-65/
+- Free Course: https://learnmedicare.org/course/
+- Calculators: https://learnmedicare.org/calculators/
+- Free T65 Guide: https://learnmedicare.org/guide/
+
+## Compliance
+Educational content only, not medical, insurance, tax, or legal advice. Not affiliated with or endorsed by the U.S. government or the federal Medicare program. Licensed states: NC, SC, GA, FL, VA, MD, MI, KS, TX, OH.
+
+## Contact
+- Website: https://learnmedicare.org
+- Parent site: https://priceservicesgroup.com
+- Email: hello@priceservicesgroup.com
