@@ -1,7 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const jsonLd = {
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare and Working at 65',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.quick-answer'],
+    },
+  },
+  {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
@@ -25,8 +35,9 @@ const jsonLd = {
       name: 'What happens when I eventually leave my job or lose employer coverage?',
       acceptedAnswer: { '@type': 'Answer', text: 'Losing employer group coverage generally triggers a Special Enrollment Period, giving you a window to sign up for Medicare without facing a late enrollment penalty, as long as your prior coverage was creditable.' },
     },
-  ],
-};
+    ],
+  },
+];
 ---
 <BaseLayout
   title="Medicare and Working at 65: Employer Coverage Explained | Learn Medicare"
@@ -44,6 +55,15 @@ const jsonLd = {
 
   <section>
     <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          If you or your spouse has employer coverage from a company with 20 or more employees,
+          you can delay Medicare without penalty. You have a Special Enrollment Period of 8 months
+          after that coverage ends to enroll in Medicare Part B without a late penalty.
+        </p>
+      </div>
+
       <div class="grid grid-2">
         <div class="card">
           <h2>Employer size matters</h2>
@@ -103,4 +123,25 @@ const jsonLd = {
   .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
 </style>

@@ -11,14 +11,34 @@ const lessons = [
   { n: 6, title: 'Your Next Step', desc: 'How to move from learning to enrolling with confidence.' },
 ];
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'Learn Medicare',
-  url: 'https://learnmedicare.org',
-  description: 'Free, unbiased Medicare education from a licensed independent agent.',
-  logo: 'https://learnmedicare.org/brand/psg-logo.png',
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Learn Medicare',
+    url: 'https://learnmedicare.org',
+    description: 'Free, unbiased Medicare education from a licensed independent agent.',
+    logo: 'https://learnmedicare.org/brand/psg-logo.png',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'LearnMedicare.org',
+    url: 'https://learnmedicare.org',
+    logo: 'https://learnmedicare.org/favicon.ico',
+    description: 'Free Medicare education resource operated by Price Services Group, LLC. Learn about Medicare Parts A, B, C, and D, enrollment periods, costs, and coverage options.',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Price Services Group, LLC',
+      url: 'https://priceservicesgroup.com',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '866-648-1578',
+      contactType: 'customer service',
+    },
+  },
+];
 ---
 <BaseLayout
   title="Learn Medicare — Free Medicare Education | Where You Matter"
