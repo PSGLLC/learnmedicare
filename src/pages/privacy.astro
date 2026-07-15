@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { COMPLIANCE } from '../site.config';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy Policy',
+  url: 'https://learnmedicare.org/privacy',
+};
+---
+<BaseLayout
+  title="Privacy Policy | Learn Medicare"
+  description="How Learn Medicare collects, uses, and protects the information you share with us."
+  path="/privacy"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="subhead">Effective Date: July 14, 2026</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container legal">
+      <p>
+        Learn Medicare ("Learn Medicare," "we," "us," or "our") is an educational Medicare
+        resource operated in connection with a licensed insurance agent, Kayla Price (NPN
+        18530055). This Privacy Policy explains what information we collect through
+        learnmedicare.org (the "Site"), how we use it, and the choices available to you. By
+        using the Site, you agree to the practices described in this Policy.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We collect information in the following ways:</p>
+      <ul>
+        <li>
+          <strong>Information you provide directly.</strong> When you fill out a form on the
+          Site — such as requesting our free Medicare guide, enrolling in our email course,
+          registering for the mini-course, or requesting a free plan review — we collect
+          information such as your name, email address, phone number, ZIP code, and any other
+          details you choose to provide.
+        </li>
+        <li>
+          <strong>Automatically collected information.</strong> Like most websites, we
+          automatically collect certain technical information when you visit, including your IP
+          address, browser type, device type, referring URL, pages viewed, and time spent on the
+          Site. This is collected through cookies and similar tracking technologies, described
+          further in Section 5 below.
+        </li>
+        <li>
+          <strong>Communications.</strong> If you contact us by phone, email, or chat, we retain
+          a record of that communication, including any information you voluntarily provide.
+        </li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Create and maintain a contact record for you in our customer relationship
+          management system (GoHighLevel, "GHL"), so we can respond to your requests and follow
+          up appropriately;</li>
+        <li>Deliver the educational content you requested, including our free Medicare guide and
+          mini-course lessons;</li>
+        <li>Enroll you, with your consent, in an educational email drip sequence that delivers
+          Medicare information over time via automated and manual email communications;</li>
+        <li>Contact you by phone, text, or email about scheduling a complimentary, no-pressure
+          plan review with a licensed agent, if you have requested one;</li>
+        <li>Improve the Site's content, usability, and performance; and</li>
+        <li>Comply with legal, regulatory, and recordkeeping obligations applicable to licensed
+          insurance agents.</li>
+      </ul>
+
+      <h2>3. Consent to Contact (TCPA Disclosure)</h2>
+      <p>
+        By submitting a form on this Site and providing your telephone number and/or email
+        address, you expressly consent to be contacted by Kayla Price and/or Price Services
+        Group LLC by telephone (including by automatic telephone dialing systems and prerecorded
+        or artificial voice messages), text message (SMS), and email regarding Medicare
+        education and, where applicable, insurance products and services, even if your number is
+        listed on a Do Not Call registry. Message and data rates may apply. Consent to be
+        contacted is not a condition of purchasing any product or service. You may revoke your
+        consent at any time by replying "STOP" to any text message, clicking "unsubscribe" in
+        any email, or contacting us directly using the information in Section 8 below.
+      </p>
+
+      <h2>4. Email Drip / Educational Sequence</h2>
+      <p>
+        If you request our free guide, enroll in the mini-course, or otherwise opt in, you may
+        be enrolled in an automated series of educational emails about Medicare. You may
+        unsubscribe from this sequence at any time using the link provided in each email.
+        Unsubscribing from marketing or educational emails does not automatically revoke consent
+        to be contacted by phone or text unless you separately request that as described in
+        Section 3.
+      </p>
+
+      <h2>5. Cookies and Tracking Technologies</h2>
+      <p>
+        We use cookies, pixels, and similar technologies to operate the Site, remember your
+        preferences (such as light/dark display mode), measure traffic and engagement, and
+        support advertising and analytics tools. You can control cookies through your browser
+        settings; disabling cookies may affect certain Site functionality. We do not knowingly
+        sell personal information, as that term is defined under applicable state privacy laws.
+      </p>
+
+      <h2>6. How We Share Information</h2>
+      <p>
+        We do not sell your personal information. We may share information with:
+      </p>
+      <ul>
+        <li>Service providers who help us operate the Site and manage contacts, including our
+          CRM provider (GoHighLevel) and email/SMS delivery platforms, under confidentiality
+          obligations;</li>
+        <li>Carriers or business partners only where necessary to service a request you have
+          affirmatively made, such as a plan review; and</li>
+        <li>Government authorities or regulators, where required by law.</li>
+      </ul>
+
+      <h2>7. Data Retention and Security</h2>
+      <p>
+        We retain contact and form information for as long as reasonably necessary to fulfill
+        the purposes described in this Policy and to comply with applicable insurance
+        recordkeeping requirements. We use commercially reasonable administrative and technical
+        safeguards to protect your information, but no method of transmission or storage is
+        completely secure.
+      </p>
+
+      <h2>8. Your Choices and Rights</h2>
+      <p>
+        You may request access to, correction of, or deletion of the personal information we
+        hold about you, or ask us to stop contacting you, by emailing us at the address below.
+        Depending on your state of residence, you may have additional rights under applicable
+        privacy law.
+      </p>
+
+      <h2>9. Educational Content Disclaimer</h2>
+      <p>
+        This Site provides general educational information about Medicare and does not
+        constitute medical, legal, financial, or insurance advice specific to your situation.
+        {COMPLIANCE.tpmo} Kayla Price is a licensed insurance agent (NPN 18530055); nothing on
+        this Site should be construed as a recommendation to enroll in, disenroll from, or
+        change any specific plan.
+      </p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>
+        This Site is not directed to individuals under the age of 18, and we do not knowingly
+        collect personal information from children.
+      </p>
+
+      <h2>11. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. The "Effective Date" above reflects
+        the most recent revision. Continued use of the Site after changes are posted constitutes
+        acceptance of the updated Policy.
+      </p>
+
+      <h2>12. Contact Us</h2>
+      <p>
+        Questions about this Privacy Policy or your information may be directed to Kayla Price,
+        licensed insurance agent (NPN 18530055), Price Services Group LLC, through the contact
+        options listed on this Site.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #2b1147 100%);
+    color: #fff;
+    padding: 4rem 0;
+  }
+  .hero h1 { color: #fff; }
+  .hero .eyebrow { color: var(--color-teal); }
+  .subhead { color: #e2d4f0; }
+  .legal { max-width: 800px; }
+  .legal h2 { margin-top: 2rem; font-size: 1.3rem; }
+  .legal p, .legal li { color: var(--color-text-muted); line-height: 1.7; }
+  .legal ul { padding-left: 1.4rem; }
+</style>

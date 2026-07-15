@@ -21,6 +21,9 @@ const year = 2026;
       <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
       <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
       <p class="tpmo">{COMPLIANCE.tpmo}</p>
+      <p class="legal-links">
+        <a href="/privacy">Privacy Policy</a> &bull; <a href="/terms">Terms of Use</a>
+      </p>
       <p class="copyright">&copy; {year} Price Services Group LLC. {TAGLINE}</p>
     </div>
   </div>
@@ -56,4 +59,7 @@ const year = 2026;
     margin: 0 0 0.5rem;
   }
   .copyright { color: #9e8bb6; }
+  .legal-links { }
+  .legal-links a { color: #b6a4cb; text-decoration: underline; }
+  .legal-links a:hover { color: var(--color-teal); }
 </style>
