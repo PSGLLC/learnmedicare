@@ -234,9 +234,36 @@ const jsonLd = [
   const fmt = (n: number) =>
     n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
+  // ── Tracking helpers ────────────────────────────────────────────
+  // NOTE: this site has no cookie-consent mechanism (see BaseLayout.astro),
+  // so no tracker script is loaded here — window.psgTracker will be
+  // undefined and these calls no-op via optional chaining. Wired now so
+  // events fire automatically the moment a consent-gated tracker load is
+  // added in a future pass.
+  const startedCalcs = new Set<string>();
+  function trackCalcStart(name: string) {
+    if (startedCalcs.has(name)) return;
+    startedCalcs.add(name);
+    (window as any).psgTracker?.track('calculator_started', {
+      calculator_name: name,
+      calculator_category: 'Medicare',
+      page_url: window.location.href,
+    });
+  }
+  function trackCalcComplete(name: string, resultSummary: string) {
+    (window as any).psgTracker?.track('calculator_completed', {
+      calculator_name: name,
+      calculator_category: 'Medicare',
+      result_summary: resultSummary,
+      page_url: window.location.href,
+    });
+  }
+
   // ── Calculator 1: Part B Late Enrollment Penalty ──────────────────────
+  const PART_B_NAME = 'Part B Late Enrollment Penalty';
   const PART_B_STANDARD_PREMIUM = 202.9; // 2026 standard Part B premium
   const bMonthsInput = document.getElementById('b-months') as HTMLInputElement;
+  let bInteracted = false;
   function updatePartB() {
     const monthsLate = Math.max(0, Number(bMonthsInput.value) || 0);
     const penaltyPercent = Math.floor(monthsLate / 12) * 10;
@@ -245,19 +272,29 @@ const jsonLd = [
     (document.getElementById('b-percent') as HTMLElement).textContent = `${penaltyPercent}%`;
     (document.getElementById('b-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
     (document.getElementById('b-total') as HTMLElement).textContent = fmt(newMonthlyPremium);
+    if (bInteracted) trackCalcComplete(PART_B_NAME, `${fmt(newMonthlyPremium)}/month (${fmt(monthlyPenalty)}/month penalty)`);
   }
-  bMonthsInput.addEventListener('input', updatePartB);
+  bMonthsInput.addEventListener('input', () => {
+    if (!bInteracted) { bInteracted = true; trackCalcStart(PART_B_NAME); }
+    updatePartB();
+  });
   updatePartB();
 
   // ── Calculator 2: Part D Late Enrollment Penalty ───────────────────────
+  const PART_D_NAME = 'Part D Late Enrollment Penalty';
   const PART_D_BASE_PREMIUM = 38.99; // 2026 national base beneficiary premium
   const dMonthsInput = document.getElementById('d-months') as HTMLInputElement;
+  let dInteracted = false;
   function updatePartD() {
     const monthsLate = Math.max(0, Number(dMonthsInput.value) || 0);
     const monthlyPenalty = 0.01 * PART_D_BASE_PREMIUM * monthsLate;
     (document.getElementById('d-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
+    if (dInteracted) trackCalcComplete(PART_D_NAME, `${fmt(monthlyPenalty)}/month penalty`);
   }
-  dMonthsInput.addEventListener('input', updatePartD);
+  dMonthsInput.addEventListener('input', () => {
+    if (!dInteracted) { dInteracted = true; trackCalcStart(PART_D_NAME); }
+    updatePartD();
+  });
   updatePartD();
 
   // ── Calculator 3: Medicare Advantage vs. Medigap ───────────────────────
@@ -269,6 +306,8 @@ const jsonLd = [
   const MEDIGAP_PLAN_G_MONTHLY_PREMIUM = 165; // illustrative average Plan G premium; varies widely by state/insurer
   const MEDIGAP_RESIDUAL_ANNUAL_COST = 257; // approx. 2026 Part B annual deductible, the main Plan G out-of-pocket exposure
 
+  const MG_NAME = 'Medicare Advantage vs. Medigap Cost Comparison';
+  let mgInteracted = false;
   const mgIds = ['mg-primary', 'mg-specialist', 'mg-hosp', 'mg-budget'];
   function updateMG() {
     const primary = Math.max(0, Number((document.getElementById('mg-primary') as HTMLInputElement).value) || 0);
@@ -292,8 +331,12 @@ const jsonLd = [
     (document.getElementById('mg-mg-premium') as HTMLElement).textContent = fmt(mgAnnualPremium);
     (document.getElementById('mg-mg-visits') as HTMLElement).textContent = fmt(mgAnnualVisits);
     (document.getElementById('mg-mg-total') as HTMLElement).textContent = fmt(mgTotal);
+    if (mgInteracted) trackCalcComplete(MG_NAME, `MA est. ${fmt(maTotal)}/year vs. Medigap Plan G est. ${fmt(mgTotal)}/year`);
   }
-  mgIds.forEach((id) => document.getElementById(id)?.addEventListener('input', updateMG));
+  mgIds.forEach((id) => document.getElementById(id)?.addEventListener('input', () => {
+    if (!mgInteracted) { mgInteracted = true; trackCalcStart(MG_NAME); }
+    updateMG();
+  }));
   updateMG();
 
   // ── Calculator 4: IRMAA Calculator ─────────────────────────────────────
@@ -316,6 +359,8 @@ const jsonLd = [
     { threshold: 106000, surcharge: 384.3 },
   ];
 
+  const IRMAA_NAME = 'IRMAA Calculator';
+  let irmaaInteracted = false;
   function updateIRMAA() {
     const magi = Math.max(0, Number((document.getElementById('irmaa-magi') as HTMLInputElement).value) || 0);
     const filing = (document.getElementById('irmaa-filing') as HTMLSelectElement).value;
@@ -335,12 +380,21 @@ const jsonLd = [
     const applies = surcharge > 0;
     (document.getElementById('irmaa-applies') as HTMLElement).textContent = applies ? 'Yes' : 'No';
     (document.getElementById('irmaa-surcharge') as HTMLElement).textContent = fmt(surcharge);
+    if (irmaaInteracted) trackCalcComplete(IRMAA_NAME, applies ? `IRMAA applies: +${fmt(surcharge)}/month` : 'IRMAA does not apply');
   }
-  document.getElementById('irmaa-magi')?.addEventListener('input', updateIRMAA);
-  document.getElementById('irmaa-filing')?.addEventListener('change', updateIRMAA);
+  document.getElementById('irmaa-magi')?.addEventListener('input', () => {
+    if (!irmaaInteracted) { irmaaInteracted = true; trackCalcStart(IRMAA_NAME); }
+    updateIRMAA();
+  });
+  document.getElementById('irmaa-filing')?.addEventListener('change', () => {
+    if (!irmaaInteracted) { irmaaInteracted = true; trackCalcStart(IRMAA_NAME); }
+    updateIRMAA();
+  });
   updateIRMAA();
 
   // ── Calculator 5: Retirement Healthcare Gap ────────────────────────────
+  const GAP_NAME = 'Retirement Healthcare Gap';
+  let gapInteracted = false;
   const MEDICARE_ELIGIBILITY_AGE = 65;
   function updateGap() {
     const currentAge = Math.max(0, Number((document.getElementById('gap-current-age') as HTMLInputElement).value) || 0);
@@ -350,15 +404,20 @@ const jsonLd = [
 
     if (retireAge >= MEDICARE_ELIGIBILITY_AGE) {
       headline.textContent = 'No coverage gap — Medicare eligibility begins at 65.';
+      if (gapInteracted) trackCalcComplete(GAP_NAME, 'No coverage gap');
       return;
     }
 
     const gapYears = MEDICARE_ELIGIBILITY_AGE - retireAge;
     const totalGapCost = gapYears * 12 * monthlyCost;
     headline.innerHTML = `Estimated coverage gap: <strong>${gapYears} year${gapYears === 1 ? '' : 's'}</strong> — total estimated cost: <strong>${fmt(totalGapCost)}</strong>`;
+    if (gapInteracted) trackCalcComplete(GAP_NAME, `${gapYears}-year gap, ${fmt(totalGapCost)} total estimated cost`);
   }
   ['gap-current-age', 'gap-retire-age', 'gap-monthly-cost'].forEach((id) =>
-    document.getElementById(id)?.addEventListener('input', updateGap),
+    document.getElementById(id)?.addEventListener('input', () => {
+      if (!gapInteracted) { gapInteracted = true; trackCalcStart(GAP_NAME); }
+      updateGap();
+    }),
   );
   updateGap();
 </script>
