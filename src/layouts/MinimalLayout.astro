@@ -3,15 +3,35 @@ import MinimalCompliance from '../components/MinimalCompliance.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
 
+interface Breadcrumb {
+  name: string;
+  url: string;
+}
+
 interface Props {
   title: string;
   description: string;
   path: string;
   jsonLd?: Record<string, any> | Record<string, any>[];
+  breadcrumbs?: Breadcrumb[];
 }
-const { title, description, path, jsonLd } = Astro.props;
+const { title, description, path, jsonLd, breadcrumbs } = Astro.props;
 const canonical = new URL(path, SITE_URL).toString();
 const jsonLdEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  const crumbList = [{ name: 'Home', url: '/' }, ...breadcrumbs];
+  jsonLdEntries.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbList.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: new URL(crumb.url, SITE_URL).toString(),
+    })),
+  });
+}
 ---
 <!doctype html>
 <html lang="en">
