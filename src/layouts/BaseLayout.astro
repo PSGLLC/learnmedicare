@@ -6,18 +6,38 @@ import LessonProgress from '../components/LessonProgress.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
 
+interface Breadcrumb {
+  name: string;
+  url: string;
+}
+
 interface Props {
   title: string;
   description: string;
   path: string;
   jsonLd?: Record<string, any> | Record<string, any>[];
   ogImage?: string;
+  breadcrumbs?: Breadcrumb[];
 }
 
-const { title, description, path, jsonLd, ogImage = '/brand/psg-logo.png' } = Astro.props;
+const { title, description, path, jsonLd, ogImage = '/brand/psg-logo.png', breadcrumbs } = Astro.props;
 const canonical = new URL(path, SITE_URL).toString();
 const ogImageUrl = new URL(ogImage, SITE_URL).toString();
 const jsonLdEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  const crumbList = [{ name: 'Home', url: '/' }, ...breadcrumbs];
+  jsonLdEntries.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbList.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: new URL(crumb.url, SITE_URL).toString(),
+    })),
+  });
+}
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const showStickyGuideCTA = normalizedPath !== '/guide';
 const LESSON_PATHS = ['/basics', '/enrollment', '/coverage', '/penalties', '/working-at-65'];
