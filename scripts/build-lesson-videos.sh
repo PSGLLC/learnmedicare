@@ -13,7 +13,9 @@
 # ------------------------------------------------------------------
 # EXPECTED INPUT LAYOUT
 # ------------------------------------------------------------------
-#   src/content/voiceovers/lesson1.m4a ... lesson6.m4a
+#   src/content/voiceovers/lesson1.{m4a,mp3,wav} ... lesson6.{m4a,mp3,wav}
+#     (any one of .m4a / .mp3 / .wav per lesson; .m4a checked first for
+#     backward compatibility, then .mp3, then .wav)
 #   src/content/lesson-slides/lesson1/slide-01.png, slide-02.png, ...
 #   src/content/lesson-slides/lesson2/slide-01.png, ...
 #   ... through lesson6
@@ -88,12 +90,23 @@ mkdir -p "$OUT_DIR"
 LESSONS="${1:-1 2 3 4 5 6}"
 
 for N in $LESSONS; do
-  VO="$VOICEOVER_DIR/lesson${N}.m4a"
   SLIDE_DIR="$SLIDES_DIR/lesson${N}"
   OUT="$OUT_DIR/lesson${N}.mp4"
 
-  if [ ! -f "$VO" ]; then
-    echo "Skipping lesson $N: voiceover not found at $VO"
+  # Accept .m4a (legacy), .mp3, or .wav voiceover files, checked in that
+  # order. ffmpeg decodes all three natively and the audio track is always
+  # re-encoded to AAC below, so no format-specific handling is needed beyond
+  # locating the file.
+  VO=""
+  for EXT in m4a mp3 wav; do
+    CANDIDATE="$VOICEOVER_DIR/lesson${N}.${EXT}"
+    if [ -f "$CANDIDATE" ]; then
+      VO="$CANDIDATE"
+      break
+    fi
+  done
+  if [ -z "$VO" ]; then
+    echo "Skipping lesson $N: voiceover not found at $VOICEOVER_DIR/lesson${N}.{m4a,mp3,wav}"
     continue
   fi
   if [ ! -d "$SLIDE_DIR" ] || [ -z "$(ls -A "$SLIDE_DIR" 2>/dev/null)" ]; then

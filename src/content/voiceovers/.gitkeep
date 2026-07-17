@@ -1,1 +1,1 @@
-Place lesson1.m4a through lesson6.m4a here. See scripts/build-lesson-videos.sh for details.
+Place lesson1 through lesson6 voiceover files here, as lessonN.m4a, lessonN.mp3, or lessonN.wav. See scripts/build-lesson-videos.sh for details.

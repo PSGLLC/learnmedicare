@@ -1,6 +1,6 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
-const jsonLd = {
+const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
@@ -24,8 +24,43 @@ const jsonLd = {
       name: 'Do I need to create an account to take the course?',
       acceptedAnswer: { '@type': 'Answer', text: 'No account is required — the course loads directly on this page, or you can watch it at course.learnmedicare.org.' },
     },
+    {
+      '@type': 'Question',
+      name: 'Is this official Medicare guidance?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. This is independent educational content from a licensed insurance agency, not an official Medicare or government resource. For official guidance, always confirm details at Medicare.gov or 1-800-MEDICARE.' },
+    },
   ],
 };
+
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Free Medicare Course',
+  description:
+    'A free, self-paced, six-lesson course covering Medicare basics, enrollment periods, coverage options, avoiding penalties, working past 65, and putting it all together — built for people approaching or navigating Medicare enrollment.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Price Services Group',
+    sameAs: 'https://priceservicesgroup.com',
+  },
+  instructor: {
+    '@type': 'Person',
+    name: 'Kayla Price',
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Licensed Insurance Agent',
+      identifier: 'NPN 18530055',
+    },
+  },
+  isAccessibleForFree: true,
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'online',
+    courseWorkload: 'PT1H',
+  },
+};
+
+const jsonLd = [faqJsonLd, courseJsonLd];
 const LESSONS = [
   { n: 1, title: 'Medicare Basics' },
   { n: 2, title: 'Enrollment Periods' },
@@ -45,6 +80,14 @@ const LESSONS = [
   <section class="course-hero">
     <div class="container">
       <h1>Free Medicare Course</h1>
+      <p class="course-hero-sub">
+        Six self-paced lessons covering everything you need to know before you enroll in
+        Medicare — no account, no login, and no cost to take it.
+      </p>
+      <div class="course-hero-cta">
+        <a href="#vl-grid" class="btn btn-primary">Start the Course</a>
+        <a href="/guide" class="btn btn-outline">Prefer a written guide? Get it free by email &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -281,6 +324,18 @@ const LESSONS = [
     text-align: center;
   }
   .course-hero h1 { font-size: 1.6rem; margin: 0; }
+  .course-hero-sub {
+    max-width: 620px;
+    margin: 0.6rem auto 0;
+    color: var(--color-text-muted);
+  }
+  .course-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
   .course-frame-section {
     padding: 0 0 1.5rem;
   }
