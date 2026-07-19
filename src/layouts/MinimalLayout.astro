@@ -42,7 +42,6 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="noindex, follow" />
     {jsonLdEntries.map((entry) => (
       <script type="application/ld+json" set:html={JSON.stringify(entry)} />
     ))}
