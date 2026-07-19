@@ -12,6 +12,7 @@ export const NAV_LINKS = [
   { href: '/guide', label: 'Free Guide' },
   { href: '/calculators', label: 'Calculators' },
   { href: '/course', label: 'Take the Course' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export const COMPLIANCE = {
