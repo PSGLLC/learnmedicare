@@ -1,0 +1,121 @@
+---
+import MinimalLayout from '../layouts/MinimalLayout.astro';
+
+const terms = [
+  { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance), run directly by the federal government with no networks — any provider that accepts Medicare, anywhere in the country, will treat you." },
+  { term: "Medicare Part A", def: "Hospital insurance. Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people pay no premium for Part A if they or a spouse paid Medicare taxes for at least 10 years." },
+  { term: "Medicare Part B", def: "Medical insurance. Covers doctor visits, outpatient care, preventive services, and durable medical equipment. Most people pay a standard monthly premium ($202.90 in 2026) plus an annual deductible ($283 in 2026)." },
+  { term: "Medicare Part C", def: "Also called Medicare Advantage — a private-insurance alternative to Original Medicare that bundles Part A, Part B, and usually Part D into one plan, often with extra benefits like dental and vision." },
+  { term: "Medicare Part D", def: "Prescription drug coverage, sold as a standalone plan or bundled into a Medicare Advantage plan. As of 2026, Part D has a $2,100 annual out-of-pocket cap on covered drugs." },
+  { term: "Medicare Advantage", def: "See Medicare Part C. A private plan approved by Medicare that replaces Original Medicare, typically using a provider network (HMO or PPO) and often bundling drug coverage and extra benefits." },
+  { term: "Medigap", def: "Also called Medicare Supplement insurance — a policy sold by private insurers that works alongside Original Medicare to cover its cost-sharing gaps (coinsurance, copays, and in some plans, deductibles). Cannot be used with Medicare Advantage." },
+  { term: "Medicare Supplement", def: "See Medigap." },
+  { term: "Initial Enrollment Period (IEP)", def: "The 7-month window to first sign up for Medicare, centered on your 65th birthday — 3 months before, the month of, and 3 months after." },
+  { term: "Annual Enrollment Period (AEP)", def: "The window each year, October 15 through December 7, when anyone with Medicare can switch Medicare Advantage plans, change Part D drug plans, or move between Original Medicare and Medicare Advantage. Changes take effect January 1." },
+  { term: "Medicare Advantage Open Enrollment Period (MA OEP)", def: "A window running January 1 through March 31 that lets people already enrolled in a Medicare Advantage plan make one additional plan switch, or return to Original Medicare." },
+  { term: "Special Enrollment Period (SEP)", def: "A window outside the standard enrollment periods that opens when you have a qualifying life event — such as moving, losing employer coverage, or losing Medicaid — allowing you to enroll in or change Medicare coverage." },
+  { term: "General Enrollment Period (GEP)", def: "A window running January 1 through March 31 for people who missed their Initial Enrollment Period and don't qualify for a Special Enrollment Period. Coverage typically starts the month after you enroll, and a late-enrollment penalty may apply." },
+  { term: "Late Enrollment Penalty", def: "A permanent premium increase applied to Part B or Part D if you enroll late without qualifying employer coverage or another valid exception. The penalty is added to your premium for as long as you have that coverage." },
+  { term: "IRMAA (Income-Related Monthly Adjustment Amount)", def: "An extra amount added to your Part B and Part D premiums if your income, based on your tax return from two years prior, is above a certain threshold." },
+  { term: "Formulary", def: "The list of prescription drugs a specific Part D or Medicare Advantage plan covers, organized into cost tiers. Two plans can cover the same drug at very different costs depending on its tier." },
+  { term: "Star Rating", def: "A 1-to-5 star quality score CMS assigns to Medicare Advantage and Part D plans each year, based on member satisfaction, care quality, and plan performance — a useful factor when comparing plans, alongside cost and network." },
+  { term: "Special Needs Plan (SNP)", def: "A type of Medicare Advantage plan designed for people with specific needs — dual-eligible beneficiaries (Medicare + Medicaid), those in institutional care, or those with certain chronic conditions. Often includes extra tailored benefits." },
+  { term: "Dual-Eligible", def: "Someone who qualifies for both Medicare and Medicaid at the same time. Medicaid can help cover Medicare premiums and cost-sharing, and often covers services Medicare doesn't, like long-term custodial care." },
+  { term: "Medicare Savings Program (MSP)", def: "A state-run program that can help pay Medicare premiums, deductibles, copays, and coinsurance for people with limited income and resources." },
+  { term: "Extra Help", def: "A federal program that helps people with limited income and resources pay for Medicare Part D prescription drug costs, including premiums, deductibles, and copays." },
+  { term: "Out-of-Pocket Maximum", def: "The most you'll pay in a plan year for covered services under a Medicare Advantage plan before the plan pays 100% of covered costs. Original Medicare alone has no out-of-pocket maximum, which is part of why many people pair it with Medigap or a Medicare Advantage plan." },
+  { term: "Annual Notice of Change (ANOC)", def: "A notice your Medicare Advantage or Part D plan sends every September, explaining what's changing about your specific plan for the coming year — premium, deductible, copays, network, or formulary." },
+];
+
+const faqs = terms.slice(0, 5).map(t => ({
+  q: `What is ${t.term}?`,
+  a: t.def,
+}));
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: 'Medicare Glossary',
+    description: 'A plain-English glossary of key Medicare terms — enrollment periods, plan types, and costs explained.',
+    url: 'https://learnmedicare.org/gz/',
+    hasDefinedTerm: terms.map(t => ({
+      '@type': 'DefinedTerm',
+      name: t.term,
+      description: t.def,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+<MinimalLayout
+  title="Medicare Glossary | Plain-English Terms Explained"
+  description="A free, plain-English glossary of 20+ key Medicare terms — Parts A-D, enrollment periods, Medigap, IRMAA, and more, explained clearly."
+  path="/gz/"
+  breadcrumbs={[{ name: 'Medicare Glossary', url: '/gz/' }]}
+  jsonLd={jsonLd}
+>
+  <section class="glossary-hero">
+    <div class="container">
+      <p class="section-label">Medicare Glossary</p>
+      <h1>Medicare Terms, in Plain English</h1>
+      <p class="glossary-hero-sub speakable-answer">
+        Medicare is full of acronyms and jargon that don't mean much until someone explains them —
+        below are 23 of the terms you'll run into most often, defined in plain language, no
+        insurance-speak required.
+      </p>
+      <div class="glossary-hero-cta">
+        <a href="/course" class="btn btn-primary">Take the Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="glossary-list-section">
+    <div class="container">
+      <dl class="glossary-list">
+        {terms.map((t) => (
+          <div class="glossary-item">
+            <dt>{t.term}</dt>
+            <dd>{t.def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="glossary-cta-section">
+    <div class="container">
+      <h2>Ready for the Full Picture?</h2>
+      <p>
+        These definitions are a starting point — our free, self-paced course walks through how
+        every one of these terms fits together, from Medicare basics through enrollment.
+      </p>
+      <a href="/course" class="btn btn-primary">Start the Free Medicare Course →</a>
+    </div>
+  </section>
+</MinimalLayout>
+
+<style>
+  .glossary-hero { padding: 3.5rem 0 2.5rem; text-align: center; }
+  .glossary-hero-sub { max-width: 62ch; margin: 1rem auto 1.75rem; font-size: 1.05rem; line-height: 1.7; }
+  .glossary-hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  .glossary-list-section { padding: 1rem 0 3rem; }
+  .glossary-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; }
+  .glossary-item { border-top: 1px solid var(--line, #e3d6f0); padding: 1.25rem 0; }
+  .glossary-item:last-child { border-bottom: 1px solid var(--line, #e3d6f0); }
+  .glossary-item dt { font-weight: 700; font-size: 1.05rem; margin: 0 0 .4rem; }
+  .glossary-item dd { margin: 0; color: var(--muted, #5a4a6e); line-height: 1.65; }
+
+  .glossary-cta-section { padding: 2.5rem 0 4rem; text-align: center; background: var(--soft, #f5effe); }
+  .glossary-cta-section h2 { margin: 0 0 .6rem; }
+  .glossary-cta-section p { max-width: 56ch; margin: 0 auto 1.5rem; color: var(--muted, #5a4a6e); }
+</style>
