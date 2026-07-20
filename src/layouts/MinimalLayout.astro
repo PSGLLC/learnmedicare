@@ -14,9 +14,22 @@ interface Props {
   path: string;
   jsonLd?: Record<string, any> | Record<string, any>[];
   breadcrumbs?: Breadcrumb[];
+  ogImage?: string;
 }
-const { title, description, path, jsonLd, breadcrumbs } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  jsonLd,
+  breadcrumbs,
+  // Real file, not a placeholder — public/brand/psg-logo.png is 2048x1035px,
+  // already well over the 1200x630 og:image floor. No dedicated course
+  // thumbnail exists in the repo, so this is the best available image
+  // (same default BaseLayout.astro uses on the rest of the site).
+  ogImage = '/brand/psg-logo.png',
+} = Astro.props;
 const canonical = new URL(path, SITE_URL).toString();
+const ogImageUrl = new URL(ogImage, SITE_URL).toString();
 const jsonLdEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
 if (breadcrumbs && breadcrumbs.length > 0) {
@@ -42,6 +55,17 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="2048" />
+    <meta property="og:image:height" content="1035" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
     {jsonLdEntries.map((entry) => (
       <script type="application/ld+json" set:html={JSON.stringify(entry)} />
     ))}
