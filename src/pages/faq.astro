@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'What is Medicare?',
+    a: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS). It primarily covers people age 65 and older, as well as certain younger people with qualifying disabilities or End-Stage Renal Disease (ESRD).',
+  },
+  {
+    q: 'Who is eligible for Medicare?',
+    a: "Most people become eligible at age 65 if they or a spouse have at least 10 years (40 quarters) of Medicare-covered employment. People under 65 may also qualify due to certain disabilities or a diagnosis of ESRD or ALS.",
+  },
+  {
+    q: 'When can I enroll in Medicare?',
+    a: 'Your Initial Enrollment Period runs 7 months — the 3 months before your 65th birthday month, your birthday month, and the 3 months after. Outside of that, there are also the Annual Enrollment Period (Oct 15–Dec 7), the Medicare Advantage Open Enrollment Period (Jan 1–Mar 31), and Special Enrollment Periods tied to certain life events.',
+  },
+  {
+    q: 'What is the difference between Medicare Advantage and Original Medicare?',
+    a: "Original Medicare (Parts A and B) is run directly by the federal government and lets you see any provider nationwide who accepts Medicare. Medicare Advantage (Part C) is an alternative way to get your Part A and B benefits through a private insurer, often bundling in Part D and extra benefits, but typically within a provider network.",
+  },
+  {
+    q: 'What does Medicare Part A cover?',
+    a: 'Part A generally covers inpatient hospital stays, care in a skilled nursing facility, hospice care, and some home health care. Most people don’t pay a monthly premium for Part A because of their work history.',
+  },
+  {
+    q: 'What does Medicare Part B cover?',
+    a: 'Part B generally covers doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Nearly everyone pays a monthly premium for Part B.',
+  },
+  {
+    q: 'What does Medicare Part D cover?',
+    a: "Part D covers prescription medications. It's offered through private insurance companies, either as a stand-alone plan alongside Original Medicare or bundled into a Medicare Advantage plan. Going without creditable drug coverage can lead to a lasting late enrollment penalty.",
+  },
+  {
+    q: 'What is a Medigap plan?',
+    a: 'A Medigap (Medicare Supplement) plan is private insurance that works alongside Original Medicare to help cover costs like copays, coinsurance, and deductibles that Medicare doesn’t pay. Medigap plans don’t work with Medicare Advantage and typically don’t include drug coverage.',
+  },
+  {
+    q: 'How much does Medicare cost?',
+    a: 'Costs vary by part and by plan. Part A is usually premium-free if you have enough work history. Part B has a standard monthly premium plus an annual deductible. Part C and Part D premiums vary by plan and location since they’re sold through private insurers. Exact figures change every year, so it’s worth checking current numbers at Medicare.gov.',
+  },
+  {
+    q: 'What is the Medicare Initial Enrollment Period?',
+    a: 'The Initial Enrollment Period (IEP) is the 7-month window centered on your 65th birthday — 3 months before, your birthday month, and 3 months after — during which you can first enroll in Medicare without a late enrollment penalty.',
+  },
+  {
+    q: 'Can I keep my doctor with Medicare Advantage?',
+    a: 'It depends on the plan. Medicare Advantage plans typically use HMO or PPO provider networks, so you’ll want to confirm your doctor is in-network before enrolling. Original Medicare, by contrast, lets you see any doctor nationwide who accepts Medicare.',
+  },
+  {
+    q: 'What happens if I miss my enrollment window?',
+    a: 'Missing your enrollment window can mean waiting for the next available period (like the Annual Enrollment Period) and may result in a late enrollment penalty for Part B or Part D that can last as long as you have that coverage.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare FAQ',
+    description: 'Get answers to the most common Medicare questions — eligibility, enrollment, costs, plan types, and more.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+<BaseLayout
+  title="Medicare FAQ — Common Questions Answered | LearnMedicare.org"
+  description="Get answers to the most common Medicare questions — eligibility, enrollment, costs, plan types, and more."
+  path="/faq/"
+  breadcrumbs={[{ name: 'FAQ', url: '/faq/' }]}
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">FAQ</p>
+      <h1>Medicare FAQ</h1>
+      <p class="subhead">Answers to the questions we hear most often.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <div class="faq-item card">
+            <h2>{f.q}</h2>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt lead-section">
+    <div class="container lead-inner">
+      <p class="eyebrow">Still Have Questions?</p>
+      <h2>Get our free Medicare guide delivered to your inbox.</h2>
+      <p class="lead-sub">A clear, no-pressure walkthrough of Medicare — sent straight to your email.</p>
+
+      <form id="faq-lead-form" class="lead-form" novalidate>
+        <div class="form-row">
+          <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+        <!-- Honeypot — hidden from real visitors -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Send Me the Free Guide</button>
+        <p id="faq-form-error" class="form-error" role="alert" hidden></p>
+      </form>
+
+      <div id="faq-form-success" class="form-success" hidden>
+        <p>Your guide is on its way — check your inbox!</p>
+      </div>
+
+      <p class="compliance-note">
+        By submitting this form you agree to be contacted by Price Services Group LLC.
+        We respect your privacy and will never sell your information.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('faq-lead-form') as HTMLFormElement | null;
+    const errorEl = document.getElementById('faq-form-error');
+    const successEl = document.getElementById('faq-form-success');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        firstName: String(formData.get('firstName') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        website: String(formData.get('website') ?? ''),
+        pagePath: window.location.pathname,
+      };
+
+      const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch('/api/faq-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({ ok: false }));
+
+        if (res.ok && data.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        if (errorEl) {
+          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          errorEl.hidden = false;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Me the Free Guide';
+        }
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; margin-bottom: 0; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 780px; margin: 0 auto; }
+  .faq-item h2 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--color-text-muted); margin-bottom: 0; }
+
+  .lead-section { padding: 4rem 0; }
+  .lead-inner { max-width: 520px; margin: 0 auto; text-align: center; }
+  .lead-sub { color: var(--color-text-muted); margin-bottom: 1.75rem; }
+
+  .lead-form { text-align: left; }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .form-row input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+  .hp-field { position: absolute; left: -9999px; }
+  .form-submit { width: 100%; margin-top: 0.5rem; }
+  .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
+  .form-success p { font-weight: 600; }
+  .compliance-note { color: var(--color-text-muted); font-size: 0.8rem; margin-top: 1.25rem; margin-bottom: 0; }
+</style>
