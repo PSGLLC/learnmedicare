@@ -176,6 +176,36 @@ const LESSONS = [
       <button type="button" class="cert-print-btn" id="cert-print-btn">Print / Save as PDF</button>
     </div>
   </section>
+
+  <section class="course-lead-section">
+    <div class="container course-lead-inner">
+      <h2>Get our free Medicare guide delivered to your inbox.</h2>
+      <p class="course-lead-sub">One email. No spam. Unsubscribe anytime.</p>
+
+      <form id="course-lead-form" class="lead-form" novalidate>
+        <div class="form-row">
+          <label for="course-firstName">First Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="course-firstName" name="firstName" autocomplete="given-name" required />
+        </div>
+        <div class="form-row">
+          <label for="course-email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="course-email" name="email" autocomplete="email" required />
+        </div>
+        <!-- Honeypot — hidden from real visitors -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="course-website">Website</label>
+          <input type="text" id="course-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Send Me the Free Guide</button>
+        <p id="course-form-error" class="form-error" role="alert" hidden></p>
+      </form>
+
+      <div id="course-form-success" class="form-success" hidden>
+        <p>Your guide is on its way — check your inbox!</p>
+      </div>
+    </div>
+  </section>
 </MinimalLayout>
 
 <script>
@@ -318,6 +348,60 @@ const LESSONS = [
 
     render();
   })();
+</script>
+
+<script>
+  const courseLeadForm = document.getElementById('course-lead-form') as HTMLFormElement | null;
+  const courseLeadError = document.getElementById('course-form-error');
+  const courseLeadSuccess = document.getElementById('course-form-success');
+
+  courseLeadForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (courseLeadError) {
+      courseLeadError.hidden = true;
+      courseLeadError.textContent = '';
+    }
+
+    const formData = new FormData(courseLeadForm);
+    const payload = {
+      firstName: String(formData.get('firstName') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      website: String(formData.get('website') ?? ''),
+      pagePath: window.location.pathname,
+    };
+
+    const submitBtn = courseLeadForm.querySelector<HTMLButtonElement>('.form-submit');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const res = await fetch('/api/course-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+
+      if (res.ok && data.ok) {
+        courseLeadForm.hidden = true;
+        if (courseLeadSuccess) courseLeadSuccess.hidden = false;
+      } else {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      if (courseLeadError) {
+        courseLeadError.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+        courseLeadError.hidden = false;
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Me the Free Guide';
+      }
+    }
+  });
 </script>
 
 <style>
@@ -553,5 +637,32 @@ const LESSONS = [
       border: none;
       padding: 0;
     }
+    .course-lead-section {
+      display: none !important;
+    }
   }
+
+  .course-lead-section {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-alt);
+  }
+  .course-lead-inner { max-width: 480px; margin: 0 auto; text-align: center; }
+  .course-lead-sub { color: var(--color-text-muted); margin-bottom: 1.75rem; }
+  .course-lead-inner .lead-form { text-align: left; }
+  .course-lead-inner .form-row { margin-bottom: 1rem; }
+  .course-lead-inner .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .course-lead-inner .form-row input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+  .course-lead-inner .hp-field { position: absolute; left: -9999px; }
+  .course-lead-inner .form-submit { width: 100%; margin-top: 0.5rem; }
+  .course-lead-inner .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
+  .course-lead-inner .form-success p { font-weight: 600; }
 </style>
