@@ -68,6 +68,11 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.faq-item h2', '.faq-item p'],
+  },
 ];
 ---
 <BaseLayout
