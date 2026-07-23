@@ -187,6 +187,30 @@ const jsonLd = [
     </div>
   </section>
 
+  <section class="section-alt">
+    <div class="container">
+      <p class="eyebrow">Free Resources</p>
+      <h2>Free Medicare Guides</h2>
+      <div class="grid grid-3">
+        <div class="card guide-card">
+          <h3>Turning 65 Guide</h3>
+          <p>Everything you need to know before Medicare begins.</p>
+          <a href="https://partner.priceservicesgroup.com/guides/t65-medicare-guide" class="btn btn-teal">Download Free Guide →</a>
+        </div>
+        <div class="card guide-card">
+          <h3>New to Medicare Guide</h3>
+          <p>Just enrolled? Here's how to use your benefits.</p>
+          <a href="https://partner.priceservicesgroup.com/guides/new-to-medicare-guide" class="btn btn-teal">Download Free Guide →</a>
+        </div>
+        <div class="card guide-card">
+          <h3>Already on Medicare Guide</h3>
+          <p>Make sure your coverage is still working for you.</p>
+          <a href="https://partner.priceservicesgroup.com/guides/already-on-medicare-guide" class="btn btn-teal">Download Free Guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script>
     const form = document.getElementById('lead-form') as HTMLFormElement | null;
     const errorEl = document.getElementById('lead-form-error');
@@ -369,6 +393,11 @@ const jsonLd = [
     color: var(--color-text);
   }
   :root[data-theme="dark"] .form-success { background: rgba(81, 222, 204, 0.12); }
+  .guide-card { text-align: center; }
+  .guide-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .guide-card p { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: 1.25rem; }
+  .guide-card .btn { width: 100%; text-align: center; }
+
   .compliance-note {
     color: var(--color-text-muted);
     font-size: 0.78rem;
