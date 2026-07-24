@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+/* Google Fonts now loaded via a <link> in BaseLayout.astro/MinimalLayout.astro
+   <head> (with preconnect hints) instead of @import here — @import inside a
+   stylesheet is render-blocking and adds a serial CSS→CSS→font fetch chain
+   that delays FCP/LCP. */
 
 :root {
   --color-purple: #9059B5;
