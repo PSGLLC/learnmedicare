@@ -1,0 +1,92 @@
+---
+// Feature 8 — Course Progress Tracking. Renders "Lesson X of 6 complete"
+// at the top of each of the 5 lesson pages. Reads/writes the shared
+// localStorage module in src/scripts/course-progress.ts. Marks the current
+// lesson "started" on load, and "completed" once the visitor scrolls to
+// 80%+ of the page, or clicks a "Mark Complete" button (see
+// MarkCompleteButton.astro, rendered separately at the end of each
+// lesson's content).
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+---
+<div class="course-progress-bar" id="course-progress-bar" data-slug={slug}>
+  <div class="cpb-track">
+    <div class="cpb-fill" id="cpb-fill"></div>
+  </div>
+  <p class="cpb-label" id="cpb-label">Loading progress…</p>
+</div>
+
+<style>
+  .course-progress-bar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 0;
+  }
+  .cpb-track {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(128, 128, 128, 0.25);
+    overflow: hidden;
+  }
+  .cpb-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-teal, #51decc);
+    transition: width 0.3s ease;
+  }
+  .cpb-label {
+    margin: 0.4rem 0 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-dark, #1a0a2e);
+    opacity: 0.75;
+  }
+  :root[data-theme="dark"] .cpb-label {
+    color: #fff;
+  }
+</style>
+
+<script>
+  import { markStarted, markCompleted, getCompletedCount, getScrollPercent, TOTAL_LESSONS } from '../scripts/course-progress';
+
+  const root = document.getElementById('course-progress-bar');
+  const slug = root?.getAttribute('data-slug') || '';
+  const fill = document.getElementById('cpb-fill');
+  const label = document.getElementById('cpb-label');
+
+  function render() {
+    const count = getCompletedCount();
+    if (label) label.textContent = `Lesson ${count} of ${TOTAL_LESSONS} complete`;
+    if (fill) fill.style.width = `${Math.round((count / TOTAL_LESSONS) * 100)}%`;
+    document.dispatchEvent(new CustomEvent('lm-progress-updated'));
+  }
+
+  if (slug) {
+    markStarted(slug);
+    render();
+
+    let completedThisLoad = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (completedThisLoad) return;
+        if (getScrollPercent() >= 80) {
+          completedThisLoad = true;
+          markCompleted(slug);
+          render();
+        }
+      },
+      { passive: true }
+    );
+
+    // A Mark Complete button, if present on the page, dispatches this event.
+    document.addEventListener('lm-mark-complete', (e) => {
+      const evtSlug = (e as CustomEvent).detail?.slug;
+      if (evtSlug === slug) render();
+    });
+  } else {
+    render();
+  }
+</script>

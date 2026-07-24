@@ -87,6 +87,13 @@ const LESSONS = [
   { n: 5, title: 'Working Past 65', answer: 'If you have creditable employer coverage from a company with 20+ employees, you can often delay Medicare Part B without a penalty.' },
   { n: 6, title: 'Putting It All Together', answer: 'Once you know your parts, timing, and coverage options, the next step is comparing specific plans against your own doctors, drugs, and budget.' },
 ];
+const LESSON_STATUS_LINKS = [
+  { slug: 'basics', path: '/basics', label: 'Medicare Basics' },
+  { slug: 'enrollment', path: '/enrollment', label: 'Enrollment' },
+  { slug: 'coverage', path: '/coverage', label: 'Coverage Options' },
+  { slug: 'penalties', path: '/penalties', label: 'Avoiding Penalties' },
+  { slug: 'working-at-65', path: '/working-at-65', label: 'Working Past 65' },
+];
 ---
 <MinimalLayout
   title="Free Medicare Course | Learn Medicare"
@@ -105,6 +112,67 @@ const LESSONS = [
       <div class="course-hero-cta">
         <a href="#vl-grid" class="btn btn-primary">Start the Course</a>
         <a href="/guide" class="btn btn-outline">Prefer a written guide? Get it free by email &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-status-section">
+    <div class="container">
+      <h2>Your Progress</h2>
+      <p class="lesson-status-sub">Based on the lessons you've read on this device.</p>
+      <ul class="lesson-status-list" id="lesson-status-list">
+        {LESSON_STATUS_LINKS.map((l) => (
+          <li class="lesson-status-item" data-status-slug={l.slug}>
+            <a href={l.path}>
+              <span class="lesson-status-icon" data-status-icon>&#9675;</span>
+              <span class="lesson-status-label">{l.label}</span>
+              <span class="lesson-status-text" data-status-text>Not Started</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="email-course-section">
+    <div class="container email-course-inner">
+      <h2>Prefer email? Take the Email Course Instead</h2>
+      <p class="email-course-sub">Get one lesson per day for 6 days — free.</p>
+
+      <form id="email-course-form" class="lead-form" novalidate>
+        <div class="form-row">
+          <label for="ec-firstName">First Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="ec-firstName" name="firstName" autocomplete="given-name" required />
+        </div>
+        <div class="form-row">
+          <label for="ec-email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="ec-email" name="email" autocomplete="email" required />
+        </div>
+        <!-- Honeypot — hidden from real visitors -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="ec-website">Website</label>
+          <input type="text" id="ec-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="form-row form-row-checkbox">
+          <label class="checkbox-label" for="ec-tcpaConsent">
+            <input type="checkbox" id="ec-tcpaConsent" name="tcpaConsent" required />
+            <span>
+              By submitting this form, I consent to be contacted by Price Services Group and its
+              licensed agents by phone (including autodialed calls), text message, and email
+              regarding Medicare plan options. I understand I can revoke this consent at any time
+              by replying STOP to texts or contacting us directly. Message and data rates may
+              apply.
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Start the Email Course &rarr;</button>
+        <p id="email-course-form-error" class="form-error" role="alert" hidden></p>
+      </form>
+
+      <div id="email-course-form-success" class="form-success" hidden>
+        <p>You're in! Check your inbox for Lesson 1.</p>
       </div>
     </div>
   </section>
@@ -240,6 +308,56 @@ const LESSONS = [
       note.hidden = false;
     });
   }
+</script>
+
+<script>
+  // Feature 8 — Course Progress Tracking. Renders ✅/🔄/○ status for each of
+  // the 5 written lesson pages based on the shared localStorage module, and
+  // treats this hub page itself as the course's 6th lesson ("Putting It All
+  // Together") — started on load, completed at 80% scroll — the same rule
+  // used on the 5 lesson pages, so the "Lesson X of 6" count elsewhere on
+  // the site stays accurate whether or not a visitor ever scrolls a written
+  // lesson to the bottom before checking this hub.
+  import { markStarted, markCompleted, getStatus, getScrollPercent } from '../scripts/course-progress';
+
+  function renderStatuses() {
+    document.querySelectorAll<HTMLElement>('[data-status-slug]').forEach((item) => {
+      const slug = item.getAttribute('data-status-slug') || '';
+      const status = getStatus(slug);
+      const icon = item.querySelector('[data-status-icon]');
+      const text = item.querySelector('[data-status-text]');
+      item.classList.remove('status-complete', 'status-progress', 'status-none');
+      if (status === 'completed') {
+        item.classList.add('status-complete');
+        if (icon) icon.textContent = '✅';
+        if (text) text.textContent = 'Complete';
+      } else if (status === 'started') {
+        item.classList.add('status-progress');
+        if (icon) icon.textContent = '🔄';
+        if (text) text.textContent = 'In Progress';
+      } else {
+        item.classList.add('status-none');
+        if (icon) icon.textContent = '○';
+        if (text) text.textContent = 'Not Started';
+      }
+    });
+  }
+
+  markStarted('course');
+  renderStatuses();
+
+  let courseCompletedThisLoad = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (courseCompletedThisLoad) return;
+      if (getScrollPercent() >= 80) {
+        courseCompletedThisLoad = true;
+        markCompleted('course');
+      }
+    },
+    { passive: true }
+  );
 </script>
 
 <script is:inline>
@@ -416,6 +534,63 @@ const LESSONS = [
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Me the Free Guide';
+      }
+    }
+  });
+</script>
+
+<script>
+  // Feature 9 — Email Course opt-in. POSTs to the same GHL-forwarding Pages
+  // Function pattern used by /api/lead (functions/api/email-course-lead.ts).
+  const emailCourseForm = document.getElementById('email-course-form') as HTMLFormElement | null;
+  const emailCourseError = document.getElementById('email-course-form-error');
+  const emailCourseSuccess = document.getElementById('email-course-form-success');
+
+  emailCourseForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (emailCourseError) {
+      emailCourseError.hidden = true;
+      emailCourseError.textContent = '';
+    }
+
+    const formData = new FormData(emailCourseForm);
+    const payload = {
+      first_name: String(formData.get('firstName') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      website: String(formData.get('website') ?? ''),
+      tcpaConsent: emailCourseForm.querySelector<HTMLInputElement>('#ec-tcpaConsent')?.checked === true,
+      pagePath: window.location.pathname,
+    };
+
+    const submitBtn = emailCourseForm.querySelector<HTMLButtonElement>('.form-submit');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const res = await fetch('/api/email-course-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+
+      if (res.ok && data.ok) {
+        emailCourseForm.hidden = true;
+        if (emailCourseSuccess) emailCourseSuccess.hidden = false;
+      } else {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      if (emailCourseError) {
+        emailCourseError.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+        emailCourseError.hidden = false;
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Start the Email Course →';
       }
     }
   });
@@ -688,4 +863,73 @@ const LESSONS = [
   .course-lead-inner .form-submit { width: 100%; margin-top: 0.5rem; }
   .course-lead-inner .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
   .course-lead-inner .form-success p { font-weight: 600; }
+
+  .lesson-status-section {
+    padding: 1.5rem 0 0.5rem;
+  }
+  .lesson-status-section h2 { text-align: center; margin-bottom: 0.25rem; }
+  .lesson-status-sub {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin: 0 0 1.25rem;
+  }
+  .lesson-status-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .lesson-status-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.2s ease;
+  }
+  .lesson-status-item.status-complete a { border-color: #51decc; }
+  .lesson-status-icon { font-size: 1.1rem; }
+  .lesson-status-label { flex: 1; font-weight: 600; }
+  .lesson-status-text { font-size: 0.85rem; color: var(--color-text-muted); }
+
+  .email-course-section {
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-alt);
+  }
+  .email-course-inner { max-width: 480px; margin: 0 auto; text-align: center; }
+  .email-course-inner h2 { margin-bottom: 0.4rem; }
+  .email-course-sub { color: var(--color-text-muted); margin-bottom: 1.75rem; }
+  .email-course-inner .lead-form { text-align: left; }
+  .email-course-inner .form-row { margin-bottom: 1rem; }
+  .email-course-inner .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .email-course-inner .form-row input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+  .email-course-inner .form-row-checkbox { margin-bottom: 1.25rem; }
+  .email-course-inner .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+  .email-course-inner .checkbox-label input { margin-top: 0.2rem; }
+  .email-course-inner .hp-field { position: absolute; left: -9999px; }
+  .email-course-inner .form-submit { width: 100%; margin-top: 0.5rem; }
+  .email-course-inner .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
+  .email-course-inner .form-success p { font-weight: 600; }
 </style>

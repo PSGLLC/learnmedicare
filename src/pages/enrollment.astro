@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MarkCompleteButton from '../components/MarkCompleteButton.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
@@ -129,6 +130,8 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <MarkCompleteButton slug="enrollment" />
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">

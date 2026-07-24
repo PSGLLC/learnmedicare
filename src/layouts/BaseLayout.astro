@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import StickyGuideCTA from '../components/StickyGuideCTA.astro';
 import LessonProgress from '../components/LessonProgress.astro';
+import CourseProgressBar from '../components/CourseProgressBar.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
 
@@ -42,6 +43,10 @@ const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const showStickyGuideCTA = normalizedPath !== '/guide';
 const LESSON_PATHS = ['/basics', '/enrollment', '/coverage', '/penalties', '/working-at-65'];
 const showLessonProgress = LESSON_PATHS.includes(normalizedPath);
+// Feature 8 (Course Progress Tracking) — slug used as the localStorage key
+// for the current lesson page; drives CourseProgressBar + the footer's
+// "Reset Progress" link on the same 5 pages.
+const currentLessonSlug = normalizedPath.replace(/^\//, '');
 ---
 <!doctype html>
 <html lang="en">
@@ -100,10 +105,11 @@ const showLessonProgress = LESSON_PATHS.includes(normalizedPath);
   <body>
     <Nav />
     {showLessonProgress && <LessonProgress />}
+    {showLessonProgress && <CourseProgressBar slug={currentLessonSlug} />}
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer showResetProgress={showLessonProgress} />
     {showStickyGuideCTA && <StickyGuideCTA />}
     <script src="https://partner.priceservicesgroup.com/psg-tracker.js" defer></script>
   </body>

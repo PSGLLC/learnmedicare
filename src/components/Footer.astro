@@ -1,6 +1,11 @@
 ---
 import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS } from '../site.config';
 const year = 2026;
+
+interface Props {
+  showResetProgress?: boolean;
+}
+const { showResetProgress = false } = Astro.props;
 ---
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -23,6 +28,11 @@ const year = 2026;
       <p class="tpmo">{COMPLIANCE.tpmo}</p>
       <p class="legal-links">
         <a href="/privacy">Privacy Policy</a> &bull; <a href="/terms">Terms of Use</a>
+        {showResetProgress && (
+          <>
+            &bull; <button type="button" id="reset-progress-link" class="reset-progress-link">Reset Progress</button>
+          </>
+        )}
       </p>
       <p class="copyright">&copy; {year} Price Services Group LLC. {TAGLINE}</p>
     </div>
@@ -77,4 +87,29 @@ const year = 2026;
     color: #b6a4cb;
     margin: 0;
   }
+  .reset-progress-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: #b6a4cb;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .reset-progress-link:hover {
+    color: var(--color-teal);
+  }
 </style>
+
+{showResetProgress && (
+  <script>
+    import { resetProgress } from '../scripts/course-progress';
+
+    document.getElementById('reset-progress-link')?.addEventListener('click', () => {
+      if (window.confirm('Reset your course progress? This clears completed/started status for all lessons on this device.')) {
+        resetProgress();
+        window.location.reload();
+      }
+    });
+  </script>
+)}

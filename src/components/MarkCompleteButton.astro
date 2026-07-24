@@ -1,0 +1,52 @@
+---
+// Feature 8 — explicit "Mark Complete" control for a lesson page, placed at
+// the end of the lesson content. Works alongside the 80%-scroll
+// auto-completion in CourseProgressBar.astro.
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+---
+<div class="mark-complete-wrap">
+  <button type="button" class="btn btn-outline mark-complete-btn" id="mark-complete-btn" data-slug={slug}>
+    Mark Complete
+  </button>
+  <p class="mark-complete-status" id="mark-complete-status" hidden>&#10003; Lesson marked complete</p>
+</div>
+
+<style>
+  .mark-complete-wrap {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .mark-complete-status {
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: var(--color-teal, #51decc);
+  }
+</style>
+
+<script>
+  import { markCompleted, getStatus } from '../scripts/course-progress';
+
+  const btn = document.getElementById('mark-complete-btn');
+  const status = document.getElementById('mark-complete-status');
+  const slug = btn?.getAttribute('data-slug') || '';
+
+  function reflectState() {
+    if (!btn || !slug) return;
+    const isComplete = getStatus(slug) === 'completed';
+    (btn as HTMLButtonElement).disabled = isComplete;
+    btn.textContent = isComplete ? 'Completed' : 'Mark Complete';
+    if (status) status.hidden = !isComplete;
+  }
+
+  btn?.addEventListener('click', () => {
+    if (!slug) return;
+    markCompleted(slug);
+    reflectState();
+    document.dispatchEvent(new CustomEvent('lm-mark-complete', { detail: { slug } }));
+  });
+
+  reflectState();
+</script>

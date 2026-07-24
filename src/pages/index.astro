@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ResumeCard from '../components/ResumeCard.astro';
 import { BOOKING_URL } from '../site.config';
 import { authorship, dataset } from '../lib/schema';
 
@@ -98,6 +99,8 @@ const jsonLd = [
       <a href="/basics" class="btn btn-primary">Start Learning Free</a>
     </div>
   </section>
+
+  <ResumeCard />
 
   <section>
     <div class="container">
