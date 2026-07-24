@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -10,7 +14,18 @@ const jsonLd = [
       '@type': 'SpeakableSpecification',
       cssSelector: ['.quick-answer'],
     },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Part B Premium & Deductible 2026',
+    description: 'The standard Medicare Part B monthly premium ($202.90) and annual deductible ($283) for 2026, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
+  dataset({
+    name: 'Medicare Part D Annual Out-of-Pocket Cap 2026',
+    description: 'The 2026 Medicare Part D annual out-of-pocket spending cap ($2,100) on covered prescription drugs, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/drug-coverage-part-d/costs-for-medicare-drug-coverage',
+  }),
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

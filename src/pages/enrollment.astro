@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -10,7 +14,13 @@ const jsonLd = [
       '@type': 'SpeakableSpecification',
       cssSelector: ['.quick-answer'],
     },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Enrollment Periods (IEP, GEP, AEP)',
+    description: 'Official Medicare enrollment period definitions and dates — Initial Enrollment Period, General Enrollment Period, and the October 15–December 7 Annual Enrollment Period.',
+    creatorUrl: 'https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start',
+  }),
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

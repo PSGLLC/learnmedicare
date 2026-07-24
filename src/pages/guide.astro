@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { BOOKING_URL } from '../site.config';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -8,7 +12,13 @@ const jsonLd = [
     '@type': 'WebPage',
     name: 'Free Turning 65 Medicare Guide',
     description: 'Request a free guide covering everything you need to know about turning 65 and Medicare, delivered by email.',
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Part B Premium & Part D Out-of-Pocket Cap 2026',
+    description: 'The 2026 standard Medicare Part B monthly premium, Part B annual deductible, and Part D annual out-of-pocket cap, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -112,7 +122,13 @@ const jsonLd = [
           <div class="form-row form-row-checkbox">
             <label class="checkbox-label" for="smsOptIn">
               <input type="checkbox" id="smsOptIn" name="smsOptIn" required />
-              <span>I agree to receive text messages from Price Services Group LLC. Message and data rates may apply.</span>
+              <span>
+                By submitting this form, I consent to be contacted by Price Services Group and
+                its licensed agents by phone (including autodialed calls), text message, and
+                email regarding Medicare plan options. I understand I can revoke this consent at
+                any time by replying STOP to texts or contacting us directly. Message and data
+                rates may apply.
+              </span>
             </label>
           </div>
 

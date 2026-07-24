@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { BOOKING_URL } from '../site.config';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const lessons = [
   { n: 1, title: 'Medicare Options Overview', desc: 'A bird\'s-eye view of how Medicare fits together.' },
@@ -12,6 +16,40 @@ const lessons = [
 ];
 
 const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Learn Medicare — Free Medicare Education',
+    description: 'Free, unbiased Medicare education. Understand your options before you enroll.',
+    url: 'https://learnmedicare.org/',
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is Medicare?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS), primarily covering people 65 and older and certain younger people with qualifying disabilities.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is this free Medicare course really free?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. The six-lesson course, guides, and calculators on this site are free to use, with no obligation to purchase any insurance product.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Learn Medicare an official government resource?',
+        acceptedAnswer: { '@type': 'Answer', text: 'No. Learn Medicare is independent educational content produced by a licensed insurance agency, not an official Medicare or government website. For official guidance, visit Medicare.gov or call 1-800-MEDICARE.' },
+      },
+    ],
+  },
+  dataset({
+    name: 'Medicare Part B Standard Premium 2026',
+    description: 'The standard monthly Medicare Part B premium and annual deductible for 2026, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
   {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
@@ -162,12 +200,11 @@ const jsonLd = [
           <label class="checkbox-label" for="lead-tcpaConsent">
             <input type="checkbox" id="lead-tcpaConsent" name="tcpaConsent" required />
             <span>
-              By checking this box, I agree that Price Services Group LLC (or a licensed agent
-              calling on its behalf) may contact me by phone, text message, and email — including
-              using an automatic telephone dialing system or prerecorded/artificial voice messages
-              — at the phone number and email I provided, to discuss Medicare plan options. I
-              understand my consent is not a condition of purchasing any product or service,
-              message and data rates may apply, and I can revoke this consent at any time.
+              By submitting this form, I consent to be contacted by Price Services Group and its
+              licensed agents by phone (including autodialed calls), text message, and email
+              regarding Medicare plan options. I understand I can revoke this consent at any time
+              by replying STOP to texts or contacting us directly. Message and data rates may
+              apply.
             </span>
           </label>
         </div>

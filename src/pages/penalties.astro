@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -10,7 +14,13 @@ const jsonLd = [
       '@type': 'SpeakableSpecification',
       cssSelector: ['.quick-answer'],
     },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Part B & Part D Late Enrollment Penalty Rates',
+    description: 'Official CMS formulas for Medicare Part B (10% per 12-month period) and Part D (1% of national base beneficiary premium per month) late enrollment penalties.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

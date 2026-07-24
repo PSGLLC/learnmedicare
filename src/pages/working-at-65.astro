@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -10,7 +14,13 @@ const jsonLd = [
       '@type': 'SpeakableSpecification',
       cssSelector: ['.quick-answer'],
     },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Special Enrollment Period & Creditable Coverage Rules',
+    description: 'Official CMS/SSA rules on delaying Medicare with employer group coverage and the Special Enrollment Period for people working past 65.',
+    creatorUrl: 'https://www.ssa.gov/benefits/medicare/',
+  }),
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

@@ -1,5 +1,9 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const terms = [
   { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance), run directly by the federal government with no networks — any provider that accepts Medicare, anywhere in the country, will treat you." },
@@ -44,7 +48,13 @@ const jsonLd = [
       name: t.term,
       description: t.def,
     })),
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Part B/D Costs & IRMAA Thresholds 2026',
+    description: 'Official CMS figures underlying the glossary definitions on this page — Part B premium/deductible, Part D out-of-pocket cap, and IRMAA income thresholds for 2026.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

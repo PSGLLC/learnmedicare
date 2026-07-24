@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -7,7 +11,13 @@ const jsonLd = [
     '@type': 'WebPage',
     name: 'Medicare Calculators',
     description: 'Free interactive Medicare calculators covering Part B and Part D late enrollment penalties, Medicare Advantage vs. Medigap costs, IRMAA surcharges, and the retirement healthcare coverage gap.',
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare IRMAA Income Thresholds 2026',
+    description: 'Official CMS/SSA Income-Related Monthly Adjustment Amount (IRMAA) thresholds used in the Medicare Part B and Part D premium surcharge calculator on this page.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs/irmaa',
+  }),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

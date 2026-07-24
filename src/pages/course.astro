@@ -1,8 +1,14 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
+import { authorship } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
+
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   mainEntity: [
     {
       '@type': 'Question',
@@ -69,16 +75,17 @@ const courseJsonLd = {
     courseMode: 'online',
     courseWorkload: 'PT1H',
   },
+  ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
 };
 
 const jsonLd = [faqJsonLd, courseJsonLd];
 const LESSONS = [
-  { n: 1, title: 'Medicare Basics' },
-  { n: 2, title: 'Enrollment Periods' },
-  { n: 3, title: 'Coverage Options' },
-  { n: 4, title: 'Avoiding Penalties' },
-  { n: 5, title: 'Working Past 65' },
-  { n: 6, title: 'Putting It All Together' },
+  { n: 1, title: 'Medicare Basics', answer: 'Medicare is the federal health insurance program made up of four parts — A, B, C, and D — each covering a different piece of your care.' },
+  { n: 2, title: 'Enrollment Periods', answer: 'Your Initial Enrollment Period is a 7-month window centered on your 65th birthday; missing it can trigger a lasting late enrollment penalty.' },
+  { n: 3, title: 'Coverage Options', answer: 'Medicare Advantage and Medigap are two different paths to filling the gaps Original Medicare leaves behind, each with its own tradeoffs.' },
+  { n: 4, title: 'Avoiding Penalties', answer: 'The Part B and Part D late enrollment penalties are added to your premium for as long as you have that coverage, so enrolling on time matters.' },
+  { n: 5, title: 'Working Past 65', answer: 'If you have creditable employer coverage from a company with 20+ employees, you can often delay Medicare Part B without a penalty.' },
+  { n: 6, title: 'Putting It All Together', answer: 'Once you know your parts, timing, and coverage options, the next step is comparing specific plans against your own doctors, drugs, and budget.' },
 ];
 ---
 <MinimalLayout
@@ -139,6 +146,7 @@ const LESSONS = [
               <span class="vl-check" aria-hidden="true">&#10003;</span>
             </div>
             <h3>{lesson.title}</h3>
+            <p class="vl-answer">{lesson.answer}</p>
             <div class="vl-video-wrap" data-video-wrap data-video-src={`/videos/lesson${lesson.n}.mp4`}>
               <video
                 controls
@@ -506,6 +514,12 @@ const LESSONS = [
   .vl-card h3 {
     margin: 0 0 0.6rem;
     font-size: 1.05rem;
+  }
+  .vl-answer {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
   }
   .vl-card video {
     width: 100%;

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const faqs = [
   {
@@ -58,6 +62,7 @@ const jsonLd = [
     '@type': 'WebPage',
     name: 'Medicare FAQ',
     description: 'Get answers to the most common Medicare questions — eligibility, enrollment, costs, plan types, and more.',
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
   {
     '@context': 'https://schema.org',

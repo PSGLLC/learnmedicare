@@ -15,6 +15,12 @@
 - Calculators: https://learnmedicare.org/calculators/
 - Free T65 Guide: https://learnmedicare.org/guide/
 
+## Tools (agent-callable)
+- Discovery manifest: https://learnmedicare.org/.well-known/mcp.json
+- medicare_quiz — Medicare Decision Style Quiz, helps users identify their Medicare decision style: https://partner.priceservicesgroup.com/quiz
+- medicare_enrollment_info — Medicare enrollment period information and deadlines: https://learnmedicare.org/courses/medicare-101
+- No live read/write MCP execution endpoint (`/mcp`) is hosted on this domain today; the manifest above lists callable destinations rather than a JSON-RPC tool server.
+
 ## Compliance
 Educational content only, not medical, insurance, tax, or legal advice. Not affiliated with or endorsed by the U.S. government or the federal Medicare program. Licensed states: NC, SC, GA, FL, VA, MD, MI, KS, TX, OH.
 

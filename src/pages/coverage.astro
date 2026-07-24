@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-23';
 
 const jsonLd = [
   {
@@ -11,7 +15,13 @@ const jsonLd = [
       '@type': 'SpeakableSpecification',
       cssSelector: ['.quick-answer'],
     },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
+  dataset({
+    name: 'Medicare Advantage & Medigap Plan Structure',
+    description: 'Official CMS guidance comparing Medicare Advantage (Part C) plan structure and Medigap (Medicare Supplement) plan structure.',
+    creatorUrl: 'https://www.medicare.gov/health-drug-plans/medigap',
+  }),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

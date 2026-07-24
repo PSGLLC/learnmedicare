@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "tools": [
+    {
+      "name": "medicare_quiz",
+      "description": "Medicare Decision Style Quiz — helps users identify their Medicare decision style",
+      "url": "https://partner.priceservicesgroup.com/quiz"
+    },
+    {
+      "name": "medicare_enrollment_info",
+      "description": "Get Medicare enrollment period information and deadlines",
+      "url": "https://learnmedicare.org/courses/medicare-101"
+    }
+  ]
+}

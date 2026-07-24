@@ -76,6 +76,26 @@ const showLessonProgress = LESSON_PATHS.includes(normalizedPath);
         } catch (e) {}
       })();
     </script>
+    <script is:inline>
+      (function () {
+        try {
+          navigator.modelContext = {
+            tools: [
+              {
+                name: 'medicare_quiz',
+                description: 'Medicare Decision Style Quiz — helps users identify their Medicare decision style',
+                endpoint: '/.well-known/mcp.json',
+              },
+              {
+                name: 'medicare_enrollment_info',
+                description: 'Get Medicare enrollment period information and deadlines',
+                endpoint: '/.well-known/mcp.json',
+              },
+            ],
+          };
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <Nav />
