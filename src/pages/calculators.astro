@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const jsonLd = [
   {
@@ -21,6 +21,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
     mainEntity: [
       {
         '@type': 'Question',

@@ -3,11 +3,12 @@ import MinimalLayout from '../layouts/MinimalLayout.astro';
 import { authorship } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
   ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   mainEntity: [
     {

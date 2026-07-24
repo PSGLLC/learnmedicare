@@ -4,7 +4,7 @@ import MarkCompleteButton from '../components/MarkCompleteButton.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const jsonLd = [
   {
@@ -25,6 +25,7 @@ const jsonLd = [
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
   mainEntity: [
     {
       '@type': 'Question',
@@ -122,6 +123,11 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
+    Not sure how these penalties apply to your situation? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
+    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+  </p>
 
   <MarkCompleteButton slug="penalties" />
 

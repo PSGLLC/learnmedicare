@@ -3,7 +3,7 @@ import MinimalLayout from '../layouts/MinimalLayout.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const terms = [
   { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance), run directly by the federal government with no networks — any provider that accepts Medicare, anywhere in the country, will treat you." },
@@ -58,6 +58,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
     mainEntity: faqs.map(f => ({
       '@type': 'Question',
       name: f.q,
@@ -109,6 +110,10 @@ const jsonLd = [
         every one of these terms fits together, from Medicare basics through enrollment.
       </p>
       <a href="/course" class="btn btn-primary">Start the Free Medicare Course →</a>
+      <p style="margin-top:1.25rem;font-size:.95rem;">
+        Or <a href="https://partner.priceservicesgroup.com/quiz">take the Medicare Decision Style Quiz</a> or
+        <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+      </p>
     </div>
   </section>
 </MinimalLayout>

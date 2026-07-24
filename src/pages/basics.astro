@@ -4,7 +4,7 @@ import MarkCompleteButton from '../components/MarkCompleteButton.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-23';
+const DATE_MODIFIED = '2026-07-24';
 
 const jsonLd = [
   {
@@ -30,6 +30,7 @@ const jsonLd = [
   {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
   mainEntity: [
     {
       '@type': 'Question',
@@ -62,7 +63,7 @@ const jsonLd = [
 ---
 <BaseLayout
   title="What Is Medicare? The Basics Explained | Learn Medicare"
-  description="A plain-English breakdown of Medicare Parts A, B, C, and D — what each one covers and how they fit together."
+  description="What is Medicare? A plain-English guide to Parts A, B, C, and D — what each one covers, how they fit together, and which parts you actually need to enroll in."
   path="/basics/"
   breadcrumbs={[{ name: 'The Basics', url: '/basics/' }]}
   jsonLd={jsonLd}
@@ -134,6 +135,11 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
+    Want a quick starting point? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
+    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+  </p>
 
   <MarkCompleteButton slug="basics" />
 
