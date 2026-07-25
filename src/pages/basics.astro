@@ -35,27 +35,27 @@ const jsonLd = [
     {
       '@type': 'Question',
       name: 'What is Medicare Part A?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health care.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people don\'t pay a monthly premium for Part A because they or a spouse paid Medicare taxes while working.' },
     },
     {
       '@type': 'Question',
       name: 'What is Medicare Part B?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive services, and durable medical equipment.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Most people pay a monthly premium for Part B.' },
     },
     {
       '@type': 'Question',
-      name: 'What is Medicare Part C?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part C, also called Medicare Advantage, is an alternative way to get your Medicare benefits through private insurance companies approved by Medicare.' },
+      name: 'Do I need both Part A and Part B?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most people enroll in both. Part A alone doesn\'t cover doctor visits or outpatient care, and Part B alone doesn\'t cover hospital stays — together they form Original Medicare. Delaying Part B without other qualifying coverage can lead to a lasting late enrollment penalty.' },
     },
     {
       '@type': 'Question',
-      name: 'What is Medicare Part D?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part D is prescription drug coverage, offered through private insurance companies, either as a stand-alone plan or bundled into a Medicare Advantage plan.' },
+      name: "What's the difference between Medicare Advantage and Medigap?",
+      acceptedAnswer: { '@type': 'Answer', text: 'Medicare Advantage (Part C) replaces Original Medicare with a private plan, often bundling in Part D and extra benefits, but typically uses a provider network. Medigap works alongside Original Medicare to cover its gaps — like copays and deductibles — and lets you see any doctor nationwide who accepts Medicare, but doesn\'t include drug coverage.' },
     },
     {
       '@type': 'Question',
-      name: "What's the difference between Part A and Part B?",
-      acceptedAnswer: { '@type': 'Answer', text: "Part A covers hospital and inpatient-related care and is usually premium-free, while Part B covers doctor visits, outpatient care, and preventive services and generally requires a monthly premium." },
+      name: 'When does Medicare coverage start?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If you sign up during the 3 months before your 65th birthday month, coverage starts the first day of your birthday month. Signing up during your birthday month or the 3 months after can delay your start date by one to three months.' },
     },
     ],
   },
@@ -73,6 +73,7 @@ const jsonLd = [
       <p class="eyebrow">The Basics</p>
       <h1>What is Medicare?</h1>
       <p class="subhead">Medicare can feel like alphabet soup. Let's break it down in plain English — no jargon.</p>
+      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
     </div>
   </section>
 
@@ -136,10 +137,104 @@ const jsonLd = [
     </div>
   </section>
 
-  <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
-    Want a quick starting point? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
-    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
-  </p>
+  <section class="section-alt">
+    <div class="container">
+      <h2>Common Medicare Misconceptions</h2>
+      <p>
+        Medicare is one of the most misunderstood federal programs, partly because it changed so much over the
+        decades and partly because the rules genuinely are complicated. Here are a few of the misconceptions
+        we hear most often.
+      </p>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>"Medicare covers everything once I turn 65."</h3>
+          <p>
+            Original Medicare (Parts A and B) doesn't cover most dental, vision, or hearing care, and it
+            doesn't cap your out-of-pocket costs. That's exactly the gap that Medicare Advantage plans and
+            Medigap policies exist to fill — see <a href="/coverage">how they compare</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"I can sign up for Medicare whenever I want."</h3>
+          <p>
+            Medicare has specific enrollment windows, and missing them can mean a permanent late enrollment
+            penalty added to your premium for as long as you have that coverage. See our full breakdown of
+            <a href="/enrollment">when to enroll</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"Medicare is free."</h3>
+          <p>
+            Part A is usually premium-free if you or a spouse paid Medicare taxes while working, but Part B
+            carries a standard monthly premium ($202.90 in 2026), and most people also pay for Part D or a
+            Medicare Advantage plan's associated costs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"If I have employer coverage, I don't need to think about Medicare."</h3>
+          <p>
+            Depending on the size of your employer and how their group plan coordinates with Medicare, delaying
+            enrollment could still trigger a penalty later. See <a href="/working-at-65">how Medicare interacts
+            with employer coverage</a> before you assume you're covered.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What is Medicare Part A?</summary>
+          <p>Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing
+            facility care, hospice, and some home health care. Most people don't pay a monthly premium for
+            Part A because they or a spouse paid Medicare taxes while working.</p>
+        </details>
+        <details>
+          <summary>What is Medicare Part B?</summary>
+          <p>Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive
+            services like screenings and vaccines, and durable medical equipment. Most people pay a monthly
+            premium for Part B.</p>
+        </details>
+        <details>
+          <summary>Do I need both Part A and Part B?</summary>
+          <p>Most people enroll in both. Part A alone doesn't cover doctor visits or outpatient care, and
+            Part B alone doesn't cover hospital stays — together they form Original Medicare. Delaying Part B
+            without other qualifying coverage can lead to a lasting late enrollment penalty.</p>
+        </details>
+        <details>
+          <summary>What's the difference between Medicare Advantage and Medigap?</summary>
+          <p>Medicare Advantage (Part C) replaces Original Medicare with a private plan, often bundling in
+            Part D and extra benefits, but typically uses a provider network. Medigap works alongside Original
+            Medicare to cover its gaps — like copays and deductibles — and lets you see any doctor nationwide
+            who accepts Medicare, but doesn't include drug coverage.</p>
+        </details>
+        <details>
+          <summary>When does Medicare coverage start?</summary>
+          <p>If you sign up during the 3 months before your 65th birthday month, coverage starts the first day
+            of your birthday month. Signing up during your birthday month or the 3 months after can delay your
+            start date by one to three months.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Next Steps</h2>
+      <p>Once you understand the basics, here's a simple checklist to work through before you enroll:</p>
+      <ul class="checklist">
+        <li>Confirm your work-history eligibility for premium-free Part A through the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.</li>
+        <li>Mark your Initial Enrollment Period on a calendar — see <a href="/enrollment">when to enroll</a> to find your exact window.</li>
+        <li>If you're still working, check <a href="/working-at-65">how employer coverage affects your timing</a> before you decide to delay.</li>
+        <li>Compare Medicare Advantage and Medigap to see <a href="/coverage">which path fits your situation</a>.</li>
+        <li>Understand how <a href="/penalties">late enrollment penalties</a> are calculated so you know what's at stake.</li>
+        <li>When you're ready for personalized guidance, <a href="https://partner.priceservicesgroup.com/quiz">take the Medicare Decision Style Quiz</a> or <a href="https://priceservicesgroup.com/contact">schedule a free consultation</a>.</li>
+      </ul>
+    </div>
+  </section>
 
   <MarkCompleteButton slug="basics" />
 
@@ -179,4 +274,35 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
+
+  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .faq-list details {
+    background: var(--color-bg-alt, #f8f5fb);
+    border: 1px solid var(--color-lavender);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
+  .faq-list summary {
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-heading);
+  }
+  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
+
+  .checklist { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+  .checklist li {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-teal);
+    font-weight: 700;
+  }
 </style>

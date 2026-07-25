@@ -68,6 +68,7 @@ const jsonLd = [
       <p class="eyebrow">Enrollment</p>
       <h1>When can you enroll in Medicare?</h1>
       <p class="subhead">Medicare has several enrollment windows. Knowing which one applies to you helps you avoid gaps in coverage and unnecessary penalties.</p>
+      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
     </div>
   </section>
 
@@ -132,6 +133,40 @@ const jsonLd = [
     </div>
   </section>
 
+  <section class="section-alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What is the Initial Enrollment Period (IEP)?</summary>
+          <p>The IEP is a 7-month window around your 65th birthday (the 3 months before, the month of, and
+            the 3 months after) when you can first sign up for Medicare.</p>
+        </details>
+        <details>
+          <summary>What is a Special Enrollment Period (SEP)?</summary>
+          <p>A SEP lets you enroll or make changes outside normal windows because of a qualifying life event,
+            such as losing employer coverage or moving.</p>
+        </details>
+        <details>
+          <summary>What is the General Enrollment Period (GEP)?</summary>
+          <p>The GEP runs January 1 through March 31 each year for people who missed their Initial Enrollment
+            Period and don't qualify for a Special Enrollment Period.</p>
+        </details>
+        <details>
+          <summary>What is the Annual Enrollment Period (AEP)?</summary>
+          <p>AEP runs October 15 through December 7 each year. It's when anyone already on Medicare can change
+            Medicare Advantage or Part D plans for the following year.</p>
+        </details>
+        <details>
+          <summary>What happens if I miss my Initial Enrollment Period?</summary>
+          <p>If you miss your IEP and don't qualify for a Special Enrollment Period, you'll generally need to
+            wait for the General Enrollment Period (Jan 1 – Mar 31), and you may face late enrollment penalties
+            for Part B and Part D.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
     Not sure which enrollment window applies to you? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
     <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
@@ -175,4 +210,17 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
+
+  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .faq-list details {
+    background: var(--color-bg-alt, #f8f5fb);
+    border: 1px solid var(--color-lavender);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
+  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
+  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>

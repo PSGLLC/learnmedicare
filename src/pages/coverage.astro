@@ -64,6 +64,7 @@ const jsonLd = [
       <p class="eyebrow">Coverage Options</p>
       <h1>Medicare Advantage vs. Medigap</h1>
       <p class="subhead">Two different paths to covering the gaps Original Medicare leaves behind. Neither is universally "better" — the right fit depends on your health, budget, and priorities.</p>
+      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
     </div>
   </section>
 
@@ -151,6 +152,34 @@ const jsonLd = [
     </div>
   </section>
 
+  <section class="section-alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Can I switch from Medicare Advantage to Medigap later?</summary>
+          <p>You can generally switch, but outside of certain protected windows, a Medigap insurer may use
+            medical underwriting to accept or deny your application or charge more based on health history.</p>
+        </details>
+        <details>
+          <summary>Does Medicare Advantage or Medigap have lower monthly premiums?</summary>
+          <p>Medicare Advantage plans often have lower monthly premiums, sometimes $0, while Medigap plans
+            generally carry higher monthly premiums in exchange for more predictable cost-sharing.</p>
+        </details>
+        <details>
+          <summary>Do Medicare Advantage plans restrict which doctors I can see?</summary>
+          <p>Usually, yes. Medicare Advantage plans typically use HMO or PPO provider networks, while Medigap
+            lets you see any doctor nationwide who accepts Medicare.</p>
+        </details>
+        <details>
+          <summary>Does Medigap include prescription drug coverage?</summary>
+          <p>No. Medigap plans typically don't include drug coverage, so you'd need to pair a Medigap policy
+            with a separate Part D plan.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
     Still weighing your options? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
     <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
@@ -195,4 +224,17 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
+
+  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .faq-list details {
+    background: var(--color-bg-alt, #f8f5fb);
+    border: 1px solid var(--color-lavender);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
+  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
+  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>
