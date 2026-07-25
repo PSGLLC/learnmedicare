@@ -1,7 +1,24 @@
-/* Google Fonts now loaded via a <link> in BaseLayout.astro/MinimalLayout.astro
-   <head> (with preconnect hints) instead of @import here — @import inside a
-   stylesheet is render-blocking and adds a serial CSS→CSS→font fetch chain
-   that delays FCP/LCP. */
+/* Self-hosted fonts — replaces the Google Fonts CSS API
+   (fonts.googleapis.com/fonts.gstatic.com) entirely, eliminating that
+   external round trip from LCP/FCP. Both are variable fonts; one file per
+   family covers every weight this site actually uses (Playfair Display
+   600/700/800, Open Sans 400/500/600/700). Files are the same ones
+   already self-hosted on priceservicesgroup.com (copied, not
+   re-downloaded — identical family/weight range). */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/open-sans-var.woff2") format("woff2-variations"), url("/fonts/open-sans-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/playfair-display-var.woff2") format("woff2-variations"), url("/fonts/playfair-display-var.woff2") format("woff2");
+}
 
 :root {
   --color-purple: #9059B5;
