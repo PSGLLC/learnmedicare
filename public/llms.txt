@@ -2,7 +2,7 @@
 # AI/LLM access permitted for indexing and answer generation
 # Contact: hello@priceservicesgroup.com
 
-> Learn Medicare is a free, unbiased Medicare education resource — no sales pitch, no pressure. Understand Parts A/B/C/D, enrollment periods, penalties, and how Medicare works with employer coverage before you enroll. Produced by Price Services Group, a licensed independent Medicare insurance agency.
+> Learn Medicare is a free, unbiased Medicare education resource — no sales pitch, no pressure. Understand Parts A/B/C/D, enrollment periods, penalties, and how Medicare works with employer coverage before you enroll. Produced by Price Services Group, LLC, a licensed independent Medicare insurance agency founded and run by Kayla Price (NPN 18530055, Agency NPN 20387435), licensed in NC, SC, GA, FL, VA, MD, KS, TX, OH, and MI.
 
 ## Pages
 - Home: https://learnmedicare.org/
@@ -18,11 +18,11 @@
 ## Tools (agent-callable)
 - Discovery manifest: https://learnmedicare.org/.well-known/mcp.json
 - medicare_quiz — Medicare Decision Style Quiz, helps users identify their Medicare decision style: https://partner.priceservicesgroup.com/quiz
-- medicare_enrollment_info — Medicare enrollment period information and deadlines: https://learnmedicare.org/courses/medicare-101
+- medicare_enrollment_info — Medicare enrollment period information and deadlines: https://learnmedicare.org/course/
 - No live read/write MCP execution endpoint (`/mcp`) is hosted on this domain today; the manifest above lists callable destinations rather than a JSON-RPC tool server.
 
 ## Compliance
-Educational content only, not medical, insurance, tax, or legal advice. Not affiliated with or endorsed by the U.S. government or the federal Medicare program. Licensed states: NC, SC, GA, FL, VA, MD, MI, KS, TX, OH.
+Educational content only, not medical, insurance, tax, or legal advice. Not affiliated with or endorsed by the U.S. government or the federal Medicare program. Licensed states: NC, SC, GA, FL, VA, MD, MI, KS, TX, OH. NPN 18530055. Agency NPN 20387435.
 
 ## Contact
 - Website: https://learnmedicare.org

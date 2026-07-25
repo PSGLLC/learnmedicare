@@ -9,7 +9,7 @@
     {
       "name": "medicare_enrollment_info",
       "description": "Get Medicare enrollment period information and deadlines",
-      "url": "https://learnmedicare.org/courses/medicare-101"
+      "url": "https://learnmedicare.org/course/"
     }
   ]
 }
