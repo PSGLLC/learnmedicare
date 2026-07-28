@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResumeCard from '../components/ResumeCard.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { BOOKING_URL } from '../site.config';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: 'What is Medicare?', answer: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS), primarily covering people 65 and older and certain younger people with qualifying disabilities.' },
+  { question: 'Is this free Medicare course really free?', answer: 'Yes. The six-lesson course, guides, and calculators on this site are free to use, with no obligation to purchase any insurance product.' },
+  { question: 'Is Learn Medicare an official government resource?', answer: 'No. Learn Medicare is independent educational content produced by a licensed insurance agency, not an official Medicare or government website. For official guidance, visit Medicare.gov or call 1-800-MEDICARE.' },
+];
 
 const lessons = [
   { n: 1, title: 'Medicare Options Overview', desc: 'A bird\'s-eye view of how Medicare fits together.' },
@@ -24,28 +31,6 @@ const jsonLd = [
     description: 'Free, unbiased Medicare education. Understand your options before you enroll.',
     url: 'https://learnmedicare.org/',
     ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is Medicare?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS), primarily covering people 65 and older and certain younger people with qualifying disabilities.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is this free Medicare course really free?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Yes. The six-lesson course, guides, and calculators on this site are free to use, with no obligation to purchase any insurance product.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is Learn Medicare an official government resource?',
-        acceptedAnswer: { '@type': 'Answer', text: 'No. Learn Medicare is independent educational content produced by a licensed insurance agency, not an official Medicare or government website. For official guidance, visit Medicare.gov or call 1-800-MEDICARE.' },
-      },
-    ],
   },
   dataset({
     name: 'Medicare Part B Standard Premium 2026',
@@ -241,6 +226,8 @@ const jsonLd = [
       </p>
     </div>
   </section>
+
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt">
     <div class="container">

@@ -1,9 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: 'Are these Medicare calculators free to use?', answer: 'Yes. All calculators on this page are free, run instantly in your browser, and require no sign-up or personal information.' },
+  { question: 'How is the Medicare Part B late enrollment penalty calculated?', answer: "The Part B penalty adds roughly 10% to your monthly premium for each full 12-month period you were eligible for Part B but didn't enroll and didn't have other creditable coverage. This penalty is generally permanent for as long as you have Part B." },
+  { question: 'What is IRMAA and how does it affect my premium?', answer: 'IRMAA (Income-Related Monthly Adjustment Amount) is a surcharge added to Part B and Part D premiums for higher-income beneficiaries, based on your reported income from two years prior.' },
+  { question: 'Can a calculator tell me exactly what I will pay?', answer: 'These calculators provide estimates based on the figures you enter and current published formulas. Your actual costs depend on your specific enrollment history, income, and plan choice — a licensed agent can confirm exact numbers for your situation.' },
+];
 
 const jsonLd = [
   {
@@ -18,33 +28,6 @@ const jsonLd = [
     description: 'Official CMS/SSA Income-Related Monthly Adjustment Amount (IRMAA) thresholds used in the Medicare Part B and Part D premium surcharge calculator on this page.',
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs/irmaa',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Are these Medicare calculators free to use?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Yes. All calculators on this page are free, run instantly in your browser, and require no sign-up or personal information.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How is the Medicare Part B late enrollment penalty calculated?',
-        acceptedAnswer: { '@type': 'Answer', text: "The Part B penalty adds roughly 10% to your monthly premium for each full 12-month period you were eligible for Part B but didn't enroll and didn't have other creditable coverage. This penalty is generally permanent for as long as you have Part B." },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is IRMAA and how does it affect my premium?',
-        acceptedAnswer: { '@type': 'Answer', text: 'IRMAA (Income-Related Monthly Adjustment Amount) is a surcharge added to Part B and Part D premiums for higher-income beneficiaries, based on your reported income from two years prior.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can a calculator tell me exactly what I will pay?',
-        acceptedAnswer: { '@type': 'Answer', text: 'These calculators provide estimates based on the figures you enter and current published formulas. Your actual costs depend on your specific enrollment history, income, and plan choice — a licensed agent can confirm exact numbers for your situation.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -54,6 +37,7 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Calculators', url: '/calculators/' }]}
   jsonLd={jsonLd}
 >
+  <BreadcrumbNav crumbs={[{ name: 'Calculators', url: '/calculators/' }]} />
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Calculators</p>
@@ -62,6 +46,7 @@ const jsonLd = [
         Five interactive tools to help you estimate penalties, compare coverage costs, and plan
         ahead. Enter your numbers below — everything calculates instantly right here on the page.
       </p>
+      <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
     </div>
   </section>
 
@@ -240,6 +225,8 @@ const jsonLd = [
       </p>
     </div>
   </section>
+
+  <FAQSection faqs={faqs} />
 </BaseLayout>
 
 <script>

@@ -1,10 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { BOOKING_URL } from '../site.config';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: 'What does the free Turning 65 Medicare Guide cover?', answer: 'The guide walks through Medicare Parts A, B, C, and D in plain English, a timeline of enrollment periods so you don\'t miss a deadline, an overview of Medicare Advantage vs. Medigap, how to avoid late enrollment penalties, and tips for coordinating Medicare with employer coverage.' },
+  { question: 'How do I get the free guide?', answer: 'Fill out the short form on this page with your name, email, and phone number, and we\'ll email you the full guide.' },
+  { question: 'Is the guide free and is there any obligation?', answer: 'Yes, the guide is completely free and educational. It does not recommend any specific insurance plan, and requesting it doesn\'t obligate you to buy anything.' },
+  { question: 'Who is the Turning 65 Medicare Guide for?', answer: 'It\'s designed for anyone approaching age 65 who wants a clear, no-pressure walkthrough of their Medicare enrollment timing and coverage options before making a decision.' },
+];
 
 const jsonLd = [
   {
@@ -19,33 +29,6 @@ const jsonLd = [
     description: 'The 2026 standard Medicare Part B monthly premium, Part B annual deductible, and Part D annual out-of-pocket cap, as published by CMS.',
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What does the free Turning 65 Medicare Guide cover?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The guide walks through Medicare Parts A, B, C, and D in plain English, a timeline of enrollment periods so you don\'t miss a deadline, an overview of Medicare Advantage vs. Medigap, how to avoid late enrollment penalties, and tips for coordinating Medicare with employer coverage.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How do I get the free guide?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Fill out the short form on this page with your name, email, and phone number, and we\'ll email you the full guide.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is the guide free and is there any obligation?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Yes, the guide is completely free and educational. It does not recommend any specific insurance plan, and requesting it doesn\'t obligate you to buy anything.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Who is the Turning 65 Medicare Guide for?',
-        acceptedAnswer: { '@type': 'Answer', text: 'It\'s designed for anyone approaching age 65 who wants a clear, no-pressure walkthrough of their Medicare enrollment timing and coverage options before making a decision.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -55,6 +38,7 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Free Guide', url: '/guide/' }]}
   jsonLd={jsonLd}
 >
+  <BreadcrumbNav crumbs={[{ name: 'Free Guide', url: '/guide/' }]} />
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Free Guide</p>
@@ -63,6 +47,7 @@ const jsonLd = [
         A clear, no-pressure walkthrough of everything you need to know before you turn 65 —
         enrollment timing, coverage options, and how to avoid costly penalties.
       </p>
+      <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
     </div>
   </section>
 
@@ -399,6 +384,8 @@ const jsonLd = [
     Want a quick starting point first? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
     <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
   </p>
+
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">

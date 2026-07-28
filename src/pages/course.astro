@@ -1,43 +1,20 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-  ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What does the free Medicare course teach?',
-      acceptedAnswer: { '@type': 'Answer', text: 'The course covers everything you need to know before you enroll in Medicare, broken into six self-paced lessons.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is the Medicare course really free?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, the course is completely free to take, with no obligation to purchase any insurance plan.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does the course take to complete?',
-      acceptedAnswer: { '@type': 'Answer', text: 'It\'s self-paced, so you can go through the six lessons on your own schedule and revisit them any time.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need to create an account to take the course?',
-      acceptedAnswer: { '@type': 'Answer', text: 'No account is required — the course loads directly on this page, or you can watch it at course.learnmedicare.org.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is this official Medicare guidance?',
-      acceptedAnswer: { '@type': 'Answer', text: 'No. This is independent educational content from a licensed insurance agency, not an official Medicare or government resource. For official guidance, always confirm details at Medicare.gov or 1-800-MEDICARE.' },
-    },
-  ],
-};
+const faqs = [
+  { question: 'What does the free Medicare course teach?', answer: 'The course covers everything you need to know before you enroll in Medicare, broken into six self-paced lessons.' },
+  { question: 'Is the Medicare course really free?', answer: 'Yes, the course is completely free to take, with no obligation to purchase any insurance plan.' },
+  { question: 'How long does the course take to complete?', answer: 'It\'s self-paced, so you can go through the six lessons on your own schedule and revisit them any time.' },
+  { question: 'Do I need to create an account to take the course?', answer: 'No account is required — the course loads directly on this page, or you can watch it at course.learnmedicare.org.' },
+  { question: 'Is this official Medicare guidance?', answer: 'No. This is independent educational content from a licensed insurance agency, not an official Medicare or government resource. For official guidance, always confirm details at Medicare.gov or 1-800-MEDICARE.' },
+];
 
 const courseJsonLd = {
   '@context': 'https://schema.org',
@@ -80,7 +57,7 @@ const courseJsonLd = {
   ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
 };
 
-const jsonLd = [faqJsonLd, courseJsonLd];
+const jsonLd = [courseJsonLd];
 const LESSONS = [
   { n: 1, title: 'Medicare Basics', answer: 'Medicare is the federal health insurance program made up of four parts — A, B, C, and D — each covering a different piece of your care.' },
   { n: 2, title: 'Enrollment Periods', answer: 'Your Initial Enrollment Period is a 7-month window centered on your 65th birthday; missing it can trigger a lasting late enrollment penalty.' },
@@ -104,6 +81,7 @@ const LESSON_STATUS_LINKS = [
   breadcrumbs={[{ name: 'Take the Course', url: '/course/' }]}
   jsonLd={jsonLd}
 >
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }]} />
   <section class="course-hero">
     <div class="container">
       <h1>Free Medicare Course</h1>
@@ -111,6 +89,7 @@ const LESSON_STATUS_LINKS = [
         Six self-paced lessons covering everything you need to know before you enroll in
         Medicare — no account, no login, and no cost to take it.
       </p>
+      <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
       <div class="course-hero-cta">
         <a href="#vl-grid" class="btn btn-primary">Start the Course</a>
         <a href="/guide" class="btn btn-outline">Prefer a written guide? Get it free by email &rarr;</a>
@@ -293,6 +272,8 @@ const LESSON_STATUS_LINKS = [
       </div>
     </div>
   </section>
+
+  <FAQSection faqs={faqs} />
 </MinimalLayout>
 
 <script>
