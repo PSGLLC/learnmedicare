@@ -9,6 +9,7 @@
 // this site has too few pages for that to matter.
 import { readFileSync, existsSync } from "node:fs";
 
+const PRODUCTION_BRANCH = "main";
 const HOST = "learnmedicare.org";
 const KEY = "9848f0a7d7faa14583fed70e6e6edd31";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
@@ -19,6 +20,17 @@ function extractLocs(xml) {
 }
 
 async function main() {
+  // Cloudflare runs this postbuild hook on every build — production,
+  // PR previews, and any local `npm run build` a developer runs to
+  // sanity-check a change. Only a real production deploy should ping the
+  // live IndexNow API with the full URL list.
+  if (!(process.env.CF_PAGES === "1" && process.env.CF_PAGES_BRANCH === PRODUCTION_BRANCH)) {
+    console.log(
+      `submit-indexnow: skipping (not a production Pages build — CF_PAGES=${process.env.CF_PAGES ?? "unset"}, CF_PAGES_BRANCH=${process.env.CF_PAGES_BRANCH ?? "unset"})`,
+    );
+    return;
+  }
+
   if (!existsSync(SITEMAP_INDEX)) {
     console.log("submit-indexnow: no dist/sitemap-index.xml found, skipping");
     return;
