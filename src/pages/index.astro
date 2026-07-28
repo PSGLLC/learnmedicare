@@ -84,6 +84,20 @@ const jsonLd = [
     '@type': 'SpeakableSpecification',
     cssSelector: ['.hero-inner h1', '.hero-inner .subhead'],
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Learn Medicare',
+    url: 'https://learnmedicare.org',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.google.com/search?q=site:learnmedicare.org+{search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
 ];
 ---
 <BaseLayout

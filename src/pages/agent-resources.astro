@@ -1,0 +1,143 @@
+---
+// Scaffolding-only page — foundation for a future agent training module.
+// Deliberately noindex'd (not ready for public indexing) and left out of
+// primary nav per the brief; reachable only by direct link for now.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+---
+<BaseLayout
+  title="Resources for Medicare Agents | Learn Medicare"
+  description="Agent training and resources coming soon from Learn Medicare. Join our network to get notified when the agent training module launches."
+  path="/agent-resources/"
+  breadcrumbs={[{ name: 'Agent Resources', url: '/agent-resources/' }]}
+  noindex
+>
+  <BreadcrumbNav crumbs={[{ name: 'Agent Resources', url: '/agent-resources/' }]} />
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">For Agents</p>
+      <h1>Resources for Medicare Agents</h1>
+      <p class="subhead">Agent training and resources coming soon. Join our network to get notified.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="agent-form-wrap">
+        <form id="agent-lead-form" class="agent-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="npn">NPN <span class="optional">(optional)</span></label>
+            <input type="text" id="npn" name="npn" autocomplete="off" />
+          </div>
+          <!-- Honeypot — hidden from real visitors -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Notify Me</button>
+          <p id="agent-form-error" class="form-error" role="alert" hidden></p>
+        </form>
+
+        <div id="agent-form-success" class="form-success" hidden>
+          <p>Thanks — you're on the list. We'll be in touch when agent resources launch.</p>
+        </div>
+
+        <p class="compliance-note">
+          By submitting this form you agree to be contacted by Price Services Group LLC.
+          We respect your privacy and will never sell your information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('agent-lead-form') as HTMLFormElement | null;
+    const errorEl = document.getElementById('agent-form-error');
+    const successEl = document.getElementById('agent-form-success');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get('name') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        npn: String(formData.get('npn') ?? '').trim(),
+        website: String(formData.get('website') ?? ''),
+        pagePath: window.location.pathname,
+      };
+
+      const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch('/api/agent-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({ ok: false }));
+
+        if (res.ok && data.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        if (errorEl) {
+          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          errorEl.hidden = false;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Notify Me';
+        }
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+
+  .agent-form-wrap { max-width: 460px; margin: 2rem auto; }
+  .agent-form { text-align: left; }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .optional { font-weight: 400; color: var(--color-text-muted); }
+  .form-row input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+  .hp-field { position: absolute; left: -9999px; }
+  .form-submit { width: 100%; margin-top: 0.5rem; }
+  .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
+  .form-success p { font-weight: 600; text-align: center; }
+  .compliance-note { color: var(--color-text-muted); font-size: 0.8rem; margin-top: 1.25rem; margin-bottom: 0; text-align: center; }
+</style>
