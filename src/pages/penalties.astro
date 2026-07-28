@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MarkCompleteButton from '../components/MarkCompleteButton.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: 'How is the Medicare Part B late enrollment penalty calculated?', answer: 'For each full 12-month period you were eligible for Part B but didn\'t enroll (and didn\'t have other creditable coverage), your monthly premium may go up by roughly 10%. This penalty generally lasts as long as you have Part B.' },
+  { question: 'How is the Medicare Part D late enrollment penalty calculated?', answer: 'The Part D penalty is generally about 1% of the national base beneficiary premium for each full month you went without creditable prescription drug coverage, added to your monthly Part D premium for as long as you have Part D coverage.' },
+  { question: 'How can I avoid the Medicare late enrollment penalties?', answer: 'Enroll during your Initial Enrollment Period, or make sure any coverage you keep instead (such as employer coverage) qualifies as creditable coverage so you avoid a penalty when you do eventually sign up.' },
+  { question: 'Do the Part B and Part D penalties ever go away?', answer: 'Generally, no. Both penalties are typically added to your premium for as long as you have that part of Medicare, which is why enrolling on time or maintaining creditable coverage matters.' },
+];
 
 const jsonLd = [
   {
@@ -23,31 +34,18 @@ const jsonLd = [
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
   }),
   {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How is the Medicare Part B late enrollment penalty calculated?',
-      acceptedAnswer: { '@type': 'Answer', text: 'For each full 12-month period you were eligible for Part B but didn\'t enroll (and didn\'t have other creditable coverage), your monthly premium may go up by roughly 10%. This penalty generally lasts as long as you have Part B.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How is the Medicare Part D late enrollment penalty calculated?',
-      acceptedAnswer: { '@type': 'Answer', text: 'The Part D penalty is generally about 1% of the national base beneficiary premium for each full month you went without creditable prescription drug coverage, added to your monthly Part D premium for as long as you have Part D coverage.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How can I avoid the Medicare late enrollment penalties?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Enroll during your Initial Enrollment Period, or make sure any coverage you keep instead (such as employer coverage) qualifies as creditable coverage so you avoid a penalty when you do eventually sign up.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do the Part B and Part D penalties ever go away?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Generally, no. Both penalties are typically added to your premium for as long as you have that part of Medicare, which is why enrolling on time or maintaining creditable coverage matters.' },
-    },
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Avoid Medicare Late Enrollment Penalties',
+    description: 'Steps to avoid permanent Part B and Part D late enrollment penalties.',
+    step: [
+      { '@type': 'HowToStep', name: 'Know your Initial Enrollment Period', text: 'Identify your 7-month Initial Enrollment Period, centered on your 65th birthday month.' },
+      { '@type': 'HowToStep', name: 'Confirm creditable coverage', text: 'If delaying Medicare, confirm any employer or other coverage you keep qualifies as "creditable coverage."' },
+      { '@type': 'HowToStep', name: 'Enroll in Part B on time', text: 'Sign up for Part B during your IEP or a valid Special Enrollment Period to avoid the roughly 10%-per-year penalty.' },
+      { '@type': 'HowToStep', name: 'Enroll in Part D or maintain drug coverage', text: 'Sign up for Part D, or maintain other creditable prescription drug coverage, to avoid the Part D penalty.' },
+      { '@type': 'HowToStep', name: 'Verify your enrollment', text: 'Confirm your enrollment went through and your coverage start date at Medicare.gov or SSA.gov.' },
     ],
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
 ];
 ---
@@ -58,13 +56,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Penalties', url: '/penalties/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Penalties</p>
-      <h1>Understanding Medicare late enrollment penalties</h1>
-      <p class="subhead">Enrolling late without other qualifying coverage can add a lasting penalty to your premiums. Here's how the math works.</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'Penalties', url: '/penalties/' }]} />
+  <PageHero
+    label="Penalties"
+    heading="Understanding Medicare late enrollment penalties"
+    subtext="Enrolling late without other qualifying coverage can add a lasting penalty to your premiums. Here's how the math works."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -124,9 +123,11 @@ const jsonLd = [
     </div>
   </section>
 
+  <FAQSection faqs={faqs} />
+
   <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
     Not sure how these penalties apply to your situation? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
-    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
   </p>
 
   <MarkCompleteButton slug="penalties" />
@@ -141,9 +142,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .example {
     margin-top: 1rem;
     padding: 1rem;

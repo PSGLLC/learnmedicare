@@ -1,0 +1,56 @@
+---
+// Single source of truth for FAQ content — renders the visible accordion
+// AND the FAQPage JSON-LD from the same `faqs` array, so pages no longer
+// hand-duplicate each Q&A once in HTML and once in a jsonLd block.
+import SchemaOrg from './SchemaOrg.astro';
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+interface Props {
+  faqs: FaqItem[];
+  heading?: string;
+  authorName?: string;
+  authorUrl?: string;
+}
+const { faqs, heading = 'Frequently Asked Questions', authorName = 'Kayla Price', authorUrl = 'https://priceservicesgroup.com' } = Astro.props;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  author: { '@type': 'Person', name: authorName, url: authorUrl },
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+<section class="faq-section">
+  <div class="container">
+    {heading && <h2>{heading}</h2>}
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<SchemaOrg schema={faqSchema} />
+
+<style>
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .faq-list details {
+    background: var(--color-bg-alt, #f8f5fb);
+    border: 1px solid var(--color-lavender);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+  }
+  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
+  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
+  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
+</style>

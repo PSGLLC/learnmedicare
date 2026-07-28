@@ -1,0 +1,46 @@
+---
+// Standardized CTA band. 'medicare' and 'aca' variants link to the two
+// fixed booking calendars used sitewide; 'general' just uses whatever
+// buttonUrl is passed (e.g. an internal /course or /coverage link).
+const MEDICARE_BOOKING_URL = 'https://host.safemsngr.com/widget/booking/A0NTF4B4d9I3h3wNvyIB';
+const ACA_BOOKING_URL = 'https://host.safemsngr.com/widget/bookings/psgllc-healthins';
+
+type Variant = 'medicare' | 'aca' | 'general';
+interface Props {
+  heading: string;
+  subtext?: string;
+  buttonText: string;
+  buttonUrl?: string;
+  variant?: Variant;
+}
+const { heading, subtext, buttonText, buttonUrl, variant = 'general' } = Astro.props;
+
+const href = variant === 'medicare' ? MEDICARE_BOOKING_URL : variant === 'aca' ? ACA_BOOKING_URL : (buttonUrl ?? '#');
+const isExternal = variant !== 'general' || /^https?:\/\//.test(href);
+---
+<section class:list={['cta-block', `cta-block-${variant}`]}>
+  <div class="container cta-block-inner">
+    <h2>{heading}</h2>
+    {subtext && <p>{subtext}</p>}
+    {isExternal ? (
+      <a href={href} target="_blank" rel="noopener noreferrer" class="btn btn-primary">{buttonText}</a>
+    ) : (
+      <a href={href} class="btn btn-primary">{buttonText}</a>
+    )}
+  </div>
+</section>
+
+<style>
+  .cta-block { text-align: center; padding: 3rem 0; }
+  .cta-block-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+  .cta-block-medicare { background: var(--color-lavender); }
+  :root[data-theme="dark"] .cta-block-medicare { background: rgba(144, 89, 181, 0.12); }
+  .cta-block-medicare .btn { background: var(--color-purple); border-color: var(--color-purple); color: #fff; }
+
+  .cta-block-aca { background: rgba(81, 222, 204, 0.14); }
+  :root[data-theme="dark"] .cta-block-aca { background: rgba(81, 222, 204, 0.08); }
+  .cta-block-aca .btn { background: var(--color-teal); border-color: var(--color-teal); color: var(--color-dark); }
+
+  .cta-block-general { background: var(--color-bg-alt); }
+</style>

@@ -1,10 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MarkCompleteButton from '../components/MarkCompleteButton.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-28';
+
+const faqs = [
+  { question: 'Can I switch from Medicare Advantage to Medigap later?', answer: 'You can generally switch, but outside of certain protected windows, a Medigap insurer may use medical underwriting to accept or deny your application or charge more based on health history.' },
+  { question: 'Does Medicare Advantage or Medigap have lower monthly premiums?', answer: 'Medicare Advantage plans often have lower monthly premiums, sometimes $0, while Medigap plans generally carry higher monthly premiums in exchange for more predictable cost-sharing.' },
+  { question: 'Do Medicare Advantage plans restrict which doctors I can see?', answer: 'Usually, yes. Medicare Advantage plans typically use HMO or PPO provider networks, while Medigap lets you see any doctor nationwide who accepts Medicare.' },
+  { question: 'Does Medigap include prescription drug coverage?', answer: 'No. Medigap plans typically don\'t include drug coverage, so you\'d need to pair a Medigap policy with a separate Part D plan.' },
+  { question: 'What does Original Medicare not cover?', answer: 'Original Medicare generally does not cover routine dental, vision, or hearing care, most long-term custodial care, and prescription drugs. These are the most common coverage gaps that Medicare Advantage extra benefits or Medigap plus a separate Part D plan are designed to help address.' },
+  { question: 'How does a Medicare Supplement plan fill Medicare\'s coverage gaps?', answer: 'A Medicare Supplement (Medigap) plan pays some or all of the out-of-pocket costs Original Medicare leaves behind, such as coinsurance, copayments, and deductibles, so you\'re not exposed to unlimited out-of-pocket costs when you need care.' },
+];
 
 const jsonLd = [
   {
@@ -23,43 +36,6 @@ const jsonLd = [
     description: 'Official CMS guidance comparing Medicare Advantage (Part C) plan structure and Medigap (Medicare Supplement) plan structure.',
     creatorUrl: 'https://www.medicare.gov/health-drug-plans/medigap',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Can I switch from Medicare Advantage to Medigap later?',
-        acceptedAnswer: { '@type': 'Answer', text: 'You can generally switch, but outside of certain protected windows, a Medigap insurer may use medical underwriting to accept or deny your application or charge more based on health history.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does Medicare Advantage or Medigap have lower monthly premiums?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Medicare Advantage plans often have lower monthly premiums, sometimes $0, while Medigap plans generally carry higher monthly premiums in exchange for more predictable cost-sharing.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Do Medicare Advantage plans restrict which doctors I can see?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Usually, yes. Medicare Advantage plans typically use HMO or PPO provider networks, while Medigap lets you see any doctor nationwide who accepts Medicare.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does Medigap include prescription drug coverage?',
-        acceptedAnswer: { '@type': 'Answer', text: 'No. Medigap plans typically don\'t include drug coverage, so you\'d need to pair a Medigap policy with a separate Part D plan.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What does Original Medicare not cover?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Original Medicare generally does not cover routine dental, vision, or hearing care, most long-term custodial care, and prescription drugs. These are the most common coverage gaps that Medicare Advantage extra benefits or Medigap plus a separate Part D plan are designed to help address.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does a Medicare Supplement plan fill Medicare\'s coverage gaps?',
-        acceptedAnswer: { '@type': 'Answer', text: 'A Medicare Supplement (Medigap) plan pays some or all of the out-of-pocket costs Original Medicare leaves behind, such as coinsurance, copayments, and deductibles, so you\'re not exposed to unlimited out-of-pocket costs when you need care.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -69,14 +45,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Coverage Options', url: '/coverage/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Coverage Options</p>
-      <h1>Medicare Advantage vs. Medigap</h1>
-      <p class="subhead">Two different paths to covering the gaps Original Medicare leaves behind. Neither is universally "better" — the right fit depends on your health, budget, and priorities.</p>
-      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'Coverage Options', url: '/coverage/' }]} />
+  <PageHero
+    label="Coverage Options"
+    heading="Medicare Advantage vs. Medigap"
+    subtext='Two different paths to covering the gaps Original Medicare leaves behind. Neither is universally "better" — the right fit depends on your health, budget, and priorities.'
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -218,49 +194,11 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>Can I switch from Medicare Advantage to Medigap later?</summary>
-          <p>You can generally switch, but outside of certain protected windows, a Medigap insurer may use
-            medical underwriting to accept or deny your application or charge more based on health history.</p>
-        </details>
-        <details>
-          <summary>Does Medicare Advantage or Medigap have lower monthly premiums?</summary>
-          <p>Medicare Advantage plans often have lower monthly premiums, sometimes $0, while Medigap plans
-            generally carry higher monthly premiums in exchange for more predictable cost-sharing.</p>
-        </details>
-        <details>
-          <summary>Do Medicare Advantage plans restrict which doctors I can see?</summary>
-          <p>Usually, yes. Medicare Advantage plans typically use HMO or PPO provider networks, while Medigap
-            lets you see any doctor nationwide who accepts Medicare.</p>
-        </details>
-        <details>
-          <summary>Does Medigap include prescription drug coverage?</summary>
-          <p>No. Medigap plans typically don't include drug coverage, so you'd need to pair a Medigap policy
-            with a separate Part D plan.</p>
-        </details>
-        <details>
-          <summary>What does Original Medicare not cover?</summary>
-          <p>Original Medicare generally does not cover routine dental, vision, or hearing care, most
-            long-term custodial care, and prescription drugs. These are the most common coverage gaps that
-            Medicare Advantage extra benefits or Medigap plus a separate Part D plan are designed to help address.</p>
-        </details>
-        <details>
-          <summary>How does a Medicare Supplement plan fill Medicare's coverage gaps?</summary>
-          <p>A Medicare Supplement (Medigap) plan pays some or all of the out-of-pocket costs Original
-            Medicare leaves behind, such as coinsurance, copayments, and deductibles, so you're not exposed
-            to unlimited out-of-pocket costs when you need care.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
     Still weighing your options? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
-    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
   </p>
 
   <MarkCompleteButton slug="coverage" />
@@ -275,9 +213,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .table-scroll { overflow-x: auto; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
@@ -302,17 +237,4 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
-
-  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .faq-list details {
-    background: var(--color-bg-alt, #f8f5fb);
-    border: 1px solid var(--color-lavender);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
-  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
-  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>

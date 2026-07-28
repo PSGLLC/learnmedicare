@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 import { BOOKING_URL } from '../site.config';
 
 const DATE_PUBLISHED = '2026-07-28';
 const DATE_MODIFIED = '2026-07-28';
+
+const faqs = [
+  { question: 'When is AEP 2026?', answer: 'AEP 2026 runs October 15 through December 7, 2026. Changes you make take effect January 1, 2027, for Plan Year 2027.' },
+  { question: 'What can I change during AEP?', answer: 'During AEP you can switch from one Medicare Advantage plan to another, switch from one Part D drug plan to another, join a Medicare Advantage or Part D plan for the first time, or drop Medicare Advantage and return to Original Medicare.' },
+  { question: 'Do I have to do anything during AEP if I like my current plan?', answer: 'You\'re not required to make a change, but it\'s worth a review every year — premiums, formularies, provider networks, and your own health needs can all shift from one plan year to the next, sometimes without much notice.' },
+  { question: 'Is a Medicare plan review during AEP free?', answer: 'Yes. A plan review with a licensed insurance agent is free and comes with no obligation to enroll in anything.' },
+];
 
 const jsonLd = [
   {
@@ -23,33 +34,6 @@ const jsonLd = [
     description: 'Official CMS guidance on the Annual Enrollment Period (AEP), which runs October 15 through December 7 each year.',
     creatorUrl: 'https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/when-do-i-sign-up',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'When is AEP 2026?',
-        acceptedAnswer: { '@type': 'Answer', text: 'AEP 2026 runs October 15 through December 7, 2026. Changes you make take effect January 1, 2027, for Plan Year 2027.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What can I change during AEP?',
-        acceptedAnswer: { '@type': 'Answer', text: 'During AEP you can switch from one Medicare Advantage plan to another, switch from one Part D drug plan to another, join a Medicare Advantage or Part D plan for the first time, or drop Medicare Advantage and return to Original Medicare.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Do I have to do anything during AEP if I like my current plan?',
-        acceptedAnswer: { '@type': 'Answer', text: 'You\'re not required to make a change, but it\'s worth a review every year — premiums, formularies, provider networks, and your own health needs can all shift from one plan year to the next, sometimes without much notice.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is a Medicare plan review during AEP free?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Yes. A plan review with a licensed insurance agent is free and comes with no obligation to enroll in anything.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -59,14 +43,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'AEP Guide', url: '/aep-guide/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Annual Enrollment</p>
-      <h1>AEP 2026 Runs October 15 – December 7</h1>
-      <p class="subhead">The Medicare Annual Enrollment Period is your yearly chance to change your coverage for Plan Year 2027. Here's what's on the table and how to make the most of it.</p>
-      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'AEP Guide', url: '/aep-guide/' }]} />
+  <PageHero
+    label="Annual Enrollment"
+    heading="AEP 2026 Runs October 15 – December 7"
+    subtext="The Medicare Annual Enrollment Period is your yearly chance to change your coverage for Plan Year 2027. Here's what's on the table and how to make the most of it."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -144,29 +128,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>When is AEP 2026?</summary>
-          <p>AEP 2026 runs October 15 through December 7, 2026. Changes you make take effect January 1, 2027, for Plan Year 2027.</p>
-        </details>
-        <details>
-          <summary>What can I change during AEP?</summary>
-          <p>During AEP you can switch from one Medicare Advantage plan to another, switch from one Part D drug plan to another, join a Medicare Advantage or Part D plan for the first time, or drop Medicare Advantage and return to Original Medicare.</p>
-        </details>
-        <details>
-          <summary>Do I have to do anything during AEP if I like my current plan?</summary>
-          <p>You're not required to make a change, but it's worth a review every year — premiums, formularies, provider networks, and your own health needs can all shift from one plan year to the next, sometimes without much notice.</p>
-        </details>
-        <details>
-          <summary>Is a Medicare plan review during AEP free?</summary>
-          <p>Yes. A plan review with a licensed insurance agent is free and comes with no obligation to enroll in anything.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">
@@ -178,9 +140,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
 
@@ -202,17 +161,4 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
-
-  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .faq-list details {
-    background: var(--color-bg-alt, #f8f5fb);
-    border: 1px solid var(--color-lavender);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
-  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
-  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>

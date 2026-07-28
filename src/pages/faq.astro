@@ -1,59 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
 
 const faqs = [
-  {
-    q: 'What is Medicare?',
-    a: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS). It primarily covers people age 65 and older, as well as certain younger people with qualifying disabilities or End-Stage Renal Disease (ESRD).',
-  },
-  {
-    q: 'Who is eligible for Medicare?',
-    a: "Most people become eligible at age 65 if they or a spouse have at least 10 years (40 quarters) of Medicare-covered employment. People under 65 may also qualify due to certain disabilities or a diagnosis of ESRD or ALS.",
-  },
-  {
-    q: 'When can I enroll in Medicare?',
-    a: 'Your Initial Enrollment Period runs 7 months — the 3 months before your 65th birthday month, your birthday month, and the 3 months after. Outside of that, there are also the Annual Enrollment Period (Oct 15–Dec 7), the Medicare Advantage Open Enrollment Period (Jan 1–Mar 31), and Special Enrollment Periods tied to certain life events.',
-  },
-  {
-    q: 'What is the difference between Medicare Advantage and Original Medicare?',
-    a: "Original Medicare (Parts A and B) is run directly by the federal government and lets you see any provider nationwide who accepts Medicare. Medicare Advantage (Part C) is an alternative way to get your Part A and B benefits through a private insurer, often bundling in Part D and extra benefits, but typically within a provider network.",
-  },
-  {
-    q: 'What does Medicare Part A cover?',
-    a: 'Part A generally covers inpatient hospital stays, care in a skilled nursing facility, hospice care, and some home health care. Most people don’t pay a monthly premium for Part A because of their work history.',
-  },
-  {
-    q: 'What does Medicare Part B cover?',
-    a: 'Part B generally covers doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Nearly everyone pays a monthly premium for Part B.',
-  },
-  {
-    q: 'What does Medicare Part D cover?',
-    a: "Part D covers prescription medications. It's offered through private insurance companies, either as a stand-alone plan alongside Original Medicare or bundled into a Medicare Advantage plan. Going without creditable drug coverage can lead to a lasting late enrollment penalty.",
-  },
-  {
-    q: 'What is a Medigap plan?',
-    a: 'A Medigap (Medicare Supplement) plan is private insurance that works alongside Original Medicare to help cover costs like copays, coinsurance, and deductibles that Medicare doesn’t pay. Medigap plans don’t work with Medicare Advantage and typically don’t include drug coverage.',
-  },
-  {
-    q: 'How much does Medicare cost?',
-    a: 'Costs vary by part and by plan. Part A is usually premium-free if you have enough work history. Part B has a standard monthly premium plus an annual deductible. Part C and Part D premiums vary by plan and location since they’re sold through private insurers. Exact figures change every year, so it’s worth checking current numbers at Medicare.gov.',
-  },
-  {
-    q: 'What is the Medicare Initial Enrollment Period?',
-    a: 'The Initial Enrollment Period (IEP) is the 7-month window centered on your 65th birthday — 3 months before, your birthday month, and 3 months after — during which you can first enroll in Medicare without a late enrollment penalty.',
-  },
-  {
-    q: 'Can I keep my doctor with Medicare Advantage?',
-    a: 'It depends on the plan. Medicare Advantage plans typically use HMO or PPO provider networks, so you’ll want to confirm your doctor is in-network before enrolling. Original Medicare, by contrast, lets you see any doctor nationwide who accepts Medicare.',
-  },
-  {
-    q: 'What happens if I miss my enrollment window?',
-    a: 'Missing your enrollment window can mean waiting for the next available period (like the Annual Enrollment Period) and may result in a late enrollment penalty for Part B or Part D that can last as long as you have that coverage.',
-  },
+  { question: 'What is Medicare?', answer: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS). It primarily covers people age 65 and older, as well as certain younger people with qualifying disabilities or End-Stage Renal Disease (ESRD).' },
+  { question: 'Who is eligible for Medicare?', answer: "Most people become eligible at age 65 if they or a spouse have at least 10 years (40 quarters) of Medicare-covered employment. People under 65 may also qualify due to certain disabilities or a diagnosis of ESRD or ALS." },
+  { question: 'When can I enroll in Medicare?', answer: 'Your Initial Enrollment Period runs 7 months — the 3 months before your 65th birthday month, your birthday month, and the 3 months after. Outside of that, there are also the Annual Enrollment Period (Oct 15–Dec 7), the Medicare Advantage Open Enrollment Period (Jan 1–Mar 31), and Special Enrollment Periods tied to certain life events.' },
+  { question: 'What is the difference between Medicare Advantage and Original Medicare?', answer: "Original Medicare (Parts A and B) is run directly by the federal government and lets you see any provider nationwide who accepts Medicare. Medicare Advantage (Part C) is an alternative way to get your Part A and B benefits through a private insurer, often bundling in Part D and extra benefits, but typically within a provider network." },
+  { question: 'What does Medicare Part A cover?', answer: 'Part A generally covers inpatient hospital stays, care in a skilled nursing facility, hospice care, and some home health care. Most people don’t pay a monthly premium for Part A because of their work history.' },
+  { question: 'What does Medicare Part B cover?', answer: 'Part B generally covers doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Nearly everyone pays a monthly premium for Part B.' },
+  { question: 'What does Medicare Part D cover?', answer: "Part D covers prescription medications. It's offered through private insurance companies, either as a stand-alone plan alongside Original Medicare or bundled into a Medicare Advantage plan. Going without creditable drug coverage can lead to a lasting late enrollment penalty." },
+  { question: 'What is a Medigap plan?', answer: 'A Medigap (Medicare Supplement) plan is private insurance that works alongside Original Medicare to help cover costs like copays, coinsurance, and deductibles that Medicare doesn’t pay. Medigap plans don’t work with Medicare Advantage and typically don’t include drug coverage.' },
+  { question: 'How much does Medicare cost?', answer: 'Costs vary by part and by plan. Part A is usually premium-free if you have enough work history. Part B has a standard monthly premium plus an annual deductible. Part C and Part D premiums vary by plan and location since they’re sold through private insurers. Exact figures change every year, so it’s worth checking current numbers at Medicare.gov.' },
+  { question: 'What is the Medicare Initial Enrollment Period?', answer: 'The Initial Enrollment Period (IEP) is the 7-month window centered on your 65th birthday — 3 months before, your birthday month, and 3 months after — during which you can first enroll in Medicare without a late enrollment penalty.' },
+  { question: 'Can I keep my doctor with Medicare Advantage?', answer: 'It depends on the plan. Medicare Advantage plans typically use HMO or PPO provider networks, so you’ll want to confirm your doctor is in-network before enrolling. Original Medicare, by contrast, lets you see any doctor nationwide who accepts Medicare.' },
+  { question: 'What happens if I miss my enrollment window?', answer: 'Missing your enrollment window can mean waiting for the next available period (like the Annual Enrollment Period) and may result in a late enrollment penalty for Part B or Part D that can last as long as you have that coverage.' },
 ];
 
 const jsonLd = [
@@ -64,21 +32,6 @@ const jsonLd = [
     description: 'Get answers to the most common Medicare questions — eligibility, enrollment, costs, plan types, and more.',
     ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'SpeakableSpecification',
-    cssSelector: ['.faq-item h2', '.faq-item p'],
-  },
 ];
 ---
 <BaseLayout
@@ -88,26 +41,12 @@ const jsonLd = [
   breadcrumbs={[{ name: 'FAQ', url: '/faq/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">FAQ</p>
-      <h1>Medicare FAQ</h1>
-      <p class="subhead">Answers to the questions we hear most often.</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'FAQ', url: '/faq/' }]} />
+  <PageHero label="FAQ" heading="Medicare FAQ" subtext="Answers to the questions we hear most often.">
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
-  <section>
-    <div class="container">
-      <div class="faq-list">
-        {faqs.map((f) => (
-          <div class="faq-item card">
-            <h2>{f.q}</h2>
-            <p>{f.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} heading="" />
 
   <section class="section-alt lead-section">
     <div class="container lead-inner">
@@ -201,14 +140,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; margin-bottom: 0; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 780px; margin: 0 auto; }
-  .faq-item h2 { font-size: 1.15rem; margin-bottom: 0.5rem; }
-  .faq-item p { color: var(--color-text-muted); margin-bottom: 0; }
-
   .lead-section { padding: 4rem 0; }
   .lead-inner { max-width: 520px; margin: 0 auto; text-align: center; }
   .lead-sub { color: var(--color-text-muted); margin-bottom: 1.75rem; }

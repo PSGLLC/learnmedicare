@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 import { BOOKING_URL } from '../site.config';
 
 const DATE_PUBLISHED = '2026-07-28';
 const DATE_MODIFIED = '2026-07-28';
+
+const faqs = [
+  { question: 'When does my Medicare Initial Enrollment Period start?', answer: 'Your Initial Enrollment Period is 7 months long: it starts 3 months before the month you turn 65, includes your birthday month, and ends 3 months after.' },
+  { question: 'Do I have to sign up for Medicare at 65 if I\'m still working?', answer: 'Not always. If you have qualifying coverage through a current employer (usually one with 20 or more employees), you may be able to delay Part B without a penalty. If your coverage is through a smaller employer or retiree plan, the rules differ, so it\'s worth checking your specific situation before your window closes.' },
+  { question: 'What\'s the difference between Part A and Part B?', answer: 'Part A covers hospital stays, skilled nursing facility care, and hospice. Part B covers doctor visits, outpatient care, and preventive services. Most people get Part A premium-free but pay a monthly premium for Part B.' },
+  { question: 'What happens if I miss my Initial Enrollment Period?', answer: 'If you don\'t have other qualifying coverage and miss your window, you may face a late enrollment penalty added to your Part B premium for as long as you have Medicare, plus a gap in coverage until the next enrollment period opens.' },
+];
 
 const jsonLd = [
   {
@@ -23,33 +34,6 @@ const jsonLd = [
     description: 'Official CMS guidance on the 7-month Initial Enrollment Period surrounding a person\'s 65th birthday.',
     creatorUrl: 'https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'When does my Medicare Initial Enrollment Period start?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Your Initial Enrollment Period is 7 months long: it starts 3 months before the month you turn 65, includes your birthday month, and ends 3 months after.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Do I have to sign up for Medicare at 65 if I\'m still working?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Not always. If you have qualifying coverage through a current employer (usually one with 20 or more employees), you may be able to delay Part B without a penalty. If your coverage is through a smaller employer or retiree plan, the rules differ, so it\'s worth checking your specific situation before your window closes.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What\'s the difference between Part A and Part B?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Part A covers hospital stays, skilled nursing facility care, and hospice. Part B covers doctor visits, outpatient care, and preventive services. Most people get Part A premium-free but pay a monthly premium for Part B.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What happens if I miss my Initial Enrollment Period?',
-        acceptedAnswer: { '@type': 'Answer', text: 'If you don\'t have other qualifying coverage and miss your window, you may face a late enrollment penalty added to your Part B premium for as long as you have Medicare, plus a gap in coverage until the next enrollment period opens.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -59,14 +43,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Turning 65', url: '/turning-65/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Turning 65</p>
-      <h1>Your Medicare Journey Starts at 65</h1>
-      <p class="subhead">Turning 65 brings a lot of mail, a lot of opinions, and a lot of unfamiliar terms. Here's the plain-English version of what actually matters and when.</p>
-      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'Turning 65', url: '/turning-65/' }]} />
+  <PageHero
+    label="Turning 65"
+    heading="Your Medicare Journey Starts at 65"
+    subtext="Turning 65 brings a lot of mail, a lot of opinions, and a lot of unfamiliar terms. Here's the plain-English version of what actually matters and when."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -151,29 +135,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>When does my Medicare Initial Enrollment Period start?</summary>
-          <p>Your Initial Enrollment Period is 7 months long: it starts 3 months before the month you turn 65, includes your birthday month, and ends 3 months after.</p>
-        </details>
-        <details>
-          <summary>Do I have to sign up for Medicare at 65 if I'm still working?</summary>
-          <p>Not always. If you have qualifying coverage through a current employer (usually one with 20 or more employees), you may be able to delay Part B without a penalty. If your coverage is through a smaller employer or retiree plan, the rules differ, so it's worth checking your specific situation before your window closes.</p>
-        </details>
-        <details>
-          <summary>What's the difference between Part A and Part B?</summary>
-          <p>Part A covers hospital stays, skilled nursing facility care, and hospice. Part B covers doctor visits, outpatient care, and preventive services. Most people get Part A premium-free but pay a monthly premium for Part B.</p>
-        </details>
-        <details>
-          <summary>What happens if I miss my Initial Enrollment Period?</summary>
-          <p>If you don't have other qualifying coverage and miss your window, you may face a late enrollment penalty added to your Part B premium for as long as you have Medicare, plus a gap in coverage until the next enrollment period opens.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">
@@ -185,9 +147,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
 
@@ -210,21 +169,8 @@ const jsonLd = [
   }
   .quick-answer p:last-child { margin: 0; }
 
-  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
-
   .ts-timeline { margin: 1.5rem 0 2rem; }
   .ts-label { font-family: var(--font-body); font-size: 13px; fill: var(--color-text); font-weight: 600; }
   .ts-label-strong { fill: var(--color-purple); }
   .ts-sub { font-family: var(--font-body); font-size: 11px; fill: var(--color-text-muted); }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .faq-list details {
-    background: var(--color-bg-alt, #f8f5fb);
-    border: 1px solid var(--color-lavender);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
-  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
-  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>

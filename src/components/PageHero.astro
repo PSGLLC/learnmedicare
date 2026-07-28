@@ -1,0 +1,38 @@
+---
+// Standardizes the `.page-hero` pattern (eyebrow / h1 / subtext / optional
+// CTA) used across lesson-style pages. Slot content (e.g. AuthorByline)
+// can be dropped in below the subtext.
+interface Cta {
+  text: string;
+  url: string;
+  external?: boolean;
+}
+interface Props {
+  label: string;
+  heading: string;
+  subtext?: string;
+  cta?: Cta;
+}
+const { label, heading, subtext, cta } = Astro.props;
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">{label}</p>
+    <h1>{heading}</h1>
+    {subtext && <p class="subhead">{subtext}</p>}
+    <slot />
+    {cta && (
+      cta.external ? (
+        <a href={cta.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:1.5rem;">{cta.text}</a>
+      ) : (
+        <a href={cta.url} class="btn btn-primary" style="margin-top:1.5rem;">{cta.text}</a>
+      )
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
+  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
+  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+</style>

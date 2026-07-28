@@ -1,0 +1,11 @@
+---
+// Renders one or more JSON-LD blocks cleanly. Accepts a single schema
+// object or an array — pages that build up several JSON-LD entries (e.g.
+// a WebPage block + a Dataset block) can just pass the whole array.
+interface Props {
+  schema: Record<string, any> | Record<string, any>[];
+}
+const { schema } = Astro.props;
+const entries = Array.isArray(schema) ? schema : [schema];
+---
+{entries.map((entry) => <script type="application/ld+json" set:html={JSON.stringify(entry)} />)}

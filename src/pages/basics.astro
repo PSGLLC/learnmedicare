@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MarkCompleteButton from '../components/MarkCompleteButton.astro';
+import PageHero from '../components/PageHero.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: 'What is Medicare Part A?', answer: 'Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people don\'t pay a monthly premium for Part A because they or a spouse paid Medicare taxes while working.' },
+  { question: 'What is Medicare Part B?', answer: 'Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Most people pay a monthly premium for Part B.' },
+  { question: 'Do I need both Part A and Part B?', answer: 'Most people enroll in both. Part A alone doesn\'t cover doctor visits or outpatient care, and Part B alone doesn\'t cover hospital stays — together they form Original Medicare. Delaying Part B without other qualifying coverage can lead to a lasting late enrollment penalty.' },
+  { question: "What's the difference between Medicare Advantage and Medigap?", answer: 'Medicare Advantage (Part C) replaces Original Medicare with a private plan, often bundling in Part D and extra benefits, but typically uses a provider network. Medigap works alongside Original Medicare to cover its gaps — like copays and deductibles — and lets you see any doctor nationwide who accepts Medicare, but doesn\'t include drug coverage.' },
+  { question: 'When does Medicare coverage start?', answer: 'If you sign up during the 3 months before your 65th birthday month, coverage starts the first day of your birthday month. Signing up during your birthday month or the 3 months after can delay your start date by one to three months.' },
+];
 
 const jsonLd = [
   {
@@ -28,36 +40,18 @@ const jsonLd = [
     creatorUrl: 'https://www.medicare.gov/drug-coverage-part-d/costs-for-medicare-drug-coverage',
   }),
   {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is Medicare Part A?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people don\'t pay a monthly premium for Part A because they or a spouse paid Medicare taxes while working.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is Medicare Part B?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive services like screenings and vaccines, and durable medical equipment. Most people pay a monthly premium for Part B.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need both Part A and Part B?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Most people enroll in both. Part A alone doesn\'t cover doctor visits or outpatient care, and Part B alone doesn\'t cover hospital stays — together they form Original Medicare. Delaying Part B without other qualifying coverage can lead to a lasting late enrollment penalty.' },
-    },
-    {
-      '@type': 'Question',
-      name: "What's the difference between Medicare Advantage and Medigap?",
-      acceptedAnswer: { '@type': 'Answer', text: 'Medicare Advantage (Part C) replaces Original Medicare with a private plan, often bundling in Part D and extra benefits, but typically uses a provider network. Medigap works alongside Original Medicare to cover its gaps — like copays and deductibles — and lets you see any doctor nationwide who accepts Medicare, but doesn\'t include drug coverage.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'When does Medicare coverage start?',
-      acceptedAnswer: { '@type': 'Answer', text: 'If you sign up during the 3 months before your 65th birthday month, coverage starts the first day of your birthday month. Signing up during your birthday month or the 3 months after can delay your start date by one to three months.' },
-    },
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Understand Medicare Parts A, B, C, D',
+    description: 'A simple sequence for making sense of Medicare\'s parts and choosing between Medicare Advantage and Medigap.',
+    step: [
+      { '@type': 'HowToStep', name: 'Learn Part A', text: 'Understand Part A hospital insurance — inpatient stays, skilled nursing, hospice, and home health.' },
+      { '@type': 'HowToStep', name: 'Learn Part B', text: 'Understand Part B medical insurance — doctor visits, outpatient care, preventive services, and durable medical equipment.' },
+      { '@type': 'HowToStep', name: 'Understand the coverage gap', text: 'Recognize what Original Medicare (Parts A and B) doesn\'t cover, including most dental, vision, hearing care, and any out-of-pocket cap.' },
+      { '@type': 'HowToStep', name: 'Choose between MA and Medigap', text: 'Decide whether a Medicare Advantage plan or a Medigap policy alongside Original Medicare fits your needs and budget.' },
+      { '@type': 'HowToStep', name: 'Add Part D', text: 'Add prescription drug coverage, either as a standalone Part D plan or bundled into a Medicare Advantage plan.' },
     ],
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
 ];
 ---
@@ -68,14 +62,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'The Basics', url: '/basics/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">The Basics</p>
-      <h1>What is Medicare?</h1>
-      <p class="subhead">Medicare can feel like alphabet soup. Let's break it down in plain English — no jargon.</p>
-      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'The Basics', url: '/basics/' }]} />
+  <PageHero
+    label="The Basics"
+    heading="What is Medicare?"
+    subtext="Medicare can feel like alphabet soup. Let's break it down in plain English — no jargon."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -182,44 +176,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>What is Medicare Part A?</summary>
-          <p>Part A is hospital insurance. It generally helps cover inpatient hospital stays, skilled nursing
-            facility care, hospice, and some home health care. Most people don't pay a monthly premium for
-            Part A because they or a spouse paid Medicare taxes while working.</p>
-        </details>
-        <details>
-          <summary>What is Medicare Part B?</summary>
-          <p>Part B is medical insurance. It generally helps cover doctor visits, outpatient care, preventive
-            services like screenings and vaccines, and durable medical equipment. Most people pay a monthly
-            premium for Part B.</p>
-        </details>
-        <details>
-          <summary>Do I need both Part A and Part B?</summary>
-          <p>Most people enroll in both. Part A alone doesn't cover doctor visits or outpatient care, and
-            Part B alone doesn't cover hospital stays — together they form Original Medicare. Delaying Part B
-            without other qualifying coverage can lead to a lasting late enrollment penalty.</p>
-        </details>
-        <details>
-          <summary>What's the difference between Medicare Advantage and Medigap?</summary>
-          <p>Medicare Advantage (Part C) replaces Original Medicare with a private plan, often bundling in
-            Part D and extra benefits, but typically uses a provider network. Medigap works alongside Original
-            Medicare to cover its gaps — like copays and deductibles — and lets you see any doctor nationwide
-            who accepts Medicare, but doesn't include drug coverage.</p>
-        </details>
-        <details>
-          <summary>When does Medicare coverage start?</summary>
-          <p>If you sign up during the 3 months before your 65th birthday month, coverage starts the first day
-            of your birthday month. Signing up during your birthday month or the 3 months after can delay your
-            start date by one to three months.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt">
     <div class="container">
@@ -248,9 +205,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
 
@@ -274,23 +228,6 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
-
-  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .faq-list details {
-    background: var(--color-bg-alt, #f8f5fb);
-    border: 1px solid var(--color-lavender);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
-  .faq-list summary {
-    font-weight: 700;
-    cursor: pointer;
-    font-family: var(--font-heading);
-  }
-  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 
   .checklist { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
   .checklist li {

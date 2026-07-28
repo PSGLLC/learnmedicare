@@ -10,6 +10,7 @@ export const NAV_LINKS = [
   { href: '/penalties', label: 'Penalties' },
   { href: '/working-at-65', label: 'Working at 65' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/glossary', label: 'Glossary' },
   { href: '/guide', label: 'Free Guide' },
   { href: '/calculators', label: 'Calculators' },
   { href: '/course', label: 'Take the Course' },

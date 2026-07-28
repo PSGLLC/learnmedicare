@@ -1,0 +1,23 @@
+---
+// Standardized "Written by" byline. Also emits the WebPage authorship
+// JSON-LD via lib/schema's authorship() so the visible byline and the
+// schema dateModified never drift apart — pass the same `date` you use
+// for DATE_MODIFIED on the page.
+import SchemaOrg from './SchemaOrg.astro';
+import { authorship } from '../lib/schema';
+
+interface Props {
+  name?: string;
+  npn?: string;
+  date: string;
+  datePublished?: string;
+  emitSchema?: boolean;
+}
+const { name = 'Kayla Price', npn = '18530055', date, datePublished, emitSchema = false } = Astro.props;
+---
+<p class="author-byline">Written by {name}, Licensed Medicare Agent (NPN {npn})</p>
+{emitSchema && <SchemaOrg schema={authorship(datePublished ?? date, date)} />}
+
+<style>
+  .author-byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
+</style>

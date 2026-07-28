@@ -1,11 +1,14 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-07-28';
 
 const terms = [
+  { term: "Medicare", def: "The federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS), primarily covering people age 65 and older and certain younger people with qualifying disabilities." },
   { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance), run directly by the federal government with no networks — any provider that accepts Medicare, anywhere in the country, will treat you." },
   { term: "Medicare Part A", def: "Hospital insurance. Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people pay no premium for Part A if they or a spouse paid Medicare taxes for at least 10 years." },
   { term: "Medicare Part B", def: "Medical insurance. Covers doctor visits, outpatient care, preventive services, and durable medical equipment. Most people pay a standard monthly premium ($202.90 in 2026) plus an annual deductible ($283 in 2026)." },
@@ -21,13 +24,20 @@ const terms = [
   { term: "General Enrollment Period (GEP)", def: "A window running January 1 through March 31 for people who missed their Initial Enrollment Period and don't qualify for a Special Enrollment Period. Coverage typically starts the month after you enroll, and a late-enrollment penalty may apply." },
   { term: "Late Enrollment Penalty", def: "A permanent premium increase applied to Part B or Part D if you enroll late without qualifying employer coverage or another valid exception. The penalty is added to your premium for as long as you have that coverage." },
   { term: "IRMAA (Income-Related Monthly Adjustment Amount)", def: "An extra amount added to your Part B and Part D premiums if your income, based on your tax return from two years prior, is above a certain threshold." },
+  { term: "TrOOP (True Out-of-Pocket Costs)", def: "The costs that count toward your Part D out-of-pocket total — what you (or others on your behalf) actually pay for covered drugs. Once TrOOP reaches the annual cap, the Part D out-of-pocket maximum kicks in." },
   { term: "Formulary", def: "The list of prescription drugs a specific Part D or Medicare Advantage plan covers, organized into cost tiers. Two plans can cover the same drug at very different costs depending on its tier." },
+  { term: "Prior Authorization", def: "A requirement that your plan approve certain services or medications before you receive them, confirming the care is medically necessary before the plan agrees to pay." },
+  { term: "Step Therapy", def: "A plan rule requiring you to try a lower-cost drug first before the plan will cover a more expensive alternative for the same condition, unless the lower-cost option isn't appropriate for you." },
+  { term: "Creditable Coverage", def: "Health or drug coverage considered at least as good as Medicare's. Having creditable coverage (such as through a current employer) lets you delay Medicare enrollment without facing a late enrollment penalty later." },
+  { term: "CMS (Centers for Medicare & Medicaid Services)", def: "The federal agency within the U.S. Department of Health and Human Services that administers Medicare, Medicaid, and the ACA Marketplace, and sets the rules private insurers must follow to sell Medicare plans." },
+  { term: "SHIP / SHIIP (State Health Insurance Assistance Program)", def: "A free, unbiased counseling service, funded by the federal government and run at the state level, that helps people with Medicare questions and plan comparisons at no cost." },
+  { term: "Benchmark", def: "The maximum amount CMS will pay a Medicare Advantage plan in a given county, used to help determine plan bids, extra benefits, and rebates in that area." },
   { term: "Star Rating", def: "A 1-to-5 star quality score CMS assigns to Medicare Advantage and Part D plans each year, based on member satisfaction, care quality, and plan performance — a useful factor when comparing plans, alongside cost and network." },
   { term: "Special Needs Plan (SNP)", def: "A type of Medicare Advantage plan designed for people with specific needs — dual-eligible beneficiaries (Medicare + Medicaid), those in institutional care, or those with certain chronic conditions. Often includes extra tailored benefits." },
   { term: "Dual-Eligible", def: "Someone who qualifies for both Medicare and Medicaid at the same time. Medicaid can help cover Medicare premiums and cost-sharing, and often covers services Medicare doesn't, like long-term custodial care." },
   { term: "Medicare Savings Program (MSP)", def: "A state-run program that can help pay Medicare premiums, deductibles, copays, and coinsurance for people with limited income and resources." },
   { term: "Extra Help", def: "A federal program that helps people with limited income and resources pay for Medicare Part D prescription drug costs, including premiums, deductibles, and copays." },
-  { term: "Out-of-Pocket Maximum", def: "The most you'll pay in a plan year for covered services under a Medicare Advantage plan before the plan pays 100% of covered costs. Original Medicare alone has no out-of-pocket maximum, which is part of why many people pair it with Medigap or a Medicare Advantage plan." },
+  { term: "Out-of-Pocket Maximum (OOPM)", def: "The most you'll pay in a plan year for covered services under a Medicare Advantage plan before the plan pays 100% of covered costs. Original Medicare alone has no out-of-pocket maximum, which is part of why many people pair it with Medigap or a Medicare Advantage plan." },
   { term: "Annual Notice of Change (ANOC)", def: "A notice your Medicare Advantage or Part D plan sends every September, explaining what's changing about your specific plan for the coming year — premium, deductible, copays, network, or formulary." },
 ];
 
@@ -42,7 +52,7 @@ const jsonLd = [
     '@type': 'DefinedTermSet',
     name: 'Medicare Glossary',
     description: 'A plain-English glossary of key Medicare terms — enrollment periods, plan types, and costs explained.',
-    url: 'https://learnmedicare.org/gz/',
+    url: 'https://learnmedicare.org/glossary/',
     hasDefinedTerm: terms.map(t => ({
       '@type': 'DefinedTerm',
       name: t.term,
@@ -69,20 +79,23 @@ const jsonLd = [
 ---
 <MinimalLayout
   title="Medicare Glossary | Plain-English Terms Explained"
-  description="A free, plain-English glossary of 20+ key Medicare terms — Parts A-D, enrollment periods, Medigap, IRMAA, and more, explained clearly."
-  path="/gz/"
-  breadcrumbs={[{ name: 'Medicare Glossary', url: '/gz/' }]}
+  description="A free, plain-English glossary of key Medicare terms — Parts A-D, enrollment periods, Medigap, IRMAA, and more, explained clearly."
+  path="/glossary/"
+  breadcrumbs={[{ name: 'Medicare Glossary', url: '/glossary/' }]}
   jsonLd={jsonLd}
 >
+  <BreadcrumbNav crumbs={[{ name: 'Medicare Glossary', url: '/glossary/' }]} />
+
   <section class="glossary-hero">
     <div class="container">
       <p class="section-label">Medicare Glossary</p>
       <h1>Medicare Terms, in Plain English</h1>
       <p class="glossary-hero-sub speakable-answer">
         Medicare is full of acronyms and jargon that don't mean much until someone explains them —
-        below are 23 of the terms you'll run into most often, defined in plain language, no
+        below are {terms.length} of the terms you'll run into most often, defined in plain language, no
         insurance-speak required.
       </p>
+      <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
       <div class="glossary-hero-cta">
         <a href="/course" class="btn btn-primary">Take the Free Course →</a>
       </div>
@@ -112,7 +125,7 @@ const jsonLd = [
       <a href="/course" class="btn btn-primary">Start the Free Medicare Course →</a>
       <p style="margin-top:1.25rem;font-size:.95rem;">
         Or <a href="https://partner.priceservicesgroup.com/quiz">take the Medicare Decision Style Quiz</a> or
-        <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+        <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
       </p>
     </div>
   </section>
@@ -121,7 +134,7 @@ const jsonLd = [
 <style>
   .glossary-hero { padding: 3.5rem 0 2.5rem; text-align: center; }
   .glossary-hero-sub { max-width: 62ch; margin: 1rem auto 1.75rem; font-size: 1.05rem; line-height: 1.7; }
-  .glossary-hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .glossary-hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
 
   .glossary-list-section { padding: 1rem 0 3rem; }
   .glossary-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; }

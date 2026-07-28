@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MarkCompleteButton from '../components/MarkCompleteButton.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
+
+const faqs = [
+  { question: "Can I delay Medicare if I'm still working at 65?", answer: 'In many cases, yes — especially if your employer has 20 or more employees and offers group health coverage. You may be able to delay Part B without a penalty as long as that coverage is creditable.' },
+  { question: 'What is "creditable coverage"?', answer: 'Creditable coverage is health or drug coverage that\'s considered at least as good as Medicare\'s. Having creditable coverage can let you delay Medicare enrollment without facing a late enrollment penalty later.' },
+  { question: 'Do I need to enroll in Medicare if I still have employer coverage?', answer: 'Not necessarily. If your employer has 20 or more employees and your group coverage is creditable, you can often delay enrolling without penalty. If your employer has fewer than 20 employees, Medicare typically becomes primary, so enrolling on time usually matters more.' },
+  { question: 'What happens when I eventually leave my job or lose employer coverage?', answer: 'Losing employer group coverage generally triggers a Special Enrollment Period, giving you a window to sign up for Medicare without facing a late enrollment penalty, as long as your prior coverage was creditable.' },
+];
 
 const jsonLd = [
   {
@@ -22,33 +33,6 @@ const jsonLd = [
     description: 'Official CMS/SSA rules on delaying Medicare with employer group coverage and the Special Enrollment Period for people working past 65.',
     creatorUrl: 'https://www.ssa.gov/benefits/medicare/',
   }),
-  {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: "Can I delay Medicare if I'm still working at 65?",
-      acceptedAnswer: { '@type': 'Answer', text: 'In many cases, yes — especially if your employer has 20 or more employees and offers group health coverage. You may be able to delay Part B without a penalty as long as that coverage is creditable.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is "creditable coverage"?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Creditable coverage is health or drug coverage that\'s considered at least as good as Medicare\'s. Having creditable coverage can let you delay Medicare enrollment without facing a late enrollment penalty later.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need to enroll in Medicare if I still have employer coverage?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Not necessarily. If your employer has 20 or more employees and your group coverage is creditable, you can often delay enrolling without penalty. If your employer has fewer than 20 employees, Medicare typically becomes primary, so enrolling on time usually matters more.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What happens when I eventually leave my job or lose employer coverage?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Losing employer group coverage generally triggers a Special Enrollment Period, giving you a window to sign up for Medicare without facing a late enrollment penalty, as long as your prior coverage was creditable.' },
-    },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -58,13 +42,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Working at 65', url: '/working-at-65/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Working at 65</p>
-      <h1>Still working at 65? Here's how Medicare fits in.</h1>
-      <p class="subhead">Turning 65 doesn't always mean you need to enroll in Medicare right away — but the right choice depends on your employer coverage.</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'Working at 65', url: '/working-at-65/' }]} />
+  <PageHero
+    label="Working at 65"
+    heading="Still working at 65? Here's how Medicare fits in."
+    subtext="Turning 65 doesn't always mean you need to enroll in Medicare right away — but the right choice depends on your employer coverage."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -121,9 +106,11 @@ const jsonLd = [
     </div>
   </section>
 
+  <FAQSection faqs={faqs} />
+
   <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:0 auto 2rem;">
     Weighing Medicare against employer coverage? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
-    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a Medicare advisor</a>.
+    <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
   </p>
 
   <MarkCompleteButton slug="working-at-65" />
@@ -138,9 +125,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
 

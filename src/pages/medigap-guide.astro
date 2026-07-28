@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 import { BOOKING_URL } from '../site.config';
 
 const DATE_PUBLISHED = '2026-07-28';
 const DATE_MODIFIED = '2026-07-28';
+
+const faqs = [
+  { question: 'What does Medigap cover that Original Medicare doesn\'t?', answer: 'Medigap covers some or all of the out-of-pocket costs left over from Original Medicare, such as Part A and Part B deductibles, coinsurance, and copayments, depending on the plan letter you choose.' },
+  { question: 'What\'s the difference between Plan G and Plan N?', answer: 'Plan G covers Part B coinsurance in full, while Plan N requires small copays for some doctor and ER visits and doesn\'t cover Part B excess charges. Plan N generally carries a lower monthly premium in exchange for those small out-of-pocket costs.' },
+  { question: 'What is the Medigap 6-month enrollment window?', answer: 'Your Medigap Open Enrollment Period is the 6 months starting the month you\'re both 65 or older and enrolled in Part B. During this window, insurers must sell you any Medigap policy they offer regardless of health history, without medical underwriting.' },
+  { question: 'Does Medigap include prescription drug coverage?', answer: 'No. Medigap plans don\'t include drug coverage, so most people pair a Medigap policy with a separate Part D plan.' },
+];
 
 const jsonLd = [
   {
@@ -23,33 +34,6 @@ const jsonLd = [
     description: 'Official CMS guidance on standardized Medigap plan letters, benefits, and the Medigap Open Enrollment Period.',
     creatorUrl: 'https://www.medicare.gov/health-drug-plans/medigap',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What does Medigap cover that Original Medicare doesn\'t?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Medigap covers some or all of the out-of-pocket costs left over from Original Medicare, such as Part A and Part B deductibles, coinsurance, and copayments, depending on the plan letter you choose.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What\'s the difference between Plan G and Plan N?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Plan G covers Part B coinsurance in full, while Plan N requires small copays for some doctor and ER visits and doesn\'t cover Part B excess charges. Plan N generally carries a lower monthly premium in exchange for those small out-of-pocket costs.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the Medigap 6-month enrollment window?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Your Medigap Open Enrollment Period is the 6 months starting the month you\'re both 65 or older and enrolled in Part B. During this window, insurers must sell you any Medigap policy they offer regardless of health history, without medical underwriting.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does Medigap include prescription drug coverage?',
-        acceptedAnswer: { '@type': 'Answer', text: 'No. Medigap plans don\'t include drug coverage, so most people pair a Medigap policy with a separate Part D plan.' },
-      },
-    ],
-  },
 ];
 ---
 <BaseLayout
@@ -59,14 +43,14 @@ const jsonLd = [
   breadcrumbs={[{ name: 'Medigap Guide', url: '/medigap-guide/' }]}
   jsonLd={jsonLd}
 >
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Medigap</p>
-      <h1>Original Medicare Covers 80%. What About the Other 20%?</h1>
-      <p class="subhead">Medicare Supplement insurance, better known as Medigap, is built to pay the deductibles, coinsurance, and copayments Original Medicare leaves behind.</p>
-      <p class="byline">Written by Kayla Price, Licensed Medicare Agent (NPN 18530055)</p>
-    </div>
-  </section>
+  <BreadcrumbNav crumbs={[{ name: 'Medigap Guide', url: '/medigap-guide/' }]} />
+  <PageHero
+    label="Medigap"
+    heading="Original Medicare Covers 80%. What About the Other 20%?"
+    subtext="Medicare Supplement insurance, better known as Medigap, is built to pay the deductibles, coinsurance, and copayments Original Medicare leaves behind."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
 
   <section>
     <div class="container">
@@ -162,29 +146,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>What does Medigap cover that Original Medicare doesn't?</summary>
-          <p>Medigap covers some or all of the out-of-pocket costs left over from Original Medicare, such as Part A and Part B deductibles, coinsurance, and copayments, depending on the plan letter you choose.</p>
-        </details>
-        <details>
-          <summary>What's the difference between Plan G and Plan N?</summary>
-          <p>Plan G covers Part B coinsurance in full, while Plan N requires small copays for some doctor and ER visits and doesn't cover Part B excess charges. Plan N generally carries a lower monthly premium in exchange for those small out-of-pocket costs.</p>
-        </details>
-        <details>
-          <summary>What is the Medigap 6-month enrollment window?</summary>
-          <p>Your Medigap Open Enrollment Period is the 6 months starting the month you're both 65 or older and enrolled in Part B. During this window, insurers must sell you any Medigap policy they offer regardless of health history, without medical underwriting.</p>
-        </details>
-        <details>
-          <summary>Does Medigap include prescription drug coverage?</summary>
-          <p>No. Medigap plans don't include drug coverage, so most people pair a Medigap policy with a separate Part D plan.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <section class="section-alt cta-band">
     <div class="container cta-inner">
@@ -196,9 +158,6 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
   .cta-band { text-align: center; }
   .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
   .table-scroll { overflow-x: auto; }
@@ -221,17 +180,4 @@ const jsonLd = [
     color: var(--color-purple);
   }
   .quick-answer p:last-child { margin: 0; }
-
-  .byline { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; margin-top: 0.5rem; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .faq-list details {
-    background: var(--color-bg-alt, #f8f5fb);
-    border: 1px solid var(--color-lavender);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
-  :root[data-theme="dark"] .faq-list details { background: rgba(144, 89, 181, 0.08); }
-  .faq-list summary { font-weight: 700; cursor: pointer; font-family: var(--font-heading); }
-  .faq-list p { margin: 0.75rem 0 0; color: var(--color-text-muted); }
 </style>
