@@ -4,7 +4,7 @@ import MarkCompleteButton from '../components/MarkCompleteButton.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-07-28';
 
 const jsonLd = [
   {
@@ -48,12 +48,22 @@ const jsonLd = [
         name: 'Does Medigap include prescription drug coverage?',
         acceptedAnswer: { '@type': 'Answer', text: 'No. Medigap plans typically don\'t include drug coverage, so you\'d need to pair a Medigap policy with a separate Part D plan.' },
       },
+      {
+        '@type': 'Question',
+        name: 'What does Original Medicare not cover?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Original Medicare generally does not cover routine dental, vision, or hearing care, most long-term custodial care, and prescription drugs. These are the most common coverage gaps that Medicare Advantage extra benefits or Medigap plus a separate Part D plan are designed to help address.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How does a Medicare Supplement plan fill Medicare\'s coverage gaps?',
+        acceptedAnswer: { '@type': 'Answer', text: 'A Medicare Supplement (Medigap) plan pays some or all of the out-of-pocket costs Original Medicare leaves behind, such as coinsurance, copayments, and deductibles, so you\'re not exposed to unlimited out-of-pocket costs when you need care.' },
+      },
     ],
   },
 ];
 ---
 <BaseLayout
-  title="Medicare Advantage vs. Medigap: A Balanced Comparison | Learn Medicare"
+  title="Medicare Advantage vs. Medigap Compared | LearnMedicare.org"
   description="Medigap vs Medicare Advantage: compare supplemental insurance and MA plans side by side. Understand coverage gaps, costs, and which fits your situation in 2026."
   path="/coverage/"
   breadcrumbs={[{ name: 'Coverage Options', url: '/coverage/' }]}
@@ -78,6 +88,62 @@ const jsonLd = [
           care, and durable medical equipment. Together, Parts A and B are called Original Medicare.
         </p>
       </div>
+
+      <h2>What Medicare Covers and What It Doesn't</h2>
+      <p>
+        Original Medicare (Parts A and B) covers a lot, but it's not comprehensive. Part A generally
+        covers inpatient hospital stays, skilled nursing facility care after a qualifying hospital
+        stay, hospice care, and some home health care. Part B generally covers doctor visits,
+        outpatient care, preventive services like annual wellness visits and many screenings, and
+        durable medical equipment such as wheelchairs and walkers.
+      </p>
+      <p>
+        What Original Medicare typically does <strong>not</strong> cover is just as important to
+        understand: routine dental care (cleanings, fillings, dentures), routine vision care (eye
+        exams for glasses, glasses themselves), routine hearing care (hearing aids and fittings),
+        most long-term custodial care (help with daily activities like bathing and dressing), and
+        outpatient prescription drugs, which require a separate Part D plan. These are the gaps that
+        Medicare Advantage extra benefits or a Medigap policy paired with Part D are built to help
+        address — see <a href="/basics">the basics of Parts A, B, C, and D</a> for a fuller
+        breakdown of how the four parts fit together.
+      </p>
+
+      <h2 style="margin-top:2.5rem;">Medicare Coverage Gaps</h2>
+      <p>
+        Even for the services Original Medicare does cover, you're usually responsible for
+        deductibles, coinsurance, and copayments — and there's no annual out-of-pocket maximum under
+        Original Medicare alone. That means a serious illness or extended hospital stay could result
+        in significant out-of-pocket costs with no cap. The most common coverage gaps people run into
+        include:
+      </p>
+      <ul>
+        <li><strong>The Part A deductible</strong> — a set amount you pay before Part A starts covering
+          an inpatient hospital stay, per benefit period.</li>
+        <li><strong>Part B coinsurance</strong> — typically 20% of the Medicare-approved amount for most
+          doctor services and outpatient care, with no upper limit.</li>
+        <li><strong>Skilled nursing facility costs</strong> — Part A covers a limited number of days,
+          with coinsurance kicking in after the first 20 days.</li>
+        <li><strong>No out-of-pocket maximum</strong> — unlike Medicare Advantage plans, Original
+          Medicare by itself doesn't cap what you could pay out of pocket in a year.</li>
+      </ul>
+
+      <h2 style="margin-top:2.5rem;">How Medicare Supplement Plans Fill the Gaps</h2>
+      <p>
+        A Medicare Supplement (Medigap) policy is designed specifically to pay some or all of these
+        leftover costs — the deductibles, coinsurance, and copayments that Original Medicare doesn't
+        cover. Depending on the plan you choose, a Medigap policy can cover most or nearly all of your
+        Part A and Part B cost-sharing, which is why Medigap plans generally carry a higher monthly
+        premium than Medicare Advantage: you're paying more up front for far more predictable costs
+        later. Medigap plans are standardized by letter (like Plan G or Plan N), so the core benefits
+        of a given plan letter are the same no matter which insurance company sells it — only the
+        premium and the carrier's service tend to differ.
+      </p>
+      <p>
+        Medigap does not include prescription drug coverage, so most people who choose a Medigap plan
+        pair it with a standalone Part D plan to cover medications. And because Medigap plans have no
+        provider networks, they travel with you nationwide — you can see any doctor or hospital that
+        accepts Medicare, without referrals or prior authorization for covered services.
+      </p>
 
       <div class="table-scroll">
         <table class="compare">
@@ -175,6 +241,18 @@ const jsonLd = [
           <summary>Does Medigap include prescription drug coverage?</summary>
           <p>No. Medigap plans typically don't include drug coverage, so you'd need to pair a Medigap policy
             with a separate Part D plan.</p>
+        </details>
+        <details>
+          <summary>What does Original Medicare not cover?</summary>
+          <p>Original Medicare generally does not cover routine dental, vision, or hearing care, most
+            long-term custodial care, and prescription drugs. These are the most common coverage gaps that
+            Medicare Advantage extra benefits or Medigap plus a separate Part D plan are designed to help address.</p>
+        </details>
+        <details>
+          <summary>How does a Medicare Supplement plan fill Medicare's coverage gaps?</summary>
+          <p>A Medicare Supplement (Medigap) plan pays some or all of the out-of-pocket costs Original
+            Medicare leaves behind, such as coinsurance, copayments, and deductibles, so you're not exposed
+            to unlimited out-of-pocket costs when you need care.</p>
         </details>
       </div>
     </div>

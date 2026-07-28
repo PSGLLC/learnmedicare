@@ -4,7 +4,7 @@ import MarkCompleteButton from '../components/MarkCompleteButton.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-07-28';
 
 const jsonLd = [
   {
@@ -52,13 +52,23 @@ const jsonLd = [
       name: 'What happens if I miss my Initial Enrollment Period?',
       acceptedAnswer: { '@type': 'Answer', text: 'If you miss your IEP and don\'t qualify for a Special Enrollment Period, you\'ll generally need to wait for the General Enrollment Period (Jan 1 - Mar 31), and you may face late enrollment penalties for Part B and Part D.' },
     },
+    {
+      '@type': 'Question',
+      name: 'How much is the Medicare Part B late enrollment penalty?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Part B penalty adds about 10% to your monthly premium for each full 12-month period you were eligible but didn\'t enroll and didn\'t have other qualifying coverage. This penalty is generally permanent and applies for as long as you have Part B.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I actually sign up for Medicare?',
+      acceptedAnswer: { '@type': 'Answer', text: 'You can enroll online at SSA.gov, by calling Social Security or 1-800-MEDICARE, by visiting a local Social Security office, or by working with a licensed Medicare agent who can walk you through your options at no cost to you.' },
+    },
     ],
   },
 ];
 ---
 <BaseLayout
-  title="When to Enroll in Medicare: IEP, SEP, GEP & AEP | Learn Medicare"
-  description="Understand the Medicare enrollment periods — IEP, SEP, GEP, and AEP (Oct 15–Dec 7) — and why enrolling on time matters."
+  title="Medicare Enrollment Periods: IEP, SEP, GEP, AEP | LM"
+  description="Understand the Medicare enrollment periods — IEP, SEP, GEP, and AEP — what happens if you miss them, and how to enroll. Plain-English guide."
   path="/enrollment/"
   breadcrumbs={[{ name: 'Enrollment', url: '/enrollment/' }]}
   jsonLd={jsonLd}
@@ -83,44 +93,82 @@ const jsonLd = [
         </p>
       </div>
 
+      <h2>Medicare Enrollment Periods Explained</h2>
       <div class="grid grid-2">
         <div class="card">
-          <h2>IEP — Initial Enrollment Period</h2>
+          <h3>IEP — Initial Enrollment Period</h3>
           <p>
             Your Initial Enrollment Period is a 7-month window centered on your 65th birthday: the
             3 months before your birthday month, your birthday month itself, and the 3 months after.
             This is typically the first chance most people have to enroll in Medicare — see
             <a href="/basics">the basics of Parts A, B, C, and D</a> if you're still getting oriented.
+            If you enroll in the 3 months before your birthday month, coverage generally starts the
+            first of your birthday month. Enrolling during your birthday month or in the 3 months
+            after can delay when your coverage actually begins, so earlier is almost always better.
           </p>
         </div>
         <div class="card">
-          <h2>SEP — Special Enrollment Period</h2>
+          <h3>SEP — Special Enrollment Period</h3>
           <p>
             A Special Enrollment Period is triggered by certain life events — most commonly, losing
             employer group coverage or moving to a new service area. SEPs let you enroll or change
             coverage outside the usual windows without waiting for the next general opportunity. If
             you're still working past 65, see <a href="/working-at-65">how employer coverage affects your timing</a>.
+            Most SEPs tied to losing employer coverage give you an 8-month window to sign up for
+            Part B, starting the month after the employment or coverage ends — whichever comes first.
           </p>
         </div>
         <div class="card">
-          <h2>GEP — General Enrollment Period</h2>
+          <h3>GEP — General Enrollment Period</h3>
           <p>
             If you missed your Initial Enrollment Period and don't qualify for a Special Enrollment
             Period, the General Enrollment Period (January 1 – March 31 each year) gives you another
-            chance to sign up for Part A and/or Part B.
+            chance to sign up for Part A and/or Part B. Coverage under the GEP generally starts the
+            first day of the month after you enroll, which can mean a gap of several months without
+            coverage — one more reason the IEP and SEP windows matter so much.
           </p>
         </div>
         <div class="card">
-          <h2>AEP — Annual Enrollment Period</h2>
+          <h3>AEP — Annual Enrollment Period</h3>
           <p>
-            The Annual Enrollment Period runs <strong>October 15 – December 7</strong> every year.
+            The Annual Enrollment Period, AEP 2026, runs <strong>October 15 – December 7, 2026</strong>.
             If you're already on Medicare, this is your annual opportunity to switch Medicare
-            Advantage or Part D prescription drug plans for the coming year.
+            Advantage or Part D prescription drug plans for Plan Year 2027 coverage. Any changes you
+            make during AEP 2026 take effect January 1, 2027.
           </p>
         </div>
       </div>
 
-      <div class="warning" style="margin-top: 2.5rem;">
+      <h2 style="margin-top:3rem;">What Happens If You Miss Your Enrollment Window</h2>
+      <p>
+        Missing your enrollment window doesn't just mean waiting longer to sign up — for Part B and
+        Part D, it can mean paying more for as long as you have that coverage. Understanding these
+        penalties is one of the biggest reasons to plan your enrollment ahead of time rather than
+        after the fact.
+      </p>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>Part B late enrollment penalty</h3>
+          <p>
+            If you don't sign up for Part B when you're first eligible and don't have other
+            qualifying coverage (such as active employer coverage), your monthly Part B premium can
+            go up about 10% for each full 12-month period you were eligible but didn't enroll. This
+            penalty is generally permanent — it applies for as long as you're enrolled in Part B, not
+            just for a year or two.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part D late enrollment penalty</h3>
+          <p>
+            If you go 63 or more days in a row without Medicare drug coverage or other creditable
+            prescription drug coverage after your Initial Enrollment Period ends, you may owe a Part D
+            late enrollment penalty. It's calculated as roughly 1% of the "national base beneficiary
+            premium" for each full month you went without creditable coverage, added to your premium
+            for as long as you have Part D coverage.
+          </p>
+        </div>
+      </div>
+      <div class="warning" style="margin-top: 2rem;">
         <p style="margin:0;">
           <strong>Late enrollment can cost you.</strong> Missing your Initial Enrollment Period and
           not having other qualifying coverage can lead to late enrollment penalties for Part B and
@@ -130,6 +178,34 @@ const jsonLd = [
           or sign up directly through the <a href="https://www.ssa.gov/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
         </p>
       </div>
+
+      <h2 style="margin-top:3rem;">How to Enroll</h2>
+      <p>
+        There are a few different ways to actually sign up for Medicare once you know which
+        enrollment period applies to you:
+      </p>
+      <ul>
+        <li>
+          <strong>Online at SSA.gov</strong> — the Social Security Administration handles Medicare
+          enrollment, and signing up online at
+          <a href="https://www.ssa.gov/medicare/" target="_blank" rel="noopener noreferrer">ssa.gov/medicare</a>
+          is usually the fastest option for most people.
+        </li>
+        <li>
+          <strong>By phone</strong> — call Social Security directly, or call
+          <strong>1-800-MEDICARE</strong> (1-800-633-4227) for general Medicare questions and guidance
+          on your options.
+        </li>
+        <li>
+          <strong>In person</strong> — you can visit a local Social Security office if you'd rather
+          enroll or ask questions face to face.
+        </li>
+        <li>
+          <strong>With a licensed Medicare agent</strong> — a licensed agent can walk you through
+          your enrollment timeline, explain Medicare Advantage vs. Medigap, and help you compare
+          plans, generally at no cost to you.
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -162,6 +238,18 @@ const jsonLd = [
           <p>If you miss your IEP and don't qualify for a Special Enrollment Period, you'll generally need to
             wait for the General Enrollment Period (Jan 1 – Mar 31), and you may face late enrollment penalties
             for Part B and Part D.</p>
+        </details>
+        <details>
+          <summary>How much is the Medicare Part B late enrollment penalty?</summary>
+          <p>The Part B penalty adds about 10% to your monthly premium for each full 12-month period you were
+            eligible but didn't enroll and didn't have other qualifying coverage. This penalty is generally
+            permanent and applies for as long as you have Part B.</p>
+        </details>
+        <details>
+          <summary>How do I actually sign up for Medicare?</summary>
+          <p>You can enroll online at SSA.gov, by calling Social Security or 1-800-MEDICARE, by visiting a
+            local Social Security office, or by working with a licensed Medicare agent who can walk you through
+            your options at no cost to you.</p>
         </details>
       </div>
     </div>
