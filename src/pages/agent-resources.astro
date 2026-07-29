@@ -1,13 +1,14 @@
 ---
-// Scaffolding-only page — foundation for a future agent training module.
-// Deliberately noindex'd (not ready for public indexing) and left out of
-// primary nav per the brief; reachable only by direct link for now.
+// Deliberately noindex'd and left out of primary nav (linked from the
+// footer only) — internal/agent-facing content, not meant for public
+// search indexing. See functions/api/agent-verify.ts for why the NPN
+// verification form doesn't do a live API lookup.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 ---
 <BaseLayout
   title="Resources for Medicare Agents | Learn Medicare"
-  description="Agent training and resources coming soon from Learn Medicare. Join our network to get notified when the agent training module launches."
+  description="Quick-reference cards, verification tools, and shareable client links for licensed Medicare agents working with Price Services Group."
   path="/agent-resources/"
   breadcrumbs={[{ name: 'Agent Resources', url: '/agent-resources/' }]}
   noindex
@@ -18,100 +19,193 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
     <div class="container">
       <p class="eyebrow">For Agents</p>
       <h1>Resources for Medicare Agents</h1>
-      <p class="subhead">Agent training and resources coming soon. Join our network to get notified.</p>
+      <p class="subhead">Quick-reference cards, verification tools, and shareable client links.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="agent-form-wrap">
-        <form id="agent-lead-form" class="agent-form" novalidate>
-          <div class="form-row">
-            <label for="name">Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" autocomplete="name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
-          </div>
-          <div class="form-row">
-            <label for="npn">NPN <span class="optional">(optional)</span></label>
-            <input type="text" id="npn" name="npn" autocomplete="off" />
-          </div>
-          <!-- Honeypot — hidden from real visitors -->
-          <div class="hp-field" aria-hidden="true">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <button type="submit" class="btn btn-primary form-submit">Notify Me</button>
-          <p id="agent-form-error" class="form-error" role="alert" hidden></p>
-        </form>
-
-        <div id="agent-form-success" class="form-success" hidden>
-          <p>Thanks — you're on the list. We'll be in touch when agent resources launch.</p>
+  <!-- ── NPN Verification ─────────────────────────────────────────── -->
+  <section id="print-hide-npn">
+    <div class="container narrow">
+      <h2>NPN Lookup</h2>
+      <p class="section-note">
+        Enter an NPN below. Note: automated verification isn't available here —
+        NPNs are tracked by NIPR and state Departments of Insurance, not a public API this
+        site can query directly. Submitting will show you the correct places to verify instead.
+      </p>
+      <form id="npn-form" novalidate>
+        <div class="form-row">
+          <label for="npn-input">NPN</label>
+          <input type="text" id="npn-input" name="npn" inputmode="numeric" autocomplete="off" placeholder="e.g. 18530055" required />
         </div>
+        <button type="submit" class="btn btn-primary">Look Up</button>
+      </form>
+      <div id="npn-result" class="npn-result" hidden></div>
+    </div>
+  </section>
 
-        <p class="compliance-note">
-          By submitting this form you agree to be contacted by Price Services Group LLC.
-          We respect your privacy and will never sell your information.
+  <!-- ── Quick Reference Cards ────────────────────────────────────── -->
+  <section class="section-alt" id="print-hide-cards">
+    <div class="container">
+      <h2>Quick Reference Cards</h2>
+      <p class="section-note">Printable one-page references — click Print on any card to print just that card.</p>
+
+      <div class="ref-card" data-print-id="enrollment">
+        <div class="ref-card-head">
+          <h3>Medicare Enrollment Periods</h3>
+          <button type="button" class="btn btn-outline print-btn" data-print-target="enrollment">Print</button>
+        </div>
+        <table class="compare">
+          <thead><tr><th>Window</th><th>When</th><th>Who It's For</th></tr></thead>
+          <tbody>
+            <tr><td>Initial Enrollment Period (IEP)</td><td>7 months around 65th birthday</td><td>First-time enrollees</td></tr>
+            <tr><td>General Enrollment Period (GEP)</td><td>Jan 1 - Mar 31 annually</td><td>Missed IEP, no SEP</td></tr>
+            <tr><td>Special Enrollment Period (SEP)</td><td>Varies, ~2 months from event</td><td>Qualifying life events</td></tr>
+            <tr><td>Annual Enrollment Period (AEP 2026)</td><td>Oct 15 - Dec 7, 2026</td><td>Switching MA/Part D plans</td></tr>
+            <tr><td>MA Open Enrollment (MA OEP)</td><td>Jan 1 - Mar 31 annually</td><td>One additional MA switch</td></tr>
+            <tr><td>Medigap Open Enrollment</td><td>One-time, 6 months from 65+Part B</td><td>Guaranteed-issue Medigap</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ref-card" data-print-id="costs">
+        <div class="ref-card-head">
+          <h3>2026 Medicare Costs at a Glance</h3>
+          <button type="button" class="btn btn-outline print-btn" data-print-target="costs">Print</button>
+        </div>
+        <table class="compare">
+          <thead><tr><th>Item</th><th>2026 Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Part A premium (40+ quarters)</td><td>$0/month</td></tr>
+            <tr><td>Part A premium (30-39 quarters)</td><td>$285/month</td></tr>
+            <tr><td>Part A premium (fewer than 30 quarters)</td><td>$518/month</td></tr>
+            <tr><td>Part A deductible (per benefit period)</td><td>$1,676</td></tr>
+            <tr><td>Part B standard premium</td><td>$202.90/month</td></tr>
+            <tr><td>Part B annual deductible</td><td>$283</td></tr>
+            <tr><td>Part D annual out-of-pocket cap</td><td>$2,100</td></tr>
+            <tr><td>Insulin cost cap (per month's supply)</td><td>$35</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ref-card" data-print-id="medigap">
+        <div class="ref-card-head">
+          <h3>Medigap Plan Comparison</h3>
+          <button type="button" class="btn btn-outline print-btn" data-print-target="medigap">Print</button>
+        </div>
+        <div class="table-scroll">
+          <table class="compare medigap-table">
+            <thead>
+              <tr><th>Benefit</th><th>A</th><th>B</th><th>D</th><th>G</th><th>K</th><th>L</th><th>M</th><th>N</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Part A coinsurance &amp; hospital costs</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Part B coinsurance/copay</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>50%</td><td>75%</td><td>✓</td><td>Partial*</td></tr>
+              <tr><td>Blood (first 3 pints)</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>50%</td><td>75%</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Part A hospice coinsurance</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>50%</td><td>75%</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Skilled nursing facility coinsurance</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>50%</td><td>75%</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Part A deductible</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>50%</td><td>75%</td><td>50%</td><td>✓</td></tr>
+              <tr><td>Part B deductible</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Part B excess charges</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Foreign travel emergency</td><td>—</td><td>—</td><td>80%</td><td>80%</td><td>—</td><td>—</td><td>80%</td><td>80%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ref-card-footnote">
+          *Plan N pays Part B coinsurance in full except for up to $20 copay for some office visits and up to $50 for ER visits that don't result in admission. Plans K and L show percentage of the benefit covered, with an annual out-of-pocket limit ($7,220 for K, $3,610 for L in 2026 — confirm current figures before quoting). Neither Plan A nor high-deductible options are shown separately here; verify current-year figures and state availability before presenting to a client.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- ── Agent Tools ───────────────────────────────────────────────── -->
+  <section id="print-hide-tools">
+    <div class="container">
+      <h2>Agent Tools</h2>
+      <div class="tool-grid">
+        <a href="https://www.medicare.gov/plan-compare" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <h3>Medicare Plan Finder</h3>
+          <p>Official CMS plan comparison tool — medicare.gov/plan-compare</p>
+        </a>
+        <a href="https://www.cms.gov/medicare/health-drug-plans/part-c-d/compliance-audits/marketing" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <h3>CMS TPMO Marketing Guidelines</h3>
+          <p>Current CMS Medicare Communications and Marketing Guidelines</p>
+        </a>
+        <a href="https://www.ncdoi.gov" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <h3>NC DOI License Lookup</h3>
+          <p>North Carolina Department of Insurance</p>
+        </a>
+        <a href="https://partner.priceservicesgroup.com" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <h3>PSG Partner Portal</h3>
+          <p>Agent tools, resources, and account access</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LearnMedicare for Clients ─────────────────────────────────── -->
+  <section class="section-alt" id="print-hide-clients">
+    <div class="container">
+      <h2>LearnMedicare for Clients</h2>
+      <p class="section-note">Shareable links you can send clients directly.</p>
+      <div class="tool-grid">
+        <a href="/course" class="card tool-card">
+          <h3>Free Medicare Course</h3>
+          <p>Six self-paced lessons covering everything before enrollment</p>
+        </a>
+        <a href="/basics" class="card tool-card">
+          <h3>The Basics</h3>
+          <p>What Medicare is and how Parts A-D fit together</p>
+        </a>
+        <a href="/enrollment" class="card tool-card">
+          <h3>Enrollment Guide</h3>
+          <p>IEP, GEP, SEP, and AEP timing explained</p>
+        </a>
+        <a href="/glossary" class="card tool-card">
+          <h3>Medicare Glossary</h3>
+          <p>55+ plain-English term definitions</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <script>
-    const form = document.getElementById('agent-lead-form') as HTMLFormElement | null;
-    const errorEl = document.getElementById('agent-form-error');
-    const successEl = document.getElementById('agent-form-success');
+    const form = document.getElementById('npn-form') as HTMLFormElement | null;
+    const resultEl = document.getElementById('npn-result');
 
     form?.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (errorEl) {
-        errorEl.hidden = true;
-        errorEl.textContent = '';
-      }
-
-      const formData = new FormData(form);
-      const payload = {
-        name: String(formData.get('name') ?? '').trim(),
-        email: String(formData.get('email') ?? '').trim(),
-        npn: String(formData.get('npn') ?? '').trim(),
-        website: String(formData.get('website') ?? ''),
-        pagePath: window.location.pathname,
-      };
-
-      const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-      }
+      if (!resultEl) return;
+      const npn = (document.getElementById('npn-input') as HTMLInputElement | null)?.value.trim() ?? '';
+      resultEl.hidden = false;
+      resultEl.innerHTML = '<p>Looking up…</p>';
 
       try {
-        const res = await fetch('/api/agent-lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json().catch(() => ({ ok: false }));
-
-        if (res.ok && data.ok) {
-          form.hidden = true;
-          if (successEl) successEl.hidden = false;
+        const res = await fetch(`/api/agent-verify?npn=${encodeURIComponent(npn)}`);
+        const data = await res.json();
+        if (data.message) {
+          const links = (data.links || [])
+            .map((l: { label: string; url: string }) => `<li><a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a></li>`)
+            .join('');
+          resultEl.innerHTML = `<p>${data.message}</p><ul>${links}</ul>`;
         } else {
-          throw new Error(data.error || 'Something went wrong. Please try again.');
+          resultEl.innerHTML = `<p>${data.error || 'Something went wrong.'}</p>`;
         }
-      } catch (err) {
-        if (errorEl) {
-          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
-          errorEl.hidden = false;
-        }
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Notify Me';
-        }
+      } catch {
+        resultEl.innerHTML = '<p>Something went wrong. Please try again.</p>';
       }
+    });
+
+    // Scoped print — hide every section except the clicked card's own
+    // section by toggling a body-level data attribute; @media print CSS
+    // below uses it to hide the sibling sections while printing.
+    document.querySelectorAll<HTMLButtonElement>('.print-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.body.setAttribute('data-printing-card', btn.dataset.printTarget || '');
+        window.print();
+      });
+    });
+    window.addEventListener('afterprint', () => {
+      document.body.removeAttribute('data-printing-card');
     });
   </script>
 </BaseLayout>
@@ -120,14 +214,14 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
   .page-hero { background: var(--color-lavender); padding: 4rem 0; }
   :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
   .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+  .narrow { max-width: 620px; }
+  .section-note { color: var(--color-text-muted); margin-bottom: 1.5rem; }
 
-  .agent-form-wrap { max-width: 460px; margin: 2rem auto; }
-  .agent-form { text-align: left; }
   .form-row { margin-bottom: 1rem; }
   .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
-  .optional { font-weight: 400; color: var(--color-text-muted); }
   .form-row input {
     width: 100%;
+    max-width: 320px;
     padding: 0.65rem 0.85rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -135,9 +229,64 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
     color: var(--color-text);
     font-size: 1rem;
   }
-  .hp-field { position: absolute; left: -9999px; }
-  .form-submit { width: 100%; margin-top: 0.5rem; }
-  .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
-  .form-success p { font-weight: 600; text-align: center; }
-  .compliance-note { color: var(--color-text-muted); font-size: 0.8rem; margin-top: 1.25rem; margin-bottom: 0; text-align: center; }
+  .npn-result {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg-alt);
+  }
+  .npn-result ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+
+  .ref-card {
+    background: var(--color-card-bg, var(--color-bg));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .ref-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .ref-card-head h3 { margin: 0; }
+  .ref-card-footnote {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 1rem 0 0;
+  }
+  .table-scroll { overflow-x: auto; }
+  .medigap-table th, .medigap-table td { text-align: center; }
+  .medigap-table td:first-child { text-align: left; }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .tool-card { text-decoration: none; color: var(--color-text); }
+  .tool-card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+  .tool-card p { margin: 0; font-size: 0.88rem; color: var(--color-text-muted); }
+
+  @media print {
+    body[data-printing-card] :is(header, footer, #print-hide-npn, #print-hide-tools, #print-hide-clients, .page-hero) {
+      display: none !important;
+    }
+    body[data-printing-card] #print-hide-cards > .container > h2,
+    body[data-printing-card] #print-hide-cards > .container > .section-note {
+      display: none !important;
+    }
+    body[data-printing-card] .ref-card { display: none !important; }
+    body[data-printing-card] .ref-card[data-print-id] { }
+    body[data-printing-card="enrollment"] .ref-card[data-print-id="enrollment"],
+    body[data-printing-card="costs"] .ref-card[data-print-id="costs"],
+    body[data-printing-card="medigap"] .ref-card[data-print-id="medigap"] {
+      display: block !important;
+    }
+    .print-btn { display: none !important; }
+  }
 </style>
