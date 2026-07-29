@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is the main difference between Medicare and Medicaid?', answer: 'Medicare is a federal program based on age (65+) or disability, available regardless of income. Medicaid is a joint federal-state program based on income and financial need. Medicare is the same nationwide; Medicaid rules and benefits vary by state.' },
+  { question: 'Can I have both Medicare and Medicaid at the same time?', answer: 'Yes — this is called being "dual eligible." Medicaid can help pay Medicare premiums, deductibles, and copays for people with limited income and resources, and may cover services Medicare doesn\'t, like long-term custodial care.' },
+  { question: 'Does Medicaid cost more or less than Medicare?', answer: 'For those who qualify, Medicaid typically has little to no cost — premiums, deductibles, and copays are usually minimal or waived based on income. Medicare has standard premiums and deductibles (e.g., the 2026 Part B premium is $202.90/month) regardless of income, though income-based help programs exist.' },
+  { question: 'Who administers Medicare vs. Medicaid?', answer: 'Medicare is administered entirely by the federal Centers for Medicare & Medicaid Services (CMS). Medicaid is administered by each individual state within federal guidelines, which is why Medicaid eligibility and benefits differ from state to state.' },
+  { question: 'Does Medicaid cover things Medicare doesn\'t?', answer: 'Yes, notably long-term custodial care (like nursing home stays for daily living assistance), which Original Medicare generally does not cover. Medicaid may also cover dental, vision, and transportation to medical appointments, depending on the state.' },
+  { question: 'How do I know if I qualify for Medicaid in addition to Medicare?', answer: 'Eligibility depends on your income and assets relative to your state\'s Medicaid thresholds. Programs like the Qualified Medicare Beneficiary (QMB) program can help pay Medicare costs for people with limited income even if they don\'t qualify for full Medicaid — check with your state Medicaid office or a licensed insurance agent.' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare vs. Medicaid: What\'s the Difference?',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.quick-answer'],
+    },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  dataset({
+    name: 'Medicare Part B Premium 2026',
+    description: 'The standard Medicare Part B monthly premium ($202.90) for 2026, as published by CMS, used for cost comparison against Medicaid.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
+];
+---
+<BaseLayout
+  title="Medicare vs. Medicaid: What's the Difference in 2026?"
+  description="Medicare vs. Medicaid explained side by side — eligibility, cost, coverage, who administers each program, and whether you can have both at once."
+  path="/medicare-vs-medicaid/"
+  breadcrumbs={[{ name: 'Medicare vs. Medicaid', url: '/medicare-vs-medicaid/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Medicare vs. Medicaid', url: '/medicare-vs-medicaid/' }]} />
+  <PageHero
+    label="The #1 Confused Question"
+    heading="Medicare vs. Medicaid: What's the Difference?"
+    subtext="Two federal health programs with similar names and very different rules. Here's a clear, side-by-side breakdown."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Medicare is a <strong>federal</strong> health insurance program based mainly on age (65+)
+          or disability — your income doesn't determine eligibility. Medicaid is a
+          <strong>joint federal-state</strong> program based on income and financial need, with
+          rules that vary by state. Some people qualify for both at once.
+        </p>
+      </div>
+
+      <h2>Side-by-Side Comparison</h2>
+      <div style="overflow-x: auto; margin-top: 1.5rem;">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Medicare</th>
+              <th>Medicaid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Who runs it</strong></td>
+              <td>Federal government (CMS) exclusively</td>
+              <td>Federal government + each state (state administers)</td>
+            </tr>
+            <tr>
+              <td><strong>Eligibility basis</strong></td>
+              <td>Age 65+, or disability/ESRD/ALS — not income</td>
+              <td>Income and financial need — varies by state</td>
+            </tr>
+            <tr>
+              <td><strong>Rules by state</strong></td>
+              <td>Same nationwide</td>
+              <td>Vary significantly by state</td>
+            </tr>
+            <tr>
+              <td><strong>Typical cost</strong></td>
+              <td>Part B premium $202.90/mo (2026); Part A usually $0</td>
+              <td>Often little to no cost for those who qualify</td>
+            </tr>
+            <tr>
+              <td><strong>Long-term custodial care</strong></td>
+              <td>Generally not covered</td>
+              <td>Often covered, subject to state rules</td>
+            </tr>
+            <tr>
+              <td><strong>Can you have both?</strong></td>
+              <td colspan="2">Yes — known as "dual eligible" status</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Eligibility: Who Qualifies for Each</h2>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Medicare Eligibility</h3>
+          <p>
+            You generally qualify at 65 if you or a spouse worked and paid Medicare taxes for at
+            least 10 years. You can also qualify earlier with 24 months of Social Security
+            Disability Insurance (SSDI), or immediately with End-Stage Renal Disease (ESRD) or ALS.
+            Income and assets play no role in basic Medicare eligibility.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Medicaid Eligibility</h3>
+          <p>
+            Based on your household income and, in many states, your assets, relative to
+            state-specific thresholds. Because each state sets its own limits and covered groups,
+            two people with identical incomes in different states can have very different Medicaid
+            eligibility outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Coverage: What Each Program Pays For</h2>
+      <p>
+        Both programs cover core medical care — hospital stays, doctor visits, prescription drugs —
+        but the details diverge in important ways.
+      </p>
+      <ul class="checklist">
+        <li><strong>Medicare</strong> covers hospital care (Part A), medical care (Part B), and optionally drug coverage (Part D) or a private Medicare Advantage plan (Part C). It generally does not cover long-term custodial care, and Original Medicare has no annual out-of-pocket cap.</li>
+        <li><strong>Medicaid</strong> covers a broader range of services depending on the state, often including long-term nursing home care, dental, vision, and non-emergency medical transportation — services Original Medicare typically excludes.</li>
+      </ul>
+      <p style="margin-top: 1.5rem;">
+        For the full picture of what Original Medicare leaves uncovered and how Medicare Advantage
+        or Medigap can fill those gaps, see <a href="/coverage">our coverage options guide</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Cost: What You'll Actually Pay</h2>
+      <p>
+        This is where the two programs look most different. Medicare has standard, published
+        costs that apply regardless of income (though income-based surcharges and assistance
+        programs exist on top of the standard rates):
+      </p>
+      <ul class="checklist">
+        <li>Part A: usually $0/month premium; $1,676 deductible per benefit period if hospitalized</li>
+        <li>Part B: $202.90/month standard premium in 2026, plus a $283 annual deductible</li>
+        <li>Part D: premiums vary by plan; 2026 out-of-pocket cap is $2,100/year</li>
+      </ul>
+      <p style="margin-top: 1rem;">
+        Medicaid, by contrast, is designed around ability to pay — for those who qualify, premiums
+        and cost-sharing are often minimal or waived entirely. See our
+        <a href="/medicare-costs-2026">full 2026 Medicare cost breakdown</a> for exact figures,
+        including IRMAA income brackets.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Can You Have Both? Understanding "Dual Eligible" Status</h2>
+      <p>
+        Yes — many people qualify for both Medicare and Medicaid simultaneously. This is called
+        being "dual eligible." When it happens, Medicaid can help pay for Medicare's premiums,
+        deductibles, and copays, and may cover services Medicare doesn't, like long-term custodial
+        care.
+      </p>
+      <p>
+        There's also a middle tier worth knowing about: programs like the Qualified Medicare
+        Beneficiary (QMB) program can help pay Medicare costs for people with limited income even
+        if they don't qualify for full Medicaid benefits. If your income is limited, it's worth
+        checking with your state Medicaid office — or a licensed insurance agent — to see what
+        assistance you might qualify for.
+      </p>
+      <p>
+        Dual-eligible beneficiaries also have access to a specific type of Medicare Advantage plan
+        called a Dual Eligible Special Needs Plan (D-SNP), designed specifically to coordinate
+        Medicare and Medicaid benefits together rather than leaving you to manage two separate
+        programs on your own. If you think you might qualify for both programs, ask specifically
+        about D-SNP availability in your area — not every Medicare Advantage plan offers one.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Common Mix-Ups We Hear</h2>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>"I make too much money for Medicare."</h3>
+          <p>
+            Income doesn't affect basic Medicare eligibility at all — it's based on age or
+            disability. Income only comes into play through IRMAA, a surcharge that raises your
+            Part B and Part D premiums if your income is above certain thresholds, but it never
+            disqualifies you from the program itself.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"Medicaid will cover my nursing home costs automatically."</h3>
+          <p>
+            Only if you meet your state's income and asset limits — Medicaid nursing home coverage
+            typically requires you to "spend down" assets to qualify, and rules vary significantly
+            by state. This is a common area where families are caught off guard.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"Once I'm on Medicare, I can't also get Medicaid."</h3>
+          <p>
+            Not true — dual eligibility is common, especially for lower-income seniors. If your
+            income and assets are limited, it's worth checking whether you qualify for Medicaid or
+            a Medicare Savings Program even after you're already enrolled in Medicare.
+          </p>
+        </div>
+        <div class="card">
+          <h3>"Medicare and Medicaid are basically the same thing with different names."</h3>
+          <p>
+            They're structured completely differently — one is a single federal program with
+            nationwide rules, the other is 50+ separate state programs operating under shared
+            federal guidelines. A Medicaid recipient moving from one state to another may find their
+            coverage changes; a Medicare recipient's coverage does not.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Which Program Applies to You?</h2>
+      <p>
+        If you're approaching 65, or you already have a qualifying disability, ESRD, or ALS
+        diagnosis, Medicare is almost certainly the program that applies to you — regardless of
+        your income level. If you're under 65 without a qualifying condition and have limited
+        income, Medicaid is the program to look into instead. And if both apply — age/disability
+        <em>and</em> limited income — you may be eligible for both at once, which is worth
+        exploring rather than assuming you only qualify for one.
+      </p>
+      <p>
+        For a deeper look at how Medicare itself works once you've confirmed it applies to you,
+        start with <a href="/what-is-medicare">What Is Medicare?</a>, or jump straight to
+        <a href="/enrollment">when and how to enroll</a>.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Not sure which programs you qualify for?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) who can help you understand your
+        specific situation. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+      <a href="/what-is-medicare" class="btn btn-primary">Back to Medicare Basics</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+  .checklist li {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-teal);
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What happens if I miss my Medicare enrollment window?', answer: 'You may face a late enrollment penalty added permanently to your Part B and/or Part D premium for as long as you have that coverage, and you may have to wait until the next General Enrollment Period (January 1 - March 31) to sign up, potentially leaving you without coverage for months.' },
+  { question: 'Does my employer coverage automatically continue to work with Medicare?', answer: 'Not automatically in every case. Whether your employer plan or Medicare pays first depends on your employer\'s size. Smaller employers (fewer than 20 employees) generally require you to enroll in Medicare at 65 for it to pay primary — assuming your coverage continues unchanged can leave gaps.' },
+  { question: 'Do I need to compare my Medicare plan every year?', answer: 'Yes. Medicare Advantage and Part D plans can change their premiums, copays, and drug formularies every year, even if you don\'t switch plans. The Annual Enrollment Period (AEP 2026, Oct 15 - Dec 7) exists specifically so you can review and switch if your current plan no longer fits.' },
+  { question: 'Is it a mistake to skip Part D if I don\'t take any medications?', answer: 'Often, yes. Going without creditable prescription drug coverage for 63+ continuous days after your Initial Enrollment Period ends can trigger a permanent Part D late enrollment penalty, even if you don\'t need medications now — your future self may need coverage without the penalty already attached.' },
+  { question: 'What\'s the difference between Medigap and Medicare Advantage that trips people up?', answer: 'Medigap works alongside Original Medicare with no provider network, but doesn\'t include drug coverage and generally can\'t be added later without medical underwriting outside your initial window. Medicare Advantage bundles more benefits but typically requires using an in-network provider. Choosing without understanding this tradeoff is one of the most common regretted decisions.' },
+  { question: 'Why does it matter if my doctor is in-network?', answer: 'If you enroll in a Medicare Advantage plan and your doctors or preferred hospital aren\'t in its network, you could face significantly higher costs or need to switch providers entirely. Always verify network status directly with the plan before enrolling, not just from a plan brochure.' },
+  { question: 'What is a Special Enrollment Period and why does missing one matter?', answer: 'A Special Enrollment Period (SEP) lets you enroll or make changes outside normal windows when triggered by specific life events, like losing employer coverage or moving. Missing a qualifying SEP window can force you to wait for the next General Enrollment Period, potentially leaving you without coverage or facing penalties in the meantime.' },
+];
+
+const MISTAKES = [
+  {
+    n: 1,
+    title: 'Missing Your Enrollment Window',
+    summary: 'The single most consequential Medicare mistake — and the one with the most lasting financial impact.',
+    body: `Your Initial Enrollment Period (IEP) is a 7-month window centered on your 65th birthday month — 3 months before, your birthday month, and 3 months after. Miss it without a qualifying Special Enrollment Period, and two things happen: you may have to wait until the next General Enrollment Period (January 1 - March 31) to enroll, and you'll likely face a late enrollment penalty.
+
+The Part B penalty is especially punishing because it's permanent: your premium increases by 10% for each full 12-month period you were eligible but didn't enroll, and that increase lasts for as long as you have Part B — not just for a year or two. The Part D penalty works similarly, calculated based on how many months you went without creditable drug coverage.`,
+  },
+  {
+    n: 2,
+    title: 'Assuming Employer Coverage Automatically Continues to Work With Medicare',
+    summary: 'Whether Medicare or your employer plan pays first depends on employer size — and getting it wrong can mean unpaid claims.',
+    body: `Many people approaching 65 who are still working assume their employer health plan just keeps working the same way once Medicare eligibility kicks in. That's not always true. If your employer has fewer than 20 employees, Medicare generally becomes your primary coverage at 65, and you typically need to enroll in Part A and Part B for claims to be paid correctly — your employer plan may pay little or nothing without it.
+
+If your employer has 20 or more employees, your group plan usually stays primary, and you can often delay Medicare Part B without a penalty until that coverage ends. The rules differ enough between these two scenarios that assuming either one applies to you without checking is a real risk. See our <a href="/working-at-65">full breakdown of how Medicare interacts with employer coverage</a> before you decide to delay enrollment.`,
+  },
+  {
+    n: 3,
+    title: 'Not Comparing Plans Annually',
+    summary: 'Your Medicare Advantage or Part D plan can change year to year even if you never touch it.',
+    body: `It's tempting to enroll in a Medicare Advantage or Part D plan once and never think about it again. But insurance companies routinely adjust premiums, copays, provider networks, and drug formularies from one plan year to the next — sometimes significantly. A plan that was the best fit for your budget and prescriptions two years ago may no longer be competitive, or may no longer cover a medication you've since been prescribed.
+
+The Annual Enrollment Period (AEP 2026, running October 15 through December 7, 2026, for Plan Year 2027 coverage) exists specifically so you can review your options and switch if needed. Skipping this annual check-in is one of the quieter mistakes — it doesn't trigger a penalty, but it can quietly cost you hundreds of dollars a year in avoidable premiums or drug costs.`,
+  },
+  {
+    n: 4,
+    title: 'Skipping Part D Because You Don\'t Take Medications Now',
+    summary: 'Going without creditable drug coverage sets a penalty clock running, even if you feel fine today.',
+    body: `If you don't take any prescription medications when you first become eligible for Medicare, it's tempting to skip Part D entirely to save on premiums. The problem: if you go 63 or more continuous days without creditable prescription drug coverage after your Initial Enrollment Period ends, you can trigger a permanent late enrollment penalty when you eventually do sign up for Part D — even years later, and even if your health situation has changed and you now need medications.
+
+The penalty is calculated based on how long you went without coverage, and like the Part B penalty, it's added to your premium for as long as you have Part D. The safer approach for most people is enrolling in at least a low-cost standalone Part D plan during your Initial Enrollment Period, even with minimal current drug needs, to avoid the penalty clock ever starting.`,
+  },
+  {
+    n: 5,
+    title: 'Not Understanding Medigap vs. Medicare Advantage Before Choosing',
+    summary: 'These two paths work fundamentally differently, and the choice is hard to reverse later.',
+    body: `Medigap and Medicare Advantage are often presented as simply "two options," but they work in very different ways. Medigap policies work alongside Original Medicare, letting you see any provider nationwide who accepts Medicare, but they don't include drug coverage (you'd still need a separate Part D plan) and generally carry a higher monthly premium. Medicare Advantage plans typically bundle in Part D and extra benefits, often with a lower or $0 premium, but usually require using an in-network provider.
+
+The mistake isn't picking one over the other — it's picking without understanding the tradeoff. This matters more than it might seem, because switching from Medicare Advantage back to a Medigap policy later can require medical underwriting outside your initial enrollment window, meaning a Medigap insurer could deny you coverage or charge more based on your health at that point. See our <a href="/coverage">full comparison of coverage options</a> before you decide.`,
+  },
+  {
+    n: 6,
+    title: 'Not Verifying Provider Networks Before Enrolling',
+    summary: 'A plan brochure listing "your doctor" isn\'t the same as confirming it directly.',
+    body: `If you choose a Medicare Advantage plan, your doctors, specialists, and preferred hospital need to be in that plan's network for you to get in-network pricing — and sometimes for the visit to be covered at all, depending on the plan type. It's a common mistake to assume a provider is in-network based on a plan's marketing materials or a general sense that "most doctors take Medicare Advantage."
+
+Provider networks can and do change year to year, sometimes mid-year. Before enrolling — and again each year during AEP — verify directly with both the plan and your provider's office that the specific doctors and facilities you use are currently in-network for the plan year you're enrolling in, not just for the current year.`,
+  },
+  {
+    n: 7,
+    title: 'Missing Special Enrollment Periods (SEPs)',
+    summary: 'Life events create enrollment windows — missing them can mean waiting months, or facing a penalty.',
+    body: `Special Enrollment Periods let you enroll in or change Medicare coverage outside the usual windows when triggered by specific circumstances — most commonly losing employer group health coverage, but also situations like moving out of your plan's service area, losing Medicaid eligibility, or your plan leaving the Medicare program. Most SEPs have a limited window, often around 2 months from the triggering event.
+
+The mistake is not realizing a life event qualifies you for an SEP at all, and letting the window close without acting. Missing a qualifying SEP can mean waiting until the next General Enrollment Period to enroll, potentially leaving you without coverage for months and facing a late enrollment penalty you could have avoided entirely. If your life circumstances are changing — retiring, moving, losing coverage — it's worth checking whether an SEP applies before assuming you have to wait for AEP.`,
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Top 7 Medicare Mistakes to Avoid',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.quick-answer'],
+    },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Avoid the Most Common Medicare Mistakes',
+    description: 'A sequence of checks to avoid the 7 most common and costly Medicare enrollment and coverage mistakes.',
+    step: MISTAKES.map((m) => ({ '@type': 'HowToStep', name: m.title, text: m.summary })),
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  dataset({
+    name: 'Medicare Part B Late Enrollment Penalty Structure',
+    description: 'CMS rules on how the Medicare Part B late enrollment penalty is calculated — a 10% premium increase per full 12-month period of eligibility without enrollment, applied for as long as Part B coverage continues.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties',
+  }),
+];
+---
+<BaseLayout
+  title="Top 7 Medicare Mistakes to Avoid in 2026 | Learn Medicare"
+  description="The 7 most common and costly Medicare mistakes — missed enrollment windows, employer coverage assumptions, skipping Part D, and more — explained in full."
+  path="/medicare-mistakes/"
+  breadcrumbs={[{ name: 'Medicare Mistakes', url: '/medicare-mistakes/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Medicare Mistakes', url: '/medicare-mistakes/' }]} />
+  <PageHero
+    label="Avoid These"
+    heading="Top 7 Medicare Mistakes to Avoid"
+    subtext="These are the mistakes we see most often — and the ones with the biggest financial consequences. Here's how to avoid each one."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          The most common Medicare mistakes are: missing your enrollment window, wrongly assuming
+          employer coverage automatically continues to work with Medicare, not comparing plans
+          annually, skipping Part D, not understanding Medigap vs. Medicare Advantage, not verifying
+          provider networks, and missing Special Enrollment Periods. Each can carry lasting
+          financial consequences — most are entirely avoidable with the right information.
+        </p>
+      </div>
+
+      {MISTAKES.map((m) => (
+        <div class="mistake-block">
+          <div class="mistake-header">
+            <span class="mistake-num">{m.n}</span>
+            <h2>{m.title}</h2>
+          </div>
+          <p class="mistake-summary">{m.summary}</p>
+          {m.body.split('\n\n').map((para) => <p set:html={para} />)}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Don't navigate this alone.</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) who can help you avoid these
+        mistakes with a free, no-pressure review of your situation. Call
+        <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+      <a href="/enrollment" class="btn btn-primary">See Enrollment Windows</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+
+  .mistake-block {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .mistake-block:first-of-type { border-top: none; padding-top: 1rem; }
+  .mistake-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .mistake-num {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-purple);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .mistake-header h2 { margin: 0; }
+  .mistake-summary {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+</style>
