@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import { getCollection } from 'astro:content';
+import { authorship } from '../../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Medicare Blog',
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://learnmedicare.org/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://learnmedicare.org/blog/' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="Medicare Blog | Learn Medicare"
+  description="Plain-language Medicare articles from licensed insurance agent Kayla Price. Enrollment tips, plan comparisons, and cost breakdowns."
+  path="/blog/"
+  breadcrumbs={[{ name: 'Blog', url: '/blog/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Blog', url: '/blog/' }]} />
+  <PageHero
+    label="Medicare Blog"
+    heading="Plain-Language Medicare Articles"
+    subtext="Enrollment tips, plan comparisons, and cost breakdowns from a licensed insurance agent — no jargon, no sales pitch."
+  />
+
+  <section>
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}/`} class="card blog-card">
+            <p class="blog-card-date">
+              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h2>{post.data.title}</h2>
+            <p class="blog-card-excerpt">{post.data.excerpt}</p>
+            <div class="blog-card-tags">
+              {post.data.tags.map((tag: string) => <span class="tag-pill">{tag}</span>)}
+            </div>
+            <span class="blog-card-cta">Read Article &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Want a structured walkthrough instead?</h2>
+      <p>Take our free, self-paced Medicare course — six lessons covering everything you need to know.</p>
+      <a href="/course" class="btn btn-primary">Take the Free Course</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .blog-card {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .blog-card-date {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 0.5rem;
+  }
+  .blog-card h2 { margin: 0 0 0.6rem; font-size: 1.15rem; }
+  .blog-card-excerpt {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.85rem;
+  }
+  .blog-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.85rem; }
+  .tag-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-purple);
+    background: var(--color-lavender);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+  }
+  :root[data-theme="dark"] .tag-pill { background: rgba(144, 89, 181, 0.15); }
+  .blog-card-cta { font-weight: 700; color: var(--color-purple); font-size: 0.85rem; }
+</style>

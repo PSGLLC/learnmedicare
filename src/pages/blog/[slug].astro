@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { getCollection, render } from 'astro:content';
+import { authorship } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const allPosts = await getCollection('blog');
+
+const DATE_PUBLISHED = post.data.date.toISOString().slice(0, 10);
+const DATE_MODIFIED = (post.data.dateModified ?? post.data.date).toISOString().slice(0, 10);
+
+// Reading time: standard 200 words/minute estimate against the raw markdown
+// body (post.body is the unrendered source, close enough for an estimate —
+// exact rendered word count isn't worth a second render pass here).
+const wordCount = post.body?.split(/\s+/).filter(Boolean).length ?? 0;
+const readingMinutes = Math.max(1, Math.round(wordCount / 200));
+
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id && p.data.tags.some((t: string) => post.data.tags.includes(t)))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const canonicalUrl = `https://learnmedicare.org/blog/${post.id}/`;
+
+const jsonLd: Record<string, any>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.data.title,
+    description: post.data.description,
+    url: canonicalUrl,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://learnmedicare.org/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://learnmedicare.org/blog/' },
+      { '@type': 'ListItem', position: 3, name: post.data.title, item: canonicalUrl },
+    ],
+  },
+];
+if (post.data.faqs && post.data.faqs.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
+    mainEntity: post.data.faqs.map((f: { question: string; answer: string }) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  });
+}
+---
+<BaseLayout
+  title={post.data.seoTitle ?? post.data.title}
+  description={post.data.description}
+  path={`/blog/${post.id}/`}
+  breadcrumbs={[{ name: 'Blog', url: '/blog/' }, { name: post.data.title, url: `/blog/${post.id}/` }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Blog', url: '/blog/' }, { name: post.data.title, url: `/blog/${post.id}/` }]} />
+  <PageHero label="Medicare Blog" heading={post.data.title}>
+    <p class="post-meta">
+      {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      &bull; {readingMinutes} min read
+    </p>
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container narrow">
+      <div class="post-tags">
+        {post.data.tags.map((tag: string) => <span class="tag-pill">{tag}</span>)}
+      </div>
+      <div class="post-body">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  {post.data.faqs && post.data.faqs.length > 0 && <FAQSection faqs={post.data.faqs} />}
+
+  {relatedPosts.length > 0 && (
+    <section class="section-alt">
+      <div class="container">
+        <h2>Related Articles</h2>
+        <div class="related-grid">
+          {relatedPosts.map((rp) => (
+            <a href={`/blog/${rp.id}/`} class="card related-card">
+              <h3>{rp.data.title}</h3>
+              <p>{rp.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>Have questions about your specific situation?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+      <a href="/blog" class="btn btn-primary">More Articles</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 760px; }
+  .post-meta { color: var(--color-text-muted); font-size: 0.9rem; margin: 0.75rem 0 0.5rem; }
+  .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .tag-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-purple);
+    background: var(--color-lavender);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+  }
+  :root[data-theme="dark"] .tag-pill { background: rgba(144, 89, 181, 0.15); }
+
+  .post-body :global(h2) { margin-top: 2.25rem; }
+  .post-body :global(p) { line-height: 1.75; }
+  .post-body :global(ul), .post-body :global(ol) { line-height: 1.75; padding-left: 1.4rem; }
+  .post-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+  .post-body :global(th), .post-body :global(td) {
+    text-align: left;
+    padding: 0.6rem 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .post-body :global(th) {
+    background: var(--color-purple);
+    color: #fff;
+    font-family: var(--font-heading);
+  }
+  .post-body :global(a) { color: var(--color-purple); }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .related-card { text-decoration: none; color: var(--color-text); }
+  .related-card h3 { margin: 0 0 0.5rem; font-size: 1.02rem; }
+  .related-card p { margin: 0; font-size: 0.88rem; color: var(--color-text-muted); }
+
+  .cta-band { text-align: center; padding: 2.5rem 0; background: var(--color-lavender); }
+  :root[data-theme="dark"] .cta-band { background: rgba(144, 89, 181, 0.1); }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+</style>
