@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import MarkCompleteButton from '../../components/MarkCompleteButton.astro';
+import LessonFooterNav from '../../components/LessonFooterNav.astro';
+import { authorship, learningResource, dataset } from '../../lib/schema';
+import { lessonByN } from '../../lib/lessons';
+
+const lesson = lessonByN(2);
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What does Medicare Part A cover?', answer: 'Part A covers inpatient hospital stays, care in a skilled nursing facility (up to 100 days per benefit period, with conditions), hospice care, and some home health care. It does not cover long-term custodial care.' },
+  { question: 'What does Medicare Part B cover?', answer: 'Part B covers doctor visits, outpatient care, preventive services like screenings and vaccines, mental health services, durable medical equipment, and some home health care not covered by Part A.' },
+  { question: 'How much do Part A and Part B cost in 2026?', answer: 'Part A is usually $0/month if you have 40+ work quarters (otherwise $285 or $518/month), with a $1,676 deductible per benefit period. Part B is $202.90/month standard premium with a $283 annual deductible, plus 20% coinsurance after that.' },
+  { question: 'Can I have Part A without Part B, or vice versa?', answer: 'Yes, technically, but it\'s uncommon and usually not advisable unless you have other coverage. Part A alone doesn\'t cover doctor visits or outpatient care, and Part B alone doesn\'t cover hospital stays — together they form Original Medicare.' },
+];
+
+const jsonLd = [
+  learningResource({
+    name: lesson.title,
+    description: lesson.description,
+    url: `https://learnmedicare.org${lesson.path}/`,
+    position: lesson.n,
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: lesson.title,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  dataset({
+    name: 'Medicare Part A & Part B Costs 2026',
+    description: 'The 2026 Part A deductible ($1,676 per benefit period) and Part B premium ($202.90/month) and deductible ($283), as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
+];
+---
+<BaseLayout
+  title="Lesson 2: Part A and Part B Explained | Free Course"
+  description="Lesson 2 of the free Medicare course: what Part A hospital coverage and Part B medical coverage actually pay for, and what they cost in 2026."
+  path="/course/lesson-2/"
+  breadcrumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 2: Part A and Part B', url: '/course/lesson-2/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 2', url: '/course/lesson-2/' }]} />
+  <PageHero
+    label="Lesson 2 of 6"
+    heading="Part A and Part B — Hospital and Medical Coverage"
+    subtext="Original Medicare's two building blocks, explained in detail: what each one pays for, what it costs, and where the gaps are."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Part A covers inpatient hospital care; Part B covers outpatient medical care like doctor
+          visits. Together they're called Original Medicare. In 2026, Part A is usually
+          premium-free, while Part B costs $202.90/month standard, with a $283 deductible.
+        </p>
+      </div>
+
+      <h2>Part A: Hospital Insurance in Detail</h2>
+      <p>Part A generally covers:</p>
+      <ul class="checklist">
+        <li>Inpatient hospital stays (semi-private room, meals, general nursing, medications as part of your inpatient treatment)</li>
+        <li>Skilled nursing facility care, for up to 100 days per benefit period, following a qualifying hospital stay</li>
+        <li>Hospice care for people with a terminal diagnosis</li>
+        <li>Some home health care, when ordered by a doctor and provided by a Medicare-certified agency</li>
+      </ul>
+      <p>
+        A critical detail: Part A's skilled nursing coverage is <strong>not</strong> the same as
+        long-term custodial care. It only applies after a qualifying inpatient hospital stay, and
+        it's time-limited. Medicare generally does not pay for extended nursing home stays for
+        help with daily living activities — that gap is one of the most consequential ones in
+        Medicare, and it's why long-term care planning is often handled separately.
+      </p>
+
+      <h2>Part A Costs in 2026</h2>
+      <div style="overflow-x: auto; margin-top: 1rem;">
+        <table class="compare">
+          <thead><tr><th>Item</th><th>2026 Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Premium (40+ work quarters)</td><td>$0/month</td></tr>
+            <tr><td>Premium (30-39 quarters)</td><td>$285/month</td></tr>
+            <tr><td>Premium (fewer than 30 quarters)</td><td>$518/month</td></tr>
+            <tr><td>Deductible (per benefit period)</td><td>$1,676</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Part B: Medical Insurance in Detail</h2>
+      <p>Part B generally covers:</p>
+      <ul class="checklist">
+        <li>Doctor visits, including specialists</li>
+        <li>Outpatient care and outpatient hospital services</li>
+        <li>Preventive services — annual wellness visits, many screenings, and vaccines, often at no cost</li>
+        <li>Durable medical equipment, like wheelchairs and walkers</li>
+        <li>Mental health services, including outpatient counseling</li>
+        <li>Ambulance services when medically necessary</li>
+      </ul>
+
+      <h2>Part B Costs in 2026</h2>
+      <div style="overflow-x: auto; margin-top: 1rem;">
+        <table class="compare">
+          <thead><tr><th>Item</th><th>2026 Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Standard monthly premium</td><td>$202.90</td></tr>
+            <tr><td>Annual deductible</td><td>$283</td></tr>
+            <tr><td>Coinsurance after deductible</td><td>20% of Medicare-approved amount</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: 1rem;">
+        That 20% coinsurance has no cap under Original Medicare alone — there's no ceiling on how
+        much you could owe in a serious health year. This is exactly the gap that Medicare
+        Advantage plans (with their built-in annual maximums) and Medigap policies (which can cover
+        that 20%) exist to close. We'll cover both in Lessons 3 and 5.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Why You Usually Need Both</h2>
+      <p>
+        Part A alone doesn't cover doctor visits or outpatient care. Part B alone doesn't cover
+        hospital stays. Most people need both to have functional coverage, which is why they're
+        almost always enrolled together and referred to jointly as "Original Medicare." Delaying
+        Part B without other qualifying coverage — like an employer plan from a large employer —
+        can trigger a permanent late enrollment penalty, covered in full in Lesson 6.
+      </p>
+      <p>
+        If you're still working and wondering whether you need to enroll in Part B right away, that
+        depends heavily on your employer's size — see our full breakdown at
+        <a href="/working-at-65">Working at 65: How Employer Coverage Interacts With Medicare</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>What Happens After You Meet Your Deductibles</h2>
+      <p>
+        Once you've met the Part A deductible for a benefit period, Part A generally covers your
+        inpatient hospital costs in full for the first 60 days, with daily coinsurance kicking in
+        for longer stays. Once you've met the Part B annual deductible, Medicare generally pays 80%
+        of the Medicare-approved amount for covered services, and you're responsible for the
+        remaining 20% — for as many services as you use for the rest of the year, with no annual
+        cap on that 20% share under Original Medicare alone. Understanding this open-ended
+        coinsurance is the single biggest reason people look at Medicare Advantage plans (with
+        their built-in maximums) or Medigap policies (which can cover that 20%) rather than relying
+        on Original Medicare by itself.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <MarkCompleteButton slug={lesson.slug} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Not sure which parts you actually need?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+    </div>
+  </section>
+
+  <LessonFooterNav n={lesson.n} />
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 0; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .checklist li { position: relative; padding-left: 1.75rem; }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-teal);
+    font-weight: 700;
+  }
+</style>

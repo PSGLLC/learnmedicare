@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import MarkCompleteButton from '../../components/MarkCompleteButton.astro';
+import LessonFooterNav from '../../components/LessonFooterNav.astro';
+import { authorship, learningResource } from '../../lib/schema';
+import { lessonByN } from '../../lib/lessons';
+
+const lesson = lessonByN(5);
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is Medigap?', answer: 'Medigap (Medicare Supplement Insurance) is a private insurance policy that works alongside Original Medicare to help pay costs Original Medicare doesn\'t cover, like copays, coinsurance, and deductibles.' },
+  { question: 'When is the best time to enroll in Medigap?', answer: 'Your Medigap Open Enrollment Period is the 6-month window starting the month you\'re both 65+ and enrolled in Part B. During this window, insurers must sell you any Medigap policy regardless of health conditions. Outside this window, insurers can use medical underwriting to deny coverage or charge more.' },
+  { question: 'Does Medigap include prescription drug coverage?', answer: 'No. Medigap policies do not include Part D drug coverage — you\'d need a separate standalone Part D plan alongside your Medigap policy and Original Medicare.' },
+  { question: 'Can I use any doctor with a Medigap policy?', answer: 'Yes. Since Medigap works alongside Original Medicare rather than replacing it, you can see any provider nationwide who accepts Medicare — there\'s no network restriction, unlike most Medicare Advantage plans.' },
+];
+
+const jsonLd = [
+  learningResource({
+    name: lesson.title,
+    description: lesson.description,
+    url: `https://learnmedicare.org${lesson.path}/`,
+    position: lesson.n,
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: lesson.title,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+];
+---
+<BaseLayout
+  title="Lesson 5: Medigap Supplement Plans | LearnMedicare"
+  description="Lesson 5 of the free Medicare course: what Medigap supplement plans cover, how they work with Original Medicare, and the critical enrollment window."
+  path="/course/lesson-5/"
+  breadcrumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 5: Medigap Supplement Plans', url: '/course/lesson-5/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 5', url: '/course/lesson-5/' }]} />
+  <PageHero
+    label="Lesson 5 of 6"
+    heading="Medigap Supplement Plans"
+    subtext="What Medigap covers, how it works alongside Original Medicare, and why the enrollment timing on this one matters more than almost anything else in Medicare."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Medigap is private insurance that works alongside Original Medicare to cover costs like
+          copays, coinsurance, and deductibles. It doesn't include drug coverage, and it works
+          nationwide with no provider network — but you generally need to enroll during a specific
+          6-month window to guarantee acceptance regardless of health.
+        </p>
+      </div>
+
+      <h2>What Medigap Covers</h2>
+      <p>
+        Medigap policies are standardized (in most states) into lettered plans — like Plan G or
+        Plan N — each covering a specific combination of Original Medicare's cost-sharing gaps:
+        Part A coinsurance and hospital costs, Part B coinsurance or copayments, blood transfusions,
+        Part A hospice care coinsurance, skilled nursing facility coinsurance, and in some plans,
+        the Part A and/or Part B deductibles. The specific combination of what's covered depends on
+        which lettered plan you choose.
+      </p>
+
+      <h2>What Medigap Does Not Cover</h2>
+      <ul class="checklist">
+        <li>Prescription drugs — you need a separate standalone Part D plan</li>
+        <li>Dental, vision, or hearing care</li>
+        <li>Long-term custodial care</li>
+        <li>Private-duty nursing</li>
+      </ul>
+
+      <h2>The Most Popular Medigap Plans</h2>
+      <p>
+        Among the lettered Medigap plans, Plan G and Plan N are currently the most commonly chosen
+        by new enrollees. Plan G covers nearly all of Original Medicare's cost-sharing gaps except
+        the Part B deductible, which you pay out of pocket before Plan G coverage applies to
+        further Part B costs. Plan N covers a similar range but with small copays for some office
+        and emergency room visits, in exchange for a typically lower monthly premium than Plan G.
+        The right choice between them — and among the other lettered plans — depends on how you
+        weigh a lower monthly premium against slightly higher costs when you actually use care.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>The Enrollment Window That Matters Most</h2>
+      <div class="callout" style="margin-top: 1rem;">
+        <p style="margin:0;">
+          <strong>Medigap Open Enrollment</strong> is a one-time, 6-month window that starts the
+          month you're both age 65 or older <em>and</em> enrolled in Part B. During this window,
+          insurance companies in most states must sell you any Medigap policy they offer,
+          regardless of your health history, and can't charge you more because of pre-existing
+          conditions.
+        </p>
+      </div>
+      <p style="margin-top: 1.5rem;">
+        Outside that window, insurers in most states can use medical underwriting — meaning they
+        can deny you coverage entirely or charge significantly more based on your health. This is
+        the single biggest reason the Medicare Advantage vs. Medigap decision (covered in Lesson 3)
+        isn't fully reversible: if you choose Medicare Advantage first and later decide you want a
+        Medigap policy instead, you may not be able to get one on favorable terms, or at all,
+        depending on your health at that point and your state's specific rules.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Medigap vs. Medicare Advantage: The Core Tradeoff</h2>
+      <p>
+        Medigap generally carries a higher monthly premium than many Medicare Advantage plans, but
+        in exchange, it offers predictable, low out-of-pocket costs when you actually use care, and
+        the freedom to see any Medicare-accepting provider nationwide with no referrals or network
+        restrictions. Medicare Advantage often costs less upfront but comes with network
+        limitations and variable out-of-pocket costs depending on the care you need. Revisit
+        Lesson 3 for the full side-by-side comparison if you haven't already.
+      </p>
+      <p>
+        For the full explanation of how these enrollment timing rules interact with your Initial
+        Enrollment Period, continue to Lesson 6, or see our complete
+        <a href="/enrollment">Medicare enrollment guide</a>.
+      </p>
+      <p>
+        One more detail worth knowing: Medigap premiums typically vary based on your age and where
+        you live, since standardized Medigap plans compete mainly on price and insurer reputation
+        rather than on benefits — the benefits for a given lettered plan, like Plan G, are the same
+        no matter which company sells it in most states. That means it's worth comparing quotes
+        from multiple insurers offering the same lettered plan, since prices for identical coverage
+        can vary meaningfully between companies.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <MarkCompleteButton slug={lesson.slug} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Wondering if you're still in your Medigap window?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+    </div>
+  </section>
+
+  <LessonFooterNav n={lesson.n} />
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 0; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .checklist li { position: relative; padding-left: 1.75rem; }
+  .checklist li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-text-muted);
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import MarkCompleteButton from '../../components/MarkCompleteButton.astro';
+import LessonFooterNav from '../../components/LessonFooterNav.astro';
+import { authorship, learningResource, dataset } from '../../lib/schema';
+import { lessonByN } from '../../lib/lessons';
+
+const lesson = lessonByN(4);
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is Medicare Part D?', answer: 'Part D is Medicare\'s prescription drug coverage, sold by private insurance companies either as a standalone plan (alongside Original Medicare) or bundled into a Medicare Advantage plan.' },
+  { question: 'What is the Part D out-of-pocket cap in 2026?', answer: 'As of 2026, Part D has a $2,100 annual out-of-pocket cap on covered drugs. Once you hit that amount in a calendar year, you pay $0 for the rest of the year for covered Part D drugs.' },
+  { question: 'What happens if I don\'t sign up for Part D?', answer: 'If you go 63 or more continuous days without creditable prescription drug coverage after your Initial Enrollment Period ends, you can face a permanent late enrollment penalty when you eventually enroll — even if you don\'t take medications now.' },
+  { question: 'What is a drug formulary?', answer: 'A formulary is the list of drugs a specific Part D or Medicare Advantage plan covers, organized into cost tiers. Formularies vary by plan and can change year to year, which is why checking your specific medications against a plan\'s formulary before enrolling matters.' },
+];
+
+const jsonLd = [
+  learningResource({
+    name: lesson.title,
+    description: lesson.description,
+    url: `https://learnmedicare.org${lesson.path}/`,
+    position: lesson.n,
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: lesson.title,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  dataset({
+    name: 'Medicare Part D Annual Out-of-Pocket Cap 2026',
+    description: 'The 2026 Medicare Part D annual out-of-pocket spending cap ($2,100) on covered prescription drugs, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/drug-coverage-part-d/costs-for-medicare-drug-coverage',
+  }),
+];
+---
+<BaseLayout
+  title="Lesson 4: Part D Drug Coverage Explained | Free Course"
+  description="Lesson 4 of our free Medicare course: how Part D prescription drug coverage works, drug formularies, and the 2026 $2,100 annual out-of-pocket cap."
+  path="/course/lesson-4/"
+  breadcrumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 4: Part D Drug Coverage', url: '/course/lesson-4/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 4', url: '/course/lesson-4/' }]} />
+  <PageHero
+    label="Lesson 4 of 6"
+    heading="Part D Drug Coverage — How It Works"
+    subtext="Prescription drug coverage, the 2026 out-of-pocket cap, and why skipping Part D can be a costly mistake even if you don't take medications now."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Part D covers prescription drugs through private plans, either standalone or bundled into
+          Medicare Advantage. As of 2026, your out-of-pocket costs on covered drugs are capped at
+          $2,100 per year — after that, covered drugs cost $0 for the rest of the year.
+        </p>
+      </div>
+
+      <h2>How Part D Coverage Works</h2>
+      <p>
+        Unlike Part A and Part B, which are administered directly by the federal government, Part D
+        is entirely run by private insurance companies operating under CMS rules. You choose a
+        specific plan, and that plan determines your premium, deductible (if any), and which drugs
+        it covers and at what cost — called the plan's <strong>formulary</strong>.
+      </p>
+
+      <h2>The 2026 Part D Out-of-Pocket Cap</h2>
+      <div class="callout" style="margin-top: 1.5rem;">
+        <p style="margin:0;">
+          <strong>$2,100 annual cap</strong> — once your out-of-pocket spending on covered Part D
+          drugs reaches this amount in 2026, you owe $0 for the rest of the calendar year on those
+          covered drugs. This is one of the most significant recent changes to Medicare, a result
+          of the Inflation Reduction Act's drug pricing reforms, and it replaced the older
+          "donut hole" coverage gap structure that used to leave beneficiaries with unpredictable
+          costs mid-year.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Understanding Drug Formularies</h2>
+      <p>
+        Every Part D and Medicare Advantage plan maintains its own formulary — the specific list of
+        drugs it covers, organized into cost tiers (generally, lower tiers for generics cost less
+        than higher tiers for brand-name or specialty drugs). Two plans can have very different
+        costs for the exact same medication, depending on which tier they place it in.
+      </p>
+      <p>
+        Formularies aren't fixed forever — plans can and do change their formularies from year to
+        year, sometimes removing a drug or moving it to a higher tier. This is one of the key
+        reasons annual plan comparison matters, even if you're happy with your current plan: a
+        formulary change could quietly increase what you pay for a medication you've been taking
+        for years.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Why Skipping Part D Can Backfire</h2>
+      <p>
+        It's tempting to skip Part D if you don't currently take any prescription medications — why
+        pay a premium for something you're not using? The problem is the late enrollment penalty:
+        if you go 63 or more continuous days without <strong>creditable</strong> prescription drug
+        coverage (coverage at least as good as standard Medicare drug coverage) after your Initial
+        Enrollment Period ends, enrolling later can trigger a permanent penalty added to your
+        premium — even if the gap was years ago and even if you didn't need medications at the
+        time.
+      </p>
+      <p>
+        For most people, enrolling in at least a low-cost standalone Part D plan during your
+        Initial Enrollment Period — even with minimal current drug needs — is the safer path than
+        risking a permanent penalty later. See <a href="/medicare-mistakes">our full breakdown of
+        this and other common Medicare mistakes</a> for more detail.
+      </p>
+      <p>
+        The penalty itself is calculated as roughly 1% of the national base beneficiary premium for
+        each full month you went without creditable coverage, rounded to the nearest 10 cents, and
+        it's added to your monthly Part D premium for as long as you have Part D coverage. Because
+        the national base premium can change each year, the exact dollar amount of the penalty can
+        shift slightly year to year even though the percentage calculation stays consistent — but
+        the core lesson doesn't change: the earlier you close this gap, the less it costs you over
+        time.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <MarkCompleteButton slug={lesson.slug} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Want help comparing Part D plans for your medications?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+    </div>
+  </section>
+
+  <LessonFooterNav n={lesson.n} />
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 0; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+</style>

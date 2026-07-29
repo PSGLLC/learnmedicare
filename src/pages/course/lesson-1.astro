@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import MarkCompleteButton from '../../components/MarkCompleteButton.astro';
+import LessonFooterNav from '../../components/LessonFooterNav.astro';
+import { authorship, learningResource } from '../../lib/schema';
+import { lessonByN } from '../../lib/lessons';
+
+const lesson = lessonByN(1);
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is Medicare?', answer: 'Medicare is the federal health insurance program for people 65 and older, and certain younger people with disabilities, End-Stage Renal Disease (ESRD), or ALS. It\'s administered by the Centers for Medicare & Medicaid Services (CMS).' },
+  { question: 'What are the 4 parts of Medicare?', answer: 'Part A (hospital insurance), Part B (medical insurance), Part C (Medicare Advantage, a private-plan alternative), and Part D (prescription drug coverage). Parts A and B together are called Original Medicare.' },
+  { question: 'Do I need all 4 parts?', answer: 'Most people need Part A and Part B at minimum. From there, you choose either a Medicare Advantage plan (which often bundles Part D) or a standalone Part D plan alongside Original Medicare. Skipping drug coverage entirely can lead to a lasting penalty.' },
+  { question: 'Is Medicare the same as Medicaid?', answer: 'No. Medicare is federal and based on age or disability, not income. Medicaid is a joint federal-state program based on financial need. See our full comparison for the complete breakdown.' },
+];
+
+const jsonLd = [
+  learningResource({
+    name: lesson.title,
+    description: lesson.description,
+    url: `https://learnmedicare.org${lesson.path}/`,
+    position: lesson.n,
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: lesson.title,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+];
+---
+<BaseLayout
+  title="Lesson 1: What Is Medicare? | Free Medicare Course"
+  description="Lesson 1 of our free Medicare course: what Medicare is, who qualifies, and how Parts A, B, C, and D fit together — explained in plain English."
+  path="/course/lesson-1/"
+  breadcrumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 1: What Is Medicare?', url: '/course/lesson-1/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 1', url: '/course/lesson-1/' }]} />
+  <PageHero
+    label="Lesson 1 of 6"
+    heading="What Is Medicare?"
+    subtext="The foundation for everything else in this course — what Medicare is, who qualifies, and how its four parts fit together."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Medicare is the U.S. federal health insurance program for people 65 and older, and
+          certain younger people with disabilities. It's made up of four parts — A, B, C, and D —
+          that together cover hospital stays, doctor visits, and prescription drugs.
+        </p>
+      </div>
+
+      <h2>Who Qualifies?</h2>
+      <p>
+        You generally qualify for Medicare at age 65 if you or a spouse worked and paid Medicare
+        taxes for at least 10 years. You can also qualify earlier with 24 months of Social Security
+        Disability Insurance (SSDI), or immediately with End-Stage Renal Disease (ESRD) or ALS.
+        Income has no bearing on basic eligibility — this is one of the biggest differences between
+        Medicare and Medicaid.
+      </p>
+
+      <h2>The 4 Parts, at a Glance</h2>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Part A — Hospital Insurance</h3>
+          <p>
+            Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home
+            health care. Usually premium-free if you have enough work history. We'll go deeper on
+            Part A in Lesson 2.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part B — Medical Insurance</h3>
+          <p>
+            Covers doctor visits, outpatient care, preventive services, and durable medical
+            equipment. Most people pay a standard monthly premium ($202.90 in 2026).
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part C — Medicare Advantage</h3>
+          <p>
+            A private-plan alternative to Original Medicare, bundling A, B, and often D through an
+            approved insurance company. We'll compare it to Original Medicare fully in Lesson 3.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part D — Prescription Drug Coverage</h3>
+          <p>
+            Helps cover medication costs, either standalone or bundled into a Medicare Advantage
+            plan. Lesson 4 covers exactly how this works, including the 2026 out-of-pocket cap.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>Key term:</strong> "Original Medicare" means Parts A and B together, run directly
+          by the federal government. Everything else in this course builds on that foundation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>What Medicare Doesn't Cover</h2>
+      <p>
+        A common misconception is that Medicare covers everything once you turn 65. Original
+        Medicare generally does not cover routine dental, vision, or hearing care, long-term
+        custodial care, or most care outside the U.S. — and it has no annual out-of-pocket maximum.
+        These gaps are exactly why Medicare Advantage plans and Medigap policies exist, which we'll
+        cover in Lessons 3 and 5.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>How This Course Is Organized</h2>
+      <p>
+        This lesson gave you the big picture. From here, each lesson goes one level deeper:
+        Lesson 2 covers Part A and Part B in detail, Lesson 3 compares Medicare Advantage to
+        Original Medicare, Lesson 4 explains Part D drug coverage, Lesson 5 covers Medigap
+        supplement plans, and Lesson 6 walks through exactly when and how to enroll. For a broader,
+        single-page version of this material, see our <a href="/what-is-medicare">What Is
+        Medicare? guide</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Why Getting This Right Matters</h2>
+      <p>
+        Medicare's structure can feel like alphabet soup at first, but understanding it isn't just
+        academic — it directly affects your wallet and your care. Enrolling late, or in the wrong
+        combination of parts for your situation, can mean permanent late enrollment penalties added
+        to your premium for as long as you have that coverage. Choosing between Medicare Advantage
+        and Original Medicare without understanding the tradeoffs can mean discovering your
+        preferred doctor isn't in-network, or facing unexpectedly high costs in a bad health year.
+      </p>
+      <p>
+        The goal of this course isn't to make you an expert on Medicare policy — it's to make sure
+        you understand enough to ask the right questions and avoid the most common, most costly
+        mistakes. If you want the short version of what those mistakes look like before working
+        through the full course, see our <a href="/medicare-mistakes">Top 7 Medicare Mistakes to
+        Avoid</a> guide.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <MarkCompleteButton slug={lesson.slug} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Have questions about your specific situation?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+    </div>
+  </section>
+
+  <LessonFooterNav n={lesson.n} />
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--color-text-muted); margin-bottom: 0; }
+
+  .quick-answer {
+    border-left: 4px solid var(--color-purple);
+    background: var(--color-lavender);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .quick-answer p:last-child { margin: 0; }
+</style>

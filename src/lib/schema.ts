@@ -51,6 +51,42 @@ interface DatasetOpts {
   dateModified?: string;
 }
 
+interface LearningResourceOpts {
+  name: string;
+  description: string;
+  url: string;
+  position: number;
+}
+
+/**
+ * LearningResource JSON-LD for a written lesson page under /course/lesson-N
+ * — schema.org's recommended type for a single unit of educational content
+ * that's part of a larger Course, via isPartOf. Distinct from the Course
+ * schema itself (see course.astro), which describes the overall 6-lesson
+ * offering.
+ */
+export function learningResource(opts: LearningResourceOpts) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    learningResourceType: 'Lesson',
+    position: opts.position,
+    isPartOf: {
+      '@type': 'Course',
+      name: 'Medicare 101: Free Mini-Course',
+      url: 'https://learnmedicare.org/course/',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Price Services Group, LLC',
+      url: 'https://priceservicesgroup.com',
+    },
+  };
+}
+
 /** Dataset JSON-LD block for a specific cited .gov figure. */
 export function dataset(opts: DatasetOpts) {
   return {

@@ -1,0 +1,78 @@
+---
+// Previous/Next navigation for /course/lesson-N pages, plus a link back
+// to the course hub. Pass the current lesson's `n`; prev/next resolve
+// automatically from lib/lessons.ts's fixed ordering.
+import { COURSE_LESSONS } from '../lib/lessons';
+
+interface Props {
+  n: number;
+}
+const { n } = Astro.props;
+const prev = COURSE_LESSONS.find((l) => l.n === n - 1);
+const next = COURSE_LESSONS.find((l) => l.n === n + 1);
+---
+<nav class="lesson-footer-nav" aria-label="Lesson navigation">
+  <div class="container lesson-nav-inner">
+    {prev ? (
+      <a href={prev.path} class="lesson-nav-link lesson-nav-prev">
+        <span class="lesson-nav-dir">&larr; Previous Lesson</span>
+        <span class="lesson-nav-title">{prev.title}</span>
+      </a>
+    ) : <span></span>}
+    <a href="/course" class="lesson-nav-hub">All Lessons</a>
+    {next ? (
+      <a href={next.path} class="lesson-nav-link lesson-nav-next">
+        <span class="lesson-nav-dir">Next Lesson &rarr;</span>
+        <span class="lesson-nav-title">{next.title}</span>
+      </a>
+    ) : <span></span>}
+  </div>
+</nav>
+
+<style>
+  .lesson-footer-nav {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .lesson-nav-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .lesson-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  .lesson-nav-link:hover { border-color: var(--color-purple); }
+  .lesson-nav-prev { text-align: left; }
+  .lesson-nav-next { text-align: right; grid-column: 3; }
+  .lesson-nav-dir {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-purple);
+  }
+  .lesson-nav-title { color: var(--color-text); font-weight: 600; }
+  .lesson-nav-hub {
+    grid-column: 2;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .lesson-nav-hub:hover { color: var(--color-purple); }
+  @media (max-width: 700px) {
+    .lesson-nav-inner { grid-template-columns: 1fr; }
+    .lesson-nav-next { grid-column: 1; text-align: left; }
+    .lesson-nav-hub { grid-column: 1; order: -1; margin-bottom: 0.5rem; }
+  }
+</style>
