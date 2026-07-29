@@ -1,6 +1,7 @@
 ---
-import { NAV_LINKS, BOOKING_URL } from '../site.config';
+import { NAV_LINKS, RESOURCES_DROPDOWN, BOOKING_URL } from '../site.config';
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.replace(/\/$/, ''));
 ---
 <header class="nav-wrap">
   <div class="container nav-inner">
@@ -18,6 +19,25 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
           <a href={link.href} class:list={['nav-link', { active: isActive }]}>{link.label}</a>
         );
       })}
+      <div class="nav-dropdown">
+        <button
+          type="button"
+          class:list={['nav-link', 'nav-dropdown-toggle', { active: isResourcesActive }]}
+          id="resources-toggle"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Resources <span class="nav-dropdown-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="nav-dropdown-menu" id="resources-menu" aria-labelledby="resources-toggle">
+          {RESOURCES_DROPDOWN.map((link) => {
+            const isActive = current === link.href.replace(/\/$/, '');
+            return (
+              <a href={link.href} class:list={['nav-dropdown-link', { active: isActive }]}>{link.label}</a>
+            );
+          })}
+        </div>
+      </div>
       <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Schedule Free Review</a>
     </nav>
   </div>
@@ -67,6 +87,64 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
   :root[data-theme="dark"] .nav-link:hover,
   :root[data-theme="dark"] .nav-link.active { color: var(--color-teal); }
   .nav-cta { padding: 0.55rem 1.25rem; font-size: 0.9rem; }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+  }
+  .nav-dropdown-caret { font-size: 0.7rem; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem;
+    min-width: 220px;
+    z-index: 10;
+  }
+  .nav-dropdown-menu.open { display: block; }
+  .nav-dropdown-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .nav-dropdown-link:hover, .nav-dropdown-link.active {
+    background: var(--color-lavender);
+    color: var(--color-purple);
+  }
+  :root[data-theme="dark"] .nav-dropdown-link:hover,
+  :root[data-theme="dark"] .nav-dropdown-link.active {
+    background: rgba(144, 89, 181, 0.15);
+    color: var(--color-teal);
+  }
+  @media (max-width: 980px) {
+    .nav-dropdown-menu {
+      display: block;
+      position: static;
+      box-shadow: none;
+      border: none;
+      background: none;
+      padding: 0 0 0 1rem;
+      min-width: 0;
+    }
+    .nav-dropdown-menu.open { display: block; }
+    .nav-dropdown-toggle { width: 100%; justify-content: space-between; }
+  }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
   .nav-toggle span {
     display: block;
@@ -101,5 +179,25 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
   toggle?.addEventListener('click', () => {
     const isOpen = links?.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+
+  const resourcesToggle = document.getElementById('resources-toggle');
+  const resourcesMenu = document.getElementById('resources-menu');
+  resourcesToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = resourcesMenu?.classList.toggle('open');
+    resourcesToggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+  document.addEventListener('click', (e) => {
+    if (resourcesMenu?.classList.contains('open') && !resourcesMenu.contains(e.target as Node) && e.target !== resourcesToggle) {
+      resourcesMenu.classList.remove('open');
+      resourcesToggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      resourcesMenu?.classList.remove('open');
+      resourcesToggle?.setAttribute('aria-expanded', 'false');
+    }
   });
 </script>
