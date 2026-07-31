@@ -6,11 +6,17 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
   <div class="container nav-inner">
     <a href="/" class="brand">
       <img src="/brand/psg-logo-nav.png" alt="Price Services Group logo" width="200" height="101" fetchpriority="high" decoding="async" />
-      <span class="brand-name">Learn Medicare</span>
+      <span class="brand-name"><span class="brand-learn">Learn</span><span class="brand-medicare">Medicare</span></span>
     </a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <nav class="nav-links" id="nav-links">
       {NAV_LINKS.map((link) => {
         const isActive = current === link.href.replace(/\/$/, '') || (link.href === '/' && current === '/');
@@ -29,7 +35,7 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
     top: 0;
     z-index: 50;
     background: var(--bg-primary);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--fill-teal);
   }
   .nav-inner {
     display: flex;
@@ -51,6 +57,29 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
     font-weight: 700;
     font-size: 1.15rem;
   }
+  .brand-learn { color: var(--fill-accent); }
+  .brand-medicare { color: var(--fill-teal); }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .theme-toggle:hover { color: var(--fill-accent); border-color: var(--fill-accent); }
+  .icon-moon { display: none; }
+  :root[data-theme="dark"] .icon-sun { display: none; }
+  :root[data-theme="dark"] .icon-moon { display: block; }
   .nav-links {
     display: flex;
     align-items: center;
@@ -101,5 +130,15 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
   toggle?.addEventListener('click', () => {
     const isOpen = links?.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {}
   });
 </script>
