@@ -45,7 +45,7 @@ const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     margin: 0 0 0.4rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-dark, #1a0a2e);
+    color: var(--text-primary, #1a0a2e);
     opacity: 0.75;
   }
 
@@ -70,12 +70,12 @@ const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   }
 
   .lp-segment.lp-viewed {
-    background: var(--color-teal, #51decc);
+    background: var(--fill-teal, #51decc);
     cursor: pointer;
   }
 
   .lp-segment.lp-current {
-    outline: 2px solid var(--color-teal, #51decc);
+    outline: 2px solid var(--fill-teal, #51decc);
     outline-offset: 2px;
   }
 </style>

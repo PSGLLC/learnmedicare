@@ -45,7 +45,7 @@ const { showResetProgress = false } = Astro.props;
 
 <style>
   .site-footer {
-    background: var(--color-dark);
+    background: var(--text-primary);
     color: #e7dcf4;
     padding: 3.5rem 0 2rem;
     margin-top: 3rem;
@@ -61,10 +61,10 @@ const { showResetProgress = false } = Astro.props;
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
   .footer-brand img { height: 34px; margin-bottom: 0.4rem; }
-  .tagline { font-family: var(--font-heading); font-style: italic; color: var(--color-teal); margin: 0; }
+  .tagline { font-family: var(--font-heading); font-style: italic; color: var(--fill-teal); margin: 0; }
   .footer-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
   .footer-links a { color: #d8c8ea; text-decoration: none; font-size: 0.9rem; }
-  .footer-links a:hover { color: var(--color-teal); }
+  .footer-links a:hover { color: var(--fill-teal); }
   .compliance p {
     font-size: 0.78rem;
     line-height: 1.6;
@@ -75,7 +75,7 @@ const { showResetProgress = false } = Astro.props;
   .copyright { color: #9e8bb6; }
   .legal-links { }
   .legal-links a { color: #b6a4cb; text-decoration: underline; }
-  .legal-links a:hover { color: var(--color-teal); }
+  .legal-links a:hover { color: var(--fill-teal); }
   .tpmo-disclaimer {
     max-width: 900px;
     margin: 0.5rem auto 0;
@@ -97,7 +97,7 @@ const { showResetProgress = false } = Astro.props;
     cursor: pointer;
   }
   .reset-progress-link:hover {
-    color: var(--color-teal);
+    color: var(--fill-teal);
   }
 </style>
 
