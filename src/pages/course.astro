@@ -84,7 +84,7 @@ const LESSON_STATUS_LINKS = [
   <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }]} />
   <section class="course-hero">
     <div class="container">
-      <h1>Free Medicare Course</h1>
+      <h1>Learn Medicare in Under an Hour</h1>
       <p class="course-hero-sub">
         Six self-paced lessons covering everything you need to know before you enroll in
         Medicare — no account, no login, and no cost to take it.
@@ -191,7 +191,7 @@ const LESSON_STATUS_LINKS = [
         {LESSONS.map((lesson) => (
           <div class="vl-card" data-lesson={lesson.n}>
             <div class="vl-card-head">
-              <span class="vl-num">Lesson {lesson.n}</span>
+              <span class="vl-num-circle">{lesson.n}</span>
               <span class="vl-check" aria-hidden="true">&#10003;</span>
             </div>
             <h3>{lesson.title}</h3>
@@ -581,14 +581,16 @@ const LESSON_STATUS_LINKS = [
 
 <style>
   .course-hero {
-    padding: 1.5rem 0 0.5rem;
+    padding: 3rem 0 2.5rem;
     text-align: center;
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    margin: 0 0 1.5rem;
   }
-  .course-hero h1 { font-size: 1.6rem; margin: 0; }
+  .course-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 0; color: #fff; }
   .course-hero-sub {
     max-width: 620px;
-    margin: 0.6rem auto 0;
-    color: var(--text-secondary);
+    margin: 0.75rem auto 0;
+    color: #f0e6f8;
   }
   .course-hero-cta {
     display: flex;
@@ -653,12 +655,17 @@ const LESSON_STATUS_LINKS = [
     align-items: center;
     margin-bottom: 0.35rem;
   }
-  .vl-num {
-    font-size: 0.8rem;
+  .vl-num-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--fill-accent);
+    color: #fff;
     font-weight: 700;
-    color: #9059B5;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-size: 0.9rem;
   }
   .vl-check {
     color: #51decc;
