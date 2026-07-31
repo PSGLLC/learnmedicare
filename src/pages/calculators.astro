@@ -422,9 +422,13 @@ const jsonLd = [
 </script>
 
 <style>
-  .page-hero { background: var(--fill-purple-light); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--bg-secondary); }
-  .subhead { color: var(--text-secondary); font-size: 1.1rem; max-width: 640px; }
+  .page-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .page-hero .eyebrow { color: var(--fill-teal); }
+  .page-hero h1 { color: #fff; }
+  .page-hero .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 640px; }
 
   .calc-stack {
     max-width: 780px;

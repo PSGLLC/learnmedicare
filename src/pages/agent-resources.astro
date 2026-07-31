@@ -14,7 +14,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 >
   <BreadcrumbNav crumbs={[{ name: 'Agent Resources', url: '/agent-resources/' }]} />
 
-  <section class="page-hero">
+  <section class="agent-hero">
     <div class="container">
       <p class="eyebrow">For Agents</p>
       <h1>Resources for Medicare Agents</h1>
@@ -117,9 +117,13 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--fill-purple-light); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--bg-secondary); }
-  .subhead { color: var(--text-secondary); font-size: 1.1rem; max-width: 640px; }
+  .agent-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .agent-hero .eyebrow { color: var(--fill-teal); }
+  .agent-hero h1 { color: #fff; }
+  .agent-hero .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 640px; }
 
   .agent-form-wrap { max-width: 460px; margin: 2rem auto; }
   .agent-form { text-align: left; }
