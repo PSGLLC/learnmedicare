@@ -169,6 +169,11 @@ table.compare th {
 }
 table.compare tr:last-child td { border-bottom: none; }
 
+.section-heading {
+  border-left: 4px solid var(--fill-teal);
+  padding-left: 1rem;
+}
+
 .callout {
   border-left: 4px solid var(--fill-teal);
   background: var(--fill-purple-light);
