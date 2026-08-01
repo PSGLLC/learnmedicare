@@ -422,9 +422,13 @@ const jsonLd = [
 </script>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+  .page-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .page-hero .eyebrow { color: var(--fill-teal); }
+  .page-hero h1 { color: #fff; }
+  .page-hero .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 640px; }
 
   .calc-stack {
     max-width: 780px;
@@ -435,14 +439,14 @@ const jsonLd = [
   }
 
   .calc-card h2 { margin-bottom: 0.35rem; font-size: 1.4rem; }
-  .calc-desc { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .calc-desc { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
 
   .calc-field { margin-bottom: 1.1rem; }
   .calc-field label {
     display: block;
     font-size: 0.88rem;
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--text-primary);
     margin-bottom: 0.4rem;
   }
   .calc-field-grid {
@@ -456,22 +460,22 @@ const jsonLd = [
     width: 100%;
     padding: 0.65rem 0.85rem;
     border-radius: 0.6rem;
-    border: 2px solid var(--color-teal);
-    background: var(--color-bg);
-    color: var(--color-text);
+    border: 2px solid var(--fill-teal);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-size: 1rem;
     font-family: inherit;
   }
   .calc-field input:focus,
   .calc-field select:focus {
     outline: none;
-    border-color: var(--color-teal);
+    border-color: var(--fill-teal);
     box-shadow: 0 0 0 3px rgba(81, 222, 204, 0.3);
   }
 
   .calc-result {
-    background: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     border-radius: 0.85rem;
     padding: 1.25rem 1.4rem;
     margin: 1.25rem 0;
@@ -483,42 +487,42 @@ const jsonLd = [
     padding: 0.4rem 0;
     font-size: 0.95rem;
   }
-  .calc-result-row strong { color: var(--color-purple); font-family: var(--font-heading); font-size: 1.1rem; }
+  .calc-result-row strong { color: var(--fill-accent); font-family: var(--font-heading); font-size: 1.1rem; }
   .calc-result-row.calc-result-highlight {
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--border);
     margin-top: 0.4rem;
     padding-top: 0.75rem;
   }
   .calc-result-row.calc-result-highlight strong { font-size: 1.3rem; }
-  .calc-result-headline { margin: 0; font-size: 1.05rem; color: var(--color-text); }
-  .calc-result-headline strong { color: var(--color-purple); }
+  .calc-result-headline { margin: 0; font-size: 1.05rem; color: var(--text-primary); }
+  .calc-result-headline strong { color: var(--fill-accent); }
 
   .calc-table { width: 100%; border-collapse: collapse; }
   .calc-table th, .calc-table td {
     text-align: left;
     padding: 0.6rem 0.5rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--border);
     font-size: 0.92rem;
   }
   .calc-table th {
-    color: var(--color-purple);
+    color: var(--fill-accent);
     font-weight: 700;
     font-size: 0.85rem;
     font-family: var(--font-heading);
   }
   .calc-table tr:last-child td { border-bottom: none; }
 
-  .calc-note { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.75rem; }
-  .calc-note a { color: var(--color-purple); }
+  .calc-note { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem; }
+  .calc-note a { color: var(--fill-accent); }
 
   .disclaimer-section { padding: 0 0 3.5rem; }
   .disclaimer {
     max-width: 780px;
     margin: 0 auto;
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     text-align: center;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--border);
     padding-top: 1.5rem;
   }
 

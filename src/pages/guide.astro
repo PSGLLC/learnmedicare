@@ -380,7 +380,7 @@ const jsonLd = [
     });
   </script>
 
-  <p style="text-align:center;color:var(--color-text-muted);font-size:.95rem;max-width:640px;margin:2rem auto 0;">
+  <p style="text-align:center;color:var(--text-secondary);font-size:.95rem;max-width:640px;margin:2rem auto 0;">
     Want a quick starting point first? <a href="https://partner.priceservicesgroup.com/quiz">Take the Medicare Decision Style Quiz</a> or
     <a href="https://priceservicesgroup.com/contact">schedule a consultation with a licensed insurance agent</a>.
   </p>
@@ -397,9 +397,13 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; margin-bottom: 1.75rem; }
+  .page-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .page-hero .eyebrow { color: var(--fill-teal); }
+  .page-hero h1 { color: #fff; }
+  .page-hero .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 640px; margin-bottom: 1.75rem; }
   .guide-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -408,10 +412,10 @@ const jsonLd = [
   }
   .guide-grid ul { padding-left: 1.2rem; margin-bottom: 1.5rem; }
   .guide-grid li { margin-bottom: 0.5rem; }
-  .fine-print { color: var(--color-text-muted); font-size: 0.85rem; margin: 0; }
+  .fine-print { color: var(--text-secondary); font-size: 0.85rem; margin: 0; }
   .preview-card {
-    background: var(--color-card-bg);
-    border: 1px solid var(--color-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
@@ -427,9 +431,9 @@ const jsonLd = [
     margin: 0 auto 0.75rem;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
-    background: var(--color-bg);
+    background: var(--bg-primary);
   }
   .pdf-preview iframe {
     position: absolute;
@@ -447,7 +451,7 @@ const jsonLd = [
   }
   .preview-caption {
     text-align: center;
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     font-size: 0.85rem;
     margin: 0 0 1.5rem;
   }
@@ -455,28 +459,28 @@ const jsonLd = [
     .guide-grid { grid-template-columns: 1fr; }
   }
   .cta-band { text-align: center; }
-  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+  .cta-inner p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 
   .lead-form { display: flex; flex-direction: column; gap: 1rem; }
   .form-row { display: flex; flex-direction: column; gap: 0.35rem; text-align: left; }
-  .form-row label { font-weight: 600; font-size: 0.9rem; color: var(--color-text); }
-  .form-row .optional { font-weight: 400; color: var(--color-text-muted); font-size: 0.8rem; }
+  .form-row label { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+  .form-row .optional { font-weight: 400; color: var(--text-secondary); font-size: 0.8rem; }
   .form-row input {
     font-family: var(--font-body);
     font-size: 1rem;
     padding: 0.7rem 0.9rem;
     border-radius: 10px;
-    border: 1px solid var(--color-border);
-    background: var(--color-bg);
-    color: var(--color-text);
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
   }
   .form-row input:focus {
     outline: none;
-    border-color: var(--color-purple);
+    border-color: var(--fill-accent);
     box-shadow: 0 0 0 3px rgba(144, 89, 181, 0.18);
   }
   :root[data-theme="dark"] .form-row input:focus {
-    border-color: var(--color-teal);
+    border-color: var(--fill-teal);
     box-shadow: 0 0 0 3px rgba(81, 222, 204, 0.18);
   }
   .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -487,7 +491,7 @@ const jsonLd = [
     gap: 0.6rem;
     font-weight: 400;
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     cursor: pointer;
   }
   .checkbox-label input[type='checkbox'] {
@@ -495,7 +499,7 @@ const jsonLd = [
     width: 1.1rem;
     height: 1.1rem;
     margin-top: 0.15rem;
-    accent-color: var(--color-purple);
+    accent-color: var(--fill-accent);
   }
   .form-submit { width: 100%; text-align: center; margin-top: 0.25rem; }
   .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
@@ -505,16 +509,16 @@ const jsonLd = [
     margin: 0;
   }
   .form-success {
-    background: var(--color-lavender);
+    background: var(--fill-purple-light);
     border-radius: var(--radius);
     padding: 1.5rem;
     text-align: center;
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--text-primary);
   }
   :root[data-theme="dark"] .form-success { background: rgba(81, 222, 204, 0.12); }
   .compliance-note {
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     font-size: 0.78rem;
     margin: 1.25rem 0 0;
     text-align: center;
@@ -534,15 +538,15 @@ const jsonLd = [
     font-size: 1.2rem;
   }
   .guide-article p {
-    color: var(--color-text);
+    color: var(--text-primary);
     line-height: 1.7;
     margin-bottom: 1rem;
   }
-  .guide-article a { color: var(--color-purple); }
+  .guide-article a { color: var(--fill-accent); }
   .tpmo-note {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-border);
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
     padding-top: 1.25rem;
     margin-top: 1.5rem;
   }

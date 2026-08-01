@@ -126,15 +126,15 @@ if (post.data.faqs && post.data.faqs.length > 0) {
 
 <style>
   .narrow { max-width: 760px; }
-  .post-meta { color: var(--color-text-muted); font-size: 0.9rem; margin: 0.75rem 0 0.5rem; }
+  .post-meta { color: var(--text-secondary); font-size: 0.9rem; margin: 0.75rem 0 0.5rem; }
   .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
   .tag-pill {
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    color: var(--color-purple);
-    background: var(--color-lavender);
+    color: var(--fill-accent);
+    background: var(--fill-purple-light);
     padding: 0.15rem 0.55rem;
     border-radius: 999px;
   }
@@ -152,14 +152,14 @@ if (post.data.faqs && post.data.faqs.length > 0) {
   .post-body :global(th), .post-body :global(td) {
     text-align: left;
     padding: 0.6rem 0.85rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--border);
   }
   .post-body :global(th) {
-    background: var(--color-purple);
+    background: var(--fill-accent);
     color: #fff;
     font-family: var(--font-heading);
   }
-  .post-body :global(a) { color: var(--color-purple); }
+  .post-body :global(a) { color: var(--fill-accent); }
 
   .related-grid {
     display: grid;
@@ -167,11 +167,11 @@ if (post.data.faqs && post.data.faqs.length > 0) {
     gap: 1.25rem;
     margin-top: 1.5rem;
   }
-  .related-card { text-decoration: none; color: var(--color-text); }
+  .related-card { text-decoration: none; color: var(--text-primary); }
   .related-card h3 { margin: 0 0 0.5rem; font-size: 1.02rem; }
-  .related-card p { margin: 0; font-size: 0.88rem; color: var(--color-text-muted); }
+  .related-card p { margin: 0; font-size: 0.88rem; color: var(--text-secondary); }
 
-  .cta-band { text-align: center; padding: 2.5rem 0; background: var(--color-lavender); }
+  .cta-band { text-align: center; padding: 2.5rem 0; background: var(--fill-purple-light); }
   :root[data-theme="dark"] .cta-band { background: rgba(144, 89, 181, 0.1); }
-  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+  .cta-inner p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 </style>

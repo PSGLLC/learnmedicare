@@ -32,7 +32,7 @@ const next = COURSE_LESSONS.find((l) => l.n === n + 1);
 <style>
   .lesson-footer-nav {
     padding: 2rem 0;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--border);
   }
   .lesson-nav-inner {
     display: grid;
@@ -46,10 +46,10 @@ const next = COURSE_LESSONS.find((l) => l.n === n + 1);
     gap: 0.2rem;
     text-decoration: none;
     padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
   }
-  .lesson-nav-link:hover { border-color: var(--color-purple); }
+  .lesson-nav-link:hover { border-color: var(--fill-accent); }
   .lesson-nav-prev { text-align: left; }
   .lesson-nav-next { text-align: right; grid-column: 3; }
   .lesson-nav-dir {
@@ -57,19 +57,19 @@ const next = COURSE_LESSONS.find((l) => l.n === n + 1);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--color-purple);
+    color: var(--fill-accent);
   }
-  .lesson-nav-title { color: var(--color-text); font-weight: 600; }
+  .lesson-nav-title { color: var(--text-primary); font-weight: 600; }
   .lesson-nav-hub {
     grid-column: 2;
     text-align: center;
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
   }
-  .lesson-nav-hub:hover { color: var(--color-purple); }
+  .lesson-nav-hub:hover { color: var(--fill-accent); }
   @media (max-width: 700px) {
     .lesson-nav-inner { grid-template-columns: 1fr; }
     .lesson-nav-next { grid-column: 1; text-align: left; }

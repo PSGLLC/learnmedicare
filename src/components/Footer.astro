@@ -9,28 +9,39 @@ const { showResetProgress = false } = Astro.props;
 ---
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
+    <div class="footer-columns">
+      <div class="footer-col">
         <img src="/brand/psg-logo-nav.png" alt="Price Services Group logo" width="200" height="101" loading="lazy" decoding="async" />
+        <h3>About LearnMedicare</h3>
         <p class="tagline">{TAGLINE}</p>
+        <p>Free, unbiased Medicare education to help you understand your options with confidence.</p>
       </div>
-      <nav class="footer-links">
-        {NAV_LINKS.filter((l) => l.href !== '/').map((l) => (
-          <a href={l.href}>{l.label}</a>
-        ))}
-        <a href={MEDICARE_QA_URL} target="_blank" rel="noopener noreferrer">Free Medicare Q&amp;A Tool</a>
-      </nav>
-      <nav class="footer-links footer-psg-info">
-        {PSG_INFO_LINKS.map((l) => (
-          <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
-        ))}
-      </nav>
-      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <nav class="footer-links">
+          {NAV_LINKS.filter((l) => l.href !== '/').map((l) => (
+            <a href={l.href}>{l.label}</a>
+          ))}
+          <a href={MEDICARE_QA_URL} target="_blank" rel="noopener noreferrer">Free Medicare Q&amp;A Tool</a>
+        </nav>
+        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
+      </div>
+      <div class="footer-col">
+        <h3>PSG Info</h3>
+        <p>Presented by Price Services Group, LLC</p>
+        <p>Licensed Insurance Agent</p>
+        <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
+        <p><a href="mailto:hello@priceservicesgroup.com">hello@priceservicesgroup.com</a></p>
+        <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
+        <nav class="footer-links footer-psg-info">
+          {PSG_INFO_LINKS.map((l) => (
+            <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          ))}
+        </nav>
+      </div>
     </div>
 
     <div class="compliance">
-      <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
-      <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
       <p class="tpmo">{COMPLIANCE.tpmo}</p>
       <p class="legal-links">
         <a href="/privacy">Privacy Policy</a> &bull; <a href="/terms">Terms of Use</a> &bull; <a href="/agent-resources">Agent Resources</a>
@@ -40,7 +51,7 @@ const { showResetProgress = false } = Astro.props;
           </>
         )}
       </p>
-      <p class="copyright">&copy; {year} Price Services Group LLC. {TAGLINE}</p>
+      <p class="copyright">&copy; {year} Price Services Group LLC. {TAGLINE} &bull; Not affiliated with Medicare.gov or CMS.</p>
     </div>
 
     <div class="tpmo-disclaimer">
@@ -51,26 +62,34 @@ const { showResetProgress = false } = Astro.props;
 
 <style>
   .site-footer {
-    background: var(--color-dark);
+    background: var(--text-primary);
     color: #e7dcf4;
     padding: 3.5rem 0 2rem;
     margin-top: 3rem;
+    border-top: 4px solid var(--fill-teal);
   }
   .footer-inner { display: flex; flex-direction: column; gap: 2rem; }
-  .footer-top {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
-  .footer-brand img { height: 34px; margin-bottom: 0.4rem; }
-  .tagline { font-family: var(--font-heading); font-style: italic; color: var(--color-teal); margin: 0; }
-  .footer-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .footer-col h3 {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.05rem;
+    margin: 0.75rem 0 0.75rem;
+  }
+  .footer-col p { font-size: 0.85rem; color: #d8c8ea; margin: 0 0 0.4rem; }
+  .footer-col a { color: #d8c8ea; }
+  .footer-col a:hover { color: var(--fill-teal); }
+  .footer-col img { height: 34px; }
+  .tagline { font-family: var(--font-heading); font-style: italic; color: var(--fill-teal) !important; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
   .footer-links a { color: #d8c8ea; text-decoration: none; font-size: 0.9rem; }
-  .footer-links a:hover { color: var(--color-teal); }
+  .footer-links a:hover { color: var(--fill-teal); }
   .compliance p {
     font-size: 0.78rem;
     line-height: 1.6;
@@ -78,10 +97,13 @@ const { showResetProgress = false } = Astro.props;
     max-width: 900px;
     margin: 0 0 0.5rem;
   }
+  @media (max-width: 900px) {
+    .footer-columns { grid-template-columns: 1fr; }
+  }
   .copyright { color: #9e8bb6; }
   .legal-links { }
   .legal-links a { color: #b6a4cb; text-decoration: underline; }
-  .legal-links a:hover { color: var(--color-teal); }
+  .legal-links a:hover { color: var(--fill-teal); }
   .tpmo-disclaimer {
     max-width: 900px;
     margin: 0.5rem auto 0;
@@ -103,7 +125,7 @@ const { showResetProgress = false } = Astro.props;
     cursor: pointer;
   }
   .reset-progress-link:hover {
-    color: var(--color-teal);
+    color: var(--fill-teal);
   }
 </style>
 

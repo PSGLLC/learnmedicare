@@ -82,9 +82,23 @@ const jsonLd = [
         </p>
       </div>
 
+      <div class="callout key-figures">
+        <p class="key-figures-label">2026 Key Figures</p>
+        <div class="key-figures-grid">
+          <div>
+            <span class="figure">$202.90/mo</span>
+            <span class="figure-label">Standard Part B Premium</span>
+          </div>
+          <div>
+            <span class="figure">$2,100</span>
+            <span class="figure-label">Part D Annual Out-of-Pocket Cap</span>
+          </div>
+        </div>
+      </div>
+
       <div class="grid grid-2">
         <div class="card">
-          <h2>Part A — Hospital Insurance</h2>
+          <h2 class="section-heading">Part A — Hospital Insurance</h2>
           <p>
             Part A generally helps cover inpatient hospital stays, care in a skilled nursing facility,
             hospice care, and some home health care. Most people don't pay a monthly premium for
@@ -93,7 +107,7 @@ const jsonLd = [
           </p>
         </div>
         <div class="card">
-          <h2>Part B — Medical Insurance</h2>
+          <h2 class="section-heading">Part B — Medical Insurance</h2>
           <p>
             Part B generally helps cover doctor visits, outpatient care, preventive services like
             screenings and vaccines, and durable medical equipment. Most people pay a monthly
@@ -102,7 +116,7 @@ const jsonLd = [
           </p>
         </div>
         <div class="card">
-          <h2>Part C — Medicare Advantage</h2>
+          <h2 class="section-heading">Part C — Medicare Advantage</h2>
           <p>
             Part C, better known as Medicare Advantage, is a way to get your Part A and Part B
             benefits (and often Part D) through a private insurance company approved by Medicare.
@@ -111,7 +125,7 @@ const jsonLd = [
           </p>
         </div>
         <div class="card">
-          <h2>Part D — Prescription Drug Coverage</h2>
+          <h2 class="section-heading">Part D — Prescription Drug Coverage</h2>
           <p>
             Part D helps cover the cost of prescription medications. It's offered through private
             insurance companies, either as its own stand-alone plan alongside Original Medicare, or
@@ -133,7 +147,7 @@ const jsonLd = [
 
   <section class="section-alt">
     <div class="container">
-      <h2>Common Medicare Misconceptions</h2>
+      <h2 class="section-heading">Common Medicare Misconceptions</h2>
       <p>
         Medicare is one of the most misunderstood federal programs, partly because it changed so much over the
         decades and partly because the rules genuinely are complicated. For a more complete definitional
@@ -266,7 +280,7 @@ const jsonLd = [
 
   <section class="section-alt">
     <div class="container">
-      <h2>Next Steps</h2>
+      <h2 class="section-heading">Next Steps</h2>
       <p>Once you understand the basics, here's a simple checklist to work through before you enroll:</p>
       <ul class="checklist">
         <li>Confirm your work-history eligibility for premium-free Part A through the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.</li>
@@ -292,11 +306,31 @@ const jsonLd = [
 
 <style>
   .cta-band { text-align: center; }
-  .cta-inner p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+  .cta-inner p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+  .key-figures { margin-bottom: 2.5rem; }
+  .key-figures-label {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--fill-accent);
+    margin: 0 0 0.75rem;
+  }
+  :root[data-theme="dark"] .key-figures-label { color: var(--fill-teal); }
+  .key-figures-grid { display: flex; flex-wrap: wrap; gap: 2rem; }
+  .figure {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .figure-label { display: block; font-size: 0.85rem; color: var(--text-secondary); }
 
   .quick-answer {
-    border-left: 4px solid var(--color-purple);
-    background: var(--color-lavender);
+    border-left: 4px solid var(--fill-accent);
+    background: var(--fill-purple-light);
     border-radius: 0 var(--radius) var(--radius) 0;
     padding: 1.25rem 1.5rem;
     margin-bottom: 2.5rem;
@@ -311,7 +345,7 @@ const jsonLd = [
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--color-purple);
+    color: var(--fill-accent);
   }
   .quick-answer p:last-child { margin: 0; }
 
@@ -325,7 +359,7 @@ const jsonLd = [
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--color-teal);
+    color: var(--fill-teal);
     font-weight: 700;
   }
 </style>

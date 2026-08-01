@@ -15,7 +15,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 >
   <BreadcrumbNav crumbs={[{ name: 'Agent Resources', url: '/agent-resources/' }]} />
 
-  <section class="page-hero">
+  <section class="agent-hero">
     <div class="container">
       <p class="eyebrow">For Agents</p>
       <h1>Resources for Medicare Agents</h1>
@@ -211,11 +211,15 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 </BaseLayout>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; }
+  .agent-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .agent-hero .eyebrow { color: var(--fill-teal); }
+  .agent-hero h1 { color: #fff; }
+  .agent-hero .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 640px; }
   .narrow { max-width: 620px; }
-  .section-note { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+  .section-note { color: var(--text-secondary); margin-bottom: 1.5rem; }
 
   .form-row { margin-bottom: 1rem; }
   .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
@@ -223,24 +227,24 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
     width: 100%;
     max-width: 320px;
     padding: 0.65rem 0.85rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: var(--color-bg);
-    color: var(--color-text);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-size: 1rem;
   }
   .npn-result {
     margin-top: 1.25rem;
     padding: 1rem 1.25rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    background: var(--color-bg-alt);
+    background: var(--bg-secondary);
   }
   .npn-result ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 
   .ref-card {
-    background: var(--color-card-bg, var(--color-bg));
-    border: 1px solid var(--color-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -255,7 +259,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
   .ref-card-head h3 { margin: 0; }
   .ref-card-footnote {
     font-size: 0.8rem;
-    color: var(--color-text-muted);
+    color: var(--text-secondary);
     margin: 1rem 0 0;
   }
   .table-scroll { overflow-x: auto; }
@@ -268,12 +272,12 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
     gap: 1.25rem;
     margin-top: 1.5rem;
   }
-  .tool-card { text-decoration: none; color: var(--color-text); }
+  .tool-card { text-decoration: none; color: var(--text-primary); }
   .tool-card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
-  .tool-card p { margin: 0; font-size: 0.88rem; color: var(--color-text-muted); }
+  .tool-card p { margin: 0; font-size: 0.88rem; color: var(--text-secondary); }
 
   @media print {
-    body[data-printing-card] :is(header, footer, #print-hide-npn, #print-hide-tools, #print-hide-clients, .page-hero) {
+    body[data-printing-card] :is(header, footer, #print-hide-npn, #print-hide-tools, #print-hide-clients, .agent-hero) {
       display: none !important;
     }
     body[data-printing-card] #print-hide-cards > .container > h2,

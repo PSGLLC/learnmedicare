@@ -23,16 +23,20 @@ const { label, heading, subtext, cta } = Astro.props;
     <slot />
     {cta && (
       cta.external ? (
-        <a href={cta.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:1.5rem;">{cta.text}</a>
+        <a href={cta.url} target="_blank" rel="noopener noreferrer" class="btn btn-teal" style="margin-top:1.5rem;">{cta.text}</a>
       ) : (
-        <a href={cta.url} class="btn btn-primary" style="margin-top:1.5rem;">{cta.text}</a>
+        <a href={cta.url} class="btn btn-teal" style="margin-top:1.5rem;">{cta.text}</a>
       )
     )}
   </div>
 </section>
 
 <style>
-  .page-hero { background: var(--color-lavender); padding: 4rem 0; }
-  :root[data-theme="dark"] .page-hero { background: var(--color-bg-alt); }
-  .subhead { color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; }
+  .page-hero {
+    background: linear-gradient(135deg, var(--fill-accent) 0%, #6d3f8f 100%);
+    padding: 4rem 0;
+  }
+  .page-hero .eyebrow { color: var(--fill-teal); }
+  .page-hero h1 { color: #fff; }
+  .subhead { color: #f0e6f8; font-size: 1.1rem; max-width: 680px; }
 </style>

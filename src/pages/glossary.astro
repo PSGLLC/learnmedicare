@@ -78,6 +78,9 @@ const terms = [
   { term: "TrOOP (True Out-of-Pocket Costs)", def: "The costs that count toward your Part D out-of-pocket total — what you (or others on your behalf) actually pay for covered drugs. Once TrOOP reaches the annual cap, the Part D out-of-pocket maximum kicks in." },
 ];
 
+const lettersPresent = [...new Set(terms.map(t => t.term[0].toUpperCase()))];
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
 const faqs = terms.slice(0, 5).map(t => ({
   q: `What is ${t.term}?`,
   a: t.def,
@@ -139,15 +142,33 @@ const jsonLd = [
     </div>
   </section>
 
+  <section class="glossary-jump-section">
+    <div class="container">
+      <nav class="jump-links" aria-label="Jump to letter">
+        {alphabet.map((letter) => (
+          lettersPresent.includes(letter) ? (
+            <a href={`#letter-${letter}`} class="jump-pill">{letter}</a>
+          ) : (
+            <span class="jump-pill jump-pill-disabled" aria-hidden="true">{letter}</span>
+          )
+        ))}
+      </nav>
+    </div>
+  </section>
+
   <section class="glossary-list-section">
     <div class="container">
       <dl class="glossary-list">
-        {terms.map((t) => (
-          <div class="glossary-item">
-            <dt>{t.term}</dt>
-            <dd>{t.def}</dd>
-          </div>
-        ))}
+        {terms.map((t, i) => {
+          const letter = t.term[0].toUpperCase();
+          const isFirstOfLetter = i === 0 || terms[i - 1].term[0].toUpperCase() !== letter;
+          return (
+            <div class="glossary-item" id={isFirstOfLetter ? `letter-${letter}` : undefined}>
+              <dt>{t.term}</dt>
+              <dd>{t.def}</dd>
+            </div>
+          );
+        })}
       </dl>
     </div>
   </section>
@@ -173,14 +194,33 @@ const jsonLd = [
   .glossary-hero-sub { max-width: 62ch; margin: 1rem auto 1.75rem; font-size: 1.05rem; line-height: 1.7; }
   .glossary-hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
 
+  .glossary-jump-section { padding: 0 0 1.5rem; }
+  .jump-links { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 760px; margin: 0 auto; }
+  .jump-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--fill-purple-light);
+    color: var(--fill-accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  :root[data-theme="dark"] .jump-pill { background: rgba(81, 222, 204, 0.1); color: var(--fill-teal); }
+  .jump-pill:hover { background: var(--fill-accent); color: #fff; }
+  .jump-pill-disabled { opacity: 0.3; background: transparent; color: var(--text-secondary); }
+
   .glossary-list-section { padding: 1rem 0 3rem; }
   .glossary-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; }
-  .glossary-item { border-top: 1px solid var(--line, #e3d6f0); padding: 1.25rem 0; }
-  .glossary-item:last-child { border-bottom: 1px solid var(--line, #e3d6f0); }
-  .glossary-item dt { font-weight: 700; font-size: 1.05rem; margin: 0 0 .4rem; }
-  .glossary-item dd { margin: 0; color: var(--muted, #5a4a6e); line-height: 1.65; }
+  .glossary-item { border-top: 1px solid var(--border); padding: 1.25rem 0; scroll-margin-top: 5rem; }
+  .glossary-item:last-child { border-bottom: 1px solid var(--border); }
+  .glossary-item dt { font-weight: 700; font-size: 1.05rem; margin: 0 0 .4rem; color: var(--fill-accent); font-family: var(--font-heading); }
+  .glossary-item dd { margin: 0; color: var(--text-secondary); line-height: 1.65; border-left: 3px solid var(--fill-teal); padding-left: 0.9rem; }
 
-  .glossary-cta-section { padding: 2.5rem 0 4rem; text-align: center; background: var(--soft, #f5effe); }
+  .glossary-cta-section { padding: 2.5rem 0 4rem; text-align: center; background: var(--bg-secondary); }
   .glossary-cta-section h2 { margin: 0 0 .6rem; }
-  .glossary-cta-section p { max-width: 56ch; margin: 0 auto 1.5rem; color: var(--muted, #5a4a6e); }
+  .glossary-cta-section p { max-width: 56ch; margin: 0 auto 1.5rem; color: var(--text-secondary); }
 </style>
