@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS, RESOURCES_DROPDOWN, BOOKING_URL } from '../site.config';
+import { NAV_LINKS, RESOURCES_DROPDOWN, BOOKING_URL, MEDICARE_QA_URL } from '../site.config';
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.replace(/\/$/, ''));
 ---
@@ -15,6 +15,14 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     <nav class="nav-links" id="nav-links">
       {NAV_LINKS.map((link) => {
         const isActive = current === link.href.replace(/\/$/, '') || (link.href === '/' && current === '/');
+        if (link.href === '/blog') {
+          return (
+            <>
+              <a href={MEDICARE_QA_URL} target="_blank" rel="noopener noreferrer" class="nav-link">Medicare Q&amp;A</a>
+              <a href={link.href} class:list={['nav-link', { active: isActive }]}>{link.label}</a>
+            </>
+          );
+        }
         return (
           <a href={link.href} class:list={['nav-link', { active: isActive }]}>{link.label}</a>
         );

@@ -1,5 +1,6 @@
 export const SITE_URL = 'https://learnmedicare.org';
 export const BOOKING_URL = 'https://host.safemsngr.com/widget/booking/A0NTF4B4d9I3h3wNvyIB';
+export const MEDICARE_QA_URL = 'https://huggingface.co/spaces/PPAKayla/medicare-qa';
 export const TAGLINE = 'Where You Matter.';
 
 export const NAV_LINKS = [
@@ -25,6 +26,12 @@ export const RESOURCES_DROPDOWN = [
   { href: '/medicare-vs-medicaid', label: 'Medicare vs. Medicaid' },
   { href: '/medicare-costs-2026', label: '2026 Medicare Costs' },
   { href: '/medicare-mistakes', label: 'Medicare Mistakes to Avoid' },
+];
+
+export const PSG_INFO_LINKS = [
+  { href: 'https://priceservicesgroup.com', label: 'priceservicesgroup.com' },
+  { href: 'https://local.priceservicesgroup.com', label: 'Find Local Medicare Help' },
+  { href: MEDICARE_QA_URL, label: 'Free Medicare Q&A' },
 ];
 
 export const COMPLIANCE = {
