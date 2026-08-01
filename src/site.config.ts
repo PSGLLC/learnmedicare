@@ -17,6 +17,16 @@ export const NAV_LINKS = [
   { href: '/blog', label: 'Blog' },
 ];
 
+// Grouped separately from NAV_LINKS rather than appended flatly — the nav
+// is already 12 items; a 5th group avoids further crowding the top-level
+// bar. Rendered as a "Resources" dropdown in Nav.astro.
+export const RESOURCES_DROPDOWN = [
+  { href: '/what-is-medicare', label: 'What Is Medicare?' },
+  { href: '/medicare-vs-medicaid', label: 'Medicare vs. Medicaid' },
+  { href: '/medicare-costs-2026', label: '2026 Medicare Costs' },
+  { href: '/medicare-mistakes', label: 'Medicare Mistakes to Avoid' },
+];
+
 export const COMPLIANCE = {
   npn: 'NPN 18530055',
   agencyNpn: 'Agency NPN 20387435',

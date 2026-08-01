@@ -4,6 +4,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 import AuthorByline from '../components/AuthorByline.astro';
 import FAQSection from '../components/FAQSection.astro';
 import { authorship } from '../lib/schema';
+import { COURSE_LESSONS } from '../lib/lessons';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-24';
@@ -220,6 +221,31 @@ const LESSON_STATUS_LINKS = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="written-lessons-section">
+    <div class="container">
+      <h2>Prefer to Read? Written Lessons</h2>
+      <p class="wl-intro">
+        The same six topics as the video lessons above, written out in full — read at your own
+        pace, share a link to a specific topic, or use them as a reference after you've watched the
+        videos.
+      </p>
+      <div class="wl-grid">
+        {COURSE_LESSONS.map((lesson) => (
+          <a href={lesson.path} class="wl-card">
+            <span class="wl-num">Lesson {lesson.n}</span>
+            <h3>{lesson.title}</h3>
+            <p>{lesson.description}</p>
+            <span class="wl-cta">Read Lesson &rarr;</span>
+          </a>
+        ))}
+      </div>
+      <p class="wl-blog-link">
+        Want more? Visit the <a href="/blog">Medicare Blog</a> for articles on enrollment, costs,
+        and coverage comparisons.
+      </p>
     </div>
   </section>
 
@@ -726,6 +752,44 @@ const LESSON_STATUS_LINKS = [
     height: 16px;
     accent-color: #51decc;
   }
+
+  .written-lessons-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .written-lessons-section h2 { text-align: center; margin-bottom: 0.25rem; }
+  .wl-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+  }
+  .wl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .wl-card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease;
+  }
+  .wl-card:hover { border-color: #9059B5; }
+  .wl-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #9059B5;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .wl-card h3 { margin: 0.35rem 0 0.5rem; font-size: 1.05rem; }
+  .wl-card p { margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+  .wl-cta { font-size: 0.85rem; font-weight: 700; color: #9059B5; }
+  .wl-blog-link { text-align: center; margin-top: 1.5rem; color: var(--text-secondary); }
 
   .certificate-section {
     padding: 2rem 0 3rem;

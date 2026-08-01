@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { authorship, dataset } from '../lib/schema';
+
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is Medicare in simple terms?', answer: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS) for people age 65 and older, and for certain younger people with qualifying disabilities, End-Stage Renal Disease (ESRD), or ALS (Lou Gehrig\'s disease). It helps pay for hospital stays, doctor visits, and prescription drugs.' },
+  { question: 'Who qualifies for Medicare?', answer: 'You generally qualify at age 65 if you or a spouse worked and paid Medicare taxes for at least 10 years (40 quarters). You can also qualify before 65 if you\'ve received Social Security Disability Insurance (SSDI) for 24 months, or immediately if you have ESRD or ALS.' },
+  { question: 'What are the 4 parts of Medicare?', answer: 'Part A is hospital insurance, Part B is medical insurance, Part C (Medicare Advantage) is a private-plan alternative that bundles A and B (often with D), and Part D is prescription drug coverage. Original Medicare refers to Parts A and B together.' },
+  { question: 'Is Medicare free?', answer: 'Not entirely. Part A is usually premium-free if you or a spouse paid Medicare taxes for at least 10 years. Part B carries a standard monthly premium ($202.90 in 2026), and most people also pay something for Part D or a Medicare Advantage plan.' },
+  { question: 'What is the difference between Medicare and Medicaid?', answer: 'Medicare is a federal program based mainly on age or disability, available regardless of income. Medicaid is a joint federal-state program based on income and financial need. Some people qualify for both at once, known as "dual eligible" status.' },
+  { question: 'Do I automatically get Medicare at 65?', answer: 'Only if you\'re already receiving Social Security or Railroad Retirement Board benefits before turning 65 — in that case you\'re auto-enrolled in Parts A and B. Otherwise, you need to actively sign up during your Initial Enrollment Period.' },
+  { question: 'Can I have Medicare and employer insurance at the same time?', answer: 'Yes. Depending on your employer\'s size, Medicare may pay first (primary) or your employer plan may pay first, with Medicare paying second (secondary). These are called Medicare Secondary Payer rules, and getting the order wrong can affect what gets paid.' },
+  { question: 'What does Medicare not cover?', answer: 'Original Medicare generally does not cover routine dental, vision, or hearing care, long-term custodial care, or care outside the U.S. in most cases. It also has no annual out-of-pocket maximum. Medicare Advantage plans and Medigap policies exist specifically to address these gaps.' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'What Is Medicare? A Complete Guide',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.quick-answer'],
+    },
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+  dataset({
+    name: 'Medicare Part B Premium & Deductible 2026',
+    description: 'The standard Medicare Part B monthly premium ($202.90) and annual deductible ($283) for 2026, as published by CMS.',
+    creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
+  }),
+  dataset({
+    name: 'Medicare Eligibility Rules',
+    description: 'CMS eligibility criteria for Medicare based on age, work history, disability status, and qualifying medical conditions (ESRD, ALS).',
+    creatorUrl: 'https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/who-is-eligible-for-medicare',
+  }),
+];
+---
+<BaseLayout
+  title="What Is Medicare? A Complete Guide for 2026 | Learn Medicare"
+  description="What is Medicare? A plain-English guide to eligibility, the 4 parts (A, B, C, D), how it differs from Medicaid, and how to enroll — updated for 2026."
+  path="/what-is-medicare/"
+  breadcrumbs={[{ name: 'What Is Medicare?', url: '/what-is-medicare/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'What Is Medicare?', url: '/what-is-medicare/' }]} />
+  <PageHero
+    label="Foundations"
+    heading="What Is Medicare?"
+    subtext="A plain-English answer to one of the most-searched questions in healthcare — what Medicare is, who qualifies, and how the parts fit together."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Medicare is the U.S. federal health insurance program administered by the Centers for
+          Medicare & Medicaid Services (CMS). It covers people age 65 and older, and certain
+          younger people with qualifying disabilities, End-Stage Renal Disease (ESRD), or ALS. It's
+          made up of four parts — A, B, C, and D — that together cover hospital stays, doctor
+          visits, and prescription drugs.
+        </p>
+      </div>
+
+      <h2>Who Runs Medicare?</h2>
+      <p>
+        Medicare is a federal program, not a state one. It's administered by the Centers for
+        Medicare & Medicaid Services (CMS), an agency within the U.S. Department of Health and
+        Human Services. That's a key distinction from Medicaid, which is jointly run by the federal
+        government and each individual state — see our full <a href="/medicare-vs-medicaid">Medicare
+        vs. Medicaid comparison</a> for how the two programs differ. Because CMS sets one national
+        set of rules, your Part A and Part B benefits work the same way no matter which state you
+        live in. What does vary by location isn't Original Medicare itself — it's which private
+        Medicare Advantage and Part D plans are available in your specific county, since those are
+        sold by private insurance companies operating under CMS's rules, not by the government
+        directly.
+      </p>
+
+      <h2>Who Qualifies for Medicare?</h2>
+      <p>You generally qualify for Medicare in one of these ways:</p>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Age 65 or older</h3>
+          <p>
+            If you or a spouse worked and paid Medicare taxes for at least 10 years (40 quarters),
+            you qualify for premium-free Part A at 65. You can confirm your specific work-history
+            eligibility through the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Under 65 with a qualifying disability</h3>
+          <p>
+            If you've received Social Security Disability Insurance (SSDI) benefits for 24 months,
+            you're automatically enrolled in Medicare — no separate application needed.
+          </p>
+        </div>
+        <div class="card">
+          <h3>End-Stage Renal Disease (ESRD)</h3>
+          <p>
+            People with permanent kidney failure requiring dialysis or a transplant can qualify for
+            Medicare regardless of age, typically starting a few months after dialysis begins.
+          </p>
+        </div>
+        <div class="card">
+          <h3>ALS (Lou Gehrig's disease)</h3>
+          <p>
+            People diagnosed with ALS qualify for Medicare immediately upon becoming eligible for
+            Social Security Disability benefits — there's no 24-month waiting period for ALS.
+          </p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 2.5rem;">The 4 Parts of Medicare</h2>
+      <p>
+        Medicare is organized into four parts, each covering a different piece of your care. This
+        is the single most useful thing to understand before you enroll.
+      </p>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Part A — Hospital Insurance</h3>
+          <p>
+            Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home
+            health care. Most people don't pay a monthly premium because they (or a spouse) paid
+            Medicare taxes while working.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part B — Medical Insurance</h3>
+          <p>
+            Covers doctor visits, outpatient care, preventive services like screenings and vaccines,
+            and durable medical equipment. Most people pay a standard monthly premium — $202.90 in
+            2026, with a $283 annual deductible.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part C — Medicare Advantage</h3>
+          <p>
+            A way to get your Part A and Part B benefits (and often Part D) through a private
+            insurance company approved by Medicare, usually within a provider network and often with
+            extra benefits bundled in.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Part D — Prescription Drug Coverage</h3>
+          <p>
+            Helps cover the cost of prescription medications, either as a standalone plan alongside
+            Original Medicare or bundled into a Medicare Advantage plan. As of 2026, Part D has a
+            $2,100 annual out-of-pocket cap on covered drugs.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 2.5rem;">
+        <p style="margin:0;">
+          <strong>Terminology note:</strong> "Original Medicare" refers to Parts A and B together,
+          as run directly by the federal government. "Medicare Advantage" (Part C) is the private-plan
+          alternative to Original Medicare. Understanding this distinction is the foundation for
+          comparing your <a href="/coverage">coverage options</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>How Medicare Differs From Medicaid</h2>
+      <p>
+        Medicare and Medicaid are the two programs people confuse most often, largely because both
+        names start with "Medi" and both involve government-funded health coverage. But they work
+        very differently:
+      </p>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Medicare</h3>
+          <p>
+            Federal program. Eligibility is based mainly on age (65+) or disability status —
+            <strong>not</strong> income. Administered entirely by CMS, so the rules are the same
+            nationwide.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Medicaid</h3>
+          <p>
+            Joint federal-state program. Eligibility is based on income and financial need. Each
+            state runs its own program within federal guidelines, so benefits and rules vary by
+            state.
+          </p>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem;">
+        Some people qualify for both programs at once — known as being "dual eligible." For the
+        full breakdown of eligibility, cost, and how the two programs coordinate, see our dedicated
+        guide: <a href="/medicare-vs-medicaid">Medicare vs. Medicaid Explained</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>What Medicare Does Not Cover</h2>
+      <p>
+        A common misconception is that Medicare covers everything once you turn 65. Original
+        Medicare generally does <strong>not</strong> cover:
+      </p>
+      <ul class="checklist">
+        <li>Routine dental care, most dentures, and dental exams</li>
+        <li>Routine vision care and most eyeglasses or contact lenses</li>
+        <li>Routine hearing exams and hearing aids</li>
+        <li>Long-term custodial care (help with daily activities like bathing or dressing)</li>
+        <li>Most care received outside the United States</li>
+        <li>An annual out-of-pocket maximum — Original Medicare has no spending cap</li>
+      </ul>
+      <p style="margin-top: 1.5rem;">
+        These gaps are exactly what Medicare Advantage plans and Medigap policies are designed to
+        address — see how they <a href="/coverage">compare on cost and coverage</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>How Much Does Medicare Cost?</h2>
+      <p>
+        Medicare isn't free, but it's also not as expensive as many people assume — especially
+        compared to individual health insurance before age 65. Here's the general shape of the
+        costs:
+      </p>
+      <ul class="checklist">
+        <li><strong>Part A:</strong> $0/month for most people (premium-free if you have enough work history); a $1,676 deductible per benefit period if you're hospitalized.</li>
+        <li><strong>Part B:</strong> $202.90/month standard premium in 2026, plus a $283 annual deductible. Higher earners pay more through IRMAA surcharges.</li>
+        <li><strong>Part C (Medicare Advantage):</strong> Premiums vary by plan and county — many are $0/month, but you'll still pay Part B's premium and plan cost-sharing.</li>
+        <li><strong>Part D:</strong> Premiums vary by plan; as of 2026, your out-of-pocket drug costs are capped at $2,100 per year.</li>
+      </ul>
+      <p style="margin-top: 1.5rem;">
+        For the complete 2026 breakdown — including IRMAA income brackets and how Part A costs
+        work for people without enough work history — see our dedicated page:
+        <a href="/medicare-costs-2026">Medicare Costs 2026</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>How and When Do You Enroll?</h2>
+      <p>
+        Timing matters more with Medicare than with most insurance decisions, because missing your
+        enrollment window can trigger a permanent late enrollment penalty added to your premium for
+        as long as you have that coverage. The main windows to know:
+      </p>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Initial Enrollment Period (IEP)</h3>
+          <p>
+            A 7-month window centered on your 65th birthday month — 3 months before, your birthday
+            month, and 3 months after. This is the window most people use.
+          </p>
+        </div>
+        <div class="card">
+          <h3>General Enrollment Period (GEP)</h3>
+          <p>
+            January 1 – March 31 each year, for anyone who missed their Initial Enrollment Period
+            and doesn't qualify for a Special Enrollment Period. Coverage typically starts the month
+            after you sign up, and late penalties may apply.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Special Enrollment Period (SEP)</h3>
+          <p>
+            Triggered by specific life events — most commonly losing employer group coverage. SEPs
+            let you enroll penalty-free outside the usual windows if you qualify.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Annual Enrollment Period (AEP)</h3>
+          <p>
+            October 15 – December 7 each year (AEP 2026, for Plan Year 2027 coverage). This is when
+            anyone already on Medicare can switch Medicare Advantage or Part D plans for the
+            following year.
+          </p>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem;">
+        For the complete timeline, exact dates, and how to avoid penalties, see our full
+        <a href="/enrollment">Medicare enrollment guide</a>. And if you're planning to keep working
+        past 65, check <a href="/working-at-65">how employer coverage affects your enrollment
+        timing</a> before you decide to delay.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Ready to see how Medicare fits your situation?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) who can walk you through your
+        specific options — no pressure, no obligation. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+      <a href="/enrollment" class="btn btn-primary">Continue to Enrollment</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+  .quick-answer {
+    border-left: 4px solid var(--fill-accent);
+    background: var(--fill-purple-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--fill-accent);
+  }
+  .quick-answer p:last-child { margin: 0; }
+
+  .checklist { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+  .checklist li {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .checklist li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text-secondary);
+    font-weight: 700;
+  }
+</style>

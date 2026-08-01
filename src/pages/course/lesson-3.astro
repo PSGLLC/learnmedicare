@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import MarkCompleteButton from '../../components/MarkCompleteButton.astro';
+import LessonFooterNav from '../../components/LessonFooterNav.astro';
+import { authorship, learningResource } from '../../lib/schema';
+import { lessonByN } from '../../lib/lessons';
+
+const lesson = lessonByN(3);
+const DATE_PUBLISHED = '2026-07-29';
+const DATE_MODIFIED = '2026-07-29';
+
+const faqs = [
+  { question: 'What is Medicare Advantage?', answer: 'Medicare Advantage (Part C) is a way to get your Medicare benefits through a private insurance company approved by Medicare, instead of directly through the government. Plans must cover everything Original Medicare covers, and most bundle in Part D and extra benefits.' },
+  { question: 'Is Medicare Advantage cheaper than Original Medicare?', answer: 'Often, yes, in terms of premiums — many Medicare Advantage plans have $0 monthly premiums beyond the standard Part B premium. But total cost depends on your health needs; Medicare Advantage plans have out-of-pocket maximums, which Original Medicare alone lacks.' },
+  { question: 'Can I use any doctor with Medicare Advantage?', answer: 'Usually not without extra cost. Most Medicare Advantage plans use a provider network (HMO or PPO), so seeing an out-of-network provider may cost more or not be covered at all, unlike Original Medicare, which is accepted by any provider nationwide who takes Medicare.' },
+  { question: 'Can I switch between Medicare Advantage and Original Medicare later?', answer: 'Yes, generally during the Annual Enrollment Period (Oct 15 - Dec 7) or Medicare Advantage Open Enrollment Period (Jan 1 - Mar 31). But switching back to Original Medicare and adding a Medigap policy later may require medical underwriting, so the decision isn\'t fully reversible without risk.' },
+];
+
+const jsonLd = [
+  learningResource({
+    name: lesson.title,
+    description: lesson.description,
+    url: `https://learnmedicare.org${lesson.path}/`,
+    position: lesson.n,
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: lesson.title,
+    ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
+  },
+];
+---
+<BaseLayout
+  title="Lesson 3: Medicare Advantage vs. Original Medicare"
+  description="Lesson 3 of the free Medicare course: how Medicare Advantage compares to Original Medicare on cost, networks, and coverage — and how to choose."
+  path="/course/lesson-3/"
+  breadcrumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 3: Medicare Advantage vs. Original Medicare', url: '/course/lesson-3/' }]}
+  jsonLd={jsonLd}
+>
+  <BreadcrumbNav crumbs={[{ name: 'Take the Course', url: '/course/' }, { name: 'Lesson 3', url: '/course/lesson-3/' }]} />
+  <PageHero
+    label="Lesson 3 of 6"
+    heading="Medicare Advantage vs. Original Medicare"
+    subtext="The single biggest decision most people make about their Medicare coverage. Here's how the two paths actually compare."
+  >
+    <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
+  </PageHero>
+
+  <section>
+    <div class="container">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Quick Answer</p>
+        <p>
+          Original Medicare (Parts A and B, run by the government) lets you see any provider
+          nationwide but has no out-of-pocket cap. Medicare Advantage (Part C, run by private
+          insurers) usually bundles in Part D and extra benefits with an out-of-pocket maximum, but
+          typically requires using an in-network provider.
+        </p>
+      </div>
+
+      <h2>How Medicare Advantage Works</h2>
+      <p>
+        Medicare Advantage plans are sold by private insurance companies approved by Medicare.
+        By law, they must cover everything Original Medicare covers (except hospice, which Original
+        Medicare still covers even if you're in a Medicare Advantage plan). Most plans go further,
+        bundling in Part D prescription drug coverage and extras like dental, vision, hearing, or
+        fitness benefits — which is a large part of their appeal.
+      </p>
+
+      <h2>Side-by-Side Comparison</h2>
+      <div style="overflow-x: auto; margin-top: 1.5rem;">
+        <table class="compare">
+          <thead>
+            <tr><th></th><th>Original Medicare</th><th>Medicare Advantage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Who administers it</strong></td><td>Federal government directly</td><td>Private insurance companies</td></tr>
+            <tr><td><strong>Provider access</strong></td><td>Any provider nationwide accepting Medicare</td><td>Usually an in-network requirement (HMO/PPO)</td></tr>
+            <tr><td><strong>Drug coverage</strong></td><td>Requires separate Part D plan</td><td>Usually bundled in</td></tr>
+            <tr><td><strong>Extra benefits</strong></td><td>None built in</td><td>Often dental, vision, hearing, fitness</td></tr>
+            <tr><td><strong>Out-of-pocket maximum</strong></td><td>None</td><td>Yes, plan-specific annual cap</td></tr>
+            <tr><td><strong>Medigap compatible</strong></td><td>Yes</td><td>No — Medigap works with Original Medicare only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>What to Weigh Before Choosing</h2>
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Your doctors and hospitals</h3>
+          <p>
+            If you have specific doctors or a hospital system you want to keep, verify directly
+            with both the plan and the provider's office that they're in-network — don't rely on
+            plan marketing materials alone.
+          </p>
+        </div>
+        <div class="card">
+          <h3>How much you travel</h3>
+          <p>
+            Original Medicare (paired with a Medigap policy) offers the most flexibility if you
+            split time between states or travel frequently, since it's accepted nationwide with no
+            network restrictions.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Your prescription needs</h3>
+          <p>
+            Medicare Advantage plans often bundle Part D conveniently, but check the plan's drug
+            formulary for your specific medications — coverage and tier placement vary by plan.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Your risk tolerance for costs</h3>
+          <p>
+            Medicare Advantage's built-in out-of-pocket maximum offers real protection in a bad
+            health year that Original Medicare alone doesn't have — unless you pair Original
+            Medicare with a Medigap policy, covered in Lesson 5.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>The Decision Isn't Fully Reversible</h2>
+      <p>
+        This is the detail that trips people up most: switching from Medicare Advantage back to
+        Original Medicare plus a Medigap policy later isn't guaranteed. Medigap insurers can, in
+        most states, use medical underwriting to deny coverage or charge more based on your health
+        if you're applying outside your initial Medigap enrollment window. That makes this an
+        important decision to get right the first time, not something to treat casually. Lesson 5
+        covers Medigap enrollment timing in full.
+      </p>
+      <p>
+        For the complete cost comparison methodology — including how to weigh premiums against
+        out-of-pocket maximums for your specific situation — see our
+        <a href="/coverage">full coverage options guide</a>.
+      </p>
+
+      <h2>A Note on Star Ratings</h2>
+      <p>
+        Medicare rates Medicare Advantage and Part D plans on a 5-star scale each year, based on
+        factors like member satisfaction, customer service, and clinical quality measures. A
+        plan's star rating can be a useful signal when comparing options in your area, but it's not
+        a substitute for checking the specifics that matter most to you — your doctors' network
+        status, your prescriptions' formulary placement, and the plan's actual out-of-pocket
+        maximum. A high star rating doesn't guarantee a plan is the right fit for your individual
+        situation.
+      </p>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <MarkCompleteButton slug={lesson.slug} />
+
+  <section class="section-alt cta-band">
+    <div class="container cta-inner">
+      <h2>Want help weighing your specific options?</h2>
+      <p>
+        Kayla Price is a licensed insurance agent (NPN 18530055) offering free, no-pressure
+        consultations. Call <a href="tel:8666481578">(866) 648-1578</a>.
+      </p>
+    </div>
+  </section>
+
+  <LessonFooterNav n={lesson.n} />
+</BaseLayout>
+
+<style>
+  .cta-band { text-align: center; }
+  .cta-inner p { color: var(--text-secondary); margin-bottom: 0; }
+
+  .quick-answer {
+    border-left: 4px solid var(--fill-accent);
+    background: var(--fill-purple-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  :root[data-theme="dark"] .quick-answer {
+    background: rgba(144, 89, 181, 0.1);
+  }
+  .quick-answer-label {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--fill-accent);
+  }
+  .quick-answer p:last-child { margin: 0; }
+</style>
