@@ -5,7 +5,7 @@ export const TAGLINE = 'Where You Matter.';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Learn Medicare' },
-  { href: '/basics', label: 'The Basics' },
+  { href: '/basics/', label: 'The Basics' },
   { href: '/enrollment', label: 'Enrollment' },
   { href: '/coverage', label: 'Coverage Options' },
   { href: '/penalties', label: 'Penalties' },
