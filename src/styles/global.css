@@ -21,9 +21,25 @@
 }
 
 :root {
-  --bg-primary: #FFFFFF;
+  --bg-primary: #FCF9ED;   /* was #FFFFFF — warmed/darkened per brand
+                              feedback, same shift as PSG-Main-Website's
+                              --paper (both started from pure white).
+                              --fill-teal (1.66:1) and --border (1.28:1)
+                              were already failing AA/3:1 against the old
+                              white and are marginally lower now (1.57:1 /
+                              1.21:1) — pre-existing, not caused by this
+                              change. --fill-accent passes at 4.65:1 (was
+                              4.90:1) — thin margin, flagging. */
   --bg-secondary: #F8F6FF;
   --bg-card: #FFFFFF;
+  --header-bg: #E1BEE7;    /* was sharing --bg-primary directly (header had
+                              no token of its own); split out so the header
+                              can differ from the page. Old effective value
+                              (via --bg-primary) was #FFFFFF — near-white,
+                              fine for the logo's purple mark (8.5:1) but
+                              this is about matching the other two repos'
+                              lighter-purple header, still readable at
+                              11.29:1 for the logo's dark-purple ink. */
   --text-primary: #1a0a2e;
   --text-secondary: #4a3a6e;
   --text-muted: #7a6a9e;
@@ -43,6 +59,8 @@
 
 :root[data-theme="dark"] {
   --bg-primary: #0f0720;
+  --header-bg: #0f0720;   /* unchanged — same value --bg-primary already
+                             supplied before the header got its own token */
   --bg-secondary: #1a0a2e;
   --bg-card: #1f1040;
   --text-primary: #f0eaff;
