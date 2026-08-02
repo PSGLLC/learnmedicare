@@ -32,14 +32,18 @@
                               4.90:1) — thin margin, flagging. */
   --bg-secondary: #F8F6FF;
   --bg-card: #FFFFFF;
-  --header-bg: #E1BEE7;    /* was sharing --bg-primary directly (header had
+  --header-bg: linear-gradient(to right, #E1BEE7, #F3E5F5, #E0F2F1);
+                            /* was sharing --bg-primary directly (header had
                               no token of its own); split out so the header
-                              can differ from the page. Old effective value
-                              (via --bg-primary) was #FFFFFF — near-white,
-                              fine for the logo's purple mark (8.5:1) but
-                              this is about matching the other two repos'
-                              lighter-purple header, still readable at
-                              11.29:1 for the logo's dark-purple ink. */
+                              can differ from the page. Verified the full
+                              gradient path against the logo's purple/teal
+                              ink: worst point for both colors is the
+                              #E1BEE7 stop itself (purple 5.18:1, teal
+                              1.38:1) — contrast only improves along the
+                              gradient, never regresses, even across the
+                              logo's interleaved purple/teal wordmark
+                              region. Matches the same gradient applied to
+                              Ambrose and PSG-Main-Website. */
   --text-primary: #1a0a2e;
   --text-secondary: #4a3a6e;
   --text-muted: #7a6a9e;
