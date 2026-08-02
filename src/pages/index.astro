@@ -132,7 +132,7 @@ const jsonLd = [
 
   <section class="section-alt">
     <div class="container meet-kayla">
-      <img src="/img/headshot.webp" alt="Kayla, licensed independent Medicare agent" class="headshot" width="600" height="600" loading="lazy" decoding="async" />
+      <img src="/img/Lavender_and_Teal_headshot_no_background-800w.webp" alt="Kayla, licensed independent Medicare agent" class="headshot" width="800" height="800" loading="lazy" decoding="async" />
       <div class="card kayla-card">
         <p class="eyebrow">Meet Kayla</p>
         <h2>Your guide through Medicare</h2>
@@ -373,12 +373,15 @@ const jsonLd = [
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: start;
   }
   .headshot {
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    display: block;
+    width: clamp(220px, 22vw, 320px);
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 50%;
   }
   .kayla-card p:last-child { margin-bottom: 0; }
   @media (max-width: 800px) {
