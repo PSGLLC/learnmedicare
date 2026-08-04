@@ -2,7 +2,7 @@
 import MinimalLayout from '../layouts/MinimalLayout.astro';
 import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 import AuthorByline from '../components/AuthorByline.astro';
-import { authorship, dataset } from '../lib/schema';
+import { authorship, dataset, SITE_REVIEWER } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-28';
@@ -109,6 +109,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
+    reviewedBy: SITE_REVIEWER,
     mainEntity: faqs.map(f => ({
       '@type': 'Question',
       name: f.q,

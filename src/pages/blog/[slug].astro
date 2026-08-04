@@ -5,7 +5,7 @@ import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import { getCollection, render } from 'astro:content';
-import { authorship } from '../../lib/schema';
+import { authorship, SITE_REVIEWER } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -59,6 +59,7 @@ if (post.data.faqs && post.data.faqs.length > 0) {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
+    reviewedBy: SITE_REVIEWER,
     mainEntity: post.data.faqs.map((f: { question: string; answer: string }) => ({
       '@type': 'Question',
       name: f.question,

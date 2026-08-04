@@ -3,6 +3,7 @@
 // AND the FAQPage JSON-LD from the same `faqs` array, so pages no longer
 // hand-duplicate each Q&A once in HTML and once in a jsonLd block.
 import SchemaOrg from './SchemaOrg.astro';
+import { SITE_REVIEWER } from '../lib/schema';
 
 interface FaqItem {
   question: string;
@@ -20,6 +21,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   author: { '@type': 'Person', name: authorName, url: authorUrl },
+  reviewedBy: SITE_REVIEWER,
   mainEntity: faqs.map((f) => ({
     '@type': 'Question',
     name: f.question,
