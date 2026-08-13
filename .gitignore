@@ -22,3 +22,17 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Lesson video production working files (raw slides, audio chunks, ffmpeg
+# build segments, source Kling clips) — not site code; the finished videos
+# that the site actually serves live in public/videos/lessonN.mp4, which
+# IS tracked.
+/Lesson 1 - Learn Medicare/
+/Lesson 2 - Learn Medicare Options/
+/Lesson 3 - Medicare Advantage /
+/Lesson 4 - Medicare Supplement/
+/Lesson 5 - Medicare Part D/
+/Lesson 6 - Your Next Step/
+/audio/
+/build/
+/videos/
