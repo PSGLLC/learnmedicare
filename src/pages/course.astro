@@ -166,38 +166,57 @@ const LESSON_STATUS_LINKS = [
         Watch each lesson below, then mark it complete. Once all six are done, your
         certificate of completion unlocks underneath.
       </p>
-      <div class="vl-grid" id="vl-grid">
-        {LESSONS.map((lesson) => (
-          <div class="vl-card" data-lesson={lesson.n}>
-            <div class="vl-card-head">
-              <span class="vl-num-circle">{lesson.n}</span>
-              <span class="vl-check" aria-hidden="true">&#10003;</span>
+      <div id="vl-grid">
+        <div id="vl-gate" class="vl-gate">
+          <h3>Enter your name and email to unlock the videos</h3>
+          <p class="vl-gate-sub">Free, no obligation — just tells us where to reach you if you have questions.</p>
+          <form id="vl-gate-form" class="lead-form" novalidate>
+            <div class="form-row">
+              <label for="vl-firstName">First Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="vl-firstName" name="firstName" autocomplete="given-name" required />
             </div>
-            <h3>{lesson.title}</h3>
-            <p class="vl-answer">{lesson.answer}</p>
-            <div class="vl-video-wrap" data-video-wrap data-video-src={`/videos/lesson${lesson.n}.mp4`}>
-              <video
-                controls
-                preload="none"
-                width="100%"
-                poster="/brand/psg-logo.png"
-                data-lesson-video
-                hidden
-              >
-                Your browser does not support embedded video.
-                <a href={`/videos/lesson${lesson.n}.mp4`}>Download the video directly</a>.
-              </video>
-              <div class="vl-coming-soon" data-coming-soon>
-                <span class="vl-coming-soon-icon" aria-hidden="true">&#9200;</span>
-                <span>Coming Soon</span>
+            <div class="form-row">
+              <label for="vl-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="vl-email" name="email" autocomplete="email" required />
+            </div>
+            <!-- Honeypot — hidden from real visitors -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="vl-website">Website</label>
+              <input type="text" id="vl-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Unlock the Videos</button>
+            <p id="vl-gate-error" class="form-error" role="alert" hidden></p>
+          </form>
+        </div>
+
+        <div class="vl-videos" id="vl-videos" hidden>
+          {LESSONS.map((lesson) => (
+            <div class="vl-card" data-lesson={lesson.n}>
+              <div class="vl-card-head">
+                <span class="vl-num-circle">{lesson.n}</span>
+                <span class="vl-check" aria-hidden="true">&#10003;</span>
               </div>
+              <h3>{lesson.title}</h3>
+              <p class="vl-answer">{lesson.answer}</p>
+              <div class="vl-video-wrap">
+                <video
+                  controls
+                  preload="none"
+                  width="100%"
+                  poster="/brand/psg-logo.png"
+                  src={`/videos/lesson${lesson.n}.mp4`}
+                >
+                  Your browser does not support embedded video.
+                  <a href={`/videos/lesson${lesson.n}.mp4`}>Download the video directly</a>.
+                </video>
+              </div>
+              <label class="vl-mark">
+                <input type="checkbox" class="vl-checkbox" data-lesson-checkbox={lesson.n} />
+                Mark lesson {lesson.n} complete
+              </label>
             </div>
-            <label class="vl-mark">
-              <input type="checkbox" class="vl-checkbox" data-lesson-checkbox={lesson.n} />
-              Mark lesson {lesson.n} complete
-            </label>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -332,29 +351,27 @@ const LESSON_STATUS_LINKS = [
 
 <script is:inline>
   (function () {
-    // Probe each lesson's video file with a HEAD request before revealing the
-    // <video> element. A missing file (404) shows a "Coming Soon" placeholder
-    // instead of a broken/empty native video player.
-    document.querySelectorAll('[data-video-wrap]').forEach(function (wrap) {
-      var src = wrap.getAttribute('data-video-src');
-      var video = wrap.querySelector('[data-lesson-video]');
-      var comingSoon = wrap.querySelector('[data-coming-soon]');
-      if (!src || !video || !comingSoon) return;
-
-      fetch(src, { method: 'HEAD' })
-        .then(function (res) {
-          if (res.ok) {
-            video.setAttribute('src', src);
-            video.hidden = false;
-            comingSoon.hidden = true;
-          } else {
-            comingSoon.hidden = false;
-          }
-        })
-        .catch(function () {
-          comingSoon.hidden = false;
-        });
-    });
+    // Video-lesson email gate. Unlocks (shows the video grid, hides the
+    // gate form) if a `course_unlocked` cookie is already present — set
+    // either by a successful gate-form submit (see the courseLeadForm-style
+    // handler below) or by Kayla's own preview link
+    // (/api/course-preview?key=..., a Cloudflare Pages Function that
+    // validates a server-side secret and sets this same cookie before
+    // redirecting here). Runs inline/early so there's no flash of gated
+    // content for a visitor who's already unlocked.
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+    window.__unlockCourseVideos = function () {
+      var gate = document.getElementById('vl-gate');
+      var videos = document.getElementById('vl-videos');
+      if (gate) gate.hidden = true;
+      if (videos) videos.hidden = false;
+    };
+    if (getCookie('course_unlocked') === '1') {
+      window.__unlockCourseVideos();
+    }
   })();
 </script>
 
@@ -492,6 +509,8 @@ const LESSON_STATUS_LINKS = [
       if (res.ok && data.ok) {
         courseLeadForm.hidden = true;
         if (courseLeadSuccess) courseLeadSuccess.hidden = false;
+        document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
+        (window as any).__unlockCourseVideos?.();
       } else {
         throw new Error(data.error || 'Something went wrong. Please try again.');
       }
@@ -549,6 +568,8 @@ const LESSON_STATUS_LINKS = [
       if (res.ok && data.ok) {
         emailCourseForm.hidden = true;
         if (emailCourseSuccess) emailCourseSuccess.hidden = false;
+        document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
+        (window as any).__unlockCourseVideos?.();
       } else {
         throw new Error(data.error || 'Something went wrong. Please try again.');
       }
@@ -561,6 +582,64 @@ const LESSON_STATUS_LINKS = [
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Start the Email Course →';
+      }
+    }
+  });
+</script>
+
+<script>
+  // Video-lesson gate form. Reuses the exact same /api/course-lead
+  // endpoint (and GHL lead-capture behavior) as the course-lead-form
+  // below — this is just a second instance of that same lead pattern,
+  // positioned where visitors actually need it, that additionally
+  // unlocks the video grid on success.
+  const vlGateForm = document.getElementById('vl-gate-form') as HTMLFormElement | null;
+  const vlGateError = document.getElementById('vl-gate-error');
+
+  vlGateForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (vlGateError) {
+      vlGateError.hidden = true;
+      vlGateError.textContent = '';
+    }
+
+    const formData = new FormData(vlGateForm);
+    const payload = {
+      firstName: String(formData.get('firstName') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      website: String(formData.get('website') ?? ''),
+      pagePath: window.location.pathname,
+    };
+
+    const submitBtn = vlGateForm.querySelector<HTMLButtonElement>('.form-submit');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Unlocking…';
+    }
+
+    try {
+      const res = await fetch('/api/course-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+
+      if (res.ok && data.ok) {
+        document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
+        (window as any).__unlockCourseVideos?.();
+      } else {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      if (vlGateError) {
+        vlGateError.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+        vlGateError.hidden = false;
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Unlock the Videos';
       }
     }
   });
@@ -600,11 +679,31 @@ const LESSON_STATUS_LINKS = [
     max-width: 640px;
     margin: 0 auto 1.5rem;
   }
-  .vl-grid {
+  .vl-videos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
   }
+  /* Explicit override so the `hidden` attribute/property actually hides
+     this — otherwise the `display: grid` above (an author-stylesheet rule)
+     wins over the UA stylesheet's `[hidden] { display: none }`, and toggling
+     `.hidden = true` in JS would silently do nothing visually. This is the
+     exact bug that made the old "Coming Soon" box never actually hide. */
+  .vl-videos[hidden] {
+    display: none;
+  }
+  .vl-gate {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-secondary);
+  }
+  .vl-gate h3 { margin: 0 0 0.4rem; }
+  .vl-gate-sub { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem; }
+  .vl-gate .lead-form { text-align: left; }
   .vl-card {
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -660,24 +759,6 @@ const LESSON_STATUS_LINKS = [
   }
   .vl-video-wrap {
     position: relative;
-  }
-  .vl-coming-soon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    border-radius: 6px;
-    background: var(--bg-secondary);
-    border: 1px dashed var(--border);
-    color: var(--text-secondary);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-  .vl-coming-soon-icon {
-    font-size: 1.6rem;
   }
   .vl-mark {
     display: flex;
