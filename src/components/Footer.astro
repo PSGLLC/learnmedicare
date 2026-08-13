@@ -1,5 +1,5 @@
 ---
-import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS } from '../site.config';
+import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS, MEDICARE_QA_URL, PSG_INFO_LINKS } from '../site.config';
 const year = 2026;
 
 interface Props {
@@ -22,6 +22,7 @@ const { showResetProgress = false } = Astro.props;
           {NAV_LINKS.filter((l) => l.href !== '/').map((l) => (
             <a href={l.href}>{l.label}</a>
           ))}
+          <a href={MEDICARE_QA_URL} target="_blank" rel="noopener noreferrer">Free Medicare Q&amp;A Tool</a>
         </nav>
         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
       </div>
@@ -31,8 +32,12 @@ const { showResetProgress = false } = Astro.props;
         <p>Licensed Insurance Agent</p>
         <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
         <p><a href="mailto:hello@priceservicesgroup.com">hello@priceservicesgroup.com</a></p>
-        <p><a href="https://priceservicesgroup.com" target="_blank" rel="noopener noreferrer">priceservicesgroup.com</a></p>
         <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
+        <nav class="footer-links footer-psg-info">
+          {PSG_INFO_LINKS.map((l) => (
+            <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          ))}
+        </nav>
       </div>
     </div>
 

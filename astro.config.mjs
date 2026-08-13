@@ -7,6 +7,7 @@ const today = new Date().toISOString().split('T')[0];
 
 export default defineConfig({
   site: 'https://learnmedicare.org',
+  trailingSlash: 'always',
   integrations: [
     sitemap({
       // No page here carries a dateModified/updatedAt in frontmatter (all

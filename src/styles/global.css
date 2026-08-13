@@ -21,9 +21,29 @@
 }
 
 :root {
-  --bg-primary: #FFFFFF;
+  --bg-primary: #FCF9ED;   /* was #FFFFFF — warmed/darkened per brand
+                              feedback, same shift as PSG-Main-Website's
+                              --paper (both started from pure white).
+                              --fill-teal (1.66:1) and --border (1.28:1)
+                              were already failing AA/3:1 against the old
+                              white and are marginally lower now (1.57:1 /
+                              1.21:1) — pre-existing, not caused by this
+                              change. --fill-accent passes at 4.65:1 (was
+                              4.90:1) — thin margin, flagging. */
   --bg-secondary: #F8F6FF;
   --bg-card: #FFFFFF;
+  --header-bg: linear-gradient(to right, #E1BEE7, #F3E5F5, #E0F2F1);
+                            /* was sharing --bg-primary directly (header had
+                              no token of its own); split out so the header
+                              can differ from the page. Verified the full
+                              gradient path against the logo's purple/teal
+                              ink: worst point for both colors is the
+                              #E1BEE7 stop itself (purple 5.18:1, teal
+                              1.38:1) — contrast only improves along the
+                              gradient, never regresses, even across the
+                              logo's interleaved purple/teal wordmark
+                              region. Matches the same gradient applied to
+                              Ambrose and PSG-Main-Website. */
   --text-primary: #1a0a2e;
   --text-secondary: #4a3a6e;
   --text-muted: #7a6a9e;
@@ -43,6 +63,8 @@
 
 :root[data-theme="dark"] {
   --bg-primary: #0f0720;
+  --header-bg: #0f0720;   /* unchanged — same value --bg-primary already
+                             supplied before the header got its own token */
   --bg-secondary: #1a0a2e;
   --bg-card: #1f1040;
   --text-primary: #f0eaff;

@@ -97,7 +97,7 @@ const jsonLd = [
       <h1>Medicare Made Simple</h1>
       <p class="subhead">Free, unbiased Medicare education for people turning 65, transitioning to retirement, or helping a loved one navigate coverage.</p>
       <div class="hero-ctas">
-        <a href="/basics" class="btn btn-primary">Start Learning →</a>
+        <a href="/basics/" class="btn btn-primary">Start Learning →</a>
         <a href="/course" class="btn btn-outline-teal">Take the Course</a>
       </div>
       <p class="trust-line">Presented by Price Services Group, LLC · Licensed Insurance Agent</p>
@@ -122,9 +122,17 @@ const jsonLd = [
     </div>
   </section>
 
+  <section class="qa-section">
+    <div class="container qa-inner">
+      <h2>Have a Medicare Question Right Now?</h2>
+      <p>Get an instant answer from our free AI-powered Medicare Q&amp;A tool — no sign-up, no cost, no sales pitch.</p>
+      <a href="https://huggingface.co/spaces/PPAKayla/medicare-qa" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Ask a Medicare Question →</a>
+    </div>
+  </section>
+
   <section class="section-alt">
     <div class="container meet-kayla">
-      <img src="/img/headshot.webp" alt="Kayla, licensed independent Medicare agent" class="headshot" width="600" height="600" loading="lazy" decoding="async" />
+      <img src="/img/Lavender_and_Teal_headshot_no_background-800w.webp" alt="Kayla, licensed independent Medicare agent" class="headshot" width="800" height="800" loading="lazy" decoding="async" />
       <div class="card kayla-card">
         <p class="eyebrow">Meet Kayla</p>
         <h2>Your guide through Medicare</h2>
@@ -365,12 +373,15 @@ const jsonLd = [
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: start;
   }
   .headshot {
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    display: block;
+    width: clamp(220px, 22vw, 320px);
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 50%;
   }
   .kayla-card p:last-child { margin-bottom: 0; }
   @media (max-width: 800px) {
@@ -385,6 +396,15 @@ const jsonLd = [
   }
   .cta-inner h2 { color: #fff; }
   .cta-inner p { color: #f0e6f8; margin-bottom: 1.5rem; }
+
+  .qa-section {
+    background: var(--color-purple);
+    color: #fff;
+    text-align: center;
+  }
+  .qa-inner { max-width: 640px; }
+  .qa-inner h2 { color: #fff; }
+  .qa-inner p { color: #f0e6f8; margin-bottom: 1.5rem; }
 
   .quiz-inner { text-align: center; max-width: 640px; }
   .quiz-sub { color: var(--text-secondary); margin-bottom: 1.5rem; }
