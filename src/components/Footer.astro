@@ -62,7 +62,11 @@ const { showResetProgress = false } = Astro.props;
 
 <style>
   .site-footer {
-    background: var(--text-primary);
+    /* Fixed dark purple, deliberately NOT var(--text-primary) — that token
+       flips to a near-white value in dark mode (it's meant for text color,
+       not backgrounds), which washed the footer out to pale lavender. The
+       footer should always render dark regardless of site theme. */
+    background: #1a0a2e;
     color: #e7dcf4;
     padding: 3.5rem 0 2rem;
     margin-top: 3rem;
@@ -85,7 +89,7 @@ const { showResetProgress = false } = Astro.props;
   .footer-col p { font-size: 0.85rem; color: #d8c8ea; margin: 0 0 0.4rem; }
   .footer-col a { color: #d8c8ea; }
   .footer-col a:hover { color: var(--fill-teal); }
-  .footer-col img { height: 34px; }
+  .footer-col img { width: auto; height: 34px; aspect-ratio: 200 / 101; }
   .tagline { font-family: var(--font-heading); font-style: italic; color: var(--fill-teal) !important; }
   .footer-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
   .footer-links a { color: #d8c8ea; text-decoration: none; font-size: 0.9rem; }

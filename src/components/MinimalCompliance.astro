@@ -12,7 +12,9 @@ const year = 2026;
 </footer>
 <style>
   .minimal-footer {
-    background: var(--text-primary);
+    /* Fixed dark purple, deliberately NOT var(--text-primary) — see
+       Footer.astro for the same fix and why. */
+    background: #1a0a2e;
     color: #b6a4cb;
     padding: 1.25rem 0;
   }

@@ -13,7 +13,7 @@ const faqs = [
   { question: 'What does the free Medicare course teach?', answer: 'The course covers everything you need to know before you enroll in Medicare, broken into six self-paced lessons.' },
   { question: 'Is the Medicare course really free?', answer: 'Yes, the course is completely free to take, with no obligation to purchase any insurance plan.' },
   { question: 'How long does the course take to complete?', answer: 'It\'s self-paced, so you can go through the six lessons on your own schedule and revisit them any time.' },
-  { question: 'Do I need to create an account to take the course?', answer: 'No account is required — the course loads directly on this page, or you can watch it at course.learnmedicare.org.' },
+  { question: 'Do I need to create an account to take the course?', answer: 'No account is required — the course loads directly on this page.' },
   { question: 'Is this official Medicare guidance?', answer: 'No. This is independent educational content from a licensed insurance agency, not an official Medicare or government resource. For official guidance, always confirm details at Medicare.gov or 1-800-MEDICARE.' },
 ];
 
@@ -159,28 +159,6 @@ const LESSON_STATUS_LINKS = [
     </div>
   </section>
 
-  <section class="course-frame-section">
-    <div class="frame-wrap">
-      <iframe
-        id="course-frame"
-        src="https://course.learnmedicare.org"
-        title="Learn Medicare free course"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <noscript>
-      <p class="fallback-note">
-        Course not loading? Watch directly at
-        <a href="https://course.learnmedicare.org" target="_blank" rel="noopener noreferrer">course.learnmedicare.org &rarr;</a>
-      </p>
-    </noscript>
-    <p class="fallback-note" id="fallback-note" hidden>
-      Course not loading? Watch directly at
-      <a href="https://course.learnmedicare.org" target="_blank" rel="noopener noreferrer">course.learnmedicare.org &rarr;</a>
-    </p>
-  </section>
-
   <section class="video-lessons-section">
     <div class="container">
       <h2>Video Lessons</h2>
@@ -206,8 +184,8 @@ const LESSON_STATUS_LINKS = [
                 data-lesson-video
                 hidden
               >
-                Your browser does not support embedded video. Watch at
-                <a href={`/videos/lesson${lesson.n}.mp4`}>course.learnmedicare.org</a>.
+                Your browser does not support embedded video.
+                <a href={`/videos/lesson${lesson.n}.mp4`}>Download the video directly</a>.
               </video>
               <div class="vl-coming-soon" data-coming-soon>
                 <span class="vl-coming-soon-icon" aria-hidden="true">&#9200;</span>
@@ -301,23 +279,6 @@ const LESSON_STATUS_LINKS = [
 
   <FAQSection faqs={faqs} />
 </MinimalLayout>
-
-<script>
-  const frame = document.getElementById('course-frame') as HTMLIFrameElement | null;
-  const note = document.getElementById('fallback-note');
-  if (frame && note) {
-    const timer = setTimeout(() => {
-      note.hidden = false;
-    }, 3500);
-    frame.addEventListener('load', () => {
-      // Best-effort: if the iframe successfully reports a load event, assume it rendered.
-      clearTimeout(timer);
-    });
-    frame.addEventListener('error', () => {
-      note.hidden = false;
-    });
-  }
-</script>
 
 <script>
   // Feature 8 — Course Progress Tracking. Renders ✅/🔄/○ status for each of
@@ -625,27 +586,6 @@ const LESSON_STATUS_LINKS = [
     justify-content: center;
     margin-top: 1rem;
   }
-  .course-frame-section {
-    padding: 0 0 1.5rem;
-  }
-  .frame-wrap {
-    width: 100%;
-    height: calc(100vh - 130px);
-    min-height: 500px;
-  }
-  .frame-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-  .fallback-note {
-    text-align: center;
-    padding: 1rem 1.5rem 0;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-  }
-
   .video-lessons-section {
     padding: 2rem 0;
     border-top: 1px solid var(--border);
@@ -877,7 +817,6 @@ const LESSON_STATUS_LINKS = [
 
   @media print {
     .course-hero,
-    .course-frame-section,
     .video-lessons-section,
     .cert-name-prompt,
     .cert-print-btn,
