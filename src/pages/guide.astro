@@ -361,6 +361,7 @@ const jsonLd = [
         const data = await res.json().catch(() => ({ ok: false }));
 
         if (res.ok && data.ok) {
+          (window as any).fbq?.('track', 'Lead', { content_name: 'guide_page' });
           form.hidden = true;
           if (successEl) successEl.hidden = false;
         } else {

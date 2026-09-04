@@ -507,6 +507,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        (window as any).fbq?.('track', 'Lead', { content_name: 'guide_download_course_page' });
         courseLeadForm.hidden = true;
         if (courseLeadSuccess) courseLeadSuccess.hidden = false;
         document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
@@ -566,6 +567,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        (window as any).fbq?.('track', 'Lead', { content_name: 'email_course' });
         emailCourseForm.hidden = true;
         if (emailCourseSuccess) emailCourseSuccess.hidden = false;
         document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
@@ -626,6 +628,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        (window as any).fbq?.('track', 'Lead', { content_name: 'video_gate' });
         document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
         (window as any).__unlockCourseVideos?.();
       } else {
