@@ -204,6 +204,19 @@ const jsonLd = [
             <option value="just-exploring">Just Exploring</option>
           </select>
         </div>
+        <div class="form-row">
+          <label for="lead-occupation">What's your occupation? <span aria-hidden="true">*</span></label>
+          <select id="lead-occupation" name="occupation" required>
+            <option value="">Select one</option>
+            <option value="retired">Retired</option>
+            <option value="self-employed">Self-employed</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="insurance-medicare-life">Health/Medicare/Life Insurance Agent or Broker</option>
+            <option value="insurance-pc">Property &amp; Casualty / Auto / Home Insurance Agent</option>
+            <option value="financial-advisor">Financial Advisor / Wealth Management</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
 
         <!-- Honeypot — hidden from real visitors -->
         <div class="hp-field" aria-hidden="true">
@@ -230,6 +243,9 @@ const jsonLd = [
 
       <div id="lead-form-success" class="form-success" hidden>
         <p>Thank you! Check your email for your free guide.</p>
+      </div>
+      <div id="lead-form-redirect" class="form-success" hidden>
+        <p>This offer is designed for Medicare consumers, not industry professionals. If you're a licensed agent or broker and have a business inquiry, please reach out to us directly at (866) 648-1578 or hello@priceservicesgroup.com — we're happy to talk.</p>
       </div>
 
       <p class="compliance-note">
@@ -294,6 +310,7 @@ const jsonLd = [
         email: String(formData.get('email') ?? '').trim(),
         phone: String(formData.get('phone') ?? '').trim(),
         status: String(formData.get('status') ?? '').trim(),
+        occupation: String(formData.get('occupation') ?? '').trim(),
         website: String(formData.get('website') ?? ''),
         tcpaConsent: true,
         pagePath: window.location.pathname,
@@ -315,7 +332,12 @@ const jsonLd = [
 
         if (res.ok && data.ok) {
           form.hidden = true;
-          if (successEl) successEl.hidden = false;
+          if (data.disqualified) {
+            const redirectEl = document.getElementById('lead-form-redirect');
+            if (redirectEl) redirectEl.hidden = false;
+          } else if (successEl) {
+            successEl.hidden = false;
+          }
         } else {
           throw new Error(data.error || 'Something went wrong. Please try again.');
         }

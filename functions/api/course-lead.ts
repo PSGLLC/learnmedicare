@@ -4,13 +4,19 @@
 // Mirrors functions/api/guide-lead.ts, trimmed to the first name + email
 // fields collected on the /course page's lead form.
 
+import { checkDisqualification, createDisqualifiedAgentContact, isValidOccupation, flagDomainSignalByEmail, isGateDisabled } from "./_shared/agentDisqualification";
+
 interface Env {
   GHL_GUIDE_WEBHOOK_URL: string;
+  GHL_API_TOKEN: string;
+  AGENT_GATE_DISABLED?: string;
 }
 
 interface LeadPayload {
   firstName?: string;
   email?: string;
+  occupation?: string;
+  source?: string; // "course-lead-form" | "vl-gate-form" — which form on /course posted here
   pagePath?: string;
   website?: string; // honeypot — real visitors never fill this
 }
@@ -69,6 +75,44 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!EMAIL_RE.test(email)) {
     return json({ ok: false, error: "Enter a valid email address." }, 400);
   }
+  // Kill switch — see isGateDisabled's header comment. When set, every
+  // check below (occupation-required, blocklist/occupation reject,
+  // domain-signal soft-flag) is skipped entirely and this behaves exactly
+  // like the pre-existing "just create the lead" endpoint.
+  const gateDisabled = isGateDisabled(env);
+
+  if (!gateDisabled) {
+    // Enforced server-side too, not just via the frontend dropdown's
+    // `required` attribute — a raw API call must not be able to skip
+    // occupation and have it silently treated as "not an agent."
+    if (!isValidOccupation(body.occupation)) {
+      return json({ ok: false, error: "Select your occupation." }, 400);
+    }
+  }
+
+  const formSource = String(body.source ?? "course-lead-form");
+
+  if (!gateDisabled && env.GHL_API_TOKEN) {
+    // Blocklist check (known individual) then occupation check — reject
+    // before the normal webhook-forward flow below ever fires (that's what
+    // creates the full GHL contact). Only a minimal throwaway contact is
+    // created, for visibility, not follow-up.
+    const result = await checkDisqualification(env.GHL_API_TOKEN, { occupation: body.occupation, email });
+    if (result.disqualified) {
+      try {
+        await createDisqualifiedAgentContact(env.GHL_API_TOKEN, {
+          firstName,
+          lastName: "",
+          email,
+          source: formSource,
+          result,
+        });
+      } catch (err) {
+        console.error("course-lead: failed to create disqualified-agent contact:", err);
+      }
+      return json({ ok: true, disqualified: true });
+    }
+  }
 
   const submittedAt = new Date().toISOString();
   const payload = {
@@ -76,13 +120,23 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     email,
     locationId: GHL_LOCATION_ID,
     tags: ["learnmedicare-course-lead"],
-    source: "learnmedicare-course-page",
+    source: formSource,
     pagePath: String(body.pagePath ?? "/course"),
     submittedAt,
   };
 
   if (!env.GHL_GUIDE_WEBHOOK_URL) {
     return json({ ok: false, error: "Lead delivery is not configured yet." }, 500);
+  }
+
+  // Soft email-domain signal — only reached when NOT already disqualified
+  // above, and skipped entirely under the kill switch. Never changes this
+  // submission's flow; just leaves a note on the real contact for later
+  // manual review. Fire-and-forget, non-blocking.
+  if (!gateDisabled && env.GHL_API_TOKEN) {
+    context.waitUntil(
+      flagDomainSignalByEmail(env.GHL_API_TOKEN, { firstName, lastName: "", email, occupation: body.occupation }),
+    );
   }
 
   const delivered = await forwardToGHL(env.GHL_GUIDE_WEBHOOK_URL, payload);

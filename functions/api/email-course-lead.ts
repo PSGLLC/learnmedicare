@@ -10,13 +10,18 @@
 // targeting. Does not call GHL directly beyond this existing
 // webhook-forward pattern; workflow creation is out of scope here.
 
+import { checkDisqualification, createDisqualifiedAgentContact, isValidOccupation, flagDomainSignalByEmail, isGateDisabled } from './_shared/agentDisqualification';
+
 interface Env {
   GHL_WEB_LEAD_WEBHOOK_URL: string;
+  GHL_API_TOKEN: string;
+  AGENT_GATE_DISABLED?: string;
 }
 
 interface LeadPayload {
   first_name?: string;
   email?: string;
+  occupation?: string;
   pagePath?: string;
   website?: string; // honeypot — real visitors never fill this
   tcpaConsent?: boolean;
@@ -76,6 +81,42 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (body.tcpaConsent !== true) {
     return json({ ok: false, error: 'Please agree to be contacted to continue.' }, 400);
   }
+  // Kill switch — see isGateDisabled's header comment. When set, every
+  // check below (occupation-required, blocklist/occupation reject,
+  // domain-signal soft-flag) is skipped entirely and this behaves exactly
+  // like the pre-existing "just create the lead" endpoint.
+  const gateDisabled = isGateDisabled(env);
+
+  if (!gateDisabled) {
+    // Enforced server-side too, not just via the frontend dropdown's
+    // `required` attribute — a raw API call must not be able to skip
+    // occupation and have it silently treated as "not an agent."
+    if (!isValidOccupation(body.occupation)) {
+      return json({ ok: false, error: 'Select your occupation.' }, 400);
+    }
+
+    // Blocklist check (known individual) then occupation check — reject
+    // before the normal webhook-forward flow below ever fires (that's what
+    // creates the full GHL contact). Only a minimal throwaway contact is
+    // created, for visibility, not follow-up.
+    if (env.GHL_API_TOKEN) {
+      const result = await checkDisqualification(env.GHL_API_TOKEN, { occupation: body.occupation, email });
+      if (result.disqualified) {
+        try {
+          await createDisqualifiedAgentContact(env.GHL_API_TOKEN, {
+            firstName: first_name,
+            lastName: '',
+            email,
+            source: 'email-course-form',
+            result,
+          });
+        } catch (err) {
+          console.error('email-course-lead: failed to create disqualified-agent contact:', err);
+        }
+        return json({ ok: true, disqualified: true });
+      }
+    }
+  }
 
   // Note: no CF-IPRegion/detected_state field here — that signal isn't
   // wired up anywhere else on this site (checked functions/api/*.ts before
@@ -91,6 +132,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   if (!env.GHL_WEB_LEAD_WEBHOOK_URL) {
     return json({ ok: false, error: 'Lead delivery is not configured yet.' }, 500);
+  }
+
+  // Soft email-domain signal — only reached when NOT already disqualified
+  // above, and skipped entirely under the kill switch. Never changes this
+  // submission's flow; just leaves a note on the real contact for later
+  // manual review. Fire-and-forget, non-blocking.
+  if (!gateDisabled && env.GHL_API_TOKEN) {
+    context.waitUntil(
+      flagDomainSignalByEmail(env.GHL_API_TOKEN, { firstName: first_name, lastName: '', email, occupation: body.occupation }),
+    );
   }
 
   const delivered = await forwardToGHL(env.GHL_WEB_LEAD_WEBHOOK_URL, payload);
