@@ -560,6 +560,7 @@ const LESSON_STATUS_LINKS = [
           const redirectEl = document.getElementById('course-form-redirect');
           if (redirectEl) redirectEl.hidden = false;
         } else {
+          (window as any).fbq?.('track', 'Lead', { content_name: 'guide_download_course_page' });
           if (courseLeadSuccess) courseLeadSuccess.hidden = false;
           document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
           (window as any).__unlockCourseVideos?.();
@@ -625,6 +626,7 @@ const LESSON_STATUS_LINKS = [
           const redirectEl = document.getElementById('email-course-form-redirect');
           if (redirectEl) redirectEl.hidden = false;
         } else {
+          (window as any).fbq?.('track', 'Lead', { content_name: 'email_course' });
           if (emailCourseSuccess) emailCourseSuccess.hidden = false;
           document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
           (window as any).__unlockCourseVideos?.();
@@ -692,6 +694,7 @@ const LESSON_STATUS_LINKS = [
           const redirectEl = document.getElementById('vl-gate-redirect');
           if (redirectEl) redirectEl.hidden = false;
         } else {
+          (window as any).fbq?.('track', 'Lead', { content_name: 'video_gate' });
           document.cookie = 'course_unlocked=1; Max-Age=31536000; Path=/; SameSite=Lax';
           (window as any).__unlockCourseVideos?.();
         }

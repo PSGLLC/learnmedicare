@@ -1,0 +1,31 @@
+---
+// Base Meta Pixel snippet — loaded site-wide via both BaseLayout.astro and
+// MinimalLayout.astro's <head> (this repo has two independent top-level
+// layouts; course.astro and glossary.astro use MinimalLayout, everything
+// else uses BaseLayout — see each layout's own import of this component).
+// Confirmed against Meta Ads Manager > Data Sources before hardcoding:
+// this is the "PSG Pixel", same one used across PSG's other properties.
+//
+// No consent-gating: this repo has no cookie/tracking consent banner
+// anywhere (checked — the only "consent" references in the codebase are
+// TCPA phone/text-consent checkboxes on lead forms, unrelated to
+// pixel/cookie tracking), so per the opt-out decision already made
+// elsewhere for PSG properties, this fires unconditionally with nothing
+// to wire a decline signal into.
+const PIXEL_ID = "2395238053967046";
+---
+<script define:vars={{ PIXEL_ID }} is:inline>
+  (function () {
+    if (window.fbq) return;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  })();
+</script>

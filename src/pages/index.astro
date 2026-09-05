@@ -335,8 +335,9 @@ const jsonLd = [
           if (data.disqualified) {
             const redirectEl = document.getElementById('lead-form-redirect');
             if (redirectEl) redirectEl.hidden = false;
-          } else if (successEl) {
-            successEl.hidden = false;
+          } else {
+            (window as any).fbq?.('track', 'Lead', { content_name: 'homepage' });
+            if (successEl) successEl.hidden = false;
           }
         } else {
           throw new Error(data.error || 'Something went wrong. Please try again.');

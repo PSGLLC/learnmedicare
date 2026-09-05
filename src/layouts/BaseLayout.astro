@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import MetaPixel from '../components/MetaPixel.astro';
 import StickyGuideCTA from '../components/StickyGuideCTA.astro';
 import LessonProgress from '../components/LessonProgress.astro';
 import CourseProgressBar from '../components/CourseProgressBar.astro';
@@ -52,6 +53,7 @@ const currentLessonSlug = normalizedPath.replace(/^\//, '');
 <!doctype html>
 <html lang="en">
   <head>
+    <MetaPixel />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/brand/psg-logo.png" />
