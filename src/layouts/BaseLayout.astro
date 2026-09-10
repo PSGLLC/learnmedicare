@@ -61,6 +61,7 @@ const currentLessonSlug = normalizedPath.replace(/^\//, '');
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Learn Medicare Blog" href={new URL('/rss.xml', SITE_URL).toString()} />
     {/* Self-hosted fonts (see global.css @font-face) — no more
        fonts.googleapis.com/fonts.gstatic.com round trip. Preload the two
        files directly since the H1 (Playfair) and body copy (Open Sans)
