@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+
+// Client-side fetch to the shared psg-curated-news-worker — same feed
+// backing priceservicesgroup.com's and local.priceservicesgroup.com's
+// /news pages. Only ever returns status='published' rows.
+const NEWS_API = 'https://psg-curated-news-worker.marketing-priceservicesgroup.workers.dev/items';
+---
+<BaseLayout
+  title="Latest Medicare & Health Policy News | Learn Medicare"
+  description="Curated Medicare and health-policy news from CMS.gov, KFF, and NC Health News, summarized in plain English — with a link to the original source on every item."
+  path="/news/"
+  breadcrumbs={[{ name: 'News', url: '/news/' }]}
+>
+  <BreadcrumbNav crumbs={[{ name: 'News', url: '/news/' }]} />
+  <PageHero
+    label="Newsroom"
+    heading="Latest Medicare & Health Policy News"
+    subtext="Curated from CMS.gov, KFF, and NC Health News — summarized in plain English, always linked back to the original source."
+  />
+
+  <section>
+    <div class="container">
+      <div id="news-list" class="news-grid">
+        <p id="news-loading">Loading the latest news…</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ NEWS_API }}>
+  (async function () {
+    const list = document.getElementById('news-list');
+    const loading = document.getElementById('news-loading');
+    try {
+      const res = await fetch(NEWS_API);
+      if (!res.ok) throw new Error('bad response');
+      const items = await res.json();
+      loading.remove();
+      if (!Array.isArray(items) || items.length === 0) {
+        list.innerHTML = '<p>No news items yet — check back soon.</p>';
+        return;
+      }
+      list.innerHTML = items
+        .map((item) => {
+          const date = new Date(item.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+          const safeTitle = item.original_title.replace(/</g, '&lt;');
+          const safeSummary = item.summary.replace(/</g, '&lt;');
+          const safeSource = item.source_name.replace(/</g, '&lt;');
+          return `<article class="card news-item">
+            <p class="blog-card-date">${safeSource} · ${date}</p>
+            <h2>${safeTitle}</h2>
+            <p class="blog-card-excerpt">${safeSummary}</p>
+            <a class="blog-card-cta" href="${item.source_url}" target="_blank" rel="noopener noreferrer">Read more at ${safeSource} &rarr;</a>
+          </article>`;
+        })
+        .join('');
+    } catch (e) {
+      loading.textContent = "Couldn't load news right now — please check back later.";
+    }
+  })();
+</script>
+
+<style>
+  .news-grid{display:flex;flex-direction:column;gap:1.2rem;max-width:72ch;margin:0 auto}
+  .news-item{padding:1.6rem}
+</style>
