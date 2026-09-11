@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist --output-path dist/pagefind",
     "postbuild": "node scripts/submit-indexnow.mjs",
     "preview": "astro preview",
     "astro": "astro"
@@ -16,5 +16,8 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.0.7"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
   }
 }
