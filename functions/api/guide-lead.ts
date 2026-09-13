@@ -104,7 +104,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     smsOptIn,
     submittedAt,
     // Passive geolocation via Cloudflare's edge header — no third-party API.
-    detected_state: request.headers.get("CF-IPRegion") ?? "",
+    detected_state: request.headers.get("CF-IPRegion") ?? (request as any).cf?.regionCode ?? "",
   };
 
   // Out-of-state geofencing — see _shared/visitorTargeting.ts. Soft signal
