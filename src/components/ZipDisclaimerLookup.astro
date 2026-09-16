@@ -1,0 +1,100 @@
+---
+// ZIP-accurate TPMO disclaimer widget. {COMPLIANCE.tpmo} above (a static
+// string in site.config.ts) stays as the default/fallback — this widget
+// lets a visitor enter their ZIP for the real, county-level, appointed-
+// carrier-only count, computed by PSG-Partner-Portal (this site has no D1
+// of its own). Same component/endpoint as PSG-Main-Website's
+// ZipDisclaimerLookup.astro, copied rather than shared since these are
+// separate repos/deploys — keep both in sync if the endpoint contract
+// changes.
+const PORTAL_DISCLAIMER_ENDPOINT = "https://portal.priceservicesgroup.com/api/disclaimer/by-zip";
+---
+<div class="zip-disclaimer-lookup">
+  <label for="zip-disclaimer-input">Want the exact count for your ZIP code?</label>
+  <div class="zip-disclaimer-row">
+    <input type="text" id="zip-disclaimer-input" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" aria-label="ZIP code" placeholder="ZIP code" />
+    <button type="button" id="zip-disclaimer-btn">Check</button>
+  </div>
+  <p id="zip-disclaimer-result" role="status"></p>
+</div>
+
+<style>
+  .zip-disclaimer-lookup {
+    margin-top: 0.5rem;
+    font-size: 0.72rem;
+  }
+  .zip-disclaimer-lookup label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .zip-disclaimer-row {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .zip-disclaimer-row input {
+    width: 100px;
+    padding: 0.25rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid rgba(182, 164, 203, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e9e1f2;
+    font-size: 0.72rem;
+  }
+  .zip-disclaimer-row button {
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    border: 1px solid rgba(182, 164, 203, 0.5);
+    background: transparent;
+    color: #e9e1f2;
+    font-size: 0.72rem;
+    cursor: pointer;
+  }
+  .zip-disclaimer-row button:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  #zip-disclaimer-result {
+    margin: 0.4rem 0 0;
+    max-width: 480px;
+  }
+</style>
+
+<script is:inline define:vars={{ PORTAL_DISCLAIMER_ENDPOINT }}>
+  (function () {
+    var btn = document.getElementById("zip-disclaimer-btn");
+    var input = document.getElementById("zip-disclaimer-input");
+    var result = document.getElementById("zip-disclaimer-result");
+    if (!btn || !input || !result) return;
+
+    function lookup() {
+      var zip = (input.value || "").trim();
+      if (!/^\d{5}$/.test(zip)) {
+        result.textContent = "Enter a valid 5-digit ZIP code.";
+        return;
+      }
+      btn.disabled = true;
+      result.textContent = "Looking up…";
+      fetch(PORTAL_DISCLAIMER_ENDPOINT + "?zip=" + encodeURIComponent(zip), { credentials: "omit" })
+        .then(function (res) {
+          return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+        })
+        .then(function (r) {
+          btn.disabled = false;
+          if (!r.ok) {
+            result.textContent = r.data && r.data.error ? r.data.error : "Couldn't look that up right now.";
+            return;
+          }
+          result.textContent = r.data.disclaimer_text;
+        })
+        .catch(function () {
+          btn.disabled = false;
+          result.textContent = "Couldn't look that up right now — please try again.";
+        });
+    }
+
+    btn.addEventListener("click", lookup);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") lookup();
+    });
+  })();
+</script>

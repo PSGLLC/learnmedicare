@@ -1,5 +1,6 @@
 ---
 import { COMPLIANCE, TAGLINE } from '../site.config';
+import ZipDisclaimerLookup from './ZipDisclaimerLookup.astro';
 const year = 2026;
 ---
 <footer class="minimal-footer">
@@ -7,6 +8,7 @@ const year = 2026;
     <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
     <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
     <p>{COMPLIANCE.tpmo}</p>
+    <ZipDisclaimerLookup />
     <p>&copy; {year} Price Services Group LLC. {TAGLINE}</p>
   </div>
 </footer>
