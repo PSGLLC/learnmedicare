@@ -1,5 +1,6 @@
 ---
 import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS, MEDICARE_QA_URL, PSG_INFO_LINKS } from '../site.config';
+import ZipDisclaimerLookup from './ZipDisclaimerLookup.astro';
 const year = 2026;
 
 interface Props {
@@ -56,6 +57,7 @@ const { showResetProgress = false } = Astro.props;
 
     <div class="tpmo-disclaimer">
       <p>We do not offer every plan available in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+      <ZipDisclaimerLookup />
     </div>
   </div>
 </footer>
