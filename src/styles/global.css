@@ -9,14 +9,14 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 300 800;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/open-sans-var.woff2") format("woff2-variations"), url("/fonts/open-sans-var.woff2") format("woff2");
 }
 @font-face {
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400 900;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/playfair-display-var.woff2") format("woff2-variations"), url("/fonts/playfair-display-var.woff2") format("woff2");
 }
 
