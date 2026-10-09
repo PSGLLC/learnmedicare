@@ -89,8 +89,14 @@ const { showResetProgress = false } = Astro.props;
     margin: 0.75rem 0 0.75rem;
   }
   .footer-col p { font-size: 0.85rem; color: #d8c8ea; margin: 0 0 0.4rem; }
-  .footer-col a { color: #d8c8ea; }
-  .footer-col a:hover { color: var(--fill-teal); }
+  /* :not(.btn) 2026-10 fix: this rule's specificity (.footer-col a) beat
+     .btn-teal's own `color: var(--text-primary)`, so the footer's
+     "Schedule Free Review" button rendered lavender (#d8c8ea) text on its
+     teal (#51decc) fill — 1.05:1 contrast, a Lighthouse color-contrast
+     failure. Excluding .btn lets the button's own (correct, dark-on-teal)
+     color win. */
+  .footer-col a:not(.btn) { color: #d8c8ea; }
+  .footer-col a:not(.btn):hover { color: var(--fill-teal); }
   .footer-col img { width: auto; height: 34px; aspect-ratio: 200 / 101; }
   .tagline { font-family: var(--font-heading); font-style: italic; color: var(--fill-teal) !important; }
   .footer-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }

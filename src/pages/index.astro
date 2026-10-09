@@ -381,7 +381,11 @@ const jsonLd = [
   .lesson-num {
     display: inline-block;
     background: var(--fill-purple-light);
-    color: var(--fill-accent);
+    /* 2026-10 fix: --fill-accent (#9059B5) only reaches 3.65:1 against this
+       badge's light-purple fill (#EAD8F6) — Lighthouse color-contrast
+       failure, needs 4.5:1. #7d47a1 is the darker purple already used as
+       .btn-primary's hover shade; it clears 4.5:1 here (4.77:1). */
+    color: #7d47a1;
     font-weight: 700;
     font-size: 0.75rem;
     padding: 0.25rem 0.7rem;
@@ -418,16 +422,26 @@ const jsonLd = [
     text-align: center;
   }
   .cta-inner h2 { color: #fff; }
-  .cta-inner p { color: #f0e6f8; margin-bottom: 1.5rem; }
+  /* 2026-10 fix: #f0e6f8 on --fill-accent (#9059B5) measured 4.05:1,
+     under the 4.5:1 Lighthouse color-contrast threshold. #faf5fd clears
+     it (4.56:1) while staying a near-white tint rather than pure white. */
+  .cta-inner p { color: #faf5fd; margin-bottom: 1.5rem; }
 
   .qa-section {
-    background: var(--color-purple);
+    /* 2026-10 fix: this referenced --color-purple, a token that doesn't
+       exist anywhere in the design system (see --fill-accent in
+       global.css, used identically by .cta-section above). The undefined
+       var() made the declaration drop silently, leaving white/near-white
+       text (#fff, #f0e6f8) on the page's cream background with no purple
+       fill underneath — Lighthouse flagged both as color-contrast
+       failures (1.05:1 and 1.14:1, needs 3.0/4.5). */
+    background: var(--fill-accent);
     color: #fff;
     text-align: center;
   }
   .qa-inner { max-width: 640px; }
   .qa-inner h2 { color: #fff; }
-  .qa-inner p { color: #f0e6f8; margin-bottom: 1.5rem; }
+  .qa-inner p { color: #faf5fd; margin-bottom: 1.5rem; }
 
   .quiz-inner { text-align: center; max-width: 640px; }
   .quiz-sub { color: var(--text-secondary); margin-bottom: 1.5rem; }
