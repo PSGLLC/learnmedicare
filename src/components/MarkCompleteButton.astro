@@ -22,8 +22,9 @@ const { slug } = Astro.props;
   .mark-complete-status {
     margin-top: 0.6rem;
     font-weight: 600;
-    color: var(--fill-teal, #51decc);
+    color: var(--fill-accent);
   }
+  :root[data-theme="dark"] .mark-complete-status { color: var(--fill-teal); }
 </style>
 
 <script>

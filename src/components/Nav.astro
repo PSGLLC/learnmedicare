@@ -92,7 +92,8 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     font-size: 1.15rem;
   }
   .brand-learn { color: var(--accent-text); }
-  .brand-medicare { color: var(--fill-teal); }
+  .brand-medicare { color: var(--fill-accent); }
+  :root[data-theme="dark"] .brand-medicare { color: var(--fill-teal); }
   .nav-right {
     display: flex;
     align-items: center;
