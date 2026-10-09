@@ -26,7 +26,7 @@ Medicare Advantage **replaces** Original Medicare — you get your Part A and Pa
 
 ## Side-by-Side Comparison
 
-| | Medicare Advantage | Medigap |
+| Feature | Medicare Advantage | Medigap |
 |---|---|---|
 | Monthly premium | Often lower, sometimes $0 | Generally higher |
 | Provider network | Usually HMO/PPO restricted | Any provider nationwide accepting Medicare |
