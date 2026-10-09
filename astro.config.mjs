@@ -10,6 +10,9 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
+      // /medicare-qa/ is a static file in public/ (not an Astro page), so the integration
+      // can't discover it on its own.
+      customPages: ['https://learnmedicare.org/medicare-qa/'],
       // No page here carries a dateModified/updatedAt in frontmatter (all
       // pages are plain .astro files, no content collection), so every URL
       // falls back to today's build date.
