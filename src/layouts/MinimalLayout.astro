@@ -1,6 +1,7 @@
 ---
 import MinimalCompliance from '../components/MinimalCompliance.astro';
 import MetaPixel from '../components/MetaPixel.astro';
+import VisitorAnalyticsConsent from '../components/VisitorAnalyticsConsent.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
 
@@ -114,6 +115,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
         <a href="/" class="back-link">&larr; Back to Learn Medicare</a>
       </div>
     </header>
+    <VisitorAnalyticsConsent />
     <main>
       <slot />
     </main>

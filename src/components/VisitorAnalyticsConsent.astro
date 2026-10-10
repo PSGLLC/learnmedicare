@@ -1,0 +1,22 @@
+<section id="visitor-analytics-choice" aria-label="Visitor analytics preferences" hidden>
+  <div class="container analytics-inner">
+    <p>Allow website analytics? We use browsing activity to understand visits to LearnMedicare. <a href="/privacy">Privacy Policy</a></p>
+    <div class="analytics-actions">
+      <button type="button" class="btn btn-teal" data-analytics-choice="allow">Allow Analytics</button>
+      <button type="button" class="btn btn-outline" data-analytics-choice="decline">Decline Analytics</button>
+    </div>
+  </div>
+</section>
+<div class="container analytics-preferences">
+  <button type="button" id="visitor-analytics-preferences">Analytics Preferences</button>
+</div>
+<script is:inline src="/js/visitor-analytics-consent.js"></script>
+<style>
+  #visitor-analytics-choice { padding: 0; border-top: 2px solid var(--fill-teal); background: var(--bg-primary); color: var(--text-primary); }
+  .analytics-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding-block: 1.25rem; flex-wrap: wrap; }
+  .analytics-inner p { margin: 0; flex: 1 1 24rem; }
+  .analytics-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+  .analytics-actions button { white-space: normal; }
+  .analytics-preferences { padding-block: .75rem; }
+  #visitor-analytics-preferences { border: 0; background: none; color: var(--accent-text); text-decoration: underline; font: inherit; cursor: pointer; }
+</style>
