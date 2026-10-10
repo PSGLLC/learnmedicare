@@ -519,6 +519,7 @@ const LESSON_STATUS_LINKS = [
 </script>
 
 <script>
+  import { assertLeadResponse } from '../lib/leadResponse';
   const courseLeadForm = document.getElementById('course-lead-form') as HTMLFormElement | null;
   const courseLeadError = document.getElementById('course-form-error');
   const courseLeadSuccess = document.getElementById('course-form-success');
@@ -555,6 +556,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        assertLeadResponse(res.ok, data);
         courseLeadForm.hidden = true;
         if (data.disqualified) {
           const redirectEl = document.getElementById('course-form-redirect');
@@ -585,6 +587,7 @@ const LESSON_STATUS_LINKS = [
 <script>
   // Feature 9 — Email Course opt-in. POSTs to the same GHL-forwarding Pages
   // Function pattern used by /api/lead (functions/api/email-course-lead.ts).
+  import { assertLeadResponse } from '../lib/leadResponse';
   const emailCourseForm = document.getElementById('email-course-form') as HTMLFormElement | null;
   const emailCourseError = document.getElementById('email-course-form-error');
   const emailCourseSuccess = document.getElementById('email-course-form-success');
@@ -621,6 +624,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        assertLeadResponse(res.ok, data);
         emailCourseForm.hidden = true;
         if (data.disqualified) {
           const redirectEl = document.getElementById('email-course-form-redirect');
@@ -654,6 +658,7 @@ const LESSON_STATUS_LINKS = [
   // below — this is just a second instance of that same lead pattern,
   // positioned where visitors actually need it, that additionally
   // unlocks the video grid on success.
+  import { assertLeadResponse } from '../lib/leadResponse';
   const vlGateForm = document.getElementById('vl-gate-form') as HTMLFormElement | null;
   const vlGateError = document.getElementById('vl-gate-error');
 
@@ -689,6 +694,7 @@ const LESSON_STATUS_LINKS = [
       const data = await res.json().catch(() => ({ ok: false }));
 
       if (res.ok && data.ok) {
+        assertLeadResponse(res.ok, data);
         if (data.disqualified) {
           vlGateForm.hidden = true;
           const redirectEl = document.getElementById('vl-gate-redirect');
