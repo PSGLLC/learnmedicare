@@ -9,14 +9,14 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 300 800;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/open-sans-var.woff2") format("woff2-variations"), url("/fonts/open-sans-var.woff2") format("woff2");
 }
 @font-face {
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400 900;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/playfair-display-var.woff2") format("woff2-variations"), url("/fonts/playfair-display-var.woff2") format("woff2");
 }
 
@@ -49,6 +49,9 @@
   --text-muted: #7a6a9e;
   --border: #E8E0F4;
   --fill-accent: #9059B5;
+  /* Text-safe accent: darker purple on light surfaces;
+     lightened in dark mode below. --fill-accent stays for fills/borders. */
+  --accent-text: #7d47a1;   /* #9059B5 is 3.65:1 on --fill-purple-light #EAD8F6; #7d47a1 is 4.76:1 there, 6.06:1 on --bg-primary */
   --fill-teal: #51DECC;
   --fill-teal-light: rgba(81, 222, 204, 0.12);
   --fill-purple-light: #EAD8F6;
@@ -72,6 +75,7 @@
   --text-muted: #8a7ab8;
   --border: #2d1f5e;
   --fill-accent: #9059B5;
+  --accent-text: #c9a4e8;   /* #9059B5 text was 3.0-3.99:1 on dark surfaces; #c9a4e8 is ~8:1 */
   --fill-teal: #51DECC;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
@@ -98,7 +102,7 @@ h1, h2, h3, h4 {
 
 p { margin: 0 0 1em; }
 
-a { color: var(--fill-accent); }
+a { color: var(--accent-text); }
 
 .container {
   max-width: var(--max-width);
@@ -128,16 +132,19 @@ a { color: var(--fill-accent); }
 
 .btn-teal {
   background: var(--fill-teal);
-  color: var(--text-primary);
+  color: #1a0a2e;  /* fixed ink: var(--text-primary) flips to #f0eaff in dark mode = 1.41:1 on teal; #1a0a2e = 11.2:1 */
   box-shadow: 0 6px 18px rgba(81, 222, 204, 0.35);
 }
 
 .btn-outline {
   background: transparent;
   border-color: var(--fill-accent);
-  color: var(--fill-accent);
+  color: var(--accent-text);
 }
 :root[data-theme="dark"] .btn-outline { border-color: var(--fill-teal); color: var(--fill-teal); }
+
+/* visually hidden, still read by screen readers (empty table corner headers) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 section { padding: 4.5rem 0; }
 .section-alt { background: var(--bg-secondary); }
@@ -155,7 +162,7 @@ section { padding: 4.5rem 0; }
   letter-spacing: 0.08em;
   font-weight: 700;
   font-size: 0.8rem;
-  color: var(--fill-accent);
+  color: var(--accent-text);
 }
 :root[data-theme="dark"] .eyebrow { color: var(--fill-teal); }
 

@@ -21,14 +21,13 @@ const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 <div class="lesson-progress" id="lesson-progress" data-lessons={JSON.stringify(LESSONS.map((l) => l.path))} data-current={normalizedPath}>
   <p class="lp-label" id="lp-label">Lessons viewed</p>
-  <div class="lp-bar" role="list">
+  <div class="lp-bar" role="group" aria-labelledby="lp-label">
     {LESSONS.map((lesson) => (
       <button
         type="button"
         class="lp-segment"
         data-path={lesson.path}
         aria-label={lesson.label}
-        role="listitem"
       ></button>
     ))}
   </div>

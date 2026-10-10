@@ -91,8 +91,9 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     font-weight: 700;
     font-size: 1.15rem;
   }
-  .brand-learn { color: var(--fill-accent); }
-  .brand-medicare { color: var(--fill-teal); }
+  .brand-learn { color: var(--accent-text); }
+  .brand-medicare { color: var(--fill-accent); }
+  :root[data-theme="dark"] .brand-medicare { color: var(--fill-teal); }
   .nav-right {
     display: flex;
     align-items: center;
@@ -110,7 +111,7 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     color: var(--text-secondary);
     cursor: pointer;
   }
-  .theme-toggle:hover { color: var(--fill-accent); border-color: var(--fill-accent); }
+  .theme-toggle:hover { color: var(--accent-text); border-color: var(--fill-accent); }
   .icon-moon { display: none; }
   :root[data-theme="dark"] .icon-sun { display: none; }
   :root[data-theme="dark"] .icon-moon { display: block; }
@@ -126,7 +127,7 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     font-weight: 600;
     font-size: 0.95rem;
   }
-  .nav-link:hover, .nav-link.active { color: var(--fill-accent); }
+  .nav-link:hover, .nav-link.active { color: var(--accent-text); }
   :root[data-theme="dark"] .nav-link:hover,
   :root[data-theme="dark"] .nav-link.active { color: var(--fill-teal); }
   .nav-cta { padding: 0.55rem 1.25rem; font-size: 0.9rem; }
@@ -168,7 +169,7 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
   }
   .nav-dropdown-link:hover, .nav-dropdown-link.active {
     background: var(--fill-purple-light);
-    color: var(--fill-accent);
+    color: var(--accent-text);
   }
   :root[data-theme="dark"] .nav-dropdown-link:hover,
   :root[data-theme="dark"] .nav-dropdown-link.active {

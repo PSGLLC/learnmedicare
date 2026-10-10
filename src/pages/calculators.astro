@@ -120,7 +120,7 @@ const jsonLd = [
         <div class="calc-result" id="mg-result">
           <table class="calc-table">
             <thead>
-              <tr><th></th><th>Medicare Advantage</th><th>Medigap (Plan G)</th></tr>
+              <tr><th scope="col"><span class="sr-only">Cost item</span></th><th scope="col">Medicare Advantage</th><th>Medigap (Plan G)</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -487,7 +487,7 @@ const jsonLd = [
     padding: 0.4rem 0;
     font-size: 0.95rem;
   }
-  .calc-result-row strong { color: var(--fill-accent); font-family: var(--font-heading); font-size: 1.1rem; }
+  .calc-result-row strong { color: var(--accent-text); font-family: var(--font-heading); font-size: 1.1rem; }
   .calc-result-row.calc-result-highlight {
     border-top: 1px solid var(--border);
     margin-top: 0.4rem;
@@ -495,7 +495,7 @@ const jsonLd = [
   }
   .calc-result-row.calc-result-highlight strong { font-size: 1.3rem; }
   .calc-result-headline { margin: 0; font-size: 1.05rem; color: var(--text-primary); }
-  .calc-result-headline strong { color: var(--fill-accent); }
+  .calc-result-headline strong { color: var(--accent-text); }
 
   .calc-table { width: 100%; border-collapse: collapse; }
   .calc-table th, .calc-table td {
@@ -505,7 +505,7 @@ const jsonLd = [
     font-size: 0.92rem;
   }
   .calc-table th {
-    color: var(--fill-accent);
+    color: var(--accent-text);
     font-weight: 700;
     font-size: 0.85rem;
     font-family: var(--font-heading);
@@ -513,7 +513,7 @@ const jsonLd = [
   .calc-table tr:last-child td { border-bottom: none; }
 
   .calc-note { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem; }
-  .calc-note a { color: var(--fill-accent); }
+  .calc-note a { color: var(--accent-text); }
 
   .disclaimer-section { padding: 0 0 3.5rem; }
   .disclaimer {

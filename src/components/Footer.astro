@@ -13,12 +13,12 @@ const { showResetProgress = false } = Astro.props;
     <div class="footer-columns">
       <div class="footer-col">
         <img src="/brand/psg-logo-nav.png" alt="Price Services Group logo" width="200" height="101" loading="lazy" decoding="async" />
-        <h3>About LearnMedicare</h3>
+        <h2>About LearnMedicare</h2>
         <p class="tagline">{TAGLINE}</p>
         <p>Free, unbiased Medicare education to help you understand your options with confidence.</p>
       </div>
       <div class="footer-col">
-        <h3>Quick Links</h3>
+        <h2>Quick Links</h2>
         <nav class="footer-links">
           {NAV_LINKS.filter((l) => l.href !== '/').map((l) => (
             <a href={l.href}>{l.label}</a>
@@ -28,7 +28,7 @@ const { showResetProgress = false } = Astro.props;
         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-teal">Schedule Free Review</a>
       </div>
       <div class="footer-col">
-        <h3>PSG Info</h3>
+        <h2>PSG Info</h2>
         <p>Presented by Price Services Group, LLC</p>
         <p>Licensed Insurance Agent</p>
         <p>{COMPLIANCE.npn} &bull; {COMPLIANCE.agencyNpn}</p>
@@ -82,15 +82,21 @@ const { showResetProgress = false } = Astro.props;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
-  .footer-col h3 {
+  .footer-col h2 {
     font-family: var(--font-heading);
     color: #fff;
     font-size: 1.05rem;
     margin: 0.75rem 0 0.75rem;
   }
   .footer-col p { font-size: 0.85rem; color: #d8c8ea; margin: 0 0 0.4rem; }
-  .footer-col a { color: #d8c8ea; }
-  .footer-col a:hover { color: var(--fill-teal); }
+  /* :not(.btn) 2026-10 fix: this rule's specificity (.footer-col a) beat
+     .btn-teal's own `color: var(--text-primary)`, so the footer's
+     "Schedule Free Review" button rendered lavender (#d8c8ea) text on its
+     teal (#51decc) fill — 1.05:1 contrast, a Lighthouse color-contrast
+     failure. Excluding .btn lets the button's own (correct, dark-on-teal)
+     color win. */
+  .footer-col a:not(.btn) { color: #d8c8ea; }
+  .footer-col a:not(.btn):hover { color: var(--fill-teal); }
   .footer-col img { width: auto; height: 34px; aspect-ratio: 200 / 101; }
   .tagline { font-family: var(--font-heading); font-style: italic; color: var(--fill-teal) !important; }
   .footer-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
