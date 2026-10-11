@@ -20,7 +20,7 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
         <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -46,6 +46,7 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
           id="resources-toggle"
           aria-haspopup="true"
           aria-expanded="false"
+          aria-controls="resources-menu"
         >
           Resources <span class="nav-dropdown-caret" aria-hidden="true">&#9662;</span>
         </button>
@@ -253,8 +254,20 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      const focusInResources = resourcesMenu?.classList.contains('open') && (resourcesMenu.contains(document.activeElement) || document.activeElement === resourcesToggle);
       resourcesMenu?.classList.remove('open');
       resourcesToggle?.setAttribute('aria-expanded', 'false');
+      if (focusInResources) {
+        resourcesToggle?.focus();
+        e.preventDefault();
+        return;
+      }
+      if (links?.classList.contains('open') && (links.contains(document.activeElement) || document.activeElement === toggle)) {
+        links.classList.remove('open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.focus();
+        e.preventDefault();
+      }
     }
   });
 </script>
