@@ -2,7 +2,7 @@
 import MinimalLayout from '../layouts/MinimalLayout.astro';
 import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 import AuthorByline from '../components/AuthorByline.astro';
-import { authorship, dataset, SITE_REVIEWER } from '../lib/schema';
+import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-28';
@@ -81,11 +81,6 @@ const terms = [
 const lettersPresent = [...new Set(terms.map(t => t.term[0].toUpperCase()))];
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-const faqs = terms.slice(0, 5).map(t => ({
-  q: `What is ${t.term}?`,
-  a: t.def,
-}));
-
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -105,17 +100,6 @@ const jsonLd = [
     description: 'Official CMS figures underlying the glossary definitions on this page — Part B premium/deductible, Part D out-of-pocket cap, and IRMAA income thresholds for 2026.',
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
   }),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    author: { '@type': 'Person', name: 'Kayla Price', url: 'https://priceservicesgroup.com' },
-    reviewedBy: SITE_REVIEWER,
-    mainEntity: faqs.map(f => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
 ];
 ---
 <MinimalLayout
