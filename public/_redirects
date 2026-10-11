@@ -1,3 +1,5 @@
 /sitemap.xml /sitemap-index.xml 200
+/home https://learnmedicare.org/ 301
+/home/ https://learnmedicare.org/ 301
 /gz /glossary 301
 /gz/ /glossary/ 301
