@@ -108,6 +108,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header class="mini-header">
       <div class="container mini-header-inner">
         <a href="/" class="mini-brand">
@@ -118,7 +119,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
       </div>
     </header>
     <VisitorAnalyticsConsent />
-    <main>
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <MinimalCompliance />

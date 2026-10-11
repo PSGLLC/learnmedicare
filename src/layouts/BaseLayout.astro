@@ -116,11 +116,12 @@ const currentLessonSlug = normalizedPath.replace(/^\//, '');
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <Nav />
     <VisitorAnalyticsConsent />
     {showLessonProgress && <LessonProgress />}
     {showLessonProgress && <CourseProgressBar slug={currentLessonSlug} />}
-    <main>
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <Footer showResetProgress={showLessonProgress} />

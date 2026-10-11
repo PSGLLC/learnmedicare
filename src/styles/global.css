@@ -136,6 +136,19 @@ a { color: var(--accent-text); }
   box-shadow: 0 6px 18px rgba(81, 222, 204, 0.35);
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 2px solid var(--fill-teal);
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+
 .btn-outline {
   background: transparent;
   border-color: var(--fill-accent);
