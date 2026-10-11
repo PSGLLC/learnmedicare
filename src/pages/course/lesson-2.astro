@@ -11,12 +11,12 @@ import { lessonByN } from '../../lib/lessons';
 
 const lesson = lessonByN(2);
 const DATE_PUBLISHED = '2026-07-29';
-const DATE_MODIFIED = '2026-07-29';
+const DATE_MODIFIED = '2026-10-10';
 
 const faqs = [
   { question: 'What does Medicare Part A cover?', answer: 'Part A covers inpatient hospital stays, care in a skilled nursing facility (up to 100 days per benefit period, with conditions), hospice care, and some home health care. It does not cover long-term custodial care.' },
   { question: 'What does Medicare Part B cover?', answer: 'Part B covers doctor visits, outpatient care, preventive services like screenings and vaccines, mental health services, durable medical equipment, and some home health care not covered by Part A.' },
-  { question: 'How much do Part A and Part B cost in 2026?', answer: 'Part A is usually $0/month if you have 40+ work quarters (otherwise $285 or $518/month), with a $1,676 deductible per benefit period. Part B is $202.90/month standard premium with a $283 annual deductible, plus 20% coinsurance after that.' },
+  { question: 'How much do Part A and Part B cost in 2026?', answer: 'Part A is usually $0/month if you have 40+ work quarters (otherwise $311 or $565/month), with a $1,736 deductible per benefit period. Part B is $202.90/month standard premium with a $283 annual deductible, plus 20% coinsurance after that.' },
   { question: 'Can I have Part A without Part B, or vice versa?', answer: 'Yes, technically, but it\'s uncommon and usually not advisable unless you have other coverage. Part A alone doesn\'t cover doctor visits or outpatient care, and Part B alone doesn\'t cover hospital stays — together they form Original Medicare.' },
 ];
 
@@ -35,7 +35,7 @@ const jsonLd = [
   },
   dataset({
     name: 'Medicare Part A & Part B Costs 2026',
-    description: 'The 2026 Part A deductible ($1,676 per benefit period) and Part B premium ($202.90/month) and deductible ($283), as published by CMS.',
+    description: 'The 2026 Part A deductible ($1,736 per benefit period) and Part B premium ($202.90/month) and deductible ($283), as published by CMS.',
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
   }),
 ];
@@ -84,14 +84,17 @@ const jsonLd = [
       </p>
 
       <h2>Part A Costs in 2026</h2>
+      <p>
+        Source: <a href="https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles">CMS 2026 Medicare Parts A and B premiums and deductibles</a>.
+      </p>
       <div style="overflow-x: auto; margin-top: 1rem;">
         <table class="compare">
           <thead><tr><th>Item</th><th>2026 Amount</th></tr></thead>
           <tbody>
             <tr><td>Premium (40+ work quarters)</td><td>$0/month</td></tr>
-            <tr><td>Premium (30-39 quarters)</td><td>$285/month</td></tr>
-            <tr><td>Premium (fewer than 30 quarters)</td><td>$518/month</td></tr>
-            <tr><td>Deductible (per benefit period)</td><td>$1,676</td></tr>
+            <tr><td>Premium (30-39 quarters)</td><td>$311/month</td></tr>
+            <tr><td>Premium (fewer than 30 quarters)</td><td>$565/month</td></tr>
+            <tr><td>Deductible (per benefit period)</td><td>$1,736</td></tr>
           </tbody>
         </table>
       </div>
