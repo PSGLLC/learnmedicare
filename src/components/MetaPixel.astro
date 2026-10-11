@@ -6,16 +6,12 @@
 // Confirmed against Meta Ads Manager > Data Sources before hardcoding:
 // this is the "PSG Pixel", same one used across PSG's other properties.
 //
-// No consent-gating: this repo has no cookie/tracking consent banner
-// anywhere (checked — the only "consent" references in the codebase are
-// TCPA phone/text-consent checkboxes on lead forms, unrelated to
-// pixel/cookie tracking), so per the opt-out decision already made
-// elsewhere for PSG properties, this fires unconditionally with nothing
-// to wire a decline signal into.
+// Marketing has a separate explicit choice in VisitorAnalyticsConsent.
 const PIXEL_ID = "2395238053967046";
 ---
 <script define:vars={{ PIXEL_ID }} is:inline>
-  (function () {
+  window.__loadMarketing = function () {
+    if (window.__psgConsent?.marketing !== true) return;
     if (window.fbq) return;
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -27,5 +23,5 @@ const PIXEL_ID = "2395238053967046";
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', PIXEL_ID);
     fbq('track', 'PageView');
-  })();
+  };
 </script>

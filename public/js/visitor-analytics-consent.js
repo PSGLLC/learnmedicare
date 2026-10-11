@@ -5,8 +5,8 @@
   var loaded = false;
 
   function apply(choice) {
-    // Preserve other categories; this control manages first-party analytics only.
     window.__psgConsent = Object.assign({}, choice, { analytics: choice.analytics === true });
+    if (choice.marketing === true) window.__loadMarketing?.();
     if (!window.__psgConsent.analytics) return;
     if (loaded) {
       window.psgTracker?.init();
@@ -24,19 +24,39 @@
     var parsed = JSON.parse(localStorage.getItem(key));
     if (parsed && typeof parsed.analytics === "boolean") stored = parsed;
   } catch (_) {}
+  var analyticsChosen = !!stored;
   apply(stored || { essential: true, analytics: false });
-  if (panel) panel.hidden = !!stored;
+  if (panel) panel.hidden = !!stored && typeof stored.marketing === 'boolean';
 
   document.querySelectorAll("[data-analytics-choice]").forEach(function (button) {
     button.addEventListener("click", function () {
+      analyticsChosen = true;
       var choice = Object.assign({}, window.__psgConsent, {
         essential: true,
         analytics: button.dataset.analyticsChoice === "allow",
         timestamp: Date.now(),
       });
       try { localStorage.setItem(key, JSON.stringify(choice)); } catch (_) {}
+      if (window.__psgConsent.analytics === true && !choice.analytics) {
+        window.__psgConsent = choice;
+        window.location.reload();
+        return;
+      }
       apply(choice);
-      if (panel) panel.hidden = true;
+      if (panel) panel.hidden = typeof choice.marketing === 'boolean';
+    });
+  });
+  document.querySelectorAll('[data-marketing-choice]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var choice = Object.assign({}, window.__psgConsent, { essential: true, marketing: button.dataset.marketingChoice === 'allow', timestamp: Date.now() });
+      try { localStorage.setItem(key, JSON.stringify(choice)); } catch (_) {}
+      if (window.__psgConsent.marketing === true && !choice.marketing) {
+        window.__psgConsent = choice;
+        window.location.reload();
+        return;
+      }
+      apply(choice);
+      if (panel) panel.hidden = analyticsChosen;
     });
   });
   document.getElementById("visitor-analytics-preferences")?.addEventListener("click", function () {

@@ -9,14 +9,15 @@ function setup(stored, blocked = false) {
   const scripts = [];
   const panel = { hidden: true, querySelector: () => ({ focus() {} }) };
   const buttons = ['allow', 'decline'].map(value => ({ dataset: { analyticsChoice: value }, addEventListener: (_, fn) => { handlers[value] = fn; } }));
-  const window = {};
+  const marketingButtons = ['allow', 'decline'].map(value => ({ dataset: { marketingChoice: value }, addEventListener: (_, fn) => { handlers['marketing-' + value] = fn; } }));
+  const window = { location: { reload() { window.reloaded = true; } }, __loadMarketing() { window.marketingLoads = (window.marketingLoads || 0) + 1; } };
   let saved = stored;
   const context = {
     window, Date,
     localStorage: { getItem: () => { if (blocked) throw Error(); return saved; }, setItem: (_, value) => { if (blocked) throw Error(); saved = value; } },
     document: {
       getElementById: id => id === 'visitor-analytics-choice' ? panel : { addEventListener: (_, fn) => { handlers.preferences = fn; } },
-      querySelectorAll: () => buttons,
+      querySelectorAll: selector => selector.includes('marketing') ? marketingButtons : buttons,
       createElement: () => ({}), body: { appendChild: script => scripts.push(script) },
     },
   };
@@ -37,8 +38,19 @@ test('allow loads once and decline disables the tracker consent signal', () => {
   assert.equal(result.window.__psgConsent.analytics, true);
   result.handlers.decline();
   assert.equal(result.window.__psgConsent.analytics, false);
+  assert.equal(result.window.reloaded, true);
   result.handlers.preferences();
   assert.equal(result.panel.hidden, false);
+});
+test('marketing requires its own explicit choice and withdrawal reloads', () => {
+  const result = setup(null);
+  result.handlers.allow();
+  assert.equal(result.window.marketingLoads, undefined);
+  result.handlers['marketing-allow']();
+  assert.equal(result.window.marketingLoads, 1);
+  result.handlers['marketing-decline']();
+  assert.equal(result.window.__psgConsent.marketing, false);
+  assert.equal(result.window.reloaded, true);
 });
 test('saved decisions and marketing preferences are respected', () => {
   const allow = setup('{"analytics":true,"marketing":false}');
