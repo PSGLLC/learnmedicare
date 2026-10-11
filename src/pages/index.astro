@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import headshot from '../../public/img/Lavender_and_Teal_headshot_no_background-800w.webp';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResumeCard from '../components/ResumeCard.astro';
 import FAQSection from '../components/FAQSection.astro';
@@ -132,7 +134,7 @@ const jsonLd = [
 
   <section class="section-alt">
     <div class="container meet-kayla">
-      <img src="/img/Lavender_and_Teal_headshot_no_background-800w.webp" alt="Kayla, licensed independent Medicare agent" class="headshot" width="800" height="800" loading="lazy" decoding="async" />
+      <Image src={headshot} alt="Kayla, licensed independent Medicare agent" class="headshot" width={800} height={800} widths={[240, 480, 800]} sizes="(max-width: 800px) 260px, 320px" format="webp" loading="lazy" decoding="async" />
       <div class="card kayla-card">
         <p class="eyebrow">Meet Kayla</p>
         <h2>Your guide through Medicare</h2>

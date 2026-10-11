@@ -1,14 +1,17 @@
 ---
 import { NAV_LINKS, RESOURCES_DROPDOWN, BOOKING_URL, MEDICARE_QA_URL } from '../site.config';
 import SearchModal from './SearchModal.astro';
+import { Image } from 'astro:assets';
+import logoLight from '../../public/brand/psg-logo-nav.png';
+import logoDark from '../../public/brand/psg-logo-nav-dark.png';
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.replace(/\/$/, ''));
 ---
 <header class="nav-wrap">
   <div class="container nav-inner">
     <a href="/" class="brand">
-      <img class="logo-light" src="/brand/psg-logo-nav.png" alt="Price Services Group logo" width="200" height="101" fetchpriority="high" decoding="async" />
-      <img class="logo-dark" src="/brand/psg-logo-nav-dark.png" alt="Price Services Group logo" width="200" height="101" decoding="async" />
+      <Image class="logo-light" src={logoLight} alt="Price Services Group logo" width={200} height={101} widths={[80, 160, 240]} sizes="80px" format="webp" loading="eager" decoding="async" />
+      <Image class="logo-dark" src={logoDark} alt="Price Services Group logo" width={200} height={101} widths={[80, 160, 240]} sizes="80px" format="webp" loading="eager" decoding="async" />
       <span class="brand-name"><span class="brand-learn">Learn</span><span class="brand-medicare">Medicare</span></span>
     </a>
     <div class="nav-right">

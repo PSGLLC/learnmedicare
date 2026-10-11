@@ -4,6 +4,8 @@ import MetaPixel from '../components/MetaPixel.astro';
 import VisitorAnalyticsConsent from '../components/VisitorAnalyticsConsent.astro';
 import '../styles/global.css';
 import { SITE_URL } from '../site.config';
+import { Image } from 'astro:assets';
+import logo from '../../public/brand/psg-logo.png';
 
 interface Breadcrumb {
   name: string;
@@ -109,7 +111,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     <header class="mini-header">
       <div class="container mini-header-inner">
         <a href="/" class="mini-brand">
-          <img src="/brand/psg-logo.png" alt="Price Services Group logo" />
+          <Image src={logo} alt="Price Services Group logo" width={68} height={34} widths={[80, 160, 240]} sizes="68px" format="webp" loading="eager" />
           <span>Learn Medicare</span>
         </a>
         <a href="/" class="back-link">&larr; Back to Learn Medicare</a>

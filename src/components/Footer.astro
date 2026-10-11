@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../../public/brand/psg-logo-nav.png';
 import { COMPLIANCE, TAGLINE, BOOKING_URL, NAV_LINKS, MEDICARE_QA_URL, PSG_INFO_LINKS } from '../site.config';
 import ZipDisclaimerLookup from './ZipDisclaimerLookup.astro';
 const year = 2026;
@@ -12,7 +14,7 @@ const { showResetProgress = false } = Astro.props;
   <div class="container footer-inner">
     <div class="footer-columns">
       <div class="footer-col">
-        <img src="/brand/psg-logo-nav.png" alt="Price Services Group logo" width="200" height="101" loading="lazy" decoding="async" />
+        <Image src={logo} alt="Price Services Group logo" width={200} height={101} widths={[80, 160, 240]} sizes="68px" format="webp" loading="lazy" decoding="async" />
         <h2>About LearnMedicare</h2>
         <p class="tagline">{TAGLINE}</p>
         <p>Free, unbiased Medicare education to help you understand your options with confidence.</p>
