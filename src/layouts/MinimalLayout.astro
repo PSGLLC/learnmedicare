@@ -149,4 +149,8 @@ if (breadcrumbs && breadcrumbs.length > 0) {
   }
   .mini-brand img { height: 34px; }
   .back-link { font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+  @media (max-width: 480px) {
+    .mini-header-inner { flex-direction: column; align-items: flex-start; padding-inline: 1.5rem; }
+    .back-link { max-width: 100%; white-space: normal; }
+  }
 </style>
