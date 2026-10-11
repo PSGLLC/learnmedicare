@@ -8,13 +8,13 @@ import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-10-11';
 
 const faqs = [
-  { question: "Can I delay Medicare if I'm still working at 65?", answer: 'In many cases, yes — especially if your employer has 20 or more employees and offers group health coverage. You may be able to delay Part B without a penalty as long as that coverage is creditable.' },
-  { question: 'What is "creditable coverage"?', answer: 'Creditable coverage is health or drug coverage that\'s considered at least as good as Medicare\'s. Having creditable coverage can let you delay Medicare enrollment without facing a late enrollment penalty later.' },
-  { question: 'Do I need to enroll in Medicare if I still have employer coverage?', answer: 'Not necessarily. If your employer has 20 or more employees and your group coverage is creditable, you can often delay enrolling without penalty. If your employer has fewer than 20 employees, Medicare typically becomes primary, so enrolling on time usually matters more.' },
-  { question: 'What happens when I eventually leave my job or lose employer coverage?', answer: 'Losing employer group coverage generally triggers a Special Enrollment Period, giving you a window to sign up for Medicare without facing a late enrollment penalty, as long as your prior coverage was creditable.' },
+  { question: "Can I delay Medicare if I'm still working at 65?", answer: 'Group health coverage based on your or your spouse\'s current employment may qualify you for a Part B Special Enrollment Period. Confirm how the plan pays before delaying. Creditable prescription drug coverage is a separate Part D rule.' },
+  { question: 'What is "creditable coverage"?', answer: 'For Part D, prescription drug coverage expected to pay, on average, at least as much as standard Medicare drug coverage is creditable. It can protect against a Part D late enrollment penalty, but does not by itself establish a Part B enrollment exception.' },
+  { question: 'Do I need to enroll in Medicare if I still have employer coverage?', answer: 'It depends on current-employment group health coverage and how your plan coordinates with Medicare. For people 65 or older, Medicare generally pays first when the employer has fewer than 20 employees. Confirm payment order and enrollment requirements with the benefits administrator.' },
+  { question: 'What happens when I eventually leave my job or lose employer coverage?', answer: 'If you qualify for the employment-based Part B Special Enrollment Period, it generally lasts 8 months after employment or group health coverage ends, whichever happens first. COBRA and retiree coverage do not extend it. Part D has separate enrollment dates.' },
 ];
 
 const jsonLd = [
@@ -56,9 +56,10 @@ const jsonLd = [
       <div class="quick-answer">
         <p class="quick-answer-label">Quick Answer</p>
         <p>
-          If you or your spouse has employer coverage from a company with 20 or more employees,
-          you can delay Medicare without penalty. You have a Special Enrollment Period of 8 months
-          after that coverage ends to enroll in Medicare Part B without a late penalty.
+          Group health coverage based on your or your spouse's current employment may let you delay
+          Part B. Confirm payment order before deciding. If you qualify, the Part B Special Enrollment
+          Period generally lasts 8 months after employment or that coverage ends, whichever happens first.
+          COBRA does not extend this window; Part D has separate rules.
         </p>
       </div>
 
@@ -80,14 +81,14 @@ const jsonLd = [
         <div class="card">
           <h2>What is "creditable coverage"?</h2>
           <p>
-            Creditable coverage is health or drug coverage that Medicare considers at least as good
-            as its own. If your employer coverage is creditable, you can generally delay Medicare
-            enrollment without facing a late enrollment penalty when you eventually sign up.
+            For Part D, creditable prescription drug coverage is expected to pay, on average, at least
+            as much as standard Medicare drug coverage. Maintaining it can help avoid the Part D late
+            enrollment penalty. It does not by itself let you delay Part B.
           </p>
           <p>
             Ask your employer's benefits administrator for a "creditable coverage" notice each year —
-            it confirms whether your plan meets this standard for both medical (Part B) and
-            prescription drug (Part D) purposes. If you're weighing employer coverage against
+            it describes the prescription drug coverage's status for Part D, not Part B eligibility.
+            If you're weighing employer coverage against
             Medicare options, see how <a href="/coverage">Medicare Advantage compares to Medigap</a>.
           </p>
         </div>
@@ -95,11 +96,10 @@ const jsonLd = [
 
       <div class="callout" style="margin-top: 2.5rem;">
         <p style="margin:0;">
-          <strong>Why this matters:</strong> if your coverage isn't creditable, or you let it lapse
-          without enrolling in Medicare, you could face the late enrollment penalties described on
-          our <a href="/penalties">Penalties</a> page. Confirming creditable coverage status before
-          you decide to delay is one of the most important steps in planning your Medicare timeline. For
-          official guidance, see <a href="https://www.medicare.gov" target="_blank" rel="noopener noreferrer">Medicare.gov</a>
+          <strong>Why this matters:</strong> confirm Part B and Part D deadlines separately before
+          delaying enrollment. Our <a href="/penalties">Penalties</a> page explains the different penalties. For
+          official guidance, see <a href="https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/working-past-65" target="_blank" rel="noopener noreferrer">Medicare.gov: Working Past 65</a>,
+          <a href="https://www.medicare.gov/health-drug-plans/part-d/basics/creditable-coverage">Creditable Drug Coverage</a>,
           or the <a href="https://www.ssa.gov/benefits/medicare/" target="_blank" rel="noopener noreferrer">Social Security Administration</a>.
         </p>
       </div>

@@ -5,7 +5,7 @@ import AuthorByline from '../components/AuthorByline.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-28';
+const DATE_MODIFIED = '2026-10-11';
 
 // Alphabetized per the brief. Note: several terms the brief asked to "add"
 // (AEP, Creditable Coverage, Dual Eligible, Extra Help, Formulary, GEP,
@@ -31,7 +31,7 @@ const terms = [
   { term: "Coordination of Benefits", def: "The process that determines which of your insurance plans pays first (primary) and which pays second (secondary) when you have more than one type of coverage, such as Medicare and an employer plan. See Medicare Secondary Payer for the specific rules governing this with Medicare." },
   { term: "Copayment (Copay)", def: "A flat dollar amount you pay for a covered service, such as $20 for a doctor visit — different from coinsurance, which is a percentage of the cost rather than a fixed amount." },
   { term: "Cost-Sharing", def: "The general term for the portion of healthcare costs you pay yourself, including premiums, deductibles, copayments, and coinsurance — as opposed to what your plan pays." },
-  { term: "Creditable Coverage", def: "Health or drug coverage considered at least as good as Medicare's. Having creditable coverage (such as through a current employer) lets you delay Medicare enrollment without facing a late enrollment penalty later." },
+  { term: "Creditable Coverage", def: "For Part D, prescription drug coverage expected to pay, on average, at least as much as standard Medicare drug coverage. Keeping it can help you avoid a Part D late enrollment penalty. Part B has separate rules: a Special Enrollment Period generally requires group health coverage based on your or your spouse's current employment; COBRA or retiree coverage does not extend that Part B enrollment window." },
   { term: "Dual-Eligible", def: "Someone who qualifies for both Medicare and Medicaid at the same time. Medicaid can help cover Medicare premiums and cost-sharing, and often covers services Medicare doesn't, like long-term custodial care." },
   { term: "Durable Medical Equipment (DME)", def: "Medically necessary equipment for home use, like wheelchairs, walkers, and hospital beds, generally covered under Part B when prescribed by a doctor." },
   { term: "Enrollment Period", def: "The general term for any of Medicare's defined windows — Initial, General, Special, or Annual — during which you can enroll in or change coverage. See each specific period for its own rules and timing." },
@@ -62,7 +62,7 @@ const terms = [
   { term: "Medigap Open Enrollment Period", def: "A one-time, 6-month window starting the month you're both 65+ and enrolled in Part B, during which Medigap insurers must generally sell you any policy they offer regardless of health history." },
   { term: "Network", def: "The group of doctors, hospitals, and other providers that a Medicare Advantage plan has contracted with. Using an in-network provider typically costs less than going out-of-network, and some plan types (HMOs) may not cover out-of-network care except in emergencies." },
   { term: "Open Enrollment Period (OEP)", def: "See Medicare Advantage Open Enrollment Period (MA OEP) — the January 1 through March 31 window for people already in a Medicare Advantage plan to make one plan switch or return to Original Medicare." },
-  { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance), run directly by the federal government with no networks — any provider that accepts Medicare, anywhere in the country, will treat you." },
+  { term: "Original Medicare", def: "The traditional federal Medicare program made up of Part A (hospital insurance) and Part B (medical insurance). You can use doctors and hospitals that take Medicare anywhere in the U.S., without a plan network. Confirm that the provider accepts Medicare and is accepting new patients; coverage does not guarantee an appointment or that every service is covered." },
   { term: "Out-of-Pocket Maximum (OOPM)", def: "The most you'll pay in a plan year for covered services under a Medicare Advantage plan before the plan pays 100% of covered costs. Original Medicare alone has no out-of-pocket maximum, which is part of why many people pair it with Medigap or a Medicare Advantage plan." },
   { term: "PACE (Program of All-Inclusive Care for the Elderly)", def: "A Medicare and Medicaid program providing comprehensive medical and social services to help frail, older adults continue living in their community rather than a nursing home." },
   { term: "Premium", def: "The amount you pay, usually monthly, to have insurance coverage — separate from what you pay when you actually use care (deductibles, copays, coinsurance)." },
@@ -155,6 +155,7 @@ const jsonLd = [
           );
         })}
       </dl>
+      <p>Sources: <a href="https://www.medicare.gov/health-drug-plans/part-d/basics/creditable-coverage">Creditable drug coverage</a>, <a href="https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/working-past-65">working past 65</a>, and <a href="https://www.medicare.gov/basics/get-started-with-medicare/using-medicare/how-to-get-medicare-services">using Medicare services</a>.</p>
     </div>
   </section>
 
