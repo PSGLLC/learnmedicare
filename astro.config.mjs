@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://learnmedicare.org',
   trailingSlash: 'always',
+  build: { inlineStylesheets: 'auto' },
+  // Inline the site's small critical CSS bundles; larger future bundles stay cacheable.
+  vite: { build: { assetsInlineLimit: 12 * 1024 } },
   integrations: [
     sitemap({
       // The external Q&A redirect is not an indexable content page.

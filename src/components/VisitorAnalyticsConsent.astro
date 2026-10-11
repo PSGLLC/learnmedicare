@@ -14,7 +14,8 @@
 </div>
 <script is:inline src="/js/visitor-analytics-consent.js"></script>
 <style>
-  #visitor-analytics-choice { padding: 0; border-top: 2px solid var(--fill-teal); background: var(--bg-primary); color: var(--text-primary); }
+  #visitor-analytics-choice { position: fixed; inset-inline: 0; bottom: 0; z-index: 300; max-height: 50svh; overflow-y: auto; padding: 0; border-top: 2px solid var(--fill-teal); background: var(--bg-primary); color: var(--text-primary); box-shadow: 0 -4px 16px rgb(0 0 0 / 12%); }
+  #visitor-analytics-choice[hidden] { display: none; }
   .analytics-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding-block: 1.25rem; flex-wrap: wrap; }
   .analytics-inner p { margin: 0; flex: 1 1 24rem; }
   .analytics-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
