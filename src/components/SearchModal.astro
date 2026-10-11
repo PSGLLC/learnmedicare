@@ -57,7 +57,7 @@
           new window.PagefindUI({ element: "#pagefind-search", showSubResults: true, showImages: false });
         }
         var input = panel.querySelector("input");
-        if (input) input.focus();
+        if (input && !panel.hidden && !document.querySelector("dialog[open]")) input.focus();
       };
       document.body.appendChild(script);
     }
@@ -90,16 +90,19 @@
       closePanel(false);
     });
 
+    // Pagefind blurs its input on Escape; capture focus ownership first.
     document.addEventListener("keydown", function (e) {
-      var isTyping = document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA";
-      if (panel.hidden && ((e.key === "k" && (e.metaKey || e.ctrlKey)) || (e.key === "/" && !isTyping))) {
+      if (document.querySelector("dialog[open]")) return;
+      var active = document.activeElement;
+      var isTyping = active.tagName === "INPUT" || active.tagName === "TEXTAREA" || active.tagName === "SELECT" || active.isContentEditable;
+      if (panel.hidden && !isTyping && ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/")) {
         e.preventDefault();
         openPanel();
       }
       if (e.key === "Escape" && !panel.hidden) {
-        closePanel(true);
+        closePanel(wrap.contains(document.activeElement));
       }
-    });
+    }, true);
   })();
 </script>
 
