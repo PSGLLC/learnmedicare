@@ -5,6 +5,14 @@ import test from 'node:test';
 // CMS's 2026 Part A fact sheet: $1,736 deductible and $311/$565 premiums.
 const paths = ['medicare-costs-2026', 'course/lesson-2', 'agent-resources', 'what-is-medicare', 'medicare-vs-medicaid'];
 
+test('calculators no longer label old amounts as 2026 or use placeholder IRMAA tiers', () => {
+  const html = readFileSync(new URL('../dist/calculators/index.html', import.meta.url), 'utf8');
+  assert.ok(html.includes('$283'));
+  assert.ok(html.includes('CMS 2026 brackets'));
+  assert.ok(html.includes('lived apart all year'));
+  assert.doesNotMatch(html, /\$257|two-bracket structure|illustrative placeholders/);
+});
+
 for (const path of paths) {
   test(`${path} renders current Part A costs without stale 2025 figures`, () => {
     const html = readFileSync(new URL(`../dist/${path}/index.html`, import.meta.url), 'utf8');

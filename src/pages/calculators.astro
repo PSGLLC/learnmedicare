@@ -143,10 +143,10 @@ const jsonLd = [
         </div>
         <p class="calc-note">
           This is an illustrative estimate, not a quote. Assumes Medicare Advantage copays of about $25/primary
-          care visit, $50/specialist visit, and $1,556 per hospital admission (roughly the 2026 Part A inpatient
+          care visit, $50/specialist visit, and $1,556 per hospital admission (an illustrative copay, not the Original Medicare
           deductible), on top of your chosen monthly premium budget. Assumes a Medigap Plan G monthly premium of
           about $165 (varies widely by state and insurer) with near-zero per-visit cost after the annual Part B
-          deductible (~$257 in 2026), since Plan G covers Part B coinsurance in full. Adjust these assumptions to
+          deductible ($283 in 2026), since standard Plan G covers covered Part B coinsurance. Both totals exclude the common Part B premium and separate Part D costs. Adjust these assumptions to
           your actual plan quotes for an accurate comparison.
         </p>
       </div>
@@ -165,7 +165,8 @@ const jsonLd = [
             <select id="irmaa-filing">
               <option value="single">Single</option>
               <option value="joint">Married Filing Jointly</option>
-              <option value="separate">Married Filing Separately</option>
+              <option value="separate">Married Filing Separately (lived together)</option>
+              <option value="single">Married Filing Separately (lived apart all year)</option>
             </select>
           </div>
         </div>
@@ -181,12 +182,8 @@ const jsonLd = [
         </div>
         <p class="calc-note">
           IRMAA uses a two-year lookback, so your 2026 Part B premium is based on your 2024 tax return MAGI.
-          Married Filing Separately uses a two-bracket structure (only one surcharge tier above the standard
-          threshold), while Single, Married Filing Jointly, and Qualifying Widow(er) share a five-tier bracket
-          structure. The bracket <em>logic</em> below is implemented correctly, but the exact dollar thresholds
-          and surcharge amounts are illustrative placeholders and change annually — verify current figures at
-          <a href="https://www.ssa.gov/benefits/medicare/medicare-premiums.html" target="_blank" rel="noopener noreferrer">SSA.gov</a>
-          before relying on them.
+          These are Part B adjustments for full Medicare coverage, using the <a href="https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles">published CMS 2026 brackets</a>.
+          Separate returns have different brackets if spouses lived together during the tax year. Social Security determines your actual premium; Part D adjustments are separate.
         </p>
       </div>
 
@@ -301,9 +298,9 @@ const jsonLd = [
   // Adjust these constants as actual plan data becomes available.
   const MA_PRIMARY_COPAY = 25; // typical MA primary care visit copay
   const MA_SPECIALIST_COPAY = 50; // typical MA specialist visit copay
-  const MA_HOSPITAL_COPAY = 1556; // approx. 2026 Part A inpatient deductible, used as a per-admission proxy
+  const MA_HOSPITAL_COPAY = 1556; // Illustrative assumed MA copay, not an Original Medicare deductible.
   const MEDIGAP_PLAN_G_MONTHLY_PREMIUM = 165; // illustrative average Plan G premium; varies widely by state/insurer
-  const MEDIGAP_RESIDUAL_ANNUAL_COST = 257; // approx. 2026 Part B annual deductible, the main Plan G out-of-pocket exposure
+  const MEDIGAP_RESIDUAL_ANNUAL_COST = 283; // 2026 Part B annual deductible.
 
   const MG_NAME = 'Medicare Advantage vs. Medigap Cost Comparison';
   let mgInteracted = false;
@@ -339,23 +336,19 @@ const jsonLd = [
   updateMG();
 
   // ── Calculator 4: IRMAA Calculator ─────────────────────────────────────
-  // NOTE: The bracket LOGIC/STRUCTURE below is correct (5 tiers for Single/
-  // Joint/Widow(er), 2 tiers for Married Filing Separately, each tier adding
-  // an increasing surcharge on top of the standard Part B premium). The
-  // exact dollar thresholds and surcharge amounts are illustrative and
-  // should be verified annually against SSA.gov — they are NOT guaranteed
-  // to be the authoritative 2026 figures.
+  // CMS 2026 Part B adjustments; uppermost thresholds are inclusive.
   const IRMAA_STANDARD_BRACKETS = [
     { single: 0, joint: 0, surcharge: 0 },
-    { single: 106000, joint: 212000, surcharge: 69.9 },
-    { single: 133000, joint: 266000, surcharge: 174.7 },
-    { single: 167000, joint: 334000, surcharge: 279.5 },
-    { single: 200000, joint: 400000, surcharge: 384.3 },
-    { single: 500000, joint: 750000, surcharge: 419.3 },
+    { single: 109000, joint: 218000, surcharge: 81.2 },
+    { single: 137000, joint: 274000, surcharge: 202.9 },
+    { single: 171000, joint: 342000, surcharge: 324.6 },
+    { single: 205000, joint: 410000, surcharge: 446.3 },
+    { single: 500000, joint: 750000, surcharge: 487, inclusive: true },
   ];
   const IRMAA_SEPARATE_BRACKETS = [
     { threshold: 0, surcharge: 0 },
-    { threshold: 106000, surcharge: 384.3 },
+    { threshold: 109000, surcharge: 446.3 },
+    { threshold: 391000, surcharge: 487, inclusive: true },
   ];
 
   const IRMAA_NAME = 'IRMAA Calculator';
@@ -367,12 +360,12 @@ const jsonLd = [
     let surcharge = 0;
     if (filing === 'separate') {
       for (const bracket of IRMAA_SEPARATE_BRACKETS) {
-        if (magi >= bracket.threshold) surcharge = bracket.surcharge;
+        if (bracket.inclusive ? magi >= bracket.threshold : magi > bracket.threshold) surcharge = bracket.surcharge;
       }
     } else {
       for (const bracket of IRMAA_STANDARD_BRACKETS) {
         const threshold = filing === 'joint' ? bracket.joint : bracket.single;
-        if (magi >= threshold) surcharge = bracket.surcharge;
+        if (bracket.inclusive ? magi >= threshold : magi > threshold) surcharge = bracket.surcharge;
       }
     }
 
