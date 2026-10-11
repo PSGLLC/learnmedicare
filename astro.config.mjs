@@ -8,9 +8,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      // /medicare-qa/ is a static file in public/ (not an Astro page), so the integration
-      // can't discover it on its own.
-      customPages: ['https://learnmedicare.org/medicare-qa/'],
+      // The external Q&A redirect is not an indexable content page.
       filter: (page) => new URL(page).pathname !== '/agent-resources/',
       // Omit lastmod until a reliable per-page content revision date is available.
     }),
