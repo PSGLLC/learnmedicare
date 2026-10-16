@@ -1,5 +1,5 @@
 export const SITE_URL = 'https://learnmedicare.org';
-export const BOOKING_URL = 'https://host.safemsngr.com/widget/booking/A0NTF4B4d9I3h3wNvyIB';
+export const BOOKING_URL = 'https://priceservicesgroup.com/schedule/';
 export const MEDICARE_QA_URL = 'https://huggingface.co/spaces/PPAKayla/medicare-qa';
 export const TAGLINE = 'Where You Matter.';
 
