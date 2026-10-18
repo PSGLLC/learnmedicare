@@ -14,7 +14,7 @@ const faqs = [
   { question: 'What is the Medicare Part A deductible in 2026?', answer: 'The 2026 Part A deductible is $1,736 per benefit period. This is what you pay before Part A coverage kicks in for an inpatient hospital stay — it\'s not an annual deductible, but a per-benefit-period one, so it can apply more than once a year.' },
   { question: 'Do I have to pay a premium for Medicare Part A?', answer: 'Most people don\'t. If you or a spouse paid Medicare taxes for at least 40 quarters (10 years), Part A is premium-free. If you have 30-39 quarters, the 2026 Part A premium is $311/month. With fewer than 30 quarters, it\'s $565/month.' },
   { question: 'What is IRMAA and how much could it cost me?', answer: 'IRMAA (Income-Related Monthly Adjustment Amount) is a surcharge added to Part B and Part D premiums for higher-income beneficiaries. It\'s based on your Modified Adjusted Gross Income (MAGI) from two years prior, and it\'s tiered — the more you earn, the more you pay, up to several times the standard premium at the highest tiers.' },
-  { question: 'What is the Part D out-of-pocket cap in 2026?', answer: 'As of 2026, Part D has a $2,100 annual out-of-pocket cap on covered prescription drugs. Once you hit that cap, you pay nothing more for covered Part D drugs for the rest of the calendar year — a result of the Inflation Reduction Act\'s Medicare drug pricing reforms.' },
+  { question: 'What is the Part D out-of-pocket threshold for 2026 and 2027?', answer: 'The defined-standard Part D out-of-pocket threshold is $2,100 for 2026 and $2,400 for 2027. After reaching the applicable threshold, you pay no cost sharing for covered Part D drugs for the rest of that calendar year. Premiums and non-covered drugs are separate.' },
   { question: 'What is the Part B deductible in 2026?', answer: 'The 2026 Part B annual deductible is $283. After you meet it, Medicare generally pays 80% of Medicare-approved costs for covered services, and you\'re responsible for the remaining 20% coinsurance, unless you have a Medigap policy or Medicare Advantage plan that covers it.' },
 ];
 
@@ -40,8 +40,8 @@ const jsonLd = [
     creatorUrl: 'https://www.medicare.gov/basics/costs/medicare-costs',
   }),
   dataset({
-    name: 'Medicare Part D Annual Out-of-Pocket Cap 2026',
-    description: 'The 2026 Medicare Part D annual out-of-pocket spending cap ($2,100) on covered prescription drugs, as published by CMS.',
+    name: 'Medicare Part D Out-of-Pocket Thresholds 2026 and 2027',
+    description: 'CMS finalized defined-standard Medicare Part D out-of-pocket thresholds of $2,100 for 2026 and $2,400 for 2027.',
     creatorUrl: 'https://www.medicare.gov/drug-coverage-part-d/costs-for-medicare-drug-coverage',
   }),
   dataset({
@@ -53,7 +53,7 @@ const jsonLd = [
 ---
 <BaseLayout
   title="Medicare Costs 2026: Premiums, Deductibles & IRMAA"
-  description="The actual 2026 Medicare numbers: Part A and B premiums, deductibles, IRMAA income tiers, and the Part D out-of-pocket cap — explained in plain English."
+  description="2026 Medicare Part A and B premiums, deductibles, IRMAA, plus CMS-finalized 2026 and 2027 Part D thresholds, explained in plain English."
   path="/medicare-costs-2026/"
   breadcrumbs={[{ name: 'Medicare Costs 2026', url: '/medicare-costs-2026/' }]}
   jsonLd={jsonLd}
@@ -62,7 +62,7 @@ const jsonLd = [
   <PageHero
     label="2026 Figures"
     heading="Medicare Costs 2026"
-    subtext="The actual premiums, deductibles, and out-of-pocket caps for 2026 — no guessing, no outdated numbers."
+    subtext="2026 Part A and B costs, plus the finalized Part D out-of-pocket thresholds for 2026 and 2027."
   >
     <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
   </PageHero>
@@ -75,7 +75,7 @@ const jsonLd = [
           In 2026, the standard Medicare Part B premium is <strong>$202.90/month</strong> with a
           <strong>$283 annual deductible</strong>. Part A is premium-free for most people, with a
           <strong>$1,736 deductible</strong> per benefit period. Part D has a
-          <strong>$2,100 annual out-of-pocket cap</strong> on covered drugs.
+          <strong>$2,100 for 2026 and $2,400 for 2027</strong> for the annual out-of-pocket threshold on covered Part D drugs.
         </p>
       </div>
 
@@ -156,19 +156,15 @@ const jsonLd = [
 
   <section class="section-alt">
     <div class="container">
-      <h2>Part D Costs 2026</h2>
+      <h2>Part D Costs 2026 and 2027</h2>
       <p>
         Part D premiums vary significantly by plan and are set by private insurance companies, so
-        there's no single "standard" Part D premium the way there is for Part B. What is
-        standardized in 2026 is the annual out-of-pocket cap:
+        there's no single "standard" Part D premium the way there is for Part B. CMS finalized the
+        defined-standard out-of-pocket thresholds at $2,100 for 2026 and $2,400 for 2027:
       </p>
       <div class="callout" style="margin-top: 1.5rem;">
         <p style="margin:0;">
-          <strong>$2,100 annual out-of-pocket cap</strong> — once your out-of-pocket spending on
-          covered Part D drugs reaches this amount in 2026, you pay $0 for the rest of the calendar
-          year for those covered drugs. This cap is a result of the Inflation Reduction Act's
-          Medicare drug pricing reforms and represents one of the biggest recent changes to Medicare
-          drug costs.
+          <strong>$2,100 in 2026 and $2,400 in 2027.</strong> After reaching the applicable annual out-of-pocket threshold, you pay no cost sharing for covered Part D drugs for the rest of that calendar year. Monthly premiums and non-covered drugs are separate. See the <a href="https://www.cms.gov/files/document/2027-announcement.pdf">CMS 2027 Rate Announcement, Attachment V</a> for the finalized 2027 figure.
         </p>
       </div>
       <p style="margin-top: 1.5rem;">
