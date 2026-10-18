@@ -8,12 +8,12 @@ import { BOOKING_URL } from '../site.config';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-10-18';
 
 const faqs = [
   { question: 'What is Medicare?', answer: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS), primarily covering people 65 and older and certain younger people with qualifying disabilities.' },
   { question: 'Is this free Medicare course really free?', answer: 'Yes. The six-lesson course, guides, and calculators on this site are free to use, with no obligation to purchase any insurance product.' },
-  { question: 'Is Learn Medicare an official government resource?', answer: 'No. Learn Medicare is independent educational content produced by a licensed insurance agency, not an official Medicare or government website. For official guidance, visit Medicare.gov or call 1-800-MEDICARE.' },
+  { question: 'Is Learn Medicare an official government resource?', answer: 'No. Learn Medicare is an educational resource presented by Price Services Group, LLC, a licensed insurance agency. It is not a Medicare or government website. For official guidance, visit Medicare.gov or call 1-800-MEDICARE.' },
 ];
 
 const lessons = [
@@ -30,7 +30,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Learn Medicare — Free Medicare Education',
-    description: 'Free, unbiased Medicare education. Understand your options before you enroll.',
+    description: 'Free Medicare education from Price Services Group, a licensed insurance agency. Understand your options before you enroll.',
     url: 'https://learnmedicare.org/',
     ...authorship(DATE_PUBLISHED, DATE_MODIFIED),
   },
@@ -44,7 +44,7 @@ const jsonLd = [
     '@type': 'EducationalOrganization',
     name: 'Learn Medicare',
     url: 'https://learnmedicare.org',
-    description: 'Free, unbiased Medicare education from a licensed independent agent.',
+    description: 'Free Medicare education from a licensed independent agent at Price Services Group.',
     logo: 'https://learnmedicare.org/brand/psg-logo.png',
   },
   {
@@ -53,7 +53,7 @@ const jsonLd = [
     name: 'LearnMedicare.org',
     url: 'https://learnmedicare.org',
     logo: 'https://learnmedicare.org/favicon.ico',
-    description: 'Free Medicare education resource helping people understand their options before talking to an agent.',
+    description: 'Medicare education from Price Services Group, LLC, a licensed insurance agency. The site helps people understand their options before speaking with an agent.',
     sameAs: ['https://priceservicesgroup.com'],
     parentOrganization: {
       '@type': 'Organization',
@@ -89,7 +89,7 @@ const jsonLd = [
 ---
 <BaseLayout
   title="Learn Medicare — Free Medicare Education | Where You Matter"
-  description="Free Medicare education: Medicare basics, enrollment periods, Parts A, B, C, and D explained. No sales pitch — understand your options before you enroll."
+  description="Free Medicare education: Medicare basics, enrollment periods, and Parts A, B, C, and D explained in plain language by Price Services Group, a licensed insurance agency."
   path="/"
   jsonLd={jsonLd}
 >
@@ -97,7 +97,7 @@ const jsonLd = [
     <div class="container hero-inner">
       <p class="eyebrow">Free Medicare Education</p>
       <h1>Medicare Made Simple</h1>
-      <p class="subhead">Free, unbiased Medicare education for people turning 65, transitioning to retirement, or helping a loved one navigate coverage.</p>
+      <p class="subhead">Free, plain-language Medicare education from Price Services Group for people turning 65, transitioning to retirement, or helping a loved one navigate coverage.</p>
       <div class="hero-ctas">
         <a href="/basics/" class="btn btn-primary">Start Learning →</a>
         <a href="/course" class="btn btn-outline-teal">Take the Course</a>
@@ -111,7 +111,7 @@ const jsonLd = [
   <section>
     <div class="container">
       <p class="eyebrow">Free Mini-Course</p>
-      <h2>Six short lessons. Zero sales pitch.</h2>
+      <h2>Six short lessons. Learn before you decide.</h2>
       <div class="grid grid-3">
         {lessons.map((l) => (
           <a href="/course" class="card lesson-card">
@@ -127,7 +127,7 @@ const jsonLd = [
   <section class="qa-section">
     <div class="container qa-inner">
       <h2>Have a Medicare Question Right Now?</h2>
-      <p>Get an instant answer from our free AI-powered Medicare Q&amp;A tool — no sign-up, no cost, no sales pitch.</p>
+      <p>Get an instant answer from our free AI-powered Medicare Q&amp;A tool. No sign-up or payment is required.</p>
       <a href="https://huggingface.co/spaces/PPAKayla/medicare-qa" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Ask a Medicare Question →</a>
     </div>
   </section>
@@ -140,9 +140,7 @@ const jsonLd = [
         <h2>Your guide through Medicare</h2>
         <p>
           Kayla Price is a licensed independent Medicare agent (NPN 18530055) dedicated to helping
-          people understand their coverage options in plain English, without pressure or a sales pitch.
-          Because she isn't tied to a single insurance company, her focus stays on your questions —
-          not a quota.
+          people understand their coverage options in plain English and make informed decisions. As an independent agent, she can compare options from the insurance companies she represents, based on your needs.
         </p>
         <p>
           Whether you're new to Medicare or reviewing your current plan, Kayla believes informed
