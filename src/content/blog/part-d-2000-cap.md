@@ -28,7 +28,7 @@ A few details worth understanding:
 
 - **The cap doesn't include your monthly premium.** You continue paying your Part D (or Medicare Advantage plan's bundled) premium regardless of whether you've hit the cap.
 - **It only applies to drugs on your plan's formulary.** If a medication isn't covered by your specific plan, spending on it doesn't count toward the cap, and you're paying the full price out of pocket.
-- **Manufacturer discounts on brand-name drugs in the "coverage gap" phase count toward your total,** which is part of why the effective path to the cap can be faster than the raw dollar figure might suggest for some brand-name-heavy drug regimens.
+- **The old Coverage Gap Discount Program ended on January 1, 2025.** A separate Manufacturer Discount Program now applies under the redesigned Part D benefit. These are different programs, so do not assume manufacturer payments count toward your personal out-of-pocket threshold; check current CMS and plan guidance for your situation.
 
 ## Who Benefits Most
 
