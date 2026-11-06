@@ -155,6 +155,10 @@ if (post.data.faqs && post.data.faqs.length > 0) {
     padding: 0.6rem 0.85rem;
     border-bottom: 1px solid var(--border);
   }
+  @media (max-width: 640px) {
+    .post-body :global(table) { font-size: 0.85rem; }
+    .post-body :global(th), .post-body :global(td) { padding: 0.5rem 0.4rem; overflow-wrap: anywhere; }
+  }
   .post-body :global(th) {
     background: var(--fill-accent);
     color: #fff;

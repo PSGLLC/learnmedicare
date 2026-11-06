@@ -219,6 +219,23 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
     .nav-links.open { display: flex; }
     .nav-cta { width: 100%; text-align: center; }
   }
+  /* Touch targets: on the phone/tablet header the theme, search and menu buttons are at least 44x44px. */
+  @media (max-width: 980px) {
+    .theme-toggle { width: 44px; height: 44px; }
+    .nav-toggle { width: 44px; height: 44px; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .nav-toggle span { margin: 3px 0; }
+  }
+  /* Small phones (320-420px): the logo + "LearnMedicare" wordmark + three 44px header buttons need more than the
+     272px the header has at 320px, so the header pushed the whole page sideways; between ~385px and ~410px they
+     still fill the header so the menu button sits against the screen edge (0px at 390px). A slightly smaller
+     logo/wordmark, tighter gaps and 1rem side padding in the header make it fit with room to spare. */
+  @media (max-width: 420px) {
+    .nav-inner { padding-inline: 1rem; }
+    .brand { gap: 0.3rem; min-width: 0; }
+    .brand img { height: 28px; }
+    .brand-name { font-size: 0.85rem; white-space: nowrap; }
+    .nav-right { gap: 0; flex-shrink: 0; }
+  }
 </style>
 
 <script>
