@@ -210,6 +210,10 @@ table.compare th {
   font-family: var(--font-heading);
 }
 table.compare tr:last-child td { border-bottom: none; }
+/* Phones: tighter cells so 3-column reference tables fit inside the page instead of pushing it sideways. */
+@media (max-width: 640px) {
+  table.compare th, table.compare td { padding: 0.6rem 0.5rem; font-size: 0.88rem; overflow-wrap: anywhere; }
+}
 
 .section-heading {
   border-left: 4px solid var(--fill-teal);

@@ -9,6 +9,7 @@ const year = 2026;
     <p>Licensed in: {COMPLIANCE.states.join(', ')}</p>
     <p>{COMPLIANCE.tpmo}</p>
     <ZipDisclaimerLookup />
+    <p class="minimal-legal"><a href="/privacy">Privacy Policy</a> &bull; <a href="/terms">Terms of Use</a></p>
     <p>&copy; {year} Price Services Group LLC. {TAGLINE}</p>
   </div>
 </footer>
@@ -20,5 +21,6 @@ const year = 2026;
     color: #b6a4cb;
     padding: 1.25rem 0;
   }
+  .minimal-legal a { color: inherit; text-decoration: underline; }
   .minimal-footer p { font-size: 0.72rem; line-height: 1.5; margin: 0 0 0.35rem; max-width: 1000px; }
 </style>
