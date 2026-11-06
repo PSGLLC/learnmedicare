@@ -10,8 +10,8 @@ import { WIDTHS, setup, docWidth } from './helpers/viewport.mjs';
 const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
 
 test('css: small-phone header rules exist (smaller logo/wordmark, tighter gaps, 1rem side padding)', () => {
-  const m = nav.match(/@media \(max-width: 380px\) \{[\s\S]*?\n  \}/);
-  assert.ok(m, '380px media query not found');
+  const m = nav.match(/@media \(max-width: 420px\) \{[\s\S]*?\n  \}/);
+  assert.ok(m, '420px media query not found');
   for (const rule of [/\.nav-inner \{ padding-inline: 1rem; \}/, /\.brand img \{ height: 28px; \}/, /\.brand-name \{ font-size: 0\.85rem;/, /\.nav-right \{ gap: 0;/]) assert.match(m[0], rule);
 });
 
@@ -45,5 +45,14 @@ for (const w of WIDTHS) {
   test(`/agent-resources/ @${w}px: analytics-choice panel stays inside the screen`, { skip }, async () => {
     const r = await env.at('/agent-resources/', w, () => { const b = document.querySelector('#visitor-analytics-choice').getBoundingClientRect(); return [Math.round(b.left), Math.round(b.right)]; });
     assert.ok(r[0] >= 0 && r[1] <= w + 1, `panel spans ${r[0]}..${r[1]} at ${w}px`);
+  });
+}
+
+// The small-phone header rules reach 420px: at 390-400px the three 44px buttons otherwise fill the header and the
+// menu button touches the screen edge (0px at 390px, 3px at 393px). Normal is 16px or more; require at least 12px.
+for (const w of [375, 390, 393, 400, 420, 430]) {
+  test(`/ @${w}px: menu button keeps a gap to the right screen edge`, { skip }, async () => {
+    const gap = await env.at('/', w, () => { const t = document.getElementById('nav-toggle').getBoundingClientRect(); return Math.round(innerWidth - t.right); });
+    assert.ok(gap >= 12, `menu button is ${gap}px from the right edge at ${w}px`);
   });
 }
