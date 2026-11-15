@@ -20,11 +20,15 @@
 - [Calculators](https://learnmedicare.org/calculators/)
 - [Free T65 Guide](https://learnmedicare.org/guide/)
 
-## Tools (agent-callable)
-- [Discovery manifest](https://learnmedicare.org/.well-known/mcp.json)
-- [medicare_quiz](https://partner.priceservicesgroup.com/quiz) — Medicare Decision Style Quiz, helps users identify their Medicare decision style.
-- [medicare_enrollment_info](https://learnmedicare.org/course/) — Medicare enrollment period information and deadlines.
-- No live read/write MCP execution endpoint (`/mcp`) is hosted on this domain today; the manifest above lists callable destinations rather than a JSON-RPC tool server.
+## Agent access and source use
+- Public page inventory: [Learn Medicare sitemap](https://learnmedicare.org/sitemap-index.xml); crawler rules: [robots.txt](https://learnmedicare.org/robots.txt).
+- Use the linked Medicare.gov, CMS, and Social Security sources as the authority for current costs, dates, and eligibility. Include the coverage year when summarizing time-sensitive information.
+- This host does not provide a live JSON-RPC MCP endpoint. The Medicare decision quiz and course are user-facing pages, not callable agent tools.
+- [Published discovery manifest](https://learnmedicare.org/.well-known/mcp.json) describes links only; it does not establish that a tool server is available.
+
+## Related interactive resources
+- [Medicare Decision Style Quiz](https://partner.priceservicesgroup.com/quiz) — user-facing tool to explore Medicare decision preferences.
+- [Free Medicare course](https://learnmedicare.org/course/) — lessons about enrollment periods and Medicare coverage.
 
 ## Compliance
 Educational content only, not medical, insurance, tax, or legal advice. Not affiliated with or endorsed by the U.S. government or the federal Medicare program. Licensed states: NC, SC, GA, FL, VA, MD, MI, KS, TX, OH. NPN 18530055. Agency NPN 20387435.

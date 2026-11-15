@@ -1,0 +1,13 @@
+# Astro build output uses content-hashed filenames; a changed asset gets a new URL.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static files keep stable public paths, so cache for a month and revalidate later.
+/brand/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/fonts/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/img/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
