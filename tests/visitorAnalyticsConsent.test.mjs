@@ -4,6 +4,10 @@ import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 
 const source = readFileSync('public/js/visitor-analytics-consent.js', 'utf8');
+const consentComponent = readFileSync('src/components/VisitorAnalyticsConsent.astro', 'utf8');
+test('consent behavior remains available from a deferred same-origin script', () => {
+  assert.match(consentComponent, /src="\/js\/visitor-analytics-consent\.js" defer/);
+});
 function setup(stored, blocked = false) {
   const handlers = {};
   const scripts = [];

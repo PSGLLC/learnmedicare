@@ -7,6 +7,8 @@ test('navigation disclosures have controls and Escape restores the appropriate t
   assert.match(nav, /aria-controls="nav-links"/);
   assert.match(nav, /aria-controls="resources-menu"/);
   assert.match(nav, /if \(focusInResources\) \{\s+resourcesToggle\?\.focus\(\);\s+e\.preventDefault\(\);\s+return;/);
-  assert.match(nav, /links\.contains\(document\.activeElement\) \|\| document\.activeElement === toggle/);
+  assert.match(nav, /if \(links\?\.classList\.contains\('open'\)\) \{\s+const focusInNav = links\.contains\(document\.activeElement\) \|\| document\.activeElement === toggle;/);
+  assert.match(nav, /if \(focusInNav\) toggle\?\.focus\(\);/);
+  assert.match(nav, /toggle\?\.setAttribute\('aria-expanded', 'false'\);/);
   assert.match(nav, /toggle\?\.focus\(\)/);
 });

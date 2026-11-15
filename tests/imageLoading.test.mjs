@@ -23,3 +23,18 @@ test('both layouts use optimized PSG logo icons', () => {
     assert.ok(png.length < (size === 48 ? 5000 : 20000));
   }
 });
+
+test('theme-specific navigation logos load lazily so the hidden theme asset is not eager', () => {
+  const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
+  assert.equal((nav.match(/loading="lazy" decoding="async"/g) || []).length, 2);
+  assert.match(nav, /class="logo-light"[\s\S]*?loading="lazy"/);
+  assert.match(nav, /class="logo-dark"[\s\S]*?loading="lazy"/);
+});
+
+test('hashed assets are immutable while stable static assets use finite revalidation', () => {
+  const headers = readFileSync(new URL('../public/_headers', import.meta.url), 'utf8');
+  assert.match(headers, /\/_astro\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
+  for (const path of ['/brand/*', '/fonts/*', '/img/*']) {
+    assert.ok(headers.includes(`${path}\n  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800`), path);
+  }
+});
