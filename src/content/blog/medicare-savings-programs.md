@@ -27,7 +27,7 @@ This guide walks through what Medicare Savings Programs actually do, the four ma
 
 A Medicare Savings Program is administered by your state (using Medicaid funding) to help people with limited income and resources pay for Medicare. Despite the Medicaid connection, you don't need to qualify for full Medicaid to get help through an MSP — these programs have their own eligibility rules, and in most states the income limits for at least one MSP tier are higher than full Medicaid's.
 
-Importantly, an MSP doesn't replace your Medicare coverage or move you into a different health plan. You keep Original Medicare (or your Medicare Advantage plan) exactly as it is. The program simply pays some of your Medicare costs on your behalf. For a full breakdown of what those standard costs look like in 2026, see our [2026 Medicare costs guide](/medicare-costs-2026).
+Importantly, an MSP doesn't replace your Medicare coverage or move you into a different health plan. You keep Original Medicare (or your Medicare Advantage plan) exactly as it is. The program simply pays some of your Medicare costs on your behalf. For a full breakdown of what those standard costs look like in 2026, see our [2026 Medicare costs guide](/medicare-costs-2026/).
 
 ## The Four Types of Medicare Savings Programs
 
@@ -38,7 +38,7 @@ There are four MSP tiers, and which one you qualify for depends on your income a
 - **Qualifying Individual (QI):** Also covers only the Part B premium, for people whose income is a bit higher still than the SLMB limit. QI is funded on a limited annual basis in some states, so applying earlier in the year can matter.
 - **Qualified Disabled and Working Individual (QDWI):** A narrower program for people under 65 with a disability who lost Social Security disability benefits and premium-free Part A because they returned to work, but still need help paying the Part A premium.
 
-Our [glossary](/glossary) has plain-English definitions of QMB and the other MSP terms if you want a quick reference while you read plan materials or state paperwork.
+Our [glossary](/glossary/) has plain-English definitions of QMB and the other MSP terms if you want a quick reference while you read plan materials or state paperwork.
 
 ## What Each Program Actually Covers
 
@@ -48,7 +48,7 @@ The practical difference between the tiers comes down to what gets paid and for 
 - **SLMB and QI** only pay your Part B premium. That's still meaningful money back in your pocket every month, but you remain responsible for deductibles and coinsurance the way you would without an MSP.
 - **QDWI** pays only the Part A premium, and only for the specific group of younger, working people with disabilities it's designed for.
 
-None of the MSP tiers pay your Medicare Advantage or Medigap premium directly, though the Part B premium assistance still lowers your overall monthly cost regardless of which path you've chosen. If you're still deciding between Medicare Advantage and Medigap, our [coverage comparison guide](/coverage) can help you weigh the tradeoffs before you factor an MSP into the decision.
+None of the MSP tiers pay your Medicare Advantage or Medigap premium directly, though the Part B premium assistance still lowers your overall monthly cost regardless of which path you've chosen. If you're still deciding between Medicare Advantage and Medigap, our [coverage comparison guide](/coverage/) can help you weigh the tradeoffs before you factor an MSP into the decision.
 
 ## How MSPs Connect to Extra Help and Part D
 
@@ -65,7 +65,7 @@ Because MSP income and resource limits are set by each state and adjusted period
 - You're already receiving full Medicaid benefits, since in that case you likely qualify for QMB automatically.
 - You're paying the Part A premium because you have fewer than 30 or 30-39 work quarters, and that cost is a strain.
 
-Even if you're not sure which tier you'd fall into, it costs nothing to apply and find out. And if you're approaching 65 and weighing your overall enrollment timeline for the first time, our [turning 65 guide](/turning-65) and [enrollment periods guide](/enrollment) are good starting points before you add MSP eligibility into the mix.
+Even if you're not sure which tier you'd fall into, it costs nothing to apply and find out. And if you're approaching 65 and weighing your overall enrollment timeline for the first time, our [turning 65 guide](/turning-65/) and [enrollment periods guide](/enrollment/) are good starting points before you add MSP eligibility into the mix.
 
 ## How to Apply
 

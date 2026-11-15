@@ -37,7 +37,7 @@ Because AEP 2026 is open (through December 7, 2026), you already have a built-in
 - **Move to Original Medicare and add a standalone Part D plan.** This keeps you on traditional Medicare, with the flexibility to see any provider who accepts Medicare, plus separate drug coverage.
 - **Move to Original Medicare and apply for a Medigap policy.** This is where non-renewal members often get a protection that voluntary switchers don't: guaranteed issue rights, covered in detail below.
 
-If your non-renewal notice arrived close to the AEP deadline, or you need more time than December 7 allows, you likely qualify for a dedicated Special Enrollment Period tied to the plan's exit. That SEP gives you additional months beyond the normal AEP window to enroll in a new Medicare Advantage or Part D plan, so a tight calendar shouldn't force a rushed decision. Our [enrollment periods guide](/enrollment) explains how Special Enrollment Periods work alongside AEP, the GEP, and other windows.
+If your non-renewal notice arrived close to the AEP deadline, or you need more time than December 7 allows, you likely qualify for a dedicated Special Enrollment Period tied to the plan's exit. That SEP gives you additional months beyond the normal AEP window to enroll in a new Medicare Advantage or Part D plan, so a tight calendar shouldn't force a rushed decision. Our [enrollment periods guide](/enrollment/) explains how Special Enrollment Periods work alongside AEP, the GEP, and other windows.
 
 ## Why Guaranteed Issue Rights Matter Here
 
@@ -57,7 +57,7 @@ Before enrolling anywhere new, pull together:
 - The names of your primary doctors and any specialists you see regularly, to confirm they're in-network for a Medicare Advantage option, or simply note that Original Medicare works with any provider who accepts Medicare.
 - Any upcoming procedures or ongoing treatment that might be affected by a coverage gap or network change.
 
-Our [guide to checking your network and pharmacy before AEP](/blog/check-network-pharmacy-before-aep-2026/) has a more detailed walkthrough of this process, and the [Medicare basics](/basics) page is a good refresher if some of this terminology is new to you.
+Our [guide to checking your network and pharmacy before AEP](/blog/check-network-pharmacy-before-aep-2026/) has a more detailed walkthrough of this process, and the [Medicare basics](/basics/) page is a good refresher if some of this terminology is new to you.
 
 ## Getting Help Without It Costing You Anything
 

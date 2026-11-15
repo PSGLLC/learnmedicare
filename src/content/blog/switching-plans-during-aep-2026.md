@@ -25,7 +25,7 @@ This guide covers the part that happens during AEP itself, not just before it.
 
 ## What AEP 2026 Actually Lets You Do
 
-AEP is open to anyone already enrolled in Medicare — it's not the enrollment period for people newly turning 65, who instead work through their own [enrollment timeline](/enrollment) around that birthday. If that's your situation, our [turning 65 guide](/turning-65) is the better starting point.
+AEP is open to anyone already enrolled in Medicare — it's not the enrollment period for people newly turning 65, who instead work through their own [enrollment timeline](/enrollment/) around that birthday. If that's your situation, our [turning 65 guide](/turning-65/) is the better starting point.
 
 During AEP 2026, you can make any of these changes, effective January 1, 2027 (Plan Year 2027):
 
@@ -34,7 +34,7 @@ During AEP 2026, you can make any of these changes, effective January 1, 2027 (P
 - Join a Medicare Advantage or Part D plan for the first time, if you haven't had one.
 - Drop Medicare Advantage and move back to Original Medicare.
 
-AEP does not cover Medigap (Medicare Supplement) enrollment. Medigap runs on its own rules, separate from this window — our [coverage comparison guide](/coverage) walks through how Medicare Advantage and Medigap differ if you're weighing a bigger change than a plan swap.
+AEP does not cover Medigap (Medicare Supplement) enrollment. Medigap runs on its own rules, separate from this window — our [coverage comparison guide](/coverage/) walks through how Medicare Advantage and Medigap differ if you're weighing a bigger change than a plan swap.
 
 ## How Making a Change Actually Works
 
@@ -62,11 +62,11 @@ It also means there's no real downside to enrolling early and continuing to comp
 A few patterns show up every year that are worth avoiding:
 
 - **Waiting until the last few days.** Plan Finder and agent phone lines get busier as December 7 approaches, and a late technical issue leaves no time to fix it.
-- **Comparing premiums only.** A plan with a $0 premium can still cost more overall once you factor in copays, coinsurance, and drug tiers. If you're also managing a fixed budget, our [2026 Medicare costs guide](/medicare-costs-2026) breaks down the Part B premium ($202.90/month), Part B deductible ($283), and the $2,100 Part D annual out-of-pocket cap that applies across all plans in 2026.
+- **Comparing premiums only.** A plan with a $0 premium can still cost more overall once you factor in copays, coinsurance, and drug tiers. If you're also managing a fixed budget, our [2026 Medicare costs guide](/medicare-costs-2026/) breaks down the Part B premium ($202.90/month), Part B deductible ($283), and the $2,100 Part D annual out-of-pocket cap that applies across all plans in 2026.
 - **Assuming a verbal confirmation is enough.** Always get something in writing or a confirmation number, regardless of which channel you use to enroll.
 - **Dropping Medicare Advantage for Original Medicare without checking Medigap first.** If you want a Medigap policy too, apply separately and understand that underwriting may apply outside your one-time Open Enrollment Period.
 
-Our [common Medicare mistakes guide](/medicare-mistakes) covers several more of these in detail, and the [glossary](/glossary) is a quick reference if any of the terms above — formulary, coinsurance, guaranteed issue — aren't familiar yet.
+Our [common Medicare mistakes guide](/medicare-mistakes/) covers several more of these in detail, and the [glossary](/glossary/) is a quick reference if any of the terms above — formulary, coinsurance, guaranteed issue — aren't familiar yet.
 
 AEP 2026 gives you until December 7 to get your coverage right for Plan Year 2027, and the process itself is more forgiving than people expect — you can change your mind right up until the deadline. The part that actually matters is making sure something gets submitted, with confirmation in hand, before the window closes.
 

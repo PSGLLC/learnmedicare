@@ -68,11 +68,11 @@ const LESSONS = [
   { n: 6, title: 'Your Next Step', answer: 'Once you know your parts, timing, and coverage options, the next step is comparing specific plans against your own doctors, drugs, and budget.' },
 ];
 const LESSON_STATUS_LINKS = [
-  { slug: 'basics', path: '/basics', label: 'Medicare Basics' },
-  { slug: 'enrollment', path: '/enrollment', label: 'Enrollment' },
-  { slug: 'coverage', path: '/coverage', label: 'Coverage Options' },
-  { slug: 'penalties', path: '/penalties', label: 'Avoiding Penalties' },
-  { slug: 'working-at-65', path: '/working-at-65', label: 'Working Past 65' },
+  { slug: 'basics', path: '/basics/', label: 'Medicare Basics' },
+  { slug: 'enrollment', path: '/enrollment/', label: 'Enrollment' },
+  { slug: 'coverage', path: '/coverage/', label: 'Coverage Options' },
+  { slug: 'penalties', path: '/penalties/', label: 'Avoiding Penalties' },
+  { slug: 'working-at-65', path: '/working-at-65/', label: 'Working Past 65' },
 ];
 ---
 <MinimalLayout
@@ -93,7 +93,7 @@ const LESSON_STATUS_LINKS = [
       <AuthorByline date={DATE_MODIFIED} datePublished={DATE_PUBLISHED} />
       <div class="course-hero-cta">
         <a href="#vl-grid" class="btn btn-primary">Start the Course</a>
-        <a href="/guide" class="btn btn-outline">Prefer a written guide? Get it free by email &rarr;</a>
+        <a href="/guide/" class="btn btn-outline">Prefer a written guide? Get it free by email &rarr;</a>
       </div>
     </div>
   </section>
@@ -270,7 +270,7 @@ const LESSON_STATUS_LINKS = [
         ))}
       </div>
       <p class="wl-blog-link">
-        Want more? Visit the <a href="/blog">Medicare Blog</a> for articles on enrollment, costs,
+        Want more? Visit the <a href="/blog/">Medicare Blog</a> for articles on enrollment, costs,
         and coverage comparisons.
       </p>
     </div>

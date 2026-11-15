@@ -44,7 +44,7 @@ The most common mistake in comparing these two options is looking only at the mo
 2. Estimate your likely out-of-pocket costs based on your actual healthcare use — office visits, any planned procedures, regular prescriptions.
 3. For Medicare Advantage, check the plan's specific out-of-pocket maximum as your worst-case cost ceiling for the year.
 
-For the full 2026 cost figures to plug into this estimate — including IRMAA and Part A costs — see our [complete cost breakdown](/medicare-costs-2026).
+For the full 2026 cost figures to plug into this estimate — including IRMAA and Part A costs — see our [complete cost breakdown](/medicare-costs-2026/).
 
 ## Networks and Provider Access
 
@@ -66,7 +66,7 @@ This is the detail that trips people up most: switching from Medicare Advantage 
 
 Because this decision depends heavily on your specific doctors, prescriptions, health status, and budget — not a one-size-fits-all answer — working through it with a licensed insurance agent can help you avoid a choice you later regret. A good agent walks through your actual situation rather than pushing a specific product.
 
-See our [full coverage options guide](/coverage) for more on comparing these two paths, or start with [What Is Medicare?](/what-is-medicare) if you want the foundational overview first.
+See our [full coverage options guide](/coverage/) for more on comparing these two paths, or start with [What Is Medicare?](/what-is-medicare/) if you want the foundational overview first.
 
 ## Ready to Compare Your Options?
 
