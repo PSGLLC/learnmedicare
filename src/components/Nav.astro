@@ -279,10 +279,11 @@ const isResourcesActive = RESOURCES_DROPDOWN.some((l) => current === l.href.repl
         e.preventDefault();
         return;
       }
-      if (links?.classList.contains('open') && (links.contains(document.activeElement) || document.activeElement === toggle)) {
+      if (links?.classList.contains('open')) {
+        const focusInNav = links.contains(document.activeElement) || document.activeElement === toggle;
         links.classList.remove('open');
         toggle?.setAttribute('aria-expanded', 'false');
-        toggle?.focus();
+        if (focusInNav) toggle?.focus();
         e.preventDefault();
       }
     }
