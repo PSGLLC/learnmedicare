@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 
 const f = readFileSync(new URL('../src/components/MinimalCompliance.astro', import.meta.url), 'utf8');
-test('minimal footer links to /privacy and /terms', () => {
-  assert.match(f, /<a href="\/privacy">Privacy Policy<\/a>/);
-  assert.match(f, /<a href="\/terms">Terms of Use<\/a>/);
+test('minimal footer links directly to the canonical /privacy/ and /terms/ pages', () => {
+  assert.match(f, /<a href="\/privacy\/">Privacy Policy<\/a>/);
+  assert.match(f, /<a href="\/terms\/">Terms of Use<\/a>/);
 });
 test('the linked pages exist', () => {
   assert.ok(existsSync(new URL('../src/pages/privacy.astro', import.meta.url)));

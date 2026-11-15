@@ -18,12 +18,12 @@ export interface LessonDef {
 }
 
 export const LESSONS: LessonDef[] = [
-  { slug: 'basics', path: '/basics', label: 'Medicare Basics' },
-  { slug: 'enrollment', path: '/enrollment', label: 'Enrollment' },
-  { slug: 'coverage', path: '/coverage', label: 'Coverage Options' },
-  { slug: 'penalties', path: '/penalties', label: 'Avoiding Penalties' },
-  { slug: 'working-at-65', path: '/working-at-65', label: 'Working Past 65' },
-  { slug: 'course', path: '/course', label: 'Putting It All Together' },
+  { slug: 'basics', path: '/basics/', label: 'Medicare Basics' },
+  { slug: 'enrollment', path: '/enrollment/', label: 'Enrollment' },
+  { slug: 'coverage', path: '/coverage/', label: 'Coverage Options' },
+  { slug: 'penalties', path: '/penalties/', label: 'Avoiding Penalties' },
+  { slug: 'working-at-65', path: '/working-at-65/', label: 'Working Past 65' },
+  { slug: 'course', path: '/course/', label: 'Putting It All Together' },
 ];
 
 export const TOTAL_LESSONS = LESSONS.length;

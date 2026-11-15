@@ -48,7 +48,7 @@ If your income is limited, you may also qualify for **Extra Help** (the Part D L
 
 Because the cap only applies to drugs actually covered by your plan's formulary, confirming your specific medications are covered — and at what tier — is the most important step for understanding your real-world costs. Before enrolling in or renewing a Part D or Medicare Advantage plan, check the plan's current formulary directly against your prescription list, since formularies can change from year to year even for plans you don't switch. This is worth re-checking every year during AEP, not just when you first enroll.
 
-For the complete breakdown of 2026 Medicare costs beyond Part D — including Part A and Part B premiums, deductibles, and IRMAA — see our [full 2026 cost guide](/medicare-costs-2026). And if you're weighing whether a standalone Part D plan alongside Medigap, or a Medicare Advantage plan with bundled drug coverage, fits your situation better, see our [coverage comparison guide](/coverage).
+For the complete breakdown of 2026 Medicare costs beyond Part D — including Part A and Part B premiums, deductibles, and IRMAA — see our [full 2026 cost guide](/medicare-costs-2026/). And if you're weighing whether a standalone Part D plan alongside Medigap, or a Medicare Advantage plan with bundled drug coverage, fits your situation better, see our [coverage comparison guide](/coverage/).
 
 ## Questions About Your Specific Medications?
 

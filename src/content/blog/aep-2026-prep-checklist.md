@@ -21,13 +21,13 @@ faqs:
 
 Medicare's Annual Enrollment Period, also called Open Enrollment, runs October 15 through December 7, 2026. If you have not reviewed your coverage yet, there is still time to compare plans before the deadline. Earlier preparation helps: Annual Notices of Change arrive in the fall, and a current list of your doctors and medications makes it easier to evaluate your 2027 options. This checklist covers the key details to review before you make a decision.
 
-This is especially true if you're on Medicare Advantage or a standalone Part D drug plan, since those are the plan types that change from year to year. If you have a Medigap policy alongside Original Medicare, your coverage generally doesn't change annually in the same way, though it's still worth checking whether your premium is changing and whether a [Medicare Savings Program](/medicare-costs-2026) might help if costs feel tight.
+This is especially true if you're on Medicare Advantage or a standalone Part D drug plan, since those are the plan types that change from year to year. If you have a Medigap policy alongside Original Medicare, your coverage generally doesn't change annually in the same way, though it's still worth checking whether your premium is changing and whether a [Medicare Savings Program](/medicare-costs-2026/) might help if costs feel tight.
 
 ## Review Your Annual Notice of Change (ANOC)
 
 If you're enrolled in a Medicare Advantage or Part D plan, your plan sends an Annual Notice of Change (ANOC) each fall. Read the notice and compare its premiums, deductibles, copays, covered drugs, and provider network with what you expect to need in Plan Year 2027. If you have not reviewed your options yet, use the remaining enrollment window through December 7 to compare before making a decision. Medicare confirms that Open Enrollment runs October 15 through December 7 and changes made during it take effect January 1 ([official enrollment dates](https://www.medicare.gov/health-drug-plans/open-enrollment)).
 
-If a term in the letter doesn't make sense, our [Medicare glossary](/glossary) can help translate it into plain English.
+If a term in the letter doesn't make sense, our [Medicare glossary](/glossary/) can help translate it into plain English.
 
 ## Check Your Doctors, Hospitals, and Prescriptions
 
@@ -37,11 +37,11 @@ Make a current list of your medications and dosages, doctors, specialists, and h
 
 Before you dive into specific plans, it helps to get clear on what you're actually looking for. Are you mostly concerned about monthly premium? Total out-of-pocket costs if you need a lot of care? Keeping a specific doctor? Making sure a particular medication is covered affordably? Different people reasonably prioritize different things, and knowing your own priorities ahead of time keeps you from getting swayed by whichever plan happens to have the flashiest marketing.
 
-This is also a good time to revisit the basics of how [Medicare Advantage and Original Medicare with Part D](/coverage) differ if you've never fully compared them, especially if your health needs or budget have changed since you first enrolled. Reviewing our [Medicare enrollment periods overview](/enrollment) can also help you understand exactly which window applies to your situation, since AEP isn't the only time changes are allowed for everyone.
+This is also a good time to revisit the basics of how [Medicare Advantage and Original Medicare with Part D](/coverage/) differ if you've never fully compared them, especially if your health needs or budget have changed since you first enrolled. Reviewing our [Medicare enrollment periods overview](/enrollment/) can also help you understand exactly which window applies to your situation, since AEP isn't the only time changes are allowed for everyone.
 
 ## Common Prep Mistakes to Avoid
 
-A few mistakes show up during AEP: assuming last year's plan is unchanged without reading the ANOC, waiting until the final days before December 7 to compare, and comparing only premiums without checking drug coverage or provider networks. For a fuller rundown of Medicare decision pitfalls, see our [common Medicare mistakes](/medicare-mistakes) page.
+A few mistakes show up during AEP: assuming last year's plan is unchanged without reading the ANOC, waiting until the final days before December 7 to compare, and comparing only premiums without checking drug coverage or provider networks. For a fuller rundown of Medicare decision pitfalls, see our [common Medicare mistakes](/medicare-mistakes/) page.
 
 If you keep your current plan, coverage generally continues automatically into Plan Year 2027. Review the ANOC so you understand changes taking effect, even if you do not plan to switch.
 
@@ -49,6 +49,6 @@ If you keep your current plan, coverage generally continues automatically into P
 
 Open Enrollment is underway through December 7, 2026. Use Medicare Plan Compare or your plan's materials to review 2027 options. Our [AEP 2026 guide](/blog/aep-2026-guide/) explains the changes available during this window. If you enroll or switch by December 7, the new coverage generally begins January 1, 2027.
 
-If you miss the December 7 deadline, your options depend on your circumstances and any other enrollment period for which you qualify. Our [Medicare enrollment periods overview](/enrollment) explains the different windows.
+If you miss the December 7 deadline, your options depend on your circumstances and any other enrollment period for which you qualify. Our [Medicare enrollment periods overview](/enrollment/) explains the different windows.
 
 Have questions? Kayla Price is a licensed insurance agent serving NC, SC, GA, FL, VA, MD, MI, KS, TX, and OH. Call (866) 648-1578 or visit priceservicesgroup.com.

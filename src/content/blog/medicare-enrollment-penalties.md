@@ -46,7 +46,7 @@ A few common situations where you can delay enrollment without triggering a pena
 - **Creditable drug coverage.** If your employer or other coverage counts as creditable for Part D purposes, you can delay Part D enrollment without a penalty, as long as you enroll within 63 days of that coverage ending.
 - **VA health benefits.** Veterans with VA health coverage should check their specific situation carefully — VA coverage doesn't automatically count as creditable coverage for Medicare purposes in every case, so this is worth confirming directly rather than assuming.
 
-If you're still working and unsure whether your employer coverage qualifies, see our full breakdown of [how Medicare interacts with employer coverage](/working-at-65) before making a decision either way.
+If you're still working and unsure whether your employer coverage qualifies, see our full breakdown of [how Medicare interacts with employer coverage](/working-at-65/) before making a decision either way.
 
 ## How to Dispute a Penalty You Think Is Wrong
 
@@ -54,9 +54,9 @@ If you believe a late enrollment penalty was calculated incorrectly — for inst
 
 ## Why These Penalties Are Worth Taking Seriously
 
-Because both penalties are permanent additions to your premium — not one-time fees — even a relatively short enrollment gap can add up to real money over the years you have Medicare coverage. This is exactly why enrollment timing gets its own dedicated attention in our [Top 7 Medicare Mistakes](/medicare-mistakes) guide, and why understanding your Initial Enrollment Period and Special Enrollment Period options in our [full enrollment guide](/enrollment) is worth doing before you need it, not after.
+Because both penalties are permanent additions to your premium — not one-time fees — even a relatively short enrollment gap can add up to real money over the years you have Medicare coverage. This is exactly why enrollment timing gets its own dedicated attention in our [Top 7 Medicare Mistakes](/medicare-mistakes/) guide, and why understanding your Initial Enrollment Period and Special Enrollment Period options in our [full enrollment guide](/enrollment/) is worth doing before you need it, not after.
 
-For the current 2026 premium figures these penalty calculations are based on, see our [complete cost breakdown](/medicare-costs-2026).
+For the current 2026 premium figures these penalty calculations are based on, see our [complete cost breakdown](/medicare-costs-2026/).
 
 ## Not Sure Where You Stand?
 

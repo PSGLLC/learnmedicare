@@ -27,7 +27,7 @@ This guide walks through what actually happens the day after AEP closes, who sti
 
 If you don't actively make a change during AEP 2026, nothing happens to your current coverage — and that's the key point. Whatever you're enrolled in on December 7 simply carries forward into Plan Year 2027, starting January 1. If you're on a Medicare Advantage plan, you stay on it. If you have Original Medicare with a standalone Part D plan, that continues too. You are not disenrolled, and you don't default to having no coverage at all.
 
-The real cost of missing the deadline isn't a coverage gap — it's being stuck. If your current Medicare Advantage plan is raising costs, shrinking its network, or dropping a drug you need from its formulary for 2027, you generally can't do anything about it until the next enrollment opportunity rolls around. For a refresher on how AEP fits alongside Medicare's other enrollment windows, our [enrollment periods guide](/enrollment) breaks down each one side by side, including what happens if you miss them.
+The real cost of missing the deadline isn't a coverage gap — it's being stuck. If your current Medicare Advantage plan is raising costs, shrinking its network, or dropping a drug you need from its formulary for 2027, you generally can't do anything about it until the next enrollment opportunity rolls around. For a refresher on how AEP fits alongside Medicare's other enrollment windows, our [enrollment periods guide](/enrollment/) breaks down each one side by side, including what happens if you miss them.
 
 ## The One Narrow Exception: Medicare Advantage Open Enrollment
 
@@ -39,7 +39,7 @@ OEP is genuinely useful if you discover early in the new year that your Medicare
 
 This is the group with the least flexibility after December 7. If you're on Original Medicare with a standalone Part D prescription drug plan, missing AEP generally means you're locked into that same Part D plan for all of Plan Year 2027, with no equivalent to the Medicare Advantage OEP available to you. The only way around this is qualifying for a Special Enrollment Period (SEP) — for example, if you move out of your plan's service area, lose other creditable drug coverage, or experience certain other qualifying life events.
 
-If none of those apply, your best move is simply to make sure the Part D plan you're already on still covers your medications reasonably well for 2027, even though you can't formally change plans. Our [guide to reviewing your Part D drug coverage](/blog/review-part-d-formulary-aep-2026/) walks through how to check a formulary, and the [Medicare costs page](/medicare-costs-2026) has the current Part D out-of-pocket cap figures, including the $2,100 annual out-of-pocket threshold for 2026, so you know what you're working with for the rest of this plan year.
+If none of those apply, your best move is simply to make sure the Part D plan you're already on still covers your medications reasonably well for 2027, even though you can't formally change plans. Our [guide to reviewing your Part D drug coverage](/blog/review-part-d-formulary-aep-2026/) walks through how to check a formulary, and the [Medicare costs page](/medicare-costs-2026/) has the current Part D out-of-pocket cap figures, including the $2,100 annual out-of-pocket threshold for 2026, so you know what you're working with for the rest of this plan year.
 
 ## Avoiding a Repeat Next Year
 
@@ -50,7 +50,7 @@ If this year's deadline caught you off guard, a little structure now prevents th
 - **Work with a licensed insurance agent before the window opens**, so comparisons and decisions are mostly made before the clock starts running, rather than during it.
 - **Know your plan's star rating and network status going in**, so you're not starting research from zero once AEP begins. Our [Medicare Advantage Star Ratings guide](/blog/medicare-advantage-star-ratings/) explains what those ratings mean for your plan choice.
 
-If you're newer to Medicare altogether and some of this terminology still feels unfamiliar, the [Medicare basics](/basics) page and our [glossary](/glossary) are good places to get oriented before the next enrollment window opens.
+If you're newer to Medicare altogether and some of this terminology still feels unfamiliar, the [Medicare basics](/basics/) page and our [glossary](/glossary/) are good places to get oriented before the next enrollment window opens.
 
 ## What to Do Right Now If December 7 Is Still Ahead
 
