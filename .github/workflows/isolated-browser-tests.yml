@@ -1,0 +1,79 @@
+name: Isolated browser tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.18.0
+          cache: npm
+      - name: Install locked site dependencies
+        run: npm ci
+      - name: Install pinned Puppeteer and Chrome for Testing
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PUPPETEER_CACHE_DIR="$RUNNER_TEMP/chrome-for-testing"
+          npm install --prefix "$RUNNER_TEMP/browser-tools" --no-save --no-audit --no-fund puppeteer@25.17.0
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/puppeteer" browsers install chrome@157.0.8103.50 --path "$PUPPETEER_CACHE_DIR"
+          chrome_path="$(find "$PUPPETEER_CACHE_DIR" -type f -name chrome -print -quit)"
+          test -n "$chrome_path"
+          echo "PUPPETEER_CORE_DIR=$RUNNER_TEMP/browser-tools" >> "$GITHUB_ENV"
+          echo "CHROME_PATH=$chrome_path" >> "$GITHUB_ENV"
+          echo "BROWSER_TEST_ARTIFACT_DIR=$RUNNER_TEMP/browser-test-artifacts" >> "$GITHUB_ENV"
+          echo "PUPPETEER_CACHE_DIR=$PUPPETEER_CACHE_DIR" >> "$GITHUB_ENV"
+      - name: Verify headless Chrome starts in the isolated runner
+        run: |
+          node --input-type=module <<'NODE'
+          import { createRequire } from 'node:module';
+          const require = createRequire(`${process.env.PUPPETEER_CORE_DIR}/`);
+          const puppeteer = require('puppeteer-core');
+          const browser = await puppeteer.launch({
+            executablePath: process.env.CHROME_PATH,
+            headless: 'new',
+            timeout: 60000,
+            args: ['--no-first-run', '--disable-extensions', '--no-sandbox', '--disable-dev-shm-usage'],
+          });
+          try {
+            const page = await browser.newPage();
+            await page.goto('data:text/html,<title>isolated-runner-ready</title>ready');
+            console.log(`Chrome ${await browser.version()} launched and rendered a local data page.`);
+          } finally {
+            await browser.close();
+          }
+          NODE
+      - name: Build static site
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee "$RUNNER_TEMP/build.log"
+      - name: Run complete browser-capable test suite
+        timeout-minutes: 20
+        shell: bash
+        run: |
+          set -o pipefail
+          node --test --test-concurrency=1 tests/*.test.mjs 2>&1 | tee "$RUNNER_TEMP/browser-tests.log"
+      - name: Upload build log, test log, and local-page screenshots on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: learn-browser-test-failure-${{ github.run_id }}
+          if-no-files-found: warn
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/build.log
+            ${{ runner.temp }}/browser-tests.log
+            ${{ runner.temp }}/browser-test-artifacts/
