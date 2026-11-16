@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 export const WIDTHS = [320, 360, 375, 390, 400, 430];
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ico': 'image/x-icon', '.xml': 'application/xml', '.txt': 'text/plain' };
@@ -33,7 +34,13 @@ export async function setup() {
   });
   await new Promise((r) => server.listen(0, '127.0.0.1', r));
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const browser = await puppeteer.launch({ executablePath: chrome, headless: 'new', args: ['--no-first-run'] });
+  const args = ['--no-first-run', '--disable-extensions'];
+  // GitHub's isolated Linux runner lacks the writable shared-memory mount and
+  // user-namespace sandbox setup expected by downloaded Chrome for Testing.
+  // This applies only to the disposable CI VM; local Chrome keeps its default
+  // sandbox and arguments.
+  if (process.env.CI === 'true') args.push('--no-sandbox', '--disable-dev-shm-usage');
+  const browser = await puppeteer.launch({ executablePath: chrome, headless: 'new', args, timeout: 60000 });
   return {
     origin, browser,
     async close() { await browser.close(); server.close(); },
@@ -47,6 +54,12 @@ export async function setup() {
         const resp = await page.goto(origin + pagePath, { waitUntil: 'domcontentloaded', timeout: 30000 });
         if (!resp || resp.status() !== 200) throw new Error(`${pagePath} returned ${resp && resp.status()}`);
         await new Promise((r) => setTimeout(r, 700));
+        const artifacts = process.env.BROWSER_TEST_ARTIFACT_DIR;
+        if (artifacts && pagePath === '/' && [320, 390, 430].includes(width)) {
+          await fs.promises.mkdir(artifacts, { recursive: true });
+          const key = createHash('sha256').update(`${pagePath}:${width}`).digest('hex').slice(0, 12);
+          await page.screenshot({ path: path.join(artifacts, `home-${width}-${key}.jpg`), type: 'jpeg', quality: 65, fullPage: false });
+        }
         return await page.evaluate(fn);
       } finally { await page.close(); }
     },

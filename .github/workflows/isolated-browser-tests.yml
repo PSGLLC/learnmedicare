@@ -35,18 +35,39 @@ jobs:
           echo "CHROME_PATH=$chrome_path" >> "$GITHUB_ENV"
           echo "BROWSER_TEST_ARTIFACT_DIR=$RUNNER_TEMP/browser-test-artifacts" >> "$GITHUB_ENV"
           echo "PUPPETEER_CACHE_DIR=$PUPPETEER_CACHE_DIR" >> "$GITHUB_ENV"
+      - name: Verify headless Chrome starts in the isolated runner
+        run: |
+          node --input-type=module <<'NODE'
+          import { createRequire } from 'node:module';
+          const require = createRequire(`${process.env.PUPPETEER_CORE_DIR}/`);
+          const puppeteer = require('puppeteer-core');
+          const browser = await puppeteer.launch({
+            executablePath: process.env.CHROME_PATH,
+            headless: 'new',
+            timeout: 60000,
+            args: ['--no-first-run', '--disable-extensions', '--no-sandbox', '--disable-dev-shm-usage'],
+          });
+          try {
+            const page = await browser.newPage();
+            await page.goto('data:text/html,<title>isolated-runner-ready</title>ready');
+            console.log(`Chrome ${await browser.version()} launched and rendered a local data page.`);
+          } finally {
+            await browser.close();
+          }
+          NODE
       - name: Build static site
         shell: bash
         run: |
           set -o pipefail
           npm run build 2>&1 | tee "$RUNNER_TEMP/build.log"
       - name: Run complete browser-capable test suite
+        timeout-minutes: 20
         shell: bash
         run: |
           set -o pipefail
           node --test --test-concurrency=1 tests/*.test.mjs 2>&1 | tee "$RUNNER_TEMP/browser-tests.log"
       - name: Upload build log, test log, and local-page screenshots on failure
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: learn-browser-test-failure-${{ github.run_id }}
