@@ -2,7 +2,14 @@
   "use strict";
   var key = "psg_cookie_consent";
   var panel = document.getElementById("visitor-analytics-choice");
+  var preferences = document.getElementById("visitor-analytics-preferences");
   var loaded = false;
+
+  function setPanelVisible(visible) {
+    if (!panel) return;
+    panel.hidden = !visible;
+    preferences?.setAttribute("aria-expanded", String(visible));
+  }
 
   function apply(choice) {
     window.__psgConsent = Object.assign({}, choice, { analytics: choice.analytics === true });
@@ -26,7 +33,7 @@
   } catch (_) {}
   var analyticsChosen = !!stored;
   apply(stored || { essential: true, analytics: false });
-  if (panel) panel.hidden = !!stored && typeof stored.marketing === 'boolean';
+  setPanelVisible(!(!!stored && typeof stored.marketing === 'boolean'));
 
   document.querySelectorAll("[data-analytics-choice]").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -43,7 +50,7 @@
         return;
       }
       apply(choice);
-      if (panel) panel.hidden = typeof choice.marketing === 'boolean';
+      setPanelVisible(typeof choice.marketing !== 'boolean');
     });
   });
   document.querySelectorAll('[data-marketing-choice]').forEach(function (button) {
@@ -56,13 +63,20 @@
         return;
       }
       apply(choice);
-      if (panel) panel.hidden = analyticsChosen;
+      setPanelVisible(!analyticsChosen);
     });
   });
-  document.getElementById("visitor-analytics-preferences")?.addEventListener("click", function () {
-    if (panel) {
-      panel.hidden = false;
-      panel.querySelector("button")?.focus();
-    }
+  preferences?.addEventListener("click", function () {
+    setPanelVisible(true);
+    panel?.querySelector("button")?.focus();
+  });
+
+  // This compact preference strip is intentionally nonmodal: Escape simply
+  // dismisses it without recording a choice or changing any consent state.
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape" || !panel || panel.hidden) return;
+    event.preventDefault();
+    setPanelVisible(false);
+    preferences?.focus();
   });
 })();

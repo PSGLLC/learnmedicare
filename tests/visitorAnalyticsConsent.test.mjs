@@ -12,6 +12,11 @@ function setup(stored, blocked = false) {
   const handlers = {};
   const scripts = [];
   const panel = { hidden: true, querySelector: () => ({ focus() {} }) };
+  const preferenceTrigger = {
+    addEventListener: (_, fn) => { handlers.preferences = fn; },
+    setAttribute() {},
+    focus() {},
+  };
   const buttons = ['allow', 'decline'].map(value => ({ dataset: { analyticsChoice: value }, addEventListener: (_, fn) => { handlers[value] = fn; } }));
   const marketingButtons = ['allow', 'decline'].map(value => ({ dataset: { marketingChoice: value }, addEventListener: (_, fn) => { handlers['marketing-' + value] = fn; } }));
   const window = { location: { reload() { window.reloaded = true; } }, __loadMarketing() { window.marketingLoads = (window.marketingLoads || 0) + 1; } };
@@ -20,8 +25,9 @@ function setup(stored, blocked = false) {
     window, Date,
     localStorage: { getItem: () => { if (blocked) throw Error(); return saved; }, setItem: (_, value) => { if (blocked) throw Error(); saved = value; } },
     document: {
-      getElementById: id => id === 'visitor-analytics-choice' ? panel : { addEventListener: (_, fn) => { handlers.preferences = fn; } },
+      getElementById: id => id === 'visitor-analytics-choice' ? panel : preferenceTrigger,
       querySelectorAll: selector => selector.includes('marketing') ? marketingButtons : buttons,
+      addEventListener() {},
       createElement: () => ({}), body: { appendChild: script => scripts.push(script) },
     },
   };
@@ -68,4 +74,52 @@ test('blocked storage still permits an explicit session choice', () => {
   assert.equal(result.scripts.length, 0);
   result.handlers.allow();
   assert.equal(result.scripts.length, 1);
+});
+
+test('Escape closes preferences without saving or changing consent and restores trigger focus', () => {
+  const handlers = {};
+  const attrs = {};
+  let writes = 0;
+  let focused = '';
+  const firstChoice = { focus() { focused = 'first-choice'; } };
+  const panel = { hidden: true, querySelector() { return firstChoice; } };
+  const preferences = {
+    addEventListener(type, fn) { handlers[`preferences:${type}`] = fn; },
+    setAttribute(name, value) { attrs[name] = value; },
+    focus() { focused = 'preferences'; },
+  };
+  const document = {
+    getElementById(id) { return id === 'visitor-analytics-choice' ? panel : preferences; },
+    querySelectorAll() { return []; },
+    addEventListener(type, fn) { handlers[`document:${type}`] = fn; },
+    createElement() { return {}; },
+    body: { appendChild() {} },
+  };
+  const window = { __psgConsent: null };
+  const localStorage = { getItem() { return null; }, setItem() { writes += 1; } };
+  vm.runInNewContext(source, { document, window, localStorage, Date, JSON, Object });
+
+  assert.equal(panel.hidden, false);
+  assert.equal(attrs['aria-expanded'], 'true');
+  const consentBeforeEscape = window.__psgConsent;
+  let prevented = false;
+  handlers['document:keydown']({ key: 'Escape', preventDefault() { prevented = true; } });
+  assert.equal(prevented, true);
+  assert.equal(panel.hidden, true);
+  assert.equal(attrs['aria-expanded'], 'false');
+  assert.equal(focused, 'preferences');
+  assert.equal(writes, 0);
+  assert.equal(window.__psgConsent, consentBeforeEscape);
+
+  handlers['preferences:click']();
+  assert.equal(panel.hidden, false);
+  assert.equal(attrs['aria-expanded'], 'true');
+  assert.equal(focused, 'first-choice');
+  assert.equal(writes, 0);
+});
+
+test('preferences remain nonmodal and the trigger identifies the expandable section', () => {
+  assert.match(consentComponent, /<section id="visitor-analytics-choice" aria-label="Privacy preferences" hidden>/);
+  assert.doesNotMatch(consentComponent, /aria-modal|role="dialog"/);
+  assert.match(consentComponent, /id="visitor-analytics-preferences"[^>]*aria-controls="visitor-analytics-choice"[^>]*aria-expanded="false"/);
 });
