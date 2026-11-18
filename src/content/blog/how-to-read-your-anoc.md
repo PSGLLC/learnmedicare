@@ -1,16 +1,16 @@
 ---
-title: "How to Read Your Annual Notice of Change (ANOC) Before AEP 2026"
-seoTitle: "How to Read Your ANOC Letter Before AEP 2026 Opens"
-description: "Your Medicare plan's Annual Notice of Change letter explains what's changing for Plan Year 2027. Here's how to read it before AEP 2026 opens."
+title: "How to Read Your Annual Notice of Change During AEP 2026"
+seoTitle: "How to Read Your Medicare ANOC for 2027 Coverage"
+description: "Your Medicare plan's Annual Notice of Change letter explains what's changing for Plan Year 2027. Here's how to read it during AEP 2026."
 date: 2026-08-20
-dateModified: 2026-08-20
+dateModified: 2026-11-18
 tags: [aep, seasonal, medicare-advantage, part-d, enrollment]
-excerpt: "Every Medicare Advantage and Part D plan sends an Annual Notice of Change letter each fall. Here's how to actually read it before AEP 2026 opens on October 15."
+excerpt: "Every Medicare Advantage and Part D plan sends an Annual Notice of Change letter each fall. Here's how to read it and use it to review your 2027 coverage during AEP 2026."
 faqs:
   - question: "What is an Annual Notice of Change (ANOC) letter?"
     answer: "It's a letter your Medicare Advantage or Part D plan is required to send every fall, usually by the end of September, explaining exactly what's changing about your plan for the next plan year — premium, deductible, copays, covered drugs, and network providers."
   - question: "When will I receive my ANOC for Plan Year 2027?"
-    answer: "Plans are required to mail the ANOC by September 30, ahead of when AEP 2026 opens on October 15. If you haven't received one by early October and you're enrolled in a Medicare Advantage or Part D plan, contact your plan directly or check your online member account."
+    answer: "Plans are required to mail the ANOC by September 30, before AEP 2026, which runs October 15 through December 7. If you haven't received one by early October and you're enrolled in a Medicare Advantage or Part D plan, contact your plan directly or check your online member account."
   - question: "Do I need to do anything if I'm happy with my current plan?"
     answer: "No. If you take no action, your current plan continues automatically into Plan Year 2027. But it's still worth reading the ANOC, since your plan's costs, drug coverage, or network can change for the coming year even if you don't switch anything."
   - question: "What's the difference between the ANOC and the Evidence of Coverage (EOC)?"
@@ -23,7 +23,7 @@ If you're enrolled in a Medicare Advantage or Part D plan, one piece of mail mat
 
 ## What the ANOC Actually Is
 
-The ANOC is a summary document, not the full rulebook for your plan. Your Medicare Advantage or Part D plan is required to mail it by September 30 each year, ahead of when [AEP 2026](/blog/aep-2026-guide/) opens on October 15. It lays out, side by side, what your plan's premium, deductible, copays, covered drugs, and network look like this year versus what they'll look like starting January 1, 2027, at the start of Plan Year 2027.
+The ANOC is a summary document, not the full rulebook for your plan. Your Medicare Advantage or Part D plan is required to mail it by September 30 each year, before [AEP 2026](/blog/aep-2026-guide/), which runs October 15 through December 7. It lays out, side by side, what your plan's premium, deductible, copays, covered drugs, and network look like this year versus what they'll look like starting January 1, 2027, at the start of Plan Year 2027.
 
 It's different from your plan's Evidence of Coverage (EOC), which is a much longer document spelling out every detail of your benefits. Think of the ANOC as the highlight reel and the EOC as the full transcript. For most people, the ANOC alone is enough to spot whether something meaningful is changing. You'd only need to dig into the EOC if the ANOC flags a change you want to understand in more depth.
 
@@ -46,12 +46,12 @@ None of this means your plan did something wrong. Plans are allowed to adjust th
 
 Once you've gone through the ANOC, hold it up against your actual medication list and doctor list, which is worth [building now if you haven't already](/blog/aep-2026-prep-checklist/). If everything still lines up, you're done. Coverage continues automatically into Plan Year 2027 if you take no action, and there's nothing wrong with staying put when your plan still fits.
 
-If something doesn't line up, that's what AEP 2026 is for. Running from October 15 through December 7, it's your yearly window to switch Medicare Advantage plans, switch Part D plans, or move between Medicare Advantage and Original Medicare. It's also worth checking your plan's current [star rating](/blog/medicare-advantage-star-ratings/) alongside any ANOC changes, since a lower rating combined with a shrinking network or a shrinking formulary is a stronger signal to compare alternatives than either issue alone. For a broader look at how Medicare Advantage and Original Medicare with a Medigap policy compare, our [coverage guide](/coverage/) walks through the fuller decision.
+If something doesn't line up, that's what AEP 2026 is for. Running from October 15 through December 7, it's your yearly window to switch Medicare Advantage plans, switch Part D plans, or move between Medicare Advantage and Original Medicare. It's also worth checking your plan's current [star rating](/blog/medicare-advantage-star-ratings/) alongside any ANOC changes, since a lower rating combined with a shrinking network or a shrinking formulary is a stronger signal to compare alternatives than either issue alone. For a broader look at how Medicare Advantage and Original Medicare with a Medigap policy compare, our [coverage guide](/coverage) walks through the fuller decision.
 
 ## If You Don't Receive an ANOC
 
 If you're enrolled in a Medicare Advantage or Part D plan and haven't received your ANOC by early October, don't assume nothing is changing. Contact your plan directly or log into your online member account, since ANOC letters are also typically posted there. If you're on Original Medicare with a Medigap policy and no separate Part D plan, you generally won't get an ANOC in the same way, since Original Medicare's core benefits don't change plan to plan — though it's still worth checking whether your Medigap premium is changing for the coming year.
 
-Reading a letter isn't glamorous, and it's easy to see why so many people skip it. But the ANOC is one of the few pieces of mail that directly tells you, in plain terms, exactly what's different about your coverage before you have to decide anything. Spending fifteen minutes with it in September means that by the time AEP 2026 opens, you already know whether you're looking to compare plans or simply confirming your current one still works. If any of the terms in your ANOC are unfamiliar, our [Medicare glossary](/glossary/) can help translate the jargon, and our [common Medicare mistakes](/medicare-mistakes/) page covers other pitfalls worth avoiding during this same stretch of the year.
+Reading a letter isn't glamorous, and it's easy to see why so many people skip it. But the ANOC is one of the few pieces of mail that directly tells you, in plain terms, exactly what's different about your coverage before you have to decide anything. Spending fifteen minutes with it helps you decide whether to compare plans or confirm that your current coverage still works for 2027. If any of the terms in your ANOC are unfamiliar, our [Medicare glossary](/glossary) can help translate the jargon, and our [common Medicare mistakes](/medicare-mistakes) page covers other pitfalls worth avoiding during this same stretch of the year.
 
 Have questions? Kayla Price is a licensed insurance agent serving NC, SC, GA, FL, VA, MD, MI, KS, TX, and OH. Call (866) 648-1578 or visit priceservicesgroup.com.
