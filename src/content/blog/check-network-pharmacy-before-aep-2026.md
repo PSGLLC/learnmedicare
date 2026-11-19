@@ -1,11 +1,11 @@
 ---
-title: "How to Check If Your Doctors and Pharmacy Are In-Network Before AEP 2026"
-seoTitle: "Check Your Doctors & Pharmacy Are In-Network Before AEP 2026"
-description: "Plan costs and drug lists get the attention, but network changes catch people off guard every fall. Here's how to confirm your doctors and pharmacy are covered before AEP 2026."
+title: "Check Your Doctors and Pharmacy for 2027 Medicare Plans"
+seoTitle: "Check Your Medicare Plan Network During AEP 2026"
+description: "Check whether your doctors, hospitals, and pharmacy are in network for Plan Year 2027 before choosing a Medicare plan during AEP 2026."
 date: 2026-09-24
-dateModified: 2026-09-24
+dateModified: 2026-11-18
 tags: [medicare-advantage, aep, seasonal, enrollment, provider-network]
-excerpt: "A plan can look identical on paper and still drop your doctor or your pharmacy from its network for the new plan year. Here's how to check before AEP 2026 opens, not after."
+excerpt: "A plan can look identical on paper and still drop your doctor or your pharmacy from its network for the new plan year. Here's how to check during AEP 2026, not after."
 faqs:
   - question: "Can my doctor really leave my Medicare Advantage plan's network without me being notified directly?"
     answer: "Yes. Plans are required to update their provider directories, but a specific letter to every affected member isn't always guaranteed the way it is for major benefit changes. Your Annual Notice of Change letter may mention network changes in general terms, but confirming your specific doctor is still in-network for Plan Year 2027 is something you need to check yourself rather than assume."
@@ -19,7 +19,7 @@ faqs:
     answer: "Yes. Your Part D plan's formulary determines whether a drug is covered at all, but the pharmacy you use determines what you pay for it. The same covered drug can cost less at a preferred pharmacy than at a standard in-network one, and cost significantly more, or nothing be covered, at an out-of-network pharmacy."
 ---
 
-Every fall, most of the attention during Medicare's enrollment prep goes to premiums, deductibles, and drug formularies. Those matter, but they're not the only thing that changes from one plan year to the next. A Medicare Advantage plan can also add or drop doctors, specialists, hospitals, and pharmacies from its network — sometimes without much fanfare. If you don't check, you might not find out your cardiologist or your regular pharmacy is no longer covered until you're already trying to use your new plan in January. Before [AEP 2026](/blog/aep-2026-guide/) opens on October 15, it's worth spending a little time confirming your providers and pharmacy are still in-network for Plan Year 2027.
+Every fall, most of the attention during Medicare's enrollment prep goes to premiums, deductibles, and drug formularies. Those matter, but they're not the only thing that changes from one plan year to the next. A Medicare Advantage plan can also add or drop doctors, specialists, hospitals, and pharmacies from its network — sometimes without much fanfare. If you don't check, you might not find out your cardiologist or your regular pharmacy is no longer covered until you're already trying to use your new plan in January. During [AEP 2026](/blog/aep-2026-guide/), confirm your providers and pharmacy are still in-network for Plan Year 2027 before choosing coverage.
 
 ## Why Network Changes Catch People Off Guard
 
@@ -39,8 +39,8 @@ If you find out a doctor or pharmacy you rely on won't be in-network for Plan Ye
 
 ## A Simple Checklist for AEP 2026
 
-Before AEP 2026 opens, list out every doctor, specialist, and pharmacy you use regularly. For each one, confirm in-network status for Plan Year 2027 using both the plan directory and a direct phone call, and note whether your pharmacy is preferred or standard. If you're comparing more than one plan, repeat this check for each plan you're considering rather than assuming network status carries over between plans from the same insurer. This step takes real time, but it's far easier to do now than to discover a gap after your new coverage has already started. For a broader rundown of everything worth checking before the window opens, see our [AEP 2026 prep checklist](/blog/aep-2026-prep-checklist/), and if you're newer to how Medicare Advantage networks work in the first place, our [Medicare basics](/basics/) and [coverage options](/coverage/) pages are a good starting point.
+During AEP 2026, list every doctor, specialist, and pharmacy you use regularly. For each one, confirm in-network status for Plan Year 2027 using both the plan directory and a direct phone call, and note whether your pharmacy is preferred or standard. If you're comparing more than one plan, repeat this check for each plan you're considering rather than assuming network status carries over between plans from the same insurer. This step takes real time, but it's far easier to do now than to discover a gap after your new coverage has already started. For a broader rundown of everything worth checking while the window is open, see our [AEP 2026 prep checklist](/blog/aep-2026-prep-checklist/), and if you're newer to how Medicare Advantage networks work in the first place, our [Medicare basics](/basics) and [coverage options](/coverage) pages are a good starting point.
 
-Network and pharmacy checks don't get the same attention as premiums and drug formularies, but they affect your actual day-to-day care just as much, if not more. A plan that looks perfect on paper isn't much use if your cardiologist or your regular pharmacy isn't part of it. Taking the time now, before AEP 2026 opens on October 15, means you can make that discovery on your own schedule instead of in the middle of a doctor's appointment in January.
+Network and pharmacy checks don't get the same attention as premiums and drug formularies, but they affect your actual day-to-day care just as much, if not more. A plan that looks perfect on paper isn't much use if your cardiologist or your regular pharmacy isn't part of it. Taking the time during AEP 2026 means you can make that discovery on your own schedule instead of in the middle of a doctor's appointment in January.
 
 Have questions? Kayla Price is a licensed insurance agent serving NC, SC, GA, FL, VA, MD, MI, KS, TX, and OH. Call (866) 648-1578 or visit priceservicesgroup.com.

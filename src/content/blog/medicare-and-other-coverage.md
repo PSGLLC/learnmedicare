@@ -3,7 +3,7 @@ title: "Medicare and Other Coverage: How It Works With Employer Insurance, VA, M
 seoTitle: "Medicare and Other Health Coverage 2026 | LearnMedicare"
 description: "How Medicare works alongside employer insurance, VA benefits, Medicaid, and TRICARE — what's primary, and what to check before you enroll or delay."
 date: 2026-10-01
-dateModified: 2026-10-01
+dateModified: 2026-11-18
 tags: [coverage-comparison, enrollment, medicaid, employer-coverage]
 excerpt: "Already have employer insurance, VA benefits, Medicaid, or TRICARE? Here's how each one actually works with Medicare — and what to check before you enroll or delay."
 faqs:
@@ -35,7 +35,7 @@ Having VA health benefits doesn't exempt you from Medicare's enrollment rules, a
 
 Medicaid is a joint federal-state program based on income and financial need, which makes it fundamentally different from Medicare's age-based eligibility. People who qualify for both are called "dual eligible," and for this group, Medicare is almost always the primary payer — it pays first for Medicare-covered services, and Medicaid can then help cover remaining costs like premiums, deductibles, and coinsurance, depending on state rules and the specific Medicaid program involved.
 
-This pairing can meaningfully lower out-of-pocket costs. The standard 2026 Part B premium is $202.90 per month with a $283 annual deductible, and for many dual-eligible beneficiaries, Medicaid or a related Medicare Savings Program helps cover some or all of that. If income is a concern as you approach 65, it's worth checking eligibility with your state Medicaid office rather than assuming you don't qualify. Our [Medicare vs. Medicaid](/medicare-vs-medicaid/) page breaks down the full comparison in more detail, including how the two programs differ in administration and covered services.
+This pairing can meaningfully lower out-of-pocket costs. The standard 2026 Part B premium was $202.90 per month with a $283 annual deductible. CMS announced the 2027 standard premium of $209.40 per month and annual deductible of $292 on November 17, 2026. For many dual-eligible beneficiaries, Medicaid or a related Medicare Savings Program helps cover some or all of these costs, subject to state program rules. If income is a concern as you approach 65, check eligibility with your state Medicaid office rather than assuming you do not qualify. See [CMS's current Medicare cost figures](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles). Our [Medicare vs. Medicaid](/medicare-vs-medicaid/) page breaks down the full comparison in more detail, including how the two programs differ in administration and covered services.
 
 ## Medicare and TRICARE for Life
 

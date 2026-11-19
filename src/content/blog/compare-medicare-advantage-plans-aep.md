@@ -1,11 +1,11 @@
 ---
-title: "How to Compare Medicare Advantage Plans Side by Side Before AEP 2026"
-seoTitle: "How to Compare Medicare Advantage Plans Before AEP 2026"
-description: "AEP 2026 opens October 15. Before you switch, here's how to compare Medicare Advantage plans side by side — doctors, drugs, costs, and star ratings."
+title: "How to Compare Medicare Advantage Plans During AEP 2026"
+seoTitle: "Compare Medicare Advantage Plans for 2027"
+description: "During AEP 2026, compare Medicare Advantage plans side by side by doctors, drugs, costs, and star ratings before choosing 2027 coverage."
 date: 2026-08-27
-dateModified: 2026-08-27
+dateModified: 2026-11-18
 tags: [medicare-advantage, aep, seasonal, part-d, enrollment]
-excerpt: "Comparing Medicare Advantage plans by premium alone is how people end up with the wrong plan. Here's a simple, step-by-step way to compare plans before AEP 2026 opens."
+excerpt: "Comparing Medicare Advantage plans by premium alone is how people end up with the wrong plan. Here's a simple, step-by-step way to compare plans during AEP 2026."
 faqs:
   - question: "What's the best way to start comparing Medicare Advantage plans?"
     answer: "Start with your own doctors and medications, not the plan brochures. Make a list of every provider you see and every prescription you take, then check that list against each plan's network and formulary before you look at anything else. A plan that fails on either point isn't a real option, no matter how good its other features look."
@@ -19,7 +19,7 @@ faqs:
     answer: "Your current Medicare Advantage or Part D plan continues automatically into Plan Year 2027 if you take no action during AEP 2026. That's a reasonable choice if your plan still fits, but it's worth confirming that first — plans can change their formulary, network, or costs from one year to the next even if you don't switch anything."
 ---
 
-Medicare Advantage plans are easy to compare badly and hard to compare well. Most plan brochures lead with the number that looks best — often a $0 premium — and it's tempting to stop there. But two plans with the same $0 premium can lead to very different bills depending on your doctors, your medications, and how much care you actually use in a year. If you're getting ready for [AEP 2026](/blog/aep-2026-guide/), which opens October 15 and runs through December 7, a real side-by-side comparison takes more than glancing at a premium. Here's a straightforward way to do it.
+Medicare Advantage plans are easy to compare badly and hard to compare well. Most plan brochures lead with the number that looks best — often a $0 premium — and it's tempting to stop there. But two plans with the same $0 premium can lead to very different bills depending on your doctors, your medications, and how much care you actually use in a year. During [AEP 2026](/blog/aep-2026-guide/), which runs October 15 through December 7, a real side-by-side comparison takes more than glancing at a premium. Here's a straightforward way to do it.
 
 ## Start With Your Doctors and Your Medications
 
@@ -36,7 +36,7 @@ Once you've narrowed your list to plans that cover your doctors and drugs, it's 
 - **Copays and coinsurance.** What you pay for doctor visits, specialist visits, and prescriptions once coverage kicks in.
 - **Maximum out-of-pocket (MOOP).** The most you'd pay in a year for covered services before the plan pays 100%. This is the number that protects you in a bad health year, and it varies significantly by plan.
 
-It's worth remembering that some costs are set by the federal government and don't change plan to plan. The standard Medicare Part B premium for 2026 is $202.90 per month, with a $283 annual Part B deductible — those apply no matter which Medicare Advantage plan you choose, since Part B is still Part B. What varies between plans is everything layered on top: the plan's own premium, copays, and MOOP. For prescription costs, every plan is also bound by the same $2,100 Part D annual out-of-pocket cap for covered drugs in 2026, so once you or the plan has spent that much on your covered prescriptions in a calendar year, you pay nothing more for them through December 31. For a fuller breakdown of which 2026 costs are federal versus plan-specific, see our [Medicare costs guide](/medicare-costs-2026/).
+It's worth remembering that some costs are set by the federal government and don't change plan to plan. The standard Part B premium was $202.90 per month with a $283 annual deductible in 2026. For 2027, CMS announced a standard Part B premium of $209.40 per month and a $292 annual deductible on November 17, 2026. Those amounts apply regardless of which Medicare Advantage plan you choose; a plan may also charge its own premium or cost sharing. The Part D out-of-pocket threshold is $2,100 for covered drugs in 2026 and $2,400 in 2027; the standard deductible is up to $615 in 2026 and $700 in 2027. For a fuller breakdown of federal cost figures, see our [Medicare costs guide](/medicare-costs-2026), [CMS's 2027 Part A and Part B figures](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles), and [CMS's 2027 Part D benefit parameters](https://www.cms.gov/files/document/2027-announcement.pdf).
 
 ## Check Star Ratings and Network Depth
 
@@ -52,6 +52,6 @@ Many Medicare Advantage plans include extra benefits like dental, vision, hearin
 
 If you're already in a Medicare Advantage plan and comparing it against alternatives, don't skip your current plan's Annual Notice of Change (ANOC) letter, which plans are required to mail by September 30. It tells you exactly what's changing about your own plan for Plan Year 2027, so you're comparing your plan's actual 2027 terms against other options, not last year's terms out of habit. Our guide on [how to read your ANOC](/blog/how-to-read-your-anoc/) walks through what to look for section by section.
 
-Comparing Medicare Advantage plans thoroughly takes an hour or two, not a lifetime, and it's time well spent given that the choice you make during AEP 2026 sticks for all of Plan Year 2027 in most cases. Medicare.gov's Plan Finder tool lets you compare plans available in your area side by side using the same categories covered here. If your situation feels complicated — multiple medications, several specialists, or plans that seem too close to call — it's reasonable to get a second opinion before December 7. For a broader look at how Medicare Advantage compares to Original Medicare with a Medigap policy, our [coverage guide](/coverage/) covers that decision in full.
+Comparing Medicare Advantage plans thoroughly takes an hour or two, not a lifetime, and it's time well spent given that the choice you make during AEP 2026 sticks for all of Plan Year 2027 in most cases. Medicare.gov's Plan Finder tool lets you compare plans available in your area side by side using the same categories covered here. If your situation feels complicated — multiple medications, several specialists, or plans that seem too close to call — it's reasonable to get a second opinion before December 7. For a broader look at how Medicare Advantage compares to Original Medicare with a Medigap policy, our [coverage guide](/coverage) covers that decision in full.
 
 Have questions? Kayla Price is a licensed insurance agent serving NC, SC, GA, FL, VA, MD, MI, KS, TX, and OH. Call (866) 648-1578 or visit priceservicesgroup.com.
