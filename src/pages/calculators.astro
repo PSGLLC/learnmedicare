@@ -6,7 +6,7 @@ import FAQSection from '../components/FAQSection.astro';
 import { authorship, dataset } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-11-19';
 
 const faqs = [
   { question: 'Are these Medicare calculators free to use?', answer: 'Yes. All calculators on this page are free, run instantly in your browser, and require no sign-up or personal information.' },
@@ -58,6 +58,13 @@ const jsonLd = [
         <h2>Part B Late Enrollment Penalty</h2>
         <p class="calc-desc">Estimate how a late Part B enrollment could affect your monthly premium.</p>
         <div class="calc-field">
+          <label for="b-year">Premium year used for estimate</label>
+          <select id="b-year">
+            <option value="2027" selected>2027 — $209.40 standard premium</option>
+            <option value="2026">2026 — $202.90 standard premium</option>
+          </select>
+        </div>
+        <div class="calc-field">
           <label for="b-months">Months without Part B coverage (when you were eligible but not enrolled)</label>
           <input type="number" id="b-months" min="0" step="1" value="0" inputmode="numeric" />
         </div>
@@ -72,16 +79,23 @@ const jsonLd = [
           </div>
           <div class="calc-result-row calc-result-highlight">
             <span>New monthly Part B premium</span>
-            <strong id="b-total">$202.90</strong>
+            <strong id="b-total">$209.40</strong>
           </div>
         </div>
-        <p class="calc-note">Based on the 2026 standard Part B premium of $202.90/month. This penalty is generally added to your premium for as long as you have Medicare.</p>
+        <p class="calc-note">The estimate uses the selected year's standard Part B premium and applies 10% for each full 12-month period. Medicare rounds the resulting monthly premium to the nearest $0.10. The penalty generally continues while you have Part B; qualifying Special Enrollment Periods or Medicare Savings Program enrollment may prevent it. Confirm your circumstances with Medicare. <a href="https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles">CMS 2027 Part B costs</a> · <a href="https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties">Medicare penalty rules</a>.</p>
       </div>
 
       <!-- 2. Part D Late Enrollment Penalty -->
       <div class="calc-card card">
         <h2>Part D Late Enrollment Penalty</h2>
         <p class="calc-desc">Estimate the penalty for going without creditable prescription drug coverage.</p>
+        <div class="calc-field">
+          <label for="d-year">Premium year used for estimate</label>
+          <select id="d-year">
+            <option value="2027" selected>2027 — $41.33 national base premium</option>
+            <option value="2026">2026 — $38.99 national base premium</option>
+          </select>
+        </div>
         <div class="calc-field">
           <label for="d-months">Months without creditable drug coverage</label>
           <input type="number" id="d-months" min="0" step="1" value="0" inputmode="numeric" />
@@ -92,7 +106,7 @@ const jsonLd = [
             <strong id="d-penalty">$0.00</strong>
           </div>
         </div>
-        <p class="calc-note">Based on the 2026 national base beneficiary premium of $38.99. This penalty amount is added on top of whatever Part D plan premium you eventually choose — it does not include the plan's own premium, which varies by plan.</p>
+        <p class="calc-note">Based on the selected year's national base beneficiary premium. Medicare multiplies 1% by that base premium for each full uncovered month and rounds the monthly penalty to the nearest $0.10. The amount is added on top of your Part D plan premium, which varies by plan. People receiving Extra Help do not pay this penalty. <a href="https://www.medicare.gov/health-drug-plans/part-d/basics/costs">Medicare Part D cost and penalty rules</a>.</p>
       </div>
 
       <!-- 3. Medicare Advantage vs. Medigap -->
@@ -227,6 +241,7 @@ const jsonLd = [
 </BaseLayout>
 
 <script>
+  import { estimatePartBPenalty, estimatePartDPenalty } from '../lib/lateEnrollmentPenalties.mjs';
   const fmt = (n: number) =>
     n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
@@ -257,20 +272,23 @@ const jsonLd = [
 
   // ── Calculator 1: Part B Late Enrollment Penalty ──────────────────────
   const PART_B_NAME = 'Part B Late Enrollment Penalty';
-  const PART_B_STANDARD_PREMIUM = 202.9; // 2026 standard Part B premium
   const bMonthsInput = document.getElementById('b-months') as HTMLInputElement;
+  const bYearInput = document.getElementById('b-year') as HTMLSelectElement;
   let bInteracted = false;
   function updatePartB() {
-    const monthsLate = Math.max(0, Number(bMonthsInput.value) || 0);
+    const monthsLate = Math.max(0, Math.floor(Number(bMonthsInput.value) || 0));
+    const { premium, penalty, total } = estimatePartBPenalty(monthsLate, Number(bYearInput.value));
     const penaltyPercent = Math.floor(monthsLate / 12) * 10;
-    const monthlyPenalty = PART_B_STANDARD_PREMIUM * (penaltyPercent / 100);
-    const newMonthlyPremium = PART_B_STANDARD_PREMIUM + monthlyPenalty;
     (document.getElementById('b-percent') as HTMLElement).textContent = `${penaltyPercent}%`;
-    (document.getElementById('b-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
-    (document.getElementById('b-total') as HTMLElement).textContent = fmt(newMonthlyPremium);
-    if (bInteracted) trackCalcComplete(PART_B_NAME, `${fmt(newMonthlyPremium)}/month (${fmt(monthlyPenalty)}/month penalty)`);
+    (document.getElementById('b-penalty') as HTMLElement).textContent = fmt(penalty ?? 0);
+    (document.getElementById('b-total') as HTMLElement).textContent = fmt(total ?? premium ?? 0);
+    if (bInteracted) trackCalcComplete(PART_B_NAME, `${fmt(total ?? premium ?? 0)}/month (${fmt(penalty ?? 0)}/month penalty, ${bYearInput.value} basis)`);
   }
   bMonthsInput.addEventListener('input', () => {
+    if (!bInteracted) { bInteracted = true; trackCalcStart(PART_B_NAME); }
+    updatePartB();
+  });
+  bYearInput.addEventListener('change', () => {
     if (!bInteracted) { bInteracted = true; trackCalcStart(PART_B_NAME); }
     updatePartB();
   });
@@ -278,16 +296,20 @@ const jsonLd = [
 
   // ── Calculator 2: Part D Late Enrollment Penalty ───────────────────────
   const PART_D_NAME = 'Part D Late Enrollment Penalty';
-  const PART_D_BASE_PREMIUM = 38.99; // 2026 national base beneficiary premium
   const dMonthsInput = document.getElementById('d-months') as HTMLInputElement;
+  const dYearInput = document.getElementById('d-year') as HTMLSelectElement;
   let dInteracted = false;
   function updatePartD() {
-    const monthsLate = Math.max(0, Number(dMonthsInput.value) || 0);
-    const monthlyPenalty = 0.01 * PART_D_BASE_PREMIUM * monthsLate;
+    const monthsLate = Math.max(0, Math.floor(Number(dMonthsInput.value) || 0));
+    const monthlyPenalty = estimatePartDPenalty(monthsLate, Number(dYearInput.value));
     (document.getElementById('d-penalty') as HTMLElement).textContent = fmt(monthlyPenalty);
-    if (dInteracted) trackCalcComplete(PART_D_NAME, `${fmt(monthlyPenalty)}/month penalty`);
+    if (dInteracted) trackCalcComplete(PART_D_NAME, `${fmt(monthlyPenalty)}/month penalty (${dYearInput.value} basis)`);
   }
   dMonthsInput.addEventListener('input', () => {
+    if (!dInteracted) { dInteracted = true; trackCalcStart(PART_D_NAME); }
+    updatePartD();
+  });
+  dYearInput.addEventListener('change', () => {
     if (!dInteracted) { dInteracted = true; trackCalcStart(PART_D_NAME); }
     updatePartD();
   });
