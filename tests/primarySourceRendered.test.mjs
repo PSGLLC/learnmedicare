@@ -15,6 +15,6 @@ test('generated AEP guide keeps the current window separate from the coverage ye
 test('generated Medicare Advantage comparison describes coverage accurately and retains official context', () => {
   const html = page('/blog/medicare-advantage-vs-medigap/');
   assert.match(html, /alternative way to receive your Medicare Part A and Part B benefits/);
-  assert.match(html, /medicare\.gov\/basics\/costs\/medicare-costs/);
+  assert.match(html, /cms\.gov\/newsroom\/fact-sheets\/2027-medicare-parts-b-premiums-deductibles/);
   assert.doesNotMatch(html, /Medicare Advantage \*\*replaces\*\* Original Medicare/);
 });
