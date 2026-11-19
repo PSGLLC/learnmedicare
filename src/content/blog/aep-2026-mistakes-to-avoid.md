@@ -23,7 +23,7 @@ AEP 2026 — the Medicare Annual Enrollment Period — runs from October 15 thro
 
 ## Mistake 1: Assuming Your Plan Is Staying the Same
 
-Medicare Advantage and Part D plans are allowed to change their premiums, deductibles, provider networks, and covered drugs every single year. Nothing requires your plan to stay exactly as it was, even if you take no action at all. The plan you're happy with today could look different on January 1 simply because the insurance company redesigned it, not because you did anything wrong. If you skip your annual review entirely, you won't find out about a dropped doctor or a pricier medication until you're already using the new plan year's coverage — which is too late to change anything until spring. Our [AEP 2026 guide](/aep-guide/) walks through what to check and when.
+Medicare Advantage and Part D plans are allowed to change their premiums, deductibles, provider networks, and covered drugs every single year. Nothing requires your plan to stay exactly as it was, even if you take no action at all. The plan you're happy with today could look different on January 1 simply because the insurance company redesigned it, not because you did anything wrong. If you skip your annual review entirely, you won't find out about a dropped doctor or a pricier medication until you're already using the new plan year's coverage — which is too late to change anything until spring. Our [AEP 2026 guide](/aep-guide/) walks through what to check and when. Medicare explains how to review changes for the coming plan year in its [ANOC guidance](https://www.medicare.gov/basics/forms-publications-mailings/mailings/costs-and-coverage/upcoming-plan-changes).
 
 ## Mistake 2: Skipping the ANOC
 

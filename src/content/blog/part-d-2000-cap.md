@@ -3,6 +3,7 @@ title: "Medicare Part D's $2,100 Out-of-Pocket Cap: What It Means for You in 202
 seoTitle: "Part D $2,100 Out-of-Pocket Cap 2026 | Learn Medicare"
 description: "How Medicare's 2026 Part D $2,100 annual out-of-pocket cap works, who benefits most, the insulin cap, Extra Help, and how to check your drug coverage."
 date: 2026-07-22
+dateModified: 2026-11-18
 tags: [part-d, costs, drug-coverage]
 excerpt: "As of 2026, Medicare Part D caps your out-of-pocket drug costs at $2,100 per year. Here's exactly how that cap works and who it helps most."
 faqs:
@@ -15,6 +16,8 @@ faqs:
   - question: "What is Extra Help and how does it relate to the cap?"
     answer: "Extra Help (the Part D Low-Income Subsidy) is a separate federal program that reduces Part D premiums, deductibles, and copays for people with limited income and resources. It works alongside the $2,100 cap — Extra Help recipients often reach $0 out-of-pocket costs well before the general cap, depending on their subsidy level."
 ---
+
+> **Coverage-year update (November 18, 2026):** This article explains the **2026** $2,100 Part D out-of-pocket limit. For **2027 coverage**, Medicare lists a $2,400 limit and a maximum standard deductible of $700. Check the [current Part D cost rules](https://www.medicare.gov/health-drug-plans/part-d/basics/costs) and your plan’s own materials for the year you need.
 
 For years, Medicare's prescription drug coverage had a structure that left some beneficiaries with unpredictable, sometimes very high, out-of-pocket drug costs — the so-called "donut hole" coverage gap. As of 2026, that structure has changed significantly: Part D now has a **$2,100 annual out-of-pocket cap** on covered drugs, a result of the Inflation Reduction Act's Medicare drug pricing reforms.
 

@@ -25,7 +25,7 @@ This guide covers the part that happens during AEP itself, not just before it.
 
 ## What AEP 2026 Actually Lets You Do
 
-AEP is open to anyone already enrolled in Medicare — it's not the enrollment period for people newly turning 65, who instead work through their own [enrollment timeline](/enrollment/) around that birthday. If that's your situation, our [turning 65 guide](/turning-65/) is the better starting point.
+AEP is open to anyone already enrolled in Medicare — it's not the enrollment period for people newly turning 65, who instead work through their own [enrollment timeline](/enrollment/) around that birthday. If that's your situation, our [turning 65 guide](/turning-65/) is the better starting point. See [Medicare.gov’s Open Enrollment guidance](https://www.medicare.gov/health-drug-plans/open-enrollment) for the current window and effective date.
 
 During AEP 2026, you can make any of these changes, effective January 1, 2027 (Plan Year 2027):
 

@@ -3,7 +3,7 @@ title: "Medicare Savings Programs: How to Get Help Paying Your Medicare Costs"
 seoTitle: "Medicare Savings Programs 2026: Who Qualifies | LM"
 description: "Medicare Savings Programs can pay your Part B premium and more if your income is limited. Here's who qualifies, what each program covers, and how to apply."
 date: 2026-10-08
-dateModified: 2026-10-08
+dateModified: 2026-11-18
 tags: [medicare-savings-programs, costs, medicaid, qmb, extra-help]
 excerpt: "If paying for Medicare is a stretch, a Medicare Savings Program may be able to cover your Part B premium and more. Here's who qualifies and how to apply."
 faqs:
@@ -14,7 +14,7 @@ faqs:
   - question: "Which Medicare Savings Program pays the most?"
     answer: "The Qualified Medicare Beneficiary (QMB) program offers the most help — it pays Part A and Part B premiums plus deductibles, copays, and coinsurance. SLMB and QI only cover the Part B premium. Which one you qualify for depends on your income relative to your state's limits."
   - question: "Does getting an MSP automatically give me Extra Help for Part D?"
-    answer: "In most states, yes. Qualifying for a Medicare Savings Program typically triggers automatic enrollment in Extra Help, the federal program that lowers Part D premiums, deductibles, and copays. You don't need to file a separate Extra Help application in that case."
+    answer: "If your state determines that you qualify for a Medicare Savings Program that pays your Part B premium, you automatically qualify for Extra Help with Part D costs. QDWI pays the Part A premium and is not one of the Part B premium programs described by this automatic-qualification rule. Check your state notice or Medicare account for the next steps."
   - question: "Where do I apply for a Medicare Savings Program?"
     answer: "You apply through your state Medicaid office, not through Medicare or Social Security directly. Income and resource limits, and the exact application process, vary by state, so your state Medicaid office is the most accurate source for current rules where you live."
 ---
@@ -52,9 +52,9 @@ None of the MSP tiers pay your Medicare Advantage or Medigap premium directly, t
 
 ## How MSPs Connect to Extra Help and Part D
 
-Here's a detail that catches people off guard: if you qualify for any Medicare Savings Program, you're typically enrolled automatically in Extra Help (the Part D Low-Income Subsidy) in most states — no separate application required. Extra Help reduces your Part D premium, deductible, and copays, and works independently of the standard $2,100 annual Part D out-of-pocket cap that applies to everyone in 2026. We cover how that cap works, and how Extra Help fits alongside it, in our [Part D out-of-pocket cap guide](/blog/part-d-2000-cap/).
+If you receive state help paying your Part B premium through an MSP, you automatically qualify for Extra Help with Part D costs. This is a federal automatic-qualification rule, not merely a practice in some states. Extra Help reduces eligible drug costs and works alongside the Part D out-of-pocket limit. The limit is $2,100 for 2026 and $2,400 for 2027. We explain the 2026 coverage-year figure in our [Part D out-of-pocket limit guide](/blog/part-d-2000-cap/); see [Medicare's current MSP rules](https://www.medicare.gov/basics/costs/help/medicare-savings-programs) and [Extra Help rules](https://www.medicare.gov/basics/costs/help/drug-costs) for current details.
 
-This automatic link matters because it means qualifying for help with your Part B premium through an MSP can also meaningfully lower what you pay for prescriptions, without filing twice.
+This automatic link matters because help with your Part B premium through an MSP also establishes eligibility for Extra Help. The separate programs have different application and enrollment steps; follow the notices Medicare and your state send you.
 
 ## Who Should Check Their Eligibility
 

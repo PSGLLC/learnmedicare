@@ -3,6 +3,7 @@ title: "Medicare Late Enrollment Penalties: How to Avoid Them in 2026"
 seoTitle: "Medicare Late Enrollment Penalties 2026 | LearnMedicare"
 description: "How Medicare's Part B and Part D late enrollment penalties are calculated, when they don't apply, and how to dispute one if you think it's wrong."
 date: 2026-07-08
+dateModified: 2026-11-18
 tags: [enrollment, penalties, part-b, part-d]
 excerpt: "Missing your Medicare enrollment window can mean a permanent premium increase. Here's exactly how the Part B and Part D penalties are calculated."
 faqs:
@@ -11,7 +12,7 @@ faqs:
   - question: "How is the Part D late enrollment penalty calculated?"
     answer: "Roughly 1% of the national base beneficiary premium for each full month you went without creditable prescription drug coverage after your Initial Enrollment Period ended, rounded to the nearest 10 cents. It's added to your monthly Part D premium for as long as you have Part D coverage."
   - question: "When does the Part B penalty not apply?"
-    answer: "If you had qualifying coverage through a current employer (generally one with 20+ employees) or your spouse's employer, and you enroll in Part B within 8 months of that coverage ending, you generally won't face a penalty. Veterans with VA health benefits should check their specific circumstances, as the rules can be more nuanced."
+    answer: "If you had qualifying group health coverage based on current employment and enroll in Part B during the applicable Special Enrollment Period, you generally won't face a Part B late enrollment penalty. VA health coverage is not current-employment group health coverage for the Part B Special Enrollment Period, but VA prescription drug coverage is creditable for Part D. Check the rules for the coverage type involved."
   - question: "Can I dispute a late enrollment penalty?"
     answer: "Yes. If you believe a penalty was calculated incorrectly, or you had creditable coverage that wasn't properly documented, you can request a reconsideration through Social Security (for Part B) or your Part D plan (for Part D), providing documentation of your prior coverage."
 ---
@@ -30,7 +31,7 @@ This penalty is calculated based on the standard Part B premium in effect at the
 
 The Part D penalty works differently. If you go **63 or more continuous days** without creditable prescription drug coverage after your Initial Enrollment Period ends, you can face a penalty calculated as roughly **1% of the national base beneficiary premium for each full month** you went without that coverage, rounded to the nearest 10 cents. Like the Part B penalty, it's added to your monthly Part D premium for as long as you have Part D coverage — not a one-time charge.
 
-"Creditable coverage" means drug coverage that's expected to pay, on average, at least as much as Medicare's standard Part D coverage — this could be coverage through a current employer, for instance, not just a Medicare-specific plan.
+"Creditable coverage" means drug coverage that's expected to pay, on average, at least as much as Medicare's standard Part D coverage. It can include prescription drug coverage through an employer, TRICARE, or the Department of Veterans Affairs (VA). VA drug coverage can protect against the Part D late enrollment penalty, but VA health coverage does not count as current-employment group health coverage for the Part B Special Enrollment Period. See [Medicare's creditable drug coverage guidance](https://www.medicare.gov/health-drug-plans/part-d/basics/creditable-coverage) and [SSA's Part B employer coverage guidance](https://www.ssa.gov/faqs/en/questions/KA-02983.html).
 
 ## How to Calculate Your Potential Penalty
 
@@ -44,7 +45,7 @@ A few common situations where you can delay enrollment without triggering a pena
 
 - **Qualifying employer coverage.** If you or a spouse have coverage through a current employer with 20 or more employees, you can generally delay Part B without penalty, as long as you enroll within 8 months after that employer coverage ends (this is a Special Enrollment Period, distinct from your Initial Enrollment Period).
 - **Creditable drug coverage.** If your employer or other coverage counts as creditable for Part D purposes, you can delay Part D enrollment without a penalty, as long as you enroll within 63 days of that coverage ending.
-- **VA health benefits.** Veterans with VA health coverage should check their specific situation carefully — VA coverage doesn't automatically count as creditable coverage for Medicare purposes in every case, so this is worth confirming directly rather than assuming.
+- **VA health benefits.** VA prescription drug coverage is creditable for Part D, so keep the annual creditable-coverage notice. VA coverage does not qualify as employer group health coverage for the Part B Special Enrollment Period. If you have both questions, confirm Part B timing with Social Security and Part D status with your VA notice or Medicare.
 
 If you're still working and unsure whether your employer coverage qualifies, see our full breakdown of [how Medicare interacts with employer coverage](/working-at-65/) before making a decision either way.
 
@@ -57,6 +58,8 @@ If you believe a late enrollment penalty was calculated incorrectly — for inst
 Because both penalties are permanent additions to your premium — not one-time fees — even a relatively short enrollment gap can add up to real money over the years you have Medicare coverage. This is exactly why enrollment timing gets its own dedicated attention in our [Top 7 Medicare Mistakes](/medicare-mistakes/) guide, and why understanding your Initial Enrollment Period and Special Enrollment Period options in our [full enrollment guide](/enrollment/) is worth doing before you need it, not after.
 
 For the current 2026 premium figures these penalty calculations are based on, see our [complete cost breakdown](/medicare-costs-2026/).
+
+The examples in this guide use 2026 figures. CMS set the 2027 Part D national base beneficiary premium at $41.33; the dollar amount of a Part D penalty can therefore change with the annual base premium even when the uncovered-month count does not. See [Medicare's current penalty calculation](https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties) and [CMS's 2027 premium notice](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles).
 
 ## Not Sure Where You Stand?
 

@@ -23,7 +23,7 @@ If you're enrolled in a Medicare Advantage or Part D plan, one piece of mail mat
 
 ## What the ANOC Actually Is
 
-The ANOC is a summary document, not the full rulebook for your plan. Your Medicare Advantage or Part D plan is required to mail it by September 30 each year, before [AEP 2026](/blog/aep-2026-guide/), which runs October 15 through December 7. It lays out, side by side, what your plan's premium, deductible, copays, covered drugs, and network look like this year versus what they'll look like starting January 1, 2027, at the start of Plan Year 2027.
+The ANOC is a summary document, not the full rulebook for your plan. Your Medicare Advantage or Part D plan is required to mail it by September 30 each year, before [AEP 2026](/blog/aep-2026-guide/), which runs October 15 through December 7. It lays out, side by side, what your plan's premium, deductible, copays, covered drugs, and network look like this year versus what they'll look like starting January 1, 2027, at the start of Plan Year 2027. Medicare explains the annual notice and when plans send it at [Upcoming plan changes](https://www.medicare.gov/basics/forms-publications-mailings/mailings/costs-and-coverage/upcoming-plan-changes).
 
 It's different from your plan's Evidence of Coverage (EOC), which is a much longer document spelling out every detail of your benefits. Think of the ANOC as the highlight reel and the EOC as the full transcript. For most people, the ANOC alone is enough to spot whether something meaningful is changing. You'd only need to dig into the EOC if the ANOC flags a change you want to understand in more depth.
 
