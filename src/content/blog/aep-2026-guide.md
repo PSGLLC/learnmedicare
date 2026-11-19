@@ -21,6 +21,8 @@ faqs:
 
 Every fall, Medicare beneficiaries get one guaranteed opportunity to review and change their coverage without a qualifying life event: the Annual Enrollment Period, or AEP. For AEP 2026, that window runs **October 15 through December 7, 2026**, with any changes taking effect **January 1, 2027** — what's often called Plan Year 2027 coverage.
 
+See [Medicare.gov's current Open Enrollment guidance](https://www.medicare.gov/health-drug-plans/open-enrollment) for the official dates, permitted plan changes, and effective date.
+
 If you're already enrolled in Medicare, understanding how to use this window well can mean the difference between a plan that quietly cost you more than it should have and one that actually fits your needs, doctors, and prescriptions for the year ahead.
 
 ## What AEP Actually Is

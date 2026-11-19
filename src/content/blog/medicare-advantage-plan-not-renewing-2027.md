@@ -31,7 +31,7 @@ Carriers make this decision for business reasons: low enrollment in a county, ne
 
 ## Your Deadlines and Options Right Now
 
-Because AEP 2026 is open (through December 7, 2026), you already have a built-in window to act. Here's what's available to you:
+Because AEP 2026 is open (through December 7, 2026), you already have a built-in window to act. Here's what's available to you: For non-renewal and plan-change timing, check [Medicare’s SEP rules](https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods); the notice from your plan controls your specific case.
 
 - **Switch to a different Medicare Advantage plan.** Other carriers may still offer Medicare Advantage coverage in your county. Our [guide to comparing Medicare Advantage plans](/blog/compare-medicare-advantage-plans-aep/) walks through how to check that your doctors and prescriptions are covered before you choose.
 - **Move to Original Medicare and add a standalone Part D plan.** This keeps you on traditional Medicare, with the flexibility to see any provider who accepts Medicare, plus separate drug coverage.

@@ -3,7 +3,7 @@ title: "7 Ways to Lower Your Medicare Costs in 2026"
 seoTitle: "7 Ways to Lower Your Medicare Costs 2026 | LearnMedicare"
 description: "Practical, real ways to cut your Medicare spending in 2026 — from Medicare Savings Programs to Extra Help to picking the right plan type for your budget."
 date: 2026-07-30
-dateModified: 2026-07-30
+dateModified: 2026-11-18
 tags: [costs, savings, part-d, medigap, medicare-advantage]
 excerpt: "Medicare isn't free, but it doesn't have to break your budget either. Here are seven real ways to lower what you pay in 2026."
 faqs:
@@ -18,6 +18,8 @@ faqs:
   - question: "Is the $35 insulin cap available on every Medicare plan?"
     answer: "Yes. The $35 monthly cap on covered insulin applies across Original Medicare with Part D and Medicare Advantage plans that include drug coverage — it's a standard Medicare rule, not something specific to certain plans."
 ---
+
+> **Coverage-year update (November 18, 2026):** The figures and examples below describe **2026 coverage**. For 2027, CMS lists a standard Part B premium of $209.40 and annual deductible of $292; Medicare lists a $2,400 Part D out-of-pocket limit and a maximum standard Part D deductible of $700. See [CMS’s 2027 cost announcement](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles) and [Medicare’s Part D cost details](https://www.medicare.gov/health-drug-plans/part-d/basics/costs). Plan premiums and other costs vary.
 
 Medicare covers a lot, but it isn't free — premiums, deductibles, and coinsurance add up, and for some people those costs land at an awkward time, right as income from work is ending. The good news is that Medicare has more built-in ways to lower your costs than most people realize. Some are automatic once you know they exist; others require an application. Here are seven real, current ways to reduce what you pay for Medicare in 2026.
 
