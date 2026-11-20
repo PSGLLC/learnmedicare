@@ -10,6 +10,13 @@ test('calculators no longer label old amounts as 2026 or use placeholder IRMAA t
   assert.ok(html.includes('$283'));
   assert.ok(html.includes('CMS 2026 brackets'));
   assert.ok(html.includes('lived apart all year'));
+  assert.ok(html.includes('2027 — $209.40 standard premium'));
+  assert.ok(html.includes('2026 — $202.90 standard premium'));
+  assert.ok(html.includes('2027 — $41.33 national base premium'));
+  assert.ok(html.includes('2026 — $38.99 national base premium'));
+  assert.ok(html.includes('rounds the resulting monthly premium to the nearest $0.10'));
+  assert.ok(html.includes('nearest $0.10'));
+  assert.ok(html.includes('2026-11-19'));
   assert.doesNotMatch(html, /\$257|two-bracket structure|illustrative placeholders/);
 });
 
