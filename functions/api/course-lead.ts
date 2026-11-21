@@ -5,7 +5,6 @@
 // fields collected on the /course page's lead form.
 
 import { checkDisqualification, createDisqualifiedAgentContact, isValidOccupation, flagDomainSignalByEmail, isGateDisabled } from "./_shared/agentDisqualification";
-import { checkVisitorTargeting } from "./_shared/visitorTargeting";
 
 interface Env {
   GHL_GUIDE_WEBHOOK_URL: string;
@@ -132,11 +131,6 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // (CF-IPRegion is best-effort, VPNs can mismatch); current mode excludes
   // the lead from delivery without blocking page access or erroring to the
   // visitor.
-  const targeting = checkVisitorTargeting(payload.detected_state);
-  if (targeting.shouldExcludeFromLeadCapture) {
-    return json({ ok: true, excluded: true });
-  }
-
   if (!env.GHL_GUIDE_WEBHOOK_URL) {
     return json({ ok: false, error: "Lead delivery is not configured yet." }, 500);
   }
