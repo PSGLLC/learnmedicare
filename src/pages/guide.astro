@@ -314,6 +314,7 @@ const jsonLd = [
   </section>
 
   <script>
+    import { assertLeadResponse } from '../lib/leadResponse';
     const form = document.getElementById('guide-lead-form') as HTMLFormElement | null;
     const errorEl = document.getElementById('guide-form-error');
     const successEl = document.getElementById('guide-form-success');
@@ -363,6 +364,7 @@ const jsonLd = [
         const data = await res.json().catch(() => ({ ok: false }));
 
         if (res.ok && data.ok) {
+          assertLeadResponse(res.ok, data);
           (window as any).fbq?.('track', 'Lead', { content_name: 'guide_page' });
           form.hidden = true;
           if (successEl) {

@@ -282,6 +282,7 @@ const jsonLd = [
   </section>
 
   <script>
+    import { assertLeadResponse } from '../lib/leadResponse';
     const form = document.getElementById('lead-form') as HTMLFormElement | null;
     const errorEl = document.getElementById('lead-form-error');
     const successEl = document.getElementById('lead-form-success');
@@ -331,6 +332,7 @@ const jsonLd = [
         const data = await res.json().catch(() => ({ ok: false }));
 
         if (res.ok && data.ok) {
+          assertLeadResponse(res.ok, data);
           form.hidden = true;
           if (data.disqualified) {
             const redirectEl = document.getElementById('lead-form-redirect');

@@ -85,6 +85,7 @@ const jsonLd = [
   </section>
 
   <script>
+    import { assertLeadResponse } from '../lib/leadResponse';
     const form = document.getElementById('faq-lead-form') as HTMLFormElement | null;
     const errorEl = document.getElementById('faq-form-error');
     const successEl = document.getElementById('faq-form-success');
@@ -119,6 +120,7 @@ const jsonLd = [
         const data = await res.json().catch(() => ({ ok: false }));
 
         if (res.ok && data.ok) {
+          assertLeadResponse(res.ok, data);
           (window as any).fbq?.('track', 'Lead', { content_name: 'faq_page' });
           form.hidden = true;
           if (successEl) successEl.hidden = false;
