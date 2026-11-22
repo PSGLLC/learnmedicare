@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/render-medicare-guide.mjs && node scripts/render-guide-review-text.mjs",
     "build": "astro build && pagefind --site dist --output-path dist/pagefind",
     "postbuild": "node scripts/submit-indexnow.mjs",
     "preview": "astro preview",
