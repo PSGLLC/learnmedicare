@@ -19,13 +19,13 @@ Cloudflare Pages exposes a write-only encrypted `GHL_GUIDE_WEBHOOK_URL` secret s
 
 ## Proposed dedicated GHL workflow
 
-Create **LearnMedicare FAQ One-Time Guide Fulfillment** in the Learn Medicare/Price Services Group location. Its dedicated inbound webhook receives only FAQ submissions. Conditions before any email action:
+Create **LearnMedicare FAQ One-Time Guide Fulfillment** in the Learn Medicare/Price Services Group location. Its dedicated inbound webhook receives only FAQ submissions. The website's D1 ledger claims the request ID before it sends one webhook call; GHL does not need direct D1 access. Conditions before any email action:
 
 - `requestType` exactly `one-time-educational-guide`;
 - `source` exactly `learnmedicare-faq-page`;
 - `pagePath` exactly `/faq/`;
 - valid email present; honeypot empty;
-- request ID has not already completed in the site-side ledger.
+- a request ID is present (site-side D1 is the authoritative duplicate guard; do not create a GHL action that tries to query D1).
 
 Actions: create/update the contact with first name and email; send one fulfillment email below. Do not add `learnmedicare-lead` or `email-drip-day1`; do not add SMS, calls, opportunity creation, or unrelated assignment actions. Do not infer marketing consent from the guide request. Review any location-wide workflows triggered by contact creation before activation; their exact behavior and recipients must be inspected in GHL first.
 
