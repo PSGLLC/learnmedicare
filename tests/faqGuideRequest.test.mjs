@@ -149,7 +149,7 @@ test('FAQ form copy does not promise delivery or imply marketing consent', () =>
 });
 
 test('2027 guide separates announcement/effective dates and cites verified official figures', () => {
-  const guide = readFileSync(new URL('../docs/guide-delivery/2027-turning-65-guide.md', import.meta.url), 'utf8');
+  const guide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
   for (const text of [
     'November 17, 2026', 'January 1, 2027', '$1,776', '$444', '$888', '$222',
     '$328', '$597', '$209.40', '$292', '$700', '$2,400', '$41.33',
@@ -163,7 +163,23 @@ test('2027 guide separates announcement/effective dates and cites verified offic
 test('new review PDF is readable and the historical 2026 asset remains byte-for-byte unchanged', () => {
   const oldPdf = readFileSync(new URL('../public/docs/T65-Medicare-Guide-2026.pdf', import.meta.url));
   const draftPdf = readFileSync(new URL('../public/docs/T65-Medicare-Guide-2027.pdf', import.meta.url));
+  const currentPdf = readFileSync(new URL('../public/docs/T65-Medicare-Guide.pdf', import.meta.url));
   assert.equal(createHash('sha256').update(oldPdf).digest('hex'), 'e281bf8637cccbc3d390bdb579856b7f33c7b2c54c2cc034b27d61a82670a83a');
   assert.equal(draftPdf.subarray(0, 5).toString(), '%PDF-');
   assert.ok(draftPdf.byteLength > 10000);
+  assert.equal(draftPdf.toString('latin1').match(/\/Type \/Page\b/g)?.length, 6, 'review guide remains six pages');
+  assert.deepEqual(currentPdf, draftPdf, 'yearless current PDF serves the reviewed 2027 file byte-for-byte');
+  assert.equal(createHash('sha256').update(currentPdf).digest('hex'), createHash('sha256').update(draftPdf).digest('hex'));
+});
+
+test('yearless online guide exposes working source links and the current printable PDF', () => {
+  const guide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
+  assert.match(guide, /path: \/medicare-at-65-guide\//);
+  assert.match(guide, /datePublished: 2026-11-22[\s\S]*dateModified: 2026-11-22/);
+  assert.match(guide, /\[Download the six-page printable 2027 guide \(PDF\)\]\(\/docs\/T65-Medicare-Guide\.pdf\)/);
+  assert.match(guide, /\[CMS: 2027 Medicare Parts A and B premiums and deductibles/);
+  assert.match(guide, /\[Medicare\.gov: Part D costs/);
+  assert.match(guide, /\[SSA: Medicare IRMAA/);
+  assert.match(guide, /\[TRICARE: Medicare and TRICARE For Life/);
+  assert.match(readFileSync(new URL('../docs/guide-delivery/2027-turning-65-guide.txt', import.meta.url), 'utf8'), /https:\/\/www\.cms\.gov\/newsroom\/fact-sheets\/2027-medicare-parts-b-premiums-deductibles/);
 });

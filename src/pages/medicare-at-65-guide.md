@@ -1,3 +1,12 @@
+---
+layout: ../layouts/MedicareGuideLayout.astro
+title: "Medicare at 65: A practical 2027 guide | Learn Medicare"
+description: "A source-linked, plain-language guide to Medicare enrollment at 65 and verified federal Medicare costs for 2027."
+path: /medicare-at-65-guide/
+datePublished: 2026-11-22
+dateModified: 2026-11-22
+---
+
 # Medicare at 65: a practical 2027 guide
 
 **Prepared for editorial review: November 22, 2026**
@@ -5,6 +14,9 @@
 **Publisher:** Learn Medicare, an educational resource from Price Services Group, LLC.
 
 This guide is general education, not a coverage decision or individualized insurance recommendation. Medicare eligibility and enrollment depend on your circumstances. Confirm plan-specific benefits and costs in the plan documents and Medicare Plan Finder.
+
+[Download the six-page printable 2027 guide (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address serves the current edition; the dated 2027 and historical 2026 files remain archived separately.
+
 
 ## Start with the four parts
 

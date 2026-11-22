@@ -1,0 +1,123 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const title = frontmatter.title;
+const description = frontmatter.description;
+const path = frontmatter.path;
+const datePublished = frontmatter.datePublished;
+const dateModified = frontmatter.dateModified;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  datePublished,
+  dateModified,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Price Services Group, LLC',
+    url: 'https://priceservicesgroup.com/',
+  },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  breadcrumbs={[{ name: 'Medicare at 65 guide', url: path }]}
+  jsonLd={jsonLd}
+>
+  <article class="medicare-guide-content">
+    <slot />
+  </article>
+</BaseLayout>
+
+<style>
+  .medicare-guide-content {
+    width: min(100% - 2rem, 52rem);
+    margin-inline: auto;
+    padding-block: clamp(1.5rem, 4vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .medicare-guide-content :global(h1) {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.12;
+  }
+
+  .medicare-guide-content :global(h2),
+  .medicare-guide-content :global(h3) {
+    line-height: 1.25;
+    scroll-margin-top: 6rem;
+  }
+
+  .medicare-guide-content :global(p),
+  .medicare-guide-content :global(li) {
+    line-height: 1.7;
+  }
+
+  .medicare-guide-content :global(a) {
+    text-underline-offset: 0.18em;
+    overflow-wrap: anywhere;
+  }
+
+  .medicare-guide-content :global(a:focus-visible) {
+    outline: 3px solid var(--fill-teal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .medicare-guide-content :global(table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .medicare-guide-content :global(th),
+  .medicare-guide-content :global(td) {
+    padding: 0.65rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid var(--border);
+  }
+
+  .medicare-guide-content :global(th) {
+    background: var(--bg-secondary);
+  }
+
+  @media print {
+    @page { size: letter; margin: 0.58in; }
+    .medicare-guide-content {
+      width: auto;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      color: #111;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+    .medicare-guide-content :global(h1) { font-size: 25pt; }
+    .medicare-guide-content :global(h2) { font-size: 15pt; break-after: avoid; }
+    .medicare-guide-content :global(h3) { font-size: 11pt; break-after: avoid; }
+    .medicare-guide-content :global(p),
+    .medicare-guide-content :global(li) { line-height: 1.38; }
+    .medicare-guide-content :global(table) {
+      display: table;
+      overflow: visible;
+      width: 100%;
+      font-size: 8pt;
+      break-inside: avoid;
+    }
+    .medicare-guide-content :global(th),
+    .medicare-guide-content :global(td) { padding: 0.3rem; }
+    :global(.nav-wrap), :global(.site-footer), :global(.sticky-guide-cta),
+    :global(.skip-link) { display: none !important; }
+    :global(body), :global(main) { background: #fff !important; color: #111 !important; }
+    :global(a) { color: #111 !important; }
+  }
+</style>

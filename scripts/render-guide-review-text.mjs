@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const input = 'docs/guide-delivery/2027-turning-65-guide.md';
+const input = 'src/pages/medicare-at-65-guide.md';
 const output = 'docs/guide-delivery/2027-turning-65-guide.txt';
-const markdown = readFileSync(input, 'utf8');
+const markdown = readFileSync(input, 'utf8').replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
 const sourceLines = markdown.split(/\r?\n/);
 const lines = [];
 let tableHeaders = [];
