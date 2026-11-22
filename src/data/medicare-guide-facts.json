@@ -1,0 +1,84 @@
+{
+  "contentVersion": "2027.1",
+  "coverageYear": 2027,
+  "enrollmentYear": 2026,
+  "reviewDate": "2026-11-22",
+  "announcementDate": "2026-11-17",
+  "effectiveDate": "2027-01-01",
+  "irmaaTaxYear": 2025,
+  "pdfCoverageYear": 2027,
+  "pdfPageCount": 6,
+  "amounts": {
+    "partA": {
+      "inpatientDeductible": 1776,
+      "hospitalCoinsuranceDays61To90": 444,
+      "lifetimeReserveDay": 888,
+      "skilledNursingDays21To100": 222,
+      "monthlyPremium30To39Quarters": 328,
+      "monthlyPremiumUnder30Quarters": 597
+    },
+    "partB": {
+      "standardMonthlyPremium": 209.4,
+      "annualDeductible": 292
+    },
+    "partD": {
+      "definedStandardDeductibleMaximum": 700,
+      "annualOutOfPocketThreshold": 2400,
+      "nationalBaseBeneficiaryPremium": 41.33
+    },
+    "irmaa": {
+      "individualAndJointRows": [
+        ["Individual ≤$112,000; joint ≤$224,000", "$209.40", "$0"],
+        ["Individual >$112,000–$141,000; joint >$224,000–$282,000", "$293.10", "$15.40"],
+        ["Individual >$141,000–$177,000; joint >$282,000–$354,000", "$418.80", "$39.70"],
+        ["Individual >$177,000–$212,000; joint >$354,000–$424,000", "$544.40", "$64.00"],
+        ["Individual >$212,000–<$500,000; joint >$424,000–<$750,000", "$670.00", "$88.30"],
+        ["Individual ≥$500,000; joint ≥$750,000", "$711.80", "$96.40"]
+      ],
+      "marriedFilingSeparatelyRows": [
+        ["≤$112,000", "$209.40", "$0"],
+        [">$112,000 and <$388,000", "$670.00", "$88.30"],
+        ["≥$388,000", "$711.80", "$96.40"]
+      ]
+    }
+  },
+  "sources": {
+    "cmsPartAAndB": {
+      "url": "https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles",
+      "publishedDate": "2026-11-17",
+      "coverageYear": 2027
+    },
+    "cmsPartDParameters": {
+      "url": "https://www.cms.gov/files/document/2027-announcement.pdf",
+      "publishedDate": "2026-04-06",
+      "coverageYear": 2027
+    },
+    "cmsPartDBasePremium": {
+      "url": "https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information",
+      "publishedDate": "2026-07-28",
+      "coverageYear": 2027
+    },
+    "ssaIrmaa": {
+      "url": "https://secure.ssa.gov/POMS.NSF/LNX/0601101010",
+      "publishedDate": null,
+      "coverageYear": 2027,
+      "taxYear": 2025
+    },
+    "medicareEnrollment": {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start",
+      "publishedDate": null
+    },
+    "medicarePartD": {
+      "url": "https://www.medicare.gov/health-drug-plans/part-d/basics/costs",
+      "publishedDate": null,
+      "coverageYear": 2027
+    }
+  },
+  "design": {
+    "canvaDesignId": null,
+    "canvaDesignUrl": null,
+    "exportedPdfSha256": null,
+    "pdfExportedOn": null,
+    "reviewStatus": "editorial design selection pending"
+  }
+}

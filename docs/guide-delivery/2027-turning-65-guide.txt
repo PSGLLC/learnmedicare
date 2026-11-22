@@ -16,8 +16,8 @@ benefits and costs in the plan documents and Medicare Plan Finder.
 
 [Download the six-page printable 2027 guide
 (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address
-serves the current edition; the dated 2027 and historical 2026 files
-remain archived separately.
+serves the current edition; dated editions remain archived
+separately.
 
 START WITH THE FOUR PARTS
 =========================
@@ -214,12 +214,22 @@ additional IRMAA on top of the plan's own premium.
   Part D IRMAA: $96.40
 
 For married people filing separately who lived with a spouse during
-the year, CMS uses separate thresholds: up to $112,000, standard
-Part B and no Part D IRMAA; above $112,000 and below $388,000, $670
-total Part B and $88.30 Part D IRMAA; $388,000 or more, $711.80
-total Part B and $96.40 Part D IRMAA. Confirm your category and
-amount with the CMS/SSA notice; these figures do not replace that
-determination.
+the year, CMS uses separate thresholds:
+
+* Income: <=$112,000
+  Part B total: $209.40
+  Part D IRMAA: $0
+
+* Income: >$112,000 and <$388,000
+  Part B total: $670.00
+  Part D IRMAA: $88.30
+
+* Income: >=$388,000
+  Part B total: $711.80
+  Part D IRMAA: $96.40
+
+Confirm your category and amount with the CMS/SSA notice; these
+figures do not replace that determination.
 
 LATE ENROLLMENT PENALTIES
 =========================
@@ -232,10 +242,11 @@ Period). The increase usually lasts as long as you have Part B.
 beneficiary premium for each full month without Part D or other
 creditable drug coverage after the eligible period. For 2027, CMS
 set that base at $41.33 (CMS's 2027 base-premium release
-(https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information));
-the penalty is rounded to the nearest $0.10 and generally continues
-while you have Part D. Extra Help and other exceptions can apply.
-This is not 1% of your individual plan premium.
+(https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information);
+published July 28, 2026); the penalty is rounded to the nearest
+$0.10 and generally continues while you have Part D. Extra Help and
+other exceptions can apply. This is not 1% of your individual plan
+premium.
 * Part A: If you must buy Part A and delay enrollment, the premium
 may increase 10%; the higher premium generally lasts for twice the
 number of years you delayed. Exceptions and eligibility details
@@ -310,9 +321,10 @@ OFFICIAL SOURCES
 * CMS: 2027 Medicare Parts A and B premiums and deductibles
 (November 17, 2026)
 (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
-* CMS: 2027 Part D benefit parameters
+* CMS: 2027 Part D benefit parameters (published April 6, 2026)
 (https://www.cms.gov/files/document/2027-announcement.pdf)
-* CMS: 2027 Part D base beneficiary premium ($41.33; July 28, 2026)
+* CMS: 2027 Part D base beneficiary premium ($41.33; published July
+28, 2026)
 (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 * Medicare.gov: Part D costs
 (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
