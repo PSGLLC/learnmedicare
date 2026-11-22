@@ -38,7 +38,7 @@ Actions: create/update the contact with first name and email; send one fulfillme
 
 > Hello {{contact.first_name}},
 >
-> Here is the 2027 Medicare at 65 guide you requested: [Open the guide](https://learnmedicare.org/medicare-at-65-guide/). The page includes source links and a download link for the six-page printable PDF: https://learnmedicare.org/docs/T65-Medicare-Guide.pdf.
+> Here is the 2027 Medicare at 65 guide you requested. [Read the source-linked guide online](https://learnmedicare.org/medicare-at-65-guide/) or [download the six-page printable PDF](https://learnmedicare.org/docs/T65-Medicare-Guide.pdf).
 >
 > The guide separates 2027 amounts from enrollment dates and explains where to confirm plan-specific details with Medicare, CMS, Social Security, VA, or TRICARE. The 2027 federal amounts take effect January 1, 2027; CMS announced them November 17, 2026.
 >
