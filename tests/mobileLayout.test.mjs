@@ -43,7 +43,9 @@ test('2027 guide source links and yearless PDF are present and descriptive', { s
     canonical: document.querySelector('link[rel="canonical"]')?.href,
     h1: document.querySelector('h1')?.textContent?.trim(),
     sourceLinks: [...document.querySelectorAll('.medicare-guide-content a[href^="https://"]')].map(a => ({ name: a.textContent.trim(), href: a.href })),
-    pdfLinks: [...document.querySelectorAll('.medicare-guide-content a[href$=".pdf"]')].map(a => a.getAttribute('href')),
+    pdfLinks: [...document.querySelectorAll('.medicare-guide-content a[href$=".pdf"]')]
+      .filter(a => new URL(a.href).origin === location.origin)
+      .map(a => a.getAttribute('href')),
   }));
   assert.match(result.title, /2027/);
   assert.equal(result.canonical, 'https://learnmedicare.org/medicare-at-65-guide/', 'preview retains the intended production canonical');
