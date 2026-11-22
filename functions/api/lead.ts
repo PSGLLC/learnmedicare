@@ -139,6 +139,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
   }
 
+  const submittedAt = new Date().toISOString();
   const payload = {
     first_name,
     last_name,
@@ -147,6 +148,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     tag_base: 'learnmedicare-lead',
     tag_status,
     source: 'learnmedicare',
+    // Preserve the form's actual source page and evidence of the required
+    // contact-consent checkbox in the GHL webhook payload.
+    pagePath: String(body.pagePath ?? '/'),
+    tcpaConsent: true,
+    tcpaConsentTimestamp: submittedAt,
+    submittedAt,
     // Passive geolocation via Cloudflare's edge header — no third-party API.
     detected_state: request.headers.get('CF-IPRegion') ?? (request as any).cf?.regionCode ?? '',
   };
