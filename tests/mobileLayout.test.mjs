@@ -46,7 +46,7 @@ test('2027 guide source links and yearless PDF are present and descriptive', { s
     pdfLinks: [...document.querySelectorAll('.medicare-guide-content a[href$=".pdf"]')].map(a => a.getAttribute('href')),
   }));
   assert.match(result.title, /2027/);
-  assert.equal(result.canonical, `${env.origin}/medicare-at-65-guide/`);
+  assert.equal(result.canonical, 'https://learnmedicare.org/medicare-at-65-guide/', 'preview retains the intended production canonical');
   assert.match(result.h1, /2027/);
   assert.ok(result.sourceLinks.length >= 10, 'official references render as clickable source links');
   assert.ok(result.sourceLinks.every(({ href }) => /^https:\/\/(www\.)?(cms\.gov|medicare\.gov|secure\.ssa\.gov|www\.va\.gov|www\.tricare\.mil)/.test(href)), 'guide citations point to primary sources');
