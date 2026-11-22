@@ -121,6 +121,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Note: no CF-IPRegion/detected_state field here — that signal isn't
   // wired up anywhere else on this site (checked functions/api/*.ts before
   // adding this endpoint), so it isn't fabricated here either.
+  const submittedAt = new Date().toISOString();
   const payload = {
     first_name,
     email,
@@ -128,6 +129,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     tag_status: 'email-course-enrolled',
     source: 'learnmedicare-email-course',
     pagePath: String(body.pagePath ?? '/course'),
+    tcpaConsent: true,
+    tcpaConsentTimestamp: submittedAt,
+    submittedAt,
     // Passive geolocation via Cloudflare's edge header — no third-party API.
     detected_state: request.headers.get('CF-IPRegion') ?? (request as any).cf?.regionCode ?? '',
   };
