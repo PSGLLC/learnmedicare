@@ -2,10 +2,12 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import { renderMedicareGuideTemplate } from '../src/lib/medicareGuideFacts.mjs';
 
 const facts = JSON.parse(readFileSync(new URL('../src/data/medicare-guide-facts.json', import.meta.url), 'utf8'));
 const guidePath = new URL('../src/pages/medicare-at-65-guide.md', import.meta.url);
 const printSourcePath = new URL('../docs/guide-delivery/2027-turning-65-guide.txt', import.meta.url);
+const template = readFileSync(new URL('../docs/guide-delivery/medicare-at-65-guide.template.md', import.meta.url), 'utf8');
 
 test('online guide and Canva review source are generated from the same verified annual facts', () => {
   execFileSync(process.execPath, ['scripts/render-medicare-guide.mjs'], { cwd: new URL('..', import.meta.url) });
@@ -14,6 +16,7 @@ test('online guide and Canva review source are generated from the same verified 
   const printSource = readFileSync(printSourcePath, 'utf8');
   const combined = `${guide}\n${printSource}`;
 
+  assert.equal(guide, renderMedicareGuideTemplate(template, facts));
   assert.match(guide, new RegExp(`dateModified: ${facts.reviewDate}`));
   assert.match(guide, /datePublished: 2026-11-22/, 'first-publication metadata is not changed by the annual-facts renderer');
   assert.match(guide, new RegExp(`During the ${facts.enrollmentYear} AEP[\\s\\S]*January 1, ${facts.coverageYear}`));
@@ -36,9 +39,19 @@ test('online guide and Canva review source are generated from the same verified 
 });
 
 test('PDF edition mismatch is disclosed instead of presenting an older file as current', () => {
-  const source = readFileSync(new URL('../scripts/render-medicare-guide.mjs', import.meta.url), 'utf8');
-  assert.match(source, /facts\.pdfCoverageYear === facts\.coverageYear/);
-  assert.match(source, /yearless PDF currently contains the \$\{facts\.pdfCoverageYear\} edition, not the \$\{facts\.coverageYear\} guide/);
-  assert.match(source, /matching branded PDF must be reviewed and exported before replacing it/);
+  const fixture = structuredClone(facts);
+  fixture.pdfCoverageYear = facts.coverageYear - 1;
+  fixture.pdfPageCount = 4;
+  const rendered = renderMedicareGuideTemplate(template, fixture);
+  assert.match(rendered, /Download the four-page printable 2026 guide \(PDF\)/);
+  assert.match(rendered, /yearless PDF currently contains the 2026 edition, not the 2027 guide/);
+  assert.match(rendered, /matching branded PDF must be reviewed and exported before replacing it/);
+  assert.doesNotMatch(rendered, /The yearless PDF address serves the current edition/);
+});
+
+test('ambiguous source data fails generation instead of rendering partial annual facts', () => {
+  const fixture = structuredClone(facts);
+  fixture.amounts.irmaa.individualAndJointRows.pop();
+  assert.throws(() => renderMedicareGuideTemplate(template, fixture), /IRMAA rows are incomplete or ambiguous/);
 });
 
