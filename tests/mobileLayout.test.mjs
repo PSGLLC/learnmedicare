@@ -26,7 +26,7 @@ const env = await setup();
 const skip = env.skip;
 test.after(async () => { if (env.close) await env.close(); });
 
-for (const path of ['/', '/guide/', '/agent-resources/', '/blog/', '/calculators/', '/blog/medicare-advantage-vs-medigap/']) for (const w of WIDTHS) {
+for (const path of ['/', '/guide/', '/agent-resources/', '/blog/', '/calculators/', '/blog/medicare-advantage-vs-medigap/', '/medicare-at-65-guide/']) for (const w of WIDTHS) {
   test(`${path} @${w}px: page is not wider than the device`, { skip }, async () => {
     const sw = await env.at(path, w, docWidth);
     assert.ok(sw <= w + 1, `document is ${sw}px wide at ${w}px`);
@@ -36,6 +36,47 @@ for (const path of ['/', '/guide/', '/agent-resources/', '/blog/', '/calculators
     assert.ok(r.scroll <= r.client + 1, `header content is ${r.scroll}px in a ${r.client}px box`);
   });
 }
+
+test('2027 guide source links and yearless PDF are present and descriptive', { skip }, async () => {
+  const result = await env.at('/medicare-at-65-guide/', 1280, () => ({
+    title: document.title,
+    canonical: document.querySelector('link[rel="canonical"]')?.href,
+    h1: document.querySelector('h1')?.textContent?.trim(),
+    sourceLinks: [...document.querySelectorAll('.medicare-guide-content a[href^="https://"]')].map(a => ({ name: a.textContent.trim(), href: a.href })),
+    pdfLinks: [...document.querySelectorAll('.medicare-guide-content a[href$=".pdf"]')]
+      .filter(a => new URL(a.href).origin === location.origin)
+      .map(a => a.getAttribute('href')),
+  }));
+  assert.match(result.title, /2027/);
+  assert.equal(result.canonical, 'https://learnmedicare.org/medicare-at-65-guide/', 'preview retains the intended production canonical');
+  assert.match(result.h1, /2027/);
+  assert.ok(result.sourceLinks.length >= 10, 'official references render as clickable source links');
+  assert.ok(result.sourceLinks.every(({ href }) => /^https:\/\/(www\.)?(cms\.gov|medicare\.gov|secure\.ssa\.gov|www\.va\.gov|www\.tricare\.mil)/.test(href)), 'guide citations point to primary sources');
+  assert.deepEqual(result.pdfLinks, ['/docs/T65-Medicare-Guide.pdf']);
+});
+
+test('2027 guide has readable desktop width and print styling hides site chrome', { skip }, async () => {
+  const desktop = await env.at('/medicare-at-65-guide/', 1440, () => {
+    const article = document.querySelector('.medicare-guide-content').getBoundingClientRect();
+    return { documentWidth: document.documentElement.scrollWidth, viewport: innerWidth, articleWidth: article.width };
+  });
+  assert.ok(desktop.documentWidth <= desktop.viewport + 1);
+  assert.ok(desktop.articleWidth <= 840, `desktop guide is ${desktop.articleWidth}px wide`);
+
+  const printed = await env.at('/medicare-at-65-guide/', 1280, () => ({
+    documentWidth: document.documentElement.scrollWidth,
+    viewport: innerWidth,
+    nav: getComputedStyle(document.querySelector('.nav-wrap')).display,
+    footer: getComputedStyle(document.querySelector('.site-footer')).display,
+    bodyBackground: getComputedStyle(document.body).backgroundColor,
+    tableDisplay: getComputedStyle(document.querySelector('.medicare-guide-content table')).display,
+  }), { mediaType: 'print' });
+  assert.ok(printed.documentWidth <= printed.viewport + 1);
+  assert.equal(printed.nav, 'none');
+  assert.equal(printed.footer, 'none');
+  assert.equal(printed.bodyBackground, 'rgb(255, 255, 255)');
+  assert.equal(printed.tableDisplay, 'table');
+});
 
 for (const w of WIDTHS) {
   test(`/ @${w}px: theme, search and menu buttons are at least 44x44`, { skip }, async () => {
