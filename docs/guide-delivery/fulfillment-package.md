@@ -1,6 +1,6 @@
 # Learn Medicare FAQ guide fulfillment — approval package
 
-**Status:** fulfillment is not enabled. The dedicated production webhook and D1 request ledger are unconfigured. The guide is live and directly accessible; a follow-up page change will state that one-time email requests are unavailable until an owner approves and configures delivery.
+**Status:** fulfillment is not enabled. The dedicated production webhook and D1 request ledger are unconfigured. The guide is live and directly accessible. Draft PR #20 states that one-time email requests are unavailable and links directly to the online guide and PDF; it passed the isolated full suite (176/176, zero failures/skips) and Cloudflare preview. No message is sent and no request form remains active while delivery is unconfigured.
 **Prepared:** 2026-11-22.
 **Website entry point:** `https://learnmedicare.org/faq/` → `POST /api/faq-lead`.
 
@@ -17,7 +17,7 @@
 
 Read-only GHL inspection on 2026-11-23 found the existing `LearnMedicare Guide Request` workflow (`7217513e-3682-432b-808f-4326f2e455be`, inbound trigger `5a235da3-9ffe-4af3-bc5b-b6d07f4035a1`) listed as Published with 5 total and 0 active enrollees. Its builder shows an inbound webhook trigger with no filters and one Create Contact action; it has no email action and is not the proposed one-time delivery workflow. The separate `LearnMedicare Drip Campaign` (`4d0866d5-6ade-4aca-af29-0a9c69270835`) is listed as Published with 0 total/active enrollees; its inspected trigger is Contact Tag added includes `learnmedicare-lead`, not the FAQ-specific `learnmedicare-faq-lead`. That tag condition does not match FAQ requests. The location has many additional workflows, so this inspection does not establish that no other contact-created/updated automation can run. Before activation, inspect all enabled workflows matching those triggers and record their actions, recipients, and re-entry settings. The GHL email-services settings page did not render configuration in the existing session; a verified sender address/reply-to could not be confirmed.
 
-The current production Pages project has secrets named `GHL_GUIDE_WEBHOOK_URL` (shared), `GHL_WEB_LEAD_WEBHOOK_URL`, and `COURSE_PREVIEW_SECRET`; no `GHL_FAQ_GUIDE_WEBHOOK_URL` secret is present. The account's D1 database list contains no Learn Medicare FAQ request ledger. The deployed function therefore fails closed for valid requests rather than forwarding a CRM write. Do not change or reuse the shared secret. The reviewed guide remains directly accessible. A follow-up website change replaces the request form with an explicit unavailable notice and direct online/PDF links until a dedicated endpoint is configured and approved.
+The current production Pages project has secrets named `GHL_GUIDE_WEBHOOK_URL` (shared), `GHL_WEB_LEAD_WEBHOOK_URL`, and `COURSE_PREVIEW_SECRET`; no `GHL_FAQ_GUIDE_WEBHOOK_URL` secret is present. The account's D1 database list contains no Learn Medicare FAQ request ledger. The deployed function therefore fails closed for valid requests rather than forwarding a CRM write. Do not change or reuse the shared secret. PR #20 removes the unavailable request form and states the limitation while keeping the online guide and PDF accessible. Email remains inactive.
 
 ## Proposed dedicated GHL workflow
 
