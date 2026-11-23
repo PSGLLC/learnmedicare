@@ -132,16 +132,19 @@ test('concurrent requests sharing an ID make at most one provider call', async (
   assert.equal(first.status, 200);
 });
 
-test('FAQ form copy does not promise delivery or imply marketing consent', () => {
+test('FAQ keeps the guide directly accessible while one-time email requests are unavailable', () => {
   const source = readFileSync(new URL('../src/pages/faq.astro', import.meta.url), 'utf8');
-  assert.match(source, /accepted for processing/);
-  assert.match(source, /cannot confirm email delivery/);
-  assert.match(source, /does not sign you up for ongoing marketing, calls, or text messages/);
-  assert.match(source, /Request another copy/);
-  assert.match(source, /sessionStorage\.setItem\(requestKey, id\)/);
-  assert.match(source, /requestId,/);
-  assert.match(source, /const DATE_MODIFIED = '2026-11-22'/);
+  assert.match(source, /One-time email requests are currently unavailable/);
+  assert.match(source, /href="\/medicare-at-65-guide\/"/);
+  assert.match(source, /href="\/docs\/T65-Medicare-Guide\.pdf"/);
+  assert.match(source, /const DATE_MODIFIED = '2026-11-23'/);
+  assert.doesNotMatch(source, /id="faq-lead-form"/);
+  assert.doesNotMatch(source, /Your request was accepted for processing/);
   assert.doesNotMatch(source, /Your guide is on its way/);
+  const facts = readFileSync(new URL('../src/data/medicare-guide-facts.json', import.meta.url), 'utf8');
+  assert.match(facts, /"coverageYear": 2027/);
+  const generatedGuide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
+  assert.match(generatedGuide, /path: \/medicare-at-65-guide\//);
   const endpoint = readFileSync(new URL('../functions/api/faq-lead.ts', import.meta.url), 'utf8');
   assert.match(endpoint, /GHL_FAQ_GUIDE_WEBHOOK_URL/);
   assert.doesNotMatch(endpoint, /GHL_GUIDE_WEBHOOK_URL/);
