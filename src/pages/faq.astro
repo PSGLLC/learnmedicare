@@ -7,7 +7,7 @@ import FAQSection from '../components/FAQSection.astro';
 import { authorship } from '../lib/schema';
 
 const DATE_PUBLISHED = '2026-07-23';
-const DATE_MODIFIED = '2026-11-22';
+const DATE_MODIFIED = '2026-11-23';
 
 const faqs = [
   { question: 'What is Medicare?', answer: 'Medicare is the federal health insurance program run by the Centers for Medicare & Medicaid Services (CMS). It primarily covers people age 65 and older, as well as certain younger people with qualifying disabilities or End-Stage Renal Disease (ESRD).' },
@@ -50,147 +50,22 @@ const jsonLd = [
 
   <section class="section-alt lead-section">
     <div class="container lead-inner">
-      <p class="eyebrow">Still Have Questions?</p>
-      <h2>Request the free Medicare guide by email.</h2>
-      <p class="lead-sub">A clear, no-pressure walkthrough of Medicare. This form is for a one-time educational guide request.</p>
-
-      <form id="faq-lead-form" class="lead-form" novalidate>
-        <div class="form-row">
-          <label for="firstName">First Name <span aria-hidden="true">*</span></label>
-          <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
-        </div>
-        <div class="form-row">
-          <label for="email">Email <span aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" autocomplete="email" required />
-        </div>
-        <!-- Honeypot — hidden from real visitors -->
-        <div class="hp-field" aria-hidden="true">
-          <label for="website">Website</label>
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-        </div>
-
-        <button type="submit" class="btn btn-primary form-submit">Request the Free Guide</button>
-        <p id="faq-form-error" class="form-error" role="alert" hidden></p>
-      </form>
-
-      <div id="faq-form-success" class="form-success" hidden>
-        <p>Your request was accepted for processing. This page cannot confirm email delivery. Check your inbox and spam folder; if the guide does not arrive, contact us rather than immediately submitting the same request again.</p>
-        <button type="button" class="btn btn-outline" id="faq-request-another">Request another copy</button>
+      <p class="eyebrow">Free Medicare guide</p>
+      <h2>Read the Medicare at 65 guide</h2>
+      <p class="lead-sub">One-time email requests are currently unavailable. You can read the source-linked guide online or download the printable guide now.</p>
+      <div class="guide-actions">
+        <a class="btn btn-primary" href="/medicare-at-65-guide/">Read the guide online</a>
+        <a class="btn btn-outline" href="/docs/T65-Medicare-Guide.pdf">Download the printable guide (PDF)</a>
       </div>
-
-      <p class="compliance-note">
-        We’ll use your name and email to process this one-time guide request. It does not sign you up for ongoing marketing, calls, or text messages. See our <a href="/privacy/">Privacy Policy</a>.
-      </p>
     </div>
   </section>
-
-  <script>
-    import { assertLeadResponse } from '../lib/leadResponse';
-    const form = document.getElementById('faq-lead-form') as HTMLFormElement | null;
-    const errorEl = document.getElementById('faq-form-error');
-    const successEl = document.getElementById('faq-form-success');
-    const anotherButton = document.getElementById('faq-request-another');
-    const requestKey = 'learnmedicare-faq-guide-request-id';
-    function nextRequestId() {
-      const id = crypto.randomUUID();
-      try { sessionStorage.setItem(requestKey, id); } catch { /* D1 still prevents replays for this page session. */ }
-      return id;
-    }
-    let requestId = '';
-    try {
-      const existingId = sessionStorage.getItem(requestKey);
-      requestId = existingId && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(existingId) ? existingId : nextRequestId();
-    } catch {
-      requestId = crypto.randomUUID();
-    }
-
-    anotherButton?.addEventListener('click', () => {
-      requestId = nextRequestId();
-      if (successEl) successEl.hidden = true;
-      if (form) {
-        form.reset();
-        form.hidden = false;
-        form.querySelector<HTMLInputElement>('#firstName')?.focus();
-      }
-    });
-
-    form?.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      if (errorEl) {
-        errorEl.hidden = true;
-        errorEl.textContent = '';
-      }
-
-      const formData = new FormData(form);
-      const payload = {
-        firstName: String(formData.get('firstName') ?? '').trim(),
-        email: String(formData.get('email') ?? '').trim(),
-        website: String(formData.get('website') ?? ''),
-        pagePath: window.location.pathname,
-        requestId,
-      };
-
-      const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-      }
-
-      try {
-        const res = await fetch('/api/faq-lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json().catch(() => ({ ok: false }));
-
-        if (res.ok && data.ok) {
-          assertLeadResponse(res.ok, data);
-          (window as any).fbq?.('track', 'Lead', { content_name: 'faq_page' });
-          form.hidden = true;
-          if (successEl) {
-            successEl.hidden = false;
-            successEl.setAttribute('tabindex', '-1');
-            successEl.focus();
-          }
-        } else {
-          throw new Error(data.error || 'Something went wrong. Please try again.');
-        }
-      } catch (err) {
-        if (errorEl) {
-          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
-          errorEl.hidden = false;
-        }
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Request the Free Guide';
-        }
-      }
-    });
-  </script>
 </BaseLayout>
 
 <style>
   .lead-section { padding: 4rem 0; }
   .lead-inner { max-width: 520px; margin: 0 auto; text-align: center; }
   .lead-sub { color: var(--text-secondary); margin-bottom: 1.75rem; }
+  .guide-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .guide-actions a { max-width: 100%; text-align: center; }
 
-  .lead-form { text-align: left; }
-  .form-row { margin-bottom: 1rem; }
-  .form-row label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
-  .form-row input {
-    width: 100%;
-    padding: 0.65rem 0.85rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-size: 1rem;
-  }
-  .hp-field { position: absolute; left: -9999px; }
-  .form-submit { width: 100%; margin-top: 0.5rem; }
-  .form-error { color: #c0392b; margin-top: 0.75rem; font-size: 0.9rem; }
-  .form-success p { font-weight: 600; }
-  .compliance-note { color: var(--text-secondary); font-size: 0.8rem; margin-top: 1.25rem; margin-bottom: 0; }
 </style>
