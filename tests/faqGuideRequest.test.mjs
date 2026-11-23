@@ -151,6 +151,32 @@ test('FAQ keeps the guide directly accessible while one-time email requests are 
   assert.doesNotMatch(endpoint, /detected_state/);
 });
 
+test('preview and production FAQ ledgers are separate and use the checked migration directory', () => {
+  const config = JSON.parse(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
+  const preview = config.env.preview.d1_databases.find(binding => binding.binding === 'FAQ_GUIDE_REQUESTS');
+  const production = config.env.production.d1_databases.find(binding => binding.binding === 'FAQ_GUIDE_REQUESTS');
+  const local = config.d1_databases.find(binding => binding.binding === 'FAQ_GUIDE_REQUESTS');
+
+  assert.ok(preview, 'preview deployment has the FAQ request ledger binding');
+  assert.ok(production, 'production deployment has the FAQ request ledger binding');
+  assert.ok(local, 'local Pages development uses the isolated preview ledger');
+  assert.equal(preview.database_name, 'learnmedicare-faq-preview');
+  assert.equal(local.database_id, preview.database_id);
+  assert.equal(production.database_name, 'learnmedicare-faq-production');
+  assert.notEqual(production.database_id, preview.database_id);
+  assert.equal(preview.migrations_dir, 'migrations');
+  assert.equal(production.migrations_dir, 'migrations');
+
+  const migration = readFileSync(new URL('../migrations/0001_faq_guide_requests.sql', import.meta.url), 'utf8');
+  const tableDefinition = migration.match(/CREATE TABLE IF NOT EXISTS faq_guide_requests \([\s\S]*?\);/)?.[0];
+  assert.ok(tableDefinition, 'request ledger table is declared');
+  assert.match(tableDefinition, /request_id TEXT PRIMARY KEY/);
+  assert.match(tableDefinition, /status TEXT NOT NULL CHECK/);
+  assert.match(tableDefinition, /created_at INTEGER NOT NULL/);
+  assert.match(tableDefinition, /updated_at INTEGER NOT NULL/);
+  assert.doesNotMatch(tableDefinition, /email|first_name|phone|ip_address|consent|webhook_payload/i);
+});
+
 test('2027 guide separates announcement/effective dates and cites verified official figures', () => {
   const guide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
   for (const text of [
