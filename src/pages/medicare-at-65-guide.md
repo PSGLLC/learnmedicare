@@ -15,7 +15,7 @@ dateModified: 2026-11-22
 
 This guide is general education, not a coverage decision or individualized insurance recommendation. Medicare eligibility and enrollment depend on your circumstances. Confirm plan-specific benefits and costs in the plan documents and Medicare Plan Finder.
 
-[Download the six-page printable 2027 guide (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address serves the current edition; dated editions remain archived separately.
+[Download the printable 2027 guide (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address serves the current edition; dated editions remain archived separately.
 
 
 ## Start with the four parts

@@ -1,31 +1,32 @@
 # Annual Medicare at 65 guide maintenance
 
-## Canonical records and generated files
+## One maintained content source
 
-- `src/data/medicare-guide-facts.json` is the structured source for the guide's coverage year, enrollment year, announcement/effective dates, tax year, Part A/B/D amounts, IRMAA rows, official-source URLs/publication dates, and the current PDF edition.
-- `docs/guide-delivery/medicare-at-65-guide.template.md` is the editorial template. It contains placeholders for the structured facts, not independent copies of amounts.
-- `npm run build` first runs `scripts/render-medicare-guide.mjs`, which creates `src/pages/medicare-at-65-guide.md`, and `scripts/render-guide-review-text.mjs`, which creates `docs/guide-delivery/2027-turning-65-guide.txt`. Both outputs come from the same values. Generated outputs are committed so review diffs show exactly what visitors and the guide designer will receive.
-- The stable online guide and current-PDF paths remain `/medicare-at-65-guide/` and `/docs/T65-Medicare-Guide.pdf`. Keep previous PDFs under dated paths such as `/docs/T65-Medicare-Guide-2026.pdf` and `/docs/T65-Medicare-Guide-2027.pdf`.
+- `src/data/medicare-guide-facts.json` holds structured year-specific facts, official source URLs and publication dates, content version, and PDF export metadata.
+- `docs/guide-delivery/medicare-at-65-guide.template.md` is the editorial template. It references structured facts rather than duplicating amounts.
+- `npm run build` generates the online guide (`src/pages/medicare-at-65-guide.md`), review text, and PDFs through the prebuild scripts. `npm run guide:pdf` regenerates only the PDFs and manifest.
+- The current PDF URL is `/docs/T65-Medicare-Guide.pdf`; the online guide URL is `/medicare-at-65-guide/`. Keep both yearless. Keep dated archival editions separate and never overwrite historical PDFs.
+- The editable layout is the repository Markdown/facts source plus `scripts/render-medicare-guide-pdf.mjs` (PDFKit). This is **not a Canva-editable design**. Canva served only as the visual reference; the original Canva design is unchanged.
 
-## Source monitoring and annual review
+## Annual review and approval
 
-Use the existing [PSG Main annual Medicare cost source monitor](https://github.com/PSGLLC/PSG-Main-Website/actions/workflows/annual-medicare-cost-monitor.yml); do not create a second scheduled workflow in Learn Medicare. It checks CMS, Medicare.gov, and SSA on its existing schedule and records source outcomes. A successful check is evidence for review, not publication approval.
+1. Use the existing [PSG Main annual Medicare cost source monitor](https://github.com/PSGLLC/PSG-Main-Website/actions/workflows/annual-medicare-cost-monitor.yml). It checks CMS, Medicare.gov, and SSA; its results signal review and are not publication approval.
+2. A human verifies each proposed amount, coverage year, publication date, and effective date directly against current official sources. If a source is unavailable or ambiguous, preserve the last verified facts and record the limitation. Never infer a future figure.
+3. Update `medicare-guide-facts.json` and the content template only after evidence is confirmed. Distinguish announcement date, effective date, enrollment year, and coverage year. Preserve `datePublished`; update `reviewDate`/`dateModified` only after substantive review or revision, not a monitoring-only check.
+4. Run `npm run build`, `npm run guide:pdf`, and the isolated full test workflow. Review source diffs and the manifest. The renderer records the SHA-256, page count, embedded fonts, link annotations, and unique destinations.
+5. Inspect every PDF page at normal reading size and in print output. Check tables, page breaks, selectable text, embedded fonts, clickable source links, contact links, guide completeness, and consistency with the online page. Confirm the year shown in the PDF matches the approved online facts.
+6. Prepare both the stable current PDF and dated annual archive from the same reviewed output. A human must approve the content and PDF in the PR. The monitor never merges or deploys. Merging the approved PR is the publication step.
 
-When that monitor reports a supported change:
+## Failure and rollback
 
-1. Read the monitor's source report and compare each proposed amount, coverage year, publication date, and effective date with the official source itself. If a source is missing, inaccessible, or ambiguous, keep the last verified figure and note the source status; do not infer a future amount.
-2. A human reviewer updates `medicare-guide-facts.json` only after verifying every applicable amount and source. Keep the announcement date distinct from the January 1 effective date, and keep the AEP enrollment year distinct from the coverage year.
-3. Record the actual substantive content review in `reviewDate` and the content version. Preserve `datePublished`; do not advance `dateModified` for a monitor-only or verification-only check.
-4. Run `npm run build` and the full isolated test workflow. Review both generated content files. The output warns when `pdfCoverageYear` differs from `coverageYear`; never describe an older PDF as the current year's guide.
-5. Update the editable Canva design from the generated text and structured facts. Human action is required: review the complete copy, source links, claims, layout and accessibility in Canva; export the approved design to PDF; inspect each page and all links; then record the Canva design URL/ID, content version, PDF SHA-256 and actual export/review date in `medicare-guide-facts.json` and this release record. Canva does not automatically synchronize with the website or PDF.
-6. Include the new dated PDF edition and the same approved PDF at the yearless current URL in the review PR. Keep the prior dated edition unchanged. A reviewer must approve content and PDF changes; no monitor job merges or deploys them.
+The local renderers consume committed JSON and template files; they do not fetch or interpret source websites. Failed/ambiguous monitoring cannot mutate Learn facts. Invalid years, dates, URLs, missing required amounts, or incomplete IRMAA rows fail validation instead of generating partial output.
 
-## Failure and rollback behavior
+To roll back a bad draft, restore the prior facts, template, generated Markdown/text, PDF files, and manifest from the preceding commit. Keep the yearless routes stable. Never replace the live PDF until the reviewed PR is approved and merged.
 
-The build renderer reads only the committed JSON and template. It does not fetch external pages or mutate facts. A failed/ambiguous monitor result therefore cannot overwrite Learn Medicare values. A malformed year, date, source URL, missing amount, or incomplete IRMAA table fails generation rather than publishing partial output.
+## Current 2027 review artifact
 
-If a draft update is wrong, restore the previous JSON, template/generated Markdown/text, and PDF files from the preceding commit. Keep both yearless URLs stable. Do not replace the current PDF until the replacement is supplied, reviewed, and its coverage year matches the online figures.
-
-## Current design/export record
-
-The selected Canva design, branded PDF export, and final visual review are pending the owner's choice of design reference. Until those steps are completed and reviewed, the current PDF/design must not be described as an approved branded edition, and FAQ email fulfillment remains inactive.
+- Visual reference: `2026 T65 Guide (short)`; the original Canva design is preserved.
+- Layout version: `2027.1-layout-tool-1`; content version: `2027.1`; export date: `2026-11-23`.
+- The 10-page repository-generated PDF embeds Open Sans, uses PSG logo/portrait assets, and includes verified source/contact link annotations. Exact counts and digest are in `docs/guide-delivery/pdf-manifest.json`.
+- PR #19 contains the review draft at the existing yearless asset path plus the dated 2027 edition. It remains unmerged, so the live PDF is unchanged. The historical 2026 PDF remains byte-for-byte unchanged.
+- Rebuilding from the single template/facts source keeps the online guide and PDF content aligned. No automatic Canva synchronization is claimed. Email fulfillment remains inactive.

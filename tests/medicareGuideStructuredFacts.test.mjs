@@ -9,7 +9,7 @@ const guidePath = new URL('../src/pages/medicare-at-65-guide.md', import.meta.ur
 const printSourcePath = new URL('../docs/guide-delivery/2027-turning-65-guide.txt', import.meta.url);
 const template = readFileSync(new URL('../docs/guide-delivery/medicare-at-65-guide.template.md', import.meta.url), 'utf8');
 
-test('online guide and Canva review source are generated from the same verified annual facts', () => {
+test('online guide, print-source review text, and layout-tool PDF use the same verified annual facts', () => {
   execFileSync(process.execPath, ['scripts/render-medicare-guide.mjs'], { cwd: new URL('..', import.meta.url) });
   execFileSync(process.execPath, ['scripts/render-guide-review-text.mjs'], { cwd: new URL('..', import.meta.url) });
   const guide = readFileSync(guidePath, 'utf8');
@@ -43,7 +43,7 @@ test('PDF edition mismatch is disclosed instead of presenting an older file as c
   fixture.pdfCoverageYear = facts.coverageYear - 1;
   fixture.pdfPageCount = 4;
   const rendered = renderMedicareGuideTemplate(template, fixture);
-  assert.match(rendered, /Download the four-page printable 2026 guide \(PDF\)/);
+  assert.match(rendered, /Download the printable 2026 guide \(PDF\)/);
   assert.match(rendered, /yearless PDF currently contains the 2026 edition, not the 2027 guide/);
   assert.match(rendered, /matching branded PDF must be reviewed and exported before replacing it/);
   assert.doesNotMatch(rendered, /The yearless PDF address serves the current edition/);

@@ -1,6 +1,5 @@
 export function renderMedicareGuideTemplate(template, facts) {
   validateFacts(facts);
-  const pageCountText = ({ 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten' })[facts.pdfPageCount] ?? String(facts.pdfPageCount);
   const money = (value) => {
     if (!Number.isFinite(value) || value < 0) throw new Error('Annual guide contains an invalid money value');
     return `$${value.toLocaleString('en-US', Number.isInteger(value)
@@ -53,8 +52,8 @@ export function renderMedicareGuideTemplate(template, facts) {
     irmaaRows: amounts.irmaa.individualAndJointRows.map((row) => `| ${row[0]} | ${row[1]} | ${row[2]} |`).join('\n'),
     separateIrmaaRows: amounts.irmaa.marriedFilingSeparatelyRows.map((row) => `| ${row[0]} | ${row[1]} | ${row[2]} |`).join('\n'),
     pdfLinkText: pdfMatchesCoverageYear
-      ? `Download the ${pageCountText}-page printable ${facts.coverageYear} guide (PDF)`
-      : `Download the ${pageCountText}-page printable ${facts.pdfCoverageYear} guide (PDF)`,
+      ? `Download the printable ${facts.coverageYear} guide (PDF)`
+      : `Download the printable ${facts.pdfCoverageYear} guide (PDF)`,
     pdfEditionNotice: pdfMatchesCoverageYear
       ? 'The yearless PDF address serves the current edition; dated editions remain archived separately.'
       : `The yearless PDF currently contains the ${facts.pdfCoverageYear} edition, not the ${facts.coverageYear} guide. A matching branded PDF must be reviewed and exported before replacing it.`,

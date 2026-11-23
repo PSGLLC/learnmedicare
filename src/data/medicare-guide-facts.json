@@ -7,7 +7,7 @@
   "effectiveDate": "2027-01-01",
   "irmaaTaxYear": 2025,
   "pdfCoverageYear": 2027,
-  "pdfPageCount": 6,
+  "pdfPageCount": 10,
   "amounts": {
     "partA": {
       "inpatientDeductible": 1776,
@@ -28,17 +28,53 @@
     },
     "irmaa": {
       "individualAndJointRows": [
-        ["Individual ≤$112,000; joint ≤$224,000", "$209.40", "$0"],
-        ["Individual >$112,000–$141,000; joint >$224,000–$282,000", "$293.10", "$15.40"],
-        ["Individual >$141,000–$177,000; joint >$282,000–$354,000", "$418.80", "$39.70"],
-        ["Individual >$177,000–$212,000; joint >$354,000–$424,000", "$544.40", "$64.00"],
-        ["Individual >$212,000–<$500,000; joint >$424,000–<$750,000", "$670.00", "$88.30"],
-        ["Individual ≥$500,000; joint ≥$750,000", "$711.80", "$96.40"]
+        [
+          "Individual ≤$112,000; joint ≤$224,000",
+          "$209.40",
+          "$0"
+        ],
+        [
+          "Individual >$112,000–$141,000; joint >$224,000–$282,000",
+          "$293.10",
+          "$15.40"
+        ],
+        [
+          "Individual >$141,000–$177,000; joint >$282,000–$354,000",
+          "$418.80",
+          "$39.70"
+        ],
+        [
+          "Individual >$177,000–$212,000; joint >$354,000–$424,000",
+          "$544.40",
+          "$64.00"
+        ],
+        [
+          "Individual >$212,000–<$500,000; joint >$424,000–<$750,000",
+          "$670.00",
+          "$88.30"
+        ],
+        [
+          "Individual ≥$500,000; joint ≥$750,000",
+          "$711.80",
+          "$96.40"
+        ]
       ],
       "marriedFilingSeparatelyRows": [
-        ["≤$112,000", "$209.40", "$0"],
-        [">$112,000 and <$388,000", "$670.00", "$88.30"],
-        ["≥$388,000", "$711.80", "$96.40"]
+        [
+          "≤$112,000",
+          "$209.40",
+          "$0"
+        ],
+        [
+          ">$112,000 and <$388,000",
+          "$670.00",
+          "$88.30"
+        ],
+        [
+          "≥$388,000",
+          "$711.80",
+          "$96.40"
+        ]
       ]
     }
   },
@@ -75,10 +111,20 @@
     }
   },
   "design": {
-    "canvaDesignId": null,
-    "canvaDesignUrl": null,
-    "exportedPdfSha256": null,
-    "pdfExportedOn": null,
-    "reviewStatus": "editorial design selection pending"
+    "referenceCanvaDesignId": "DAG5SJOwdrc",
+    "referenceCanvaDesignTitle": "2026 T65 Guide (short)",
+    "layoutTool": "PDFKit",
+    "layoutVersion": "2027.1-layout-tool-1",
+    "pdfExportVersion": "2027.1-layout-tool-2026-11-23",
+    "pdfPageCount": 10,
+    "pdfExportedOn": "2026-11-23",
+    "exportedPdfSha256": "2ee0ebdc58f34b9b0de1b52ee0188b5089af9338f5483b831c4d31d2a3f656a1",
+    "reviewStatus": "layout-tool draft prepared for owner review; not Canva-editable; email fulfillment inactive",
+    "pdfLinkAnnotationCount": 160,
+    "uniquePdfLinkDestinations": 17,
+    "pdfFontsEmbedded": true,
+    "embeddedFontFamilies": [
+      "Open Sans"
+    ]
   }
 }
