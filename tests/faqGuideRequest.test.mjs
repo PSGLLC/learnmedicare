@@ -167,7 +167,7 @@ test('new review PDF is readable and the historical 2026 asset remains byte-for-
   assert.equal(createHash('sha256').update(oldPdf).digest('hex'), 'e281bf8637cccbc3d390bdb579856b7f33c7b2c54c2cc034b27d61a82670a83a');
   assert.equal(draftPdf.subarray(0, 5).toString(), '%PDF-');
   assert.ok(draftPdf.byteLength > 10000);
-  assert.equal(draftPdf.toString('latin1').match(/\/Type \/Page\b/g)?.length, 10, 'layout-tool guide uses the validated ten-page layout');
+  assert.equal(draftPdf.toString('latin1').match(/\/Type \/Page\b/g)?.length, 11, 'layout-tool guide keeps related headings with their content in the eleven-page layout');
   assert.deepEqual(currentPdf, draftPdf, 'yearless current PDF serves the reviewed 2027 file byte-for-byte');
   assert.equal(createHash('sha256').update(currentPdf).digest('hex'), createHash('sha256').update(draftPdf).digest('hex'));
 });

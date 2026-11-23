@@ -43,7 +43,7 @@ endobj
 /Subtype /Link
 /A 16 0 R
 /Type /Annot
-/Rect [28 153.974609 82.473389 169.474609]
+/Rect [28 170.774609 82.473389 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -59,7 +59,7 @@ endobj
 /Subtype /Link
 /A 18 0 R
 /Type /Annot
-/Rect [85.460693 153.974609 103.070068 169.474609]
+/Rect [85.460693 170.774609 103.070068 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -75,7 +75,7 @@ endobj
 /Subtype /Link
 /A 20 0 R
 /Type /Annot
-/Rect [106.057373 153.974609 154.634766 169.474609]
+/Rect [106.057373 170.774609 154.634766 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -91,7 +91,7 @@ endobj
 /Subtype /Link
 /A 22 0 R
 /Type /Annot
-/Rect [157.62207 153.974609 183.923828 169.474609]
+/Rect [157.62207 170.774609 183.923828 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -107,7 +107,7 @@ endobj
 /Subtype /Link
 /A 24 0 R
 /Type /Annot
-/Rect [186.911133 153.974609 216.604492 169.474609]
+/Rect [186.911133 170.774609 216.604492 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -123,7 +123,7 @@ endobj
 /Subtype /Link
 /A 26 0 R
 /Type /Annot
-/Rect [219.591797 153.974609 250.593506 169.474609]
+/Rect [219.591797 170.774609 250.593506 186.274609]
 /Border [0 0 0]
 /F 4
 >>
@@ -299,7 +299,7 @@ endobj
 /Subtype /Link
 /A 54 0 R
 /Type /Annot
-/Rect [160.126465 409.5 217.924072 425]
+/Rect [160.126465 384.839111 217.924072 400.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -315,7 +315,7 @@ endobj
 /Subtype /Link
 /A 56 0 R
 /Type /Annot
-/Rect [220.911377 409.5 332.1604 425]
+/Rect [220.911377 384.839111 332.1604 400.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -331,7 +331,7 @@ endobj
 /Subtype /Link
 /A 58 0 R
 /Type /Annot
-/Rect [335.147705 409.5 354.761719 425]
+/Rect [335.147705 384.839111 354.761719 400.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -347,7 +347,7 @@ endobj
 /Subtype /Link
 /A 60 0 R
 /Type /Annot
-/Rect [28 394 57.614746 409.5]
+/Rect [28 369.339111 57.614746 384.839111]
 /Border [0 0 0]
 /F 4
 >>
@@ -363,7 +363,7 @@ endobj
 /Subtype /Link
 /A 62 0 R
 /Type /Annot
-/Rect [95.057129 241.339111 152.854736 256.839111]
+/Rect [95.057129 216.678223 152.854736 232.178223]
 /Border [0 0 0]
 /F 4
 >>
@@ -379,7 +379,7 @@ endobj
 /Subtype /Link
 /A 64 0 R
 /Type /Annot
-/Rect [155.842041 241.339111 176.421875 256.839111]
+/Rect [155.842041 216.678223 176.421875 232.178223]
 /Border [0 0 0]
 /F 4
 >>
@@ -395,7 +395,7 @@ endobj
 /Subtype /Link
 /A 66 0 R
 /Type /Annot
-/Rect [179.40918 241.339111 231.074951 256.839111]
+/Rect [179.40918 216.678223 231.074951 232.178223]
 /Border [0 0 0]
 /F 4
 >>
@@ -443,7 +443,7 @@ endobj
 /Subtype /Link
 /A 75 0 R
 /Type /Annot
-/Rect [28 353.839111 85.797607 369.339111]
+/Rect [28 256.839111 85.797607 272.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -459,7 +459,7 @@ endobj
 /Subtype /Link
 /A 77 0 R
 /Type /Annot
-/Rect [88.784912 353.839111 110.89209 369.339111]
+/Rect [88.784912 256.839111 110.89209 272.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -475,7 +475,7 @@ endobj
 /Subtype /Link
 /A 79 0 R
 /Type /Annot
-/Rect [113.879395 353.839111 122.223633 369.339111]
+/Rect [113.879395 256.839111 122.223633 272.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -491,7 +491,7 @@ endobj
 /Subtype /Link
 /A 81 0 R
 /Type /Annot
-/Rect [125.210938 353.839111 224.780273 369.339111]
+/Rect [125.210938 256.839111 224.780273 272.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -507,7 +507,7 @@ endobj
 /Subtype /Link
 /A 83 0 R
 /Type /Annot
-/Rect [227.767578 353.839111 279.43335 369.339111]
+/Rect [227.767578 256.839111 279.43335 272.339111]
 /Border [0 0 0]
 /F 4
 >>
@@ -523,7 +523,7 @@ endobj
 /Subtype /Link
 /A 85 0 R
 /Type /Annot
-/Rect [105.647461 256.135498 129.540283 271.635498]
+/Rect [105.647461 159.135498 129.540283 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -539,7 +539,7 @@ endobj
 /Subtype /Link
 /A 87 0 R
 /Type /Annot
-/Rect [132.527588 256.135498 158.829346 271.635498]
+/Rect [132.527588 159.135498 158.829346 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -555,7 +555,7 @@ endobj
 /Subtype /Link
 /A 89 0 R
 /Type /Annot
-/Rect [161.81665 256.135498 183.923828 271.635498]
+/Rect [161.81665 159.135498 183.923828 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -571,7 +571,7 @@ endobj
 /Subtype /Link
 /A 91 0 R
 /Type /Annot
-/Rect [186.911133 256.135498 194.182861 271.635498]
+/Rect [186.911133 159.135498 194.182861 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -587,7 +587,7 @@ endobj
 /Subtype /Link
 /A 93 0 R
 /Type /Annot
-/Rect [197.170166 256.135498 217.648926 271.635498]
+/Rect [197.170166 159.135498 217.648926 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -603,7 +603,7 @@ endobj
 /Subtype /Link
 /A 95 0 R
 /Type /Annot
-/Rect [220.63623 256.135498 228.065186 271.635498]
+/Rect [220.63623 159.135498 228.065186 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -619,7 +619,7 @@ endobj
 /Subtype /Link
 /A 97 0 R
 /Type /Annot
-/Rect [231.05249 256.135498 272.919678 271.635498]
+/Rect [231.05249 159.135498 272.919678 174.635498]
 /Border [0 0 0]
 /F 4
 >>
@@ -699,7 +699,7 @@ endobj
 /Subtype /Link
 /A 113 0 R
 /Type /Annot
-/Rect [63.291748 394 121.089355 409.5]
+/Rect [63.291748 327.865137 121.089355 343.365137]
 /Border [0 0 0]
 /F 4
 >>
@@ -715,7 +715,7 @@ endobj
 /Subtype /Link
 /A 115 0 R
 /Type /Annot
-/Rect [124.07666 394 146.183838 409.5]
+/Rect [124.07666 327.865137 146.183838 343.365137]
 /Border [0 0 0]
 /F 4
 >>
@@ -731,7 +731,7 @@ endobj
 /Subtype /Link
 /A 117 0 R
 /Type /Annot
-/Rect [149.171143 394 157.515381 409.5]
+/Rect [149.171143 327.865137 157.515381 343.365137]
 /Border [0 0 0]
 /F 4
 >>
@@ -747,7 +747,7 @@ endobj
 /Subtype /Link
 /A 119 0 R
 /Type /Annot
-/Rect [160.502686 394 182.508789 409.5]
+/Rect [160.502686 327.865137 182.508789 343.365137]
 /Border [0 0 0]
 /F 4
 >>
@@ -763,7 +763,7 @@ endobj
 /Subtype /Link
 /A 121 0 R
 /Type /Annot
-/Rect [185.496094 394 237.116943 409.5]
+/Rect [185.496094 327.865137 237.116943 343.365137]
 /Border [0 0 0]
 /F 4
 >>
@@ -779,7 +779,7 @@ endobj
 /Subtype /Link
 /A 123 0 R
 /Type /Annot
-/Rect [132.931885 234.296387 160.817139 249.796387]
+/Rect [132.931885 168.161523 160.817139 183.661523]
 /Border [0 0 0]
 /F 4
 >>
@@ -795,7 +795,7 @@ endobj
 /Subtype /Link
 /A 125 0 R
 /Type /Annot
-/Rect [163.804443 234.296387 199.000732 249.796387]
+/Rect [163.804443 168.161523 199.000732 183.661523]
 /Border [0 0 0]
 /F 4
 >>
@@ -811,7 +811,7 @@ endobj
 /Subtype /Link
 /A 127 0 R
 /Type /Annot
-/Rect [201.988037 234.296387 268.483643 249.796387]
+/Rect [201.988037 168.161523 268.483643 183.661523]
 /Border [0 0 0]
 /F 4
 >>
@@ -827,7 +827,7 @@ endobj
 /Subtype /Link
 /A 129 0 R
 /Type /Annot
-/Rect [271.470947 234.296387 305.521729 249.796387]
+/Rect [271.470947 168.161523 305.521729 183.661523]
 /Border [0 0 0]
 /F 4
 >>
@@ -907,7 +907,7 @@ endobj
 /Subtype /Link
 /A 145 0 R
 /Type /Annot
-/Rect [221.890381 456 253.784912 471.5]
+/Rect [221.890381 374.5 253.784912 390]
 /Border [0 0 0]
 /F 4
 >>
@@ -923,7 +923,7 @@ endobj
 /Subtype /Link
 /A 147 0 R
 /Type /Annot
-/Rect [256.772217 456 283.073975 471.5]
+/Rect [256.772217 374.5 283.073975 390]
 /Border [0 0 0]
 /F 4
 >>
@@ -939,7 +939,7 @@ endobj
 /Subtype /Link
 /A 149 0 R
 /Type /Annot
-/Rect [32 440.5 110.506592 456]
+/Rect [32 359 110.506592 374.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -955,7 +955,7 @@ endobj
 /Subtype /Link
 /A 151 0 R
 /Type /Annot
-/Rect [113.493896 440.5 155.361084 456]
+/Rect [113.493896 359 155.361084 374.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -971,7 +971,7 @@ endobj
 /Subtype /Link
 /A 153 0 R
 /Type /Annot
-/Rect [247.342285 275.5 305.139893 291]
+/Rect [247.342285 194 305.139893 209.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -987,7 +987,7 @@ endobj
 /Subtype /Link
 /A 155 0 R
 /Type /Annot
-/Rect [308.127197 275.5 347.826904 291]
+/Rect [308.127197 194 347.826904 209.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1003,7 +1003,7 @@ endobj
 /Subtype /Link
 /A 157 0 R
 /Type /Annot
-/Rect [28 260 79.665771 275.5]
+/Rect [28 178.5 79.665771 194]
 /Border [0 0 0]
 /F 4
 >>
@@ -1051,7 +1051,7 @@ endobj
 /Subtype /Link
 /A 166 0 R
 /Type /Annot
-/Rect [84.225342 425 142.022949 440.5]
+/Rect [84.225342 328 142.022949 343.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1067,7 +1067,7 @@ endobj
 /Subtype /Link
 /A 168 0 R
 /Type /Annot
-/Rect [145.010254 425 191.420166 440.5]
+/Rect [145.010254 328 191.420166 343.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1083,7 +1083,7 @@ endobj
 /Subtype /Link
 /A 170 0 R
 /Type /Annot
-/Rect [194.407471 425 228.256104 440.5]
+/Rect [194.407471 328 228.256104 343.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1099,55 +1099,55 @@ endobj
 /Subtype /Link
 /A 172 0 R
 /Type /Annot
-/Rect [231.243408 425 260.936768 440.5]
+/Rect [231.243408 328 260.936768 343.5]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-174 0 obj
+177 0 obj
+<<
+/S /URI
+/URI (https://host.safemsngr.com/widget/booking/8IOq6stkuqzk1H2VKRcS)
+>>
+endobj
+178 0 obj
+<<
+/Subtype /Link
+/A 177 0 R
+/Type /Annot
+/Rect [283.808516 573.194922 363.679997 583]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+179 0 obj
+<<
+/S /URI
+/URI (mailto:hello@priceservicesgroup.com)
+>>
+endobj
+180 0 obj
+<<
+/Subtype /Link
+/A 179 0 R
+/Type /Annot
+/Rect [236.315938 560.194922 363.679997 570]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+181 0 obj
 <<
 /S /URI
 /URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
-175 0 obj
+182 0 obj
 <<
 /Subtype /Link
-/A 174 0 R
+/A 181 0 R
 /Type /Annot
-/Rect [138.530273 137.296387 155.634277 152.796387]
-/Border [0 0 0]
-/F 4
->>
-endobj
-176 0 obj
-<<
-/S /URI
-/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
->>
-endobj
-177 0 obj
-<<
-/Subtype /Link
-/A 176 0 R
-/Type /Annot
-/Rect [158.621582 137.296387 215.981201 152.796387]
-/Border [0 0 0]
-/F 4
->>
-endobj
-178 0 obj
-<<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
->>
-endobj
-179 0 obj
-<<
-/Subtype /Link
-/A 178 0 R
-/Type /Annot
-/Rect [233.57373 137.296387 278.220459 152.796387]
+/Rect [138.530273 394 155.634277 409.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1155,7 +1155,7 @@ endobj
 183 0 obj
 <<
 /S /URI
-/URI (https://host.safemsngr.com/widget/booking/8IOq6stkuqzk1H2VKRcS)
+/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
 >>
 endobj
 184 0 obj
@@ -1163,7 +1163,7 @@ endobj
 /Subtype /Link
 /A 183 0 R
 /Type /Annot
-/Rect [283.808516 573.194922 363.679997 583]
+/Rect [158.621582 394 215.981201 409.5]
 /Border [0 0 0]
 /F 4
 >>
@@ -1171,7 +1171,7 @@ endobj
 185 0 obj
 <<
 /S /URI
-/URI (mailto:hello@priceservicesgroup.com)
+/URI (https://www.tricare.mil/medicare)
 >>
 endobj
 186 0 obj
@@ -1179,1383 +1179,1415 @@ endobj
 /Subtype /Link
 /A 185 0 R
 /Type /Annot
+/Rect [233.57373 394 278.220459 409.5]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+190 0 obj
+<<
+/S /URI
+/URI (https://host.safemsngr.com/widget/booking/8IOq6stkuqzk1H2VKRcS)
+>>
+endobj
+191 0 obj
+<<
+/Subtype /Link
+/A 190 0 R
+/Type /Annot
+/Rect [283.808516 573.194922 363.679997 583]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+192 0 obj
+<<
+/S /URI
+/URI (mailto:hello@priceservicesgroup.com)
+>>
+endobj
+193 0 obj
+<<
+/Subtype /Link
+/A 192 0 R
+/Type /Annot
 /Rect [236.315938 560.194922 363.679997 570]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-187 0 obj
-<<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
->>
-endobj
-188 0 obj
-<<
-/Subtype /Link
-/A 187 0 R
-/Type /Annot
-/Rect [41.402832 306.839111 65.976318 320.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-189 0 obj
-<<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
->>
-endobj
-190 0 obj
-<<
-/Subtype /Link
-/A 189 0 R
-/Type /Annot
-/Rect [68.703857 306.839111 92.718506 320.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-191 0 obj
-<<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
->>
-endobj
-192 0 obj
-<<
-/Subtype /Link
-/A 191 0 R
-/Type /Annot
-/Rect [95.446045 306.839111 140.911865 320.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-193 0 obj
-<<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
->>
-endobj
 194 0 obj
 <<
-/Subtype /Link
-/A 193 0 R
-/Type /Annot
-/Rect [143.639404 306.839111 168.828125 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 195 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 194 0 R
+/Type /Annot
+/Rect [41.402832 479.839111 65.976318 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 196 0 obj
 <<
-/Subtype /Link
-/A 195 0 R
-/Type /Annot
-/Rect [171.555664 306.839111 178.195068 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 197 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 196 0 R
+/Type /Annot
+/Rect [68.703857 479.839111 92.718506 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 198 0 obj
 <<
-/Subtype /Link
-/A 197 0 R
-/Type /Annot
-/Rect [180.922607 306.839111 199.620605 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 199 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 198 0 R
+/Type /Annot
+/Rect [95.446045 479.839111 140.911865 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 200 0 obj
 <<
-/Subtype /Link
-/A 199 0 R
-/Type /Annot
-/Rect [202.348145 306.839111 209.131104 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 201 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 200 0 R
+/Type /Annot
+/Rect [143.639404 479.839111 168.828125 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 202 0 obj
 <<
-/Subtype /Link
-/A 201 0 R
-/Type /Annot
-/Rect [211.858643 306.839111 262.005371 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 203 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 202 0 R
+/Type /Annot
+/Rect [171.555664 479.839111 178.195068 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 204 0 obj
 <<
-/Subtype /Link
-/A 203 0 R
-/Type /Annot
-/Rect [264.73291 306.839111 283.430908 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 205 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 204 0 R
+/Type /Annot
+/Rect [180.922607 479.839111 199.620605 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 206 0 obj
 <<
-/Subtype /Link
-/A 205 0 R
-/Type /Annot
-/Rect [286.158447 306.839111 342.739502 320.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 207 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 206 0 R
+/Type /Annot
+/Rect [202.348145 479.839111 209.131104 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 208 0 obj
 <<
-/Subtype /Link
-/A 207 0 R
-/Type /Annot
-/Rect [32 293.339111 86.791748 306.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 209 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+/Subtype /Link
+/A 208 0 R
+/Type /Annot
+/Rect [211.858643 479.839111 262.005371 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 210 0 obj
 <<
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
+>>
+endobj
+211 0 obj
+<<
 /Subtype /Link
-/A 209 0 R
+/A 210 0 R
 /Type /Annot
-/Rect [89.519287 293.339111 104.243896 306.839111]
+/Rect [264.73291 479.839111 283.430908 493.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-211 0 obj
+212 0 obj
 <<
 /S /URI
 /URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
-212 0 obj
-<<
-/Subtype /Link
-/A 211 0 R
-/Type /Annot
-/Rect [106.971436 293.339111 134.082764 306.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 213 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 212 0 R
+/Type /Annot
+/Rect [286.158447 479.839111 342.739502 493.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 214 0 obj
 <<
-/Subtype /Link
-/A 213 0 R
-/Type /Annot
-/Rect [41.402832 275.839111 65.976318 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 215 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 214 0 R
+/Type /Annot
+/Rect [32 466.339111 86.791748 479.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 216 0 obj
 <<
-/Subtype /Link
-/A 215 0 R
-/Type /Annot
-/Rect [68.703857 275.839111 92.718506 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 217 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 216 0 R
+/Type /Annot
+/Rect [89.519287 466.339111 104.243896 479.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 218 0 obj
 <<
-/Subtype /Link
-/A 217 0 R
-/Type /Annot
-/Rect [95.446045 275.839111 115.630859 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
 >>
 endobj
 219 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 218 0 R
+/Type /Annot
+/Rect [106.971436 466.339111 134.082764 479.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 220 0 obj
 <<
-/Subtype /Link
-/A 219 0 R
-/Type /Annot
-/Rect [118.358398 275.839111 125.977051 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 221 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 220 0 R
+/Type /Annot
+/Rect [41.402832 448.839111 65.976318 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 222 0 obj
 <<
-/Subtype /Link
-/A 221 0 R
-/Type /Annot
-/Rect [128.70459 275.839111 163.285889 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 223 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 222 0 R
+/Type /Annot
+/Rect [68.703857 448.839111 92.718506 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 224 0 obj
 <<
-/Subtype /Link
-/A 223 0 R
-/Type /Annot
-/Rect [166.013428 275.839111 222.948242 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 225 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 224 0 R
+/Type /Annot
+/Rect [95.446045 448.839111 115.630859 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 226 0 obj
 <<
-/Subtype /Link
-/A 225 0 R
-/Type /Annot
-/Rect [225.675781 275.839111 277.124756 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 227 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 226 0 R
+/Type /Annot
+/Rect [118.358398 448.839111 125.977051 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 228 0 obj
 <<
-/Subtype /Link
-/A 227 0 R
-/Type /Annot
-/Rect [279.852295 275.839111 302.508301 289.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 229 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+/Subtype /Link
+/A 228 0 R
+/Type /Annot
+/Rect [128.70459 448.839111 163.285889 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 230 0 obj
 <<
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
+>>
+endobj
+231 0 obj
+<<
 /Subtype /Link
-/A 229 0 R
+/A 230 0 R
 /Type /Annot
-/Rect [305.23584 275.839111 313.956787 289.339111]
+/Rect [166.013428 448.839111 222.948242 462.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-231 0 obj
+232 0 obj
 <<
 /S /URI
 /URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
-232 0 obj
-<<
-/Subtype /Link
-/A 231 0 R
-/Type /Annot
-/Rect [316.684326 275.839111 343.795654 289.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 233 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 232 0 R
+/Type /Annot
+/Rect [225.675781 448.839111 277.124756 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 234 0 obj
 <<
-/Subtype /Link
-/A 233 0 R
-/Type /Annot
-/Rect [41.402832 258.339111 65.976318 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 235 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 234 0 R
+/Type /Annot
+/Rect [279.852295 448.839111 302.508301 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 236 0 obj
 <<
-/Subtype /Link
-/A 235 0 R
-/Type /Annot
-/Rect [68.703857 258.339111 92.718506 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 237 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 236 0 R
+/Type /Annot
+/Rect [305.23584 448.839111 313.956787 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 238 0 obj
 <<
-/Subtype /Link
-/A 237 0 R
-/Type /Annot
-/Rect [95.446045 258.339111 115.630859 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/files/document/2027-announcement.pdf)
 >>
 endobj
 239 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 238 0 R
+/Type /Annot
+/Rect [316.684326 448.839111 343.795654 462.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 240 0 obj
 <<
-/Subtype /Link
-/A 239 0 R
-/Type /Annot
-/Rect [118.358398 258.339111 125.977051 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 241 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 240 0 R
+/Type /Annot
+/Rect [41.402832 431.339111 65.976318 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 242 0 obj
 <<
-/Subtype /Link
-/A 241 0 R
-/Type /Annot
-/Rect [128.70459 258.339111 151.863037 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 243 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 242 0 R
+/Type /Annot
+/Rect [68.703857 431.339111 92.718506 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 244 0 obj
 <<
-/Subtype /Link
-/A 243 0 R
-/Type /Annot
-/Rect [154.590576 258.339111 208.495361 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 245 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 244 0 R
+/Type /Annot
+/Rect [95.446045 431.339111 115.630859 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 246 0 obj
 <<
-/Subtype /Link
-/A 245 0 R
-/Type /Annot
-/Rect [211.2229 258.339111 256.365723 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 247 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 246 0 R
+/Type /Annot
+/Rect [118.358398 431.339111 125.977051 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 248 0 obj
 <<
-/Subtype /Link
-/A 247 0 R
-/Type /Annot
-/Rect [259.093262 258.339111 297.724854 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 249 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 248 0 R
+/Type /Annot
+/Rect [128.70459 431.339111 151.863037 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 250 0 obj
 <<
-/Subtype /Link
-/A 249 0 R
-/Type /Annot
-/Rect [300.452393 258.339111 348.804688 271.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 251 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 250 0 R
+/Type /Annot
+/Rect [154.590576 431.339111 208.495361 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 252 0 obj
 <<
-/Subtype /Link
-/A 251 0 R
-/Type /Annot
-/Rect [32 244.839111 49.170166 258.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 253 0 obj
 <<
-/S /URI
-/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+/Subtype /Link
+/A 252 0 R
+/Type /Annot
+/Rect [211.2229 431.339111 256.365723 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 254 0 obj
 <<
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+>>
+endobj
+255 0 obj
+<<
 /Subtype /Link
-/A 253 0 R
+/A 254 0 R
 /Type /Annot
-/Rect [51.897705 244.839111 66.622314 258.339111]
+/Rect [259.093262 431.339111 297.724854 444.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-255 0 obj
+256 0 obj
 <<
 /S /URI
 /URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
-256 0 obj
-<<
-/Subtype /Link
-/A 255 0 R
-/Type /Annot
-/Rect [69.349854 244.839111 96.461182 258.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 257 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
+/Subtype /Link
+/A 256 0 R
+/Type /Annot
+/Rect [300.452393 431.339111 348.804688 444.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 258 0 obj
 <<
-/Subtype /Link
-/A 257 0 R
-/Type /Annot
-/Rect [41.402832 227.339111 109.647705 240.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 259 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
+/Subtype /Link
+/A 258 0 R
+/Type /Annot
+/Rect [32 417.839111 49.170166 431.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 260 0 obj
 <<
-/Subtype /Link
-/A 259 0 R
-/Type /Annot
-/Rect [112.375244 227.339111 132.560059 240.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 >>
 endobj
 261 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
+/Subtype /Link
+/A 260 0 R
+/Type /Annot
+/Rect [51.897705 417.839111 66.622314 431.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 262 0 obj
 <<
+/S /URI
+/URI (https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+>>
+endobj
+263 0 obj
+<<
 /Subtype /Link
-/A 261 0 R
+/A 262 0 R
 /Type /Annot
-/Rect [135.287598 227.339111 142.90625 240.839111]
+/Rect [69.349854 417.839111 96.461182 431.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-263 0 obj
+264 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
 >>
 endobj
-264 0 obj
-<<
-/Subtype /Link
-/A 263 0 R
-/Type /Annot
-/Rect [145.633789 227.339111 170.730225 240.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 265 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs)
+/Subtype /Link
+/A 264 0 R
+/Type /Annot
+/Rect [41.402832 400.339111 109.647705 413.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 266 0 obj
 <<
-/Subtype /Link
-/A 265 0 R
-/Type /Annot
-/Rect [41.402832 209.839111 109.647705 223.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
 >>
 endobj
 267 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs)
+/Subtype /Link
+/A 266 0 R
+/Type /Annot
+/Rect [112.375244 400.339111 132.560059 413.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 268 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
+>>
+endobj
+269 0 obj
+<<
 /Subtype /Link
-/A 267 0 R
+/A 268 0 R
 /Type /Annot
-/Rect [112.375244 209.839111 157.841064 223.339111]
+/Rect [135.287598 400.339111 142.90625 413.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-269 0 obj
+270 0 obj
+<<
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
+>>
+endobj
+271 0 obj
+<<
+/Subtype /Link
+/A 270 0 R
+/Type /Annot
+/Rect [145.633789 400.339111 170.730225 413.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+272 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/basics/costs/medicare-costs)
 >>
 endobj
-270 0 obj
-<<
-/Subtype /Link
-/A 269 0 R
-/Type /Annot
-/Rect [160.568604 209.839111 185.665039 223.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-271 0 obj
-<<
-/S /URI
-/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
->>
-endobj
-272 0 obj
-<<
-/Subtype /Link
-/A 271 0 R
-/Type /Annot
-/Rect [41.402832 192.339111 109.647705 205.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 273 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
+/Subtype /Link
+/A 272 0 R
+/Type /Annot
+/Rect [41.402832 382.839111 109.647705 396.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 274 0 obj
 <<
-/Subtype /Link
-/A 273 0 R
-/Type /Annot
-/Rect [112.375244 192.339111 139.286621 205.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs)
 >>
 endobj
 275 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
+/Subtype /Link
+/A 274 0 R
+/Type /Annot
+/Rect [112.375244 382.839111 157.841064 396.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 276 0 obj
 <<
-/Subtype /Link
-/A 275 0 R
-/Type /Annot
-/Rect [142.01416 192.339111 187.47998 205.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs)
 >>
 endobj
 277 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
+/Subtype /Link
+/A 276 0 R
+/Type /Annot
+/Rect [160.568604 382.839111 185.665039 396.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 278 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
+>>
+endobj
+279 0 obj
+<<
 /Subtype /Link
-/A 277 0 R
+/A 278 0 R
 /Type /Annot
-/Rect [190.20752 192.339111 234.417236 205.839111]
+/Rect [41.402832 365.339111 109.647705 378.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-279 0 obj
+280 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
 >>
 endobj
-280 0 obj
-<<
-/Subtype /Link
-/A 279 0 R
-/Type /Annot
-/Rect [237.144775 192.339111 264.763672 205.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 281 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 280 0 R
+/Type /Annot
+/Rect [112.375244 365.339111 139.286621 378.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 282 0 obj
 <<
-/Subtype /Link
-/A 281 0 R
-/Type /Annot
-/Rect [41.402832 174.839111 109.647705 188.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
 >>
 endobj
 283 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 282 0 R
+/Type /Annot
+/Rect [142.01416 365.339111 187.47998 378.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 284 0 obj
 <<
-/Subtype /Link
-/A 283 0 R
-/Type /Annot
-/Rect [112.375244 174.839111 145.864502 188.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
 >>
 endobj
 285 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 284 0 R
+/Type /Annot
+/Rect [190.20752 365.339111 234.417236 378.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 286 0 obj
 <<
-/Subtype /Link
-/A 285 0 R
-/Type /Annot
-/Rect [148.592041 174.839111 202.635254 188.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
 >>
 endobj
 287 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 286 0 R
+/Type /Annot
+/Rect [237.144775 365.339111 264.763672 378.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 288 0 obj
 <<
-/Subtype /Link
-/A 287 0 R
-/Type /Annot
-/Rect [205.362793 174.839111 242.369141 188.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
 >>
 endobj
 289 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 288 0 R
+/Type /Annot
+/Rect [41.402832 347.839111 109.647705 361.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 290 0 obj
 <<
-/Subtype /Link
-/A 289 0 R
-/Type /Annot
-/Rect [245.09668 174.839111 259.236816 188.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
 >>
 endobj
 291 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+/Subtype /Link
+/A 290 0 R
+/Type /Annot
+/Rect [112.375244 347.839111 145.864502 361.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 292 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+>>
+endobj
+293 0 obj
+<<
 /Subtype /Link
-/A 291 0 R
+/A 292 0 R
 /Type /Annot
-/Rect [261.964355 174.839111 284.820313 188.339111]
+/Rect [148.592041 347.839111 202.635254 361.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-293 0 obj
+294 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
 >>
 endobj
-294 0 obj
-<<
-/Subtype /Link
-/A 293 0 R
-/Type /Annot
-/Rect [287.547852 174.839111 313.900391 188.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 295 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
+/Subtype /Link
+/A 294 0 R
+/Type /Annot
+/Rect [205.362793 347.839111 242.369141 361.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 296 0 obj
 <<
-/Subtype /Link
-/A 295 0 R
-/Type /Annot
-/Rect [41.402832 157.339111 109.647705 170.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
 >>
 endobj
 297 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
+/Subtype /Link
+/A 296 0 R
+/Type /Annot
+/Rect [245.09668 347.839111 259.236816 361.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 298 0 obj
 <<
-/Subtype /Link
-/A 297 0 R
-/Type /Annot
-/Rect [112.375244 157.339111 146.818115 170.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
 >>
 endobj
 299 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
+/Subtype /Link
+/A 298 0 R
+/Type /Annot
+/Rect [261.964355 347.839111 284.820313 361.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 300 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/sign-up-change-plans/joining-a-health-or-drug-plan/special-circumstances-special-enrollment-periods)
+>>
+endobj
+301 0 obj
+<<
 /Subtype /Link
-/A 299 0 R
+/A 300 0 R
 /Type /Annot
-/Rect [149.545654 157.339111 203.527344 170.839111]
+/Rect [287.547852 347.839111 313.900391 361.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-301 0 obj
+302 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
 >>
 endobj
-302 0 obj
-<<
-/Subtype /Link
-/A 301 0 R
-/Type /Annot
-/Rect [206.254883 157.339111 238.149658 170.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 303 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+/Subtype /Link
+/A 302 0 R
+/Type /Annot
+/Rect [41.402832 330.339111 109.647705 343.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 304 0 obj
 <<
-/Subtype /Link
-/A 303 0 R
-/Type /Annot
-/Rect [41.402832 139.839111 109.647705 153.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
 >>
 endobj
 305 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+/Subtype /Link
+/A 304 0 R
+/Type /Annot
+/Rect [112.375244 330.339111 146.818115 343.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 306 0 obj
 <<
-/Subtype /Link
-/A 305 0 R
-/Type /Annot
-/Rect [112.375244 139.839111 153.636963 153.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
 >>
 endobj
 307 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+/Subtype /Link
+/A 306 0 R
+/Type /Annot
+/Rect [149.545654 330.339111 203.527344 343.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 308 0 obj
 <<
-/Subtype /Link
-/A 307 0 R
-/Type /Annot
-/Rect [156.364502 139.839111 174.488281 153.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/open-enrollment)
 >>
 endobj
 309 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+/Subtype /Link
+/A 308 0 R
+/Type /Annot
+/Rect [206.254883 330.339111 238.149658 343.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 310 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+>>
+endobj
+311 0 obj
+<<
 /Subtype /Link
-/A 309 0 R
+/A 310 0 R
 /Type /Annot
-/Rect [177.21582 139.839111 231.259033 153.339111]
+/Rect [41.402832 312.839111 109.647705 326.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-311 0 obj
+312 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
 >>
 endobj
-312 0 obj
-<<
-/Subtype /Link
-/A 311 0 R
-/Type /Annot
-/Rect [233.986572 139.839111 278.524414 153.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 313 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when)
+/Subtype /Link
+/A 312 0 R
+/Type /Annot
+/Rect [112.375244 312.839111 153.636963 326.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 314 0 obj
 <<
-/Subtype /Link
-/A 313 0 R
-/Type /Annot
-/Rect [41.402832 122.339111 109.647705 135.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
 >>
 endobj
 315 0 obj
 <<
-/S /URI
-/URI (https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when)
+/Subtype /Link
+/A 314 0 R
+/Type /Annot
+/Rect [156.364502 312.839111 174.488281 326.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 316 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+>>
+endobj
+317 0 obj
+<<
 /Subtype /Link
-/A 315 0 R
+/A 316 0 R
 /Type /Annot
-/Rect [112.375244 122.339111 154.749512 135.839111]
+/Rect [177.21582 312.839111 231.259033 326.339111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-317 0 obj
+318 0 obj
+<<
+/S /URI
+/URI (https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties)
+>>
+endobj
+319 0 obj
+<<
+/Subtype /Link
+/A 318 0 R
+/Type /Annot
+/Rect [233.986572 312.839111 278.524414 326.339111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+320 0 obj
 <<
 /S /URI
 /URI (https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when)
 >>
 endobj
-318 0 obj
-<<
-/Subtype /Link
-/A 317 0 R
-/Type /Annot
-/Rect [157.477051 122.339111 211.520264 135.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-319 0 obj
-<<
-/S /URI
-/URI (https://secure.ssa.gov/POMS.NSF/LNX/0601101010)
->>
-endobj
-320 0 obj
-<<
-/Subtype /Link
-/A 319 0 R
-/Type /Annot
-/Rect [41.402832 104.839111 62.315674 118.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 321 0 obj
 <<
-/S /URI
-/URI (https://secure.ssa.gov/POMS.NSF/LNX/0601101010)
+/Subtype /Link
+/A 320 0 R
+/Type /Annot
+/Rect [41.402832 295.339111 109.647705 308.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 322 0 obj
 <<
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when)
+>>
+endobj
+323 0 obj
+<<
 /Subtype /Link
-/A 321 0 R
+/A 322 0 R
 /Type /Annot
-/Rect [65.043213 104.839111 110.509033 118.339111]
+/Rect [112.375244 295.339111 154.749512 308.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-323 0 obj
+324 0 obj
+<<
+/S /URI
+/URI (https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when)
+>>
+endobj
+325 0 obj
+<<
+/Subtype /Link
+/A 324 0 R
+/Type /Annot
+/Rect [157.477051 295.339111 211.520264 308.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+326 0 obj
 <<
 /S /URI
 /URI (https://secure.ssa.gov/POMS.NSF/LNX/0601101010)
 >>
 endobj
-324 0 obj
-<<
-/Subtype /Link
-/A 323 0 R
-/Type /Annot
-/Rect [113.236572 104.839111 145.372314 118.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
-325 0 obj
-<<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
->>
-endobj
-326 0 obj
-<<
-/Subtype /Link
-/A 325 0 R
-/Type /Annot
-/Rect [41.402832 87.339111 57.060547 100.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 327 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+/Subtype /Link
+/A 326 0 R
+/Type /Annot
+/Rect [41.402832 277.839111 62.315674 291.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 328 0 obj
 <<
-/Subtype /Link
-/A 327 0 R
-/Type /Annot
-/Rect [59.788086 87.339111 72.6875 100.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://secure.ssa.gov/POMS.NSF/LNX/0601101010)
 >>
 endobj
 329 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+/Subtype /Link
+/A 328 0 R
+/Type /Annot
+/Rect [65.043213 277.839111 110.509033 291.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 330 0 obj
 <<
-/Subtype /Link
-/A 329 0 R
-/Type /Annot
-/Rect [75.415039 87.339111 106.417725 100.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://secure.ssa.gov/POMS.NSF/LNX/0601101010)
 >>
 endobj
 331 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+/Subtype /Link
+/A 330 0 R
+/Type /Annot
+/Rect [113.236572 277.839111 145.372314 291.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 332 0 obj
 <<
-/Subtype /Link
-/A 331 0 R
-/Type /Annot
-/Rect [109.145264 87.339111 130.196533 100.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
 333 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+/Subtype /Link
+/A 332 0 R
+/Type /Annot
+/Rect [41.402832 260.339111 57.060547 273.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 334 0 obj
 <<
-/Subtype /Link
-/A 333 0 R
-/Type /Annot
-/Rect [132.924072 87.339111 151.62207 100.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
 335 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+/Subtype /Link
+/A 334 0 R
+/Type /Annot
+/Rect [59.788086 260.339111 72.6875 273.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 336 0 obj
 <<
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+>>
+endobj
+337 0 obj
+<<
 /Subtype /Link
-/A 335 0 R
+/A 336 0 R
 /Type /Annot
-/Rect [154.349609 87.339111 181.0354 100.839111]
+/Rect [75.415039 260.339111 106.417725 273.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-337 0 obj
+338 0 obj
 <<
 /S /URI
 /URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
-338 0 obj
-<<
-/Subtype /Link
-/A 337 0 R
-/Type /Annot
-/Rect [183.762939 87.339111 231.787109 100.839111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 339 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
+/Subtype /Link
+/A 338 0 R
+/Type /Annot
+/Rect [109.145264 260.339111 130.196533 273.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 340 0 obj
 <<
-/Subtype /Link
-/A 339 0 R
-/Type /Annot
-/Rect [41.402832 69.839111 57.060547 83.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
 341 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
+/Subtype /Link
+/A 340 0 R
+/Type /Annot
+/Rect [132.924072 260.339111 151.62207 273.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 342 0 obj
 <<
-/Subtype /Link
-/A 341 0 R
-/Type /Annot
-/Rect [59.788086 69.839111 109.442627 83.339111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
 >>
 endobj
 343 0 obj
 <<
-/S /URI
-/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
+/Subtype /Link
+/A 342 0 R
+/Type /Annot
+/Rect [154.349609 260.339111 181.0354 273.839111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 344 0 obj
 <<
+/S /URI
+/URI (https://www.va.gov/resources/va-health-care-and-other-insurance/)
+>>
+endobj
+345 0 obj
+<<
 /Subtype /Link
-/A 343 0 R
+/A 344 0 R
 /Type /Annot
-/Rect [112.170166 69.839111 130.868164 83.339111]
+/Rect [183.762939 260.339111 231.787109 273.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-345 0 obj
+346 0 obj
 <<
 /S /URI
 /URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
 >>
 endobj
-346 0 obj
-<<
-/Subtype /Link
-/A 345 0 R
-/Type /Annot
-/Rect [133.595703 69.839111 179.061523 83.339111]
-/Border [0 0 0]
-/F 4
->>
-endobj
 347 0 obj
 <<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
+/Subtype /Link
+/A 346 0 R
+/Type /Annot
+/Rect [41.402832 242.839111 57.060547 256.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 348 0 obj
 <<
-/Subtype /Link
-/A 347 0 R
-/Type /Annot
-/Rect [41.402832 52.339111 84.925537 65.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
 >>
 endobj
 349 0 obj
 <<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
+/Subtype /Link
+/A 348 0 R
+/Type /Annot
+/Rect [59.788086 242.839111 109.442627 256.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 350 0 obj
 <<
-/Subtype /Link
-/A 349 0 R
-/Type /Annot
-/Rect [87.653076 52.339111 133.118896 65.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
 >>
 endobj
 351 0 obj
 <<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
+/Subtype /Link
+/A 350 0 R
+/Type /Annot
+/Rect [112.170166 242.839111 130.868164 256.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 352 0 obj
 <<
-/Subtype /Link
-/A 351 0 R
-/Type /Annot
-/Rect [135.846436 52.339111 154.544434 65.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.va.gov/family-and-caregiver-benefits/health-and-disability/champva/)
 >>
 endobj
 353 0 obj
 <<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
+/Subtype /Link
+/A 352 0 R
+/Type /Annot
+/Rect [133.595703 242.839111 179.061523 256.339111]
+/Border [0 0 0]
+/F 4
 >>
 endobj
 354 0 obj
 <<
-/Subtype /Link
-/A 353 0 R
-/Type /Annot
-/Rect [157.271973 52.339111 198.036377 65.839111]
-/Border [0 0 0]
-/F 4
+/S /URI
+/URI (https://www.tricare.mil/medicare)
 >>
 endobj
 355 0 obj
 <<
-/S /URI
-/URI (https://www.tricare.mil/medicare)
->>
-endobj
-356 0 obj
-<<
 /Subtype /Link
-/A 355 0 R
+/A 354 0 R
 /Type /Annot
-/Rect [200.763916 52.339111 216.790771 65.839111]
+/Rect [41.402832 225.339111 84.925537 238.839111]
 /Border [0 0 0]
 /F 4
 >>
 endobj
-357 0 obj
+356 0 obj
 <<
 /S /URI
 /URI (https://www.tricare.mil/medicare)
 >>
 endobj
-358 0 obj
+357 0 obj
 <<
 /Subtype /Link
-/A 357 0 R
+/A 356 0 R
 /Type /Annot
-/Rect [219.518311 52.339111 237.078125 65.839111]
+/Rect [87.653076 225.339111 133.118896 238.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+358 0 obj
+<<
+/S /URI
+/URI (https://www.tricare.mil/medicare)
+>>
+endobj
+359 0 obj
+<<
+/Subtype /Link
+/A 358 0 R
+/Type /Annot
+/Rect [135.846436 225.339111 154.544434 238.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+360 0 obj
+<<
+/S /URI
+/URI (https://www.tricare.mil/medicare)
+>>
+endobj
+361 0 obj
+<<
+/Subtype /Link
+/A 360 0 R
+/Type /Annot
+/Rect [157.271973 225.339111 198.036377 238.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+362 0 obj
+<<
+/S /URI
+/URI (https://www.tricare.mil/medicare)
+>>
+endobj
+363 0 obj
+<<
+/Subtype /Link
+/A 362 0 R
+/Type /Annot
+/Rect [200.763916 225.339111 216.790771 238.839111]
+/Border [0 0 0]
+/F 4
+>>
+endobj
+364 0 obj
+<<
+/S /URI
+/URI (https://www.tricare.mil/medicare)
+>>
+endobj
+365 0 obj
+<<
+/Subtype /Link
+/A 364 0 R
+/Type /Annot
+/Rect [219.518311 225.339111 237.078125 238.839111]
 /Border [0 0 0]
 /F 4
 >>
@@ -2587,22 +2619,15 @@ endobj
 endobj
 5 0 obj
 <<
-/Length 2671
+/Length 2556
 /Filter /FlateDecode
 >>
 stream
-xœÝ\ÝŽë¶¾×Sè:™Îp½HÒíEôœ»"»ö.ZàœÛ Íë¤(›²wE'©ÃíÁba›–äŸf†óGÑŒ3Î¿¡g#žŸ§—)H"0Ÿ£Ïÿ~š¾úöé?ÿ8<ýõ_Ï‡&EJ†ÑƒDV–w!­ßÌ6ƒ>ÿpøçô<±ÏÑfÍ×ç×./-DTwå”¯åÍG¢óP½Þölšó_þæe¢«¹}ý±ÒÌ>«3Äiþøyúê<‚ÎŸ§òr˜þö[D$DdDDõ³"¢!bDD¯¯©~ÿ€ˆ¿›ñûùãŸ§ßœ¾ûE³»aª !šÚ:y|ª`3ÈCžÄ.°t	Œf„Ôà²o£6ˆÆ(aVwœâ
-/Ÿðñ	ŸëXøÍcDuì©Žs%ÝëyëÉßµï×›ð€HZ_mÏŸ)ß¬GDò<¶áã¥eä›73òá›¿‘ùqbpt%›%Ï[1úüy°˜RŠÍð§éCùÍÎ>]P£¾Í$%Dz¨ÿXÙ8.Ÿ³xÒc•„ç*ÂOõÕ×cþ×Lˆ&ñYéU&ÎÃ·1Ñ\ÐxG¦Ve­2U9¼.?…YÆéøÊw©~÷°°—¯AOgféyÃÚµF¡qŠÉQ“ZšèÂPÊŒÀtIïmÊR„hŸL˜ŸDâyá‚	‘‘‘"ë2žE¤|¶Ör!r<W^½žê5ìâzÕòñ"?.¯Y¹ðR¹º“‰C¼žùX8Ow-û–ø¼@QØœi¤Öy3íÁAÍ£®@Î´ó™âB]C9Ó0ÔÁ´hÛx~Bä,7:¨+ÄÄÉÒ>ÐV°m]?¡6b…àÂ(û3Ð³©*¨óû<£8¹&ðTðî!ÏëIæ[VcËˆ"õžŒFI{¼?,ÿÆ!eÖ²~u‘VƒŠCíÄ·¤á¸•†ÓRqj¥#²'´]ð²æÕHS¾”Ýx4ÖKÀ²a{G¨ëÍßÕRP„¨B=´a–Æ!÷ä!ì#]C¹ëFˆ`y…¦}¤ÕM+¼ª¿šÑ?Cî’(\+ÛùóâQ—øD—xœ]#î×ömƒºÄ–Ç;è‚¾Ì`ŽWÑÓ¯: ýËþ,¨FÆÇWþJ ¦¾Å{¨ÜÓL¡¸Æ›»×ÃY*ê˜U¹èùÈ!½ÅñSE¾Î‰­"ó>V[}È@{Q×±ú¡iñ¨Å%6^É8-$•ÝÅ$¶”ªð¬·à8Î¤#!³²‡øaí*ê­ÂæÄËÀå”!ZR¡Ý´y.Ù[&¿ï-ÊÊq^ðOWóRcMtL‹ ‚‘s¾7“*Åä¬.Œ­é¶qèC ,â²>œN–ÿ¾‹¾jˆûÚYÝ–“fä×…â†ï!~j’®Ï-ò±®
-P!û¶¤dUí,×y9hÙgñ²³Úä¾vÃ_&23sd•Dóç‰9^Œ}šXX£·ã,ZŽÃH$ç‘¸s˜êXö›ëÕ1…Ä,ÍÍ/žaÁÒŒVÌÍØ§)§´SdnÇ³ÕÝþÊi„šëé%æOç±ÓÌš_h¸æï0ý}"ùÇ«ÒÊ­õÀ\\ù0½L‘—»yÉØ-YæóôÕŸhþö_¥ñ2¹/‡ !rö@H©œ£l)-çðrÎ¥€Ò¦TA’¡\#—F[éFùÌÜš³­J´”`‹>q-P…®öß¦2Dj]´RµþŒBì
-Aœ…;ˆÇòšzeáu©Ò98éø:wDN!³gÚ~‹ÛÖY î9”@œû’]˜×nšãž¦‚‚$K±u?O~Wˆ	œ"Iêi]MÞÑóVž9ß	˜ƒa~Ípäi,¤•çQð…B$*ÎÇ®€ôÓÑw^ò˜öMò±	¨Ÿ›å°¾e¬èûy¥{Z`ÉƒÛÓ*Qß¡I0oŠLî9ËN¸Xñ)÷¦pJi¬¹÷Çmxí5º²ïû9³{
-›&ÈåÖÞÝÙÍâSi"p#éêÌ)CYT
-û«ÞÔñrW|¤Ú£í.[«ór	‚Zè!M¿¸rOm&É]§ªÚ™Æi‹­ƒ­"§Ôcè"K1€YŒ=v½MîÓ:d@—¬wueÖ<ä¡ÊóS-lVªêòŒ3ëÀ‰{w©Y…¬ªì~Òò¾6í­B±Z’Êv.Ù¦ãÖá,Í¼Ã¦‘.E5Yg6k±{ZÉn*Óß5j«;Ð>|1"‹ !§žÌ¬ÎØÓpv“C¶{ÖŒÅ¦…„ŒÈ¹'·5ÄÜª¨ÆŒï§ŽqÞv„”{§{ÌžÚ/Ú•&ÝÜÈs× š€Ló†˜÷n!òjuoM—1#Ä¥5¸ƒþøDš0J:pÙ.º‹Ö^ÇI*{"ÎHË6²óv’R±\ýjpç™Ê­¢¶#ÄeŸÃÚu<·¥-‡.êa¹ýDí\s†E<µÃŸ&„ ¯Tx~þD—šÏ¯L]®Z’ƒo¬/ÓùÒò9æ_"k„¨Qb¶âÐ6s
-1ž«^ÒÙ\yË§°¼÷Ï¾H>5‚1cìIáÛ-Ñ/Óù"[æ\ ±8™’è‰ˆ¤'‰’åËÔ\iÃ“a‰¿Dþ˜h¢˜z¢—÷wå¥º¸}¶t^µR4WÛr¨šDq˜öÞÓPG'ê1ÈÃÃŒhˆECÏlû¶;s1Õ5öè³`izíÁ?ÉéHŸ=`'^üu½èÆnP‹Æ±‡ü¢oí†~µ»fÁs‘r=ØÃƒü¼='DJÜƒzŠ–­‘±µ† 9E×ËMzYäqý
-!`Ì»ö;ÌëÅf€qA.R‘d·æg>N+9E`Åà]3¸ŠwMYÎzÙÑÜI­•?·-Œ••hcÒ@=ôÿ[_RŒIÓéÁÒÚÅâz®;XëÓ¤Ù/ëš1åóºÛ­¶„‹GäãÇmÝÎëoŠ‰ƒŸ&ÞÜ:¹~ÈÄ¯(`“KØÇHÜÒ9
-«%0³”:„Ž³Ž îÆr	ðBY½QÊ±åbPT#ÝG|Ýì7²üçLì©ƒxÍãÆ‹~¦ñWRðl¼®Äø)iŠÇ«0¶i˜FŠ1Þ 1·o¡»kdœ$Ø‘˜Ì3?6ýV8zñÌv%u› âé,û¼ÿd…»†ó³æNÖ7×5Ñã{êo³Â!˜ìƒ5¸ü ‹©GôC%;7Ü,y?kð¸^òs»8Ñ>ÂüD˜ËæòÄ>šGùA…ŠêÖâw»>²$¡ÜE¸/)M[[á~Ü
-cekIO¶_YÑ×f¼qè…HP¦®fŽî–ÎáÊþ
-~êif˜-@ðƒuÀú{ ›T)ªß 6mÞ’qg©B
-âºúÊ½¬i]=Òv‹˜óV¹À—KSM¦ÀÜn.€.uj|ûˆrì?–BêqYŠÖ÷×›åëøî–ôå˜×7~×óOÛ¬Êã0EXŒªigú²•þï¦ÿž²òß
+xœÝ\ÛŽ#·}ï¯èHm]XAl'AòÀÙ}ü0#i ;	&âßØÍ–ZÒLS¶£åd1H¢$êðtÝXUlqÄñ74âhÄãîyxÊˆd‹Ñcü÷aøðÝá?ÿØþúÇoÆÝ‚"eC$$Îª#Âü,ååÁÒÙ`Œ?îþ9<£Û(¢e~~mz!·ä¨,Ê¹Ì«—Dîe¨ÎwþmË_yçe «µ}ó©ÒÈ1j0¸;Ÿž‡à‘tüô4L»áo¿EDBDFDAÄT_+"":"F}ÌõýD|üÝˆ?ŒŸþ<üþÓðý¯ZÝkPInjË*8•5Làs[@îÊ"6åK`4"ä.K~µI@Ô]Ò¨ ˜8ûÏøöˆx@Ä§úŸf~ËQ;Ôq®¤GýÞrAÊ{ëçËEx@$­6—×T.Ö#"E;ããeÍÈ·ofäã·™Dæ§C 0”l”²nEñy0Ï9ûjøóðqúÍÆ>N¨®o3I‘ê?V6öóë"žôX%á©Šð¡>Æò™ÿ5b ¤YbTz•‰ÓðmL¬&4Þ©EY«LMŒì^—Ÿ‰™ÇiÿÊ{¹¾÷0³Wæ Ã‰Yz:cíZ£ÐØ“b”Ì¤–Gº0”2"0]Ò{›ò§ìà†žøhÂâ(O3LˆÌˆ,ˆœYçñ""Ók[[.DöÓ{ÓcÔï¤:‡]ÌW-? òãüX”/•«¹'à˜üz1¼Cä}ýá² Ü´dçÄEéŒäB{"µõ'o¦=¨…ë4 Ö6ˆ¼Ð¿P·ëŠÚ	#£m‚—ª?G9ñn€sqkh¬—€åŒíÅ=SÓ»Ý,‘ƒ«PmZ‚‡~H… "GJÛH—Ð&÷Cš¬øÚFZÍÖÄë®Úï‚þÐyH¦t­lçÈŸf3ùk#â~v,E\Û·3ÔS¬µ¯¾TgôÓ
+¹¿Š&¾è*L€J4,Û« )îk”Xùï(5‚šÛï¡rßO3…|‰¿69®÷I*ê˜U¹×®>\ü-Ž¡¯ø~8mô&™¾Úc¢€ü†#/‘j‰—„æ ­ÄMRþe•ôÓRO yÚ³^,â\€ržåìû™tD ¤É¬l!~XD»ŠúãZaËF¤£;epË*´¹‚	mGž§lS\‰÷9ÊÊqqøGŽ«y™}ÝøwÜ& ‚‘Næ|k%U2&“³„0¶l?û¡O	p—môé4²^÷uúb¨É·µ³†-GÍìÈodJS¾…ø°JB<­‘÷U8
+YÚ¶%S–ÁNr]ÜiGX\&Ð†·)ÿ|†¿d‘F&f•LãóÀìcŸÖ`õ8‹ÎŸTt"9Ž0.ŸÙËX¤õ|u,J6Ý,ë_È§_¨XN#»#æ¼ÂGš!19óz¼XÝó_9Ž¤Õ|z‰ùóqì´²õ/œ¸æo7ü} ñ§«Tã­ùñ’lü8¼ÎóUwž~¼.dù™çáÃŸhüî_S~îeˆ˜?œ$çRùŽ$‚dä”çïðüK¥³ÔIr!Œ<%ôÖõ‘”o”OÖ)8Œ%šK“>qMØ¦¦öß¦2¸ºZ­T­?nz!…$ÁÂÄ}yÍ£…râuÙRåÓæ¤ëÜ9%„Âžiú-a[ÃAÜs9ƒ·%{b^›iŽ{š
+FH’-{êC?ˆ‚œ$·´®&ïèé\žg9ï?˜“a~Íp”eÌd-Ï½à$'*¡Á¶€´ÓÑwvy·Mò~µ¡~Z9”Ýbøæ±©`ÕÎ+ÝÓ‚`Ë‘Ân\Ö´ëÛ­Lû›v&÷\‚• \lŠZ·–pLi,¹÷ÇóðR{¿²ïÛ9³{
+›f(åÖÖÕÙÌâtSi"#iêÌ1CY¶û‹ÞÔñéªDOµgÙt[‹u‹rËnÀÐRiþÕå{j3IÙÑ©jcG/ækî[sn±ßÕÉ’'0K‚Þb7ÖÉ½nZ‡’²µà.¡Ì’‡ÜUy>ÔÈ™§ª!O?³	"¸u˜V^ÈªÊn'-ïlÑ·¼WKRÙ.%›‰i?8§æ¶nË(H¢Zdjs5K±{Ùµ’ÝT¦¿ë®5ÃmèÝ™ƒ¦D‘[2³c‡îìæ€b÷¬%s(ÜM	!QÉºlÁm1÷„*ª^ðýÃÑ/ÚvÈ¥—°Åì±ýbíiòÍ<wÝDiiï‚c¤Ì[>ý]îiÁC¥…~ÿDšÐ%%N¸lÝEK	¯$M=Â'¤Ó±ŠS{õT±RýZá.+•[%ÄyCˆ§¾ß¥jjK›é/êaSM>ÕÂ‚!¹Häõðç!é+ž_¾Ð¹æó…©+õCËÒ`ðñ2œ&8#P |ÇâkdÐ ÕÅ[´MíJcŽ[Œ§*„—t®f>çSX9c_%Ÿê`Ìè-)|»%úe8MrÎ\d–à¯SÃ ‘´$±Q²|V3ñÇd`˜Ræ¯‘?¦šÉsKôÊQ‘âª§°ÏæÎÃ«VŠÕlç*‚fQì¦½÷†40ˆZr÷m†$bÑÔ2ÛqÞ9›êº÷ì³”c,œ[ðrÚ3fWodÁ§x]/ú»±ëjnì-ä}k7ô«Ý5^:ˆ”SjÁî¾É/Çs’SæÔãnÙV²Ñ·Öà	³‡¶X^mC/«ƒÜ¯_z9ÅÚ`^/ôÛô—"I	k~1áý´’³+¦hšÁE¼kÊ¢sÆ0FJÔJ-•“8µ-ô•7pÏš¨…þÿâèK©k†gÍÇ“Â²6ŒSì¹a­Ç›%ÕÓÃ6Ÿ‚Átz¾‡­gw—rËrüy5—ô[¸ð˜±\FNq\øêÚ‰]ºþ‚–8‡¤mŒÓÁ¤#½°Z3Ë¹Ah?ãa,— /´5VZÙ·ÞCŠj¤Ûˆ¯»ýzÖÿ‚‰#7/‰\¿hhêqåÒu_ê)YU—8 o×0'ur÷$æö3twÝ—	6$¦ðÌ«†+ìíýË‰]q¢òýjWq8É>oßZá®ûùÑømÄõÎ%ôøžÜ,ƒpJ&ÛàßG®ÜiÃ<·ˆ~¨d{wÃÍ%øÃÐà~›x)7²áLÛË-a.›˜§[XÅ{Ð<*wîRÔ°†¿[ÿÈ’A„Já¶¤¬úÚ&îûys@V“–l¿âÑ—n¼~è…HR¦¦fön—57<ø±©½›a¶rp#{²Øx`s€*¹Æ`óÉæÍ)×~–Z!å$¡Û¨¯bÐË¢ÖÕ=Ïs9Ä*øJmj•)°°›óO sk]…êoß1QöíûRHý\‘¢åùõiù:¾y&}þÌë'¿ë÷ç¬ÎýáD3˜»jÞX¾œKÿ÷Ã+Péd
 endstream
 endobj
 30 0 obj
@@ -2628,19 +2653,24 @@ endobj
 endobj
 28 0 obj
 <<
-/Length 3395
+/Length 3337
 /Filter /FlateDecode
 >>
 stream
-xœÝ][c¹~÷¯8`^D‰‚<ä²ä!@vúm±u¤tlþþ‚²Ž}ìª:òLRC÷ a¸KvúDQ$Å›hÁ—ÿ —J¼<}=|;Äˆ8Aµ¥Ùò÷—Ã¯~ÿòyzùïÿúíòô‚"yÅfEH«.Çÿ_?Yj¹´åO;¼Ø–Vçó{jµ4T3egÙæG¢Öbh<ïò·i‰ñÉ·½™Ûo¿ŒAZØ5†Ö-_¾~õŸ¼‚._^ýíéð?¿FDBDFDAÄ2~VD¬ˆØÑÆ»Ïññ7þïòå‡?|9üù_šÝsP)­j]gÁ%æÐÁû  Ÿb»Àü-¾ÁUK»´E@´5)‹š`ao+¼|Â÷Œˆ/ˆø:^åHß#c/cœÑmüÞº ñÙöÿë"< ’Ž÷zŸ)ë‘,Æ.èñmK‘ßýp3E~øÝŸ:ËüóÀ&`hJu‘˜·b³åëAª@mîÞ6Ã=üÐÿædOÔ¦S’‘Æ5ž?{Òãà„×ÁÂ/ãÝÖïü»)!„ÔÅ¥w)q¾›VÞá©u³žêyzŸ:Uä8NÏï|æã³‡#õâôr¦,½^PííŽb«ÜŠ¢Š3uAIƒZƒ–² Òºýf¹e“	/Š+Ÿ$%XPBb6ewÇÓVb‡°|—XxAài_üx…ÝBì‚’rAdEäš¶:ÔZÝg$%ÏBh‚Àß ”„…ý¸·»¨{ÉBLÐLßõò*›èuÝqiKJ¢¬3ÈCó‡éÊª§qR>ÏiSðÕ¬1ÍåaÈ1Í‚ÊL@ZšÍ¨Ý×ÓPdm@oƒÚ>DvK›†!pq¥Ÿw»j”×3Óô±`¢§¬)/ÅxŸßë,¯[ªiô±,øqR/Xf³x¼³Î$àÄUÍ¥N çïÒ‰Ä:#íºEëÀü:ìÐ4¦ 3¨ÖfÀqlÀ~4(g!L“'" ä*4ƒîˆüt¤{‡ÞÎÓ9mNÞÆ'Û§¥úýÛ§û ïÍ>ÝG›gw47¦f³E$NcLˆô•Óöª•ëŒÆ/GäqnÔòœ1fð4ÎŸû Ï”h ÒDß2ö•Ä.™‡&Gc”	L|È3OØ´QrG'Cèáìäáqêº0õ`À^¡šÊ”âÝñÐòÌQ„&*úVÜ]1GP9Í2
-§eOA¯væjc¤[ÊM€Im¼ûÂVC9í`åBØv-ç¶CØV—0ã÷9!ßŒìZá;XyÒÄn6]ú<ïVm ¥R™AÄíqÙ±ˆ.·^¦Öù§êß
-Ž^«ÝÀgå•j2ƒZH´Í(þ˜­À¸(\•fÛ­™_25B˜‹š1ÂêÒ÷J³=¶¡ƒÅöL„±íúax»åÇL^¶µX›¡Ï×h@T§„Nßu$æ^uFUZƒ£C¶=­¬œ½)¢J›A¿ýÌˆ`>ç	ž{ >UÇ)piª>ƒùò‘ŠNƒ^	Ü„Â^»sÁ¦PŠ3Í¨|JAxÉd]!„R¸òl§u˜vÞm«ÐàýšOÖu,{*úu7Mk5A´	Ú"HCÙ¤¶2§é]8oÜ¡IÕ6C›/¨ããšlŸ°8lÉÇ«€®Ž)äF.P¾ƒÈÅ.È»‹\ì¢Å´X¬Q¸ýßCxOsçpë[™¡Ä5Åñj;åÆ4IZQ¢6#ò&Ñ {H7¾õ7ÓÊ³(×J4›Îš)ü”i8°høªªLá¾ÉÄ:2Nè]VÁµNyÍÇ®çœ¡=1’±ˆÙ^•·±£4Ãˆ#A]Ln@~éLM¨ÁTkÀ^ã0'^IN8¤8÷³Ï¨}<4m¼U¤oD|ÞÅZo`š£÷-3èL+¶oè J=iWB—¦7ÁÏ×¨\ü–Ö5e)Ï  …Yf‚£× ¼“(v´V2Lã=ßÖ'åò|$¹j=²6› ×ÉÞU4yNE[Di/$ùzÖèAàU–äàM {2Ëý}r9±‚ÅÙ~Fü.¤× T^lXTG§ÜÎšio
-­–6ƒ:\¡¹ù+ahˆ!ñn^Ú	4m:åÕ£ôÝD(k¶`­àÅ]iJÝûy„°sa[/&¾­~„W	QÎÉy«’×äé¼íˆE‘ŽÓ)¹<Ô5Ìã˜bZâ)Uu£¢3è%û@Ís­¨÷m-á¡leÆy‰pL‘ð¢Íh¶øé
-–ædå;YüÊàVe*äòRá¸	dµ©ÐšÀ¥ZõŒß]lÍ$’è÷Ñßï!0Š.ŠVvŸ-À›S`žöà“ŽÞ…|/&3‚Ks›²ø…yäjP;g±wÖÝ›WßÒ0Üje6etrø¦1 ƒz%§Ó¤[G!d½~¶g´E“”('š!¿•îŽÒ}1»h3ë¨²úŒòÍ¹¨k¨lµ~k•¥Ÿ’ö?±²Á€Žåô“ÅŸ˜sœèƒ©`Í«øl
-kªÁCê‘¤(Še÷´Ì;Ž(`iD3¨×Ö„Pj>­;j^§öwªžW¾N³™K¥|ÍLLc[xÞ€ãÃü’Ì 1¶RÛdÜî!¡‡ˆ <ÌRÿ%‚çiªEpFíSþuž24lÑÝgu(ÃS¢µJj2Od~ac÷ÙÎ\yúØ³%·ô¡@Õ‚*3Èé¶'›1FVãd¾{Í”wÂX%Ú„M ¯FÞ„‡#{ƒ¬w„=w†ìÙ5ò±78cfr«^i»y‹»Þ¹wo‡îQ5ÐåëÁš·žÔGþz¯ÔòÏ7]0ú4£3æ?7áÌ Yqâý>.Íùv8?d%BsÂèrú‹¢Eì6<ªz]«ÔÕbì<Hoöõ·ÃùÁ'†˜-n???³v"öjQ¨3[óüåT8ñ„(môÈyQX9÷ÑéÞ/ãã;½~!:ùñ%ûn¼œ[õ˜ÜUojéRóº£í³#ÅgË÷Êl€æÑh-ÂXÛCË“âÍ„ë¹ãqo“¤ã9¯ÇÆCñY´Qê„’ã÷Yï9i%òß³˜k¶C³„=Ám(ÞE}b3¨¢oÝ.ØÕ)ÛþBy=”Ú°Ðu:9•ÄT5zéî3„Ÿ-·S&ßô5Œ‘^*¾þmWïŸµm=vÖßÅRO$³n jÄÍ{S‘}jæ{Þ¤B1ÃÙºËè‡OyÉ ªà®RgÒ`u¾dGç¢Ë¾Hï-¿Ï/gáÑ3˜—¶Þ@I­ÎdØã¦>dåáDI<4/dr¿;-ì…Þé6œõ¶ò§fˆ¢Éï»œ—Ñ]@­ÕR'¨×VÎ­{r—H\]ï‡ÃJ¨ÇZ¡Éyí6z‹ƒ	÷–ûšY0ç[´â¡ß¦\°öÄÎÓÆÁ[5lûhïÀstÂZnå€ÔÎc]#ë-®¾¡Í…Q§êÍ¼ÝfÕúãì†<Îˆ&°Â…y:="àäV¬N€æë‡pHºR½iº•C%š¸Ðñ}Ù9æÐ¬’È¬»F†V¯r^:4S´ÞÅðì¡¯dò©8n§(Tq"V‰›ŽmD}œöÑÞeØ^˜ãb
-,3^¨/ª_ÏöÅUs»´NmîU\úMû@u“aàéš®@¬nÕ}Ð¹}z"Péê¥É„´´i’‡¶¦h)½6ýÛŸ
-ŠMXöTÞºö—N&j6ÀcwÂ]äRRéH€”ˆoæ„Ô‚‚ …&hïõ$¦ôk>öi{_ŠÇ})µÄÅ«÷+o%ò®ko½2ýü#Ò T"› ½ˆeØ0¢së6±é+µ¢áÛš›Ÿ\¼X»ÓÊ¢'-WŠÓÁ.À»òÍ)ô`z™ðè]VÐÆ5•mýÇÍ:Æ+O‘C>§]®i—å.ÉWpbBŸpMº­Ë­B’2‘Á¹yêìÅœu†ò"&q]ÍãºK#TÝG~ŒO¤¡,œe¦‰“[ïõ›eïØî:ÇÖ÷pn»¢ææ¶PQX¼O×w4r^õ#…F £ˆ£íRùqs]|o”—âO*a@ÆS÷1ÿ”LÿÍÃ‹ÓzBùzàp5.ÄÛñ_J2{8\½Q»vŠòX¯ÚÏ¾- þvØü±K;B/ _$‰]À¤®7ÈÝoÅþvØ<è‚|ý&LfŠkÚrÈ÷™á„(±8:gw‰—®B­b¹ÅHÍD©
-…œÌ÷Áv)92/ûÖOójX³£a=¼½IµÝÃMªa²šðÆEàqêúþìê»ðu]Õ®üˆÚ”x—¶ùîóñòë;õŒ&BÇk½¯~Çsmü×ÈI½þ[WRòšXr¹¸\BÜ]-e»-A­Þºã(Y4”«ÚNKê›Sô8GÉó¶Éø^pÄúzÞôÿ<&½5â;A§íU½äiü¾_L×¶Ð®HV‡ÚúiO/ùçÃÿÕ,Ë
+xœÝ]Y#Ç~×¯è?šG±Š‚<Ø9€<p¼oAv. €7ÀÆ@ü÷–ª¥Ö]²1µÆB˜QKÓû›Å›,ZpÁåw´àR‰—ûO‡Ï‡¸"NPmi¶üçñðÕÿû¯ûÇ¿ÿåëåþ‡‚"yÅfEH«.ÇßŠ¯Ÿ,µ\\´å‡ûžlK«‹ˆÆýùµÛµZª‹²Ç½ló–¨µ¸4îwù×´Ä¿øäó^¬íëã"-l‹Ck–Ÿ_ý™BÐåÃÓ¡ÿ¸?üã÷ˆHˆÈˆ(ˆXÆ{EÄŠˆmüôñùGD¼ûÃ‚ÿ\>üõð§‡oÑê®Xƒ*HiUëº
+.±†ÞØ y‹ØæÏÑ‚à\µ´ëH[D[“²¨ö¶ÂkÀ'|ˆøˆˆOãUŽôkDãÚã¸Îƒè6þn} ñÙö÷õ!|D$?ëñz¼§xXwˆdqí‚Ÿ·ùæ»«)òÝ7ë,óãMÀÐ”ê"±nÅfË§ƒTÚÜ½m.ø®ÿŸ“|º¡6}›’äˆôq¼pPãáø>Ø“î'<~?mýÎÿ›RAH]lQz•çË×QbsÃÊ;<µnÖÁS"÷¯óO§Š¯ÓÃ+Ÿùøìã‘zqz<S–ž.¨örG±UnEÑÅ™º ¤A­AKY
+iÝ~³\³É„Å•OŒŽ,(!±Ú²»ãi+±CX¾K,¼ ð…´/~¼ÂÀn!vAI¹ ²"rÍ[j­î3’’g!4	Aà/ÊÂÎÂ~ÜÛ]Ô=f!&
+h¦/‰z	y•Mô´î¸4È¥@%QÖä¡ùC‰teUŽË8)Ÿ‡´%xƒjÖ˜fŒòqÈ1Í‚ÊL@ZšÍ¨Ý×ýPdm@oƒÚ>DvK[†!pq¥Ÿw»j”§3ÓôkÁD÷YK^Š9ð>¿×!Yž¶TËè×²à‡§"^°ÌVq7xg]IÁ‰ªšK@Îß¥!‰uFÚu‹ÖùiØ¡iLAfP­Í€ãØ€Ý5(g!L“'" ä*4ƒîˆ|¤{‡ÞÎË9mNÞ]Æ;Û§¥úíÛ§û oÍ>ÝG›gw47¦f³‡ÞŽÚ"¼1&DúÊ†ÆiûŽ
+ÕÊuFãÇüéˆZ,8c¬à~øŸibÑ@¥‰¾dìg»d:LŽÆ(˜ø1Ï<u`ÓZtFÉa¡ç ˆS×…©Ž{…j*SŠ÷À[h@Ë3Gš¨èKq÷Œ9‚Êi–Q(8-{
+zµ3W#ÝRnLj3à=¶ÊiŽ•agØ]´œçl‡°­.aÆïsB¾/ØµÂðäI»ÙôÑçE·j-•Ê"nÝe?æ"ºÜzœZçïª+8z­vCœ•WªÉPj!Ñ6£ø]¶ãV pUšm·î2?fj„0
+-4c„5¤›è•fGlC‹í™cÛugx“»å»L^¶µX›¡Ï×h@T§„Nßu$æ^uFUZ“£wC¶Ý¯¬œ½)¢J›A¿	ýÌˆ`>ç	žG ÞUÇ)piª>ƒùø–ŠNƒ^	Ü„Â^»qÁ¦PŠ3Í¨|*AxÌd]!„R¸òl§u˜vÞm«ÐàýšwÖu,{*úi7Mk5A´	Úž"HCÙ¤¶2§éMoÜ¡IÕ6C›/¨ããšlŸ°8lÉ»g	]KÈÍ\ |™‹]7—¹ØE‹i¹X£û¿†ð–æÎÖ·2C‰k‰ã³í”›Ó$qhE‰ÚŒÈ›Bƒ!¹ÛÄÖ_,+Ïþm \+Ñl9k¥ð}¦áÀ¢«ª2…û¢ëÈ8‘ KQX×B8åýµ»žk†:ôÄLÆ"fWDU^æŽÒ#Žu1¹ùe`0µ P¬u{ÍÃœx%¹àÂïgŸQûè4m¼U¤oD|bÒ¹€Ö+˜æ}ËL:SãŠmÆÛoˆR=íj@èÒô*øyâš •‹_ÃÒº–,åÅ´0ËLpô€W
+ÅŽÖJ¦‚i¼ÛÂâ¤\Î‚$W­GÕfô:YÁ«Š&/¨h‹(í¥$ŸÎ=¼Ê’\¼	`/f™ ¿M.'V°ðígÄïBzMJåå†µ@utšÁí|¡©™ö¦ÐŠai3¨#š[¿††Oáæ•‘@Ó¦S^=JßM†²f	Ö
+^Ü•¦Ô°F
+;¶õfâëúGx•å\œ·†!y-žÎÛŽ(Ñé8]ÒËÁC]ÃÜ%î·¿kA‚ºQÑô’íPsÀÆ\ëê­d[KD([™1E^!S¼h3š=üôKs²ò…<üÊàVe*äòJá¸	dµ©Ðš5À¥ZõŒ_œ]lÍ$Šè÷Ñß®ME+»ÏÀ/0O{ðIGïB¾“Á¥¹MYü…yÔjP;W±wÖÝ›ffpÃ¨•Ùr6–Ñ)à›Æ4‚ê•œfL“n…,ü‰ýúÙ‘ÑCR¢h†ü&Tº8JÅì¢Íìkp Êê3VÈ7ç¢¯¡²Õúe<ûèlh,ÝKÚø‰tl§Ÿ<ü‰9Ç‰1˜
+Ö¼ŠÏ–°–|LuIJ¢XæpOIË<wDK#šA}nM¥ÖÓºC¡æuJa¥»áaåë4ëA¹TšÁ×ÌÂ4¶…ç8Þ¬/Ét ¡°•Ú&+àv=Da–ú‹ž§a¨ÁµOõ×yÊÐ°ÅtŸÔ¡Oó‰ÖA(©Å<Qù…Ýg;såéãÌ–ÜÖ‡UªÌ §ÛžlÄU“møª/š)ï„°JŒ	›@_¼	GöYŸ{žÙ+²kÔcopÆÊäZ½Òvëw£s¯Ÿ=¢j Ë§ƒ)4o½.¨_ùþQ©åÇS0þ2c2æw¿6áÌ YqâýÞnÍù|8ßd%BsÂ˜rú›¢Eî6"ªz=W©«ÅØy^ìëÏ‡óO41'ZÜ~}¾gïDìÕ¢P1V¶ÖùË©q"R–2fäØÈÂÊyŽN~­×ÇwzÿB¸“~|É~ì/×V=÷l6µt©ù|¢í•«#Å¾åkm6@ó
+´6a¬ã¡åEÝo\Ïû˜$÷ƒ‡â3Y=A9~/qàõ™“V¢.ñ5‹¹f4‹AØÜöâMô'6ƒÚ(æÖí‚]ƒò¸/”gÐ“A©MP×¡“SIL…AQc–î>CøÙr;UòÝÀ\Ã(é­âûè_NõþUÇÐÖãdý]ŒÂGu×7=âæ}¨È>5ó#oR¡˜áì¹Ë˜‡OyÅ ªà®RgÒ`>fgçbÊ¾HŸ-¿Ïçá12˜W¶Þ@I­ÎdØÝ¦?dåáGDItš2¹ÝöBŸŒtÎzƒü®U ¢h2Áû*'äUtPkµÔ	êu§•óèžÜÀ%W×[çá°ê±Wè'rEÞ¸M†>â`ÂÇ}ä¾f6Œ‡‹V<ôÛ”Ö™ØyÚ¸!x«†míØbŽ€NXËµ:y¬k`d Å56´90êÔ½™·Ûl¡ZšÝÇ1V¸0O@§g\€ÜŠÕ	Ð|ýIWª×"M·r¨Äš!¾-;ÇšU¹‚u×ÌÐUÎ+‡fŠÑ»’=Ô•LöŠãtŠB'¢a•¸ÉéØF@D1ÇiíM¦í…9¦À2ãåú¢û5Ñ·_(ŽšÛ¥uêp¯âàÒOlÚª›
+O×tâéVÝ;§'•®^šLHK›a yh‹@aŠ‘ÒûhÓ= ØþTPlÂ²§öÖunð8t2Q³¡ §î"—’ZHG¤D|5'¤6m(4A{«žP˜ÒùØ§uîy)ç¥Ô¯Þ®¼•¨»®}Xô>ÊtÿG¤A©D6AzË°aDçÖmâÐWjE#$¶4·>¹
+x±0v1¦µ-ÄLZ®ÞÁ.À›ŠÍ)ôdz™ðèMvÐÆ1mýÛÃ:Æ+O‘C1§]®i—í.ÉWpbBŸpMº­Ë­B’2‘Á¹uêìÅœu†ò"'qSÍã¸K#TÝG~ÌO¤¡,œe¦‰“Gïõ“eoØî:çÖ÷pn§¢æÖ¶PÑX¼O×W4r^÷#…F £È£íRùns\|”WâO*a@Æ]÷1ÿœJÿÍÍ‹Óê¡|:p„‡âíõßJ1{\½Q»‚všòXŸŸ}Ù@ýù°ùÏ.Iì½y€~“$v“Z¸^!wß>ûóas£òõ“0™)ŽiË!ß{¦¢ÅâœÝ%^ºµŠå#5¥*r2ßÛ¥ä¨¼ì[?-ªaÌŽ†õðö$Õv'©†ÈRHhÂ‰ÇWZƒžc–KÄ\b?Ã;xÛãbõZ6. d1%}@m'œ¾q‡s W(Üñ½Xæú;=l†Úß¿G“ñÈ(oç÷÷æ†ûñ÷~|1=Wð»rFjëÇ€½½|¼¼å·‡ÿf‚@
 endstream
 endobj
 49 0 obj
@@ -2666,31 +2696,28 @@ endobj
 endobj
 47 0 obj
 <<
-/Length 3844
+/Length 3288
 /Filter /FlateDecode
 >>
 stream
-xœÝ]ÍŽ#Ç¾ë)úBó§Š¬‚ìü 9p¼· ‡™‘à°1¼~ÀVµÔÒÌ6Çk¶…0£–¦÷+6‹E²>²hÂ	§ßÐ„“O/Ÿ~E:¶ÉÚô¯Óá«ßŸþý—Ó_ÿôõôòÃ¡"uEkEHŒkÎ¿•¾|2!h¹¹Ø¦^þyx=p›L'‘ê÷ç÷n/dZkk,•»ß«­Þ™ù¥q¿Û¿¦Éÿù'Ÿôfl_iâ6ÕÆ`f4}øxøê<B>¼æ/‡¿ý	Ëx_QÑ±Ÿ}|þ„ˆÏ¿›ðïÓ‡?þðáðíÿ5ºÆP+H1­ºŒ‚‹aßXùâƒØÖïÑ„ÐW¸´Øc¢-RÍ¤Lµ5,ÜmgÀ|GD<!âëx•³|ýÑ¸v×y½¿[ˆ¶þ}yOˆTÇO=_÷÷äë‘š_»‘Ç§µD¾ùîa‰|÷Í_f•ùÏ›@ÃVI'ñqW´6}<ˆ
-¨õÞmuùûÃwóÿ<àË«ÕÏK’:"=iÏï]=éyhÂëPáÓøÙ–ïüÔ’¡Ú¥M•Þ•Äõòc’XÝPyC§–É:tj–ÈËûú3KEÎ×éøÎg}|öt–žßƒNWÉÒëÔÞÎ(Z[D7†UmÊV*ö†ÒyBàkZú£S6®|–ƒLDgæ‚yBlNø/O 6¢ ôi8+æKRE°fRK€ôlõ³Púäï\-zêWyf¢%dhn"¸³¥·dŸ]=v)À\ˆ)‚ÝÆ"sJƒª
-äë¾PùeHv¬´¬“mü~Däm¿àKZ1&`1ÔHâ<Ìô¢(di«YÅÒQ’~•üÙ]LƒÝ|FZ¤0‹«@¯×Ð‡0?´©Ém*­^Ú¯Ë”<Ã¦š¶ H3F‹»*³P6)•©¾AÉo&»¨ãåî‘«CÞâÂ
-µ3·ºCeDnˆÜùQê¸v†{JiZ
-(„¨®ä»IÌ¬"—©õó0yy¦®¨îÐ=`1òš )‘D0ŸF ƒ©p»‚uDéÜÙ›K;Áz)=ü95Ð‡TsµµMÅdkA>%Ð7qúÏ³
-`/¥q€–Ó\b¨„V"„žYš=ß%}·Äi²%4¨R(Ò|JCH
-H™"áŽùtÎ‰¦Á•VšY$ÚGÆg„4Òbø¼ú,/Ô@‚ÎÊ	ÝVhWÑÆãqúb RØ"øÌK°”·#­¡qÛ‡)æ^¡*
-Ênm±`…î›D:]Õ×#Ï%}O˜¹×¶å:ÈžmFG Bòès{ÇU~»Œ‘¤ùmÄ»yL·	ûœ…B^e'–‡çÇ‘uhM‹EC¸,‘§±L¦ÍRFfÃJäyv–!ý–jûD¡öé7.;^Ç•§—'éFÀh¦%‚ý46ï–%=-Í"ØÁµKÙÒ—ï6•Â‘›÷|^iæéWGJe&»A×*ÂÑ(Rw ˆªa­ÀÜOªžJƒŠ­–@ÞgÎ›z‡NŠ¤¨÷q$5Ü¡ÊË
-AwéEi!”!ý±Yr}yÆ¤Ã¼sNÇ±	8•u–çuK2i¡=tBÌ¬ãÃIÛTØ¶>:'îù„(æ{iù¥ÝŠhÏKø1Ó›î¥`‘¨¥µ,ïó6î&±ôúNvcPìMCø53IîëJ­„jòq¬âyî>#(6òÍœm¨ýÌäB[/‡i°TDfNA».ƒ™Ñ‰ ,ž.ÝÖÛ]ä¿ˆ”®­‰
-Ñ/6ñìI$³ÒƒA\vRß³Žkiî‰A§Æ¾«ºýôØZ×ùÙÌt¿2^g>¬Ne…ÓG&q¸\ZÜ£Øû´pZVóÓuÁzc=>VwgtRîÇ“Aç‚ÆãÒ÷„âtÝ{ºï·S€¿û¹%éËD'ßjØ–äóB\¹;#CÄõG%
->Vÿû"iR,¿29{Ñ35ötÎ“ÓñNV«;\dU˜’Qÿ•I‹Û$]#üe¡vŒØïµ«ML:}<T¥bEç÷?§¾(ùZ‘=½-)•"¼]Zó%ùrÒÄSIÁ3MÏ†:ùº7d¡~ÎØ¥æ_¨*´b¤áìyÅ›­ Òüýj]½ÎgúRœô¼r ÊjKHW,ŠÔ¬/[‡Ò+Q4¤%¡·$0]‘Äc±¾û)ë+EÃ_\‚ÚuÍ¿ô©ÑmG0kÂÈýÈàLZ+[9•ANE€XªÔG”÷]§;/QçÅÇ$]#	ïzãÐKQ´¨q†‘ž’ææ¼¶.Ô¶äR¹KÉB£\R~›Dë9ò¥\}É,,ÁKª4Ï2(µ•h$7ŒÝ<³ŒPÎeÇÜ ]“˜³Ù*n÷6‡À©,~š£!F*¾ƒ
-ªP©ú=¨ËÃO%©±÷àÂÔ#¸©®×
-Ü˜9”ê.CX§NQé¢?Z]Éôâ=W)ÚH#3|¡–/´ºÔx©ô-/"Õ~Ä"½(/EHÏ×þ$yBõŠÐŽ³%ÛFý†º“GI+Ð°vŒÔaŸá³×ð/	Šmø¶©¥¶èM[‰¥ý¿±‹pªv‡|×MJfÌ÷=h´|›üá76ØçbàãÙóÒÌIÆõ:8Hýüº/ ^úùµù»<¾OçÏdäöç¾2Œ(iYlV¨ÅDeŸµ8¡	Õ"Òã»[L?gú«€ô¦¤Ë6O.9@šÕ7pùMø2Wýë(™—E³ó¶H°ÕA·°ûÚµç¬ßQÝ»Æ:¸Œ‹]9žû´Hb£Ëì6t×ãYäÚ_!_AØ8!CI,óvf
-{[‚@9p,B’©Bˆ[Wê
-²»X™œ+îøùƒV›Ž«Z²4È¦Ð±i§ ù¥§Fj€@„PX7º—ê5áŸßcÊ«@
-R«ì}1ÉÐIZU#¥xŸ}—™ÓR¸Y4w[ÁÉjP»ECÀñsnK™IZYôšjHÝ³`+[«Éé¼’ÜDcÞ²)Íµ0¯µW'QnÏ+rkˆ»'›¶ž‹hÒ¶z¼¨jfÆ(×8­þŸ˜™J+‘®>ø5µZ%˜ŸÁÝ£FsÛmž9 wßÙ…ÚÁ®U[‹`ï€OT´JÕ·:|uioNÊeöBëent(Ä%ç“ZäÚ”Vß1ŸiËSWT‰Û<¸Í½ØËvuÞö_›¸öâ¡\L*K‘íEtÅø´+#‘iæm½J’†pé[’Ê8*¥†pŸ÷éSG(­¡X¤Ú%ò‹Þ‚©†z½Ë]5¯½íÊ=’ô€íp/¼¨ã<!ñvHÑd¥ãK“ïÙYÊìfé§|~uñ½°¼¥» Ti"”k¿è¼k—2´Òšç$6ï¡ ±WÀjä3oë©g¼Þ\´*¶Ö§ªmþ¯Ö×-%dT+´ÂX(égvC?Vw¸•›)>oþ
-å6—&ôpžÏKÕËŠ}³¥Ÿß¥j~:\o|#Mï{ƒæ…2YÒü’œÁâ®™öÔg¸ß$‹¦Êz©«—¸ÍÛ•Ô¥0ôiñ²òb^k½ÖPº›¶=Ó-ñ“ÛösñeŸ®Eáùþl3PìŒ ?p T¯íf²HØ¯×œÞ÷Úøuf™XµFüßŸgXP¡KÅÚ£!¬»cžÖìÓÔÈ³z×àù´» þþŠMQ@»šEºŸ¿ú8²œÛ
-eÙ¡MÍQIU(¨½q7­;þÜ¢·ÂÉÓu5¹l×ï†Mï²:o mbÍŸˆ*4¥ê=l6árD6 .~øa Ñ}dU«@þý¶§W‘’ {-w€tY‰_‡sÑ³©1Ôúœ¶ÞÖ‡]Þ8obÓÁ½±jc/ƒ—´w=ýç#xÓ˜¹BFmûÜyv³çÿ”zÚ`›¨ÛÖª·ò£/‡Q;‹&m5ÔóÑ+ ßŸ°½Åuk)’ù®›÷yf•k$þ\–c3("¡ÜA…/6(}nŽ@}ZÎ‘Ÿ¯¦q&î€èØÊ™o±=¤%=zqûÖ™‘üÈ øaê½QyDÕ3ÙÔhkí·{¨yŠá-#Ñ:E€O+ÃË­–/áLrÑÕÛPñŽ­ù:¸p4ŠõäÊ‹óë8zqùç‚+JªŽï½\¿7—KµkAàOS8˜©¬b çƒlÞ3	z]÷òJ­jj†ÄÚým{w>Å®Ô#è‰udìsgâ%õ¶:íãì‡æÅ²Ø:Öúì|.Ê[ÄÞ+ðÜ5>Rˆ§löS±êg Š‘—Šc«¬¡4oHy§ô†'Z@šŸÇJv„ºÚ¬™MÐÀ‹f4’øg£¦T'Ò<¦åä¶Ý9¡—9• Üå¶k0V¡HÆûÝ}õä¨ô^<ÆØ~ é¬i²
-"$Ò•WàÍ™óÒ8’ö>àNÎ4j¬ÁMßãñß[Í´þˆ¿CÎ«Àó>¾mN¿lËøtÛ(0×«óe5òwÐ¡*@ù´NÁía£Ýé0JM#äû\© ”¹çe ¿+¢ŸÑ@4·‹žÀÍîfjÜÂŠÎ¶uÏ-¼(N´l~lH supÛ¥±rb~“€È:ïÚâù¡éÄ,	wŸä4nNÓø¥ùÿÞ>¹	£lƒß± pé¬˜e)yJ
-`‚$%RŠ¼4‰z3É¦=@¸kb””HÕzF±fsöäm£Í#F±T¨Mz+<ï=‡¼Êt-~è+q$SÞCë ?ºØ„´EúšŠRÀ•È6¤oý3Pí­
-©ÌSÏúlÛ×~Ë÷Î[eµs‰71ç7öìˆV5n~Å”6OøM¤ûêDá…lêÙ¶Qç:YZüïºQ ®ûŒ°—æ‡ólËx—q+ŠeÌÀÜÒ‰v¢$AÛ]f²ö_¬K~©UØÃ>òU©Â&Ú]T*lËóÎ!÷ Ò{Ür‹š‹9ßaôç5¬é£Éõ•ª.pí‚µ_wÆÏ‰1D9>Ðt`|ÏU|ùŽWÛ¾”„Ï×O+¶ÞëíçsCùãà‡­ˆ1³_Æß÷óëŽçVBuP³ZûÆðåÖýöð_CYç"
+xœÝ]_ëÊm÷§Ð(Ã?Ã!(ú¤-Ð‡é=oEv×^ @N“ í×/(lÙ»Gtnrî(ÃkÉ«ýÅáR4á„Ó?Ð„S%žÞ¾ž¾âˆ4‚ê“ùô§Ëé7¿¿üï¿]þã_;½ýù„ H­¢ycÕ	aù­´õÌ„PËÝAŸþüö?§÷ûduÑ¸>vy!«ÅPÝY”[\Ë7‰ÌâP¿Þý_Ó?qæÛ‰>¬í·_úAšØ'u3£éË×Óoþ…'BÐéËûi~{;ýç?""!"#¢ béŸ+""zoýü"¾þÓ„ÿ5}ù·Ó?9ýá¯ZÝkP)Vµ®«àk˜Á·6@¾Å"vµG`4!´®Zì9ÒQ3)“ºƒ`áf+<¾â;#âßû«,ôcDýØ¥çNtï·Þ8·ý}½	/ˆ¤ý½.Çã3ÅÍzE$cwôø¶¥Èï~zš"?ýîßg–ù¿»€£+ÕIbÝŠæÓ×“Tj­5Ûþãé§ù&7øzA5ý>%©!ÒKa§ÆyùìI¯Þ;_ú»¯ßù[SB*iŸ”>¥Äíðs”Ø\°òO­›µóÔL‘·Ïùg¦Š,ÇéüÉ¹ÖÏ½,Ô‹kÐåFYz¿£ÚÇ…•­(6GiLZÛ„@‚R&¦Gò>¹ùÁÐYù*Âha3)Q‘‘/ˆÜ–—¼u*Å¹º0K¼‹l¾{Fä·åØ|^ú1í¯Ç¿Ç~]ïÿç²PöþíŠº£
+IHAÒê[Î´ÚªžÒž$Uq,&URÉ©d–£à‰V'ÒeÈ¬y¿BZÌM´$H9
+eHÊÆjÙ]¿Ñs$ZBÁÕ¢m ‡(jÃ`—Ì…˜2ØÞ5òeÔZÂHª	Ôx3e»¥Õ¨ðþ{HÀ}#êGJ1&`1¬Å¹ë´•QÈ†AÖ
+dŠ¥=Ã$íFùÅ¶»	ÄŽ´ŒaV»ŠÞoÖB,a¾Ã¶f¨»Z@¿Oí÷uK.°I‡)qc´q°òyJG¢
+ú%ØxŸ[IÃDWÐÆì)ô§8Dv+ bMxe¼™Äì`Š\JÆÖ¯]äuZ@gƒ.—ãš U"É`¾t¯‡Âm,­–Á­¹an!X+E²›?ÇQZ§êXnõ©”¶§Ï	ê‡ Æ/S°•âœ åa&qPB+ÂÃÍ–ïë\}a´%4P)”q¾CHQÏhŸ¸}?-äap¥7kE[u×‚z_7çÆ¹HÐ¸²eD·Ú·1ûx<}1¨RØ2øÌ«³4N#”ª©p;†(æ¦ å°²XP¡E'ƒH—û†ç¹æ:Gêc‘=ÓAŽ,3Z„ã‘ÂûÜ_Åy“(}%Ãì6bäfáÓíÂ^¢È›èÄzÆÙqdÜk±l	WyéjrØ.e4`6TJ Ï»³§L–ôð0ÈR¡¶’ñ7®éÁóÆÒGi'`4«%ƒýÒ3«Jfl`„µIÙ†«oŸ
+yfæ½.šfÞ~ÚC*ÇÙ­ªg«š"PCUK`'TOÅAÑµhù˜1ojU¤ú{Ÿ{P#ªqQB!hA½2­•¥S¿'Knw`œ0i0g®ÓíØ“€³PÙz`ã¬ni@&žÊÃ¨šy¼› DŸ
+òžÁGˆüÞƒ÷¹ˆañ%‡fEª&ˆg~iM7†R°H´v¦µî¬ŸÆmÂLbiôƒ
+lg¨Ø¼¦ðud<ôŠ*!§œ|îZ|œ¹Ï"™³µ-¹=´­:;ŠŠÈÌÒ-h758Ò;à‚%Â¥û|{ˆø— ƒHiQ4²¯;Rt·¿ÛÀs‘ÌJKqÍ¤¬¶§öcÃÌ	ƒFÎ$ôËsºn®q½!›ÛnåÁsukÊg¬Lž«á
+ZÔR5û²Ö´læ—›Âú =¾6WgV Šîmúzb2h\Ðx{ü'„UÎUÒ?ŸQ9ýÓ/MÓP-ê‘-£éëZ$¹1|z¬ˆõg…¾6ÿýŽæ"Ê¯‘âÑõBÅS.¾,±s:?Pms…{ªi«dÔ~ta”™çokáG÷ìù‘ã|â‚PWš©A¥b¥nÿ’$û¡…Ú9‚ÕûtãÞ‚Ãû=K?²¶ŽA\"ì”Üáá‘Ó(ÔnŽÌ)Ôï‰Ã¡±Ò
+^Œjº—Þñ.mDu|îE€¼Õh Ú‡¾v}½nŒ­²IÕMÅÅÐ1[ƒÒ”([Òü[ƒ8œ‘„˜D¬~Ë†ÞÐúwÌÞ@‹ŽºýPO¸!˜¹pò8ÅæQMU•-ƒ<´ÚœŠ ±¨è3Ìû©Y>.¨]Ý$­f>t’1ÚVj©Æ-[Æðð5{Ô°°5É úsZçäL–
+å2ôæû$Ÿˆ§¯s ÖHÃZQx«Ž“ÌŠbõ’­ä®ºwœXF(K?w7	í¥YF/!÷v—ÀC+þifGÌXü ÉRPÒ¸fu½ùCÚ8;pajÜ¡¦«;3§T=¤eVT¥è/½¯Œ´â#)Õ©fbøZ†¾–àõ—X÷¬ˆ¡ò«0 iš ¼6,½Þ¿Œ#jt6œ%Ù>êe>ãÊ×
+8jÃŒŽé>G¿ÿ Ø‡okCÛÐñMÀ«—œÚY%Òž>#xüá28š†çÆáó"‹y’õL¦‰¡;qlþ.÷ïÓrN¬C–ïÉHÁžX¯i?dßŽ"¸Éž?M=ý’á¯Ò¼:'H×¤ÏØBBB‚jä¦àò÷ežP{…­œ=.%@@‚®-ƒnéX»*Ï¸6ü„u†|wŠÕ87¦^Ó²»Ð±‹¾™AúÜ…ñÂæÅC˜2ÈÀ–ð¨báa0v%$#BÈˆÐ3¸‚Èab¬Ïâª ß×´™òtÞôƒlzm” ¿Îßê !®Qcº—ôð?*:F
+’kû…›dµ\Z3¦ø¼Rod ¬–ÂnÙ.<l·'WEl–-»?Æ¯cÇ·ÌV©ô—¥ÞBCs\Úž6¹,šäÎÓÐ2‡4j­Qp¹|\Cœ+·6í#œMùqí+Ñ€5WÆ$(WÓxØ'f@¦–Ï>¯z7ß‡NNS‚ÙñiÜÃj4Ï3ç¹6ôò'Y¨ÃØŒ¡Õ=ƒ}€z¢ÂPU´~äá¨ëÜxB”qƒFÐÊ<'aˆkÌghCls(®ŸˆïŒðÑM‚j`šÇ}žK˜À^ÓÕãÒ>±”'ü¡±XEP–"Ú+ÔMÅ§Ý
+0VšÅ°¢BòÄ®3N†Vœ	•¢)Ü×£yúÔŠ;Še¬]†—übÌ®`Ò”¯™U‹>M©­rË(ÝaÜk]Ôù–†P‰ÑIÙdÃãë@ðÙX9ù’Éw´‹´‘ª;êÄ2”[»hÉÚó?¼¸GLbñš›ªQì¼}¬?§÷ñvqiÂÑŠ=}=‘2øœÞÝÿµ4”‘*xa,”ô;ÙÐo§Íîéf
+ÏéÀ_#ÝæÖ„–îóYU½mªoÖBé×OK5¿n¾£fÌÈA‹F™QÔü‘5ƒ%j4Xk&Ú‡>†K‰$±X¶U0w½F‹Û’®Ü‡º¶‰¾¬VÖ8Ÿ×À¼©¦ÔÝ•í#Í”½¬DO¢ÐûÆ¢²#Ø³nPM°ÕdãÂ=ßL–ûýÓ»³¾‡‰«LLÍ)ŸÖ÷,X¡‰bÊì/a;Ió²­>êyjLž#˜À?^³)
+ÔVCë'Ð‡ká
+eA˜H”5C;4F=Xk‹2»}¸Ã&é³Oä¶çN^nÚäš®?L5}4ÈÖH í/âƒ¢ˆ¼’'pyD6 &ñ Ä„¢Çˆªª€.ö}ÂÅÃ»HÉ£—;Aºjâ÷n\´Ñ¥1ägÏøázœ“‡èµdpï¤ZÏeð:®öaþÿülãa•¹B
+K-¹–Ýlù¿}2¡Od¼§õ6vôõ)ßQE3LÖócZ$A~<bÇ8lwEÊh~èAÙÃÊš‘l•£ÉP ÃJ›i&P_ÖgNuÈ¯7Ñ¸uPèèe©·Ø_Ò½š}ÛÈÈxÏ ÄSê›Sy†ÕGV3Ì3­vÅÉ6‡:Ž1b¼$Z£ðeSÄðvÏå«;3¸éäÞU|¨Ö|ïµpÔ›õäVÇ±Ïâº*/·f¿ù{o·ïÍíR~küÛ4>¤É'÷À%÷;Ò[{}–v”k]ï½]éÖnñèYœãI«O$ôú÷‚7Ößé|3^ÖtË|ü²Ù	ï÷ççfÍs§ýÝã("êÖÿ¾-¯4L¢ª™jÛY¾ÜÛT8ý?7Hn‰
 endstream
 endobj
 70 0 obj
@@ -2716,29 +2743,20 @@ endobj
 endobj
 68 0 obj
 <<
-/Length 3200
+/Length 3581
 /Filter /FlateDecode
 >>
 stream
-xœÝ][oë¸~÷¯Ðèt®ä(ú°ÛÐ‡íž·¢‰ã öH´¿ EZ’íˆ>m³ôá˜²äá§áÜ‡¢	'œ~ANx:~=¼òˆ$‚àSôé§Ã/sú×ßŽ§?ÿþ»éøÏ‚!¥€ÑUH"›MóšÚ‘	!èfÐ§ÿ~x=°O1L"–¯Ï·./ƒF4wã”¯å«D1æ¡z½íÙ4å¿|äí@WsûîK¤‰}2gˆ1Òôåëá—¿ã‰lúòz(oÇÃ_~…ˆ„ˆŒˆ‚ˆZ?"DŒˆèõ=ÕãOˆøüë	ÿ:}ùÃá·_úŸfwÇÌ@4m¬y…øT‰ÍDó$v	K—„Ñ„Vt÷A«b1ŠNæ‚Ê)6ò"ð™¾D<!âk}éŒo#ªc§:Ît¯çµ’­ÿo7á	‘¬¾‡y<¦|³žÉóØ·5"ßÿp7"?|ÿÇÂ2ÿ>°8ºQ˜$ÏÛ0úôõ A Ä”R\ÿxø¡üfçŸ/hÑÞG’"=ÕV4^æÏ™=é¹rÂkeáS}÷öÿ7@È’ødt‰eø>$V¼ÃSm±Vž*ˆoóOAEæqz¹q,ÕcO3zùtZ¥×j×+
-G5LŽ’˜,¤	.¥LL—ðÞ¹ø!¢³ñY„Ñ,Â
-S0"+""‡ÊÇù]"ûŒ"·ïV9VP|ªç¾Îãù%¼:V¯YÎ;ÍŸËõ¬ŽS=ÿ‘ëï–ßzQoß-ççÏ›ß¦Lç®È¢’$Yr’_ã^ð]«+MwÂ«Ž€%È¯lá}©’&\­ŸŸLÀ¤êÜ¡–‡Q”²u(,rJ«t®ò‹÷5ÖRMHÀRdROÃÈ$† ìÔ%ÓfRóÂor­¼¿Œä^
-$2õ˜C+ÉÖµ¯>’ÜD@®Âá^.Ú$_D{¤>†ËêÝ£©÷¤.[j¬8QÔ‰yYQÕuÍ?(:±a/AFME(€¡ÇsÐ"‹‹5muŒGªå `ï“ÜœžÓ#¨‘``îS‡ê"ŠŸg÷¤ð6»(³¨§]¨™0÷È·¡dŠ4=2••µ­ÄqŠÏ9R™[¨á8ÔJ!Ë¢77“^WFÆS•„ãT¡FPSëQ?SYåóŠzª¾2“×œwÅH¹Í²{Z…¦†iMQIäzkói¤JÑ´§›P~)2LAB"¥µg®ærc_|~‹?›‚ô¦qÛô'¯³;ÄbýüFf4@Eã.™±†XmœR‰,pJ=RkØjæãqþT„I¼‹ì••?Rür HèŒÒ#û©"Gœ”ˆ¤Kòp'[ˆ 1–èË72ÅHe'ò³³ábÅ˜sûÔ7GÍæ¨¨²¸tHæ0Þ"HÎ©îPû‡ÔAIÐCƒ›Õðº@Íó+‹¯F»ÚóDb4I½©àÌ¨DÄ jpî!?ÖøaM`Œ)udå%µ¸ø™1^+êã”
-¤”{‚ã1‚Y¡ïò»
-%ggG‘îâbjŒ74’#sÔóš4BH)õÈ›D³Ñ±GæGˆ!qÔt+õûXJ
-{¤>†ßgf.]ñXn_Š“Q=²ÆíÀÉ1uI.³ÊC~x³ÍbHœ#»ÔŽu>B ‰jÄ=*_*¥µL¤h387ë±C«´kd×ÄÞbk
- åš®ÞÆ*è˜kˆØ­K&^ä=ÂÐ\5j¶Ú’õV`®ˆ[ÄÚÐà›$`æ\NÜYŽ§•ßt\P_R«cõŸæ¼»‡®ìójÁ½V(âñgW½#¨`ÂõÍIýêñ9N–:dË±’›Eõ¸„™" qHÖCy¸]D!`’Ø%õ¦.YÞ`bA»dŸ*Â¶u´_TÝT{¼ÜLÂÏ¡i£D¢‡çk!†,|SÔÒ\VJpdõºDzøà¡Àb}vˆ}Èœa-1—õTÍ£qö³P
-1Æ{€~ØÈ8yÎÁ«£u¦1'ªòFfxHÑC—9Vq£Ü§VÐVàÎfÙ\zTW-X,ÿBN€ÔúâÃ–Š8jQÚÂ¸Ã´Š0Hp
-Úãæã·U3—V³…ÂÒ»té•&³0!èŠ^,.wê{*ði+=
-?-REèJ¾å–`¶ Ð=M_nS×Ã?4÷^ö&þ÷ÎýŠ?üÔºCtMÄ=$ßoÌx;,Ù —}OŒé3G$à1Iö„v‘ãK´Vgnábf	"Ÿ/6`ÂÜ2»W.5bFÏK5µfÎo¯(};¬~}ƒ9³Btäø)1gŽC´ØÃ¼˜®Ç¥/ýl²´°6_ÊÈåÊ[<si”ˆØ 8y£©lAºihÎ-Îz¡5ïmqŽT1--ÎÒ0ÔÖDLÍÄµ‰9»çã\›[C4^4$‡¹KZSó©6>·fæìn<ÏïÓ¼>	jÎŸF»ÉUT;ÓÇ%Ü1w–íÚØý	:^°ÿ¸ºdrwíA=>,AâÜ{X·=L¨»Èw<qTº‡1ž·LQ —K ‡„D,Ê‡6”å=·DB—TòÛ®7`È:ˆ4ù9²Á‰ÅÙ;Ô—NG”aE†BÁ,Þ§t­/p¨DÎÎ•'wu¯ÂÁ§‘-p.X0¡}‚wrXá ähT¥C¨.¾ð¶\l˜f*Fé?”Î% Q(xêPž–,i1&ZŠil‚—ÐUãÇl¥†œfµló²X«2N2G„`EûíRž%ó8©œ#š$ÇÒv©ÜZñ#¥rÞ‚Ù5®ïKçq~‡¨B°²åÖƒ‹æ¬í¢ìXiçÔó(
-s£˜Eâ´Oèc4GË›7qÜ§µìîu\rúÍ”àa=ÝÙ‹Óèy‡….Ê-c[TÄ¹xl\1ºçÒÝ`úsàr
-sdõœÏûœ´½èž‡ºv*»
-±ÃßO¹mc—ŸŸW•ÇãvsJ&J=Y|Z
-ðÎeCëiDD5öÞ9«5ÎßÏa`_ßªWs\Ù²ÎÛ%úÔ*î†yveSRÚ'ôÞàß‡¦wÐ hÔÐ¡õ˜ðÛau1%•ž³b)ËÎU ËøgÉÐ0GóÎÚ‰š¾VÙBgÎI4|JèSÖYÅ{‰ëå[à\ •à§Î¤yK‹ý¥úr‰Örâ®¤@Î¾]ºŸ®"æîµý%zÛ,{;¬.°­lâ¢žøS.Of„ {LvU}s>o;`0òÏ	–Pî|ÒŽEr.†Ä¥„Oï¥èÏ×ÜR.¿%Û>zr–½”Í­]È·,XÚ_Œ­”X×'Cs1Ã'D¤­ý—­½´E(?V!m&C|óOùT¼¡¼kpÅ'¼‘lÏ:¸†¬Ö!ð²ÑºìÛó|ÛbØŸ[¦¹lÿ:G³çMã/o½evOí›±w×‰on.y~hÆ–+òÊ¹zpÁ¼H~RŸr"Wð(*ÞdÌ
-%iÛ5Ä‹.º´ä]äeé<iÕZëÚìb£¾,™&ªy›ud©ßž¿Ë¾ˆ´Ö•Z~çuõÛ©V%WhÝWY›òoñÀxoáÃ}„3¦ù9%ñ-Wk§l‹•3èD‘W|¸Œ}
->Ì»æ~!»…ÒëüÕ1Zõô©Õ€ß¨`;®x²I·Ó<VªR}hKq´FóÏ.2'Dååu¹¶³¼â+K`0èŠ¯–±OÁWÁTB{É=ªÛ¡·løú9MCÃ§•|y]Žoyh4¯ìÍ¶ðŠ,¯oä•ÜÑ0wŒ/¼²Œ}
-^)µØÃ-V9ÍÆéªÈ¸ª3iÕ‚MÜl:"êq]ÔÙùUŒ‘ÿEX¾xaù}® Íš;àJ{æS}}gp5·…1—¡ÏÀ—)Ÿ)yÇ€|ùt½¹Ï¼ßÓ
-Æw²[å8­Ôi='Ã™g´>íHÛ-é4Ðd§àf?äjÐê)u\h¸tÀˆ9Ûä)ÞÒ†çdï9Ä·"b´lÞ»‹Å|š™_åŠÁU¢Ysø2öXÜÜý¦–þ ?×¿ÑVÊœ³'UÜ®—ƒ¼<8‡íX8LªI{Ía!‚Ï›s/¶Œ}‡½]A$±“)‘8rti:ðpg(ˆŒÃYÅÍsYÒê¦¾Ü'ï¤~ÏpùŸ^VU+3’.ÌÇõñ¦·KãGXJ‹«Óô|š_Lß$/-AˆÑ,íL_·¦ÁŸÿ‘IÐß
+xœÝ]ÝŽãÊq¾×SðR®ßî* È…í8€/8gï‚\Ìh4@ cñëÝlŠ¤f†­“dOkA³”D}üT]U]¤	'œþ‰&œñtþùôv*G$’OÙ§¿]N¿ùýå¿ÿë|ù÷ûítþû	Á"av’ÌfÂü—ÆòÊ„twÐ§¿Ÿÿzz=±O9M"VÎÏ^('Íhî,ÆQÎå›ÿå\µóí?MSùW^y;Ñ»kûí·v&öÉœ!çLÓ·ŸO¿ùO„`Ó·×S}:ŸþãŸ‘‘QQÛÿ"fDôöíõ'D|þ—	ÿsúöÇÓ¿~;ýùÿtuw\ƒˆædi¹
+Ör|4°ä¹\Ä!°¸FBlp%Í÷Q«b9‹Næ‚Ê‘xøŠï/ˆøÚ:ó[Žµc—vœéÞ>·ü åµíßËð„HÖžÓ|¼üŸÊõŒH^ŽíøxÛ2ò»Ÿîfä§ßý©ŠÌ?NìŽn”&)×m˜}úù$I åˆÈ›Ã9ýT¿³ó_OhÙ>g’‘žÚ/óÿ‹xÒs“„×&Â—öìË{þ¿™Bâ“Ñ‡L¬‡ïcbsÂÄ2µ,Ö&S•‘óÇòSY‘ù8½|ðZ´×žföÊ9è²2K¯;ÖÞ¯(ÚjÄ¢'²ä‰³†£O¼Ó¦÷.}TÈèl<ó Ñ¬À
+œÚ[W#}G˜@ž‘¸ƒV¼-Û—¦ªžõ>
+9!CÂH=è1"1PfIÒxµT‹<œ¹þ8vÍs õ ÓÓFž‡BNžzñT„¢¨QP™$«öãiDÈÆ©Ë&åUW³Uä÷eì¤ ®ÆÔe¶YâÔà7dœBÌ€9õ¯p_VmAÍW(ÇÉ†1ï“z .(:R0!Tˆ¬‡òi!²ù¤Ï«~Ãa–$2'¡ÇüÒ¿nÌužÿ®eœ-4‰PÒÞ°>LT¨xòâ$=Y™m,/*ði]ãt	s
+uî±m~)l™œ÷àÚÂö85'@"Ùã9ÞxÍ‹°È0-œÁ5÷€/»ûª¯óh¯®˜•,=ßy§Ê€¨ÖC¹(cÛxûUeŒBîR"O=äiITSO<×"2"9%íý¹ùwþÀ}h):äXÜm¤h³*`ò„=f¯ÎnQ4tïâD9ø¡5‡1õÈå×Ðy¥Q‹yÎÒH{Rb?˜¾s„ìÂ(ôW1L>XƒShi1ï±ûBâH¢]¹Š¡Zô=ˆ—Õ¶áË&¿‚à9Så°ÞeÐËfÅåq¶NKˆŽ:pyD10—pí1zëAðÈø\d%î²Ê-ûU´ÃeœµÈBÉ»2;¦ !›t5Äu2nÊ@©k†¾}Rå#ìÒ\„çU¯Ž3¸)@U: ëF¨¸aÃLm fK]zuô‚ˆ@}^ö‡P¯ÉÛ(Ù1VÎÉÍz°Çº\IËç"SOds¬nÒeù!wœP(KwŽÝfæ(‰¤§×/\Éù‡õÑ!§ŒÑ¹ˆÇðÐ‰<‘eîÀç¡SÍÃÌiÇcFo<ô*ÕÇ^:nñ‘¥(°oª<¥â¾­»SŽqÝá=`Fä¢—­•2i¡)¢”×|.õ*z›—÷¶"ÌZæí³—ùxyÈyóZ;gùœ´ï¨ç³vœÚçKj¥}oý®Ël7–÷ÖïmçÝ}7œÕ„¸ j.ÅA»ÂL CÕ¹ƒvÜK
+Ê	Ù:«eÐVZªKFn\ŒŒ€E’žÝV–úµ$ìÔ…Ù<I›Dø’§|‹§“$3õ„C¡“‚€\…Ó²<çÇÕ¯d'ÄÔÇPc¥6Ù³©÷´.4iÊÚƒX7º”‡ÎÂPmâ&1È°%04âÜZuquƒ­j–SûòÒ±qy3’Jø×K6öuUÅÏ'ÓæþŠ±Dj&Ì=øccAR’Éhš{0ÏM”ut,%äL=a^ú¤ÎC}¡HEGõ¤x‰¶ÖJŽMµÝà*Í ¦ÖCÿÀµ‚ DÜU#õØ”K_ûêÆå=”@‚\SomŽL&ˆñ‘Üíü‡íô$)uÐ~Z{þüq=4%é]ÆÇ®Ç8}]¶ƒI,÷Ø¯Á‘uÑ¨hÜ…™[è¸"”È–8¢µ…­f9·ŸÊ2‰w™}çåÍŽ'‚@/UIØOé<Úéä@P¢’VèËðØM¶•|i¾üB¡iì$ýp>\PÌ¥AúýbàÈî
+Ðïµ²¸t s¿"çè’;¶çG”=õ$xñ^WhÙù]ózC£Kp.r.Å@KÁ5˜1ÐˆˆAÖäÜc~¬óÃ`Œ]Ùì’–¸øU0^G—ˆDrOq<Fp ¦#GþÐ Œì•pq1µÎŒw4Ê$…pdîA}°]“fHaÔƒ=6‰f˜Ñ±ó#D„œ5îå±û>šBãÔÇØ÷™€™KWG<Ö¶/2ä0J©ûa¶}Â	8£y¸6.&íáÝ6#È)¸D,ÑŽÝ|¤’Õˆ{(7­¹×RÍ¡î¡-µ¼q µQâÚs[h\XS ­Ô~õ.a¬Î¥†ˆÝº0ñ&ï‘†æªQ‹×Ö[µŠú!ZÎY˜¹ÌBì,ÇËfßt^Y_S«cíŸ–¼»§®îkãæ¥8Ð ”¨çV½•3¨``ý²I]& Ì! pir<†]j]+Ü¢ªÇ%Ì‰SXåá~%,óþ$w¡~hËG–7˜XÒ.ìKcØöíÁ—2FÁMµ'Ë‹r¥0ÞÒ£d¢‡—k!†¢|£µöš¥Ç®Oœõáƒ‡– «÷Ùû9)ÂZc.ôÔÜ£qþ³P¤œó=D?ldœÊ@¤¬ŽÖ¹Œñ#6J†‡´„¸O´+ÜeÞð°w6ƒÌæÒCíëÜ‘JN€ÔúêÃnˆâ¦QuœUIu¸TGšÏ¿¬š¹¶š­ë­ÖãµÉ,MºÁ‹µÑåN»R¢åŸs}ØQ‹(ôN¾jž %téç“äÈ	óöð_NZ£o.¸Vÿß_p¶þÓ¯M¡;d× î1ùycÆÛi=ÉŽ¸²·ñ`Œ¯H‘€ç(“üŽ™ã[¶6ŸÜÓÅ\†Ë—ä‹˜°Ìû?æ«*—¼ÌXn AK3ç/¯(};m¾}ÇyÚ“9IÎËT×œ²åçÕu=¯7Õ¸º,KX›ouäzæ=Ÿ¥4JDl¼³…TïdCºkh.-Îzc5ïmqf)S¡cmq–…Cm÷ª¨ÆÛfâÖÄL¯›×¹5/Ñ¸oH®Ñi~Æ¥¡ù²ifnxËóÀ4¯OŒeDl‰±|$UÔn«1.é¤àŽ¥³ìèµ‰þeãHnÅ\]29ˆ»ö¨– q7Â×Ë˜¨{ÿ¢ïÜñÄYéÁxÞE¥z\.‰X:ÈÇÞUAÜ‚„nQò;±Ý`(An¹êÏ‘N,ÎÞA_;qQ†ñ,äÌrâc¤[{C52ûDÁ ŸÚÞ„ƒ/#ZâR°`BÇ€Çhr)wÏR•P]÷Âûr±qÃn¨:¥wPüPZ¸” ´1ÇÈcÍ’VgbI1Mð² ºj~'1{­!—6NÇÛØœæ­Ê¸ú·Œ¬Z¿CäE3ÓÊ%¨!%–vˆrïÅÔÊe&²÷¼~®ÞøH’Õû>¸j.Ö.§/møxU@ËÄqô1šŽ³•áMœ±Öé^çÍ­3š+Áãr“—F™°ÐeyÉØ^ï?‘ÇNõRº›Lù 7 ¤9ì>ž¯sN–YtÏC·v*Pº
+±#ßOL¥sWžŸ7•Çã¦9‰RO_6÷_JPO#¢ ª¹§ðÆß­Ø¹DŸ[â*ÇÕÜ%W¶bóA_–Š»a;;ƒzGe:zoðï»¦wÐ iÖÔÁúILøí´9‚§šJ/Y±(º†]¶Ç¿J††„Á8›wÐAÔôí´9Éž:spÑô%©KN)Yg%®×sì‰s¨À/Iœ'ˆy¤ÅñR}¹ekýàž®P gß/Ý/CWd Œ¥{íx‰~ì–½6'ØÑV‡¸¨ÉåÉŒ$qOÈÞUß\?·'‹0ù×$K¨t>iÇ#¹CâZBv½·È»ýõœ{"3C”òËQºí{!'9JÙ|4…|/‚õ¾ÔÅ šÔ$É'Næb†¿]Þ]Qìý¿âíÅž!-‡vC\/çõ×¥§¨|Ò²*Sƒ?òYD²Ö-|HY«CàuÐº·>~çŸ]!§ãk+˜ëÀøËÍž‡Æßþô†TÄ½T³H’òãoŽ}ºN|÷ã’O¥ôm'eåÄíµÍ‹äWÝS–¹z_TÌ†$Y¦5ä›&ºXÓ.ò²6ž,ÅZÛÒìê¢¾¬‰&ji›md-ßžßË¾j´¥)µ~Ïëæ»£%7´m«l=å»x`¸·Šá!ÁE
+k£pai~ÜÜV H¡0¸eÞHázì+Ha¹§Oi²Hz½Cºvwƒl*é¼¦5wõ;çD.ªí2+%Vå)§ÑºË,=‡Ä\•×Çí2Ø_ä;©²F	“n¤j=ö}¤êí…rc.‹q”ºŠC±µžîµþ
+FŽ)-ìåÝ(îØl__½ñö>ÃõozÙêŸ×÷]CFiào__®Öú¥5›]|Ð˜L·{ˆÃÕd)g³8¸|ÝËõŸOÿ—WuÏ
 endstream
 endobj
 101 0 obj
@@ -2764,15 +2782,17 @@ endobj
 endobj
 99 0 obj
 <<
-/Length 2027
+/Length 2236
 /Filter /FlateDecode
 >>
 stream
-xœÝ\ÛŽ#·}×Wô¤\Ö…@; œÝ· IðØH~? ›­nÍhš²“5Ç‹…Ð[ê)VëKN8ý†&œŒx:}:|>”É“Çô¯Ëá›ß_þýÓå¯úv:ýx@P¤lè‘„ÄYuB˜ß¥¼Ü™,Ý4ÆôãéŸ‡çÇä6‰hy>ß{¼[rÔå\ž›Dî¥©=ïö×4•åÎç½êÛ·[#M“ƒ»ÓôñÓá›?òD:}|>ÔËéð·ß""!"#¢ bjŸ£]s»DÄ§ßMø÷éãŸøxøþêÝ}PInjK/8•>Tãs3¶y*Ø5,¿4Œ&„¼±Ë’?mu—4i&Î¾˜çÀWûÎˆxAÄçöJ3¾¥¨µ]Z;7Ð£ýnroû~„#"i»ÚÜ^>S¬'DŠÒvƒÇç-"ß}x‘ßý¥Ræ?ÀP²IJ¿=¦O1óœ³oš8|¨³3À×ªëÛHRF¤c{aCã<.ô¤§Æ„çFáK»Æòÿ7b ¤YbRº‹ÄÚü›ïpj™¬S‘Ó}þTTdn§ó{¹Ý;Îè•gÐeE–žoP{=£hë‹3œH-Œ=)æ@É<!ð7MùÑ©	ƒ•gd"šX¥D3ºµïNü/h¦:±ö¬õÕ]•÷•Äy”ÕÙÁX8SÏjj§F‚QÖ¨[ÆÔ1_Ïô_ÒLq@•dÞCŽ£ÙK¦ N˜{È¦â]x˜™A ˜Ù{Èò©%ÇMÓœ^F™Ï‚ˆE»ü-î,33% 0eyÄóæ–n¤JÄ3"ëéy3õ7ÃºSŠ¼ëì–Ô—÷SÜ/PTCsêXË±X;ÊRWPÕÄC+3ÎÃ"AÕl=+óì—ŸYZÔ{§I<]zæ_ZŠ¡Í^æ.	t|”“HýÅ;<­S°x†<³@dAë™^Q/¹ò°ôˆ“š{å’úó¿&€¬&ÚCô¼àãÂE 1õPåa¾s€x¦. ¾Î°ZHÍI”÷Ã’º]öÒyÃ%§µ½®ý‡Í<wÈbì¹Ó“
-þi“øóÈè ä"©gò±­SÛZµ–“Æ- ƒ)…jÇlæVå²M!…HîÒ{)aù²pmm¹yêq®’%"êuA×…@å÷Ó¦Ã“'v…œÐ¼Çõjî¸Õa8QYvuÌ¼.fG™*2Sô¸Ïç¹@=2”OI£ —Zhj×ò:2Ù2 ‰9w,ŸSº‘àft¤ž¥ÇafH)8u±ÔæŸ6eŒ3êçØ”î†ÍCrv•Üý1Ýì¸µ™ÔréÊ=Tj_^ª(ÎN¹-7ñm'‘ÓŒ?[SÁn£
-ÇD¡`†ù*½ÚÒpG‚Í·cSF"_…žÚ¢[æ›ÞßUd¿0>"S")bT,ødkÊs,åªùZé™Þ‚l¾–©´Uiè¸'pÛï[)cH±÷¹¬³¥ôÕ^=ƒ0¹û¢ÀÝ´ýp@HE³{©ùÅÍàRUú–Eø¥ðÃ/ve’–x–¼LóJU²[²Èó*/U9Ïk½ÅÁ-ºþ’×Ëyo8.jW~ìö\.ë†D3ïïH…#¢ÃlK‘kÓWÁ#@L~§2wpy5}¤À&çwŸÄ7ìõnaAª„~5òšËÚQM6C¿¶ýêÇžca@5‹üf=íÝHÏæ`îœ¬gõ»ž³€	†æŽµÕ¶:Æèu	r÷0N›ŒW[W9q©ïTz`?.¹SÎÀQ„óÂãÕ&HFæ=P‡Êt,‘)ºnAîRvÎtÅWo©¨×œ…ôm~ßJËªºDžŠïØµœ[ê OÅÑ×[Â¤„À(Fò@7®¹ñi¸ÙaÀBÅÖŽÙ1O…BùÂ¡Òú—¨	åHa=Ê§¡Ž¦lrIdØã÷²¿vÙärM‰u¨ù¹xsó²Óvß|©õ
-*$'Êôˆ™Cõšâ¢‘öãîêz˜›Î@N&Ô±þ}j¿$	Œ½cý;óÔ!éH~&ÐÃ˜"µ‡òÊìqÁC@R&îÒù}+2C°Z¤Gº1Ð;gp³šlïc¸ºTê7¡{Ù„.[*l%Ã8"¸š‘qÇúJåÍÙ+Z0Oè]“/sŸ7€Çï6TƒLI•zœyz'GÊ¦öŒž5?‚xl’Ž¶®{¢Æ
-wl·kõ¾pWCbY¸XS¡RSuhó]jß‘¦Rçk©ï¾VD„8)}}ÂK€'g»~üÂßù;þvûö˜ðW´¡\7³]+ûkÓ¯¾°_ÆŸ0LüžìAí¨,{!ŸÖÔ^Î½…Ë¯HüÙE¡Š?ÒÎE¾’ýR	k,¼RdÓö5p„" 1¥H?Qø»–¼|öóé£Í¾—vŒ‡—Šž·ß-kv[S/l§Qjír‘œÓº™_Î{G‚ÚýóíÁ­ÒÆõúâìnOàjšùÞ¬Ñu?nUknü«ìÞ¿EÚ,'|gaû.Ë“B¶@ŠË×¶/ÃòÏ¯°’¡µRyBº‰,a¦”@)p‰2ùöløº'kæºœûÇÔ¤}Oq}_9h/²ÚsÛbñFÖ[cÕyšúìÅ—ú<nõ÷y~1ý$.™Ú]5ït_nÿÓƒïÿN{&÷
+xœÝ\ÝŽãº¾ÏSøÊÃQ¢çôèEÓÝ»¢I&8[`{€öõÉr,O²VºÛ]Í,†c9ñŸ>‘”H™&œpúM8Eâéüáðñ[Ä	bš,Mÿº~øýåßÿ8_þú§§ó¯Eòˆ–‚«Nó§àË	!†Mcš~=ÿóð|à4YœD4?Ÿï=^Èb0Ô”X”=?+5—Df¹©>oûkšò_¾óñ@7ºýø¾6ÒÄiÒÄ`f4½ÿpøá<‚NïŸåt>üí·ˆHˆÈˆ(ˆêµ"bDDCÄTÏ^ïñô»	ÿ>½ÿóáï?‘vè 
+,j\´àu(Â{6yÎJì
+æ/£	Á¹b°Ç ¢f&M	»-âðU¾'D¼ âs=ÂŒon#ªm—ÚÎôT·tH¾×~^:áˆHZÏqnÏ×”;ë„H)·mðøØ"òÓ»‡y÷Ó_
+eþsà$0)ÅI²ÞŠ–¦‰ÑÜÝšæ_ïÊÿìtðõjúi$ÉéX¬h<Í×™žtªLx®¾ÔsZ¾óÿFB"©Kš”î"±6?†DóÀÈ;œZkåTAä|Ÿ?™ÛééÎ=¯÷Ž3zùtY‘¥çj?gÓæz5miVðŽ‰óÕR#™Ñ¼Y`ÎvÁ7˜ßµxÙ‚¢'gÒè½°Ç2!0½ìÅ³È¤È€êFWÀdœˆ|šÏyP-ƒ•"+"ÇJÇ:™ç¶ÒOç]ƒôUõâÀâ¾nYf9#ò‘Ÿ%eÙ72sšˆtééÊðMÛ/„ÇÄË1•6K)[ý-+²c½yy½»ÁŠ6 dBSaª}|ðkˆâ3JÒ¢TŒO5¿eÈX½®CHžêÐóÊ‚eX=¯÷¯¦:3è²ËŠ¯¨iåÄ®¶rA²Ez[µÚjsÃqÑÝ¨áÊÚö]pE4¹…x+—ÙZPuõÅYùŒXáÉSUbª#ãŠôcQûŒP9—*úÕÙ-¿-œ[žy¬æ»r3»†[þÕÿEˆâó¿Ìçb²x47÷Ð•Å­×ãäf 	)JÃÍµí»à¦8‡¤á7«›/œ©±}25H.v¬ò¯ðêTïÓÊE¬¿‘ãÌ›Â¡#bXzå¸ò¾ðøT¹YŸŸ=ç•ÇÏk¶c…š¹^q]4Õ=Ò4ø\µ;6³EŠáz¯ó((¸S¶Ð/YÎˆbˆ¡ñÖMÛ÷ÀrñêŠ1}#–/ž¿0²±5×rµºíˆÈŸ_5ÇvQ,“y<ã-Ç8 ±kh¼|Óöæ9Æi’h –Œ®¶ƒh^=Ùìr3·ü†bªAâD¬=im]+ÉŸç d”ÔnYØ©'õf Ž’–X@-:†Ž¸x»Ìð-ÅT	Ñz¨Ö€´ˆ;”½Ä½‡l—R"Pt¶²¯ÔØB íò7›³0LÌ€RT–G,ïg–ã\î$Ê€»Ænu:Õ¤yDîJËi‘v”¤¦ ª;‚ÎÙ0OGàIÕcOJ_'úy! x½çÑ~š„Á²IOüK1´Àº&4ÒðQb "]ôëpZ‡`¶.<yfä‚±'zAýv­ã›Úí-²õPÎÓ¥qö7
+ kí!úÔ:ðqî"1õPåa¶=˜SÐé6\lœDâ^˜!Ÿ0É7k²Ã< KdóŽ&üsø³Èh d"¡'ò±ÎSm]ºÇ
+Q)©vÄÎ™¿²4ÎeG…D¼Kï%nËÄµ¶ù²p6ldRÌK•DÔSA×‰@á÷©QcxðÄ¦à£õ¸^Ä¸h DeÚµ/æu2;JTÁÁ™RÛøÜðØçê˜‘®|¦žƒ\2Æ¡N\ó±_;ðEŽH;’Ï!ÝHpROÒã0	BHºXê6oËºeF¹NÍÒÝ°qHfÀ¦â=Ð3Ð]Ïþ•‹d&öíro•¸SéC[¯RF8ƒ9¹ÖFEˆSò7_Å€£sú’Ú(òWYµ«ÛcµQ‚’P“mmÚÞ|&,3 DL9¨¼_ï‚ÖÔè:¾Ö¼œ>7#;8Cº«ùµ…ç,iæýLEæˆ	E¦&[Ú´}a¢x¯j‡—º§§5ARÒÊO¯>Š¯<ØÓnáAÉ”ÓMß{KDš¾_ÛÞ|ßç²*àlÒ'Ô^Mî9D3±'õ«È=»@Lêi‹A­U˜FOÔH“pãÐ„¼º”ÓŽk¥lûQé}½æNîÀ)gÎ{O0Aˆ­êÐ<‹ArJ]³ w);Çºbk"oYRžt&sŸæÇ'Kå¦u‰,dÛ±+9×ÐANMÊÑÖ»†IQ"Éj\£ãóp±SŠÉ{b§y(dÊge5Ê1.PòRìQ>54¹Ê%PÄ¿—Ý}K•Ë5$Ö¡â{¶æÑÜzâÛÈd¯ B0"§GÄš°©»vãîüz˜™v £(Ô‘þu&IDf´Žô¯ Ÿ§AgGò™@c6:¤$¨=”Wfsœ¸Kç×½Xá‰5¦ðˆ­³ƒÅX‚í}bO/eëÒ^4¡ë®ÏB†¸’a,‚ÆH‘;Ò*7%²g´˜ Z@ëŠüb{íµx|¹¡Fp
+ªÔãÌé5lÉUíŽæym©xj‚ŽfÃêàÌñv®ÞÏÜ—˜'.K*Ô¼5ß¥úªyª4Ÿóúîmþ'¸BäÎß_ê ’å¥æ/x-ÂùU¦þvu{,õ§Ì@È)5i¦íÍ/í‹LÀ5&¹»Ó½¾„F–jÈÓvåþÌåeö@(É¹»u>3$(X4³fÃyÓöuòñ"yat²‰‘p „Í˜Kñá 	”R.U¯èXûÚŒµ\eÝ ÛÛÁ#õ{ŠëgzZ½5¯Ý x`yÍAîšòì…dÖ¼Áçƒ·‰»ÞÈPÏi$-ÎóSêËv×ìÏ‡ÿ90,
 endstream
 endobj
 108 0 obj
@@ -2798,23 +2818,25 @@ endobj
 endobj
 106 0 obj
 <<
-/Length 3580
+/Length 3648
 /Filter /FlateDecode
 >>
 stream
-xœÝ]KãÆ¾ëWð¤]ïî‚ì<€8Þ[ƒF£x¬$?¨fS¤æÁÒÚžme1$Qçëbu½«ˆL0ý'˜i:}<|:ø®˜¬L¹L?ßüñüŸÎÿË·Óéç$¬¹#gR Í¯¤.ŸLL®–éçÓ¿O*S¶‰YýüôÚé³I-…X©ú¹Êæ-bÎ~¨Ÿïú×8ùŸòé€/Ööí‡~'*“J9gœ>|<|ógš’NžíétøÇï € €@ú{ € ¥?×þù þ0Á?§=üéÃáû_µºÖ šX²©-« ñ54ðµƒu'_Ä.°úNê—I¾´Â‰5g–IKIB5/ðr¢¾G 8ÀSÈL_?†ØûqêD/ýwËñÏ¶¯—‹p@íÏ6÷÷èë ‹»¢Ç§-E¾ûáfŠüðÝßËü÷@…S¢hûºr™>Ø8Y®µæÍá?´ÿ\àË	5ëÛ”Ä
-€Çþ€NÇù½³'>tNxê,|îÏeùÎoM	¶Ä¨•Ë¤ø*%ÖÃ·QbsB£žZ6kç©F‘ÓëüÓ¨Âóq||å³Ú?;ÎÔósày¥,>]QíåŽÂ­Dta8ABµb”E¡àJ$º’¦RoÝú )C!¥™<!ÎÌ	AÔTw7ý;BTH…Q…¤|î—ÁÓ(´ÅÏ uaBÜª¤/¢$f!ªd—ça0ISžwú>Ì‹>GQ±Ä€YC¨³fq>hÔ}è±¯úßS '­\«DÌ ³`kÏ§.èr_ÆSWÃ® 'È š£+ ‹!6jÁ¤"öÀ×”PCª^˜Ãº&lŒ2ŽÂ“”šèmÊž;u])wƒ¯)ía°sM˜Ñ#ôOÝÄxÜ=Ðqœ¨æ*V"Â»ÝÅq±â‡AVIu6jw‘eÔÉJåê©³ö81”Ì²„p«R‘J±*tãƒ~d‘T‰kù®U4ƒ$®ÅJDù±ê™±& ®`÷ËÃe’Ì:ö‹Î¶:£‘‡é·œ„¡B„z0âù§™‘0UÿºEÐ_UÍÃ`¥\+c{-€&ÝOu»h˜WínI-(¢tzì6}.¦™›VËäSWÕŸ/!ÈÒ_?ú'\J+dñz×2ÍôÔþ^æ×-Zª³¢%"6l¸¼Ôø˜×­»ÈÏ±W¢@"©Ù…Î>úEº»Ê/Ënº¡Â•CèÃ]\M¥€¡FP—Œ†	‘÷„›5¡UÜHY[E{{¯]è(€ÈÊæÎ8Mážî…ý©B$Q–º¹/^ý¤À
-LxØÈÐÇ}Ø–Í%Yus9n<Ð I5W’Ð:’¶vã>UË††Y0(5±Z3ºö©º˜¹eµb@ÆÅG, E°O›pßX[‘01äˆÒ-…XW‘Œk¤Ò3ŽT(!1HŽ(o]³ÀªDîAÿ»¨¦i§þÓµ/=0Nì¹ý
-GÙGþ¸á•aÆw-©‚K• -s“±"äˆ ºrrs‘ÇØÂ)³jµòæÝàxJ¥d™Ø8€O;§ªEbŠß¹Ä.)Dbï¥Ä-‰I$f–ÅyæKUÍËW¸.ž‡æH£R…ÚŸŸFo¿l©2¢R€úR°vxL•D#"ŸW¶»¯E\³4e¸}x!'‚êuLÔáV&¶zLm¹}¨¶ÙuÇþ¯ …²IÖh	:Ò$µTLB˜Ã™‚rN
-™InjÇ.¾*Y¦èÈe2F’ËŸnBn\V©L\mÏ	Á5|>ç.ö¡VºBÖÖÂæVöl$Ùàô•ñ-`]ºUôZŠ}Ì¿ÀàütXONhÓÇƒGª TVm~<@¯Ç~^ÏýËWì5Þ?|i"I‚lfßv•?Ö“tZ‰%,\¸|]´’V†ÂÑ&yA õ—Bš“¢rÁ¯‹Bæ-Ld%d§·­ÐO‡ÍY:µ
-%…’Kýº¨U4I5¨ñS¯Š_Zm.U™ÝÁÓs
-®gž)Hœ¢ÕÎ€_’‚ïipABŠÀ]$ÈrRbáî³Ð±L¥
-•Á¾
-þ3ºjª(!Ü¥°¤—:?ÛD_Øè*¥7NðÅ÷yèKX*“†-¡ZR*LÁBÖròq¡ìšj.AÕ­4Ô‹Wr6®E"È¯äÆ¹X$DàˆÒãûér2!ÍáF¼‹„1¥Ì#ÊŽƒ(’ÀŠAÈ³¯ÖyŒ“Ä5*”†6þ1@ÒÒZvêž»˜7|{\jAGê;Ó½À¿t¨:²ñOóÒ· }x=¼ÐÊát½-²ó´ùÎÀ’>òÖ–ví¦ÍçfNœ‹`È;÷“…’ÌD5¤ò•Všüäšˆ«i\å Ô$µ(‡Ûr¸­I™R5±ˆ–±™FWp°Í…Á­OÎÊî•?.·Jc€Ôr™×ÂÛ”1ç=0õ_…[›,PÈëÚ­¿Ç^ç.ók¡¹Á›mü;Ë9Úy­7áHk)ºTäâ2¡äÀãz¿ËÄ(	@Œë«[÷<?ÆímCnÜÙÚBH›¾›ÅXÚˆ6o¥LY¹KX›7‡*"†„Åš[³7/“FV«Z!¤ˆ²KuÍX¯1†K{äÐ:aBKH¨…"ªß…éH¢‰„°Dò£Q‡–¹XI¨¹jÈ$Ï’”­”ZSeÑw›R…M¨l\F˜½Ã“n#KŸ¨–¤oóÂb\ç6yØ’a®M±”köNðý°ÛyÎ»mâqáSlµ“–K`7ý7.xêãç„”"êÞK+%óÑfôkÙù…*þ4§‚b5b–ûµùj²ŒóûðÌ˜Lª |ÏóÀæä6Ú0¶õ.¡¡‘¨ì©d6æQÇêÐ”7ÃÄO‚åw}òA©A½‡é>%iÊP‡òA·V5‚ºŒwº›,£—…©zÑM½Eg–×¥RáæçXb¦§‡»æLš
-™`Dík¯k\õ6FR­7Éé‘ÊÏ‹lóy´Ò3HRjÐ^Ê;¬«ëSGþ|8ßÃ]äû…=NÍ9ËbÚ­>BÛç›E¼2nX O%b¬,Ä;Ÿ“ƒ9•yŠnÀçèÎÇ¤›1-Çew±¤RåÂóÔM?ôà’†‰”ö”¡­éëËL¼±íÛêÝÆ¬ ¿²NÏ_˜¶dz ÷UÏkhØIÊR@ðÈqÖ.Q·Ç{ÊD:(nXïy¼gU1•âÜôÑÜ‰ÀÕç\ûX³[·Ý¸œ%F
-i¼¤’H‘(’‹¾hô:ºC—©$%Ì®½Ù02›RjÅ!\fMâH%ÌöG šú©§àhYKº>ðµÞµË†É;ãKÑÀÎªã–ÀÍ™8û­Ø½=É Ìèëñ¯¦KÉ¼3[D¢‹ý2¥ö¢¯ër¦kúU×íÞçû5Ò|ÔA)À9â¿7ìÃæ½útØü‡+ºzj_
-Û5½¿ºfL’¡JH×¼êØko›‡LÏé¸žñŠŽº¨ÂAt|_Í„y¯plxwÆz·£}¤KnèùdìñawEÝ´Þ_Â¥+}\%¥š²DPï#Åï½Q¦~Î îÃ&ußý­ÁuÕ«ó4W¼…)îj*©ßl‘²„LrÕx¹zÕk$ê°ß}nhÝk#˜Er$ïD»tÖ5€Ã2Z®H ÷Ôð]ôÎ)'¨"ž¡ßEëEù2,Ó:Å}\k@ÒÙ…+¤Ño„l9€?~À²ÏI(>žu*ŸW'8ß°R†ÞUÑïyTµuT¾Ë[yy+r›*ðx¾žùÕx¾'BGÎIÊI‚†ðïBê1ú8QUŽø|`Çp™ÇT¦4pÄ0ŠI‘ õØFá"I13G(ï@ƒ&D¡öÛO_nÁð¼.w¨„†ÉçÕË‚e_Ø©h€Q~xPÉÄ·ðr»ÃÎ8Ý–—47Ptà HLVŠäæpéà´T5âÑ{dÉÔ nÙZ-#<²t3ü6vX»¹KYâ¤Ìš¬LÞ:B˜sž~:¿XX½^–/¢^LÅ­ÝÎþ!µu=½8\÷J[u*mâ¬í¿42mû§é¶niæV5Áj²´K×té—¦ã|?/Z¬•¥/ÚåýÓüÞˆÖ3M½úÔûŸmýn{~\{£Ûï›Þjz½/»}¶ôZo{±Ïó÷è¥È¹aÅ,É*b°â šö®W†½EÔö¯;nÔïÁF¶X7×éisöåÝûò™ß¿ |þjÚ¦ü¼+|ù_{×ùegþ‹M_))Wô¤‰qÛöë±7&åj[c™ •kyà)”úœŠs¶ä‹Ö43X˜l‘‘
-ñfuK4-Ã^ôºL“ÝL…9¨à3ÚÜ*œzH½?|Gùwy¹ÁŠ¬Áßí9–Œ‡$®Ï1®ÿyÙ‹»ôº» ÊºBÜ/Tž¢&«@…Wîßû¸¿`bŸ!*¿’ù%ÇÌ/›âLÁõs7Èg*9Ë)Ï3‘^.nüöN[·ÏùµEß»×oŽ³aæw°#ØøMùá{ÓÃþ`e³7×cï³7?½ ?3sÝ¨åg„ñº€­UQìVóÝc=ì"±òÅJ¨Ï&7<ÎÛ&œ‹Þ¿§°¾nñLÛ1ëÇßrÖgø<vûÔÖ^sÖNý÷u~~Ö¶Uï#ÎÞ—ôöòùš¾?ü†ŸTO
+xœÝ]ÝŽ+¹¾÷SÔDá¯DÁ^$Ù,°LæÜ¹p»»2Nl^A•dW¹»MŸdzä4·e»ü‰¢HŠ…,°ü
+X2Òrúéðõà#\1e[Š-{9üú÷/ÿ÷¿§—?þ×o—Óß°f(&Œ\Hu´þ'u¼³@Ê²´åï§¿^dKÉ³úõé½Ë3–,ÔŒX©úµló±ê×Ûÿów¾ðÍÜ~û¥âB¶¨Q*¥àòå§Ã¯ÿ@BÒåËë¡=ú    0 H­   €õçÚß?ÀÓ,ðçåËþóËá‡ivwÌA5±”¬yÌ‚ÄçÐÀ×ÖAž|7Õk`¸@ª\YÊ}¤N¬¥°,j–„jðJ¢3¾g x€×þ•¾>†ØÇ^ú8u¢[ÿÞXoûÿX„# jÎë¸¿F_¬' 4ÛÑãë–"¿ûñnŠüø»ÿi,ó'SÌû¼Š-?8sÊ¥ÖZ6Ã9üØ~3XàóµèÇ”Ä
+€Çþ€Nçõµ³'>uNxí,üÒŸm|æç¦çÄ¨•mQ|——áû(±¹`¦<56kç©F‘ÓûüÓ¨Âë8>¿ó^íïWêù5ðåBY|ÝQímUÏ¢’­|GÄÕ‹¤lBÒ©y&d#³Ë…º£9Ò»d*¢P¸j®$¼’Ç¼@"¼^Å;63ó¢@	´<¼&§# =­Ï¾©Æf%  ÜÙñ´>­cmN7Ò§Î‹LRÉ·çæÛ„O ô@Ï lŽ}‡™lAÔ±ÒÃwc9@ß×{Êv‹‹æRÏ®Xßì<ßd?¾¡îˆ‚ì:5Û–„TÛËK½“Ä0‘JæºR‰wðÜ·Ís_å.„ø¹Ó*„œÚëÎMëºÕhl·Ò¿7tkîã/ýµ®×vQÞ>'}ì¯‡ Ã×Ëöõçñù¶ÍýícÔž¯`H‘\’Z-’ß¡ÁyÇÌËM>ÿÄµë\~sý¸+“B]„Ò.WNÈb™7\~û·çr²EØ’f;S	qµ›SgÁ:k1’1ªp€´-(¿»¿ Zó«CÐºuÖ6Éil×Yˆ%1Q ËÌ=¤©¬ºå6Ì³GQÉ‰‹†PŸV¹ì|Ð¨ûÔâöYê3åpÒÊµJÄzQ1¹© Ò§ñÚíñi+@™P-Ñ
+œ5é<]…IEò¿_3PBA©zfŽÜí£Æ(ó(¼9?|HÙ—NÝc?åèÅ\š»Ô„3c„~}Ï¢»áyœ'ª9J¶ˆðn7Aqn‘iUR]O×µ»ÈF›Õ e«¢A=uÖž'†RÎEÂ8U	)H%ŠXúÇkd‘T‰kù¡U4ƒ$®–-¢ü\õÌX WÈËÃ¶”@û¢sÞ»šÈ-Óô[IÂP!B?+×;pžfFÂTýã9‚þ®jž;S*µ2F°‡àh	éçT·‹¦ªýXRE4€NÃ;V¦‹iæÄYk.äÓÞˆ#¦cýwÖÝŽa}ªp±$Ù(SÄëßìóœ(/¹RpÀrÙºC~Î]	ƒDR‹æýîÇ®òmìæ™®2®BŸ~ÄEÑd5‚:BäF˜?nÑ„¹ºóàNÊÞˆ,ˆ\ØÜ§)ÜÓ£°?UH€$ŠÁT·1Ìqª_áÏ8%&<mdèˆMÛ²ÅR¦\•ä¸!ðDƒ$ÕRIBBëL>ØØUmÃÓ,”šX³]U‡™k+dž$'P·G°Owß\[‘01rDé–“Q/"Ÿ6Ý
+À87ìJ	‰AJDù%^=«6yýï¢:c¤]ÞµOÕž,UÁ(B¾K˜…¶ZªàR%@KóŽÉ‰XJDÐ‡Éw@áTXµæòæÝdJ¥”qæ þ#Iì’ªšÄp‰m©Dbï­ÄžçµÄ$3Ë°F^§º¹%§ªÙÓW¸-ol¦ÞRj~½ýJN••Ôçà—©ŽWÀTI4cDä—ÛB~„S7Š¸fiÊð6ôé‰˜9TÏc
+ N·2±%¸«Ç>¨y³ëŽý=_Š'Af)MAgIsªYB˜Ó™‚JI
+…IîjÇ.Þ¥¬LStä2™2F’íâŸnBn^TÉf¸uÁ‹û|]Ü†Úòõ/ÈZ…˜îòI68}f|X—n=—â6æÂàüz¸\¼áGÂ³;¬À*«nÇ?Lzþçç¿æ=ÿÂE’%çQôãƒó×Ãå"{ÊINhllß%å¤å¦¡µ·7Ðr]¾¹§—–¤¨lø]Ò+{õ(eYíc{õëas•=íŒ’‚«ß%íL“ÔU"^ëÙô£æñœÍÙO.xº¦çåÊ;z—„˜ëžGIz~¦Ù	A(V#‚ ¯7"á^e’Îu«0`²*d%‚½s!Î3Ýjª(!Ü‘žÒ¦ñv%ã'›n(Q`rs”>Ÿ žúF~Ó´)Ôœ”Œ)˜È%)}žC¼¦Z…M#¨º=GMõ(%«&äw"Qó$h’8¢ôüª<‚’²–p#>DØ‰˜Ráî‚»MÙyEdËòì»Ù"ó$qM„
+2ÂÔòAHj­“B@Ý—n.–ßGFéD}GµÞ
+H‡ª3ËµŒê× íÓûNŠ–T§—Ehþ¡×Íg&&’©`0µýnjT¸pâb‚!ï<NX,å,ª!•¯:L¡rMÄUÈ4/ÿPj’jÊá¶œnkR!ïÿ’#ZÆfíà`k×…²ë™â]Tä
+ø]T*j¼tPÁKëMSxEÚš©ô$ÛÖÆ¥\íÍbzS˜æj–>†kKŠÖ|¥7Ž×X›±¬ãþyÞ$öâèå¿9UUII–k)úîÞ}Yó6„¶æc¦ÐæQÚ”ïS`T#M¬J…Šr¦p©ª‰ZösM ·Œ†3“^³RDÙŠÝöâN†s•åÔtcÂœP"ª?„íH¢‰„Ð"ùÑ¨‹S³e²%ÔR5d’«XçD3¥ÖTY´DÄÝFfaã+›Xf/e„»„ÇÌ*w2ðÇ¼0¬ë²Ñ&OA2Mc[N¥/(¿=îö†‡˜Ý6ñÇ<ÿ)¶Ì\¬°›þ›ç=õ¶ BJu¥¢ŒRö–“ô¯²ó=8UüiI†’kÄ,kó1Ô”rÌïÓû~0cÊRåxž'Ö87[)¶õÎ¾©®¨â±dÎÌw¢Ž-Ô©1n†‰×¯Ó™~lô
+R9‚úM‚,i÷ÊP§òäÙ5‚:ºD=L˜Ñ³K‰T=#'„Þ¼3£Tv¤*<@žœ˜)äééGs&MFY0¢öþÔ5®z5$©ïÓ3•`h>ÏVz’¬‡o£=çwä®®Oùu¿§‡ø»£šK	¦Å2µ¤ZýÖÞ&-â•y=½¹ce	 >x»,ÉÖf¼Ÿo ;“nº½Ç4bJVãˆyê¦¬zrNCK;½¡7ÖÏ­õæV«-³R€ü1ò:=~‘µEÓ¸ïž¼¦ºÄFmÀ#ÇU»DE#Ÿ)½w¡ FDž²ª˜¬„87å8r àêí²½;Ú½Ûn^Ì‚#…4‚‰©$R$ŠdÃÂg>úZMÓL–”°PeÃÌhŠÕŠ%B8ZVâL%\àgö@O4õRëqÁÑ´F¸>8k}jÑ“Ø›é`qÜ'è½ÊÂÍ•D0›”âEK’aA®Ûñï¦h){·ˆD‹ý6¤ö¦èë|¥=ý<?
+¼\ø{¤Ÿªp‰øïû°‡>v}=l~aGWí‹qÞÓû»¡kÁ$ª„t-›Þ=ù¶éšŽ—+îèÈ CN¢ãçj&O!ûØÇ0½<ãrÓ¤ÛHGlèºÁö|·EÝ´¾=…sqû¼LJµd(A}Œ¿GeõkpŸ6¡û~Þšœ÷X=;OKÅ{˜â¡:ª’úMp©HÈ$‘Wªg]±F¢û]A§úÑ=7‚Y¤DòN´Kg½„pZDË	ë-5üÅsÊ	ªˆQ€ÖsÝeš/¦•Š{××€¤7Z NÌF¿ÿr.üù}ŠŸTó.¯·¡Ž;lºÆ\ï+SoÎè·NªÚÊ‚*?äÁ<—
+¹5§x¼ì[‡¡\¡3Û-ùÍc4„ÿRÑ»’ªrÄçK†­ç«4±S1Jß}7QÏ­6IŠ…9Bù ’4!
+`õØKmÇ®ór§ZA˜1yÛ;¢`³ì>‡TÌ€9¢üô
+ +Ä÷ðr»QÏ<ÝVFš;(:±Ÿ$¦lÍ—õèÒÁKiÉ5âÑGë”SÖpÏÖjá™©s~ç‘ŸÅ#[eøI™Õï4ï¥#„¥”åo/o&V÷ÓòIÔ½ÃT|hwƒy¤6¯×7ƒ}±t®N¥ŸµýJ#Óõ-ëïŠ9.F‰IF±tMçji:®7£a«Œªh—ö¯ëk?>´ŠiêÐ§^ýL—Ï¶ççKetû¾m*«éýªìöÞ¨´ÞTb³®Ÿ£·'žo¶¤šY,˜pàJûÔe!A¯Í·ÇÏlÔïâæn™ru³H/›¸-ê>—Åü@ ö­si»ñÛwüÒ­%~[‘ÿf³«%Ì@*,ÉìÛ}3öa ÄvÛmd{9à¡“zMÂ5JòõÍ¢ð•q‘ÁW’Ð£.Û…³|¯ptKÚ ç!Ëy)êU]¬ï¿ç;š×öÏù–ÿ·ÓbÞöˆéãöéžûþÏ—óQS…§þýº>¿‰=Ô«´Šg}<}ÞËþÿ#Ò&#
 endstream
 endobj
 133 0 obj
@@ -2840,22 +2862,20 @@ endobj
 endobj
 131 0 obj
 <<
-/Length 2599
+/Length 2063
 /Filter /FlateDecode
 >>
 stream
-xœÝ\ÉŽ#¹½ë+òÉ `ø0ãðÁÀ¸ûføP%© ÓÚØ¿o“T¦–Jª§»šêFAH‰¹Ô‹`,ä2iÂ	§ßÑ„S$žövwÞ"™ Ú”lúÏq÷Ãÿý×þø÷¿ü8íÝ!¤1™
-Iâ&„ù›ævfBˆzÖhÓ¯ûï^vlSŠ“Hðçó­Ç¥¨	ƒKàìÏ²ÕO¢”¼©>ïünšüÏÏ|ÜÑ•l?¾¯4±MÁRJ4½ÿ°ûáÏ<B˜Þ¿ìÊa¿ûÇï‘‘QQëï€ˆ"Z=æzþ	Ÿÿ0á?§÷ÝýéýîçÏ’îB ÑClR°º|®`äÞ…Ø–/Ñ„W¸¢¦ûT«R‚*çÔà%à¾"ñ¥~tÖ¯·Õ¶cmçªt«÷µñsëï­ž)ÔcœÛý7yg=#’yÛ™>>®5òÓ»»5òî§¿“ùßŽMÀÐÅI\î€É¦;‰1åœÓªù—Ý»ò?;|z`HáuMRF¤§úÁªÃüÛÍ“ž«%¼T>Ö£µk¾´&$‚PÈbS ›šXšïÓÄê‘7lª9kµ©¢‘ýmû)Z‘¹7ÎåzîiÖž?ƒŽ‹féåLk?{hËáÚlðFˆËK¤,AÒµyRdQ³Ç…|¦sâ›#'˜%3…˜'ºˆÇ2!0]öâÎ,2dÀžAšÂù	‘Ÿç£;–›GDVD©N­„È‘QüúýÜ.q¹¶s[y†Ök©þn÷
-"¿ 
-Ï}]ÎÕûü÷éúã|»Ù_:zObõ°•Õ{a[b²Íú¦=ÃJ@ì¡a«Üh‹~Ã¬ã$óªŸ^V}ÇI#¨íÓ¥)©íÓz¸ý¯Í~.áÀÝ¿¥¡ãÙÿ`›ˆBóñÛÎÚ~Ù!¨GÃËhjgnMæùþ<øê*æzx}wÕ+t¦~=Pˆ¶î¬Ò)ëÇk¾Ó÷Õ8h”<kHÖ’–fBM°/K¢-½RÓ‘5!ÊQ2¢ò|ôÀ<;íüñÇµkJ`–ëkÜëüyRSUžæäð©~ËIãébAe>¾ŠØQÉ,Ùù5›õ†}wŠÛ=x\zÃetÿ*²Ã½òÍn×¹gj)Ÿ¯ü3¨EYùçÒö]ø§
-dVúýó5ßkÖî7•ënxÄ—õOAàs¤ÿ|Ý÷Ä~®øñúçfÙ
-öz|ÿìâ^a¾¡k÷ÏŒ Q£®óçÒö]ø'F9`´/äŸ[¾WæÀ¶XMkS•Ì)måÐ×ýïµG†üÑüt³'«½cÃ>÷â§=Üžï[î÷Xzí§Ì	RV]ütÕö=ø©Ä›|¦Ÿ"~®ÿ-Ïx`oØÖWÃžë8ÿqF•]Ü>¢”×3­{C Ð…ãÊ–¶oÞØ&QVË|ŠéD37^ØHðQÝ©A1pê -„ÔSeþ*ì¬…QÈ³‚D4í §´Ð÷þ½ºÛìÌ‚&QbìÁŽ3ÔÐx»âð–£ ’	QÏDŽÕ$ÒÊTž–ªNg›å{K_d/ÃaŒ]ƒ©l>³lÖ! jîAÅ%‹ŽuFN‚ç.dª6]J~ã’AÍÄ=›~‘<ƒ±„ž½–_ªydßÜp˜!Ø$¬^7€3>Bp‹r
-&Ð§õ0½Z„8PO»V³]¿´–6œ½WM>²Ø„ìe¦R<ƒªiæ_:f°_²Žƒ›ÈDBíf>—‡=IŽ÷ú\l
-oy¹&¾0·I¸šVdmSˆZAöeL)¥o¾‚,È}.xZksQgûí•Ý¬ÇnJûÍÕc?YšÏ¨Ç²d	ší7ÕcE$#ÂOµjûægæ"‡œ,Ò-þWõÓÛñpÞhã·+LUíèã¾â‰$¨zõjeKÛwaž¨ü–ÍúÜ«ÖXÙÎ§…]-•[Õw7ý`V¼%÷×º¸ûµ ± Dh–WV½´}VMYÍøVÅññ­sÿsó]Ü}n^Ñ ¥Œë\µ}óÖéEsóz+k¢×æ¥…S9Ìll™‡l/HC¸IÁû+öP“­˜ aUB‚$™Cîó9Gì3—¶+`WL¡¬8öBü6ü%áŽ#8ë=HŸW¶q¸Z«þ52(%ûxº˜5€$é™óxžÑŒ†tOx›i7/4ÌGÿðaã=i%é)ùPÍ8ÕêGÝ`ÀÃ¸zÏ%1Þa£ùùˆ^øˆ±‡Ø3^	Æû57.Ÿ 0›ÇãmÔadÝŽ(Åœ™{æp²àquhæ„zPãB"—ÒùSs¸aÐ!FWó½Nw½-ëkÆÀ9hOÑÅtójd¬ÛëÚŠ¦§%â†¥Û3¶sZÓÞ¤g¦“šz!é}­M$„3å|Úö¹Ìí^V{‘••›Íó§±Ôå\Û³d«6­×ÆyïRißÚ¾¥äÂQôpdá´±fÝ“bW¬í×\ÐÃÀÙD; ÏéæaÙ(Ÿ\y­wÿ06‘B¼By1¤âÑ£?Âš=u –š`Kë-ÊìGNp)d&RéiY*ìÃ*PÖe£ƒ—ú.x»!.´ßVÁ>¯záéjË(‡RG„BC;y4pÐÁ¥«mÔÑ‹,„TCÏ¶›!Ã·:J"$Â˜»pkÔ˜]o\.óƒ´m«TËÜÏËði,©`	"¦c=­„mð7oâ QGíÁ>‘ã–õHÔ€=û /6¯,9·I	»ˆÛ´f^ø9nj“A‘é^°ãV§
-ƒE£¾ÑVK¥ÆMC‚9j/4ðÀq‚$ËØƒXÞ²ªMË‚äzßö$³SÁ"‘ô´º¦@‡XáÉÂÖð Öæ-7—}Ý¹¦’
-¦èRÒ6((‹fÕzšÍóšˆF}—1Â94.é°IÌÔWsáÓjŸËXŽÙ4Jt¹SSÅ’÷£ÇéL9 J¾Ã¤Ç¥
-6ó–„Èq£²z&[Þµ´Ú£JíEiö;„=Âu¹ûeß‰BIubÔ˜ Fô‡:†^_;.¬D`‰ÂÖ‘ò¸L˜èyy‰Ý¸Ù)Y„ÄÎ
-uKÕq\-qÇGÑ?«ù€:RnMVgþ¾S­xKôY€RŒÛèÇ¸^/œ;zÞdÆ  ½áñ"Š¥lCL±¼U>ø42›æ6¯DÙÖôÐ”O¤Ø_is‡ZÃèÌIŠ`¢šä¡uÄÌb”À»%%ŠL}>‰• UvÐ>5$$F¦Ûh}g×E¾ýx…S.6¾ù67¹À„ g;£,Þ»:@!ï·oðÒº˜»Þ£êÞ/í»yÅÃ¬_9‘ë{^³q·ïtXÆm2\Ú«qÈËùù²iðP×%Äõ›æõçåþ\‹ÎôI»¯B†˜RyCü‹wGÿ¼û?-u
+xœÝ\ÍŽãÈ¾û)ô©åoUrØÝ$@&Ó· ·íì˜] yý€¥ªVùOrÏt¯Ü†!›’Õ_‘üH‰¤Œ0ü"Ò°û²ùºq	†˜‡”‡_›~>ü÷ß»Ã?þúã°ûmA-BÊÂÈ‰Tã;±¶g€åH˜‡ßvÿÙ<m()Ìêç§K§gLQhÎÄJæçÊÝGÄ”\TÏwümüÏ÷|ÝàÙÚ~|¨B(š)¤”pxø²ùá/4 ž6e³Ûüó € @ À  õ³@€ ¹n­îßÀãŸø×ðð·ÍŸ6Ÿ¾ku7¬A5°¤¨±­‚Ä×PÀ[ë w¾ˆY`v
+ÖáŠ’nS­p`M‰eÐœƒ¥/zÆ·€ <Õ—Œúub•ªœªÒsý^3ˆïëß7#lPë6ŽrÿŒn¬G Ì.;ÒÇ×^#?}¾Y#Ÿú{q™ÿm(sÈãÀ¾n…”‡/Žb2³Ô‰Ù|.ÿsÁÀÏ'Ô¤×5‰€Ûú‚ªýøÙÝ«'<U>ÔmnÇ¼¶&8F5ÎƒâEMLâÛ4Ñ0ÒŒO5²VŸ*Ù]öŸ¢å¸¿°Ïê¾í¨=?&ÍâÓ‘Ö>yh3}mò¸À!Î¦HY‚¤kóY‘EÍìHçH#ˆ”DÁ2°j´žÄc žZñ23
+@-á³Â-pS8mèqÜ:±Üõ( p%µ    g Úr¦éØ²Ý²r©ÇbýÜ¾Ë t àÝhë²¯~Ï?·ãYÇãÈÝþ”èK+[&n…ùcž©ojHæìãN[ô«£ŽK´ÎN‡Î¶Þj$@~ùjJj{™…Ûÿšµs	Nÿ–†Gÿƒò€¨ã5¶É~Ù@†§Ñ4Ñ³çûãxà—Tg1×Ãëç3«à‘ú‘ýê5æÞXÅ(ýéÅnä¾d¤ÙFq¯!niFk‚}šm±JMGìAÕ·Î[_¾ÃóHÚñåŒòc¹¦+¬ç÷ÖŸ£œ„NÏ1ë¿o¨©g.Îëë0]QzLto–UqwLXÂMgÞÏ$š%ì¼’}ï×4[’øÞ/iÙû¥cˆ{…o_Æ—f9á`$YåÂêâë\›—ý|iUëóqÖ‚;ðväc±Îðq	wñ$¾CœŸ)†d–4vüœd‚ŸÔ,â+òó÷z~–Û~k~Bj
+1/ðó2÷:ÄÛÑWî1_ÎZð0YCš¯ó}ðs	·ë¼åx8ÇLy ”€d*]þìdŸœ)¦×ÌŸ×¸×g£o»Â|!?9Z ¨”y†Ÿ×¹7!.ñû>¯gç-x˜ÖV°ßÏõì2îó];?ƒ¨1uù³“}~Š†èly­ü9Ç½R¡Í“×4ùÛr”1«Ø\½Î¿cÔuò{ãé¬%«¿CÃ¾:î‰§K¸=ß·Üï±ôOs)bŸG'Ù‡à)ä@	"èkUa¾™]æŽÙ0«¯†½Þ‹ßÑUå"îr§z=ÓR)ˆzÑ}bC'{÷lpÂ'óZÉsLG;·¥<[‹v-sJ* ”–vÉ¶ö¥jÒ{N¨k!7	!ËpLSsÙß—–ã|ïàA#‹Ÿ
+ .ÁŽµšUÍ÷Ãßrä ˜qÉEÕ%Rç*Ûiæ ,g¾õ–\$¦öša5Ï&IA@l	*LYt]2RÒ É!cõé2²^Ã ,†´äÓÛÕ ¢g0b]ò×2’jÙ5®æy È!]w€3ÞCp‹,iæÐÏãS«é5Ç ‰—´›k¶«ñw«¥ï-‹$¿²˜…ìCeBå°T¡ÆÞÒ‚ì¦,ëÁM03ëÚÙ|¼^vôÈoå\l
+oy¹&>e¬g·ªí¢Î7ùaJéÝÏ7ùmcMÈW¦@¾}îè§…fWûî¦…^¼šï˜"JÁ2}Ó°[)iÊ]™ª“½ûsæ-Êl|©è¾< ´zÙhÿï,ã>+	Q˜º2Q'ûÞ˜$D4ÙöÜÌ@N)vn§âjitä®½ÛJÓwæÅsë¾ãVÀ"îåV€Hª±kÙu²áÕ
+Áç.Uˆîß9gàßqa~	ör]^¢…”@Ô:×œdïÞ5}àŒ¼×š’ñµ{ÒROÙ•Ør2ÿ¨ÔÂMÜ^q	5æ®
+´ZGCb#]„ûx\ö»–ö¼ÚzubgOõaŒyøS¶]¯ ’Ü‚ô±óýÙST¿'ùÐ‚`òX°àwQ*&ÑÀ	™—Üyý!y53fÀ[ÂÛXró&Ã¸õí×«vÇ`’/)y_Ý8ÕÎG}ôV«Ó{.ä¿X»6Á›1.!öŒW‚ñ®¯¾­—O eÇó¨uÍžb
+Íˆ–ÜáÙƒ×ëAç@”@q	jœ
+È¥m¾m„[z†£«ùVÒ?0ü{ÆÐ0HßàºÖ=ëƒßmši;E¼çËÒùÊÇ%M¿ðF9*_zASNVz[yÖk!0‹Òô{ÓÝS÷l+>C-L·‚³¯V .ûjÑ“r'“zlª-r:)ˆžýhÁI=ß«÷|b<rTðÍñÖX/AÑÇšSÿ\{ßzs#q{®Ýº‘·~’ÆêøÚ~´k{_žðŽÇ)®ÈÝ“ÞOÇûK/d_u§«½ÂÞ]ý¾/Â•ÕBLIÕf–òƒŸ6ÿL?5
 endstream
 endobj
 140 0 obj
@@ -2881,22 +2901,20 @@ endobj
 endobj
 138 0 obj
 <<
-/Length 3408
+/Length 3288
 /Filter /FlateDecode
 >>
 stream
-xœÝ][¯ãÚm~÷¯Ð(ÃËâZ$Pô!iR Ò3oEööödL$¿ ,ÙÚ—´s¨oK¶æ[ï¤hÂ	§¢	§N<¿ž¾âˆ8A·iØô?—Ó¯þõò—?œ/ÿùo¿žÎ>!(’wÖ„d°ê„pý«ùzfBèíÍA›þ|þÓéõÄ6>‰h\Ÿ?»¼Ðèm š±({\Ë6‰ÆˆCËõÞþš¦øg¾èÃÚ~ýe9HÛ¤Æ0Æ éË×Ó¯~Ç!èôåõ4¿OÿõÏˆHˆÈˆ(ˆØ–ÏŠˆ"ÚòîËù'D|þ—	ÿ{úòï§ß~9ýþÿ´ºÖ 
-ÒF×¾®‚[¬aïØ yŽEìó÷ÀhBð®ÞÆc¤m¢cH›ÔûXáà¾D¼ âëòjWúÆ1¢åØe9ÎÑmùÝzCâÜöïõ&<!’.ïýz<>SÜ¬gD²8ö†ß¶ùÍOSä§ßüÇÌ2=±	šRŸ$Ö­8lúz’.Ð‡»Íá?ž~šÿÏäß.¨C¿OIrDzZ^¸Pãåú9Ø“žNx]Xø²¼ÛúÿoJH!u±IéSJÜ?F‰Í;ïðÔºYžš)rþœfªÈõ8½|rÎ—sOWêÅ5èr§,½¾¡ÚÇÅÖy4E7gš%-ÔZh)B#íÛo¶G6™ð¤Ø` ±òM‚ÑU‚%$VÓvw<m%vëÀ÷OüFÚ7^c`· » ƒ¤ÜY¹Wí½w÷Œ¤!DyT¡´­u6ÿ€RÞ d^XÙ«à1ì}•VÕù²Hj\ä••AoÞ›µœûzˆØKÌN ¢Ý%cÙPx‘g+¥çW¥™ÈY,[‚8b{*ƒ)ÜiP¶ífýZ&o¹u@QK¥ÃÍj-“Ü;taí–A]¤Â,ÚBá›¤¨‚/$ l¦#ƒÿºÀ¿TR[xjæÀû07b¶–Ÿ7–t¯”Þ Ymx²ŠY“ôe%+úsêŒýPMÒ¡©
-§7`eí2û‡zgoM2¨¾ì¾°Žët´ÇÔníÊžWeW©è°a¸Ï7*)ÌJ0|¥ÛŽ–­¶j]¶]™•Ì®`Œª#ƒþr—oup…Ã¹V”ŒÒu~‡„ÔºZ*ÈJ…X(º!™v³~*¡öL­'xg!»¨´9tµî³§%´¥>#tçÎ#[Æ.çy?ùCµ±Á îQ=¨ýúÖaº:ReRãòH”Q{fŽ¶	J—19³AgÁ–B®÷HšÇïFÊËóVÄëV†˜·dùVdG@j[ÆÛcÔ\¬ÎY²pn!ÀÁî–@ç~ý¢¶§þÖ\-!äs¥~é—ÜGÌ´²ËâXN@M¹·Œ¶—…sË¬ "êÞ‡ePWqö1¯òsÂ•Ã½gp¥ .@Í¥ŒPKÕÑ¡³úÈv–\_c—‘ã§xÕy 
-JÔ†f!ñ8#‰µA4'þï	À9¥Õ#¡µÁ+’Çìs£‡¥¢Ð‡(ü·ÓæJ¤múzbÖœx>ðÇB‹,åû,çß¿¾È|þô³SL;ŒÁL7¾ÕLï©u¿ÊB-À!>ôE­ÐßŽ×^s’†¿„'ê:}=…¦Pìêë¡_
-‰š‹…NÙ§d¿›ÊkÈðFÕ§w”Û\õFÁ(jé„Ö
-(øµ‡H31Oè7sÝùîZ\s÷Èi&iÀÎÞ³%ˆmB¯uqLé€6§IŽ%ÄVj³³*»+= uæå7ÕÏì{:R§v¹—/DÐÜØ3¨Ç«Jm@¦‚×V%„Šå±gˆôMŠàe‰–
-4#`q÷x°DHWàÖÄô”µ•?¤`0ú}¨/Ó`5°.¥¾:,YŽ]äáÚ…ü¥Å½Ã²à9Á×äø>±ŸÖíVér#ó.Ô×+õèÖ%[½KãÒRŒ;=¯•ÏW³:YÁZÜªCÛ¡QˆöÞ-é\QŒ¹Ž-AºÆ¯‰¥2}¥ù$”¡=FvœÐ 55¤.Ê,1G°UZFT¹Ö›ãU(3ÛIÄšrFXyÝd½êø Ì´6„2
-@ÓEM ‰„RÞ‡z˜r„ð’‡çýÊ¿ksÄì(½/Î,ÓnììÚ
-•lÃç•Qê\Q‡a]"òsPy~áÒ¶T—­åI¼ïYo|7ê!Ú:¢¾xm-Ên@l2”ó¦ÒJ-lÁm#AZ[¨¶k3“Œ ¥…úa+DÌN3˜´-§¬+n­·lë¯^ÎZ©fîÚt9/¡´h?´²¨wòl‹ ­Õ,ƒ-ú¤S´Ÿ§§R5ñƒ{eôã÷&îƒ<Zoâ>Úžö&
-XŸ€|§!Zå}w—Ž¢	Êú˜Q‡®ÊC¨sËÀ¹<tÚÂ ±‘Á}]²‚u½#Ýa¨iK™àoyÎ(Ëuº
-ˆ;e7¿Þ7gFœÞ|Ý0<ÕFˆ„-¥î4_RlkÀŸ7çFe†[X{·Ö³¥”§±Â€éôÕnÓ®-|ûÈñ¹š¥£>jnIH¼:›6˜ªªi¸Ã	ükj0âÊò²F#ºt¶(ßsŒ5ÁªÝ0<m,Ü&û‡0åFL”@?nR6uÓ=MŽ©1J£’ÒPÃ§ßE\ß>µãªö‘Ž{ð5%PûëF½Ñ‹+dØçÑ8	Ò—{(ç6¢¡.8˜0Æo%°kƒ«fà¦„ë’½+?ªËZ1Â¸Î—y riT"æú5C×”ºÜ§MsYöŠ@•2^ÓôÇLs†ä<tµ—*´Þ£0Aú½vÚ¶©{¯†±”¹3x)+Ë¯ú·Ò©ºaM`pRŸœ_Ž“cf›í¡ñvÕ¾`gÝU(A|¯q­¬úÂ6öiû]C¿Î\êÐ¼GOBä~o8YY£°"L=ŠEmŒ¶¬E¡^[_å€Ã:er/FØšý¥ö“ 4SQ~d¾bDQŒÛê¦˜ñô2 r—=FÖÌãSÈÇŸb»Ûf¢ÕfÚGº%,­C¯Ëì£Èûšµ”¾)f¡:ÞVw3(e¶11y2†¾²pï=ãæËfZÔù³!šu} DÖ0e˜7ƒåê”Ëˆñ4È”Á}z;§ëVbZjö±9˜*³fS;Y´Ž­yFåe+nÇ“Ö”ÙÄcìéÂ¥åÖ"~—6Æ,§ý-èx3>j"›&žý“ØÓšJ,?§.smBõGÓøu:+4yý3¦ù¡#RÚ iÌ¦Ø]þ½A3÷«‹´yt…D5Œ¸¹,‡~)Ã?Âì'ä?Ø=ÿí´¹âzm€qwl¿0ê…®èœ¥XÏ›’é§MõƒØïßâ1J¢8}=(Õ˜.ŸF‚ýÈ
-â —4 ln·jWÙnÖ¹*7*tÏ×÷˜°5Wë.*+ü¤ˆÆ´¨ù{²©æÅµ5ÿ.³Wâ|Ü£87ÿ_}ùÞùíõnçéC"ì5Sƒ†$}|²è÷@Ï€:ëØætABÖO™úõnôÜâûånÔ@6í-AL›žX×z“>n2…YˆCœ5…[žÞ¤¢ÓZ¢Ú…z+¸®cghÒ•%£êØ˜’ÛŽ/Ï{·a'qFíuAÝøñ¢Œ1–G#¼M×5™"°ªŒvfûÅ²¹òÄ¾OñË}Rš<oÜí2ªÇ¼ºyZ~†¼t¢	èµ	qåAuàü0@fíüCf#ÈFŒ‰¢‚„GÊ³s¼Öt8=HéµÎ’u3²ðiû*ÃðpÈfÙrŽ•MšŸxé1d4ß®+Ó”ú3«dy8í­á¶®ŒcÀp¥ÞÔë#eëv£Ó:.CZW/…Ð™"”@¼Ük¥n“ ×hÑšm+G.fNÙ2Ò%hÍD<ÛxuÂäEåÞèÙp€|î0§)ù¡P¬¢›CWŒ†ªjyç…&óÓ„	¶#ô.ïÝÖJ½Ý>[Ë³™ùTYØ5ˆy¶û.òâù¦QÏ˜!œ ´{n¯°XŽ˜‰fìpˆ†¹Øi´”{7<ß–1×IaŠò"Ç¸æ>ôcš£ÝÜÉf|}L/›-&“Q$ã`­B!Øa®Æ–LŠ|×--®{Ö°Ç£t‡R.ûÈuáÒBaÂ<zäÖöáÖ\# "s&bŸ²t¯Íáº'ksF íô¡1XÓFèß´á"•E¡³9f¼Áë0¶×»—²ªõâjlWÈes¶Ë+!ƒÑ{º!ãB‰ìé¾rÙÖP±'H;s b\Nb”{;ÁdiœW/¶Îàµµ?¾Vq¹a™åà‡vØºìÂ<Ô‘²åâÄ,zÌÛHàî¦­>){¿y»nQìõp”zmª·ºõ‡c  4‹Äú¸áöw]õ/ˆòò@qåò½¸Këßô²á¸çû÷nU¥}SÑð|çÔøÎ\·µyÔÌS</¿÷ë‹éo©Íuèc¨úÎòÛ[Îúýé&9¯z
+xœÝ]Ko#Ir¾óWÔpL<3#Ã‡]? ÌNß>H”,°½@{ûïQ¬"‹’¦‚»vOÔ¥"UýeTd¼#’&œpúšpjÄÓùëéÛ)®È h>uŸþëõôÃ?¿þ÷ŸÎ¯ø·ßMç¿ži4ì®BÒÙlB¸ü¤cýdBhzwÑ§¿žÿrz;±O½M"÷çÏn/Ô›v4wã÷òÍ¯D½Ç¥å~÷MSü‹O¾èÃÚ~÷e¹HûdÎÐ{§éË×ÓÿÊ!Øôåí4¿OüGD$DdDDÔåwCÄ†ˆ}yËçOˆøüOþçôåßOÿòåôãÿiu¬ÁD{³¶®‚5Ö0ƒØ yŽEìïÑ„06¸šöÇH«b½‹Næ‚Ê£¯ð:ðß"¾"âÛòÒ}ãÑríu¹ÎÑ}ù»õÄgÛŸ×‡ð„H¶¼·Ëõøâa=#’Çµ;z|ÛRä÷?=L‘Ÿ~ÿ3ËüÏ‰]ÀÑÚ$±nÃîÓ×“4ÖÇ}sùÏ§Ÿæÿ3yÀ×Z·Ÿ§$DzZ^¸Pãåò{°'=/œð¶°ðëòîëwþ¿)!„lˆOFŸRâvù1JlnØx‡§ÖÍºðÔL‘óçü3SE.×éå“ÏÆòÙÓ…zqz½Q–Þî¨öqG±7îj8e0Í‚’j-´”	AÉÚö›úÈ&ž::_%]$XPBbµº»ãi+±CX¾{,<!ð´×ñ<eàá!vAIYÙ¹UmZkcd$mÆ½
+¥´†díJ¹CÉ¼°ò¨BJØ@µ1¨³4nËN{^¤÷9U¡ßº9&RÉ¨,ì—› ÀEüÎ/¯Z†YãŸHˆwÔ_µÄóæ)<-Ú!~~-[BS af=Y‚Œ‹È×§2¨>À%¥ö¬“gÓ±
+ª ƒªe¼½2ÂÌe|,Ò ¶‘Â]¤Æeë•ÁåI} ïó*]t®ÙËêG”i•{k-AO}c-¬LV&¦Ù ©qÓ¶/„>—AUij˜ñÇÕH_Y¹ŽºSÄ³•1Â•Öã E¦GÁ–‘•…Á›SÎ´/‹"n\³_®u›f¢íé>0ƒ8»ƒçRjú 3fÙÃ·5ZQg'0jD’Qõe‘Xb(°¡x»ìÙçÅÎÅÕ®­´mÛ %ìê /ef«ª§´—Ê/™Í„~3êV@JÀ.mÐ„Øóè¥î9ƒöŽ–Ag_¸ù\m¬3	C•ñ[×)ö¨Š¥(ëŒrë)Ûòy‘lO¶Õ5²}‘x¼ñÿÎBÙ<³vÏ‹Ó6±”¾xHkHhÙ•³¿á‹çtýnpiÀÒ„=[æëÍu¢ç[~¢ÎO%oÐ9âCtY¨Üê/‘­c<VÛ²e¼|æ¸"r<.ƒ?¨#…ß½¿>š+Ô`fâ‘Qz7žX)‰”3óðõ0-àvì-C>ïÆ•À½R¯ŽÞIÄ3Z—j"…Îƒ5ƒ¹*œZJŠà¢ÚåØT5ƒ6X<ƒy€X\wP¢Á¢}Š$²ÕU:fp0'×.¿¦ª÷;§Î•åN‘2u¾òh©ó}´¡\Sç
+ª}|@y4c‹°_’·ûP¯ù˜—›Õ2^Ê¬Ò£©ëGÎýÄN¬SW@Ä"­˜0Ã3ü´hÜÝ%DÊ±05.Ü¨S¶íf£ LÞ²6@1O¥Ãµà³Î hš°5Ï ®Á](¶:ô $ ìn=ƒÿvÏûž•øv/!æBÓMg9”I‰¡€lÞG²Šai5N@yM5…ÁCU2¨‡¨©¡;ÐZ˜è9eËkjBÑ¡bÔè'pSOÃFÐG'J·-[mÕ*Vž¢ÎUw	ôC¸›ÂQ—n(¥ëü	H›y*Èjy’Á™vµ~*¡6&m	Þmz­§˜ñ?-]Xêã1FÀ¬qÏ–±vkÃæ: ¨nkÐìæ0]©º ZÜ‰2jÏÌ¡›~®2&,ucAM!×{$:âïzÊËóV\ÒÔÁó–,ßŠ<TQ3Þþ´üµ2ƒ(B€Çð:·#è—ÞöÔßÚfIK÷UY† ôK³¸å>b¦¥¬.åF@—
+è„¶k7G]±!P­{µß2/…pE¡ÇÑ2¸‡ˆRP J)#ÔRµ7hl£g;K^•/±ËÈqÈS¼ê<P#Òn™@H<ÎHbmÍ=ó·ÞÙ9¥Õ"¡µÁ+’Çì(NK-D¡Qøo§ÍXlúzbè®ƒx¹ôç‚F“ïû&á¿Ñ8üÓ/N5kÐ;3ey¯ÞSìv—+Å\ »Œn¿1Š…oôpÜö’›|0¼øí$Á“éë)ô…a³q¹ð[¡‘€ñÐ+ûTl7sù}O&?½£Úæ®õb"D#týÅ©÷=kLD]|$´›¹í|s-.¹Æ[ä¢°û‡xðhÙÄ7¡×º8¦4@ŸÓ¤	·¢–Úìl4Æ0z ê*È…/% \gZ„Ñg“Á.÷ò…t8êñªÄ4êé3>®­JÕª¶g„´MŠàe‰–
+4'`cdÀƒ%Ê@V·GPÖVþP´\†C¿õec¬†Õk©og.YŽ}äáÚ…ü%^'7ÔåA	zŸ“ã	±ŸÖíVé²ÒPI ¸^©uÀáM²%Ð»4îÚQ0½Ò–<a†‹Q¬`ª¥Õ¡íÐ(‚‡`
+}®cK£Ûcª	eh‘'tP5GJàr¯Ìbs[E3¢Ê¥Ï×hB™ÙN& ®Æaåm“õªãƒ0Ó´e>€¦‹)?$JyêaÊÂKÜG9í“/m‹ü2E4Ù†ÏÕƒ	„toy„”ŸïÚú½4[Ë“Ð#SûjÝÐf[úâ}´µ(›±+e(oóIÊl†Á‹BŽ]¤µ…úa+°©»d--Ô[!bv–Á¤m9e]i°ˆ	*šmýkßô:ùçí6¯øÖ”\©•ÅF£‘-£o:’ËôBgã)ÚÏÓRÕ½‰Q†{øÞÄ}GëMÜGÁ³Ò±¾Þú' ßi­|îC`HC±e}L¨A3ã.	T|ÞŒ~($3˜Ä{w™`WØßÙtsÓ”	Ž 
+‘÷áŒ²\§«Ð€ˆ±Qöðë}sv°îÄéÃ·MñÂSmÔHØSêŽGÕŽ84àÖ\[¶”ò4V0}üªÚc:À¥…o9>W³tTFÍí/	‰9ˆ)jxÈÂNàß†ºW–gÄœ4§]:	[”ï¹˜³ÌM ú­ã ÁSUðp›üW'2"`ÊJL”@?nR6ut;ü
+¦‹Ù Q´ÞÄõíà½ƒ“¶Ñ3¤ýÖ |I	TÆþæ™äô äâ
+ÀóhœéË-”sÑPìL'W%°kƒ«î0Ü3Ö%W~T8Ì¡_æË< ¹4*Gâ©ã°”ºÜ§Msá´RŠ‰”F¯iúc¦9CrD3óýl3ÐÖ¢0Aúsí´º©{¯†±”¹3x)+Ë¯ú×Ò©ºa*Ð¹E©OÎ/ÇÉ1³OÌý¡ñvÕ¾`cèm˜P‚øVãZYõ…:öiû³†~¹§ðµèâIˆÜn'+kV„ÙˆbQï=-kQè¨­¯€ÝerwXŠnN­³ŸAÝÄø‘]øvˆE1n«¹aÆÓkÈ€Ê]B1²fŸ’@>æøŸ˜èØ6]m¦]¤[ÂÞNË¨ÌûºkJßƒ³Pœ×ÞVw3(e¶11y2†¾²ps˜póëfZÔù³!šu} D®˜2ÌÝ`¹:åÒc<MœË—À}ºŸÓu-1-5ûæc]Í8òûS|¤«‚6T•—­xŒ3hØ'-96g=2g=%¨Þ¥ó˜ºÉ ý5èx5>jc:Ô|4WBôObOõ'I…?0d®¡M¨þh¿ÎAg’8,úAöÏ˜æ»ŽGÑ¢ÌnØ]þsƒfnwWjÓ×“D-Œ±ìÔ~3C?âÌmâN#ãÞ;ç¿6w\(§œÛ@ýMQ.tDœC¼q9oJ¥Ÿ6U÷úvŠÃÚ„æ==JCmž+<_ù‰ö=«‡ƒfÆÐP‡_+]e»QçŠ\¾œï1ld®Ô]ÔUøH%ŒIQó÷dSÉã^û.sWæÏß.ŸÍÿW[¾w¾¿ßõsú{`ÍÂ1ICZÿdÑïž ï÷Õûç$÷Z€5žü;™Ï}ó(›·GŸ’‚‘ck+c÷+Þñ.½ör!R*e—ïÞ~¦—›å´îŠùúëÆ~{Žº|g~ˆ›™sˆû¼üý¸¼˜þ–%6 õn6v–¯÷vÆ§ÿ‰ç±j
 endstream
 endobj
 161 0 obj
@@ -2906,7 +2924,7 @@ endobj
 /MediaBox [0 0 391.68 612]
 /Contents 159 0 R
 /Resources 160 0 R
-/Annots [163 0 R 165 0 R 167 0 R 169 0 R 171 0 R 173 0 R 175 0 R 177 0 R 179 0 R]
+/Annots [163 0 R 165 0 R 167 0 R 169 0 R 171 0 R 173 0 R]
 >>
 endobj
 160 0 obj
@@ -2922,43 +2940,34 @@ endobj
 endobj
 159 0 obj
 <<
-/Length 3778
+/Length 3097
 /Filter /FlateDecode
 >>
 stream
-xœÝ][#Ëm~×¯è?š—"Y?Ø‰ä!€sö-ÈÃŒfà°1ÿý€}‘Z³3]:vöP>XFjz¿b³x'‹&œpúšp2âéüõôí”W$¬OÞ§ÿy=ýæŸ^ÿ÷¿Î¯ÿþ/¿›Î>!(RzoBâ¬:!,¯ZlŸLÖn.öéÏçÿ>½¸On“ˆæýù£Û¹5GíE9ò^}÷–È=/­÷»ý6Mù/?ùv¢ïÖö»/ëEš¸OÚÜ¦/_O¿ùO„ Ó—·Óüë|úDDBDFDAÄ¶¾WD4DtDìëïX?BÄçßNøŸÓ—=ýó—Óÿ¦ÕÝ±Uæ¦¶­‚[®a+ØyÎE‹÷ÀhBˆ.k~i›€¨»´I{ÁÆá<¾à{AÄWD|[ÚBß¼F´^{]¯óJô¾~o{ ùÙþõöžI×ß¶\Ï÷”ë‘z^»¡Ç·=E~ÿÓÝùé÷ÿ6³Ì_NÜ:v%›$×­è}úz0ß]þÓé§ùÿ<àËÕõsJR ÒÓúƒ+5^–÷Éžô¼rÂÛÊÂ¯ëï¾ýÍÿ7%Ä@HCú¤ô!%®—ï£Äî†Æ<µmÖ•§fŠœ?æŸ™*²\§—>‹õ³§…zyz½R–Þn¨öýŽ¢½DLa8!Z7ö¦%xBàiÚâÞ­;+/t‰h`3K<-˜™¾!²¬›ÁefCað¡w‰lƒÌL¼®`{ó
-°
-9±E0Åº®œˆ¬ël‹äÁ(ƒïIºßŸ6­öR—Ñ¡;w”ÜX©m+ôU¸áóî3/[†# "ÇhŠ¯êj^ŠVÁì€Ý{Ð ö,XâÊï×mºþô2Ê÷©õ þœâ¸¯«W&g+Õm€x6Zj¨*¤Îà‚¡>Bú¼ƒ›¥\F_"ƒ0w—ì·UjËº	_V}¿¾æcú‡Jo†@"-VÃ®Zz+ˆ±Çn_å\•SÔ1
-˜ãioe*œ[#‹6¢ª0¢”ñ*[W%J‰Ù—®SÍb(ÊwÀœuÙÅ-SË„¹­ÐîâÕ—J"Õ¯Ë_c·E%lWh¤(1@¿h„2'ªƒh'm#”/;±Uf	4eÀå´o¸Ò¿ë=zê¬c˜/«{êÕò€Ô€½52B+e 3`“ »S&Ì’6™¡Ì* èÀ*#È—àÚóêÃ=íLÆ¨´zYLÊˆŸgcý©ÖWK±ÔGbw1Ðë¼b‚È#˜OküKá²ƒ¹ô±*N¾­‹54óÎ<äÓóê¬×à}jÚG~ï.îJÏÕQKgè²x7ÇÈÏ;Ñ»Å¡hò‡pƒ[ƒ²v÷rpÃ¥ˆÎ M£ù ö¸Ã¨€¦ÔmDá¾²v©Hf°p¶!Ü§:¯] ½9ŽþK=ï,ö§] -®‚…Wá²ðôúR™ØøHlÛ.Õ+íPUˆn2F\—pR•Ê«¬¨DÐhºEÙŸ6†®óó”§é˜À¾‹N¼]«jÍzrïÖMG_‹ 6[ä¢Á·¸|©]’‚»¡²Ù|÷6I8›Uï—S<DÐ>W(–ó0û@!X±Å<…ÌÕ–ªÔ5ìGöÓÊëbW+–Ë4¿1ôÆÊ1@½85c^¾6WÞ]+pæú›Úf.Lî
-)6`VI9~Lá§=\)þAuÉ·ÓõæÔuúz¢Æ€ÌÑb¾ð§BËÂ¡÷…GýŠ³é§_š†Ô4•!g\ögñZžóŽp»;®”‚ÆHf¿.ÊEƒ–F2¶Ê®–æwôÛiw·…j™ãc5Âö«¢7i8‹›gqµ`ÞQlw§•b†bný§ØLL
-7ô‘{„ô™ƒæ=¢ä}¥ÅÓfÕ…BÅHFÐÂI›‚èïÂbÓ"ADÄ²–±l…XKN™‡h	qDgi»¢ðóm„jK'•ÁQG„ç—kTæ¡ñGY'vË@û1ÇïÒò,»'qÜÛðC%7“Ï¦ôñèË†Í-•Ká:Š‡B wállÕQ'î“„ÝQÇ·]ŸÅku½FGPW ¿¨ÉóNÈÄZur±#+#ù Ü~FMÿ­çUø |N0Ðóš[šÓO·öÊRD\—SJÛÖ8bô |W4üRÌ&ñÌƒ$i0	>dñwæ­d÷›Y?S
-uÊÈ1óêÚÛˆú[Q¼¯¹ÔµwŸ«Ë[RØ¤JG]cçkŸ×w)ôÞ¡wnw®€ÊU+QÌzØcÈ3ÛŸwóºËžµ«r{×•Gq¦Ò:žÂ÷±ãR¶gmMïyµ€ùC±ùfØ¼Ö¶95Hƒ›Fre†Ù¯†ËcØ^B]ZØˆÚ¼ë®HÊsê“4}øô°^
-ûhuÍ³>oåh«ì¨­ElÜF´¾ëÕVÙÒ­— Lí*²JØºÇè!|T½viƒªÞd`îmÈJ~+b.å­[ãÝ
-Üòöá>zõê'4 ú.5_[QÐç”öî‰¥áŸÞU”G02K"#ô·Š¾¶A…t¹´I†X ¹v±Å&/
-#ÐYiDÏwîqí$ò­‰hÜÃ¹[@ó)k»ò™ íMR|o–œß¨-…iÀ1"~½*tp4Ô¡¸xÈ gª:œÜð²ß•e†vÖ…£ÑòÎéº©õ/s¾¢4‰h#äuš
-f ç˜K@K‡pé>‚}“¦¬“ƒ	öÔ'Çpí](¬¶%%]xÄ¿KB¸.ßA¼“`6JçÜ K»òXœ¯—ž—60jöwêCê>_K3n
-¢Ò1Í¹(&cIñ²y{uUË¢hËÇ}vŸÿ–FŸÂél](S¡Ç+À}Œ¥p°@fnÃÉGpËxæÈ²“Žxâ°ÙÄJÃ‡NÀ¡Yr<X‚^ó=s<¿°‰‘ƒx„¸¸ä†zXëmómçuÆ’þ.tž5Õt×¦#~°r'Ù0¼ >D²D°Aî3Á½äc7+ãØã€4m¦}•¶¨dö»¥´{ž¶è—qÊ²OŽð:ÈW²¢ðí:BE|ÉlË:»×’½\´ÝÔåýðÖ×õ½\ÿf¾§^GßÎ7{]%)_ï‰k³Eþýöæ÷CZ•\½Îñ^ˆÍ$>4x7Ø­t
-‚1¸…
-ïUÚmimô:‹R¶%ào÷­
-CwÙ°òZðŒ¾ö6'hË ]>²ÎAÊ)¢¡¦m÷1ƒ€ê Þ»úþˆû€ñ2µ¶Ö¡ƒ…¢N{®Œ¹¥<ýÞE>D“ƒ5ˆÆÆ>@ýì9¾Ý0Ïc´¥!«¬¾µÌú¨Äœk¤†&#¨už¨0xâš[Xêí¾(s¹Þëó\¶!¥Ëë>3äŠ$4Þf©óÁÃr`ü2m+íßÍ ¯-ëb`”Ye3ŠîøúõÓ&Ù_X÷‘¨æú’…ÖAÃl´Ö†0'
-j#r¾®€×]ö¹rra€5UrÂËµý7ÙZ‚“´ÞŒb û1$\‰¡ÜÑmDåú	™(yÊ ®Ç–#›5wñÔrC'laÁÖ`žc…ÇþÙ]Åm…Œt¤½·X¢îêêbK9²Ô¹Ù õ¾wórZCùÄUÂÍ)¸à—§9í:šaFñ¡fËƒ¬!ÛùÜ«—êJ½õBÜÃiÄ€–Â£ÜDúëd£¥=B#aòžL†¼¢¹ëˆÚ·óò+cÒ”ÙqÈã•:ê6R”¥¥§iŽš¡µR.ml±]»ÄˆžÉ„NŒÄ#´[aÖóu©#Aðæª1bÜ­Qdë‡òG7™Î,“¶Ã§ h'±ÌÇ¬(ûhcò’#Î<o"i„ä{ª;Ü¨`5A·jOP@±K¬ŒÑŠ£^”³?ß–”Á\Z÷ýÄ¥3J#€Pd°šÇ5NIÂ¸!ÈC§Ô1çÍ‰Å îãXw9‰Kç±P©3î˜À»K=ær#/ãK9\–Fò#­¼º.kæÝÑ|DÑGõ¡ÚÒL2`ˆó.…øò,‹ê¨PéiËŽJ0Í£‚Gh·6ÊÒ‰`!½h[éŠd6¢ëe
-·í*°Ÿ«Í	j½;£Øâ£,l±bN1îCÊ¿Õ¦VZÇÙbÂ¼Œ:(
-¨‹ÐÖ6ßs³,eîÍFD-Oe³9‰² ¶íL©‡ˆfà2…aÀßÍ/®Ž^¤B–ä.©³MÝ•Zòy ²P_Úu6s¢mÓêjÔ-8Fþ3"‹?ô é Ùg-ÀKê» í·Óî-«Çyù×Sn“Æîûë¿–ƒ (}&í|ÇÆú8™÷-¯w½¡%Sž£•1à*ZþHÏ¼CXÏöÒcJÞcÓþØ³.fÀñ¿/‚šG@l7¼}ØÞ›Æ¯ða÷œõçžù¡ã‡½ÙÔm7™®4PÊmä
-ôklæø/”àMT›ßƒþÓrÒêF·y¢;‰ùn[ƒYß5•É’	Èm8¿ÎkqmD›àpyÝdùlÞ²ùcñò#*<;=tYèûA'órË
-P:‡4{ô¡ðr{„mÝ®õ¨×œýðeâ•ÎNKÃq ô!ZfSnÇ2`ôí|DŠÁÂÚØ€Æ¦Ôî`€W­.ÉLÐçNÏcÄ ÍRHý¤¯¥c{Å€Çwòõ7Wž—eÆ„ƒÍõñ|‚Òò)žÔAaÞh»	·7öìFL×iæÜ&Ô6ZPßÔF$n@ÞÒä?Dúù4Èµ…;q`«EÖu;ÜŒ^¬‹kvhD$rÇ*®'*§Jtê†í>ôÇ­ïÅ¼Ñ‘ }ˆZ9õËIx‡`gª¾óx¾}·¹] ·ôºßÁMŸ{ç-X·{}ÍJÒÑlƒîûº¡Ë03[G¾ÜqFìúwÉ]ÛkÚê[Öm¾~˜•[þfžbW9‹ŽóúýX~˜ÞG·ÙK#ûæRÁO—ßnoùÇÓÿ®¬æ
+xœÝ]KÉ¾ëWôH-Å"	9ìæä`cß‚f4 À:€³@öïì®–Zò¸KÞÄKeaFÓ’Ú_±X|“L0ý'˜Òtüpøxˆ+ìXšMjÓ¿N‡o~ú÷?Ž§¿þéÛéøãŠ zµÊÈJ"”åUõõ	J«WmúñøÏÃëlÒ61KÜŸÞº=£¶ª fÄB÷²ÍŸˆªq©ßïúÛ8Å¿xçã?YÛ·ïûEœÈ&1*ªŠÓû‡oþHB‘éýëaþu<üí· € @ À Pûß   ¬ÿöþþ <ÿn‚¿Oïÿ|øÃûÃ÷ÿÕêîXƒHáªMÚº
+ª±†¼w°ò‹Øæ·Àp‚â\­ê}¤­\XT¹NbV*¹®ð´Ðß œ àµÿÔ…¾q±_;õëÔ‰ný{ë†Ä{Û×ë&< ôßm¹clÖ3 Z\»¢ÇÇ-E¾{w7EÞ}÷—™e~:q10Á6q¬[@múpàÆ¥©»ëæò‡wóÿ9ØàóEåó”DÀ§þ/ËßÁžøÜ9áµ³ð©ÿ¶õ3ÿkJp+Œâl“à›”¸\¾›6Úá©õ°vžš)r|›fªðr_ÞxÏû{OõâxºP_¯¨öé‰Â­Da8AAiÖH«€°Ó…®¤iõ{>Ô¢`$´Ð'ÄE€!èµƒ¯ Äý`¼ô»‚à+ÂV.@&­ÐÏ$÷~dkßŽ§¾…ž…IŠ³ˆ?ŸAïªá”·jQv’!\ëâá˜U¡T±êm uÖc§T&p*•›¨ª_ƒ‡_/*h+yŒAµvsQ»Ž IƒªT¨#Žãi‘«àž©¯Y°¡ëö¾ Ý•Fy›ªy¡ÏSüÔã+ ¯TÎ¤zó"T›‘k&K!áÊÕ³!F$mÿù"úÎ"ïi1Fá›EWÒ<uC/Oô!4QÇ;)=H õµ]f5ÿhßüª’Ü‹™–33ÊqcD…;Hy’|ö6œéžãº2eJmå‘UÒñz¡ršÄÖ¢.ØÚ õêÎçFÇBµ²Éišh(ÐhHÌ.'."nu»yI•Ð›9Ž–/}˜fs Y©Æì£ƒGyÝ‹aõŠwÈ†™	fÆHaÔ
+Z£;„B²Š®^š Öá‘ë¶[¢bP)•…GLð¼‘§[·5S¯‰}µ<›™Añ´c§ZØ•PÈs½ÇRâ¥uúB&Mµ²ŒØ»Í;'iò"p\ÔQë{7áæU5/&{ž^ãbqÏ}èh&²âh
+#¾~L/›‹FZ§ÞÃ8gß/ÍI‚Vš#¤ÈgÝÒL/”K¥/ˆÒ=”rÙG.?<5­6n#¸³àT{ž´0sd"”Ý”Ð~ÊÿkÂ•VÌ	ü´ ŠUÑ0B¿èÀ=ˆTŽ¢2‡oP÷ªçØg÷RVµžÿ$2 ÑILw®­h3hÃ“ø2.”éžîK—mÕˆ"ù éÂ¢k èºÇ^5’çÅFŒË‘GÄ^‹9%= ,©q­J…i®#èzIÿÍøóÅVZ²š}y’¥‰j9oÙ‰ýåÈ%¤Ÿ˜}`+áînÚ*ÛJýYV* c¦l4YëöW0×­ùM™Dª‰Œt'ôt¹ÈË9·žÒçT¡£Z*!›ÞÿœÊ* Å”,ìÃ}¸«vZëkºf‚çÍ{iz–
+–q¦x»ˆôDƒ¬€©…Hß…ý¸öÙÄN{â}Moœ²«óæÂm¨…ßE¼Æà9¯h“Š2¸èé6s°ÇçÅ°oªÊ#Ø]Ó_/_¡d•Š"–p®ÓK–ÞR¸‘únz½i„‡ÁGÌ‘t¨³åêuDU& Î3°[-*‚4”’šGT/Ü€…î€9ë²ôÔgÔ’r#hwñjn>Ü&Öösì6Ï„©q` ÏÍÈE+•J¡|ŒºäR…ë .¥–÷…gæ:kæKwO5[DÈŸ´V2BMe€Ö
+5Ž:®ûdö4f^É;ºŽøþ€²«¥ûÜ}¸§É˜…/+ðˆŸ "ÉBì:ÚHì.zžWŒÅÜhó©·¦VÔ2iiÊ6VÅ©eG\±45¢!Ÿ¦7|%ŽüÞ7’•‰m–TŒïfùq#z×8nâQúnp­Å[½{9›ÎÄ „Qá*^u ûÜaMÐÚˆÂ½vSE21—æJm7­?f €V…ÑæÏ±ÔãÆbß–øE°P.O÷ï¤ÊÄ*{b{S¸ÉHŒ³º5#NKhdSQ„(/²"­[­4¢é¶ÓDs[÷5zCg§iŸÀ{]Ûyº$l$kÖdDñs£Ô—‡¨Êe.„tÈæ›]X%áÒ[|³œÜÞ@€"6%,çaÎ3'êwðë.ÌL]Ã0¨0™3díbÅRšæoQâHB>@½85c^pº6ÛºÝ™Gò´	JÝÀŒ…ñ]!ÅZˆ„CŽïSx0¥àê’‡ËÍÉhúpˆ( òêó…1òcúé“YC?Å1èÝ/MC¬Ê".ûEDüLùÇÃæŽrÑ¤Cm²¿*Êy-5Œd•M-ÍgÜÑ‡ÍÝªEŽ¤!Ô_Õˆ£™+ŒÄâêY\,˜ŠmîÔ)Ö 8·˜oôKSìk&&¹8UÐ‘{„ôYtuÌ=WQr[iñ”=z…É‹7äô‡p`Â¦ÀÝ¹<c±‰fGÄb^V×NþÔNŸcº #:s½òKlbné¤Pi@ #ÂÓË%*sŽÐè£,#¦È(r‹@û>ÇoÒòÄ›Hëm¢œ¡Î¦ôþØr`ãCÅR(µÅÆŒi jvÔ‰l"ßÅÓ#êðº­zÊ®×0(ì¢Bôg5yÜ™µ‡ýQ:O—¹Hÿ_pEçÓ ýãöÁaÛ¶‘ûh®f¢äÆ c•8ŒxæA’4ÑªÅê6dñ
+¯ãËp÷›Y?R
+yÊH!òêbuDýµ(^o{„³Ë[BØ´zoçÙêk{‚;ºY1·vç
+0]µ"ZA†¨‡Ý‡<³ýqS1/›ìY½x ù-1ùÖ­ŽváÍ	~‰µÞR¤²W¹g'ÒçIÕpÄæ1õƒ´–0¸q$Wsê£‹A#jÓ¦»"(Ÿ7í!$xµ‡OË¹°o€¶7î¯™½ó“5r«@
+Tª#ZŸ…u·UÎã5Ö Lî*¢J¸™úhÞª^;·Aåol¥©Ö!+éµˆ9—·®ÏúÈ[¶¸½«Ž6"_ý¸q‚Š#¨ºIÍçVØ\T°£{|yÆÞT¤G0"KÂ#ô·£3Û)¡“¢Œ çŽ­#.UÅxÄ«¼HŒ@ÔJ‚#zÞ¸Ç¹“P­ÔÊ,~ç®ýÕ§ÌíÊ',aoÒâ[³äx;T ·¦b÷ñóU	ÏÈP\<d€3Ô
+îNnxy„QÉRÉÂÑ»hiãt]Õú§9_^Wv¯#äyšjiÀœ}Vx,ÍV\Ùtû*M™&kTƒ…>Ù‡ÛnBa¹-)®@™Fü»$„óbðVXu3±Q"p‰´°+÷%ÁñÒ(qNàijcÌÞ4CR÷ùRšqUèú€§˜+ Üx,)Ò2cgö¸|lÁÞt†q£Oât6cœS¡»+€mŒ%q°@dn]QGpóžÄ2G–eÄ£G&†-Oæ,áj¼cj -p:ÒqrÉÆÀæVCiìÃ|Ýx¾¤¿g	5mI´}~héN²j×Š4‚úÉ†ZâœÁî9 ï›Yû]ÄùIí¸­Òfá¨Ó¾YJ½Sá¡Ö‚PÝ¸4!o“#,K[(¾˜ò²ŽPa^2ÛñäêO«Æ^žÅ/›­oŸ×|êóå3ó=åò´ëùf§.IérOèÍóçûÿß›1„ØºŽ^ü„Œ|½÷Ïlç›Žj÷¥›µ{‰Û?O¹î{®gþôÙØºsùrG7Nÿ\f}½Vwž?ß?‡§¶y½~ÝyÚå¬Ìï±ß—ÂÛvŒ]ž)%ª"¾³üz}ËïÿÇ5
 endstream
 endobj
-182 0 obj
+176 0 obj
 <<
 /Type /Page
 /Parent 1 0 R
 /MediaBox [0 0 391.68 612]
-/Contents 180 0 R
-/Resources 181 0 R
-/Annots [184 0 R 186 0 R 188 0 R 190 0 R 192 0 R 194 0 R 196 0 R 198 0 R 200 0 R 202 0 R 204 0 R 206 0 R 208 0 R 210 0 R 212 0 R 214 0 R 216 0 R 218 0 R 220 0 R 222 0 R 224 0 R 226 0 R 228 0 R 230 0 R 232 0 R 234 0 R 236 0 R 238 0 R 240 0 R 242 0 R 244 0 R 246 0 R 248 0 R 250 0 R 252 0 R 254 0 R 256 0 R 258 0 R 260 0 R 262 0 R 264 0 R 266 0 R 268 0 R 270 0 R 272 0 R 274 0 R 276 0 R 278 0 R 280 0 R 282 0 R 284 0 R 286 0 R 288 0 R 290 0 R 292 0 R 294 0 R 296 0 R 298 0 R 300 0 R 302 0 R 304 0 R 306 0 R 308 0 R 310 0 R 312 0 R 314 0 R 316 0 R 318 0 R 320 0 R 322 0 R 324 0 R 326 0 R 328 0 R 330 0 R 332 0 R 334 0 R 336 0 R 338 0 R 340 0 R 342 0 R 344 0 R 346 0 R 348 0 R 350 0 R 352 0 R 354 0 R 356 0 R 358 0 R]
+/Contents 174 0 R
+/Resources 175 0 R
+/Annots [178 0 R 180 0 R 182 0 R 184 0 R 186 0 R]
 >>
 endobj
-181 0 obj
+175 0 obj
 <<
 /ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
 /Font <<
@@ -2969,85 +2978,126 @@ endobj
 >>
 >>
 endobj
-180 0 obj
+174 0 obj
 <<
-/Length 3840
+/Length 2890
 /Filter /FlateDecode
 >>
 stream
-xœÝKo+Kn€÷úú©á³È‚,fò ²0¹gdá‡˜À ùû[Ýêª–Ü%Ÿ;ºm7—%šý‰Å"Y/<ÂŽ‡G8f¤ãË¯‡÷C´pÁ”ýh~üŸÓáÿxúßÿz9ýû¿üñøò×$,Ì…‘TÎÿ“2ýæ)KÓèÇ¿¾ü÷áí@~´|dÖO·Ä3Zu'V*!Ë«Í¢i”×¾ñ/~ó~À«gûã±äGuJf†Ç¿þðÏtDHzüñv¾½þãï € €@ÆŸ 2  øø½Œ¿€ç8ÂüëáŸ~þü›žîŽgPM,–5OOAÏ0(_FeCÉ—xˆUÅÊR1<B*•^Yì>´Â‰ÕŒå¨î‰A¨Ø¤ž%ºè÷
- ' x¿äÌ7ÚÇ¶ÓØN#tß7} ñ»úÿÓ‡ð€:~ÏçöøãÃz@¶†Ç{MäO¿ÜMä—?ýÛ`2ÿw çäàŠùÈñÜ
-æÇ_œ9e+¥XÕü—Ã/Ãßì|Àjú1I, ø4~ÁHãõüs˜'>–ð6šðiüîÓkþÖ$8'F-ìGÅ›$ææûHT3­ØÔÔYG›ˆ¼Ü¶Ÿ
-ŸÛñõÆïÊø»§3½§™,¾5Ô®{y&…âÀ…pp”8ÒYò’ æú•rO'c:*H2pRºx0<{° AO£¶²Úë±öÚá°CÇV:B¢ÆãK¹GE±äTXò•¦ÜhÊ/#ë°bÛJ[³äPÀ¯¹¶Ú^Ü~ÙJÓâI@-w5-£¯³Ñ+èÙïíz+íQ)‘‘öÔ×MÕÌ9¹YáŽ–¸á$^7Ó¶p"1°Ó×‘«Câó–†LTGœ°®õiìrzpÞh= y¤æ–“£ôŒqò[šCIèâØ%={C¨4ÙÇTl¦:ÅK¢U~GdÝJEÕ$9C–Ž¦ÌÜF“§1V-;#"¦"¥§üçeËˆ\RÉ‚ˆ÷PÚosDÄ‰7¥]0±¡z×¼ËdÞcbD«*?8ä”\VBN‘¯r.5m©Ò”ÇáÑÐó¦0YÁºê—’v3úGªK%I1Fé¨ûEâ#Õä9‹jO]½ÅóX3yž»àà«Og3Ÿ©ÍBñ”MAJÏ`tô a3¾å8®²æ§m‡n)Õ'0RŸ¿øt£z©FÒMBTHµ ÷³60«ª‰áÛ_¶ŽrÊ^Êg>¥ÓÓÁ¢Í‰ÅdtÛ>¥BF1ôË«q`Š{'C,[?Jôöžç#Ë¡_<WŸÆ%ºÜú1JI…A;O³}TÄ‰KAëi:òÖ4vî¨¿ÒTm;;M#Éf#–xŽ¡æÚ1%Íæ¹JR¶=±“ÛØs(ò•Ø×"úKìùzÖúìo6ë’PŠD·ªõ%Ê£Ih m7üæÄ”ôcò’ÓüÐÅÔ_'ï¸ÙX…˜€A#‚X¬zåfñ\LÈdì©ût»¤´mºE^’å¡öØ±ûM«Ð’†)öÒ£|šGšitÛ¢ðÚsbJ³òlÓÛå(fÉL¹`G{x«füukSFÌ‰ „KOí§ETøz®‚u†õ‡ºmIYŠtT§!ÚLM£”5äáÍ«1dÈÈz‡1ó*§ºÐ±Ýhâ—êWGííê-–Ô5îù¶×j€Û®<6ë€Ö³YÚ.âqNP²pOÅõ m³AŽ)1õ{Üî¸¬i;Ætd÷Î<ÚP¬µ
-ð¦±qÂÂ¬¥§ù¦ƒƒ[Âb¦ÒÑòk¸DJTˆ8wÔwÛ|Ÿ³¯Ì5µ‰/’ï/5ýÚË›ÖµýJË›:š*€œ¾JÊƒœSVDâžÚ7—àlégÑ<šgì©þ2ŽbeËÂ,%04³žº²uúN¤IE½xGUôª¼ºJ©dï©ûµ‹ŒšPH­û›O20{ÊàYz^ã²‚û´)Y:²òåÕ‹O>Ý˜\* *r	õ»KxÐ¹&ý¾L¶VDµRô\! ˜ÉK=œè€^Ï³;ÃkbÆz‡}t˜ž3áÕ>–!øð~ˆ4`žÿô°g^Ö?¨˜CÁÊXâƒà»‚$Lä7ôäFÏ˜ÁqÅ:·ÝñýP‘„ÜËñ×CÖT,3zÝü—$‰-Ë-?ÿ˜±­á—ßÜàØÕ:àV–½j!¸BÉÐòÁM"D;à>1/ñ~¨…V QbkzÖ=’Dá”¹He“Ú^…²ï‡FRÍ/{rr¤}ò3Lªšs½.yÕï¬y™',
-y—.R!ÊÐõy·ã¶÷C#¡æVJÊvig”8÷÷\-ûeóÎŠÅ~Flûënx!&×sÐ½î×V—$.YÖRk–™€²á.YfIÆTðg»l- ¦æœ„£`µKjžª‹ô<Ýý‹ú–Xë¿Pqe¡d\h\™ŽT$å= ÈÛbCÈs5£Ÿ#ç@Kyâç9YA¯›÷‚ÏKR,äÖ¡ÈeÜ$ý² 5h !H"a/yÔr*†1¹Ž­NÕ8jË,£’ÔòcIàdnÂïÁ%2û%Œ¥ž?WÂ`½YÂ˜›÷Ò1æêÃ:¸{K5¸ª„±?psµaÜÊ”rS²¨Á!jÊ³êû#‡è‰Õ¹x¯³.qUïlyQtQÅ]ò¢è^¢¥×Eßª‰2®[¿BxÖÌœÈ5~Ø#Áœ õ,®ÙfúTÍ•MÇGå[…³YzÃ”ˆR'¡=2iÓljŽ½^ì#×—9š¦¦S®3ÎYzË4þ‰é.Ç²’\‰JoP‰Ù­©ð1ÔÅaÉo–Ôðc ¤à»ô”šˆÕ¥ƒ/û«¼h~sK9Íæ¶Kb{J…)"þ»™U’Z~ÂÉŠf•ø=:/ÒÒ¤“_6/Zèùsy‘ÒœñVyÑÜ¼—ŽQåE«àîÍ‹jpU^´?pU^´
-îÞ¼¨WçEû#WçEëu-/jxUyÑyÍyÑz}«vÒ\•óæ|¨!§˜<3°í’œJÒëwïA·H)ë¥¼CüéK¤³ô†)')Êy—ÖS‹DÔ3Æ§+oLUòZ†±‡:«Å
-æ2Ô’ 0ån¸â çÍÐy¢#N}å§ó=-IÎR[–Å’‘xD¦ûcÉÏA\ø‹üLn^Inx²xrì»#„–¼–TŽ'xß8Âé<E™óœIª	˜sÝ¼T1vaG‡X ’[S”³€ZÎ)Sè¹Gh¹$–Î¨m5Ÿ5ðJN’6‚÷è4œü{¤á=?³Þõ<ÎgbŽK#ÖRuçzr¿¤,ç5·ï¥ëÄ~I6%‘Þµœ³’Ò²cJq®À°ÅuìX¹i$«ì®“Îù-/¡T Ó>MM¢Áæ¥gjÍ^ ›Ë­/’Z|Éh3~vÔˆßcÉBÏ‡9j¬æagG]µï¦÷TŽú7àýØq·,Õ’g~ïe†Â¡Ë²ë‰fI-?×”³ÂpfÑüì‰âžï2.õ|œ'B¿2Ví»é=³ÏèàýønˆÖó4ì¸„ñfÂ]²J€‚ù7YæU84	mIº%±R|— K'oÚíâ÷ßŽð~˜…6 ‰%	Zœ)³C’Ä–PÄL;(/ƒàÚNÈJZË0¶ÁdÎF1|ô€hù[„æK=7 r¾šóîÊõ€¸Šw8Â'H\ŸêÓŽG‰k$v7í‘£xÒB ØãøùãYb”¼Ho˜ÆÑÌJ*{dJ ‰3Å=o®_-ÓN49ßÉsµ§ö"±å(”8lùî†£hœå˜½gš·Ïdz?ÌZjZqöÞvH-c\bÅª=ëûøÎ­ØB{‘Ò²sINÀÈ»dç–TÌµ;h77ÝÜ+{‘Ôð–çÆ"€­zì£c2ýóZK=“éíy­ª}/½§ŽÉVñÆv ˜¾^îˆÇ†’“£#î“¡”8Ý/–ŸwL”*»Ho˜pR2nYï…)AN¤âÎ=¦¯·â±«Xì"­eÈ·žä8»y†öìò=&Â–z>Î³Ûa¶¿É›Ê³¯â<ùt†¬^¤×zø†etÎ¡ÛYKb‡zBÇT§øÒn•Mg)-;“$çŸí’Y¢á‚ÛŽþT±â"¼!JŒ‰´ ïÒ‰9Ú=k´
-Ýtû€}x¤T¥/’[žæ)ú<ÊF<=NÒ7™¦¥ßkšÖ?˜¦õÝÍëÔãä§ð(Ÿ®ÎòoÇÈ†£J2)Š´KŽÓ¨ÃF°uŽ?çègéÓX—¢”e#¦öLðMæË`µôv:EaÅë(Ô+ñãVÍ&uó^:KÖÂ„Ü÷™õ³Ð$†@‚¡’Dä˜‚¡U”'·ÛéprûõJ›‹¤–ŸhÜ½{B¶á÷`ãß£úëkU yî;ª
-?j)N«›÷Ò%´$sÏ÷0[n‹º¼·á5\"gºGZ¦Ñsbê*­Ë½*‚å¼YVC/“ í`¤(!Ø*Áõµy³‡öYcðÚ!:¦THÀ:îíãƒÎg-6ÅØÇ»ôo‘G±”½.«õ5f7ÖT‚ZzWp«ìžs²L¥çï.÷jžæ›™/fx}Glœ¹ÜÀŒZœ¹ay?á“})[+Þ>IU¬Â'Ù]yuV™ÅqV<Þ5kõÚ©d1û$B™v	1j`ãé«?Ùf-6†ä±Lv‰9iQ^Çö¹}³Ð¥••x#”öÌú=ŠúºV,»ç¢jÕ‹ð8ƒ—¶óR’5o­UÔ%Re«›÷ÒcÜRVËë?Õa*™Úl¹â„èq}ÁAÆ^{—áöU’+¹È,@Ó*",»Ä¦–È°ÿlG¾1Ó1	l0OÀ™m—Ý˜ bßSÁŽõQþhÝx%@›	¢¸©Ìp—Ø0nZqFì¸¿2ftrÃÝÕBt,·òý>èÞ¯àñù%—ûi%d.î«‰U‘=ßy,J<6ä<³×TìFˆè¬¯ýv_:ý_«3´Ÿç×á©Z¸ø¶¼üüš8ƒiš&Îý
-‡ñ2¾¿œ¿—d5,ÒáÐsD[yü8îÚÛyÿ|øÙ]Þl
+xœÝ]Y‹#É~×¯¨?àØ¸#Œv}€ë7ã]†ÃxÁþû&ëJÝ=•ZÛ½Y˜¡‘T’j¾ŒŒûHÑ€¿¢'ÎŸ_õŠ$—!Êðëá›ß^ÿù·óõÏøv8ÿt@0¤tŒ¢Bl6 LÏ4—w×‡‹eøéü÷ÃËË>ˆX½?¿w{¡p´RXŒ³Þ«¬^EÔKóý¿MCýWßùr 7kûöÓ|‘.ƒ†ˆ áÓçÃ7¿çløôrÎ‡¿ü	u~mˆèˆˆXæÇœß?"âé7þuøôÇÃï>¾ÿ¯V÷ÄÌ@4Ü|Yk]Ã>g°ä¹.bX¾FB®p¹Æs¤U±ÑÁJAåŒ^ ßð]ñŠˆ/óŸNô­×ˆæk×ù:ÏD/ó÷–©ï­Ÿ/›pD$›}º^_SÝ¬"•zí_Öùî‡§)òÃwYæ_.‹‘R×meø|ðÈÌX]þñðÃø66øvCû:%)é8ÿáLËôº²'fNx™Yø:?–å3ÿkJˆƒ¥”Áè]JÜ/?G‰Õ7xjÖ™§FŠœßçŸ‘*2]§Ë;ïåüÞq¢^½]ï”¥—ª½•(ZkÄª2/Î¡†YP’~Ð¦šÏŠ>*6žè Ñ¤À*!˜çå¼Ý¹)üÕÂÓ„ˆGÑô‰Ô<oË¤Oë
+z¡'
+(A…½‘±Ù<ŒÚf–C<.f¢Û2¢@QFmîÍ°GëÖ.WŒinÚ‚{œX|¡ö¸Ç™yºQ›-À¢‹ü¶ø]ÝŒ—Yqãlª¸×R„
+xzKáè	‘/Ý(^-	üUx7]¸˜È®üí
+©ìÔû`ç¬¶Þ±h­vÕÔÈ æ)-˜£pÙ¯ç—„ÊJŠ.-¨Çn…!’›Ô¼ÎÑÅâ­ÇÊ€œ»Û½’`’OPZÓÝÏæ@j‹Ù>mž#Dº”§tZ…þ²²yÇÙçë_ˆQªÉn0Š­øúz,;R¾²ašo™Šnµ€¥{h_Â‚(I[ä¼NNÙ¢íF&®Èû)kLp5Ã&',¦ï‚ÈÖ›àdZÔ)°÷¡á(Œ†·¨<Ã¥Žñ“Ô”,· ÎŸ'­6Zî¾vDƒbßÊ‚kZƒY©IáãÊ^”U~@Yï¹Ò»hö÷ª-±²e½/÷Ä2ÍjÇÜR€G°zõè.áLt™‰ýÒ=aJÖüîÎ)±Cª£Z*¢¼TÉœ“¤—Þ’JEAÈK6¡Ë*ù²rL	—DL7©
+±Òd”úôÓTýj)“]F25å•a-jÓe7zæ>DŒ9°Éã]3tÊ-CyéÉ·ÕuG×R®À¹cî°X‘lÑs™üD(ÄXÝ¤m´³u‹³z¬úq	Bh˜e‹qs*#.5Ã±õÊ£cÆn^¥‚×jmsd~‹’YM—o&#J ŠNŽHuBêkÚî|øP­'€šæÔ‚î½]<AKÄÒT,93†öÎzqlùB/îÜØrZµˆÌAØT!ï¦-H«Ù¯sJ†ÎŠÜÚ]8§TÒD<p÷ãÝq…ÅEZîèÜ1A”ê2oó@w'¯æ—ØD©¥?ª—×/¥ËVëîèÑ¢è^c()-†8¯Jˆ»ÐgÕ°µ•ŽK [°bàfÈÙBë3/\{V¼#ÁSŠ¶hÛ?Ó•È#½E×©©nv#^V²×Õ (%£ÅïUa;æÊ#Î¥Iù—¾¥-8zlM˜S›I×N:°h¡Zûe#/5‘¿MÔî¥lö "1¶T=Ï®Î.²‚(Ô‚MKUû¸ªnwÍ^p$½Qs¸•Îs·=…ñ‘¦NAkÃä6ê©iäNlº?ôëuf°p÷òŸ‘YL~ 7Î
+ÝgÆ‰tµ.NžËÐ0Ai ž
+Po’¶_«;0ùðù@Õ­åˆñÂ­¯"þóuÕ!‰~qJÕh‚É
+?!Jï—ïÞ£Þý®õ˜rL÷þâÔûÈè»@z1l‰Å3~ëGnòÝÔ7öø¹,é—Ãý†óöFfTËÿ§í-Œ®­í]<e]Í öLJÁ–ƒ_î—[:|Þ1T1ÓxýW›D›Þ?`¥qD•Öì'&•_­JŸ¥¼18j–Ûè¨<„…U°ÊÔaÇs%¥æ÷«àÏëµ™“êk‘in­>W™Þ…´~~[¡|äB…áCuÉÛJ_%BFwQ{±“NQƒô•pYåû»6¤G‚¥G1Í£dã l¿Þ™ê¶–USt¿%IHJ*Ù€+óÄ0ul{MPv#}†Â°~d‚2Nq6 ï ¿Ou"^Ê3PkŽ¿[¤XÛºX9ßêÙ=J×ámgÂ–„½WxíÜÅƒnòÂ(m§»“4M³ÍÐ}%‰}1q<B@›+*‹ýè§‘(´ºÿÛPG_ï<ùÕ ,/I’ÓªÝØf‘8­?Û/uY@‰Hä™eînî‰3¡PqÔ'áoÏ·w–rÎ²¥GwÑgQûœ¤…v³°Û5ª”Ž|`–ÇÈ€û‰^#}åžWM)ýÊ£Ë[ºî­ü‘-¼‰ôkJ;»ZOcàû¤ðûyw()”7â»‰)À-š^îÑ{µ¼_ËRÖ™
+ÑêëÚ™ÚCÃ!XH[LL´:÷¢{&PÑBMJŸÞ7x„==
+—]‡»fËÌÂ6Ò‘˜þHà[™·{‡7Aªb¶NKâýÜSÇd“W¯ÿªïÎç¯Ù‰©n·ÍÞ¹°÷S= írªn¸œª;r9u+’ºµ+œî½„'Û—Â×6ôÛy˜Ô<NòC‡Q4CªEÙ„»ÿÈŠ×yÈÜ%ç¿$DNÉ*‚ª{8À¨&=<5[³´åtmé­Êƒ7cíX¥ž–à²3ÕoyÁÓÌTçÇ$HGsdè–TZË\3X¬ÊØ])¼$cþœ]ºÞ}šÑYüÚÐ]·eq0$‡<±¬²²‹ß{Z(õ\J•’–æš=ËQ.N«Ý¸y—½—‘	)B5øß\M¯¾'™-¤«Ã¨xIÎêôœâ.ì¼X’~GÞe˜üm°Ò{ƒÀÝ}ÏšãØh„ðýøž¯‘î¹U6HSI¨oNÐ<$»	í£Dæ ì‰­eÜ:~çjãÕ/½K'uÂJk	»(¡ÔÂy%¡Ü]ÇqIs¾ï<®P?mÙ¢òõni–éê®I»zÚõ†…™'·Öuç…§ûÅ(a’Ô@¿¯6T¢Ú2‹*Ù‚}|å.-©ýÅ0E×úk›Ðyt¤ú:ÈàæˆÞ¢p÷¬@ÕABbO0ÃXW¹®ý¬ÉíÄ¤ì~ù– +õpë–n{8´ gèë)Z<Ëý<žz0KºJâ¶ÓÖÍÈ	ƒPZyFíÎ¿©ÓO‡U“ìÜ¨£ÉÚX¸«G”"Õ÷ÙFÞÕ8” Êñ¤ºm”ûPµ›œ“¹ÊÜ&Üjq;Çû*µ¦17±—x_·²){koÚF»§ö¦Òzxöu/!‰ƒKö»-8]'ªù²(N-èçû™§0 NÑ‚Ûý fS+YPw2^`éVŸkPv×É@!R¶h.£{‘A¤€cqmi[ëw×#„ªUæx"½zÓÉ×æœ_Þ,@ásý}Ny¶N.¯\/þäÜ()t_àÇúLÅ%Ê»Îd_ÚMà2®.qyN«aÇEÁ×7O,š>S{;Áy1ý~âøýœþ˜^Ñp{Ûê‰
+aD±±|©·æûÃ¿fJ”
 endstream
 endobj
-360 0 obj
-(PDFKit)
-endobj
-361 0 obj
-(Learn Medicare guide renderer using PDFKit)
-endobj
-362 0 obj
-(D:20261123120000Z)
-endobj
-363 0 obj
-(Medicare at 65: A practical 2027 guide)
-endobj
-364 0 obj
-(þÿ L e a r n   M e d i c a r e      P r i c e   S e r v i c e s   G r o u p ,   L L C)
-endobj
-365 0 obj
-(Medicare education for 2027; content version 2027.1)
-endobj
-359 0 obj
+189 0 obj
 <<
-/Producer 360 0 R
-/Creator 361 0 R
-/CreationDate 362 0 R
-/Title 363 0 R
-/Author 364 0 R
-/Subject 365 0 R
+/Type /Page
+/Parent 1 0 R
+/MediaBox [0 0 391.68 612]
+/Contents 187 0 R
+/Resources 188 0 R
+/Annots [191 0 R 193 0 R 195 0 R 197 0 R 199 0 R 201 0 R 203 0 R 205 0 R 207 0 R 209 0 R 211 0 R 213 0 R 215 0 R 217 0 R 219 0 R 221 0 R 223 0 R 225 0 R 227 0 R 229 0 R 231 0 R 233 0 R 235 0 R 237 0 R 239 0 R 241 0 R 243 0 R 245 0 R 247 0 R 249 0 R 251 0 R 253 0 R 255 0 R 257 0 R 259 0 R 261 0 R 263 0 R 265 0 R 267 0 R 269 0 R 271 0 R 273 0 R 275 0 R 277 0 R 279 0 R 281 0 R 283 0 R 285 0 R 287 0 R 289 0 R 291 0 R 293 0 R 295 0 R 297 0 R 299 0 R 301 0 R 303 0 R 305 0 R 307 0 R 309 0 R 311 0 R 313 0 R 315 0 R 317 0 R 319 0 R 321 0 R 323 0 R 325 0 R 327 0 R 329 0 R 331 0 R 333 0 R 335 0 R 337 0 R 339 0 R 341 0 R 343 0 R 345 0 R 347 0 R 349 0 R 351 0 R 353 0 R 355 0 R 357 0 R 359 0 R 361 0 R 363 0 R 365 0 R]
 >>
 endobj
-366 0 obj
+188 0 obj
 <<
-/Length 5125
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F2 8 0 R
+/F3 13 0 R
+>>
+/ColorSpace <<
+>>
+>>
+endobj
+187 0 obj
+<<
+/Length 2913
 /Filter /FlateDecode
 >>
 stream
-xœuXXSW¶^{Ÿ}N(Hˆ"„@ ÊCI|òP@Œ€€€ÂCòR| ÐX £íh©Š­c[µ)¥ÔŽ¶–ªc§×±Öalµ¶SeìX;­dsï9	jûÍM>’sÈ>{¯½Ö¿þõ¯]±¾²8ˆ>%…y&°½V€®¤¤0Ï~ üV¯-»ÿ ^(Ë«^g»Eé àS¼º¦È~_ ÷))«¨¶ÝOh@  ^ûÇOË]fÿœÄÂ¯7þtþgþû«º›Ç‡ÇY:îï `Ûd âÖ. ÇÃãF8îæyö/|ºCÄB,”À^è> h>ªGÇÐŒ±Öàd\7áëøkÆ…™ÊD25Ì)æ?dÙE:É_XŽfììöçÉEs[¸\/÷ƒÈ(jÝ#q‚x»øñ_Ä	»N9\wqœçØèxÌñ#ÇŽwÜf9mqÚ%Ø»Á–û+k@€@@jXˆ 
-‰ðÆƒô5“j&g¦t°E¬œžŽâßl½l}Ÿ^B:<iq•õyÖbýÏ±=AðÓ'dö?‚G,L¢u}O%XÊZ(ý€Òf@prt5²p@)G”> •($RM¸N§•°ÆFúèOôïôÏHÛ¾»hólÖ2bøÝ£PàÌÉ‘­oï‰ßSÎl,XšÀZÀ&  pâ!“rœ)R¢°J‰&\§Páü>ÄÔ'oL@'i=rŒ^BíFÓ‹;YËŠóí¦}%
-k³öóV›J²ì>¸h³P¡@ÊÉXÎ» iBp€DÁ^¤¬ÛÇ1ô>jÆu"Ì±ÉIZ\kK¼5…µ¿ÛÔ4Ÿ±Í„°` 4…¤éXËP"¯ªÑA6€½
- ¤pœÒ×k#Üü4ár‘J¥ôå8™Ôƒ÷‰^¢Àwp¬ùñÁ/èŸ½…2~ª¸[<ï„±¹¯ÌÐÕ<wi ½Ïh­Žªà(åßß ”îðÀÇ¾!oýnçÀ¦ñ"FI
-Û¾à‰…ud¶uDšH¬	÷ü§ôÁ¬à8›“q‚n'ËT³*pi°¥/U4~RFmÚ–Þ¢Ú[Öß“†]—®/0ÅOŸ4}1.«ÿùæñ<‘øg§Š+Ï…%—}Ú~èëš…‡ÞÝ¸½´nÎ²0)-œß¿ithY‹°ÛÚDé«
-xØ` ¬/
-pWHŒN‡‹š®V7Pë9óåääkÆÜú˜]{gÔ©ëôÌDëOž¾)LgÑÇ»Ý­DNú°â”ÒõNsñwtˆ~%r¶c¥’µ€#H¥B¢'nl„J¥ ÂV¾O_¡ùèò7(­‡ž]þîsÇïàï~¦o¿ÊZŽÐs_5$ü`‹¹Ê^o äëŒŸÄéIucadü³Ÿ_6máá-Ù§WæõVÞ¦­9't–Ý4™Ò:ÉÅ¸mÝæ—nšýéH ò=”úU'’^Z£Ÿ60ÓÆDl#Û"pP0
-F1!8À‹¢_e½¿ŠžÂÕaÎJW9*ŽŽJÑJ”K²½C±xJ÷-]«V×¬–Ó`ÏÕ(Ö¬"q*kNûïl
-kgù"aˆN§G
-Ä¦Ðºµg ïÙÞ¨eQŒKŒÖŸX‹µ`jæTôÐZ6Þ!”µ€ !’($H7£0d žôOÔ¥0¹8g¤ÁÚ‡C™f°Å†¼ÆZ`x  "“:cåÓ’¸y"2³á‹ŽFz	}¸£hÉ–øjÖòèÚŠ7ž[d}Ìç®!$áê•0:
-•8 }ÆÔaLÀsÐŸÈ^oÙOðÆ‰&cäU*m„N§Áü#‘6B¥
-pÆî¾BÊ#1oFbýµ-q’­ÙÛ¾Ùô›ê¤-cJ£þZR¾Ö¼>&?Ü3z¹îv²),uZHJx!{ÑppCÖöuÙž¼ÚÓùÆ7jMí¥*uIÓ’Šß/î]T\:=}ž—³WB£6ÌOš>ÁC—¬o sPÎÄ‡yæp×*dsðDÔ54ÄûK	@Ê,óþâ¥Ð"…D£6¡Wò$HÊß¤±îÂ[‘×›Ô—!#vŸ2‰þˆBéUzysdåcåŠªõÂ)´”[ c`-0^`q~&Ž‰†1ÐË˜`§y^]{ÑuÊ”ÅeAã£&6÷ *@  <b8 â©ÝÁþÖP2ÑzœBäüð8¾þð1þ‘µ€x‚?€»‚3Ç‰dö(ÍçJ¥ÄÎÛ*e7êC~(HkJX°aþ¶‡Ö¤;Ó\R×xäRëšiå¬åè§‹›2Ç;º,h17ž-dÌ‹ÓX/Ð†ÕKui!€Žý–½ð²ž§?•f‰+#Ì“ûmúëtèôi:ôzú^¤ûþÒì¾¶ðè¶íG“N\h8¶§÷?)-ýy¼v¥öôÐ“_¨ª8ðWð^4Ž9{BùõlÐz†ÒT!¤_q¼|2&òú‡'’w7Î.ùrMò²)‰[S5Õ«ãªoí_ß_n*ìX<3mÊœºÜu/g¢}ÛþX"ðB>!‰ñÁzClÀ„8ÓNSCO6ü¡:Ø^PÄü¹AZóK€¡h4ëc-‹x{œ1Ï°JÁ¬13Á„1û”›¹M¸Ÿ^ö6#nH¦×Ûìæú‚s[–'™å®SžË{çã_´ç]™)Å(Ô+$Ò§åáW~z5c;B=U•æÿÐLéþê¾Aqo¢Œó#°lQqºh¼|¦o^…,wovÂáæ©ß~V­”Ò\Ù.CŸûbîë7uµwÂvmà9uØ´øŸ=(êû¦·h}e]Á¾š–Íh´±«±ñÏ:
-4Ë#±±êBORW4¹‹|çí-B2¾³–‘=jšƒ‚šjäL»ÊÑ»è34ƒ×1úÞ92)ï©Êâó‹‹ç/(ÞiLN6æ¤¤Øy’ûŒµ€@2›@à@È%b”´Ã;ˆé}Ô‰r8´uÒ[¬;ÐfR§>Ö“dÍb-Ã‡‰q(Ÿ‰;sD=ÜrGI>1ƒ\¨-<OÉ¶âb‡Š‡Ü—)B0.{éËZk(»{ké)ãâ··vQk[ãƒŽìJt….#æªÛGÚ·¶ªUé¹Ûpc}mìªHû:åœäàÀúb‰«¯ ä•Š×bÊ ¥3Ö‡ëô¶:,“z`üÞýL©Íövä$(üÞ¬ñ^Kª³©˜1=W¸Þ,EþhòFA‰!>›æ¢¢ÿîI
-z´wŸâÈN=ÚÉóV ºÅI^ù)$îc.ÖFèÐUÚ 6??6./y¿ KTfFLLFf Þ^f€˜Á‹·V%xá¿	%ŽÃE÷j[~>Rq<*'acdÊªˆé«’—·ÇÇÖÐ¯ ¦6Ø{ÐË?i_ùÚ=ó5!t8(€·-stÌ"•à‚ße6ØKƒ^?¦Gt:$Ë-^õÕ¿®ÍO3m[Vp0ghè|nZêï…ÙhÂ†vsÚÜüfRùÑ'VùþÙÉ~ÉkNwàÂ²ÒB”Ÿ†ê¬»	ÉO‰ŸU!po SEÌ Ö–3öD”($¹&3®ò9îr½tÖÚ,íÿ6ØEQ°™˜YBo³ìäye‹¬}ÄØ;cù~®ÐÑAFÏ&óšØ6|P•Z½^#ã•¹ÔW…/Ûizyéž®¬ÑÚ·à–ÔåŽ‡WÌ+»°çÖ¢Áw­w££xÏYAÌàÄcýÙ¼ü·ùu®0íüÅÒE‹þ¯×ë Rr†˜a‚ÍÇn)¶¤ÒÃãÉ^E¼•=!fãüþwkÎ×§V¤Mv‹iÿã©Î“3kÜRŒS±:/#>'¸ˆ˜éôë³Ôº]ã˜Hçp‰»ƒ“ƒœ»½P±zŸÁð»2‚—ÑUBŸÂ#…qR@`jØe]
-…	µ^÷S],É$e£µk›çä¥ft,éŠÚñ^Ã®þu+ÞÙÚ‹7]Gæõê–,1$ôéVÌ*9]^óÉGUoñÚ3qt$°WÀu¬
-ñ»Æv?S„lX&	úšZß¼½ºàË÷Þ¸³ÆªõÏ2,ÌV©²²üñÍ·è½óE§Qêý¢Ô3§é^½µní­®W¿,/ÿà¨””3„B$ñêT€¯êé§NHs…L$lK©
-°gJâ?fˆ=«ÜÇ:™Ô}{ïçúÚÐøÄø¬âÒ+mÞiqãPÓ&ßÒ†Ê'ø'M?Û}Ž¾Ko–L+XxhzvDÍ¡Ì”Å‹ÓÓSé‘¶Âç¼¤K5ÑjU×úÚ×sÄŽÌKÁþé¡g.2¬[ ‡‡—Ë¡}Þ§NŠ˜&õ‹™•À¤¬ZZXXX¸t xqt&Fƒè™Ô|¦m$‡ï©]ýVo‹¯>U€Â2ËVMåydçŒßŒ3»ð«¹º6ãXv¶uÂL%ç-ô<c+µú_–e™LÁ8ÒÇ´¿«+ï­šì=!eš6z35#ÍLM[ZÚÎ—c¼Ü¾tr[8;ì|ºŸ˜Ç”o^Èÿb²?içÅúv/ÚþãñƒZF†§¥¥††¥Õ”á°ÖÏ÷&'ïý¼µá¦&J{ÖìKNÞ·fm[b§]]ï FA¥!…;ÏØ:Þ]Ðk4E}î&#bFî~EÑLb´6Lß¦­žŽ7æ3@
-À] F˜Âw!L€Ò™ñ=…ûd,×D2zwûæg$úL‘¿·ÈA4ÙßGœC»éy4mëø	î¬—¸ß¢”‘Ü‰‰ÔÓ¹	M¥gQ³òùƒMÞÞM‡Züè&b¤’ˆ^+Š»à	ÖxÕ7ª|›Ú"Ð÷6k: Ds‰ìŒ«Ø &\Øx}ŒøÈht:öÜÙé§i™5E´ß/qfFžšö§–øoŒ®{=Ä3übþðº5 ï¨®ýÃ+Ö~¼#eµ.ãX•õbÜ93Á7%=ÓÀóÐè 9ÃIÁƒ¯}ü	„HÃÇ~Œ”"¥ÙiÈ¦EÑU;.hMï½Õç·Ô½$Ó|‡Çñ´b³qí:NJ÷EmôËãyèjmÈÒ×qRk)Ï?cÕA}Œ.Ãpð—;c‘’—'½.n3æùþMªR8>'tv&¥ž:1_è¢¨Tˆ³€Ä[˜mNkÃ“^Ÿ9:;òÎµÍ§S{º4"ÙS­ŒÎts#FkËäÈ¹~:c®v¯xÉàÄýÀŠuKuz{M=AÌ<ìZÕ>±M©òÍÐ3aÓ©Ì‰Òÿ9TùjÆÒ«‹²z•­lŽyx©ä}Sîâ¶äy±ÊÂüå­É(yýÁÔÉÊµV;uRðŒ œºå/œò7¿?Ï)šÀ€ŒMöø“.N
-¿‹‚mÇ€ „]ub\ý
-ªãjÎ˜hVnîª ÚÏIé‡‹÷yÏLðÍx{—-ÞB˜9¾¹‡|tw5¯2Üí„7Öæå'oK]´Í`Ø¶(u[24·DEµ˜Ë[cbZAíÅüù˜+ÿœ››^ÃñZØM®TaœÝT<Ôº;zsîãâ¦hö*ŠBÊ¤Ó¢}ôïõÕÈÍÛÓ“JþLÛJ¹çé/hÿ’e­ErýJžBöìé1 ò»˜C{±‰µ€D¨X¤Ô¹¹i#0Ðx¸¹aStcÉãeõÑ1õÆ¡’ÆhvŒ^ wªë‘/šqè0šü·l¤ôœ½#õ²žõòþIÚ3r{Ö3¼ZvõÒVúòÇœÔCÂ0™”»@;h
-{O,“Iëê._Cþ×DîR	Môrêá…49¥Ë'M2®Ê`Å¬eä¶Ÿ©¬Ð_U¸2g£¹â¹tU¡øÎ¦1|;Üè]¦C8;™
-€„–õi½ÕÙ%'rÆ2zFa ©*=.2I¹"3óø’2Ó½–¿Þ×–¦ÌŽ–ÓëcšÝMŒ]¹<<(>.(&VtszÜ•Céu+gÍž5e6}í©z-¡iÂ©œÀý™3'¾špœ÷ì¥>>ÔºÌp¤«¼JÓÆ; ,¯^_Êæuõ~»ŸÃd1òB
-wž~£@t?Ê¹qåÐv´‰»?H;ñ,¬¤¿G&ë€õÚL·Úz†?!qxö¼}Gû™xë}ô/êÊg4[GG…ÛÇœ7¨ „"ø2 n¢RAI»Â$ÛìykÛ óŒÛâ#ÖùûÇ¨#3Q˜áäÜ¼8›Â¦RÇ9:Ä’×†ÕEÇM¢ÒÌ(AlÛü'åOœÆ¸‘?þA¶Ó tÕ‘#Þ1þhÊ¢±è:í gø„´&DÕGe¢têimFVÒ£¶l4Œ’¹ìe~Hèø}ÖgÓÚ§§~v"Oß™ýæ;›èÈ•š«¹ÆO³;#<¿¶¼y‡fÅºxs®rgæ··‘˜¬-l7zp'vm¹TˆDÓÂÌ%sÒƒþ©ÉžaÈR†É¯E¦YlÞ»>ñf „Þ/@®À9rÔœ7t“:èÆ|­'Ùèæ¶B7î„nö2T‘6H m`b¡›Ul# i„n6º	`9èÆ	PÉÃm0‡´’´Ai=»º9#T‘0Š‚¡ˆÕ ðcE-ÐMz —u…\\mÄrÉ5ÈdCS¡üÖ:p9t606H$À±sáEf"¨ÉKv p7@*º	ÂØˆâÿÇA.;:ùØiü5¶ÀQ/ s8Ü9ZB:À‘˜ ›}Ô¸|tùÉ¶Žø0¨ÿF(L
+xœÝKã¸€ïþú©­7‹@Ãn@’™[C?Ü@€ “’¿P–,RvKžÞõvšh¶i«šúÌ*V_4à€ÃohÀÁ‰‡§/‡¯‡R"™ÀcH1üûxøî÷Çÿüóéø·?}?<ýt@0¤ì˜B…$±Ù€pz¥yþd@pm
+cøéé_‡—Ç|±"Ÿ¯‰J®	-‚Å8YQ½%J©MòÚ«i(å“¯º¸·ï?O…4p)%>9|÷GÁ†Ï/‡ñééð÷ß""!"#¢ ¢Nï"Æôœ§ÏññwþcøüçÃ>þú³îî†{0Ñäæó]°–{+Ÿ§Ê–J>•›Ø¬X^WŒ„\ÕË5Ý†VÄR,•sš«—€Ïõ{FÄ#"¾L=ñ-eDSÙq*ç	zL×Í?Hù¬~=ÿˆdÓ³ŸÊË{*?Ö#"E)kx|­‰üðéf"Ÿ~øËØdþ{à#¤Ü·aŠáËA\ÀSÎ9UÅ?>ÿsç>´d¯“¤ŒHÓ'Ï§÷¥yÒãÔ^¦&|œžcþÎ/MB„,KFWI,Å·‘¨:o´©YY§65yºÞ~F*r*§ç+Ÿåé³‡½"ƒŽYzi¨]j:'5Ì’™Ìó€@+C)ÓïÊ	ƒÏ&ŒN&llˆjˆ,ˆÌˆ¬ˆ<Ù))ïˆüŒÈówÊó¦‰àhï¨X~Ò¦öå~”ÌëoÞt?Âƒ‘3]˜är?R~>Ý¬˜—=öLK«è¥‚ç¾ëôCÈ-TEŽ+õ”¦žLSó8"Š­kBB@Žyørpƒœ\(êâZ´i­o¿Í¢¡Ÿ~mpPÂÒ¸sgK}Õ×Ã"¤—…¡÷.¨:ªí€Tž:8Œ×Ãdðò
+ä"´IZ¬<…[$I\²¢î¡|®Ð_á¸ÂWIjùy@p÷É/˜™û?~^óZ®ly¥ Ê†Þ¥É£@ÈÌŽ»6ïaò'ÖE%¡å–38£c—íŒ‘A4h×äñZ/«+^ŒHˆZ}í†„…«ìÙµ4wSü£SLøxÅÆUR[–Î€h’¨K–®„3½Ue-µPÁŒ]Z:²PÝ³tc4>9)¥åNJšZâË·æk­qùWQ†$Ù{äZÂOà¯[À@Ô—)2}Y4ç×¾âXbUð™_8¤LI£.î_d0Êi‡¢ä)ÞZÑZ4ÐX%²÷HÐ!'Rñlu¨6æÖQF%©å'
+œŠ;ø.üîÂ0ü)ŒU=ß–Âp¾šÂXŠ{QŒ*…±	îÖF®Jaô®Jal‚kãî×S58"Ë=’#
+É±§¬k\Õ•-/.*šÐ¨K^\ÔK-ï©èì=Oþèµ·k	º ‡•7=t$QÞkqc09+ëÃävæj$Ô¯%ÎéSf†¬ÁÊ=2e6ðd)hO‹câú´„Cchtœ¦òµˆs‘Þ2M	ˆ5Y—}
+§aÌy¯S)£[sâcÌ‹ãšß"©á'È`‚]ZJAÝÁWû‹¸h¹¸%FÙ<Eê’9x¨°ƒÿw5.ª$µüT esÓwâwï¸H¸	'ÿoã¢U=ß¥¼D¼U\´÷¢U\´	îÖ¸¨WÅEý«â¢Mp·ÆE5¸:.ê\m+ëV\Ôðªâ¢y-qÑ¶Š¾L-íxeÒ@5äŒ \PR—äLÁ2Zò[Ð­BJz¬&#–÷±FºHo˜2h6ñ.[cZdæ½Æøúpå•¡ÊQ^ËÐÄ-±tÉÐ2`ö]w%åˆ¨|è(åáôà‡5ÉEjË2'H¬Q<ÓþX
+–û`ÉrK‹ü–Ø¼’ÜðT.ÂâBSÞ
+*§Éè#ÃµM,¾s–%*Ò”Üëâ^P•¾st;vˆTzmˆrÐ@sgÒ¡yÑ\ŒÑ>´Í@|ÔÀËêDÁïïÞa8ÒÇÃWõü–ù®§~®ÌhŸ§Fl„êLXîgp5ª*ïEuˆ$«îáÝŠ9+)-;a0G´Ü%;1àHV‚ÎMv—AçreËK2:÷ÙÔ´d $EÞkjóÂ¤ã«Ó­Ï’Z|	!	ò»ñ»³¡–Ð1d]ÏûjŽj¶2ÔKy7Ú³˜ØŸƒwÃp7,-A(¡k—,¡Ç]–»–h‘ÔòwCÉïÄïÞ–¨ÄÁ­êy?KTº¤k–h)ïF{*K´—–L^,ª,OÃNri¼ÎÔ%;e@Ò²üg´ÌwhÚ’Œšrñ1;™“íªøãj2ü4;iTëg¡H¥Äâ=’dI@ª)ÙÊs'¸µ²’Ö2,Ë`\<ñ;1¼w‡¨ùc¸æº• û%;D—ë®¹w—~¬;ÄM¼ã&ÓtÈz(ðb
+ZÝ96Õ \Ëê¦9j€eF¥=Žó°ªOMqJíž§œ>_ËQ-Ò¦e¨‹±iLÄ9eÙSýjšîØ.mZ•w¹¦ö,±å¨â™Z¾ÝpTÌî±×4uÞjí, ¥fX<ŠóÖ!5'È®b¶×úæí³žJs±„ö,¥e
+Á($]²‹¦)l·ÓN“õ{˜wÏºX+{–Ôð§ç–I ï¥±÷öÉäcŒk­ëy?Ÿ,^×Šþ*ŸloY€óãé¬a¨AAÔ'CÍ`:N?ßi¢ò&ì,½aÊ(`œ¤eÝSF6=¦Ï×ü±_ì,­e(¤Ù-Þ‰á½-;}0úµÂò+a¹¿Á›Ê²oâ-ù¼†.˜‹5ºð1kß°´²³——ºõÈrœ;ævšêì_¦kiÓEJË.)h”ýÏºd—0Yì¡{[²â,¼!ÊBÀ–Qºl,9Êí½Ö˜*tóî¶ó®AWwZ$·<S@ÑyÒwâyç~’óÇ¦]×óný¤ÐõaÚª¼mjz´oÁ;¢,Zµ1Ë¯åh
+I³wÉÑÊ0ê¸l›ãÛý"½aZ–°#»¾Ó{[¦ô1ÆËÖõ\©Îñô(I„-«#õL|.{–{Òº¸eqTá’‘Ý÷-ó¡H*qt†:$I$e``tY6QJÙ¹=Ž;·_Î´9Kjù©¤qMÈûð»·‰ñ‘þ]×³ýyõqß¼X•ú±e`Muq/JaR†ßm½2ê|q,1x”É/ýáJV”gœ„º‰ë<I¯Š¥p½oÖà+{:*¥Ä],!©7láö½EJËNJõÝJÖ!;aÈ¬˜öLÜëÛ/ZnFe5#viãJ4%šwµÖªã¦®íí[IjñŠi—ôB 9ç]›7g‚ÇYOÕ¶uÏó9?{ïŸ%74KN.E¢–rGn”~Œ±–u=¿Ýò*3X¹QÞ]¢µr£6¡•­äeÚ2ïá4&¹çZùj J•»¤XÒaÓFÛ_ïß	-7Aˆ2'L»ä&–-¡ìpû¶E‹Ô–eÊ€NÆòN,ïmžùƒ¤øy+wZŽ¢+IŒ’Ì(Vg4Õé4³dËdG•2…Ìf’êâ^”&¸	&ßùM:³m@U"ŠrœA‡$ËÚûP/‡l£ÜKÎZneó.Uí’›%àD9É›uùÊØÇ$±å˜P\R—šÌå|N—L{íýµ©ä‹„†S9¼ËáÅ=r£røJÑž	ÌSt§WL^%¥e'	0'õý:ì¾^Ð“ÓWÎGh—C ¥>R[ó(±ò%<üÆSaIËm£ûL,Õ¸æäßØKu}Þu—é{¥…Î¯é¹ÚWûqùÞx@î<™ñ¥ý¼àå;e_¦yètÜ,é¯Ï§ÓÚ„lzG6n„N”6n_Æð«3{ÿ¯ªRÒ
 endstream
 endobj
 367 0 obj
+(PDFKit)
+endobj
+368 0 obj
+(Learn Medicare guide renderer using PDFKit)
+endobj
+369 0 obj
+(D:20261123120000Z)
+endobj
+370 0 obj
+(Medicare at 65: A practical 2027 guide)
+endobj
+371 0 obj
+(þÿ L e a r n   M e d i c a r e      P r i c e   S e r v i c e s   G r o u p ,   L L C)
+endobj
+372 0 obj
+(Medicare education for 2027; content version 2027.1)
+endobj
+366 0 obj
+<<
+/Producer 367 0 R
+/Creator 368 0 R
+/CreationDate 369 0 R
+/Title 370 0 R
+/Author 371 0 R
+/Subject 372 0 R
+>>
+endobj
+373 0 obj
+<<
+/Length 5121
+/Filter /FlateDecode
+>>
+stream
+xœuX\WÖ?÷Î™ Š¢‹C å!„$>y¨ F@@@Œ‚á¡ˆŠQ| Ð.X «íj©Š­k[µ)µÔ]m­U×²n?×Z×µÕÚn•µµv[Èe¿™uûí—ü ¸3÷Üó?çþç¬^UYÄÿÒ¢8^Ë ÀPZZTà¼>  ËV,ºþ ^(/¨^é¸D™ à_²¬¦Øy½@å_Z¾ºÚq=²  œ{íï?¹,1åŸà&“þ{ýg?¿¬½q¤˜ýëVÙV@Àv<@¶ÕÞ	àºµØÀ×­Òsž}%J¿½ fÀ(…]p
+ÎE3Q:Œ®cŒ=±§âÕx=¾†¿bF0ã˜¦†9Îü‹,'ÛIù3Ë±q¬™}½Ì>â|¸8n#·•ëæ~àÍ|ÿ.ÿ™ÌU– k½%{ì"¸LuYè²ÅåˆË÷®Q®Ë]\»~èzÝõ®›—Ûd·nÛ%ûaxÃB`a-hHk@äÒ÷Ò‹ÔJÒ¨•œD˜R@ÐÀ³6p{ºJ|³Åô’ý}zðt¤ÇUöçY›ý<ÕqÁOïP:°1Éö^ô•ck£ô÷”6‚cƒ½¬™µ ’+8¢ö½\+¼uQƒ^Îšè£?Ò¿Ñ?!}ÛŽâSXÛ€é7^@!?2Ç6½½3qg³°dikƒ0 Eo¥‚ãx$ µ\³j¹.Ê ÖàÂóˆ©K]—„ŽÑNzð0½ˆÚÌ–¶±¶EgÛ,»K{=Ž´÷ˆV–XJsœ>¸à°PzV‰.@ºp,Øt}‹á8†ÞGM¸–Ç‹‘Šd$´4'ÚÓX[ÿ»3§ã“Ž'¡¬ \w!këKã«j°—f/ €9Ç©±>Ú3På­â5u Ç)Þ¢OŒrßÁ3¬÷}Nÿ´ÿ-”õÓêÛù%Óš›Î—›:›¦Í¡÷½ÝUv¥ýók”Öò8 |Ý­ßl»¹~8"CÒ`/IcÏC DxEÇ`i¥c^ƒuQÞ’ÿÔá˜•ç°`N
+Êï@`gÕ„Ì³Oç‡ÎZ›±±»xí­½+ÏîÌÀóW-¶Ì(™0zÂ\\^÷ó#¼ìg·Õ—Ÿ‹L+ÿ¤mÿW5³÷?¼»nKYíÔ‘:KF”x~Ë`/Ñ³6éüŽ½‰:@,÷v„´?ì%ÈÆ`ÀÅWªë©ýŒõRjêUs~]üö]kµµFf”ý'Ÿ€4¦£ø£ûï®An!ÆÈ’´²UÞnÓð·´~É»;c¥’µ+( µ ¢ˆ'­Ñ¨¥Pa+ß§/ÐBték”qŠž^øîs‡îÜÄßþLß~•µ¤g¸bHúÁ¹Â^? àŽŸàôEÃŒLPîóÆÏ>°1÷Ä’‚îÊÛôfKÞ1å7,–Œr!as—õ¥Ö :¢~¥Ù—ÇOr0ÛÀvž #0bÂq°;æb\j¿¿”ÇÕbÎN—º
+‚««ÚŸ_‚òé!¶»o^„2ÊVhµ5ËTô(8s5–µëˆG)"q:këOçÿÙ4ÖîRäóÒƒÁˆÄ¦Ñvº©^d ¿)~¨åPŒKÍöŸX›}ñ¸ìqè¡½¼C(k B’r$à(™¨ý#õAiL>Î¨·ŸÇL8°!¯±6Þ ÈŸ(îXý4‡¥$nF>ˆLªÿ¼½^Dl-ž·1±šµ=ººèçæØ‹¹k
+/œ½l	B%FŸ2µ˜‡1 x0Rô'³ÀÂaÊ“xãø1Øò>Ú`0†cñƒ‘ˆH­Ñ»c¯ )U1X4#¹îêÆ„5)¦–ÜÍ_ï9ôuuÊÆÙñe±õ)­Xa]_å·Ðp;Õ™>><-ªˆ½`Ú·&gËâ mùÎ‚µ'
+Ío¬µ´•i´¥óVÿvN÷œ’Åé2§ûºû&å1ZÓÌ¨”	#½©ú™&@0uâl|@d/½ œŠG¡Î¾>Ñ_j R!Å²è/ÑQ‚	r Â¨IT¼IÿlßŽ7!ß7i CFæ5v4ýEÐ+(âóæÀ’ÇêE‹4ÑÚÙci™ˆ[ cbm0\bqñIÇóÁHÇ˜è%L°ÛtßÎ]èeLê’òÐá±£šN¡*@` bÄp :$R?ºƒƒìd”ý9ŽÈÙþabý1þ‘µ'ø@€— ÂÌq¼Ò	€>W«åNÞÖ¨»ÐyˆBõ–¤Ykfn~Øa¿‰'›Jk^lY>¾b1k;ôÉÜÆìá®#f5[N1Ö¬¹™³ìçhý²ù†ŒpÀÇ~Ã^9øKY/RL ÆI³Ä“U‘ÉŽý&óuÚwâí{=s2|÷ évõ_}hó–C)GÏÕžo¡÷?.+ûy¿v¥Ÿ:E}µ÷fUÕÍ½_#YÕMÑ‹æÁ^¢b/A„¸Ÿ#´ž¡4Mp8#‚ôŽWÁDU÷ðhêŽ†)¥_,O]06ySº®zYBõ­=«z*,Eís'eŒZ›¿òål´{óJÁ¾È?<9$1Ìhš<2Á²ÍRj±>ê¡6,hzhôÌi¡zëK€¡x0“;ÏÚ æˆö¸c‘aÕ’YCf0’	Cö©%6ó$º¨@£ò?ØŒx"i™Ñè°›;–ß¼0Åªòû\Á;­ù¼­àò$F¾á1þÍ÷¾òÓ«Y[:U…PYáM”îù}í×(áÂ”uv Ì)Éä‡«&¬Öá›ßÝ•›4Qgºqü×ŸV«4_9–Ë2æ¿˜ÿúÃÅ]}m]ƒ°ErFyÍýÇ)û]ã[ô}eåâÝ57Y6«ÁÁ:¬ÎÁ["ëhVÅ`#but=F=ÐDäÅûççÇ#¥XƒYÛÀ‹Þ5M¡¡5*¦XÄ®rð.úMuŒ1ZtŽR!zª²dÖÌ’’™³J¶™SSÍyiiNžä>em ‚Ò!ÄrG5mwÁ.2zu <­@ô+Ã.´‰ÔjŸJ±ç°¶þÄÜ—ŒO&œ<¨íoùƒ½¤XA%Õ‘§”‚£¸8àÐˆp¨8^Ç¸ü¥/ÖÚ#Ø›ÊŽ›ç¾½©“Ú[´çVº £(b±VÝ>Ø¶©54´W«YGÏ|ˆØúë«ÖÎXãÜ§‚S€
+Ø ,÷ð€J§ÑˆZL¬vÇÆ(ƒÑQ‡•
+oŒß»ÿàiksý\99Šº7y¸ï¼ê_­/a,Ï­²*PüPphr¸ÿúi¨ø_½;ÂSBíÚ-üÝ±C‡:DÞj@·800BT~‚ÜkÈÅúhºB{öÎ(,œ‘PP@Ì¢_-6;+>>+;h/s“XÁW´V#yá¿	%ŽÃÅ÷Ö6ÿ|põ‘Ø¼¤u1iK£',M]Ø–˜¸WQC?ºŒ˜µa~½¾A)»+Vìœ©§ý¡Á¢mÙƒ½d2©_‘ü®t¸ÀYŒÆ!=b0 ~(côxé—ß_,oÙ¼`ñ¾¼¾¾³ùé¿5åÞD#×´Y3¦6‘Ê?¶«öLILÝWsüˆ™“®þ$Â`ßAHaZâäÕ÷¶0UÄ
+JioãLD¹ ×©t1˜ñPMõR0*&¯ÈÑÑžoÂF‹7+Kèm–3½|Žý<1wO\8Q|VÄ`/cdSEM46"¨j½Ñ¨SŠÊ\á«¢FDîÈ¶¼<ggÎh"=?ë–bÄoßøW¶cŸMÅ½îÚïÆÅŠž‘²‚XÁMŒõgóBþßrä—¹Â´‰_æÏ™ó¿½^;U“Ä
+#>ö”+°ƒ ÕÞÞOÎÊ‹zTù„˜5Œûûß.?[—¾:cŒ‡LF{s“]ã™f‡µY‰yaÅÄJ?§_¦ö-Úø Ì:•KÞ–öã´-EÂ²Ý&ÓoÊÅø“¼Œ®Hñ'õ)bÄ¡HNLR»$F— è‘Të%¸ŸêbžW
+$m £+š¦¤gµÏëŒÝú^ýöž•‹ÞÙÔ×_CÖU{ë’æÍ3%7,š\z¢¢æã«Þµgò`/Ib/ƒÇPO!üLrÄ2I2Ö|Øòæíe‹¿xï;Ëíú Óì\&w¶)'ßx‹Þ;[|¥ßÿJ?y‚¾ñàÕ[+WÜê|õ‹ŠŠ/€Ž*H9±BÄBŠ¨N¥ðÕ<ýmÒ\PòÒ±Ôš`göHP’ !CœYå5Ô	(Þè›{?×­HLNÌ))»Üê—‘05¾1rdÿ-}„jdPÊ„Ó]gè»ôFù¾ÌÈÅ³÷OÈ®ÙŸ6wnfæ\ª8ØZôœ¯b¾..K«é\µöõ<™+óRXPfÄÉëâíí;bÿÞ?;¯M‰©Œ›Ä¤-_TTT4) xq°— f1Ñ3©ùLÛHÜÓz.ÛœX}|1ŠÌ6/X:Nä‘m“²NnÇ×íÖêµY‡«°»“ýöë.þÿBö¤l»P·æÜŽ9[~<²ïQó@ÿøâŒô¢ˆˆâŒšrÙòÙ®ÔÔ]ŸµœB¸±‘ÒSËw§¦î^¾¢5¹Ã©…·³¤©à%ò«Á`ôzf£ØÏ<•DÆ¨¼®¡XšMÌöú	ë"õÕðúþ’’¦
+én_ ¹à5Ýì(ãz‡•F#2}êêî*Öq4“ûõ‰²èTeœ:.?ÆÓ“˜íÍcb¦Ìá¸²ßkõK&7îVf˜o0Š99ØKNr
+ðë€Øó:1D†r3XÍ«åÈ™’]†®ðì°Ð=5Ý÷–ÝXûB¨R÷-&¦ã¢æ+9Ý». ¡@ÌÉßS{}Ž±–SØËÄ\ª6?J¬0ö‰JrÇ¡‘Dþ”Ý
+‰9Zö?û+_ÍšeNîl¿âò%Mñ/–¾oÉŸÛš:}†º¨paK*J]µ/}Œz@«×61<4¯váKûÆ†ÿ50<0Èg¬.$8k½“	H'§€_Ù™çbñv±m¹âÆx.®N¨9i¡=9ùùKCi§ ÌÝí7)) ëííö`¼U
+*ûœØVŠ½%wŽ˜Ås	L8¬vgx±g“À‹aŒ^ÎoX„‘³yÿ ?Þ…ä/Ë£]ô,¿iøH/V†‡ËG_£´z^å‰dDáãÞˆÆÑÓ¨Iýü¾F?¿ÆýÍt=1Syô¶†`ßE%sGà‘ö¿ûÖ5h[£ÑwŽøÑ0•œŸ4u‰ZoüOñ©T
+Œ+}L{:;ÞªÉÝnRgèã&#S3ÐÄÔ´fdl{9Þ×ó7ÏÙSÅ'¢c¸hÅúíå¤’¡ª0usúœÍ&Óæ9é›Sq¯µ96¶ÙZÑß2h7'Oâ}žžF'ªLO•ZƒqF\cI_ËŽ¸ùKãpä«(©×ýŽ´Ÿž§««F¾hòfOjä¨žIŸŸÓžyZŠiÏ·Zy`Y=±~pÍÑéöˆyÛ¤¤ ñSi7¶°6KlŒyµÁÓSq°ÎÛÓ[âJ/¨‹‹¯3÷•6ÄáÈÃô½S]‡ÐÄýÐ´q½IÏ8{]¾›µ‰žFHBü	àŒÊ‰7#êP/¾›¶Ð—?âÞr†‘+Ü9ÚN›Qä{2¥RNX/…ì*
+ºÊ{)ä„åëvJ”¨xç•-=Ú¼4¤³¶Û–ò¢ MÑ’¼ÑŒnà²Ïü¥EAQÛ^Ïˆ.pƒw™vi*1 IÍàÓJfpkŽwÇJ%z¦v#…&3!&E½(;ûÈ¼rË½æ¿Ü×—¥M‰SÑkCÕÝMž±daThbBhüCè		—÷gÖ.™:eòØ)ôµgtq; ?X!øÿ¢ä¬oO ãPg0°gN@?ÉÈ®)¦=É“²
+´~%ëâj_÷‰zç)Œ¿{ÅÞƒ·¦-3H)ç 4-3[ì–céct	€+@ÊójQüwðœ8=à¯
+àú@•ÔÑ‘’~üèL 4XJ3¤©œÀë™™“XM8ÎoÊ|ÿYZCv2T^¡Ã]æ‡kW•±y}Ýß,$îBv³Ø) $x‰„.0Œ€è”wýÊ£mh==|¿—vàÉXM‹,ö›öshÝäèqBâòì¼}K{˜Dû}ô=õÇMöÁAibû˜óèÅPƒ f àÁõT!)ií8“=`ž71zePP¼6&EšŽM+Hp(lªáú½«KBy­_[|ÄÂ—eÇJbÛ™g?q
+qâ4TÄñrLƒÐWŽøÅ¡‰(‡Î@×h;=]/Ò¢=)¶.64;eR{:·„rp¢i°—Lc/A¸ƒëyå/g}½¡:õsF+!ªÌm¹o¾³ž\®¹’oþ$·£!fïó+*š¶ê­L´æ«·eÓ~ÉÈŠ¢6³7ç}tûÆ‹«ƒC?>ÒZ:53ôºÜ‰¦u¤êjL†ÍáM™Çoƒ^ò&\$ ¹gÈÐr~ÐEj¡‹\>Ž±IÐÅm‚.Ü]ì%¨"­DZÁÂöB;
+ªØ Ò ]lt
+ÀrÐ…“ R\‡[a*i5i…Ò
+Fvtqf¨"¥`æÃ ˜Õˆkùfè"§ Ÿõ€|\­ÄòÉUÈf@;SâÖÚq´“V0‘VH&À±ÓàEò#ä“­¢Î ×0}ÏNƒvî:(˜Q e0bdˆÃ6˜Êw0W€ão@;N‚XÜ1XJÚÁ•X ‹}´¸bp=ùÉ±ì hÿD'Ü
+endstream
+endobj
+374 0 obj
 <<
 /Type /FontDescriptor
 /FontName /CZZZZZ+OpenSans-Bold
@@ -3059,10 +3109,10 @@ endobj
 /CapHeight 713.867188
 /XHeight 535.15625
 /StemV 0
-/FontFile2 366 0 R
+/FontFile2 373 0 R
 >>
 endobj
-368 0 obj
+375 0 obj
 <<
 /Type /Font
 /Subtype /CIDFontType2
@@ -3072,21 +3122,19 @@ endobj
 /Ordering (Identity)
 /Supplement 0
 >>
-/FontDescriptor 367 0 R
-/W [0 [1229 579.101563 765.136719 560.058594 259.765625 755.859375 660.15625 812.988281 331.054688 724.121094 571.777344 571.777344 740.234375 637.207031 689.941406 564.941406 664.0625 624.023438 627.929688 285.15625 571.777344 321.777344 571.777344 571.777344 571.777344 671.875 795.898438 550.78125 896.972656 649.902344 285.15625 942.871094 590.820313 632.8125 305.175781 514.160156 604.003906 454.101563 434.082031 285.15625 632.8125 305.175781 571.777344 571.777344 564.941406 657.226563 387.207031 619.140625 568.847656 855.957031 981.933594 632.8125 285.15625 568.847656 497.070313 657.226563 375.976563 338.867188 657.226563 338.867188 966.796875 477.050781 331.054688 578.125 548.828125 691.894531 305.175781 620.117188 571.777344 1079.101563]]
+/FontDescriptor 374 0 R
+/W [0 [1229 579.101563 765.136719 560.058594 259.765625 755.859375 660.15625 812.988281 331.054688 724.121094 571.777344 571.777344 740.234375 637.207031 689.941406 564.941406 664.0625 624.023438 627.929688 285.15625 571.777344 321.777344 571.777344 571.777344 571.777344 671.875 795.898438 550.78125 896.972656 649.902344 285.15625 942.871094 590.820313 632.8125 305.175781 514.160156 604.003906 454.101563 434.082031 285.15625 632.8125 305.175781 571.777344 571.777344 564.941406 657.226563 619.140625 568.847656 568.847656 632.8125 497.070313 657.226563 855.957031 387.207031 375.976563 338.867188 657.226563 338.867188 966.796875 477.050781 981.933594 285.15625 331.054688 578.125 548.828125 691.894531 305.175781 620.117188 571.777344 1079.101563]]
 /CIDToGIDMap /Identity
 >>
 endobj
-369 0 obj
+376 0 obj
 <<
-/Length 388
+/Length 387
 /Filter /FlateDecode
 >>
 stream
-xœ]S=oƒ0ÝùÓ!Â1`Z	!Udaè‡J3U Ÿ#¤Æ ãù÷¼ku€ÓÝ½{ïÙqUïk7¿û±o(;8ãiÏ¾'ÑÑqpÑN	3ô³õÝŸÚ)Š«zß\æ@§ÚÙQE$DüAÇaþ"6Ïfìèa©½yC~pG±9TÍZiÎÓôC'rAÈ¨,…!ÅÕK;½¶'ñ:º­¹0„ËöP57Äçe"¡Ö|KýhhžÚž|ëŽRJYÖZ[FäÌ¿6uö-
-)Ó¬_·4KQ}¼6)÷e
-=BxBÈ×h S&Kv=B2ŒgPè˜êÊ K‚ñ”MXŒ³û„	ÅÁ¢aIƒLCVcNƒ:gÎz-2pj¸N I¸/9SCVÃRŽ,D³	Œ+å0‘³‰åÐJ*†à
-4Î ø–øz ²AþT¬®Åít hÜt’Üõ½lÊßN,K³,øu!û³÷äÂú¬K¸¬ßàèú£Lã´L­Ï/—ŸÙ
+xœ]S=oƒ0ÝùÓ!Â1‰i%„T‘…¡*ÍTu |FHÅ ãù÷¼ku€ÓÝ½{ïÙqQK×¿û±­(Û;ãiÏ¾%ÑP×»h§„éÛÀÙún‡zŠâ¢<V—9ÐP:;Š,‹„ˆ?¨ëçà/bólÆ†–Ú›7ä{×‰Í©¨ÖJuž¦È!£<†l/õôZ$âut[r¡—í©¨nˆÏËDB­ù–ÚÑÐ<Õ-ùÚueRJ™gÖZ›GäÌ¿65ö-2)÷‡\|ÝÒÃÕÇk3“RqÙA¡GOé äžÉ„B‹Ð€ã(4Ìue%ÁxÈžMXŒ³û„	ÅÁ¢aIƒLCVcNƒ:gÊz52pj¸N I¸/)SÃK
+õ”˜“…p°szA*© Qèi¸V|/|! Ö8Šâdƒü©4sŠÛé Ð¸é$¹0ê{Ù”¿X–fYðëB¶gïÉ…õ/X—pY¿ÞÑõG™Æi™ZŸ_†ÿÙ
 endstream
 endobj
 8 0 obj
@@ -3095,11 +3143,11 @@ endobj
 /Subtype /Type0
 /BaseFont /CZZZZZ+OpenSans-Bold
 /Encoding /Identity-H
-/DescendantFonts [368 0 R]
-/ToUnicode 369 0 R
+/DescendantFonts [375 0 R]
+/ToUnicode 376 0 R
 >>
 endobj
-370 0 obj
+377 0 obj
 <<
 /Length 5674
 /Filter /FlateDecode
@@ -3127,7 +3175,7 @@ IþŸghkóîæÝÛv5ìˆŽˆˆžM…÷Þ@y,ß¾§ywýÎúæŸéÞŸ=zùòÑ£ŸÖ¶µµ=Úv¤=……íýéÑÃ—/>ú©àH[[G
 8Ÿ¡»$F8G!ÓÛÈ3èÁR Ò%ô3è! 1fÝ=ù« ß{|ìÌ¿§ãŸ@Æì…4r€þÎ	–€ƒ ÆtÖÿ¼ÜE
 endstream
 endobj
-371 0 obj
+378 0 obj
 <<
 /Type /FontDescriptor
 /FontName /DZZZZZ+OpenSans-Regular
@@ -3139,10 +3187,10 @@ endobj
 /CapHeight 713.867188
 /XHeight 535.15625
 /StemV 0
-/FontFile2 370 0 R
+/FontFile2 377 0 R
 >>
 endobj
-372 0 obj
+379 0 obj
 <<
 /Type /Font
 /Subtype /CIDFontType2
@@ -3152,12 +3200,12 @@ endobj
 /Ordering (Identity)
 /Supplement 0
 >>
-/FontDescriptor 371 0 R
+/FontDescriptor 378 0 R
 /W [0 [1229 571.777344 571.777344 571.777344 336.425781 601.5625 408.691406 356.445313 613.28125 561.523438 555.664063 925.78125 613.28125 613.28125 476.5625 611.816406 252.441406 774.902344 262.695313 555.664063 252.441406 611.816406 588.867188 611.816406 500.976563 521.972656 899.414063 479.003906 258.789063 601.5625 548.339844 499.511719 727.050781 629.882813 550.78125 542.96875 468.75 321.777344 516.113281 725.585938 294.921875 294.921875 262.695313 525.390625 611.816406 632.324219 645.996094 777.832031 523.4375 219.238281 571.777344 571.777344 279.296875 262.695313 672.851563 617.1875 268.554688 571.777344 571.777344 252.441406 612.304688 259.765625 571.777344 737.304688 500 571.777344 571.777344 571.777344 1000 348.632813 348.632813 571.777344 571.777344 366.699219 826.660156 596.191406 729.003906 923.339844 924.804688 752.929688 262.695313]]
 /CIDToGIDMap /Identity
 >>
 endobj
-373 0 obj
+380 0 obj
 <<
 /Length 413
 /Filter /FlateDecode
@@ -3175,8 +3223,8 @@ endobj
 /Subtype /Type0
 /BaseFont /DZZZZZ+OpenSans-Regular
 /Encoding /Identity-H
-/DescendantFonts [372 0 R]
-/ToUnicode 373 0 R
+/DescendantFonts [379 0 R]
+/ToUnicode 380 0 R
 >>
 endobj
 4 0 obj
@@ -3193,8 +3241,8 @@ endobj
 1 0 obj
 <<
 /Type /Pages
-/Count 10
-/Kids [7 0 R 30 0 R 49 0 R 70 0 R 101 0 R 108 0 R 133 0 R 140 0 R 161 0 R 182 0 R]
+/Count 11
+/Kids [7 0 R 30 0 R 49 0 R 70 0 R 101 0 R 108 0 R 133 0 R 140 0 R 161 0 R 176 0 R 189 0 R]
 >>
 endobj
 2 0 obj
@@ -3205,7 +3253,7 @@ endobj
 >>
 >>
 endobj
-374 0 obj
+381 0 obj
 <<
 /Type /XObject
 /Subtype /Image
@@ -4185,7 +4233,7 @@ endobj
 /Height 1035
 /Filter /FlateDecode
 /ColorSpace /DeviceRGB
-/SMask 374 0 R
+/SMask 381 0 R
 /Length 178579
 >>
 stream
@@ -4766,7 +4814,7 @@ j%S¤
 ˜ãFMÇp{çêû8Òz±ÛÃýá±+á‰Ñ~ÿÐq5Ñ~±·ílÔ••z1¯-ÚüäÎa¼–€×öZÂ^K·XÂ´„h×oºFÖ~‚¿Ì¶Û)$œgÓW2Þkïµ¬o0ã½&t\Mu\¦½ªã\]°èœ8,ÙcLb7h3¿î)ÄþÔmð;u/Ë¨©ý¼ïÞ…Ž¡~ÿÐ½¡™>Q´æÐïºzÍ?v1xÿlçC{~N|¢ý¸‡ïltì¦opŸsŒ_O~u+E\™C½p¤ýàQùË^øËŽX¶6î…÷Ÿ”ø@»±ÓÀZT91¥½wÎµß8ü˜tÐåuš£~SX¯Þš cp}âƒD—ø\ñåc’iï1ÉªokÍ«     €+áôDÏŠñtb ijZs¸¨»EiCÛúzsÌ©MFµ»…XLÄÄþÈÓÒsÂNÚ–´¹&lQš&¦j¹ Âhˆ¦öòí×¿-jŠ‰˜ŒÄ(È‘Ç¢Ò†ÈÞ*€šM…£“¯ oë¨U+¨±›™˜.›æÜé`Oãïûmñ¿t:Z¸ý¢ch9üïµr¿³­ë¾8XÝÁÁJ	8ZyiCã°ûAó~pmK—÷)^Ø·Õá¢J›)uRãÏî #8|ìj25÷*óÕLC{CqGîù·{Õä^XÅ¶«ÙIL““          þKüw^èÀ,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ÿß    úÿÚ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   €G=4>
 endstream
 endobj
-375 0 obj
+382 0 obj
 <<
 /Type /XObject
 /Subtype /Image
@@ -4893,7 +4941,7 @@ endobj
 /Height 1024
 /Filter /FlateDecode
 /ColorSpace /DeviceRGB
-/SMask 375 0 R
+/SMask 382 0 R
 /Length 1212560
 >>
 stream
@@ -9579,23 +9627,23 @@ z#.£Ò O^o¦çéAžšÃƒBV–€»ž’ÑÁk­Ò:õºíÌš‚Þ*ê§õ°:‹È^¥µ3ž³ÑŽæ¹Ö"êm8P™p^kz‘Y
 endstream
 endobj
 xref
-0 376
+0 383
 0000000000 65535 f 
-0000090914 00000 n 
-0000091041 00000 n 
-0000090852 00000 n 
-0000090831 00000 n 
-0000039115 00000 n 
-0000038960 00000 n 
-0000038787 00000 n 
-0000082945 00000 n 
+0000092328 00000 n 
+0000092463 00000 n 
+0000092266 00000 n 
+0000092245 00000 n 
+0000039645 00000 n 
+0000039490 00000 n 
+0000039317 00000 n 
+0000084359 00000 n 
 0000000015 00000 n 
 0000000114 00000 n 
 0000000239 00000 n 
 0000000312 00000 n 
-0000090678 00000 n 
-0000539798 00000 n 
-0000337310 00000 n 
+0000092092 00000 n 
+0000541220 00000 n 
+0000338732 00000 n 
 0000000438 00000 n 
 0000000523 00000 n 
 0000000647 00000 n 
@@ -9608,9 +9656,9 @@ xref
 0000001384 00000 n 
 0000001517 00000 n 
 0000001602 00000 n 
-0000042154 00000 n 
-0000042035 00000 n 
-0000041859 00000 n 
+0000042569 00000 n 
+0000042450 00000 n 
+0000042274 00000 n 
 0000001735 00000 n 
 0000001835 00000 n 
 0000001961 00000 n 
@@ -9627,342 +9675,349 @@ xref
 0000003189 00000 n 
 0000003322 00000 n 
 0000003459 00000 n 
-0000045925 00000 n 
-0000045806 00000 n 
-0000045623 00000 n 
+0000046282 00000 n 
+0000046163 00000 n 
+0000045980 00000 n 
 0000003592 00000 n 
 0000003692 00000 n 
 0000003818 00000 n 
 0000003891 00000 n 
 0000004017 00000 n 
 0000004154 00000 n 
-0000004275 00000 n 
-0000004412 00000 n 
-0000004531 00000 n 
-0000004668 00000 n 
-0000004789 00000 n 
-0000004926 00000 n 
-0000005038 00000 n 
-0000005134 00000 n 
-0000005266 00000 n 
-0000005362 00000 n 
-0000005495 00000 n 
-0000005591 00000 n 
-0000050180 00000 n 
-0000050061 00000 n 
-0000049843 00000 n 
-0000005723 00000 n 
-0000005823 00000 n 
-0000005949 00000 n 
-0000006022 00000 n 
-0000006148 00000 n 
-0000006310 00000 n 
-0000006434 00000 n 
-0000006596 00000 n 
-0000006727 00000 n 
-0000006889 00000 n 
-0000007022 00000 n 
-0000007184 00000 n 
-0000007317 00000 n 
-0000007479 00000 n 
-0000007611 00000 n 
-0000007732 00000 n 
-0000007865 00000 n 
-0000007986 00000 n 
-0000008119 00000 n 
-0000008240 00000 n 
-0000008372 00000 n 
-0000008493 00000 n 
-0000008626 00000 n 
-0000008747 00000 n 
-0000008880 00000 n 
-0000009001 00000 n 
-0000009133 00000 n 
-0000009254 00000 n 
-0000053712 00000 n 
-0000053592 00000 n 
-0000053454 00000 n 
-0000009386 00000 n 
-0000009487 00000 n 
-0000009615 00000 n 
-0000009689 00000 n 
-0000056144 00000 n 
-0000056024 00000 n 
-0000055813 00000 n 
-0000009817 00000 n 
-0000009918 00000 n 
-0000010046 00000 n 
-0000010120 00000 n 
-0000010248 00000 n 
-0000010349 00000 n 
-0000010471 00000 n 
-0000010572 00000 n 
-0000010694 00000 n 
-0000010795 00000 n 
-0000010918 00000 n 
-0000011019 00000 n 
-0000011142 00000 n 
-0000011243 00000 n 
-0000011366 00000 n 
-0000011451 00000 n 
-0000011586 00000 n 
-0000011671 00000 n 
-0000011806 00000 n 
-0000011891 00000 n 
-0000012026 00000 n 
-0000012111 00000 n 
-0000060058 00000 n 
-0000059938 00000 n 
-0000059799 00000 n 
-0000012246 00000 n 
-0000012347 00000 n 
-0000012475 00000 n 
-0000012549 00000 n 
-0000063047 00000 n 
-0000062927 00000 n 
-0000062732 00000 n 
-0000012677 00000 n 
-0000012778 00000 n 
-0000012906 00000 n 
-0000012980 00000 n 
-0000013108 00000 n 
-0000013256 00000 n 
-0000013379 00000 n 
-0000013527 00000 n 
-0000013650 00000 n 
-0000013798 00000 n 
-0000013913 00000 n 
-0000014061 00000 n 
-0000014184 00000 n 
-0000014291 00000 n 
-0000014414 00000 n 
-0000014521 00000 n 
-0000014644 00000 n 
-0000014751 00000 n 
-0000066845 00000 n 
-0000066725 00000 n 
-0000066530 00000 n 
-0000014865 00000 n 
-0000014966 00000 n 
-0000015094 00000 n 
-0000015168 00000 n 
-0000015296 00000 n 
-0000015403 00000 n 
-0000015525 00000 n 
-0000015632 00000 n 
-0000015755 00000 n 
-0000015862 00000 n 
-0000015985 00000 n 
-0000016092 00000 n 
-0000016215 00000 n 
-0000016318 00000 n 
-0000016453 00000 n 
-0000016571 00000 n 
-0000016706 00000 n 
-0000016777 00000 n 
-0000071645 00000 n 
-0000071525 00000 n 
-0000070698 00000 n 
-0000016911 00000 n 
-0000017012 00000 n 
-0000017140 00000 n 
-0000017214 00000 n 
-0000017342 00000 n 
-0000017464 00000 n 
-0000017597 00000 n 
-0000017719 00000 n 
-0000017852 00000 n 
-0000017974 00000 n 
-0000018108 00000 n 
-0000018230 00000 n 
-0000018365 00000 n 
-0000018487 00000 n 
-0000018622 00000 n 
-0000018744 00000 n 
-0000018879 00000 n 
-0000019001 00000 n 
-0000019136 00000 n 
-0000019258 00000 n 
-0000019393 00000 n 
-0000019515 00000 n 
-0000019649 00000 n 
-0000019771 00000 n 
-0000019906 00000 n 
-0000020028 00000 n 
-0000020154 00000 n 
-0000020276 00000 n 
-0000020410 00000 n 
-0000020532 00000 n 
-0000020667 00000 n 
-0000020762 00000 n 
-0000020895 00000 n 
-0000020990 00000 n 
-0000021123 00000 n 
-0000021218 00000 n 
-0000021352 00000 n 
-0000021447 00000 n 
-0000021582 00000 n 
-0000021677 00000 n 
-0000021811 00000 n 
-0000021906 00000 n 
-0000022041 00000 n 
-0000022136 00000 n 
-0000022271 00000 n 
-0000022366 00000 n 
-0000022501 00000 n 
-0000022596 00000 n 
-0000022730 00000 n 
-0000022825 00000 n 
-0000022960 00000 n 
-0000023108 00000 n 
-0000023241 00000 n 
-0000023389 00000 n 
-0000023522 00000 n 
-0000023670 00000 n 
-0000023804 00000 n 
-0000023952 00000 n 
-0000024087 00000 n 
-0000024235 00000 n 
-0000024369 00000 n 
-0000024517 00000 n 
-0000024652 00000 n 
-0000024800 00000 n 
-0000024933 00000 n 
-0000025081 00000 n 
-0000025216 00000 n 
-0000025364 00000 n 
-0000025499 00000 n 
-0000025647 00000 n 
-0000025773 00000 n 
-0000025921 00000 n 
-0000026054 00000 n 
-0000026202 00000 n 
-0000026335 00000 n 
-0000026436 00000 n 
-0000026570 00000 n 
-0000026671 00000 n 
-0000026806 00000 n 
-0000026907 00000 n 
-0000027041 00000 n 
-0000027142 00000 n 
-0000027277 00000 n 
-0000027368 00000 n 
-0000027502 00000 n 
-0000027593 00000 n 
-0000027728 00000 n 
-0000027819 00000 n 
-0000027954 00000 n 
-0000028092 00000 n 
-0000028226 00000 n 
-0000028364 00000 n 
-0000028499 00000 n 
-0000028637 00000 n 
-0000028770 00000 n 
-0000028908 00000 n 
-0000029042 00000 n 
-0000029180 00000 n 
-0000029315 00000 n 
-0000029478 00000 n 
-0000029612 00000 n 
-0000029775 00000 n 
-0000029910 00000 n 
-0000030073 00000 n 
-0000030208 00000 n 
-0000030371 00000 n 
-0000030506 00000 n 
-0000030669 00000 n 
-0000030803 00000 n 
-0000030966 00000 n 
-0000031101 00000 n 
-0000031264 00000 n 
-0000031399 00000 n 
-0000031496 00000 n 
-0000031630 00000 n 
-0000031727 00000 n 
-0000031862 00000 n 
-0000031959 00000 n 
-0000032094 00000 n 
-0000032191 00000 n 
-0000032326 00000 n 
-0000032433 00000 n 
-0000032567 00000 n 
-0000032674 00000 n 
-0000032809 00000 n 
-0000032916 00000 n 
-0000033051 00000 n 
-0000033158 00000 n 
-0000033292 00000 n 
-0000033399 00000 n 
-0000033534 00000 n 
-0000033641 00000 n 
-0000033775 00000 n 
-0000033882 00000 n 
-0000034017 00000 n 
-0000034124 00000 n 
-0000034259 00000 n 
-0000034344 00000 n 
-0000034477 00000 n 
-0000034562 00000 n 
-0000034696 00000 n 
-0000034781 00000 n 
-0000034916 00000 n 
-0000035019 00000 n 
-0000035151 00000 n 
-0000035254 00000 n 
-0000035384 00000 n 
-0000035487 00000 n 
-0000035620 00000 n 
-0000035723 00000 n 
-0000035857 00000 n 
-0000035960 00000 n 
-0000036093 00000 n 
-0000036196 00000 n 
-0000036328 00000 n 
-0000036431 00000 n 
-0000036565 00000 n 
-0000036683 00000 n 
-0000036814 00000 n 
-0000036932 00000 n 
-0000037064 00000 n 
-0000037182 00000 n 
-0000037315 00000 n 
-0000037433 00000 n 
-0000037566 00000 n 
-0000037637 00000 n 
-0000037768 00000 n 
-0000037839 00000 n 
-0000037971 00000 n 
-0000038042 00000 n 
-0000038175 00000 n 
-0000038246 00000 n 
-0000038379 00000 n 
-0000038450 00000 n 
-0000038583 00000 n 
-0000038654 00000 n 
-0000075920 00000 n 
-0000075560 00000 n 
-0000075586 00000 n 
-0000075648 00000 n 
-0000075685 00000 n 
-0000075743 00000 n 
-0000075849 00000 n 
-0000076048 00000 n 
-0000081248 00000 n 
-0000081518 00000 n 
-0000082483 00000 n 
-0000083094 00000 n 
-0000088843 00000 n 
-0000089116 00000 n 
-0000090191 00000 n 
-0000091088 00000 n 
-0000516079 00000 n 
+0000004287 00000 n 
+0000004424 00000 n 
+0000004555 00000 n 
+0000004692 00000 n 
+0000004825 00000 n 
+0000004962 00000 n 
+0000005086 00000 n 
+0000005182 00000 n 
+0000005314 00000 n 
+0000005410 00000 n 
+0000005543 00000 n 
+0000005639 00000 n 
+0000049981 00000 n 
+0000049862 00000 n 
+0000049644 00000 n 
+0000005771 00000 n 
+0000005871 00000 n 
+0000005997 00000 n 
+0000006070 00000 n 
+0000006196 00000 n 
+0000006358 00000 n 
+0000006482 00000 n 
+0000006644 00000 n 
+0000006775 00000 n 
+0000006937 00000 n 
+0000007070 00000 n 
+0000007232 00000 n 
+0000007365 00000 n 
+0000007527 00000 n 
+0000007659 00000 n 
+0000007780 00000 n 
+0000007913 00000 n 
+0000008034 00000 n 
+0000008167 00000 n 
+0000008288 00000 n 
+0000008420 00000 n 
+0000008541 00000 n 
+0000008674 00000 n 
+0000008795 00000 n 
+0000008928 00000 n 
+0000009049 00000 n 
+0000009181 00000 n 
+0000009302 00000 n 
+0000053894 00000 n 
+0000053774 00000 n 
+0000053636 00000 n 
+0000009434 00000 n 
+0000009535 00000 n 
+0000009663 00000 n 
+0000009737 00000 n 
+0000056535 00000 n 
+0000056415 00000 n 
+0000056204 00000 n 
+0000009865 00000 n 
+0000009966 00000 n 
+0000010094 00000 n 
+0000010168 00000 n 
+0000010296 00000 n 
+0000010397 00000 n 
+0000010531 00000 n 
+0000010632 00000 n 
+0000010766 00000 n 
+0000010867 00000 n 
+0000011002 00000 n 
+0000011103 00000 n 
+0000011238 00000 n 
+0000011339 00000 n 
+0000011474 00000 n 
+0000011559 00000 n 
+0000011694 00000 n 
+0000011779 00000 n 
+0000011914 00000 n 
+0000011999 00000 n 
+0000012134 00000 n 
+0000012219 00000 n 
+0000060517 00000 n 
+0000060397 00000 n 
+0000060258 00000 n 
+0000012354 00000 n 
+0000012455 00000 n 
+0000012583 00000 n 
+0000012657 00000 n 
+0000062970 00000 n 
+0000062850 00000 n 
+0000062655 00000 n 
+0000012785 00000 n 
+0000012886 00000 n 
+0000013014 00000 n 
+0000013088 00000 n 
+0000013216 00000 n 
+0000013364 00000 n 
+0000013487 00000 n 
+0000013635 00000 n 
+0000013758 00000 n 
+0000013906 00000 n 
+0000014021 00000 n 
+0000014169 00000 n 
+0000014292 00000 n 
+0000014399 00000 n 
+0000014522 00000 n 
+0000014629 00000 n 
+0000014752 00000 n 
+0000014859 00000 n 
+0000066624 00000 n 
+0000066504 00000 n 
+0000066333 00000 n 
+0000014973 00000 n 
+0000015074 00000 n 
+0000015202 00000 n 
+0000015276 00000 n 
+0000015404 00000 n 
+0000015511 00000 n 
+0000015633 00000 n 
+0000015740 00000 n 
+0000015863 00000 n 
+0000015970 00000 n 
+0000016093 00000 n 
+0000016200 00000 n 
+0000070079 00000 n 
+0000069959 00000 n 
+0000069796 00000 n 
+0000016323 00000 n 
+0000016424 00000 n 
+0000016552 00000 n 
+0000016626 00000 n 
+0000016754 00000 n 
+0000016857 00000 n 
+0000016980 00000 n 
+0000017098 00000 n 
+0000017221 00000 n 
+0000017292 00000 n 
+0000073991 00000 n 
+0000073871 00000 n 
+0000073044 00000 n 
+0000017414 00000 n 
+0000017515 00000 n 
+0000017643 00000 n 
+0000017717 00000 n 
+0000017845 00000 n 
+0000017967 00000 n 
+0000018100 00000 n 
+0000018222 00000 n 
+0000018355 00000 n 
+0000018477 00000 n 
+0000018611 00000 n 
+0000018733 00000 n 
+0000018868 00000 n 
+0000018990 00000 n 
+0000019125 00000 n 
+0000019247 00000 n 
+0000019382 00000 n 
+0000019504 00000 n 
+0000019639 00000 n 
+0000019761 00000 n 
+0000019896 00000 n 
+0000020018 00000 n 
+0000020152 00000 n 
+0000020274 00000 n 
+0000020409 00000 n 
+0000020531 00000 n 
+0000020657 00000 n 
+0000020779 00000 n 
+0000020913 00000 n 
+0000021035 00000 n 
+0000021170 00000 n 
+0000021265 00000 n 
+0000021398 00000 n 
+0000021493 00000 n 
+0000021626 00000 n 
+0000021721 00000 n 
+0000021855 00000 n 
+0000021950 00000 n 
+0000022085 00000 n 
+0000022180 00000 n 
+0000022314 00000 n 
+0000022409 00000 n 
+0000022544 00000 n 
+0000022639 00000 n 
+0000022774 00000 n 
+0000022869 00000 n 
+0000023004 00000 n 
+0000023099 00000 n 
+0000023233 00000 n 
+0000023328 00000 n 
+0000023463 00000 n 
+0000023611 00000 n 
+0000023744 00000 n 
+0000023892 00000 n 
+0000024025 00000 n 
+0000024173 00000 n 
+0000024307 00000 n 
+0000024455 00000 n 
+0000024590 00000 n 
+0000024738 00000 n 
+0000024872 00000 n 
+0000025020 00000 n 
+0000025155 00000 n 
+0000025303 00000 n 
+0000025436 00000 n 
+0000025584 00000 n 
+0000025719 00000 n 
+0000025867 00000 n 
+0000026002 00000 n 
+0000026150 00000 n 
+0000026276 00000 n 
+0000026424 00000 n 
+0000026557 00000 n 
+0000026705 00000 n 
+0000026838 00000 n 
+0000026939 00000 n 
+0000027073 00000 n 
+0000027174 00000 n 
+0000027309 00000 n 
+0000027410 00000 n 
+0000027544 00000 n 
+0000027645 00000 n 
+0000027780 00000 n 
+0000027871 00000 n 
+0000028005 00000 n 
+0000028096 00000 n 
+0000028231 00000 n 
+0000028322 00000 n 
+0000028457 00000 n 
+0000028595 00000 n 
+0000028729 00000 n 
+0000028867 00000 n 
+0000029002 00000 n 
+0000029140 00000 n 
+0000029273 00000 n 
+0000029411 00000 n 
+0000029545 00000 n 
+0000029683 00000 n 
+0000029818 00000 n 
+0000029981 00000 n 
+0000030115 00000 n 
+0000030278 00000 n 
+0000030413 00000 n 
+0000030576 00000 n 
+0000030711 00000 n 
+0000030874 00000 n 
+0000031009 00000 n 
+0000031172 00000 n 
+0000031306 00000 n 
+0000031469 00000 n 
+0000031604 00000 n 
+0000031767 00000 n 
+0000031902 00000 n 
+0000031999 00000 n 
+0000032133 00000 n 
+0000032230 00000 n 
+0000032365 00000 n 
+0000032462 00000 n 
+0000032597 00000 n 
+0000032694 00000 n 
+0000032829 00000 n 
+0000032936 00000 n 
+0000033070 00000 n 
+0000033177 00000 n 
+0000033312 00000 n 
+0000033419 00000 n 
+0000033554 00000 n 
+0000033661 00000 n 
+0000033795 00000 n 
+0000033902 00000 n 
+0000034037 00000 n 
+0000034144 00000 n 
+0000034278 00000 n 
+0000034385 00000 n 
+0000034520 00000 n 
+0000034627 00000 n 
+0000034762 00000 n 
+0000034847 00000 n 
+0000034980 00000 n 
+0000035065 00000 n 
+0000035199 00000 n 
+0000035284 00000 n 
+0000035419 00000 n 
+0000035522 00000 n 
+0000035655 00000 n 
+0000035758 00000 n 
+0000035889 00000 n 
+0000035992 00000 n 
+0000036126 00000 n 
+0000036229 00000 n 
+0000036364 00000 n 
+0000036467 00000 n 
+0000036601 00000 n 
+0000036704 00000 n 
+0000036837 00000 n 
+0000036940 00000 n 
+0000037075 00000 n 
+0000037193 00000 n 
+0000037326 00000 n 
+0000037444 00000 n 
+0000037578 00000 n 
+0000037696 00000 n 
+0000037831 00000 n 
+0000037949 00000 n 
+0000038084 00000 n 
+0000038155 00000 n 
+0000038288 00000 n 
+0000038359 00000 n 
+0000038493 00000 n 
+0000038564 00000 n 
+0000038699 00000 n 
+0000038770 00000 n 
+0000038905 00000 n 
+0000038976 00000 n 
+0000039111 00000 n 
+0000039182 00000 n 
+0000077339 00000 n 
+0000076979 00000 n 
+0000077005 00000 n 
+0000077067 00000 n 
+0000077104 00000 n 
+0000077162 00000 n 
+0000077268 00000 n 
+0000077467 00000 n 
+0000082663 00000 n 
+0000082933 00000 n 
+0000083898 00000 n 
+0000084508 00000 n 
+0000090257 00000 n 
+0000090530 00000 n 
+0000091605 00000 n 
+0000092510 00000 n 
+0000517501 00000 n 
 trailer
 <<
-/Size 376
+/Size 383
 /Root 3 0 R
-/Info 359 0 R
+/Info 366 0 R
 /ID [<e7d3f8c6404f93841f7f2dece3ca4c6b> <e7d3f8c6404f93841f7f2dece3ca4c6b>]
 >>
 startxref
-1752549
+1753971
 %%EOF

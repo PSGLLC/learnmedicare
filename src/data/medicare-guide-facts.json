@@ -7,7 +7,7 @@
   "effectiveDate": "2027-01-01",
   "irmaaTaxYear": 2025,
   "pdfCoverageYear": 2027,
-  "pdfPageCount": 10,
+  "pdfPageCount": 11,
   "amounts": {
     "partA": {
       "inpatientDeductible": 1776,
@@ -116,11 +116,11 @@
     "layoutTool": "PDFKit",
     "layoutVersion": "2027.1-layout-tool-1",
     "pdfExportVersion": "2027.1-layout-tool-2026-11-23",
-    "pdfPageCount": 10,
+    "pdfPageCount": 11,
     "pdfExportedOn": "2026-11-23",
-    "exportedPdfSha256": "2ee0ebdc58f34b9b0de1b52ee0188b5089af9338f5483b831c4d31d2a3f656a1",
+    "exportedPdfSha256": "3ade441367056282fab613e7efa2d547e8c998191a752bdb46c226f976365028",
     "reviewStatus": "layout-tool draft prepared for owner review; not Canva-editable; email fulfillment inactive",
-    "pdfLinkAnnotationCount": 160,
+    "pdfLinkAnnotationCount": 162,
     "uniquePdfLinkDestinations": 17,
     "pdfFontsEmbedded": true,
     "embeddedFontFamilies": [

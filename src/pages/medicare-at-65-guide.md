@@ -9,7 +9,6 @@ dateModified: 2026-11-22
 
 # Medicare at 65: a practical 2027 guide
 
-**Prepared for editorial review: November 22, 2026**
 **Coverage year:** 2027 for the amounts below. Enrollment windows are identified separately.
 **Publisher:** Learn Medicare, an educational resource from Price Services Group, LLC.
 

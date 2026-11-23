@@ -54,6 +54,15 @@ test('yearless and dated PDFs are generated identically from the online guide so
     for (const annotation of annotations) if (annotation.url) links.add(annotation.url);
   }
 
+  assert.doesNotMatch(markdown, /editorial review/i, 'reader-facing guide omits internal editorial-review wording');
+  assert.doesNotMatch(extractedPages.join(' '), /editorial review/i, 'PDF omits internal editorial-review wording');
+  const pageTwo = extractedPages[1].replace(/\s+/g, ' ');
+  const pageThree = extractedPages[2].replace(/\s+/g, ' ');
+  assert.doesNotMatch(pageTwo, /Enrollment through current employment/, 'the employment SEP heading is not stranded at the end of page 2');
+  assert.match(pageThree, /Enrollment through current employment.*current employment/, 'page 3 keeps the SEP heading with its explanation');
+  const sourcePage = (extractedPages.find((page) => page.includes('Official sources')) ?? '').replace(/\s+/g, ' ');
+  assert.match(sourcePage, /TRICARE: Medicare and TRICARE For Life/, 'the source heading and full citation list remain together');
+
   const pdfWords = words(extractedPages.join(' '));
   let cursor = 0;
   for (const sourceWord of words(plainMarkdown(markdown))) {

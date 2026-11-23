@@ -9,7 +9,6 @@ dateModified: {{reviewDate}}
 
 # Medicare at 65: a practical {{coverageYear}} guide
 
-**Prepared for editorial review: {{reviewDateDisplay}}**
 **Coverage year:** {{coverageYear}} for the amounts below. Enrollment windows are identified separately.
 **Publisher:** Learn Medicare, an educational resource from Price Services Group, LLC.
 

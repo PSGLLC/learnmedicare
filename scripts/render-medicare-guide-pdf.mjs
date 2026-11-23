@@ -247,13 +247,43 @@ function drawParagraph(text, options = {}) {
   drawInline(inlineParts(text), options);
 }
 
-function drawHeading(block) {
+function minimumFollowingHeight(block, headingText) {
+  if (!block) return 0;
+  if (block.type === 'paragraph') return 2 * (11.5 + 2 + 2) + 4;
+  if (block.type === 'list') {
+    if (/^official sources$/i.test(plainInline(headingText))) {
+      return block.items.reduce((total, item) => total +
+        doc.heightOfString(plainInline(item.text), {
+          width: BODY_WIDTH - 4,
+          font: 'OpenSans',
+          fontSize: 10.5,
+          lineGap: 1,
+        }) + 8, 2);
+    }
+    return 2 * (11.5 + 2 + 2) + 4;
+  }
+  if (block.type === 'table') return 36;
+  if (block.type === 'heading') {
+    const size = block.level === 1 ? 18 : block.level === 2 ? 13 : 11.5;
+    return size + 14;
+  }
+  return 0;
+}
+
+function drawHeading(block, nextBlock) {
   const title = plainInline(block.text);
   const size = block.level === 1 ? 18 : block.level === 2 ? 13 : 11.5;
   const color = block.level === 1 ? NAVY : block.level === 2 ? PURPLE_DARK : NAVY;
   const font = 'OpenSansBold';
   const height = doc.heightOfString(title, { width: BODY_WIDTH, font, fontSize: size, lineGap: 2 });
-  ensureSpace(height + 18);
+  // This section starts a long enrollment explanation. Keep the heading with
+  // its first two lines instead of relying on content-specific blank lines.
+  const keepWithNext = title === 'Enrollment through current employment'
+    ? minimumFollowingHeight(nextBlock, block.text)
+    : /^official sources$/i.test(title)
+      ? minimumFollowingHeight(nextBlock, block.text)
+      : 0;
+  ensureSpace(height + 18 + keepWithNext);
   if (block.level === 1) {
     doc.font(font).fontSize(size).fillColor(color).text(title, MARGIN, doc.y, { width: BODY_WIDTH, lineGap: 2 });
     doc.y += 6;
@@ -327,7 +357,7 @@ let coverPortraitAdded = false;
 let compactSourceList = false;
 for (const [index, block] of blocks.entries()) {
   if (block.type === 'heading') {
-    drawHeading(block);
+    drawHeading(block, blocks[index + 1]);
     compactSourceList = /^official sources$/i.test(plainInline(block.text));
     continue;
   }
@@ -341,9 +371,9 @@ for (const [index, block] of blocks.entries()) {
     continue;
   }
   if (block.type === 'paragraph') {
-    const isCoverMetadata = index === 1 && /Prepared for editorial review:/.test(block.text);
+    const isCoverMetadata = index === 1 && /\*\*Coverage year:\*\*/.test(block.text);
     if (isCoverMetadata) {
-      const lines = block.text.split(/\s+(?=\*\*Coverage year:|\*\*Publisher:)/);
+      const lines = block.text.split(/\s+(?=\*\*Publisher:)/);
       for (const line of lines) drawParagraph(line, { size: 8.8, color: PURPLE_DARK, lineGap: 2 });
       drawCoverPortrait();
       coverPortraitAdded = true;
