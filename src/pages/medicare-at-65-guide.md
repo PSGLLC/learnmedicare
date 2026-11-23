@@ -4,7 +4,7 @@ title: "Medicare at 65: A practical 2027 guide | Learn Medicare"
 description: "A source-linked, plain-language guide to Medicare enrollment at 65 and verified federal Medicare costs for 2027."
 path: /medicare-at-65-guide/
 datePublished: 2026-11-22
-dateModified: 2026-11-22
+dateModified: 2026-11-23
 ---
 
 # Medicare at 65: a practical 2027 guide
@@ -91,20 +91,20 @@ The following are 2027 monthly amounts from CMS. “Total Part B” includes the
 
 | 2025 tax filing status and income used for 2027 | Part B total | Part D IRMAA |
 | --- | ---: | ---: |
-| Individual ≤$112,000; joint ≤$224,000 | $209.40 | $0 |
-| Individual >$112,000–$141,000; joint >$224,000–$282,000 | $293.10 | $15.40 |
-| Individual >$141,000–$177,000; joint >$282,000–$354,000 | $418.80 | $39.70 |
-| Individual >$177,000–$212,000; joint >$354,000–$424,000 | $544.40 | $64.00 |
-| Individual >$212,000–<$500,000; joint >$424,000–<$750,000 | $670.00 | $88.30 |
-| Individual ≥$500,000; joint ≥$750,000 | $711.80 | $96.40 |
+| Individual income $112,000 or less; joint income $224,000 or less | $209.40 | $0 |
+| Individual income over $112,000 through $141,000; joint over $224,000 through $282,000 | $293.10 | $15.40 |
+| Individual income over $141,000 through $177,000; joint over $282,000 through $354,000 | $418.80 | $39.70 |
+| Individual income over $177,000 through $212,000; joint over $354,000 through $424,000 | $544.40 | $64.00 |
+| Individual income over $212,000 but under $500,000; joint over $424,000 but under $750,000 | $670.00 | $88.30 |
+| Individual income $500,000 or more; joint income $750,000 or more | $711.80 | $96.40 |
 
 For married people filing separately who lived with a spouse during the year, CMS uses separate thresholds:
 
 | Income used for 2027 | Part B total | Part D IRMAA |
 | --- | ---: | ---: |
-| ≤$112,000 | $209.40 | $0 |
-| >$112,000 and <$388,000 | $670.00 | $88.30 |
-| ≥$388,000 | $711.80 | $96.40 |
+| $112,000 or less | $209.40 | $0 |
+| Over $112,000 and under $388,000 | $670.00 | $88.30 |
+| $388,000 or more | $711.80 | $96.40 |
 
 Confirm your category and amount with the CMS/SSA notice; these figures do not replace that determination.
 

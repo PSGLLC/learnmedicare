@@ -1,8 +1,8 @@
 {
-  "contentVersion": "2027.1",
+  "contentVersion": "2027.2",
   "coverageYear": 2027,
   "enrollmentYear": 2026,
-  "reviewDate": "2026-11-22",
+  "reviewDate": "2026-11-23",
   "announcementDate": "2026-11-17",
   "effectiveDate": "2027-01-01",
   "irmaaTaxYear": 2025,
@@ -29,49 +29,49 @@
     "irmaa": {
       "individualAndJointRows": [
         [
-          "Individual ≤$112,000; joint ≤$224,000",
+          "Individual income $112,000 or less; joint income $224,000 or less",
           "$209.40",
           "$0"
         ],
         [
-          "Individual >$112,000–$141,000; joint >$224,000–$282,000",
+          "Individual income over $112,000 through $141,000; joint over $224,000 through $282,000",
           "$293.10",
           "$15.40"
         ],
         [
-          "Individual >$141,000–$177,000; joint >$282,000–$354,000",
+          "Individual income over $141,000 through $177,000; joint over $282,000 through $354,000",
           "$418.80",
           "$39.70"
         ],
         [
-          "Individual >$177,000–$212,000; joint >$354,000–$424,000",
+          "Individual income over $177,000 through $212,000; joint over $354,000 through $424,000",
           "$544.40",
           "$64.00"
         ],
         [
-          "Individual >$212,000–<$500,000; joint >$424,000–<$750,000",
+          "Individual income over $212,000 but under $500,000; joint over $424,000 but under $750,000",
           "$670.00",
           "$88.30"
         ],
         [
-          "Individual ≥$500,000; joint ≥$750,000",
+          "Individual income $500,000 or more; joint income $750,000 or more",
           "$711.80",
           "$96.40"
         ]
       ],
       "marriedFilingSeparatelyRows": [
         [
-          "≤$112,000",
+          "$112,000 or less",
           "$209.40",
           "$0"
         ],
         [
-          ">$112,000 and <$388,000",
+          "Over $112,000 and under $388,000",
           "$670.00",
           "$88.30"
         ],
         [
-          "≥$388,000",
+          "$388,000 or more",
           "$711.80",
           "$96.40"
         ]
@@ -114,11 +114,11 @@
     "referenceCanvaDesignId": "DAG5SJOwdrc",
     "referenceCanvaDesignTitle": "2026 T65 Guide (short)",
     "layoutTool": "PDFKit",
-    "layoutVersion": "2027.1-layout-tool-1",
-    "pdfExportVersion": "2027.1-layout-tool-2026-11-23",
+    "layoutVersion": "2027.2-layout-tool-2",
+    "pdfExportVersion": "2027.2-layout-tool-2-2026-11-23",
     "pdfPageCount": 12,
     "pdfExportedOn": "2026-11-23",
-    "exportedPdfSha256": "40c97e51cf34af24ed31738d5773b2d3fc0a4a464c7988c60ca574b313ee33fe",
+    "exportedPdfSha256": "8741466282606223e8dc491bee901cbab69c910a1ff98dad0656025abbe017a0",
     "reviewStatus": "layout-tool draft prepared for owner review; not Canva-editable; email fulfillment inactive",
     "pdfLinkAnnotationCount": 164,
     "uniquePdfLinkDestinations": 17,

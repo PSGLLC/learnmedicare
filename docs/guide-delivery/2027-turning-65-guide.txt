@@ -188,42 +188,42 @@ The following are 2027 monthly amounts from CMS. "Total Part B"
 includes the $209.40 standard premium. Part D amount is the
 additional IRMAA on top of the plan's own premium.
 
-* Income: Individual <=$112,000; joint <=$224,000
+* Income: Individual income $112,000 or less; joint income $224,000 or less
   Part B total: $209.40
   Part D IRMAA: $0
 
-* Income: Individual >$112,000-$141,000; joint >$224,000-$282,000
+* Income: Individual income over $112,000 through $141,000; joint over $224,000 through $282,000
   Part B total: $293.10
   Part D IRMAA: $15.40
 
-* Income: Individual >$141,000-$177,000; joint >$282,000-$354,000
+* Income: Individual income over $141,000 through $177,000; joint over $282,000 through $354,000
   Part B total: $418.80
   Part D IRMAA: $39.70
 
-* Income: Individual >$177,000-$212,000; joint >$354,000-$424,000
+* Income: Individual income over $177,000 through $212,000; joint over $354,000 through $424,000
   Part B total: $544.40
   Part D IRMAA: $64.00
 
-* Income: Individual >$212,000-<$500,000; joint >$424,000-<$750,000
+* Income: Individual income over $212,000 but under $500,000; joint over $424,000 but under $750,000
   Part B total: $670.00
   Part D IRMAA: $88.30
 
-* Income: Individual >=$500,000; joint >=$750,000
+* Income: Individual income $500,000 or more; joint income $750,000 or more
   Part B total: $711.80
   Part D IRMAA: $96.40
 
 For married people filing separately who lived with a spouse during
 the year, CMS uses separate thresholds:
 
-* Income: <=$112,000
+* Income: $112,000 or less
   Part B total: $209.40
   Part D IRMAA: $0
 
-* Income: >$112,000 and <$388,000
+* Income: Over $112,000 and under $388,000
   Part B total: $670.00
   Part D IRMAA: $88.30
 
-* Income: >=$388,000
+* Income: $388,000 or more
   Part B total: $711.80
   Part D IRMAA: $96.40
 

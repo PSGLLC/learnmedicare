@@ -28,7 +28,7 @@ To roll back a bad draft, restore the prior facts, template, generated Markdown/
 ## Current 2027 review artifact
 
 - Visual reference: `2026 T65 Guide (short)`; the original Canva design is preserved.
-- Layout version: `2027.1-layout-tool-1`; content version: `2027.1`; export date: `2026-11-23`.
+- Layout version: `2027.2-layout-tool-2`; content version: `2027.2`; export date: `2026-11-23`.
 - The 12-page repository-generated PDF embeds Open Sans, uses PSG logo/portrait assets, and includes verified source/contact link annotations. Exact counts and digest are in `docs/guide-delivery/pdf-manifest.json`.
 - PDF pagination keeps every heading with its opening paragraph, first list item, or table header plus first row. Citation-list text is 10 pt with clear line spacing; body text remains 11.5 pt. Long tables and sections can continue onto later pages.
 - PR #19 contains the review draft at the existing yearless asset path plus the dated 2027 edition. It remains unmerged, so the live PDF is unchanged. The historical 2026 PDF remains byte-for-byte unchanged.

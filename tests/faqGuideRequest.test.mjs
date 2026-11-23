@@ -175,7 +175,9 @@ test('new review PDF is readable and the historical 2026 asset remains byte-for-
 test('yearless online guide exposes working source links and the current printable PDF', () => {
   const guide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
   assert.match(guide, /path: \/medicare-at-65-guide\//);
-  assert.match(guide, /datePublished: 2026-11-22[\s\S]*dateModified: 2026-11-22/);
+  assert.match(guide, /datePublished: 2026-11-22[\s\S]*dateModified: 2026-11-23/);
+  assert.doesNotMatch(guide, /[≤≥]/, 'rendered annual guide uses readable threshold wording supported by the embedded PDF font');
+  assert.match(guide, /income \$112,000 or less[\s\S]*income \$500,000 or more/);
   assert.match(guide, /\[Download the printable 2027 guide \(PDF\)\]\(\/docs\/T65-Medicare-Guide\.pdf\)/);
   assert.match(guide, /\[CMS: 2027 Medicare Parts A and B premiums and deductibles/);
   assert.match(guide, /\[Medicare\.gov: Part D costs/);
