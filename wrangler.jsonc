@@ -2,5 +2,35 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "learnmedicare",
   "compatibility_date": "2026-07-01",
-  "pages_build_output_dir": "dist"
+  "pages_build_output_dir": "dist",
+  "d1_databases": [
+    {
+      "binding": "FAQ_GUIDE_REQUESTS",
+      "database_name": "learnmedicare-faq-preview",
+      "database_id": "ba6a265a-1b7a-4c83-9916-b16d5dd06cba",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "env": {
+    "preview": {
+      "d1_databases": [
+        {
+          "binding": "FAQ_GUIDE_REQUESTS",
+          "database_name": "learnmedicare-faq-preview",
+          "database_id": "ba6a265a-1b7a-4c83-9916-b16d5dd06cba",
+          "migrations_dir": "migrations"
+        }
+      ]
+    },
+    "production": {
+      "d1_databases": [
+        {
+          "binding": "FAQ_GUIDE_REQUESTS",
+          "database_name": "learnmedicare-faq-production",
+          "database_id": "3f18e192-3fd0-4bfa-bad5-1d067fdaf66f",
+          "migrations_dir": "migrations"
+        }
+      ]
+    }
+  }
 }
