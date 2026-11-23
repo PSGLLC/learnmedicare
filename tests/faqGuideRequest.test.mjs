@@ -8,8 +8,8 @@ import vm from 'node:vm';
 const REQUEST_A = 'e1c8f6b5-6827-4b32-9c51-621d6a011d7f';
 const REQUEST_B = 'a48f43c4-ef0c-4fb7-b95f-193e2e56d288';
 
-function fakeD1({ missingTable = false } = {}) {
-  const rows = new Map();
+function fakeD1({ missingTable = false, initialRows = [] } = {}) {
+  const rows = new Map(initialRows.map(([id, value]) => [id, { ...value }]));
   const statements = [];
   return {
     rows, statements,
@@ -19,6 +19,17 @@ function fakeD1({ missingTable = false } = {}) {
         return {
           async run() {
             if (missingTable) throw new Error('no such table');
+            if (sql.startsWith('DELETE FROM faq_guide_requests')) {
+              const cutoff = values[0];
+              let changes = 0;
+              for (const [id, row] of rows) {
+                if (row.created_at < cutoff) {
+                  rows.delete(id);
+                  changes += 1;
+                }
+              }
+              return { meta: { changes } };
+            }
             if (sql.startsWith('INSERT INTO faq_guide_requests')) {
               if (rows.has(values[0])) return { meta: { changes: 0 } };
               rows.set(values[0], { status: values[1] ?? 'processing' });
@@ -130,6 +141,25 @@ test('concurrent requests sharing an ID make at most one provider call', async (
   release();
   const first = await firstPromise;
   assert.equal(first.status, 200);
+});
+
+test('request handling deletes ledger rows past the 90-day retention boundary', async () => {
+  const now = Math.floor(Date.now() / 1000);
+  const retention = 90 * 24 * 60 * 60;
+  const expiredId = 'expired-request';
+  const currentId = 'current-request';
+  const db = fakeD1({ initialRows: [
+    [expiredId, { status: 'accepted', created_at: now - retention - 1 }],
+    [currentId, { status: 'accepted', created_at: now - retention + 1 }],
+  ] });
+  const mock = loadEndpoint({ db });
+  const response = await mock.handler({ request: request(), env: env(db) });
+
+  assert.equal(response.status, 200);
+  assert.equal(db.rows.has(expiredId), false);
+  assert.equal(db.rows.has(currentId), true);
+  assert.equal(db.rows.get(REQUEST_A).status, 'accepted');
+  assert.ok(db.statements.some(sql => sql.startsWith('DELETE FROM faq_guide_requests')));
 });
 
 test('FAQ keeps the guide directly accessible while one-time email requests are unavailable', () => {
