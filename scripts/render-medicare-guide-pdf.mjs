@@ -247,42 +247,62 @@ function drawParagraph(text, options = {}) {
   drawInline(inlineParts(text), options);
 }
 
-function minimumFollowingHeight(block, headingText) {
+function tableRowHeight(cells, widths, header = false, padding = 5, fontSize = 9.3) {
+  const cellHeights = cells.map((cell, index) => doc.heightOfString(cell, {
+    width: widths[index] - padding * 2,
+    font: header ? 'OpenSansBold' : 'OpenSans',
+    fontSize,
+    lineGap: 1,
+  }));
+  return Math.max(18, Math.max(...cellHeights) + padding * 2);
+}
+
+function minimumFollowingHeight(block, nextBlock, afterNextBlock) {
   if (!block) return 0;
-  if (block.type === 'paragraph') return 2 * (11.5 + 2 + 2) + 4;
-  if (block.type === 'list') {
-    if (/^official sources$/i.test(plainInline(headingText))) {
-      return block.items.reduce((total, item) => total +
-        doc.heightOfString(plainInline(item.text), {
-          width: BODY_WIDTH - 4,
-          font: 'OpenSans',
-          fontSize: 10.5,
-          lineGap: 1,
-        }) + 8, 2);
-    }
-    return 2 * (11.5 + 2 + 2) + 4;
+  if (block.type === 'paragraph') {
+    return doc.heightOfString(plainInline(block.text), {
+      width: BODY_WIDTH,
+      font: 'OpenSans',
+      fontSize: 11.5,
+      lineGap: 2,
+    }) + 4;
   }
-  if (block.type === 'table') return 36;
+  if (block.type === 'list') {
+    const sourceList = /^\[(?:CMS|Medicare\.gov|SSA|VA|TRICARE):/i.test(block.items[0]?.text ?? '');
+    const size = sourceList ? 10 : 11.5;
+    return doc.heightOfString(plainInline(block.items[0]?.text ?? ''), {
+      width: BODY_WIDTH - 4,
+      font: 'OpenSans',
+      fontSize: size,
+      lineGap: 2,
+    }) + size + 4;
+  }
+  if (block.type === 'table') {
+    const count = block.rows[0].length;
+    const widths = count === 2
+      ? [BODY_WIDTH * 0.75, BODY_WIDTH * 0.25]
+      : [BODY_WIDTH * 0.62, BODY_WIDTH * 0.19, BODY_WIDTH * 0.19];
+    return tableRowHeight(block.rows[0], widths, true) + tableRowHeight(block.rows[1], widths) + 2;
+  }
   if (block.type === 'heading') {
     const size = block.level === 1 ? 18 : block.level === 2 ? 13 : 11.5;
-    return size + 14;
+    const title = plainInline(block.text);
+    const headingHeight = doc.heightOfString(title, { width: BODY_WIDTH, font: 'OpenSansBold', fontSize: size, lineGap: 2 });
+    return headingHeight + (block.level === 1 ? 6 : block.level === 2 ? 12 : 7) +
+      minimumFollowingHeight(nextBlock, afterNextBlock, null);
   }
   return 0;
 }
 
-function drawHeading(block, nextBlock) {
+function drawHeading(block, nextBlock, afterNextBlock, afterAfterNextBlock) {
   const title = plainInline(block.text);
   const size = block.level === 1 ? 18 : block.level === 2 ? 13 : 11.5;
   const color = block.level === 1 ? NAVY : block.level === 2 ? PURPLE_DARK : NAVY;
   const font = 'OpenSansBold';
   const height = doc.heightOfString(title, { width: BODY_WIDTH, font, fontSize: size, lineGap: 2 });
-  // This section starts a long enrollment explanation. Keep the heading with
-  // its first two lines instead of relying on content-specific blank lines.
-  const keepWithNext = title === 'Enrollment through current employment'
-    ? minimumFollowingHeight(nextBlock, block.text)
-    : /^official sources$/i.test(title)
-      ? minimumFollowingHeight(nextBlock, block.text)
-      : 0;
+  // Keep every heading with an opening portion of its content. If headings
+  // are nested, reserve room for that heading and its first content block too.
+  const keepWithNext = minimumFollowingHeight(nextBlock, afterNextBlock, afterAfterNextBlock);
   ensureSpace(height + 18 + keepWithNext);
   if (block.level === 1) {
     doc.font(font).fontSize(size).fillColor(color).text(title, MARGIN, doc.y, { width: BODY_WIDTH, lineGap: 2 });
@@ -303,13 +323,7 @@ function drawTable(rows) {
   const tableFont = 9.3;
   const cellPadding = 5;
   const drawRow = (cells, header = false) => {
-    const cellHeights = cells.map((cell, index) => doc.heightOfString(cell, {
-      width: widths[index] - cellPadding * 2,
-      font: header ? 'OpenSansBold' : 'OpenSans',
-      fontSize: tableFont,
-      lineGap: 1,
-    }));
-    const rowHeight = Math.max(18, Math.max(...cellHeights) + cellPadding * 2);
+    const rowHeight = tableRowHeight(cells, widths, header, cellPadding, tableFont);
     if (!header && doc.y + rowHeight > BODY_BOTTOM) {
       addPage();
       drawRow(rows[0], true);
@@ -323,7 +337,8 @@ function drawTable(rows) {
     doc.moveTo(MARGIN, y + rowHeight).lineTo(MARGIN + BODY_WIDTH, y + rowHeight).lineWidth(0.45).stroke(RULE);
     doc.y = y + rowHeight;
   };
-  ensureSpace(34);
+  ensureSpace(tableRowHeight(rows[0], widths, true, cellPadding, tableFont) +
+    tableRowHeight(rows[1], widths, false, cellPadding, tableFont) + 2);
   drawRow(rows[0], true);
   for (const row of rows.slice(1)) drawRow(row);
   doc.y += 8;
@@ -354,11 +369,9 @@ function drawCoverPortrait() {
 // Cover has the portrait and logo; the body and all tables remain one column.
 addPage();
 let coverPortraitAdded = false;
-let compactSourceList = false;
 for (const [index, block] of blocks.entries()) {
   if (block.type === 'heading') {
-    drawHeading(block, blocks[index + 1]);
-    compactSourceList = /^official sources$/i.test(plainInline(block.text));
+    drawHeading(block, blocks[index + 1], blocks[index + 2], blocks[index + 3]);
     continue;
   }
   if (block.type === 'table') {
@@ -366,8 +379,8 @@ for (const [index, block] of blocks.entries()) {
     continue;
   }
   if (block.type === 'list') {
-    drawList(block.items, compactSourceList ? { size: 10.5, lineGap: 1 } : {});
-    compactSourceList = false;
+    const isSourceList = /^official sources$/i.test(plainInline(blocks[index - 1]?.text ?? ''));
+    drawList(block.items, isSourceList ? { size: 10, lineGap: 2 } : {});
     continue;
   }
   if (block.type === 'paragraph') {

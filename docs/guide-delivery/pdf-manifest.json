@@ -4,14 +4,14 @@
   "exportedOn": "2026-11-23",
   "generator": "PDFKit with embedded Open Sans fonts",
   "source": "docs/guide-delivery/medicare-at-65-guide.template.md + src/data/medicare-guide-facts.json",
-  "pageCount": 11,
+  "pageCount": 12,
   "sourceMarkdownLinkCount": 29,
-  "pdfLinkAnnotationCount": 162,
+  "pdfLinkAnnotationCount": 164,
   "uniquePdfLinkDestinations": 17,
   "embeddedFontFamilies": [
     "Open Sans"
   ],
-  "sha256": "3ade441367056282fab613e7efa2d547e8c998191a752bdb46c226f976365028",
+  "sha256": "40c97e51cf34af24ed31738d5773b2d3fc0a4a464c7988c60ca574b313ee33fe",
   "outputs": [
     "public/docs/T65-Medicare-Guide.pdf",
     "public/docs/T65-Medicare-Guide-2027.pdf"
