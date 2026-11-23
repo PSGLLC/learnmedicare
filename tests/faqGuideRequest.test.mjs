@@ -167,7 +167,7 @@ test('new review PDF is readable and the historical 2026 asset remains byte-for-
   assert.equal(createHash('sha256').update(oldPdf).digest('hex'), 'e281bf8637cccbc3d390bdb579856b7f33c7b2c54c2cc034b27d61a82670a83a');
   assert.equal(draftPdf.subarray(0, 5).toString(), '%PDF-');
   assert.ok(draftPdf.byteLength > 10000);
-  assert.equal(draftPdf.toString('latin1').match(/\/Type \/Page\b/g)?.length, 6, 'review guide remains six pages');
+  assert.equal(draftPdf.toString('latin1').match(/\/Type \/Page\b/g)?.length, 12, 'layout-tool guide keeps headings with opening content in the updated layout');
   assert.deepEqual(currentPdf, draftPdf, 'yearless current PDF serves the reviewed 2027 file byte-for-byte');
   assert.equal(createHash('sha256').update(currentPdf).digest('hex'), createHash('sha256').update(draftPdf).digest('hex'));
 });
@@ -175,8 +175,10 @@ test('new review PDF is readable and the historical 2026 asset remains byte-for-
 test('yearless online guide exposes working source links and the current printable PDF', () => {
   const guide = readFileSync(new URL('../src/pages/medicare-at-65-guide.md', import.meta.url), 'utf8');
   assert.match(guide, /path: \/medicare-at-65-guide\//);
-  assert.match(guide, /datePublished: 2026-11-22[\s\S]*dateModified: 2026-11-22/);
-  assert.match(guide, /\[Download the six-page printable 2027 guide \(PDF\)\]\(\/docs\/T65-Medicare-Guide\.pdf\)/);
+  assert.match(guide, /datePublished: 2026-11-22[\s\S]*dateModified: 2026-11-23/);
+  assert.doesNotMatch(guide, /[≤≥]/, 'rendered annual guide uses readable threshold wording supported by the embedded PDF font');
+  assert.match(guide, /income \$112,000 or less[\s\S]*income \$500,000 or more/);
+  assert.match(guide, /\[Download the printable 2027 guide \(PDF\)\]\(\/docs\/T65-Medicare-Guide\.pdf\)/);
   assert.match(guide, /\[CMS: 2027 Medicare Parts A and B premiums and deductibles/);
   assert.match(guide, /\[Medicare\.gov: Part D costs/);
   assert.match(guide, /\[SSA: Medicare IRMAA/);

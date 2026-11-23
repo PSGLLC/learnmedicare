@@ -4,18 +4,17 @@ title: "Medicare at 65: A practical 2027 guide | Learn Medicare"
 description: "A source-linked, plain-language guide to Medicare enrollment at 65 and verified federal Medicare costs for 2027."
 path: /medicare-at-65-guide/
 datePublished: 2026-11-22
-dateModified: 2026-11-22
+dateModified: 2026-11-23
 ---
 
 # Medicare at 65: a practical 2027 guide
 
-**Prepared for editorial review: November 22, 2026**
 **Coverage year:** 2027 for the amounts below. Enrollment windows are identified separately.
 **Publisher:** Learn Medicare, an educational resource from Price Services Group, LLC.
 
 This guide is general education, not a coverage decision or individualized insurance recommendation. Medicare eligibility and enrollment depend on your circumstances. Confirm plan-specific benefits and costs in the plan documents and Medicare Plan Finder.
 
-[Download the six-page printable 2027 guide (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address serves the current edition; the dated 2027 and historical 2026 files remain archived separately.
+[Download the printable 2027 guide (PDF)](/docs/T65-Medicare-Guide.pdf). The yearless PDF address serves the current edition; dated editions remain archived separately.
 
 
 ## Start with the four parts
@@ -92,19 +91,27 @@ The following are 2027 monthly amounts from CMS. “Total Part B” includes the
 
 | 2025 tax filing status and income used for 2027 | Part B total | Part D IRMAA |
 | --- | ---: | ---: |
-| Individual ≤$112,000; joint ≤$224,000 | $209.40 | $0 |
-| Individual >$112,000–$141,000; joint >$224,000–$282,000 | $293.10 | $15.40 |
-| Individual >$141,000–$177,000; joint >$282,000–$354,000 | $418.80 | $39.70 |
-| Individual >$177,000–$212,000; joint >$354,000–$424,000 | $544.40 | $64.00 |
-| Individual >$212,000–<$500,000; joint >$424,000–<$750,000 | $670.00 | $88.30 |
-| Individual ≥$500,000; joint ≥$750,000 | $711.80 | $96.40 |
+| Individual income $112,000 or less; joint income $224,000 or less | $209.40 | $0 |
+| Individual income over $112,000 through $141,000; joint over $224,000 through $282,000 | $293.10 | $15.40 |
+| Individual income over $141,000 through $177,000; joint over $282,000 through $354,000 | $418.80 | $39.70 |
+| Individual income over $177,000 through $212,000; joint over $354,000 through $424,000 | $544.40 | $64.00 |
+| Individual income over $212,000 but under $500,000; joint over $424,000 but under $750,000 | $670.00 | $88.30 |
+| Individual income $500,000 or more; joint income $750,000 or more | $711.80 | $96.40 |
 
-For married people filing separately who lived with a spouse during the year, CMS uses separate thresholds: up to $112,000, standard Part B and no Part D IRMAA; above $112,000 and below $388,000, $670 total Part B and $88.30 Part D IRMAA; $388,000 or more, $711.80 total Part B and $96.40 Part D IRMAA. Confirm your category and amount with the CMS/SSA notice; these figures do not replace that determination.
+For married people filing separately who lived with a spouse during the year, CMS uses separate thresholds:
+
+| Income used for 2027 | Part B total | Part D IRMAA |
+| --- | ---: | ---: |
+| $112,000 or less | $209.40 | $0 |
+| Over $112,000 and under $388,000 | $670.00 | $88.30 |
+| $388,000 or more | $711.80 | $96.40 |
+
+Confirm your category and amount with the CMS/SSA notice; these figures do not replace that determination.
 
 ## Late enrollment penalties
 
 - **Part B:** The premium generally increases 10% for each full 12-month period you could have had Part B but did not, unless an exception applies (such as a qualifying current-employment Special Enrollment Period). The increase usually lasts as long as you have Part B.
-- **Part D:** The penalty is generally 1% of the national base beneficiary premium for each full month without Part D or other creditable drug coverage after the eligible period. For 2027, CMS set that base at $41.33 ([CMS's 2027 base-premium release](https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)); the penalty is rounded to the nearest $0.10 and generally continues while you have Part D. Extra Help and other exceptions can apply. This is not 1% of your individual plan premium.
+- **Part D:** The penalty is generally 1% of the national base beneficiary premium for each full month without Part D or other creditable drug coverage after the eligible period. For 2027, CMS set that base at $41.33 ([CMS's 2027 base-premium release](https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information); published July 28, 2026); the penalty is rounded to the nearest $0.10 and generally continues while you have Part D. Extra Help and other exceptions can apply. This is not 1% of your individual plan premium.
 - **Part A:** If you must buy Part A and delay enrollment, the premium may increase 10%; the higher premium generally lasts for twice the number of years you delayed. Exceptions and eligibility details apply.
 
 These are general rules. Keep notices about prior coverage and verify your personal situation with Medicare or Social Security before delaying enrollment. See [Medicare's penalty guidance](https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties).
@@ -132,8 +139,8 @@ These programs coordinate with Medicare differently. VA health care is not a sub
 ### Official sources
 
 - [CMS: 2027 Medicare Parts A and B premiums and deductibles (November 17, 2026)](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles)
-- [CMS: 2027 Part D benefit parameters](https://www.cms.gov/files/document/2027-announcement.pdf)
-- [CMS: 2027 Part D base beneficiary premium ($41.33; July 28, 2026)](https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
+- [CMS: 2027 Part D benefit parameters (published April 6, 2026)](https://www.cms.gov/files/document/2027-announcement.pdf)
+- [CMS: 2027 Part D base beneficiary premium ($41.33; published July 28, 2026)](https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-2027-national-average-monthly-bid-amount-information)
 - [Medicare.gov: Part D costs](https://www.medicare.gov/health-drug-plans/part-d/basics/costs)
 - [Medicare.gov: Medicare costs](https://www.medicare.gov/basics/costs/medicare-costs)
 - [Medicare.gov: when Medicare coverage starts](https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start)
