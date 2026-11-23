@@ -14,11 +14,10 @@ test('lead response helper rejects excluded requests before success can be shown
   assert.match(source, /Your request was not submitted/);
 });
 
-test('homepage, guide, and FAQ forms reject excluded leads before success or conversion side effects', () => {
+test('homepage and guide forms reject excluded leads before success or conversion side effects', () => {
   const cases = [
     ['src/pages/index.astro', "fetch('/api/lead'", "form.hidden = true"],
     ['src/pages/guide.astro', "fetch('/api/guide-lead'", "form.hidden = true"],
-    ['src/pages/faq.astro', "fetch('/api/faq-lead'", "form.hidden = true"],
   ];
 
   for (const [path, endpoint, successMarker] of cases) {
@@ -31,6 +30,15 @@ test('homepage, guide, and FAQ forms reject excluded leads before success or con
     const conversion = handler.indexOf("fbq?.('track', 'Lead'");
     if (conversion >= 0) assert.ok(responseCheck < conversion, `${path} checks before conversion tracking`);
   }
+});
+
+test('FAQ does not expose an inactive email request form or imply lead acceptance', () => {
+  const source = readFileSync('src/pages/faq.astro', 'utf8');
+  assert.match(source, /One-time email requests are currently unavailable/);
+  assert.match(source, /href="\/medicare-at-65-guide\/"/);
+  assert.match(source, /href="\/docs\/T65-Medicare-Guide\.pdf"/);
+  assert.doesNotMatch(source, /id="faq-lead-form"/);
+  assert.doesNotMatch(source, /accepted for processing|Your guide is on its way/i);
 });
 
 test('the homepage guide request remains available outside the insurance footprint', async () => {
