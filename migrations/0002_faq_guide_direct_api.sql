@@ -10,10 +10,11 @@ CREATE UNIQUE INDEX faq_guide_one_active_request_per_recipient_idx
   ON faq_guide_requests(recipient_hash)
   WHERE recipient_hash IS NOT NULL AND status IN ('processing', 'ambiguous');
 
--- Atomic fixed-window limits: 3 requests per recipient/day and 10 per IP/hour.
+-- Atomic fixed-window limits: 3 requests per recipient/day, 10 per IP/hour,
+-- and 50 total requests per day.
 -- Keys are HMACs made with a separate secret; this table holds no PII.
 CREATE TABLE IF NOT EXISTS faq_guide_rate_limits (
-  scope TEXT NOT NULL CHECK (scope IN ('recipient_day', 'ip_hour')),
+  scope TEXT NOT NULL CHECK (scope IN ('recipient_day', 'ip_hour', 'global_day')),
   key_hash TEXT NOT NULL,
   bucket_start INTEGER NOT NULL,
   count INTEGER NOT NULL CHECK (count > 0),

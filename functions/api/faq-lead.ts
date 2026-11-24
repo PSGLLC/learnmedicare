@@ -46,7 +46,7 @@ const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RETENTION_SECONDS = 90 * 24 * 60 * 60;
 const MAX_LOOKUP_PAGES = 25;
-const RATE_LIMITS = { recipientDay: 3, ipHour: 10 };
+const RATE_LIMITS = { recipientDay: 3, ipHour: 10, globalDay: 50 };
 
 function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
@@ -56,17 +56,17 @@ function json(data: unknown, status = 200): Response {
 }
 
 function unavailable(): Response {
-  return json({ ok: false, status: "unavailable", error: "One-time guide requests are temporarily unavailable. You can still read or download the guide, or contact us for help." }, 503);
+  return json({ ok: false, status: "unavailable", error: "One-time guide requests are temporarily unavailable. You can still read or download the guide, or contact us for help.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 503);
 }
 
 function safeResponseForOutcome(outcome: string | undefined): Response {
   if (outcome === "queued") return json({ ok: true, status: "queued", emailDelivered: false, duplicate: true });
   if (outcome === "ambiguous") return json({ ok: false, status: "delivery_unconfirmed", error: "We could not confirm what happened to this request. Please do not submit it again yet; contact us if you still need the guide." }, 502);
   if (outcome === "processing") return json({ ok: false, status: "already_processing", error: "This request is already being processed. Please wait before trying again." }, 409);
-  if (outcome === "multiple_matches") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to one email recipient. Please contact us for help. You can still read or download the guide." }, 200);
-  if (outcome === "no_match") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to an existing email recipient. Please contact us for help. You can still read or download the guide." }, 200);
-  if (outcome === "email_suppressed") return json({ ok: false, status: "recipient_needs_help", error: "We could not send this request to the matched contact. Please contact us for help. You can still read or download the guide." }, 200);
-  if (outcome === "rate_limited") return json({ ok: false, status: "rate_limited", error: "Too many guide requests were made recently. Please wait and try again later. You can still read or download the guide." }, 429);
+  if (outcome === "multiple_matches") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to one email recipient. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
+  if (outcome === "no_match") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to an existing email recipient. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
+  if (outcome === "email_suppressed") return json({ ok: false, status: "recipient_needs_help", error: "We could not send this request to the matched contact. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
+  if (outcome === "rate_limited") return json({ ok: false, status: "rate_limited", error: "Too many guide requests were made recently. Please wait and try again later. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 429);
   return unavailable();
 }
 
@@ -232,7 +232,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     const now = Math.floor(Date.now() / 1000);
     const recipientAllowed = await acquireRateLimit(db, "recipient_day", recipientKey, Math.floor(now / 86_400) * 86_400, mode === "test" ? 1 : RATE_LIMITS.recipientDay);
     const ipAllowed = recipientAllowed && await acquireRateLimit(db, "ip_hour", ipKey, Math.floor(now / 3_600) * 3_600, RATE_LIMITS.ipHour);
-    if (!recipientAllowed || !ipAllowed) {
+    const globalKey = await digest(env.FAQ_REQUEST_HASH_KEY, "global:faq-guide-fulfillment");
+    const globalAllowed = recipientAllowed && ipAllowed && await acquireRateLimit(db, "global_day", globalKey, Math.floor(now / 86_400) * 86_400, mode === "test" ? 1 : RATE_LIMITS.globalDay);
+    if (!recipientAllowed || !ipAllowed || !globalAllowed) {
       await setOutcome(db, requestId, "accepted", "rate_limited");
       return safeResponseForOutcome("rate_limited");
     }

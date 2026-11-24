@@ -94,10 +94,10 @@ function loadEndpoint({ db = fakeD1(), fetchImpl } = {}) {
   return { handler: context.module.exports.onRequestPost, calls, db };
 }
 
-function request(requestId = REQUEST_A, overrides = {}) {
+function request(requestId = REQUEST_A, overrides = {}, ip = '192.0.2.25') {
   return new Request('https://learnmedicare.org/api/faq-lead', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Origin: 'https://learnmedicare.org', 'cf-connecting-ip': '192.0.2.25' },
+    headers: { 'Content-Type': 'application/json', Origin: 'https://learnmedicare.org', 'cf-connecting-ip': ip },
     body: JSON.stringify({ firstName: 'Submitted', email: EMAIL, requestId, ...overrides }),
   });
 }
@@ -362,6 +362,20 @@ test('recipient and client rate limits are atomically bounded', async () => {
   assert.equal(mock.calls.filter(call => call.pathname === '/conversations/messages').length, 3);
 });
 
+test('global daily limit bounds distributed requests across distinct recipients and IPs', async () => {
+  const mock = loadEndpoint();
+  const liveEnv = env(mock.db, { FAQ_GUIDE_DELIVERY_MODE: 'live', FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'true' });
+  let lastResponse;
+  for (let i = 1; i <= 51; i += 1) {
+    const id = `${i.toString(16).padStart(8, '0')}-1111-4111-8111-111111111111`;
+    const ip = `198.51.${Math.floor(i / 250)}.${(i % 250) + 1}`;
+    lastResponse = await mock.handler({ request: request(id, { email: `global${i}@example.invalid` }, ip), env: liveEnv });
+  }
+  assert.equal(lastResponse.status, 429);
+  assert.equal(mock.calls.filter(call => call.pathname === '/contacts/lookup').length, 50);
+  assert.equal(mock.calls.some(call => call.pathname === '/conversations/messages'), false);
+});
+
 test('wrong origin, bad input, and honeypot do not call GHL', async () => {
   const mock = loadEndpoint();
   const wrongOrigin = new Request('https://learnmedicare.org/api/faq-lead', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://attacker.example', 'cf-connecting-ip': '192.0.2.25' }, body: JSON.stringify({ firstName: 'A', email: EMAIL, requestId: REQUEST_A }) });
@@ -418,6 +432,7 @@ test('the additive ledger migration stores keyed hashes, not raw recipient or IP
   assert.match(migration, /ip_hash TEXT/);
   assert.match(migration, /CREATE UNIQUE INDEX/);
   assert.match(migration, /CREATE TABLE IF NOT EXISTS faq_guide_rate_limits/);
+  assert.match(migration, /global_day/);
   assert.doesNotMatch(migration, /email_address|raw_email|ip_address|request_body/i);
 });
 
