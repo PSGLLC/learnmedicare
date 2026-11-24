@@ -156,7 +156,7 @@ test('one exact location-scoped match sends once without contact mutation and us
   assert.equal(mock.calls[0].searchParams.get('email'), EMAIL);
   assert.equal(mock.calls[0].headers.Version, 'v3');
   assert.equal(mock.calls[1].payload.contactId, CONTACT.id);
-  assert.equal(mock.calls[1].payload.emailTo, EMAIL);
+  assert.equal('emailTo' in mock.calls[1].payload, false, 'primary email is the contact default destination');
   assert.equal(mock.calls[1].payload.emailFrom, 'info@priceservicesgroup.com');
   assert.equal(mock.calls[1].payload.status, 'pending');
   assert.equal('replyTo' in mock.calls[1].payload, false, 'the documented API has no Reply-To request field');
@@ -195,6 +195,16 @@ test('pagination continues when the first page is empty and finds a single exact
   assert.equal(response.status, 200);
   assert.equal(mock.calls.filter(call => call.pathname === '/contacts/lookup').length, 2);
   assert.equal(mock.calls.at(-1).payload.contactId, CONTACT.id);
+});
+
+test('an exact additional-email match uses only that associated destination email', async () => {
+  const mock = loadEndpoint({ fetchImpl: async call => {
+    if (call.pathname === '/contacts/lookup') return Response.json({ contacts: [{ ...CONTACT, email: 'primary@example.invalid', emailLowerCase: 'primary@example.invalid', additionalEmails: [{ email: EMAIL }] }] });
+    return Response.json({ messageId: 'additional-email-message' });
+  } });
+  const response = await mock.handler({ request: request(), env: env(mock.db) });
+  assert.equal(response.status, 200);
+  assert.equal(mock.calls.at(-1).payload.emailTo, EMAIL);
 });
 
 test('incomplete or looping pagination fails closed without sending', async () => {
@@ -259,7 +269,7 @@ test('no-match creation requires both live-mode approval flags and then uses onl
   assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup', '/contacts/', '/conversations/messages']);
   assert.deepEqual(Object.keys(mock.calls[1].payload).sort(), ['email', 'firstName', 'locationId', 'source']);
   assert.equal(mock.calls[2].payload.contactId, 'new-contact');
-  assert.equal(mock.calls[2].payload.emailTo, EMAIL);
+  assert.equal('emailTo' in mock.calls[2].payload, false, 'the new contact primary email is the destination');
 });
 
 test('a timed-out contact creation is treated as ambiguous and is never repeated', async () => {

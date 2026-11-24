@@ -261,6 +261,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   let contactId: string;
   let recipientName: string;
+  let alternateRecipientEmail: string | undefined;
   if (lookup.contacts.length === 0) {
     if (mode !== "live" || env.FAQ_GHL_CONTACT_CREATION_ENABLED !== "true" || env.FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED !== "true") {
       await setOutcome(db, requestId, "accepted", "no_match").catch(() => undefined);
@@ -282,6 +283,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     }
     contactId = matched.id!;
     recipientName = String(matched.firstName ?? "").trim().slice(0, 80);
+    const primaryEmail = (matched.emailLowerCase ?? matched.email ?? "").trim().toLowerCase();
+    if (primaryEmail !== email) alternateRecipientEmail = email;
   }
 
   let sent: Response;
@@ -289,7 +292,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     sent = await fetch(`${GHL_API}/conversations/messages`, {
       method: "POST",
       headers: { Authorization: `Bearer ${env.GHL_API_TOKEN}`, Version: "v3", "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ type: "Email", contactId, emailTo: email, emailFrom: EMAIL_FROM, subject: EMAIL_SUBJECT, html: emailHtml(recipientName), message: emailText(recipientName), status: "pending" }),
+      body: JSON.stringify({ type: "Email", contactId, ...(alternateRecipientEmail ? { emailTo: alternateRecipientEmail } : {}), emailFrom: EMAIL_FROM, subject: EMAIL_SUBJECT, html: emailHtml(recipientName), message: emailText(recipientName), status: "pending" }),
       signal: AbortSignal.timeout(8_000),
     });
   } catch {
