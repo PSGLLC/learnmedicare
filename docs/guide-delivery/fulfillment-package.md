@@ -1,6 +1,6 @@
 # Learn Medicare FAQ guide fulfillment — approval package
 
-**Status (2026-11-23):** fulfillment is not enabled. The guide is live and directly accessible. The request form is intentionally unavailable until a dedicated GHL workflow, verified sender/reply-to, complete automation review, and dedicated webhook secret are confirmed. Separate preview and production D1 request ledgers are provisioned, migrated, bound, and deployed; this does not by itself deliver email. No message has been sent and no FAQ request form is active.
+**Current status (2026-11-24):** fulfillment is not enabled. The guide is live and directly accessible; the FAQ request form remains unavailable. A direct GHL API implementation is prepared on branch `codex/faq-ghl-direct-api-fulfillment-2026-11-24`; see [direct GHL API implementation](direct-ghl-api-implementation.md) for the current design and blockers. It is not deployed. No message has been sent and no contact has been created. The previous webhook-workflow plan below is retained as decision history, not the active implementation proposal.
 **Prepared:** 2026-11-22; status and infrastructure evidence updated 2026-11-23.
 **Website entry point:** `https://learnmedicare.org/faq/` → `POST /api/faq-lead`.
 
@@ -35,7 +35,7 @@ Actions: create/update the contact with first name and email; send one fulfillme
 
 ## One-time email copy
 
-**Sender identity:** No production sender or reply-to is approved or verified yet. The authenticated GHL email-services settings page rendered no configuration in the connected session. Before activation, an account owner must choose a verified sending address and reply-to in the Learn Medicare location; use display name `Learn Medicare` only if that sender identity is approved. Do not send until the verified address, reply-to, and sending domain are recorded.
+**Sender identity (owner-provided):** From name `Kayla Price`, From address `info@priceservicesgroup.com`, Reply-To `info@priceservicesgroup.com`. The selected Private Email provider and saved Reply-To were observed, but direct Conversations API behavior for display name and Reply-To is not documented in the request schema and has not been confirmed by a controlled message. Do not claim the API path meets these sender details until that behavior is verified.
 
 **Subject:** Your requested 2027 Medicare at 65 guide
 
@@ -73,7 +73,7 @@ The public guide and current PDF URLs are yearless; dated 2026 and 2027 PDF edit
 - **Missing tracking binding/table or fulfillment endpoint:** “Guide requests are temporarily unavailable. Please contact us for the guide.”
 - **Invalid input:** required first name/email: “First name and email are required.” Invalid email: “Enter a valid email address.” Invalid request ID: “Refresh the page and try again.” An unexpected response falls back to “Something went wrong. Please try again.”
 
-## Exact proposed GHL actions and dependencies
+## Historical webhook proposal — superseded 2026-11-24
 
 1. Site Function validates the FAQ request, requires the dedicated `FAQ_GUIDE_REQUESTS` D1 binding/table, inserts the opaque request ID as a unique processing claim, and only then makes one POST to `GHL_FAQ_GUIDE_WEBHOOK_URL`. The separate D1 stores the request ID/status/timestamps only; it does not hold contact or guide-request PII.
 2. The new dedicated GHL inbound-webhook workflow filters `requestType`, `source`, `pagePath`, valid email, empty honeypot, and request ID. It then creates/updates only first name, email, source, and the FAQ-specific tag `learnmedicare-faq-lead`.
@@ -84,7 +84,7 @@ The public guide and current PDF URLs are yearless; dated 2026 and 2027 PDF edit
 
 **Remaining setup before activation:** (1) restore a readable GHL location workflow list/editor for location `RMrQyYPseTazGPmAynzT` so all enabled contact-created, contact-updated, and tag-triggered workflows can be inspected for side effects, recipients, and re-entry; (2) expose Settings → Email Services in that same location so an already verified sender and monitored reply-to can be confirmed, or have the owner configure/approve one without changing domain authentication; (3) create the dedicated webhook workflow and verify the conditional greeting, approved copy, exact filters, and absence of marketing/call/SMS/opportunity/assignment actions; (4) add the dedicated write-only Pages secret `GHL_FAQ_GUIDE_WEBHOOK_URL` mapped to that workflow's inbound webhook; (5) verify the saved/published workflow and secret/binding configuration read-only; then restore the FAQ request form and run one controlled production test after the user supplies a recipient they control. Do not change `GHL_GUIDE_WEBHOOK_URL`, shared workflows, or existing email configuration. GHL runtime is intermittent: the signed-in app rendered the workflow list and two targeted records earlier, but a later embedded list request returned an empty HTTP 404. Email Services remained on the loading shell without sender configuration. No production email action, outbound message, form submission, or new CRM record has been created.
 
-### Manual GHL setup handoff if the editor fails again
+### Historical manual GHL setup handoff — superseded
 
 In location **Price Services Group, L.L.C.** (`RMrQyYPseTazGPmAynzT`), first confirm an already verified sender and monitored reply-to in **Settings → Email Services**; do not change domain authentication or guess an address. Review all enabled **Contact Created**, **Contact Updated**, and **Contact Tag** workflows and document each matching workflow's trigger filters, actions, recipient(s), and re-entry behavior before enabling a new one. Do not edit the existing `LearnMedicare Drip Campaign` or Ruby/resend workflows.
 
@@ -100,10 +100,10 @@ Then create a dedicated workflow named **Learn Medicare FAQ — One-Time Guide F
 
 Do not add SMS, calls, sales assignments, opportunities, or marketing enrollment. The site's dedicated D1 ledger is the idempotency boundary: it records opaque request ID/status/timestamps, treats same-ID repeats as duplicates, and permits a later deliberate request with a new ID. Do not configure GHL/provider retry behavior to blindly replay an ambiguous send. Add the dedicated Cloudflare Pages secret `GHL_FAQ_GUIDE_WEBHOOK_URL` only after saving the workflow and obtaining its exact inbound URL; never replace the shared `GHL_GUIDE_WEBHOOK_URL`. Keep the FAQ email-request form unavailable until the sender, workflow, dedicated secret, and production binding are verified. A 2xx response means the webhook accepted a request, not that the email was delivered. This handoff has not been applied in GHL and no message has been sent.
 
-## Rollback
+## Historical webhook rollback
 
 Do not repoint the shared `GHL_GUIDE_WEBHOOK_URL`. To roll back after approval, disable the new GHL email action/workflow first, then remove the dedicated FAQ secret and D1 binding only after pending submissions are reconciled. Keep the FAQ endpoint failing closed and retain the tracking table until its retention period expires. Restore prior page copy only if a replacement fulfillment route is operating; do not restore the false “guide is on its way” message.
 
-## Approval needed before activation
+## Historical approval record
 
 The user approved implementation and activation of this one-time fulfillment package. The guide and copy have already been reviewed. The separate preview/production D1 provisioning, additive migration, and bindings are complete. The remaining blockers are verified sender/reply-to, readable GHL automation inventory and workflow editor, creation/publication of the dedicated workflow, the dedicated secret mapping, and post-deploy verification. That approval does not permit ongoing marketing, SMS, calls, opportunities, sales assignment, enrolling historical requests, or sending a test to an existing contact.
