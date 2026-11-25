@@ -87,9 +87,9 @@ async function acquireRateLimit(db: D1Database, scope: string, keyHash: string, 
   return row !== null;
 }
 
-async function setOutcome(db: D1Database, requestId: string, status: "accepted" | "ambiguous", outcome: string): Promise<void> {
-  await db.prepare("UPDATE faq_guide_requests SET status = ?, outcome = ?, updated_at = unixepoch() WHERE request_id = ? AND status = 'processing'")
-    .bind(status, outcome, requestId).run();
+async function setOutcome(db: D1Database, requestId: string, status: "accepted" | "ambiguous", outcome: string, providerMessageId?: string): Promise<void> {
+  await db.prepare("UPDATE faq_guide_requests SET status = ?, outcome = ?, provider_message_id = COALESCE(?, provider_message_id), updated_at = unixepoch() WHERE request_id = ? AND status = 'processing'")
+    .bind(status, outcome, providerMessageId ?? null, requestId).run();
 }
 
 async function findByRequestId(db: D1Database, requestId: string): Promise<{ outcome: string } | null> {
@@ -318,7 +318,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return safeResponseForOutcome("ambiguous");
   }
 
-  await setOutcome(db, requestId, "accepted", "queued").catch(() => undefined);
+  const providerMessageId = providerResponse.messageId ?? providerResponse.emailMessageId;
+  await setOutcome(db, requestId, "accepted", "queued", providerMessageId).catch(() => undefined);
   return json({ ok: true, status: "queued", emailDelivered: false });
 };
 
