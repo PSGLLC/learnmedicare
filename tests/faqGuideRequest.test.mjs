@@ -43,8 +43,8 @@ function fakeD1({ missingTable = false, initialRows = [] } = {}) {
               return { meta: { changes: 1 } };
             }
             if (sql.startsWith('UPDATE faq_guide_requests')) {
-              const [status, outcome, id] = values;
-              if (rows.get(id)?.status === 'processing') rows.set(id, { ...rows.get(id), status, outcome, updated_at: Math.floor(Date.now() / 1000) });
+              const [status, outcome, providerMessageId, id] = values;
+              if (rows.get(id)?.status === 'processing') rows.set(id, { ...rows.get(id), status, outcome, provider_message_id: providerMessageId ?? rows.get(id).provider_message_id ?? null, updated_at: Math.floor(Date.now() / 1000) });
               return { meta: { changes: 1 } };
             }
             return { meta: { changes: 0 } };
@@ -167,7 +167,23 @@ test('one exact location-scoped match sends once without contact mutation and us
   assert.match(mock.calls[1].payload.html, /https:\/\/learnmedicare\.org\/medicare-at-65-guide\//);
   assert.match(mock.calls[1].payload.html, /https:\/\/learnmedicare\.org\/docs\/T65-Medicare-Guide\.pdf/);
   assert.equal(mock.db.rows.get(REQUEST_A).outcome, 'queued');
+  assert.equal(mock.db.rows.get(REQUEST_A).provider_message_id, 'message-1');
+  assert.notEqual(mock.db.rows.get(REQUEST_A).outcome, 'sent');
   assert.equal(mock.calls.some(call => call.pathname === '/contacts/' || call.method === 'PUT'), false);
+});
+
+test('queued ledger stores the emailMessageId fallback without calling it delivered', async () => {
+  const mock = loadEndpoint({ fetchImpl: async call => {
+    if (call.pathname === '/contacts/lookup') return Response.json({ contacts: [CONTACT] });
+    if (call.pathname === '/conversations/messages') return Response.json({ emailMessageId: 'email-message-fallback' });
+    throw new Error(`unexpected request ${call.pathname}`);
+  } });
+  const response = await mock.handler({ request: request(), env: env(mock.db) });
+  const body = await response.json();
+  assert.equal(body.status, 'queued');
+  assert.equal(body.emailDelivered, false);
+  assert.equal(mock.db.rows.get(REQUEST_A).provider_message_id, 'email-message-fallback');
+  assert.equal(mock.db.rows.get(REQUEST_A).outcome, 'queued');
 });
 
 test('duplicate exact matches, including across lookup pages, never choose or send', async () => {
@@ -444,6 +460,12 @@ test('the additive ledger migration stores keyed hashes, not raw recipient or IP
   assert.match(migration, /CREATE TABLE IF NOT EXISTS faq_guide_rate_limits/);
   assert.match(migration, /global_day/);
   assert.doesNotMatch(migration, /email_address|raw_email|ip_address|request_body/i);
+});
+
+test('provider message ID migration is additive and does not redefine delivery status', () => {
+  const migration = readFileSync(new URL('../migrations/0003_faq_guide_provider_message_id.sql', import.meta.url), 'utf8');
+  assert.match(migration, /^ALTER TABLE faq_guide_requests ADD COLUMN provider_message_id TEXT;?$/m);
+  assert.doesNotMatch(migration, /DROP|DELETE|UPDATE|RENAME/i);
 });
 
 test('2027 guide remains accurate and published guide PDF stays the intended asset', () => {
