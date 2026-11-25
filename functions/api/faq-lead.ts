@@ -14,7 +14,6 @@ interface Env {
   FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED?: string;
   FAQ_GHL_CONTACT_CREATION_ENABLED?: string;
   FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED?: string;
-  FAQ_GHL_LOOKUP_PROBE_SECRET?: string;
 }
 interface LeadPayload {
   firstName?: string;
@@ -38,7 +37,6 @@ const GHL_API = "https://services.leadconnectorhq.com";
 const FAQ_ORIGIN = "https://learnmedicare.org";
 const GUIDE_URL = "https://learnmedicare.org/medicare-at-65-guide/";
 const PDF_URL = "https://learnmedicare.org/docs/T65-Medicare-Guide.pdf";
-const READONLY_PROBE_EMAIL = "learnmedicare-capability-check@example.invalid";
 const EMAIL_FROM = "info@priceservicesgroup.com";
 // The GHL send API does not document From-name or Reply-To input fields.
 // Live mode stays off until the connected Private Email provider is verified
@@ -324,48 +322,5 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   return json({ ok: true, status: "queued", emailDelivered: false });
 };
 
-function constantTimeEqual(left: string, right: string): boolean {
-  let difference = left.length ^ right.length;
-  const length = Math.max(left.length, right.length);
-  for (let index = 0; index < length; index += 1) {
-    difference |= (left.charCodeAt(index) || 0) ^ (right.charCodeAt(index) || 0);
-  }
-  return difference === 0;
-}
-
-// Short-lived operator-only capability check. The lookup address, location,
-// and API path are fixed; provider response bodies are intentionally ignored.
-// Remove this handler and its secret immediately after the Production check.
-export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
-  const probeSecret = env.FAQ_GHL_LOOKUP_PROBE_SECRET;
-  const authorization = request.headers.get("authorization") ?? "";
-  if (!probeSecret || probeSecret.length < 32 || !constantTimeEqual(authorization, `Bearer ${probeSecret}`)) {
-    return new Response(null, { status: 404, headers: { "Cache-Control": "no-store" } });
-  }
-
-  // This path must never run while any sending or contact-creation gate is open.
-  if (
-    env.FAQ_GUIDE_DELIVERY_MODE !== "off" ||
-    env.FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED !== "false" ||
-    env.FAQ_GHL_CONTACT_CREATION_ENABLED !== "false" ||
-    env.FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED !== "false"
-  ) {
-    return new Response(null, { status: 409, headers: { "Cache-Control": "no-store" } });
-  }
-
-  if (!env.GHL_API_TOKEN) return json({ upstreamHttpStatus: null, lookupCapability: false }, 503);
-
-  const url = new URL(`${GHL_API}/contacts/lookup`);
-  url.searchParams.set("locationId", LOCATION_ID);
-  url.searchParams.set("email", READONLY_PROBE_EMAIL);
-  url.searchParams.set("limit", "20");
-  try {
-    const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${env.GHL_API_TOKEN}`, Version: "v3", Accept: "application/json" },
-      signal: AbortSignal.timeout(8_000),
-    });
-    return json({ upstreamHttpStatus: response.status, lookupCapability: response.ok });
-  } catch {
-    return json({ upstreamHttpStatus: null, lookupCapability: false }, 502);
-  }
-};
+export const onRequestGet: PagesFunction = async () =>
+  new Response("Method Not Allowed", { status: 405, headers: { Allow: "POST", "Cache-Control": "no-store" } });

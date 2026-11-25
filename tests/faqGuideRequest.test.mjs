@@ -91,7 +91,7 @@ function loadEndpoint({ db = fakeD1(), fetchImpl } = {}) {
     },
   };
   vm.runInNewContext(code, context);
-  return { handler: context.module.exports.onRequestPost, getHandler: context.module.exports.onRequestGet, calls, db };
+  return { handler: context.module.exports.onRequestPost, calls, db };
 }
 
 function request(requestId = REQUEST_A, overrides = {}, ip = '192.0.2.25') {
@@ -111,86 +111,12 @@ const env = (db, extra = {}) => ({
   ...extra,
 });
 
-function lookupProbeRequest(authorization) {
-  return new Request('https://learnmedicare.org/api/faq-lead', { method: 'GET', headers: authorization ? { Authorization: authorization } : {} });
-}
-
-const probeEnv = extra => ({
-  FAQ_GHL_LOOKUP_PROBE_SECRET: 'temporary-probe-secret-for-test-only-000000',
-  FAQ_GUIDE_DELIVERY_MODE: 'off',
-  FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'false',
-  FAQ_GHL_CONTACT_CREATION_ENABLED: 'false',
-  FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED: 'false',
-  GHL_API_TOKEN: 'production-token-never-return-this',
-  ...extra,
-});
-
 test('production defaults stay disabled before any database or GHL request', async () => {
   const mock = loadEndpoint();
   const response = await mock.handler({ request: request(), env: { FAQ_GUIDE_REQUESTS: mock.db, GHL_API_TOKEN: 'not-used' } });
   assert.equal(response.status, 503);
   assert.equal(mock.calls.length, 0);
   assert.equal(mock.db.rows.size, 0);
-});
-
-test('read-only capability probe rejects missing and incorrect authorization without an upstream call', async () => {
-  for (const authorization of [undefined, 'Bearer wrong']) {
-    const mock = loadEndpoint();
-    const response = await mock.getHandler({ request: lookupProbeRequest(authorization), env: probeEnv({}) });
-    assert.equal(response.status, 404);
-    assert.equal(await response.text(), '');
-    assert.equal(mock.calls.length, 0);
-    assert.equal(mock.db.statements.length, 0);
-  }
-});
-
-test('authorized capability probe performs one fixed read-only lookup and returns no provider data', async () => {
-  const mock = loadEndpoint({ fetchImpl: async call => {
-    assert.equal(call.pathname, '/contacts/lookup');
-    assert.equal(call.method, 'GET');
-    assert.equal(call.searchParams.get('locationId'), 'RMrQyYPseTazGPmAynzT');
-    assert.equal(call.searchParams.get('email'), 'learnmedicare-capability-check@example.invalid');
-    assert.equal(call.searchParams.get('limit'), '20');
-    assert.equal(call.searchParams.has('nextCursor'), false);
-    assert.equal(call.headers.Authorization, 'Bearer production-token-never-return-this');
-    assert.equal(call.headers.Version, 'v3');
-    return Response.json({ contacts: [{ id: 'must-not-escape', email: 'private@example.invalid' }], nextCursor: 'private-cursor' });
-  } });
-  const response = await mock.getHandler({ request: lookupProbeRequest('Bearer temporary-probe-secret-for-test-only-000000'), env: probeEnv({ FAQ_GUIDE_REQUESTS: mock.db }) });
-  const body = await response.json();
-  assert.equal(response.status, 200);
-  assert.deepEqual(body, { upstreamHttpStatus: 200, lookupCapability: true });
-  assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup']);
-  assert.equal(mock.db.statements.length, 0);
-  assert.doesNotMatch(JSON.stringify(body), /must-not-escape|private@example|private-cursor|production-token/);
-});
-
-test('read-only capability probe fails closed unless every sending and creation gate is off', async () => {
-  for (const change of [
-    { FAQ_GUIDE_DELIVERY_MODE: 'test' },
-    { FAQ_GUIDE_DELIVERY_MODE: 'live' },
-    { FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'true' },
-    { FAQ_GHL_CONTACT_CREATION_ENABLED: 'true' },
-    { FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED: 'true' },
-  ]) {
-    const mock = loadEndpoint();
-    const response = await mock.getHandler({ request: lookupProbeRequest('Bearer temporary-probe-secret-for-test-only-000000'), env: probeEnv(change) });
-    assert.equal(response.status, 409);
-    assert.equal(await response.text(), '');
-    assert.equal(mock.calls.length, 0);
-    assert.equal(mock.db.statements.length, 0);
-  }
-});
-
-test('read-only capability probe reports upstream status only and never calls a write endpoint', async () => {
-  const mock = loadEndpoint({ fetchImpl: async call => {
-    assert.equal(call.pathname, '/contacts/lookup');
-    return Response.json({ error: 'scope denied', details: 'do not return provider body' }, { status: 403 });
-  } });
-  const response = await mock.getHandler({ request: lookupProbeRequest('Bearer temporary-probe-secret-for-test-only-000000'), env: probeEnv({}) });
-  assert.deepEqual(await response.json(), { upstreamHttpStatus: 403, lookupCapability: false });
-  assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup']);
-  assert.equal(mock.db.statements.length, 0);
 });
 
 test('live mode fails closed until the direct API sender behavior is confirmed', async () => {
