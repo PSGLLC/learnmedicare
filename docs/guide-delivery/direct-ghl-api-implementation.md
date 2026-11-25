@@ -1,6 +1,7 @@
 # Direct GHL guide fulfillment implementation
 
-**Branch:** `codex/faq-ghl-direct-api-fulfillment-2026-11-24`  
+**Branch:** `codex/faq-ghl-direct-api-fulfillment-2026-11-24`
+
 **Status:** Reviewable implementation; not deployed to Production. GitHub's Cloudflare Pages check generated a PR preview. Preview has no GHL token or hash key, delivery mode defaults to off, and the FAQ request form remains inactive. No contact was created and no email was sent.
 
 ## What changed
