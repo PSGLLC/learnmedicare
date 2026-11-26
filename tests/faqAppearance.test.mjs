@@ -30,7 +30,9 @@ test('FAQ theme overrides are route-scoped and use lavender/white light surfaces
   assert.ok(contrast('#806B93', '#FFFFFF') >= 3, 'light FAQ accordion boundary must meet non-text contrast');
   assert.ok(contrast('#806B93', '#231A32') >= 3, 'dark FAQ accordion boundary must meet non-text contrast');
   assert.ok(contrast('#9A83AD', '#231A32') >= 3, 'dark email input boundary must meet non-text contrast');
-  assert.match(globals, /\.page-faq \.page-hero \.author-byline \{ color: #F5F0FA/);
+  assert.match(globals, /\.page-faq \.page-hero \.eyebrow,[\s\S]*\.page-faq \.page-hero \.author-byline \{ color: #FFFFFF/);
+  assert.ok(contrast('#FFFFFF', '#9059B5') >= 4.5, 'FAQ hero text must meet AA at the light end of the gradient');
+  assert.ok(contrast('#FFFFFF', '#6d3f8f') >= 4.5, 'FAQ hero text must meet AA at the dark end of the gradient');
   assert.match(globals, /\.page-faq main \{ padding-bottom:/);
   assert.match(globals, /\.page-faq \.faq-section \.container \{ padding-right: 360px; \}/);
   assert.match(globals, /\.page-faq \.sticky-guide-cta \.sgc-text \{ flex: 0 1 36%;/);
@@ -67,6 +69,8 @@ for (const [scheme, expected] of [['light', 'rgb(245, 240, 250)'], ['dark', 'rgb
           cardBorder: getComputedStyle(faqCard).borderColor,
           text: cs('body').color,
           heading: cs('.page-hero h1').color,
+          heroEyebrow: getComputedStyle(document.querySelector('.page-hero .eyebrow')).color,
+          heroDescription: getComputedStyle(document.querySelector('.page-hero .subhead')).color,
           byline: getComputedStyle(byline).color,
           navText: getComputedStyle(navText).color,
           focus: cs('#faq-email').outlineStyle,
@@ -87,6 +91,9 @@ for (const [scheme, expected] of [['light', 'rgb(245, 240, 250)'], ['dark', 'rgb
       assert.equal(result.body, expected);
       assert.equal(result.band, scheme === 'light' ? 'rgb(238, 231, 244)' : 'rgb(27, 20, 40)');
       assert.equal(result.focus, 'solid');
+      assert.equal(result.heroEyebrow, 'rgb(255, 255, 255)');
+      assert.equal(result.heroDescription, 'rgb(255, 255, 255)');
+      assert.equal(result.byline, 'rgb(255, 255, 255)');
       assert.equal(result.documentWidth <= result.viewport + 1, true, `horizontal overflow: ${result.documentWidth} > ${result.viewport}`);
       assert.ok(result.main.width <= result.viewport + 1);
       assert.ok(result.closeExists);
