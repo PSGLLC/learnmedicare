@@ -48,7 +48,6 @@ for (const [scheme, expected] of [['light', 'rgb(245, 240, 250)'], ['dark', 'rgb
       const result = await env.at('/faq/', width, () => {
         document.querySelector('.sticky-guide-cta').classList.add('sgc-visible');
         if (innerWidth <= 900) document.querySelector('.form-submit').scrollIntoView({ block: 'end', behavior: 'instant' });
-        document.querySelector('#faq-email').focus({ focusVisible: true });
         const cs = s => getComputedStyle(document.querySelector(s));
         const box = s => { const r = document.querySelector(s).getBoundingClientRect(); return {left:r.left,right:r.right,width:r.width}; };
         const faqCard = document.querySelector('.faq-list details');
@@ -83,7 +82,7 @@ for (const [scheme, expected] of [['light', 'rgb(245, 240, 250)'], ['dark', 'rgb
           submitBottom: document.querySelector('.form-submit').getBoundingClientRect().bottom,
           ctaTop: document.querySelector('.sticky-guide-cta').getBoundingClientRect().top,
         };
-      }, { colorScheme: scheme });
+      }, { colorScheme: scheme, focusSelector: '#faq-email', pressKeys: ['Tab', 'Shift+Tab'] });
       assert.equal(result.theme, scheme);
       assert.equal(result.body, expected);
       assert.equal(result.band, scheme === 'light' ? 'rgb(238, 231, 244)' : 'rgb(27, 20, 40)');
