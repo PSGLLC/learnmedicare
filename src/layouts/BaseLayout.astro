@@ -115,7 +115,7 @@ const currentLessonSlug = normalizedPath.replace(/^\//, '');
       })();
     </script>
   </head>
-  <body>
+  <body class:list={{ 'page-faq': normalizedPath === '/faq' }}>
     <a class="skip-link" href="#main">Skip to main content</a>
     <Nav />
     <VisitorAnalyticsConsent />

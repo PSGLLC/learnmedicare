@@ -45,10 +45,11 @@ export async function setup() {
     origin, browser,
     async close() { await browser.close(); server.close(); },
     // Opens `pagePath` at `width` (phone emulation) and runs `fn` in the page. Returns fn's result.
-    async at(pagePath, width, fn, { mediaType } = {}) {
+    async at(pagePath, width, fn, { mediaType, colorScheme } = {}) {
       const page = await browser.newPage();
       try {
         await page.setViewport({ width, height: 800, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+        if (colorScheme) await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: colorScheme }]);
         await page.setRequestInterception(true);
         page.on('request', (r) => (r.url().startsWith(origin) ? r.continue() : r.abort('blockedbyclient')));
         const resp = await page.goto(origin + pagePath, { waitUntil: 'domcontentloaded', timeout: 30000 });
