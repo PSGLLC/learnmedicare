@@ -80,6 +80,69 @@
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* FAQ-only palette: keep the rest of Learn Medicare on its existing theme. */
+html.page-faq {
+  --bg-primary: #F5F0FA;
+  --bg-secondary: #EEE7F4;
+  --bg-card: #FFFFFF;
+  --header-bg: #FFFFFF;
+  --border: #D7C8E3;
+  --text-muted: #5F4B73;
+}
+
+:root[data-theme="dark"].page-faq {
+  --bg-primary: #120D1D;
+  --bg-secondary: #1B1428;
+  --bg-card: #231A32;
+  --header-bg: #120D1D;
+  --border: #49365F;
+  --text-primary: #F4EFFA;
+  --text-secondary: #D0C2E0;
+  --text-muted: #B8A7CC;
+  --accent-text: #D2B1F0;
+}
+
+/* The fixed guide offer is compact on FAQ so it leaves accordion content visible. */
+.page-faq main { padding-bottom: 11rem; }
+.page-faq .nav-wrap { border-bottom-color: var(--border); }
+.page-faq .brand-medicare { color: var(--accent-text); }
+html.page-faq .page-hero .eyebrow.eyebrow,
+html.page-faq .page-hero .subhead,
+html.page-faq .page-hero .author-byline { color: #FFFFFF; }
+.page-faq .request-panel .form-row input { border-color: #8A729A; }
+:root[data-theme="dark"].page-faq .request-panel .form-row input { border-color: #9A83AD; }
+.page-faq #faq-email,
+.page-faq .form-submit,
+.page-faq .faq-list summary { scroll-margin-bottom: 9rem; }
+.page-faq .form-error { color: #8b1e2d; }
+.page-faq .theme-toggle:focus-visible,
+.page-faq .nav-toggle:focus-visible,
+.page-faq .search-toggle-btn:focus-visible,
+.page-faq .nav-link:focus-visible,
+.page-faq .brand:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; border-radius: 6px; }
+:root[data-theme="dark"].page-faq .form-status { background: rgba(144, 89, 181, 0.22); border: 1px solid var(--border); color: var(--text-primary); }
+:root[data-theme="dark"].page-faq .form-error { color: #ffb8c1; }
+:root[data-theme="dark"].page-faq .form-row input:focus-visible,
+:root[data-theme="dark"].page-faq .form-submit:focus-visible,
+:root[data-theme="dark"].page-faq .another-request:focus-visible,
+:root[data-theme="dark"].page-faq .theme-toggle:focus-visible,
+:root[data-theme="dark"].page-faq .nav-toggle:focus-visible,
+:root[data-theme="dark"].page-faq .search-toggle-btn:focus-visible,
+:root[data-theme="dark"].page-faq .nav-link:focus-visible,
+:root[data-theme="dark"].page-faq .brand:focus-visible { outline-color: var(--fill-teal); }
+
+@media (max-width: 900px) {
+  .page-faq main { padding-bottom: 9rem; }
+  .page-faq .sticky-guide-cta { flex-wrap: nowrap; gap: 0.5rem; padding: 0.5rem 0.65rem; }
+  .page-faq .sticky-guide-cta .sgc-text { flex: 0 1 36%; font-size: 0.68rem; line-height: 1.2; text-align: left; }
+  .page-faq .sticky-guide-cta .sgc-btn { flex: 1 1 auto; padding: 0.38rem 0.4rem; font-size: 0.7rem; white-space: normal; line-height: 1.2; }
+  .page-faq .sticky-guide-cta .sgc-close { flex: 0 0 auto; padding: 0.15rem 0.3rem; }
+}
+@media (min-width: 901px) {
+  /* Reserve the fixed offer's corner so it does not cover FAQ accordion rows. */
+  .page-faq .faq-section .container { padding-right: 360px; }
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }

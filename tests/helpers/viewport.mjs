@@ -45,15 +45,24 @@ export async function setup() {
     origin, browser,
     async close() { await browser.close(); server.close(); },
     // Opens `pagePath` at `width` (phone emulation) and runs `fn` in the page. Returns fn's result.
-    async at(pagePath, width, fn, { mediaType } = {}) {
+    async at(pagePath, width, fn, { mediaType, colorScheme, focusSelector, pressKeys = [] } = {}) {
       const page = await browser.newPage();
       try {
         await page.setViewport({ width, height: 800, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+        if (colorScheme) await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: colorScheme }]);
         await page.setRequestInterception(true);
         page.on('request', (r) => (r.url().startsWith(origin) ? r.continue() : r.abort('blockedbyclient')));
         const resp = await page.goto(origin + pagePath, { waitUntil: 'domcontentloaded', timeout: 30000 });
         if (!resp || resp.status() !== 200) throw new Error(`${pagePath} returned ${resp && resp.status()}`);
         if (mediaType) await page.emulateMediaType(mediaType);
+        if (focusSelector) await page.focus(focusSelector);
+        for (const key of pressKeys) {
+          if (key === 'Shift+Tab') {
+            await page.keyboard.down('Shift');
+            await page.keyboard.press('Tab');
+            await page.keyboard.up('Shift');
+          } else await page.keyboard.press(key);
+        }
         await new Promise((r) => setTimeout(r, 700));
         const artifacts = process.env.BROWSER_TEST_ARTIFACT_DIR;
         if (artifacts && pagePath === '/' && [320, 390, 430].includes(width)) {

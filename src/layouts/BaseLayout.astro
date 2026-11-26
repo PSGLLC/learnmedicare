@@ -52,7 +52,7 @@ const showLessonProgress = LESSON_PATHS.includes(normalizedPath);
 const currentLessonSlug = normalizedPath.replace(/^\//, '');
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class:list={{ 'page-faq': normalizedPath === '/faq' }}>
   <head>
     <MetaPixel />
     <meta charset="UTF-8" />
