@@ -81,7 +81,7 @@
 }
 
 /* FAQ-only palette: keep the rest of Learn Medicare on its existing theme. */
-body.page-faq {
+html.page-faq {
   --bg-primary: #F5F0FA;
   --bg-secondary: #EEE7F4;
   --bg-card: #FFFFFF;
@@ -90,7 +90,7 @@ body.page-faq {
   --text-muted: #5F4B73;
 }
 
-:root[data-theme="dark"] body.page-faq {
+:root[data-theme="dark"].page-faq {
   --bg-primary: #120D1D;
   --bg-secondary: #1B1428;
   --bg-card: #231A32;

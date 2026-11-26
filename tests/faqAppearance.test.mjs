@@ -18,11 +18,11 @@ function contrast(a, b) {
 }
 
 test('FAQ theme overrides are route-scoped and use lavender/white light surfaces with purple dark surfaces', () => {
-  assert.match(layout, /'page-faq': normalizedPath === '\/faq'/);
-  assert.match(globals, /body\.page-faq\s*\{[^}]*--bg-primary:\s*#F5F0FA/s);
-  assert.match(globals, /body\.page-faq\s*\{[^}]*--bg-card:\s*#FFFFFF/s);
-  assert.match(globals, /:root\[data-theme="dark"\] body\.page-faq\s*\{[^}]*--bg-primary:\s*#120D1D/s);
-  assert.match(globals, /:root\[data-theme="dark"\] body\.page-faq\s*\{[^}]*--bg-card:\s*#231A32/s);
+  assert.match(layout, /<html lang="en" class:list=\{\{ 'page-faq': normalizedPath === '\/faq' \}\}>/);
+  assert.match(globals, /html\.page-faq\s*\{[^}]*--bg-primary:\s*#F5F0FA/s);
+  assert.match(globals, /html\.page-faq\s*\{[^}]*--bg-card:\s*#FFFFFF/s);
+  assert.match(globals, /:root\[data-theme="dark"\]\.page-faq\s*\{[^}]*--bg-primary:\s*#120D1D/s);
+  assert.match(globals, /:root\[data-theme="dark"\]\.page-faq\s*\{[^}]*--bg-card:\s*#231A32/s);
   assert.match(faq, /background: var\(--bg-card\)/);
   assert.ok(contrast('#1a0a2e', '#F5F0FA') >= 4.5);
   assert.ok(contrast('#4a3a6e', '#F5F0FA') >= 4.5);
