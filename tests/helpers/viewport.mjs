@@ -56,7 +56,13 @@ export async function setup() {
         if (!resp || resp.status() !== 200) throw new Error(`${pagePath} returned ${resp && resp.status()}`);
         if (mediaType) await page.emulateMediaType(mediaType);
         if (focusSelector) await page.focus(focusSelector);
-        for (const key of pressKeys) await page.keyboard.press(key);
+        for (const key of pressKeys) {
+          if (key === 'Shift+Tab') {
+            await page.keyboard.down('Shift');
+            await page.keyboard.press('Tab');
+            await page.keyboard.up('Shift');
+          } else await page.keyboard.press(key);
+        }
         await new Promise((r) => setTimeout(r, 700));
         const artifacts = process.env.BROWSER_TEST_ARTIFACT_DIR;
         if (artifacts && pagePath === '/' && [320, 390, 430].includes(width)) {
