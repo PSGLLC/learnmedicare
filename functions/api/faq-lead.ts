@@ -42,6 +42,7 @@ const EMAIL_FROM = "info@priceservicesgroup.com";
 // Live mode stays off until the connected Private Email provider is verified
 // to apply the owner's saved Kayla Price / Reply-To configuration.
 const EMAIL_SUBJECT = "Your requested 2027 Medicare at 65 guide";
+const TEST_EMAIL_SUBJECT = "TEST — Your requested 2027 Medicare at 65 guide";
 const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RETENTION_SECONDS = 90 * 24 * 60 * 60;
@@ -292,7 +293,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     sent = await fetch(`${GHL_API}/conversations/messages`, {
       method: "POST",
       headers: { Authorization: `Bearer ${env.GHL_API_TOKEN}`, Version: "v3", "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ type: "Email", contactId, ...(alternateRecipientEmail ? { emailTo: alternateRecipientEmail } : {}), emailFrom: EMAIL_FROM, subject: EMAIL_SUBJECT, html: emailHtml(recipientName), message: emailText(recipientName), status: "pending" }),
+      body: JSON.stringify({ type: "Email", contactId, ...(alternateRecipientEmail ? { emailTo: alternateRecipientEmail } : {}), emailFrom: EMAIL_FROM, subject: mode === "test" ? TEST_EMAIL_SUBJECT : EMAIL_SUBJECT, html: emailHtml(recipientName), message: emailText(recipientName), status: "pending" }),
       signal: AbortSignal.timeout(8_000),
     });
   } catch {
