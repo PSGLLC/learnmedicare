@@ -146,7 +146,7 @@ test('missing D1, missing hash key, and missing API token fail closed before pro
 
 test('one exact location-scoped match sends once without contact mutation and uses approved content', async () => {
   const mock = loadEndpoint();
-  const response = await mock.handler({ request: request(), env: env(mock.db) });
+  const response = await mock.handler({ request: request(REQUEST_A, { subject: 'untrusted caller subject' }), env: env(mock.db) });
   const body = await response.json();
   assert.equal(response.status, 200);
   assert.equal(body.status, 'queued');
@@ -161,7 +161,7 @@ test('one exact location-scoped match sends once without contact mutation and us
   assert.equal(mock.calls[1].payload.status, 'pending');
   assert.equal('replyTo' in mock.calls[1].payload, false, 'the documented API has no Reply-To request field');
   assert.equal('fromName' in mock.calls[1].payload, false, 'the documented API has no From-name request field');
-  assert.equal(mock.calls[1].payload.subject, 'Your requested 2027 Medicare at 65 guide');
+  assert.equal(mock.calls[1].payload.subject, 'TEST — Your requested 2027 Medicare at 65 guide');
   assert.match(mock.calls[1].payload.html, /Hello Sam,/);
   assert.match(mock.calls[1].payload.html, /one-time response/);
   assert.match(mock.calls[1].payload.html, /https:\/\/learnmedicare\.org\/medicare-at-65-guide\//);
@@ -170,6 +170,17 @@ test('one exact location-scoped match sends once without contact mutation and us
   assert.equal(mock.db.rows.get(REQUEST_A).provider_message_id, 'message-1');
   assert.notEqual(mock.db.rows.get(REQUEST_A).outcome, 'sent');
   assert.equal(mock.calls.some(call => call.pathname === '/contacts/' || call.method === 'PUT'), false);
+});
+
+test('live mode keeps the normal subject and ignores caller-provided subject values', async () => {
+  const mock = loadEndpoint();
+  const response = await mock.handler({
+    request: request(REQUEST_A, { subject: 'untrusted caller subject' }),
+    env: env(mock.db, { FAQ_GUIDE_DELIVERY_MODE: 'live', FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'true' }),
+  });
+  assert.equal(response.status, 200);
+  assert.equal(mock.calls.filter(call => call.pathname === '/conversations/messages').length, 1);
+  assert.equal(mock.calls[1].payload.subject, 'Your requested 2027 Medicare at 65 guide');
 });
 
 test('queued ledger stores the emailMessageId fallback without calling it delivered', async () => {
