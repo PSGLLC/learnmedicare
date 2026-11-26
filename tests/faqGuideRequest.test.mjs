@@ -172,6 +172,15 @@ test('one exact location-scoped match sends once without contact mutation and us
   assert.equal(mock.calls.some(call => call.pathname === '/contacts/' || call.method === 'PUT'), false);
 });
 
+test('an exact existing-contact request needs only the email address', async () => {
+  const mock = loadEndpoint();
+  const response = await mock.handler({ request: request(REQUEST_A, { firstName: undefined }), env: env(mock.db) });
+  assert.equal(response.status, 200);
+  assert.equal(mock.calls.at(-1).payload.contactId, CONTACT.id);
+  assert.match(mock.calls.at(-1).payload.message, /^Hello Sam,/);
+  assert.equal(mock.calls.some(call => call.pathname === '/contacts/' || call.method === 'PUT'), false);
+});
+
 test('live mode keeps the normal subject and ignores caller-provided subject values', async () => {
   const mock = loadEndpoint();
   const response = await mock.handler({
@@ -205,8 +214,11 @@ test('duplicate exact matches, including across lookup pages, never choose or se
   } });
   const response = await mock.handler({ request: request(), env: env(mock.db) });
   const body = await response.json();
-  assert.equal(body.status, 'recipient_needs_help');
-  assert.match(body.error, /could not safely match/);
+  assert.equal(body.status, 'email_unavailable');
+  assert.equal(body.guideUrl, 'https://learnmedicare.org/medicare-at-65-guide/');
+  assert.equal(body.pdfUrl, 'https://learnmedicare.org/docs/T65-Medicare-Guide.pdf');
+  assert.match(body.error, /could not complete email delivery/i);
+  assert.doesNotMatch(body.error, /matched contact|existing contact|match|CRM/i);
   assert.equal(mock.calls.length, 2);
   assert.equal(mock.calls[1].searchParams.get('nextCursor'), 'cursor-2');
   assert.equal(mock.db.rows.get(REQUEST_A).outcome, 'multiple_matches');
@@ -251,7 +263,7 @@ test('lookup results outside the expected location or without an exact email are
     ] });
   } });
   const response = await mock.handler({ request: request(), env: env(mock.db) });
-  assert.equal((await response.json()).status, 'recipient_needs_help');
+  assert.equal((await response.json()).status, 'email_unavailable');
   assert.equal(mock.calls.length, 1);
   assert.equal(mock.db.rows.get(REQUEST_A).outcome, 'no_match');
 });
@@ -263,7 +275,10 @@ test('no match does not create a contact or send until the separate creation gat
   } });
   const response = await mock.handler({ request: request(), env: env(mock.db) });
   const body = await response.json();
-  assert.equal(body.status, 'recipient_needs_help');
+  assert.equal(body.status, 'email_unavailable');
+  assert.equal(body.guideUrl, 'https://learnmedicare.org/medicare-at-65-guide/');
+  assert.equal(body.pdfUrl, 'https://learnmedicare.org/docs/T65-Medicare-Guide.pdf');
+  assert.doesNotMatch(body.error, /matched contact|existing contact|match|CRM/i);
   assert.equal(mock.calls.length, 1);
   assert.equal(mock.db.rows.get(REQUEST_A).outcome, 'no_match');
 });
@@ -276,7 +291,7 @@ test('the separately gated no-match creation is minimal and a known create failu
   } });
   const response = await mock.handler({ request: request(), env: env(mock.db, { FAQ_GUIDE_DELIVERY_MODE: 'live', FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'true', FAQ_GHL_CONTACT_CREATION_ENABLED: 'true', FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED: 'true' }) });
   assert.equal(response.status, 200);
-  assert.equal((await response.json()).status, 'recipient_needs_help');
+  assert.equal((await response.json()).status, 'email_unavailable');
   assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup', '/contacts/']);
   assert.deepEqual(Object.keys(mock.calls[1].payload).sort(), ['email', 'firstName', 'locationId', 'source']);
   assert.equal(mock.calls[1].headers.Version, 'v3');
@@ -297,6 +312,16 @@ test('no-match creation requires both live-mode approval flags and then uses onl
   assert.deepEqual(Object.keys(mock.calls[1].payload).sort(), ['email', 'firstName', 'locationId', 'source']);
   assert.equal(mock.calls[2].payload.contactId, 'new-contact');
   assert.equal('emailTo' in mock.calls[2].payload, false, 'the new contact primary email is the destination');
+});
+
+test('no-match release cannot create a contact without a supplied first name', async () => {
+  const mock = loadEndpoint({ fetchImpl: async call => {
+    if (call.pathname === '/contacts/lookup') return Response.json({ contacts: [] });
+    throw new Error(`unexpected write ${call.pathname}`);
+  } });
+  const response = await mock.handler({ request: request(REQUEST_A, { firstName: undefined }), env: env(mock.db, { FAQ_GUIDE_DELIVERY_MODE: 'live', FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED: 'true', FAQ_GHL_CONTACT_CREATION_ENABLED: 'true', FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED: 'true' }) });
+  assert.equal((await response.json()).status, 'email_unavailable');
+  assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup']);
 });
 
 test('a timed-out contact creation is treated as ambiguous and is never repeated', async () => {
@@ -384,7 +409,7 @@ test('contact email suppression is honored and no send is attempted', async () =
     throw new Error('must not send');
   } });
   const response = await mock.handler({ request: request(), env: env(mock.db) });
-  assert.equal((await response.json()).status, 'recipient_needs_help');
+  assert.equal((await response.json()).status, 'email_unavailable');
   assert.equal(mock.calls.some(call => call.pathname === '/conversations/messages'), false);
 });
 
@@ -418,6 +443,8 @@ test('wrong origin, bad input, and honeypot do not call GHL', async () => {
   const wrongOrigin = new Request('https://learnmedicare.org/api/faq-lead', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://attacker.example', 'cf-connecting-ip': '192.0.2.25' }, body: JSON.stringify({ firstName: 'A', email: EMAIL, requestId: REQUEST_A }) });
   assert.equal((await mock.handler({ request: wrongOrigin, env: env(mock.db) })).status, 403);
   assert.equal((await mock.handler({ request: request('bad-id'), env: env(mock.db) })).status, 400);
+  assert.equal((await mock.handler({ request: request(REQUEST_A, { email: 'not-an-email' }), env: env(mock.db) })).status, 400);
+  assert.equal((await mock.handler({ request: request(REQUEST_A, { email: '' }), env: env(mock.db) })).status, 400);
   assert.equal((await mock.handler({ request: request(REQUEST_A, { website: 'bot' }), env: env(mock.db) })).status, 200);
   assert.equal(mock.calls.length, 0);
 });
@@ -431,7 +458,7 @@ test('test mode is limited to one explicitly configured recipient and cannot cre
   assert.equal(outside.status, 503);
   assert.equal(mock.calls.length, 0);
   const noMatch = await mock.handler({ request: request(REQUEST_B), env: env(mock.db, { FAQ_GHL_CONTACT_CREATION_ENABLED: 'true', FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED: 'true' }) });
-  assert.equal((await noMatch.json()).status, 'recipient_needs_help');
+  assert.equal((await noMatch.json()).status, 'email_unavailable');
   assert.deepEqual(mock.calls.map(call => call.pathname), ['/contacts/lookup']);
 });
 
@@ -450,15 +477,26 @@ test('retention applies to request hashes and rate-limit data', async () => {
   assert.ok(db.statements.some(sql => sql.startsWith('DELETE FROM faq_guide_rate_limits')));
 });
 
-test('FAQ keeps direct guide access and the public request form inactive', () => {
+test('FAQ request form explains availability and keeps both guide links accessible', () => {
   const source = readFileSync(new URL('../src/pages/faq.astro', import.meta.url), 'utf8');
-  assert.match(source, /One-time email requests are currently unavailable/);
+  assert.match(source, /Email delivery may be unavailable/);
+  assert.match(source, /We’ll use your email only to process this one-time guide request/);
+  assert.match(source, /does not sign you up for ongoing marketing, calls, or texts/);
+  assert.match(source, /id="faq-guide-request-form"/);
+  assert.match(source, /name="email" type="email"[^>]*required/);
+  assert.doesNotMatch(source, /name="firstName"/);
   assert.match(source, /href="\/medicare-at-65-guide\/"/);
   assert.match(source, /href="\/docs\/T65-Medicare-Guide\.pdf"/);
-  assert.doesNotMatch(source, /id="faq-lead-form"/);
+  assert.match(source, /Your request was accepted for processing/);
+  assert.match(source, /cannot confirm email delivery/);
+  assert.match(source, /Please do not submit it again yet/);
+  assert.match(source, /Request another copy/);
+  assert.doesNotMatch(source, /type="checkbox"/);
   const endpoint = readFileSync(new URL('../functions/api/faq-lead.ts', import.meta.url), 'utf8');
   assert.match(endpoint, /const mode = env\.FAQ_GUIDE_DELIVERY_MODE \?\? "off"/);
   assert.match(endpoint, /mode === "live" && env\.FAQ_GHL_SENDER_BEHAVIOR_CONFIRMED !== "true"/);
+  assert.match(endpoint, /"multiple_matches", "no_match", "email_suppressed"/);
+  assert.doesNotMatch(endpoint, /could not safely match this request to an existing email recipient/i);
   assert.doesNotMatch(endpoint, /GHL_FAQ_GUIDE_WEBHOOK_URL|GHL_GUIDE_WEBHOOK_URL/);
   assert.match(endpoint, /FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED/);
 });

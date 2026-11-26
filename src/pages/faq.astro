@@ -52,13 +52,103 @@ const jsonLd = [
     <div class="container lead-inner">
       <p class="eyebrow">Free Medicare guide</p>
       <h2>Read the Medicare at 65 guide</h2>
-      <p class="lead-sub">One-time email requests are currently unavailable. You can read the source-linked guide online or download the printable guide now.</p>
+      <p class="lead-sub">Email delivery may be unavailable. You can read the source-linked guide or download the printable PDF now without submitting this form.</p>
       <div class="guide-actions">
         <a class="btn btn-primary" href="/medicare-at-65-guide/">Read the guide online</a>
         <a class="btn btn-outline" href="/docs/T65-Medicare-Guide.pdf">Download the printable guide (PDF)</a>
       </div>
+
+      <div class="request-panel">
+        <h3>Email me the guide</h3>
+        <p class="request-disclosure">We’ll use your email only to process this one-time guide request. This does not sign you up for ongoing marketing, calls, or texts. Email delivery may not be available for every request; the guide and PDF links above remain available either way. See our <a href="/privacy/">Privacy Policy</a>.</p>
+        <form id="faq-guide-request-form" class="lead-form" novalidate>
+          <div class="form-row">
+            <label for="faq-email">Email address</label>
+            <input id="faq-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+          </div>
+          <div class="hp-field" aria-hidden="true">
+            <label for="faq-website">Leave this field blank</label>
+            <input id="faq-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Email me the guide</button>
+          <p id="faq-guide-error" class="form-error" role="alert" tabindex="-1" hidden></p>
+          <p id="faq-guide-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+          <button id="faq-guide-another" class="btn btn-outline another-request" type="button" hidden>Request another copy</button>
+        </form>
+      </div>
     </div>
   </section>
+
+<script>
+  const form = document.getElementById('faq-guide-request-form') as HTMLFormElement | null;
+  const errorEl = document.getElementById('faq-guide-error');
+  const statusEl = document.getElementById('faq-guide-status');
+  const anotherButton = document.getElementById('faq-guide-another') as HTMLButtonElement | null;
+  let requestId = crypto.randomUUID();
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
+    if (statusEl) { statusEl.hidden = true; statusEl.textContent = ''; }
+    if (anotherButton) anotherButton.hidden = true;
+
+    const formData = new FormData(form);
+    const submitButton = form.querySelector<HTMLButtonElement>('.form-submit');
+    if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Sending request…'; }
+
+    const showError = (message: string) => {
+      if (errorEl) { errorEl.textContent = message; errorEl.hidden = false; errorEl.focus(); }
+    };
+    try {
+      const response = await fetch('/api/faq-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: String(formData.get('email') ?? '').trim(),
+          website: String(formData.get('website') ?? ''),
+          requestId,
+        }),
+      });
+      const data = await response.json().catch(() => ({ status: 'unavailable' }));
+      if (data.status === 'queued') {
+        if (statusEl) {
+          statusEl.textContent = 'Your request was accepted for processing. This page cannot confirm email delivery. Check your inbox and spam folder; the guide and PDF links above are available now.';
+          statusEl.hidden = false;
+          statusEl.focus();
+        }
+        if (anotherButton) anotherButton.hidden = false;
+        return;
+      }
+      if (data.status === 'email_unavailable' || data.status === 'recipient_needs_help' || data.status === 'unavailable' || data.status === 'rate_limited') {
+        showError('Email delivery could not be completed for this request. The guide and PDF links above are available now, or contact us for help.');
+        return;
+      }
+      if (data.status === 'delivery_unconfirmed' || data.status === 'already_processing') {
+        showError('We could not confirm the outcome of this request. Please do not submit it again yet. The guide and PDF links above are available now, or contact us for help.');
+        return;
+      }
+      if (response.status === 400) {
+        showError('Enter a valid email address.');
+        return;
+      }
+      showError('Email delivery could not be completed for this request. The guide and PDF links above are available now, or contact us for help.');
+    } catch {
+      showError('We could not confirm the outcome of this request. Please do not submit it again yet. The guide and PDF links above are available now, or contact us for help.');
+    } finally {
+      if (submitButton) { submitButton.disabled = false; submitButton.textContent = 'Email me the guide'; }
+    }
+  });
+
+  anotherButton?.addEventListener('click', () => {
+    requestId = crypto.randomUUID();
+    form?.reset();
+    if (statusEl) { statusEl.hidden = true; statusEl.textContent = ''; }
+    if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
+    if (anotherButton) anotherButton.hidden = true;
+    form?.querySelector<HTMLInputElement>('#faq-email')?.focus();
+  });
+</script>
 </BaseLayout>
 
 <style>
@@ -67,5 +157,20 @@ const jsonLd = [
   .lead-sub { color: var(--text-secondary); margin-bottom: 1.75rem; }
   .guide-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
   .guide-actions a { max-width: 100%; text-align: center; }
+  .request-panel { max-width: 520px; margin: 3rem auto 0; padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-primary); text-align: left; }
+  .request-panel h3 { text-align: center; margin-top: 0; }
+  .request-disclosure { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; }
+  .lead-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-row label { color: var(--text-primary); font-weight: 600; }
+  .form-row input { width: 100%; min-width: 0; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); font: inherit; }
+  .form-row input:focus-visible, .form-submit:focus-visible, .another-request:focus-visible { outline: 3px solid var(--fill-accent); outline-offset: 2px; }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-submit { width: 100%; }
+  .form-submit:disabled { opacity: 0.7; cursor: wait; }
+  .form-error { margin: 0; color: #a32020; font-weight: 600; }
+  .form-status { margin: 0; padding: 1rem; border-radius: var(--radius); background: var(--fill-purple-light); color: var(--text-primary); }
+  .another-request { width: 100%; }
+  @media (max-width: 560px) { .request-panel { padding: 1rem; } .guide-actions { flex-direction: column; } }
 
 </style>
