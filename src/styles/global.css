@@ -106,9 +106,9 @@ html.page-faq {
 .page-faq main { padding-bottom: 11rem; }
 .page-faq .nav-wrap { border-bottom-color: var(--border); }
 .page-faq .brand-medicare { color: var(--accent-text); }
-.page-faq .page-hero .eyebrow,
-.page-faq .page-hero .subhead,
-.page-faq .page-hero .author-byline { color: #FFFFFF; }
+html.page-faq .page-hero .eyebrow.eyebrow,
+html.page-faq .page-hero .subhead,
+html.page-faq .page-hero .author-byline { color: #FFFFFF; }
 .page-faq .request-panel .form-row input { border-color: #8A729A; }
 :root[data-theme="dark"].page-faq .request-panel .form-row input { border-color: #9A83AD; }
 .page-faq #faq-email,

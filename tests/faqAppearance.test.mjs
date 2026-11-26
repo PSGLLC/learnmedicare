@@ -30,7 +30,7 @@ test('FAQ theme overrides are route-scoped and use lavender/white light surfaces
   assert.ok(contrast('#806B93', '#FFFFFF') >= 3, 'light FAQ accordion boundary must meet non-text contrast');
   assert.ok(contrast('#806B93', '#231A32') >= 3, 'dark FAQ accordion boundary must meet non-text contrast');
   assert.ok(contrast('#9A83AD', '#231A32') >= 3, 'dark email input boundary must meet non-text contrast');
-  assert.match(globals, /\.page-faq \.page-hero \.eyebrow,[\s\S]*\.page-faq \.page-hero \.author-byline \{ color: #FFFFFF/);
+  assert.match(globals, /html\.page-faq \.page-hero \.eyebrow\.eyebrow,[\s\S]*html\.page-faq \.page-hero \.author-byline \{ color: #FFFFFF/);
   assert.ok(contrast('#FFFFFF', '#9059B5') >= 4.5, 'FAQ hero text must meet AA at the light end of the gradient');
   assert.ok(contrast('#FFFFFF', '#6d3f8f') >= 4.5, 'FAQ hero text must meet AA at the dark end of the gradient');
   assert.match(globals, /\.page-faq main \{ padding-bottom:/);
