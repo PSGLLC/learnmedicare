@@ -32,13 +32,17 @@ test('homepage and guide forms reject excluded leads before success or conversio
   }
 });
 
-test('FAQ does not expose an inactive email request form or imply lead acceptance', () => {
+test('FAQ guide request form explains conditional email delivery and keeps direct links available', () => {
   const source = readFileSync('src/pages/faq.astro', 'utf8');
-  assert.match(source, /One-time email requests are currently unavailable/);
+  assert.match(source, /Email delivery may be unavailable/);
+  assert.match(source, /id="faq-guide-request-form"/);
+  assert.match(source, /We’ll use your email only to process this one-time guide request/);
   assert.match(source, /href="\/medicare-at-65-guide\/"/);
   assert.match(source, /href="\/docs\/T65-Medicare-Guide\.pdf"/);
-  assert.doesNotMatch(source, /id="faq-lead-form"/);
-  assert.doesNotMatch(source, /accepted for processing|Your guide is on its way/i);
+  assert.match(source, /Your request was accepted for processing/);
+  assert.match(source, /cannot confirm email delivery/);
+  assert.doesNotMatch(source, /Your guide is on its way/i);
+  assert.doesNotMatch(source, /fbq\?\.\('track', 'Lead'/);
 });
 
 test('the homepage guide request remains available outside the insurance footprint', async () => {

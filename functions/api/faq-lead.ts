@@ -39,8 +39,8 @@ const GUIDE_URL = "https://learnmedicare.org/medicare-at-65-guide/";
 const PDF_URL = "https://learnmedicare.org/docs/T65-Medicare-Guide.pdf";
 const EMAIL_FROM = "info@priceservicesgroup.com";
 // The GHL send API does not document From-name or Reply-To input fields.
-// Live mode stays off until the connected Private Email provider is verified
-// to apply the owner's saved Kayla Price / Reply-To configuration.
+// A controlled message verified the owner's Kayla Price / Reply-To behavior;
+// public delivery is still separately gated by FAQ_GUIDE_DELIVERY_MODE.
 const EMAIL_SUBJECT = "Your requested 2027 Medicare at 65 guide";
 const TEST_EMAIL_SUBJECT = "TEST — Your requested 2027 Medicare at 65 guide";
 const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -64,9 +64,7 @@ function safeResponseForOutcome(outcome: string | undefined): Response {
   if (outcome === "queued") return json({ ok: true, status: "queued", emailDelivered: false, duplicate: true });
   if (outcome === "ambiguous") return json({ ok: false, status: "delivery_unconfirmed", error: "We could not confirm what happened to this request. Please do not submit it again yet; contact us if you still need the guide." }, 502);
   if (outcome === "processing") return json({ ok: false, status: "already_processing", error: "This request is already being processed. Please wait before trying again." }, 409);
-  if (outcome === "multiple_matches") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to one email recipient. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
-  if (outcome === "no_match") return json({ ok: false, status: "recipient_needs_help", error: "We could not safely match this request to an existing email recipient. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
-  if (outcome === "email_suppressed") return json({ ok: false, status: "recipient_needs_help", error: "We could not send this request to the matched contact. Please contact us for help. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
+  if (["multiple_matches", "no_match", "email_suppressed"].includes(outcome ?? "")) return json({ ok: false, status: "email_unavailable", error: "We could not complete email delivery for this request. You can read or download the guide now, or contact us for help.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 200);
   if (outcome === "rate_limited") return json({ ok: false, status: "rate_limited", error: "Too many guide requests were made recently. Please wait and try again later. You can still read or download the guide.", guideUrl: GUIDE_URL, pdfUrl: PDF_URL }, 429);
   return unavailable();
 }
@@ -198,7 +196,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const firstName = String(body.firstName ?? "").trim().slice(0, 80);
   const email = String(body.email ?? "").trim().toLowerCase();
   const requestId = String(body.requestId ?? "").trim();
-  if (!firstName || !email) return json({ ok: false, error: "First name and email are required." }, 400);
+  if (!email) return json({ ok: false, error: "Email is required." }, 400);
   if (email.length > 254 || !EMAIL_RE.test(email)) return json({ ok: false, error: "Enter a valid email address." }, 400);
   if (mode === "test" && (!env.FAQ_GUIDE_TEST_RECIPIENT || email !== env.FAQ_GUIDE_TEST_RECIPIENT.trim().toLowerCase())) return unavailable();
   if (!REQUEST_ID_RE.test(requestId)) return json({ ok: false, error: "Refresh the page and try again." }, 400);
@@ -265,6 +263,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let alternateRecipientEmail: string | undefined;
   if (lookup.contacts.length === 0) {
     if (mode !== "live" || env.FAQ_GHL_CONTACT_CREATION_ENABLED !== "true" || env.FAQ_GHL_CONTACT_CREATED_EFFECTS_APPROVED !== "true") {
+      await setOutcome(db, requestId, "accepted", "no_match").catch(() => undefined);
+      return safeResponseForOutcome("no_match");
+    }
+    if (!firstName) {
       await setOutcome(db, requestId, "accepted", "no_match").catch(() => undefined);
       return safeResponseForOutcome("no_match");
     }
