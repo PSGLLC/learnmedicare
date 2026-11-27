@@ -127,15 +127,22 @@ for (const [scheme, expected] of [['light', 'rgb(245, 240, 250)'], ['dark', 'rgb
 
 test('FAQ theme toggle changes the FAQ surfaces and keeps the form and sticky close control usable', { skip }, async () => {
   const r = await env.at('/faq/', 390, async () => {
-    document.querySelector('#theme-toggle').click();
+    const themeToggle = document.querySelector('#theme-toggle');
+    const pressedBefore = themeToggle.getAttribute('aria-pressed');
+    themeToggle.click();
     const mode = document.documentElement.dataset.theme;
+    const pressedAfter = themeToggle.getAttribute('aria-pressed');
     const body = getComputedStyle(document.body).backgroundColor;
     const cta = document.querySelector('.sticky-guide-cta');
     cta.classList.add('sgc-visible');
     document.querySelector('#sgc-close').click();
-    return {mode, body, stickyHidden:getComputedStyle(cta).display === 'none', dismissed:sessionStorage.getItem('sgcDismissed')};
+    themeToggle.click();
+    return {mode, pressedBefore, pressedAfter, restoredPressed:themeToggle.getAttribute('aria-pressed'), body, stickyHidden:getComputedStyle(cta).display === 'none', dismissed:sessionStorage.getItem('sgcDismissed')};
   }, { colorScheme: 'light' });
   assert.equal(r.mode, 'dark');
+  assert.equal(r.pressedBefore, 'false');
+  assert.equal(r.pressedAfter, 'true');
+  assert.equal(r.restoredPressed, 'false');
   assert.equal(r.body, 'rgb(18, 13, 29)');
   assert.equal(r.stickyHidden, true);
   assert.equal(r.dismissed, '1');
