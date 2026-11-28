@@ -12,7 +12,7 @@ faqs:
   - question: "Which coverage pays first when I have Medicare and another plan?"
     answer: "This is called coordination of benefits, and the answer depends on the pairing. With large-employer coverage, the employer plan is often primary. With Medicaid, Medicare is almost always primary. With TRICARE for Life, Medicare pays first and TRICARE pays most of what's left. Your plan documents or a licensed insurance agent can confirm the order for your specific situation."
   - question: "Can I have both Medicare and Medicaid at the same time?"
-    answer: "Yes. This is called being dual eligible. Medicaid can help pay Medicare premiums, deductibles, and coinsurance for people with limited income and resources, and may cover services Medicare doesn't, such as long-term custodial care."
+    answer: "Yes. This is called being dual eligible. Depending on your eligibility category, Medicaid may help pay Medicare premiums and cost sharing, and may cover services Medicare doesn't, such as nursing home or personal care. Benefits vary by state; see [Medicare's Medicaid guidance](https://www.medicare.gov/basics/costs/help/medicaid) and ask your state Medicaid office."
   - question: "What happens to my Medicare if I lose my employer coverage?"
     answer: "If you delayed Part B because you or your spouse had group coverage based on current employment, you can generally use an 8-month Special Enrollment Period after work or that coverage ends, whichever happens first. Part B does not use the Part D creditable-drug-coverage test."
   - question: "Does TRICARE replace the need for Medicare Part B?"
