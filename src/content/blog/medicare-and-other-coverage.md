@@ -10,7 +10,7 @@ faqs:
   - question: "Do I have to enroll in Medicare if I already have other health coverage?"
     answer: "It depends on the coverage and whether it is based on current employment. A group plan from a large employer can often let you delay Part B without a Part B late enrollment penalty; Part D creditable drug coverage is a separate test. Medicaid, VA benefits, and TRICARE have their own rules, so confirm your situation before delaying enrollment."
   - question: "Which coverage pays first when I have Medicare and another plan?"
-    answer: "This is called coordination of benefits, and the answer depends on the pairing. With large-employer coverage, the employer plan is often primary. With Medicaid, Medicare is almost always primary. With TRICARE for Life, Medicare pays first and TRICARE pays most of what's left. Your plan documents or a licensed insurance agent can confirm the order for your specific situation."
+    answer: "This is called coordination of benefits, and the answer depends on the pairing. With current-employment group coverage, employer size and other circumstances affect which plan pays first. For Medicare-covered services, Medicare generally pays before Medicaid. With TRICARE For Life in the United States, Medicare generally pays first and TRICARE pays for services it covers; other insurance or overseas care can change the order. Confirm your situation with your plan or the relevant agency."
   - question: "Can I have both Medicare and Medicaid at the same time?"
     answer: "Yes. This is called being dual eligible. Depending on your eligibility category, Medicaid may help pay Medicare premiums and cost sharing, and may cover services Medicare doesn't, such as nursing home or personal care. Benefits vary by state; see Medicare.gov's Medicaid guidance and ask your state Medicaid office."
   - question: "What happens to my Medicare if I lose my employer coverage?"
@@ -39,7 +39,7 @@ This pairing can meaningfully lower out-of-pocket costs. The standard 2026 Part 
 
 ## Medicare and TRICARE for Life
 
-Some TRICARE-eligible retirees, survivors, and family members qualify for TRICARE For Life (TFL) when they have Medicare Parts A and B. TFL coverage starts automatically when both parts are in effect, and the Part B premium is still due. In the United States, Medicare generally pays first and sends the claim to TRICARE; TRICARE pays for services it covers. When both programs cover a service, beneficiaries generally have no out-of-pocket cost, but coverage and payment order can differ when other insurance is involved or for care overseas. See [TRICARE's current TFL rules](https://www.tricare.mil/Plans/HealthPlans/TFL) and confirm your eligibility before delaying or dropping Part B.
+TRICARE For Life (TFL) is Medicare-wraparound coverage for each TRICARE-eligible beneficiary with Medicare Parts A and B; one beneficiary's TFL does not extend to family members. TFL coverage starts automatically when both parts are in effect, and the Part B premium is still due. In the United States, Medicare generally pays first and sends the claim to TRICARE; TRICARE pays for services it covers. When both programs cover a service, beneficiaries generally have no out-of-pocket cost, but coverage and payment order can differ when other insurance is involved or for care overseas. See [TRICARE's current TFL rules](https://www.tricare.mil/Plans/HealthPlans/TFL) and confirm your eligibility before delaying or dropping Part B.
 
 ## How to Decide What to Do With Other Coverage
 
